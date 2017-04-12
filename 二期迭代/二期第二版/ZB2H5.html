@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script>
+        function htmlFontSize(){
+            var html = document.querySelector("html");
+            var width = html.getBoundingClientRect().width;
+            html.style.fontSize = width / 3.75 + "px";
+        }
+        htmlFontSize();
+        window.addEventListener("resize",function(){
+            htmlFontSize();
+        },false);
+    </script>
+    <link rel="stylesheet" href="ZB2H5.css">
+</head>
+<body>
+<header><h1 class="tc fwn">平安众包</h1></header>
+<main>
+    <div class="wrap">
+        <section class="billBox">
+            <div class="billImgBox pinch-zoom">
+                <img style="visibility: hidden" class="billImg" src="piaoju04.jpg" alt="billImg">
+            </div>
+            <div class="billOperate">
+                <nav class="clearfloat">
+                    <img src="billIcon.png" alt="billIcon" class="icon l">
+                    <span class="l">票据显示</span>
+                    <span class="taskGuide r">任务指引</span>
+                </nav>
+                <input type="text" class="showInfo tc bsb">
+                <p class="textTip tc">请适当修改，保证票据内容与文本输入框一致</p>
+                <input type="button" class="next tc bsb" value="下一张">
+            </div>
+        </section>
+        <div class="divide"></div>
+        <section class="countBox">
+            <nav class="clearfloat">
+                <img src="count.png" alt="count" class="icon l">
+                <span class="l">任务统计</span>
+            </nav>
+            <div class="clearfloat countInfo">
+                <div class="l tc total">
+                    <p>累计提交(单)</p>
+                    <p class="num">18000</p>
+                </div>
+                <div class="l other">
+                    <p>任务奖励(分/单):<span>100</span></p>
+                    <p>当前积分(分):<span>100</span></p>
+                    <p>今日提交(单):<span>100</span></p>
+                </div>
+            </div>
+        </section>
+        <div class="more">点击查看</div>
+    </div>
+</main>
+<footer></footer>
+<script src="jquery-1.7.2.min.js"></script>
+<script src="ZB2H5.js"></script>
+<script type="text/javascript" src="pinchzoom.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('div.pinch-zoom').each(function () {
+            new RTP.PinchZoom($(this), {});
+        });
+    })
+</script>
+</body>
+</html>

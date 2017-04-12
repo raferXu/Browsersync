@@ -1,0 +1,111 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>Pinchzoom.js Demo</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="ZBH5.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script>
+        var get_data;
+        var thatWposition_data = {pst:[30,50,75,90]};
+        var position_data = {pst:[30,50,75,90]};
+        var jian;
+        $(function () {
+        })
+    </script>
+    <script type="text/javascript" src="ZBH5.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var limitImgH = 300;
+            var limitImgW = $('html').width();
+            $('.pinchImgDiv').height(limitImgH).css('background','#F0F0F0');
+            if(limitImgW/$('.pinchImgDiv img').width()*$('.pinchImgDiv img').height() < limitImgH){
+                $('.pinchImgDiv img').width('100%').css('background','#F0F0F0');
+                $('.pinchImgDiv img').css('padding-top',(limitImgH-$('.pinchImgDiv img').height())/2+'px');
+            }else{
+                $('.pinchImgDiv img').height(limitImgH).css('background','#F0F0F0');
+                $('.pinchImgDiv img').css('padding-left',(limitImgW-$('.pinchImgDiv img').width())/2+'px');
+                jian = (limitImgW-$('.pinchImgDiv img').width())/2;
+            }
+
+            $('div.pinch-zoom').each(function () {
+                new RTP.PinchZoom($(this), {});
+            });
+
+//            $('.pinch-zoom').append("<div class='addRect rect' style='width:" + (thatWposition_data['pst'][2]-thatWposition_data['pst'][0]) + "px;height:" + (thatWposition_data['pst'][3]-thatWposition_data['pst'][1]) + "px;position:absolute;top:" + (thatWposition_data['pst'][1]) + "px;left:" + (thatWposition_data['pst'][0]+jian) + "px'></div>");
+
+
+//            0104
+//            $(document).scroll(function () {
+//                var documentScrollTop = $(this).scrollTop();
+//                finalSubLabMgn = documentScrollTop + subLabMgn;
+////                $('#submitLabel').css('margin-top',finalSubLabMgn);
+//            });
+            var submitData = document.getElementById('submitLabel');
+            submitData.onclick =function () {
+                console.log('get_data():'+ get_data());
+                console.log(get_data());
+
+                $('.subImg').html('');
+                $('.subImg').css("left",0);
+                $('.pinch-zoom-container').css('height','auto');
+                $('.submitLabel').css({'position':'fixed','bottom':0});
+            };
+//            0104
+//            var $index;
+//            $('#cutImgUl').on('touchstart','li',function () {
+//                $('#maskImg').html('');
+//                $index = $('#cutImgUl li').index(this);
+//                $(this).siblings().removeClass('bdBlue').end().addClass('bdBlue');
+//                $('#maskImg').html('');
+//                $('#imgNextShow').children('div:eq('+$index+')').clone().appendTo($('#maskImg'));
+////                console.log('cloneLi: '+$(this).clone());
+//                $('#mask').show();
+//                $('#submitLabel').attr('disabled','disabled');
+//            });
+//            $('#maskText').on('touchstart','span',function () {
+//                $(this).siblings().removeClass('maskTextCur').end().addClass('maskTextCur');
+//                $('#cutImgUl li:eq('+$index+')>.selectLabel').html($(this).html());
+//                $('#mask').hide();
+//                $('#submitLabel').removeAttr('disabled');
+//            });
+        });
+    </script>
+</head>
+<body>
+<h2 class="labelTitle">标注</h2>
+<div class="outer">
+    <!--<div class="pinch-zoom">-->
+        <!--<img src="car.jpg"/>-->
+    <!--</div>-->
+    <div class="pinch-zoom">
+        <div class="pinchImgDiv" style="width:100%">
+            <img src="frog.jpg"/>
+        </div>
+    </div>
+    <input type="button" class="cutMove" value="切换到截图" />
+    <h3 class="labelImgTitle">图片展示</h3>
+    <ul class="subImg" id="cutImgUl"></ul>
+    <!--0104-->
+    <!--<div id="imgNextShow" style="display:none"></div>-->
+    <br><br>
+</div>
+<div class="lableSubmitOuter">
+    <input type="submit" class="submitLabel" id="submitLabel" value="提交标注" disabled="disabled">
+</div>
+<!--0104-->
+<!--<div id="mask" class="mask">-->
+    <!--<div class="maskCon">-->
+        <!--<div id="maskImg" class="maskImg"></div>-->
+        <!--<div id="maskText" class="maskText">-->
+            <!--<h5>标签</h5>-->
+            <!--<p><span class="maskLabelText maskTextCur">印章</span><span class="maskLabelText">编号</span><span class="maskLabelText">日期</span><span class="maskLabelText">边界</span></p>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+</body>
+</html>

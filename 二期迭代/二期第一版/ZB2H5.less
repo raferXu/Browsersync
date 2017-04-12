@@ -1,0 +1,235 @@
+@font-color-normal: #323232;
+@font-color-light: #828282;
+@font-color-red: #ff6000;
+//@font-size-normal: 14px;
+//@font-size-small: 11px;
+//@font-size-big: 18px;
+
+@font-size-normal: .14rem;
+@font-size-small: .11rem;
+@font-size-big: .18rem;
+
+
+
+/*reset*/
+body,h1,h2,h3,h4,h5,p{
+  margin: 0;
+}
+h1,h2,h3,h4,h5{
+  text-align: center;
+}
+ul{
+  list-style: none;
+  overflow: hidden;
+  width: auto;
+  padding: 0;
+  margin: 0;
+}
+input{
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+
+/*common*/
+.l{float: left}
+.r{float: right}
+/*清除浮动代码*/
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfloat{zoom:1}
+.tc{text-align: center}
+.fwn{font-weight: normal}
+.bsb{box-sizing: border-box}
+
+
+/*page*/
+html{
+  width: 100%;
+  height: 100%;
+  font-size: 100px;
+}
+body{
+  width: 100%;
+  height: 100%;
+  color: #333;
+  background-color: #FFF;
+  overflow: hidden;
+  font-size: .14rem;
+}
+
+
+
+/*header*/
+header{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: .44rem;
+  background: #fff;
+
+  h1{
+    line-height: .44rem;
+    font-size: @font-size-big;
+    color: @font-color-normal;
+  }
+}
+
+
+main{
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+
+  .wrap{
+    padding-top: .44rem;
+    padding-bottom: .5rem;
+
+    section.billBox{
+      width: 100%;
+
+      .billImg{
+        width: 100%;
+        height: 1.32rem;
+        background: @font-color-light;
+        overflow: hidden;
+      }
+      .billOperate{
+        margin: .15rem;
+
+        nav{
+          box-sizing: border-box;
+          margin-bottom: .4rem;
+          font-size: @font-size-normal;
+
+          .icon{
+            height: .16rem;
+            margin-right: .05rem;
+            vertical-align: middle;
+          }
+          .taskGuide{
+            color: @font-color-red;
+          }
+        }
+        .showInfo{
+          width: 100%;
+          height: .44rem;
+          margin-bottom: .1rem;
+          border: 1px solid @font-color-red;
+          border-radius: 5px;
+          color: @font-color-normal;
+          font-size: @font-size-big;
+        }
+        .textTip{
+          -webkit-text-size-adjust:none;
+          margin-bottom: .4rem;
+          color: @font-color-light;
+          font-size: @font-size-small;
+        }
+        .next{
+          width: 100%;
+          height: .44rem;
+          border: 1px solid @font-color-red;
+          border-radius: 5px;
+          color: white;
+          background: @font-color-red;
+          font-size: @font-size-big;
+        }
+      }
+    }
+
+    .divide{
+      width: 100%;
+      height: .1rem;
+      background: #f0f0f0;
+    }
+
+    section.countBox{
+      box-sizing: border-box;
+      width: 100%;
+      padding: .15rem .15rem 0;
+
+      nav{
+        box-sizing: border-box;
+        margin-bottom: .2rem;
+        font-size: @font-size-normal;
+
+        .icon{
+          height: .16rem;
+          margin-right: .05rem;
+          vertical-align: middle;
+        }
+      }
+
+      .countInfo{
+        -webkit-text-size-adjust:none;
+        width: 100%;
+        margin-bottom: .15rem;
+        font-size: @font-size-small;
+        color: @font-color-light;
+
+        & > div{
+          width: 50%;
+
+          & > p:not(:last-child){
+            margin-bottom: .1rem;
+          }
+        }
+
+        .total{
+          padding-top: .09rem;
+
+          .num{
+            color: @font-color-normal;
+            font-size: @font-size-big;
+          }
+        }
+
+        .other{
+          box-sizing: border-box;
+          padding-left: .4rem;
+          border-left: 1px solid #828282;
+        }
+      }
+    }
+
+    .more{
+      width: 100%;
+      height: .44rem;
+      line-height: .44rem;
+      text-align: center;
+      color: @font-color-red;
+      font-size: @font-size-normal;
+    }
+  }
+}
+
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: .49rem;
+  background: #f6f6f6;
+  border-top: 1px solid #c3c3c3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

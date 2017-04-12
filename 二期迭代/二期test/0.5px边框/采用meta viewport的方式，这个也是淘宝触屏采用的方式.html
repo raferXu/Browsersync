@@ -1,0 +1,6 @@
+常用的移动html viewport的设置如下
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+具体意思就不多提，它就是让页面的高宽度即为设备的高宽像素，而为了方便绘制0.5像素的viewport的设置如下
+<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no" />
+这样html的宽高就是设备的2倍，此时依然使用css board为1像素的话，肉眼看到页面线条就相当于transform:scale(0.5)的效果，即为0.5像素
+但是这种方式涉及到页面整体布局规划以及图片大小的制作，所以若采用这个方式还是事先确定为好

@@ -1,0 +1,204 @@
+/*reset*/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-align: center;
+}
+ul {
+  list-style: none;
+  overflow: hidden;
+  width: auto;
+  padding: 0;
+  margin: 0;
+}
+input {
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+/*common*/
+.l {
+  float: left;
+}
+.r {
+  float: right;
+}
+/*清除浮动代码*/
+.clearfloat:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+.clearfloat {
+  zoom: 1;
+}
+.tc {
+  text-align: center;
+}
+.fwn {
+  font-weight: normal;
+}
+.bsb {
+  box-sizing: border-box;
+}
+/*page*/
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 100px;
+}
+body {
+  width: 100%;
+  height: 100%;
+  color: #333;
+  background-color: #FFF;
+  overflow: hidden;
+  font-size: .14rem;
+}
+/*header*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: .44rem;
+  background: #fff;
+}
+header h1 {
+  line-height: .44rem;
+  font-size: 0.18rem;
+  color: #323232;
+}
+main {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+main .wrap {
+  padding-top: .44rem;
+  padding-bottom: .5rem;
+}
+main .wrap section.billBox {
+  width: 100%;
+}
+main .wrap section.billBox .billImg {
+  width: 100%;
+  height: 1.32rem;
+  background: #828282;
+  overflow: hidden;
+}
+main .wrap section.billBox .billOperate {
+  margin: .15rem;
+}
+main .wrap section.billBox .billOperate nav {
+  box-sizing: border-box;
+  margin-bottom: .4rem;
+  font-size: 0.14rem;
+}
+main .wrap section.billBox .billOperate nav .icon {
+  height: .16rem;
+  margin-right: .05rem;
+  vertical-align: middle;
+}
+main .wrap section.billBox .billOperate nav .taskGuide {
+  color: #ff6000;
+}
+main .wrap section.billBox .billOperate .showInfo {
+  width: 100%;
+  height: .44rem;
+  margin-bottom: .1rem;
+  border: 1px solid #ff6000;
+  border-radius: 5px;
+  color: #323232;
+  font-size: 0.18rem;
+}
+main .wrap section.billBox .billOperate .textTip {
+  -webkit-text-size-adjust: none;
+  margin-bottom: .4rem;
+  color: #828282;
+  font-size: 0.11rem;
+}
+main .wrap section.billBox .billOperate .next {
+  width: 100%;
+  height: .44rem;
+  border: 1px solid #ff6000;
+  border-radius: 5px;
+  color: white;
+  background: #ff6000;
+  font-size: 0.18rem;
+}
+main .wrap .divide {
+  width: 100%;
+  height: .1rem;
+  background: #f0f0f0;
+}
+main .wrap section.countBox {
+  box-sizing: border-box;
+  width: 100%;
+  padding: .15rem .15rem 0;
+}
+main .wrap section.countBox nav {
+  box-sizing: border-box;
+  margin-bottom: .2rem;
+  font-size: 0.14rem;
+}
+main .wrap section.countBox nav .icon {
+  height: .16rem;
+  margin-right: .05rem;
+  vertical-align: middle;
+}
+main .wrap section.countBox .countInfo {
+  -webkit-text-size-adjust: none;
+  width: 100%;
+  margin-bottom: .15rem;
+  font-size: 0.11rem;
+  color: #828282;
+}
+main .wrap section.countBox .countInfo > div {
+  width: 50%;
+}
+main .wrap section.countBox .countInfo > div > p:not(:last-child) {
+  margin-bottom: .1rem;
+}
+main .wrap section.countBox .countInfo .total {
+  padding-top: .09rem;
+}
+main .wrap section.countBox .countInfo .total .num {
+  color: #323232;
+  font-size: 0.18rem;
+}
+main .wrap section.countBox .countInfo .other {
+  box-sizing: border-box;
+  padding-left: .4rem;
+  border-left: 1px solid #828282;
+}
+main .wrap .more {
+  width: 100%;
+  height: .44rem;
+  line-height: .44rem;
+  text-align: center;
+  color: #ff6000;
+  font-size: 0.14rem;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: .49rem;
+  background: #f6f6f6;
+  border-top: 1px solid #c3c3c3;
+}

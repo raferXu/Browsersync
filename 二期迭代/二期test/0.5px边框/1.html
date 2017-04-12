@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>boardTest</title>
+    <style>
+        p{
+            margin: 50px auto;
+            padding: 5px 10px 5px 10px;
+            color: red;
+            text-align: center;
+            width: 60px;
+        }
+        p:first-child{
+            border-bottom: 1px solid red;
+        }
+        p:last-child{
+            position: relative;
+        }
+        p:last-child:after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            background-color: red;
+            -webkit-transform: scale(1,0.5);
+            transform: scale(1,0.5);
+            -webkit-transform-origin: center bottom;
+            transform-origin: center bottom
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <p>点击1</p>
+    <p>点击2</p>
+</div>
+</body>
+</html>

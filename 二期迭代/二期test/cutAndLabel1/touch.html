@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>Title</title>
+    <style>
+        html,body{
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1>
+<h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1>
+<h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1>
+<div id="selectorID">
+    <h1>id</h1><h1>id</h1><h1>id</h1><h1>id</h1><h1>id</h1><h1>id</h1><h1>id</h1><h1>id</h1><h1>id</h1><h1>id</h1>
+</div>
+<h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1>
+<h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>2</h1>
+<div id="inc"></div>
+<div id="inp"></div>
+<div id="ins"></div>
+<h1>2</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1>
+<h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1>
+<h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1>
+<script>
+    function load (){
+
+        document.addEventListener('touchstart',touch, false);
+        document.addEventListener('touchmove',touch, false);
+        document.addEventListener('touchend',touch, false);
+
+        function touch (event){
+            var event = event || window.event;
+
+            var oInc = document.getElementById("inc");
+            var oInp = document.getElementById("inp");
+            var oIns = document.getElementById("ins");
+
+            switch(event.type){
+                case "touchstart":
+                    oInc.innerHTML = "Touch started client (" + event.touches[0].clientX + "," + event.touches[0].clientY + ")";
+                    oInp.innerHTML = "Touch started page (" + event.touches[0].pageX + "," + event.touches[0].pageY + ")";
+                    oIns.innerHTML = "Touch started screen (" + event.touches[0].screenX + "," + event.touches[0].screenY + ")";
+                    break;
+                case "touchend":
+                    oInp.innerHTML = "<br>Touch end (" + event.changedTouches[0].clientX + "," + event.changedTouches[0].clientY + ")";
+                    break;
+                case "touchmove":
+                    event.preventDefault();
+                    oInp.innerHTML = "<br>Touch moved (" + event.touches[0].clientX + "," + event.touches[0].clientY + ")";
+                    break;
+            }
+
+        }
+    }
+    window.addEventListener('load',load, false);
+
+</script>
+</body>
+</html>
