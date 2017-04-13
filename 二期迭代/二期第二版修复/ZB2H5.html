@@ -64,7 +64,7 @@
 <!--</footer>-->
 <script src="jquery-1.7.2.min.js"></script>
 <script src="ZB2H5.js"></script>
-<script type="text/javascript" src="pinchzoom2.js"></script>
+<script type="text/javascript" src="pinchzoom2test.js"></script>
 <script type="text/javascript">
     $(function () {
         var fontSize = parseInt($('html').css('fontSize'));
@@ -75,19 +75,7 @@
     })
 </script>
 <script>
-    $('.reviseInfo').on('touchstart',function () {
-        $(this).focus();
-    });
-    var sT = $('footer').offset().top;
-    setInterval(function () {
-        if($('footer').offset().top != sT){
-            $('.showInfo').val('!=');
-            $('footer').css('visibility','visible');
-        }else{
-            $('.showInfo').val('==');
-            $('footer').css('visibility','hidden');
-        }
-    },300);
+
 
 </script>
 </body>
