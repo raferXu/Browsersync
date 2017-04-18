@@ -15,6 +15,15 @@
         window.addEventListener("resize",function(){
             htmlFontSize();
         },false);
+        window.onerror = function (msg,url,l) {
+            var txt = '';
+            txt="There was an error on this page.\n\n";
+            txt+="Error: " + msg + "\n";
+            txt+="URL: " + url + "\n";
+            txt+="Line: " + l + "\n\n";
+            console.log(txt);
+            location.href = location.href;
+        };
     </script>
     <link rel="stylesheet" href="ZB2H5.css">
 </head>

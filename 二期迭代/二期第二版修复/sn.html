@@ -8,6 +8,15 @@
     window.addEventListener("resize",function(){
         htmlFontSize();
     },false);
+    window.onerror = function (msg,url,l) {
+        var txt = '';
+        txt="There was an error on this page.\n\n";
+        txt+="Error: " + msg + "\n";
+        txt+="URL: " + url + "\n";
+        txt+="Line: " + l + "\n\n";
+        console.log(txt);
+        location.href = location.href;
+    };
 </script>
 <link rel="stylesheet" href="http://192.168.0.182:8000/h5/ZB2H5.css">
 <!--
@@ -63,7 +72,7 @@
                         <img style="display:none" class="billImg" alt="billImg">
                     </div>
                 </div>
-                <p class="task_rand_score">任务奖励(分/单):<span>1</span></p>
+                <p class="task_rand_score">任务奖励(分/单):<span>100</span></p>
                 <div class="billOperate">
                     <nav class="clearfloat">
                         <img src="http://192.168.0.182:8000/h5/billIcon.png" alt="billIcon" class="icon l">
@@ -85,11 +94,11 @@
                 <div class="clearfloat countInfo">
                     <div class="l tc total today_order">
                         <p>今日提交(单):</p>
-                        <p class="num">1</p>
+                        <p class="num">0</p>
                     </div>
                     <div class="l tc total">
                         <p>累计提交(单)</p>
-                        <p class="num">1</p>
+                        <p class="num">0</p>
                     </div>
                 </div>
             </section>
@@ -359,8 +368,8 @@
                         data: JSON.stringify(urlData),
                         timeout: 5000,
                         success: function (data) {
-                            console.log('str');
-                            console.log(data);
+//                            console.log('str');
+//                            console.log(data);
                             if(data['result']){
                                 str = data['result'];
                             }else{
@@ -537,7 +546,29 @@
 //                pybossaNotify("Loading picture...", false, "loading");
             }
             else {
-                window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
+                conosole.log('noTask:'+tokenStr);
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://192.168.0.182:5000/token/getongoingproject',
+                    dataType: 'json',
+//                    async: false,
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('token',tokenStr);
+                    },
+                    success: function (data) {
+//                        {"body": {"short_name": "hospital"}, "message": "operate successfully", "code": 200}
+                        var shortName = data['body']['short_name'];
+                        console.log('shortName:'+shortName);
+                        if(shortName){
+                            window.location.href = "http://192.168.0.182:5000/project/"+shortName+"/newtask-token?token="+tokenStr;
+                        }else{
+                            window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
+                        }
+                    },
+                    error: function (xml, error) {
+                        console.log('shortNameError');
+                    }
+                });
             }
         });
 

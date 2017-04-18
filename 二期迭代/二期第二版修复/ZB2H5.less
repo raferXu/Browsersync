@@ -105,7 +105,7 @@ main{
       }
       .task_rand_score{
         height: .43rem;
-        line-height: .33rem;
+        line-height: .43rem;
         text-align: center;
         font-size: .14rem;
         color: @font-color-light;
@@ -116,7 +116,7 @@ main{
 
         nav{
           box-sizing: border-box;
-          margin-bottom: .4rem;
+          margin-bottom: .2rem;
           font-size: @font-size-normal;
 
           .icon{
@@ -128,6 +128,11 @@ main{
             color: @font-color-red;
           }
           .taskGuide{
+            position: relative;
+            top: -.1rem;
+            right: -.1rem;
+            padding: .1rem;
+
             img{
               position: relative;
               top: 3px;
@@ -175,7 +180,7 @@ main{
 
       nav{
         box-sizing: border-box;
-        margin-bottom: .2rem;
+        //margin-bottom: .1rem;
         font-size: @font-size-normal;
 
         .icon{
@@ -184,6 +189,10 @@ main{
           vertical-align: middle;
         }
         .more{
+          position: relative;
+          top: -.1rem;
+          right: -.1rem;
+          padding: .1rem;
           color: @font-color-red;
           font-size: @font-size-normal;
 
@@ -213,10 +222,18 @@ main{
         .today_order{
           box-sizing: border-box;
           border-right: 1px solid #c8c8c8;
+
+          & > p{
+            font-size: .14rem;
+          }
         }
 
         .total{
           margin-top: .09rem;
+
+          & > p{
+            font-size: .14rem;
+          }
 
           .num{
             color: @font-color-normal;

@@ -105,7 +105,7 @@ main .wrap section.billBox .billImgBox {
 }
 main .wrap section.billBox .task_rand_score {
   height: .43rem;
-  line-height: .33rem;
+  line-height: .43rem;
   text-align: center;
   font-size: .14rem;
   color: #828282;
@@ -116,7 +116,7 @@ main .wrap section.billBox .billOperate {
 }
 main .wrap section.billBox .billOperate nav {
   box-sizing: border-box;
-  margin-bottom: .4rem;
+  margin-bottom: .2rem;
   font-size: 0.14rem;
 }
 main .wrap section.billBox .billOperate nav .icon {
@@ -127,6 +127,12 @@ main .wrap section.billBox .billOperate nav .icon {
 main .wrap section.billBox .billOperate nav .taskGuide,
 main .wrap section.billBox .billOperate nav .more {
   color: #ff6000;
+}
+main .wrap section.billBox .billOperate nav .taskGuide {
+  position: relative;
+  top: -0.1rem;
+  right: -0.1rem;
+  padding: .1rem;
 }
 main .wrap section.billBox .billOperate nav .taskGuide img {
   position: relative;
@@ -169,7 +175,6 @@ main .wrap section.countBox {
 }
 main .wrap section.countBox nav {
   box-sizing: border-box;
-  margin-bottom: .2rem;
   font-size: 0.14rem;
 }
 main .wrap section.countBox nav .icon {
@@ -178,6 +183,10 @@ main .wrap section.countBox nav .icon {
   vertical-align: middle;
 }
 main .wrap section.countBox nav .more {
+  position: relative;
+  top: -0.1rem;
+  right: -0.1rem;
+  padding: .1rem;
   color: #ff6000;
   font-size: 0.14rem;
 }
@@ -203,8 +212,14 @@ main .wrap section.countBox .countInfo .today_order {
   box-sizing: border-box;
   border-right: 1px solid #c8c8c8;
 }
+main .wrap section.countBox .countInfo .today_order > p {
+  font-size: .14rem;
+}
 main .wrap section.countBox .countInfo .total {
   margin-top: .09rem;
+}
+main .wrap section.countBox .countInfo .total > p {
+  font-size: .14rem;
 }
 main .wrap section.countBox .countInfo .total .num {
   color: #323232;
