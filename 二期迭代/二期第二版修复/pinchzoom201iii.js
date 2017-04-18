@@ -284,6 +284,12 @@
              * @return return true when the offset change was accepted
              */
             addOffset: function (offset) {
+                // console.log('weizhi');
+                // console.log(this.options.offset.x);
+                // 3->375;2->248
+                console.log($(window).width());
+                console.log(this.options.zoomFactor);
+                // console.log(offset.x);
                 this.options.offset = {
                     x: this.options.offset.x + offset.x,
                     y: this.options.offset.y + offset.y
@@ -715,29 +721,35 @@
             });
 
             el.addEventListener('touchmove', function (event) {
-                if(target.enabled) {
-                    if (firstMove) {
-                        updateInteraction(event);
-                        if (interaction) {
-                            cancelEvent(event);
+                var y = event.changedTouches[0].pageY;
+                if(y>$('.pinch-zoom-container').offset().top && y<$('.task_rand_score').offset().top){
+                    console.log('in');
+                    if(target.enabled) {
+                        if (firstMove) {
+                            updateInteraction(event);
+                            if (interaction) {
+                                cancelEvent(event);
+                            }
+                            startTouches = targetTouches(event.touches);
+                        } else {
+                            switch (interaction) {
+                                case 'zoom':
+                                    target.handleZoom(event, calculateScale(startTouches, targetTouches(event.touches)));
+                                    break;
+                                case 'drag':
+                                    target.handleDrag(event);
+                                    break;
+                            }
+                            if (interaction) {
+                                cancelEvent(event);
+                                target.update();
+                            }
                         }
-                        startTouches = targetTouches(event.touches);
-                    } else {
-                        switch (interaction) {
-                            case 'zoom':
-                                target.handleZoom(event, calculateScale(startTouches, targetTouches(event.touches)));
-                                break;
-                            case 'drag':
-                                target.handleDrag(event);
-                                break;
-                        }
-                        if (interaction) {
-                            cancelEvent(event);
-                            target.update();
-                        }
-                    }
 
-                    firstMove = false;
+                        firstMove = false;
+                    }
+                }else{
+                    console.log('out');
                 }
             });
 

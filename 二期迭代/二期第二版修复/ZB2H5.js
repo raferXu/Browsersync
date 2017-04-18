@@ -106,5 +106,13 @@ $(function () {
     // 单击未登录的取消按钮
     // 单击登录跳转登录页面
 
+    $('.next').off('click').on('click', function() {
+        if(!window.navigator.onLine){
+            $('#offLine').show();
+        }else{
+            console.log('submit');
+        }
+    });
+
 
 });

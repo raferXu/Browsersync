@@ -35,6 +35,7 @@
             /*background: url("noTaskBg.png");*/
             background: url("http://192.168.0.182:8000/h5/noTaskBg.png");
             background-size: 100% 100%;
+            background-repeat: no-repeat;
             font-size: .14rem;
         }
         main{
@@ -44,7 +45,8 @@
         }
         .tips{
             position: absolute;
-            top: 3.47rem;
+            /*top: 3.46rem;*/
+            top: 52%;
             width: 100%;
             color: #fff;
             font-size: 14px;
@@ -55,8 +57,10 @@
         }
         .showData{
             position: absolute;
-            top: 5.52rem;
+            /*top: 5.52rem;*/
+            top: 82%;
             width: 100%;
+            margin-bottom: .15rem;
         }
         .showData>div{
             width: 50%;
@@ -110,11 +114,11 @@
         <div class="showData clearfloat">
             <div class="l">
                 <p>今日提交(单)</p>
-                <p id="current_day_tasks">100</p>
+                <p id="current_day_tasks">0</p>
             </div>
             <div class="r">
                 <p>预计奖励积分</p>
-                <p id="plan_score">1000</p>
+                <p id="plan_score">0</p>
             </div>
         </div>
     </main>
@@ -130,28 +134,59 @@
     <!--<script src="http://192.168.0.162:8000/jquery-1.7.2.min.js"></script>-->
     <script>
 
+        var token = window.location.search.split('=')[1];
+        if(token){
+            var tokenJson = {'token': token};
+            console.log('tokenJson: '+tokenJson);
+            console.log(tokenJson);
+            tokenJson = JSON.stringify(tokenJson);
 
-        function ajaxFunction(){
-            var xmlHttp;
-            try{ // Firefox, Opera 8.0+, Safari
-                xmlHttp=new XMLHttpRequest();
-            }
-            catch (e){
-                try{// Internet Explorer
-                    xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+            function ajaxFunction(){
+                var xmlHttp;
+                try{ // Firefox, Opera 8.0+, Safari
+                    xmlHttp=new XMLHttpRequest();
                 }
                 catch (e){
-                    try{
-                        xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+                    try{// Internet Explorer
+                        xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
                     }
-                    catch (e){}
+                    catch (e){
+                        try{
+                            xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                        catch (e){}
+                    }
                 }
+
+                return xmlHttp;
             }
 
-            return xmlHttp;
+            var xhr = ajaxFunction();
+
+            xhr.onreadystatechange = function(){
+                alert(xhr.readyState);
+                alert(xhr.status);
+                if(xhr.readyState==4){
+                    if(xhr.status==200||xhr.status==304){
+                        var data = JSON.parse(xhr.responseText);
+                        console.log(data);
+                        var current_day_tasks = data['body']['current_day_tasks'];
+                        var plan_score = data['body']['plan_score'];
+                        document.getElementById('current_day_tasks').innerHTML = current_day_tasks;
+                        document.getElementById('plan_score').innerHTML = plan_score;
+                    }
+                }
+            };
+
+            xhr.open("POST","http://192.168.0.182:5000/token/task/notTask",true);
+
+            xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+            xhr.setRequestHeader('Accept','application/json,text/plain');
+
+            xhr.send(tokenJson);
+
         }
 
-        var xhr = ajaxFunction();
 
         /*
          * 2    服务器向浏览器响应请求
@@ -170,20 +205,6 @@
          200 一切正常(ok)
          304 没有被修改(not modified)(服务器返回304状态，表示源文件没有被修改 )
          */
-        xhr.onreadystatechange = function(){
-//            alert(xhr.readyState);
-            //alert(xhr.status);
-            if(xhr.readyState==4){
-                if(xhr.status==200||xhr.status==304){
-                    var data = JSON.parse(xhr.responseText);
-                    console.log(data);
-                    var current_day_tasks = data['body']['current_day_tasks'];
-                    var plan_score = data['body']['plan_score'];
-                    document.getElementById('current_day_tasks').innerHTML = current_day_tasks;
-                    document.getElementById('plan_score').innerHTML = plan_score;
-                }
-            }
-        };
 
         /*
          * 3    浏览器与服务器建立连接
@@ -194,12 +215,10 @@
          *         * url：路径字符串，指向你所请求的服务器上的那个文件。请求路径
          *         * asynch：表示请求是否要异步传输，默认值为true(异步)。
          */
-        xhr.open("POST","http://192.168.0.182:5000/token/task/notTask",true);
 
         //如果是POST请求方式，设置请求首部信息
 //        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
-        xhr.setRequestHeader('Accept','application/json,text/plain');
+
 
 
         /*
@@ -209,10 +228,8 @@
          *         * 如果浏览器请求的类型为GET类型时，通过send()方法发送请求数据，服务器接收不到
          *         * 如果浏览器请求的类型为POST类型时，通过send()方法发送请求数据，服务器可以接收
          */
-        var token = window.location.search.split('=')[1];
-        var tokenJson = {'token': token};
-        tokenJson = JSON.stringify(tokenJson);
-        xhr.send(tokenJson);        //xhr.send(null);
+
+                //xhr.send(null);
 
 
 /*

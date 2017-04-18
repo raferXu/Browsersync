@@ -9,7 +9,7 @@
         htmlFontSize();
     },false);
 </script>
-<link rel="stylesheet" href="http://192.168.0.88:8000/ZB2H5.css">
+<link rel="stylesheet" href="http://192.168.0.182:8000/h5/ZB2H5.css">
 <!--
     Task DOM for loading the Flickr Images
     It uses the class="skeleton" to identify the elements that belong to the
@@ -58,16 +58,17 @@
     <main>
         <div class="wrap">
             <section class="billBox">
-                <div class="billImgBox pinch-zoom">
-                    <img style="display:none" class="billImg" alt="billImg">
+                <div class="imgWrap" style="width:100%;height:1.32rem;overflow:hidden">
+                    <div class="billImgBox pinch-zoom">
+                        <img style="display:none" class="billImg" alt="billImg">
+                    </div>
                 </div>
-
                 <p class="task_rand_score">任务奖励(分/单):<span>1</span></p>
                 <div class="billOperate">
                     <nav class="clearfloat">
                         <img src="http://192.168.0.182:8000/h5/billIcon.png" alt="billIcon" class="icon l">
                         <span class="l">票据显示</span>
-                        <span class="taskGuide r">任务指引</span>
+                        <span class="taskGuide r"><img src="http://192.168.0.182:8000/h5/taskGuide.png" alt="taskGuide"></span>
                     </nav>
                     <input type="text" class="showInfo tc bsb">
                     <p class="textTip tc">请适当修改，保证票据内容与文本输入框一致</p>
@@ -79,7 +80,7 @@
                 <nav class="clearfloat">
                     <img src="http://192.168.0.182:8000/h5/count.png" alt="count" class="icon l">
                     <span class="l">任务统计</span>
-                    <span class="more r">点击查看</span>
+                    <span class="more r"><img src="http://192.168.0.182:8000/h5/more.png" alt="more"></span>
                 </nav>
                 <div class="clearfloat countInfo">
                     <div class="l tc total today_order">
@@ -94,26 +95,28 @@
             </section>
         </div>
     </main>
-
-    <div id="showMes" style="display:none;position:absolute;left:0;right:0;top:0;bottom:0;background:transparent;color:white;text-align:center;font-size:36px;z-index:100;">
-        <div style="position:absolute;top:50%;left:50%;width:1.2rem;height:.65rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(0,0,0,.7);border-radius:.1rem">
-            <img src="http://192.168.0.162:8000/loading.png" alt="loading" style="display:block;width:.36rem;height:.36rem;margin:.15rem auto;animation:change 2s linear infinite;-webkit-animation:change 2s linear infinite;">
-            <!--<img src="加载@2x.png" alt="loading" style="position:absolute;top:50%;left:50%;animation:change 2s linear infinite;-webkit-animation:change 2s linear infinite;">-->
-        </div>
-    </div>
-    <div id="toLogin" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:24px;z-index:10;">
-        <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
-            <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">未登录</p>
-            <div class="clearfloat" style="width:100%;height:.38rem;line-height:.38rem">
-                <p id="cacelBtn" class="l" style="width:50%;color:#ff6000;border-right:1px solid #c8c8c8;box-sizing:border-box">取消</p>
-                <p id="loginBtn" class="l" style="width:50%;color:#ff6000">登录</p>
-            </div>
-        </div>
-    </div>
-
 </div><!-- End of Skeleton Row -->
-
-<script type="text/javascript" src="http://192.168.0.88:8000/pinchzoom201.js"></script>
+<div id="showMes" style="display:none;position:absolute;left:0;right:0;top:0;bottom:0;background:transparent;color:white;text-align:center;font-size:36px;z-index:10000;">
+    <div style="position:absolute;top:50%;left:50%;width:1.2rem;height:.65rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(0,0,0,.7);border-radius:.1rem">
+        <img src="http://192.168.0.182:8000/loading.png" alt="loading" style="display:block;width:.36rem;height:.36rem;margin:.15rem auto;animation:change 2s linear infinite;-webkit-animation:change 2s linear infinite;">
+    </div>
+</div>
+<div id="offLine" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+        <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">网络不给力,请检查网络设置</p>
+        <p id="sureBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
+    </div>
+</div>
+<div id="toLogin" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:24px;z-index:9998;">
+    <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+        <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">未登录</p>
+        <div class="clearfloat" style="width:100%;height:.38rem;line-height:.38rem">
+            <p id="cacelBtn" class="l" style="width:50%;color:#ff6000;border-right:1px solid #c8c8c8;box-sizing:border-box">取消</p>
+            <p id="loginBtn" class="l" style="width:50%;color:#ff6000">登录</p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="http://192.168.0.182:8000/h5/pinchzoom201.js"></script>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 
@@ -138,6 +141,9 @@
 <script type="text/javascript">
     (function() {
 
+        var loadImg = false;
+        var getStr = false;
+
         // 获取token
         function GetQueryString(name) {
             var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
@@ -148,7 +154,7 @@
             return null;
         }
         var tokenStr = GetQueryString("token") || null;
-        console.log('tokenStr: ' + tokenStr);
+//        console.log('tokenStr: ' + tokenStr);
 
 // Default language
         var userLocale = "en";
@@ -198,6 +204,9 @@
 
             // loading加载框出现
             $("#showMes").show();
+            $('#sureBtn').on('touchstart',function () {
+                $('#offLine').hide();
+            });
 
             $(window).on('scroll', function () {
                 $('#toLogin').css('top',$(window).scrollTop());
@@ -208,7 +217,7 @@
         function i18n_translate() {
             var ids = Object.keys(messages[userLocale])
             for (i=0; i<ids.length; i++) {
-                console.log("Translating: " + ids[i]);
+//                console.log("Translating: " + ids[i]);
                 if (document.getElementById(ids[i])) {
                     document.getElementById(ids[i]).innerHTML = messages[userLocale][ids[i]];
                 }
@@ -217,7 +226,7 @@
 
 
         function loadUserProgress() {
-            pybossa.userProgress('sn').done(function(data){
+            pybossa.userProgress('hospital').done(function(data){
                 var pct = Math.round((data.done*100)/data.total);
                 $("#progress").css("width", pct.toString() +"%");
                 $("#progress").attr("title", pct.toString() + "% completed!");
@@ -305,8 +314,12 @@
                     if(imgLoaded($('.billImg')[0])){
                         clearInterval(imgLoadTimer);
                         imgCallback($('.billImg')[0]);
+                        loadImg = true;
+                        if(loadImg && getStr){
+                            $("#showMes").hide();
+                        }
                     }
-                },500);
+                },100);
 
                 // 定义图片加载后的回调
                 function imgCallback(img) {
@@ -338,33 +351,44 @@
                 // 发送图片获取识别字符串，并放入input中
                 var str;
                 var urlData = {"url": task.info.url,"type": task.info.type};
-                $.ajax({
-                    type: 'POST',
-                    url: 'http://192.168.0.88:5001/ocr_api/block_rec',
-                    dataType: 'json',
-                    data: JSON.stringify(urlData),
-                    success: function (data) {
-                        console.log('str');
-                        console.log(data);
-                        if(data['result']){
-                            str = data['result'];
-                        }else{
-                            str = '无法识别';
+                function getStr() {
+                    var getStrAjax = $.ajax({
+                        type: 'POST',
+                        url: 'http://192.168.0.88:5001/ocr_api/block_rec',
+                        dataType: 'json',
+                        data: JSON.stringify(urlData),
+                        timeout: 5000,
+                        success: function (data) {
+                            console.log('str');
+                            console.log(data);
+                            if(data['result']){
+                                str = data['result'];
+                            }else{
+                                str = '无法识别';
+                            }
+                            $('.showInfo').val(str);
+                        },
+                        error: function (xml, error) {
+                            console.log('strError');
+                            if(error == "timeout"){
+                                getStrAjax.abort();
+                                getStr();
+                            }
                         }
-                        $('.showInfo').val(str);
-                    },
-                    error: function () {
-                        console.log('strError');
-                    }
-                });
+                    });
+                }
+                getStr();
 
 
                 //            loading加载框消失
                 $(document).ajaxStart(function(){
-                    console.log('ajaxStart');
+//                    console.log('ajaxStart');
                 }).ajaxStop(function(){
-                    console.log('ajaxStop');
-                    $("#showMes").hide();
+//                    console.log('ajaxStop');
+                    getStr = true;
+                    if(loadImg && getStr){
+                        $("#showMes").hide();
+                    }
                     if(!tokenStr){
                         $('html')[0].addEventListener('touchstart',function () {
                             $('#toLogin').show();
@@ -388,43 +412,8 @@
 
                 //发起ajax请求获取任务统计数据userInfo插入页面中
                 var userData = {'token': tokenStr,'task_id':task_id};
-                console.log(userData);
                 userData = JSON.stringify(userData);
-                /*
-                 $.ajax({
-                 type : 'POST',
-                 url : 'http://192.168.0.182:5000/token/statistics/userInfo',
-                 data : userData,
-                 dataType : 'json',
-                 beforeSend: function (xhr) {
-                 xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
-                 xhr.setRequestHeader('Accept','application/json,text/plain');
-                 },
-                 success : function (userInfo) {
-                 console.log('userInfo: '+userInfo['body']['task_rand_score']);
-                 $('.task_rand_score span').html(userInfo.body.task_rand_score);
-                 $('.total .num').html(userInfo.body.total_order_num);
-                 $('.today_order .num').html(userInfo.body.current_day_tasks);
-                 },
-                 error : function (err) {
-                 console.log('error: '+err);
-                 }
-                 });
 
-                 // 判断是否需要跳到抽奖页面的接口数据
-                 $.ajax({
-                 type : 'GET',
-                 url : 'http://192.168.0.182:5000/token/lottery/getchanceconfig',
-                 dataType : 'json',
-                 success : function (lotteryInfo) {
-                 console.log('lotteryInfo: ' + lotteryInfo);
-                 var interval = lotteryInfo['body']['chance_configs'][0]['interval'];
-                 },
-                 error : function (err) {
-                 console.log('error: '+err);
-                 }
-                 });
-                 */
 //                判断是否需要跳到抽奖页面 getchanceconfig／interval  ＝＝  userInfo／total_order_num ？
                 $.when(
                     $.ajax({
@@ -442,27 +431,50 @@
                         url : 'http://192.168.0.182:5000/token/lottery/getchanceconfig',
                         dataType : 'json'
                     })
-                ).then(function (userInfo, lotteryInfo){
+                ).then(function (userInfo, lotteryInfo,remainingChanceInfo){
                     var total_order_num = userInfo[0].body.total_order_num;
                     $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
                     $('.total .num').html(total_order_num);
                     $('.today_order .num').html(userInfo[0].body.current_day_tasks);
-                    console.log('total_order_num: ' + total_order_num);
+//                    console.log('total_order_num: ' + total_order_num);
 
                     for(var i=0,len=lotteryInfo[0]['body']['chance_configs'].length;i<len;i++){
                         var interval = lotteryInfo[0]['body']['chance_configs'][i]['interval'];
-                        var times = lotteryInfo[0]['body']['chance_configs'][i]['times'];
+//                        var times = lotteryInfo[0]['body']['chance_configs'][i]['times'];
                         var lottery_id = lotteryInfo[0]['body']['chance_configs'][i]['lottery_id'];
-                        console.log('interval['+i+']: ' + interval);
+//                        console.log('interval['+i+']: ' + interval);
 
                         if(interval == total_order_num){
-                            jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
+//                            console.log('total_order_numaaaaaaaa'+total_order_num);
+                            var remainData = {'token': tokenStr,"threshold_value": interval};
+                            $.ajax({
+                                type: 'POST',
+                                url: 'http://192.168.0.182:5000/token/getuserremainingchance',
+                                dataType: 'json',
+                                beforeSend: function (xhr) {
+                                    xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+                                    xhr.setRequestHeader('Accept','application/json,text/plain');
+                                },
+                                data: JSON.stringify(remainData),
+                                success: function (remainingChanceInfo) {
+                                    // {"body": {"remaining_chance": 1}, "message": "operate successfully", "code": 200}
+                                    var times = remainingChanceInfo['body']['remaining_chance'];
+                                    if(times>0){
+//                                        console.log('geiaaaaaa'+interval);
+                                        jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
+                                    }
+                                },
+                                error: function () {
+                                    console.log('remaining_chanceError');
+                                }
+                            });
+                            break;
                         }
                     }
                 });
 
                 var fontSize = parseInt($('html').css('fontSize'));
-                var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.32*fontSize},maxZoom:8};
+                var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.32*fontSize},maxZoom:6,tapZoomFactor:3};
                 $('div.pinch-zoom').each(function () {
                     new RTP.PinchZoom($(this), opt);
                 });
@@ -471,17 +483,17 @@
 
 //                拿到token判断有没登录
                 if(!tokenStr){
-                    console.log('没有token');
+//                    console.log('没有token');
                     $('.task_rand_score span').html(0);
                     $('.total .num').html(0);
                     $('.today_order .num').html(0);
 
                 }else{
-                    console.log('有token');
+//                    console.log('有token');
 
                     //                点击任务指引
                     $('.taskGuide').off('touchstart').on('touchstart',function () {
-                        console.log(1111111);
+//                        console.log(1111111);
                         jobTask.taskGuide();
                     });
 
@@ -492,32 +504,43 @@
 
 //                点击下一张按钮
                     $('.next').off('click').on('click', function(evt) {
-                        var answer = {"text": $('.showInfo').val()};
-                        if (typeof answer != 'undefined') {
-                            pybossa.saveTask(task.id, answer).done(function() {
-                                pybossaNotify("Loading picture...", true, "loading");
-                                deferred.resolve();
-                            });
-                            if ($("#disqus_thread").is(":visible")) {
-                                $('#disqus_thread').toggle();
-                                $('.btn-disqus').toggle();
+                        if(!window.navigator.onLine){
+                            $('#offLine').show();
+                        }else{
+                            var answer = {"text": $('.showInfo').val()};
+                            if (typeof answer != 'undefined') {
+                                pybossa.saveTask(task.id, answer).done(function() {
+                                    $(document).ajaxStart(function(){
+                                        $("#showMes").show();
+//                                        console.log('ajaxStart');
+                                    }).ajaxStop(function(){
+//                                        console.log('ajaxStop');
+                                        $("#showMes").hide();
+                                    });
+//                                pybossaNotify("Loading picture...", true, "loading");
+                                    deferred.resolve();
+                                });
+                                if ($("#disqus_thread").is(":visible")) {
+                                    $('#disqus_thread').toggle();
+                                    $('.btn-disqus').toggle();
+                                }
                             }
+                            else {
+                                pybossaNotify("Oops... Something went wrong.", true, "error");
+                            }
+                            $('.showInfo').val('');
+                            $('.pinch-zoom-container').css('height','auto');
                         }
-                        else {
-                            pybossaNotify("Oops... Something went wrong.", true, "error");
-                        }
-                        $('.showInfo').val('');
-                        $('.pinch-zoom-container').css('height','auto');
                     });
                 }
 
-                pybossaNotify("Loading picture...", false, "loading");
+//                pybossaNotify("Loading picture...", false, "loading");
             }
             else {
                 window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
             }
         });
 
-        pybossa.run('sn');
+        pybossa.run('hospital');
     })();
 </script>

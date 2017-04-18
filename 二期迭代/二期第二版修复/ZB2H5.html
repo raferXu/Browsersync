@@ -23,16 +23,17 @@
 <main>
     <div class="wrap">
         <section class="billBox">
-            <div class="billImgBox pinch-zoom">
-                <img src="piaoju01.jpg" style="display:none" class="billImg" alt="billImg">
+            <div class="imgWrap" style="width:100%;height:1.32rem;">
+                <div class="billImgBox pinch-zoom">
+                    <img src="piaoju01.jpg" style="display:none" class="billImg" alt="billImg">
+                </div>
             </div>
-
             <p class="task_rand_score">任务奖励(分/单):<span>1</span></p>
             <div class="billOperate">
                 <nav class="clearfloat">
                     <img src="http://192.168.0.182:8000/h5/billIcon.png" alt="billIcon" class="icon l">
                     <span class="l">票据显示</span>
-                    <span class="taskGuide r">任务指引</span>
+                    <span class="taskGuide r"><img src="http://192.168.0.182:8000/h5/taskGuide.png" alt="taskGuide"></span>
                 </nav>
                 <input type="text" class="showInfo tc bsb">
                 <p class="textTip tc">请适当修改，保证票据内容与文本输入框一致</p>
@@ -44,7 +45,7 @@
             <nav class="clearfloat">
                 <img src="http://192.168.0.182:8000/h5/count.png" alt="count" class="icon l">
                 <span class="l">任务统计</span>
-                <span class="more r">点击查看</span>
+                <span class="more r"><img src="http://192.168.0.182:8000/h5/more.png" alt="more"></span>
             </nav>
             <div class="clearfloat countInfo">
                 <div class="l tc total today_order">
@@ -59,20 +60,40 @@
         </section>
     </div>
 </main>
+<div id="offLine" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:24px;z-index:10;">
+    <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+        <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">网络不给力，请检查网络设置！</p>
+        <div class="clearfloat" style="width:100%;height:.38rem;line-height:.38rem">
+            <p id="sureBtn" class="l" style="width:50%;color:#ff6000" onclick="hideOffLineBox">确定</p>
+        </div>
+    </div>
+</div>
 <!--<footer style="box-sizing:border-box;padding:.08rem;visibility:hidden">-->
     <!--<div tabindex="0" contentEditable="true" class="reviseInfo" style="box-sizing:border-box;width:100%;height:100%;background:#fff;text-align:center;border-radius:5px;line-height:.33rem;font-size:.18rem;outline:none;"></div>-->
 <!--</footer>-->
 <script src="jquery-1.7.2.min.js"></script>
 <script src="ZB2H5.js"></script>
-<script type="text/javascript" src="pinchzoom2test.js"></script>
+<script type="text/javascript" src="pinchzoom201.js"></script>
 <script type="text/javascript">
+    $('.task_rand_score')[0].addEventListener('touchmove',function (e) {
+        console.log('out');
+    });
     $(function () {
         var fontSize = parseInt($('html').css('fontSize'));
         var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.32*fontSize},maxZoom:8};
         $('div.pinch-zoom').each(function () {
             new RTP.PinchZoom($(this), opt);
+            $(this).on('pz_zoomend',function () {
+                console.log('zoomFactor');
+            });
+            $(this).on('pz_dragend',function () {
+                console.log('dragend');
+            });
+            $(this).on('pz_doubletap',function () {
+                console.log('pz_doubletap');
+            });
         });
-    })
+    });
 </script>
 <script>
 

@@ -40,7 +40,7 @@
                 this.el = $(el);
                 // this.zoomFactor = 1;
                 // this.zoomFactor = 2;
-                this.lastScale = 1;
+                this.lastScale = 3;
                 // this.offset = {
                 //     x: 0,
                 //     y: 0
@@ -65,13 +65,13 @@
         PinchZoom.prototype = {
 
             defaults: {
-                zoomFactor: 1,
+                zoomFactor: 3,
                 offset: {x:0,y:0},
 
-                tapZoomFactor: 2,
-                zoomOutFactor: 1.3,
+                tapZoomFactor: 2.8,
+                zoomOutFactor: 1,
                 animationDuration: 300,
-                maxZoom: 4,
+                maxZoom: 6,
                 minZoom: 0.5,
                 lockDragAxis: false,
                 use2d: true,
@@ -100,7 +100,7 @@
              */
             handleDrag: function (event) {
 
-                if (this.options.zoomFactor > 3.0) {
+                if (this.options.zoomFactor > 1.0) {
                     var touch = this.getTouches(event)[0];
                     this.drag(touch, this.lastDragPosition);
                     this.options.offset = this.sanitizeOffset(this.options.offset);
@@ -158,7 +158,7 @@
              */
             handleDoubleTap: function (event) {
                 var center = this.getTouches(event)[0],
-                    zoomFactor = this.options.zoomFactor > 1 ? 1 : this.options.tapZoomFactor,
+                    zoomFactor = this.options.zoomFactor != 2.8 ? 2.8 : this.options.tapZoomFactor,
                     startZoomFactor = this.options.zoomFactor,
                     updateProgress = (function (progress) {
                         this.scaleTo(startZoomFactor + progress * (zoomFactor - startZoomFactor), center);
@@ -284,9 +284,72 @@
              * @return return true when the offset change was accepted
              */
             addOffset: function (offset) {
+                /*
                 this.options.offset = {
                     x: this.options.offset.x + offset.x,
                     y: this.options.offset.y + offset.y
+                };
+                */
+
+                // console.log(this.options.offset.x);
+                // 3->375;2->248
+                // console.log(this.options.zoomFactor);
+                var x = this.options.offset.x;
+                var y = this.options.offset.y;
+                var winW = $(window).width();
+                var top = parseInt($('.billImg').css('marginTop'));
+                var w = parseInt($('.billImg').width());
+                var outW = $('.billImgBox').innerWidth();
+                var h = parseInt($('.billImg').height());
+                var wrapBoxH = $('.imgWrap').height();
+                // 往左超出就大于125*z
+                // 往右超出就小于375-125*z
+                // console.log('x:' + x);
+                if(this.options.zoomFactor<3){
+                    // console.log(this.options.zoomFactor);
+                    if(w*this.options.zoomFactor<x){
+                        // x值为125*this.options.zoomFactor表示此时图片左边正好贴在屏幕左侧
+                        // x大于此值时说明图片已开始从左边缘移除
+                        // 所以应该在超出时让值固定在此值保证图片左边正好贴在屏幕左侧
+                        x = w*this.options.zoomFactor;
+                    }else if(outW*this.options.zoomFactor*(2/3)-winW>x){
+                        // 第一个375为图片加空白的总宽度
+                        // 375*this.options.zoomFactor为图片放大后总宽度
+                        // 375*this.options.zoomFactor*(2/3)得到的是缩放后图片最左边缘距离图片右侧的距离，
+                        // 即左空白加图片自身宽度，边界线为图片右边线
+                        // －375是减去屏幕宽度，得到的结果就是当图片右边缘和屏幕右边重合的时候
+                        // 当大于此值说明图片左边距继续增大，右边缘将消失，图片继续向右移动，所以此时需要固定为图片右边缘和屏幕右边重合的时候的值
+                        x = outW*this.options.zoomFactor*(2/3)-winW;
+                    }
+
+                    // console.log('y:' + y);
+                    // console.log('top:' + top);
+                    // console.log('h:' + h);
+                    // console.log((top+h)*this.options.zoomFactor-wrapBoxH);
+                    if(y>this.options.zoomFactor*top){
+                        y = this.options.zoomFactor*top;
+                    }else if(y<(top+h)*this.options.zoomFactor-wrapBoxH){
+                        // console.log(123123);
+                        y = (top+h)*this.options.zoomFactor-wrapBoxH;
+                    }
+                }else{
+                    if(w*this.options.zoomFactor>x){
+                        x = w*this.options.zoomFactor;
+                    }
+                    if(outW*this.options.zoomFactor*(2/3)-winW<x){
+                        x = outW*this.options.zoomFactor*(2/3)-winW;
+                    }
+                    if(y>this.options.zoomFactor*top){
+                        y = this.options.zoomFactor*top;
+                    }
+                    if(y<(top+h)*this.options.zoomFactor-wrapBoxH){
+                        y = (top+h)*this.options.zoomFactor-wrapBoxH;
+                    }
+                }
+
+                this.options.offset = {
+                    x: x + offset.x,
+                    y: y + offset.y
                 };
             },
 
@@ -337,7 +400,7 @@
              */
             zoomOutAnimation: function () {
                 var startZoomFactor = this.options.zoomFactor,
-                    zoomFactor = 1,
+                    zoomFactor = 3,
                     center = this.getCurrentZoomCenter(),
                     updateProgress = (function (progress) {
                         this.scaleTo(startZoomFactor + progress * (zoomFactor - startZoomFactor), center);
@@ -402,6 +465,14 @@
                 if (offsetRight === 0) { centerX = this.container[0].offsetWidth; }
                 if (offsetBottom === 0) { centerY = this.container[0].offsetHeight; }
 
+                console.log('缩放后宽度: '+length);
+                console.log('原始宽度: '+this.container[0].offsetWidth);
+                console.log('缩放比: '+this.options.zoomFactor);
+                console.log('左边距: '+offsetLeft);
+                console.log('右边距: '+offsetRight);
+                console.log('左右边距比: '+widthOffsetRatio);
+                console.log('centerX: '+centerX);
+
                 return {
                     x: centerX,
                     y: centerY
@@ -409,7 +480,7 @@
             },
 
             canDrag: function () {
-                return !isCloseTo(this.options.zoomFactor, 1);
+                return !isCloseTo(this.options.zoomFactor, 3);
             },
 
             /**
@@ -715,30 +786,36 @@
             });
 
             el.addEventListener('touchmove', function (event) {
-                if(target.enabled) {
-                    if (firstMove) {
-                        updateInteraction(event);
-                        if (interaction) {
-                            cancelEvent(event);
+                var y = event.changedTouches[0].pageY;
+                // if(y>$('.pinch-zoom-container').offset().top && y<$('.task_rand_score').offset().top){
+                //     console.log('in');
+                    if(target.enabled) {
+                        if (firstMove) {
+                            updateInteraction(event);
+                            if (interaction) {
+                                cancelEvent(event);
+                            }
+                            startTouches = targetTouches(event.touches);
+                        } else {
+                            switch (interaction) {
+                                case 'zoom':
+                                    target.handleZoom(event, calculateScale(startTouches, targetTouches(event.touches)));
+                                    break;
+                                case 'drag':
+                                    target.handleDrag(event);
+                                    break;
+                            }
+                            if (interaction) {
+                                cancelEvent(event);
+                                target.update();
+                            }
                         }
-                        startTouches = targetTouches(event.touches);
-                    } else {
-                        switch (interaction) {
-                            case 'zoom':
-                                target.handleZoom(event, calculateScale(startTouches, targetTouches(event.touches)));
-                                break;
-                            case 'drag':
-                                target.handleDrag(event);
-                                break;
-                        }
-                        if (interaction) {
-                            cancelEvent(event);
-                            target.update();
-                        }
-                    }
 
-                    firstMove = false;
-                }
+                        firstMove = false;
+                    }
+                // }else{
+                //     console.log('out');
+                // }
             });
 
             el.addEventListener('touchend', function (event) {
