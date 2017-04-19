@@ -15,7 +15,9 @@
         txt+="URL: " + url + "\n";
         txt+="Line: " + l + "\n\n";
         console.log(txt);
-        location.href = location.href;
+        //location.href = location.href.replace(/task\/\d*/,'newtask-token');
+        //http://192.168.0.182:5000/project/sn/task/741
+        //http://192.168.0.182:5000/project/sn/newtask-token
     };
 </script>
 <link rel="stylesheet" href="http://192.168.0.182:8000/h5/ZB2H5.css">
@@ -224,7 +226,7 @@
         });
 
         function i18n_translate() {
-            var ids = Object.keys(messages[userLocale])
+            var ids = Object.keys(messages[userLocale]);
             for (i=0; i<ids.length; i++) {
 //                console.log("Translating: " + ids[i]);
                 if (document.getElementById(ids[i])) {
@@ -233,9 +235,8 @@
             }
         }
 
-
         function loadUserProgress() {
-            pybossa.userProgress('hospital').done(function(data){
+            pybossa.userProgress('sn').done(function(data){
                 var pct = Math.round((data.done*100)/data.total);
                 $("#progress").css("width", pct.toString() +"%");
                 $("#progress").attr("title", pct.toString() + "% completed!");
@@ -421,7 +422,10 @@
 
                 //发起ajax请求获取任务统计数据userInfo插入页面中
                 var userData = {'token': tokenStr,'task_id':task_id};
+                console.log('statistics/userInfo/data');
+                console.log(userData);
                 userData = JSON.stringify(userData);
+                console.log(userData);
 
 //                判断是否需要跳到抽奖页面 getchanceconfig／interval  ＝＝  userInfo／total_order_num ？
                 $.when(
@@ -440,7 +444,7 @@
                         url : 'http://192.168.0.182:5000/token/lottery/getchanceconfig',
                         dataType : 'json'
                     })
-                ).then(function (userInfo, lotteryInfo,remainingChanceInfo){
+                ).then(function (userInfo, lotteryInfo){
                     var total_order_num = userInfo[0].body.total_order_num;
                     $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
                     $('.total .num').html(total_order_num);
@@ -500,7 +504,7 @@
                 }else{
 //                    console.log('有token');
 
-                    //                点击任务指引
+//                点击任务指引
                     $('.taskGuide').off('touchstart').on('touchstart',function () {
 //                        console.log(1111111);
                         jobTask.taskGuide();
@@ -546,32 +550,40 @@
 //                pybossaNotify("Loading picture...", false, "loading");
             }
             else {
-                conosole.log('noTask:'+tokenStr);
-                $.ajax({
-                    type: 'GET',
-                    url: 'http://192.168.0.182:5000/token/getongoingproject',
-                    dataType: 'json',
-//                    async: false,
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader('token',tokenStr);
-                    },
-                    success: function (data) {
-//                        {"body": {"short_name": "hospital"}, "message": "operate successfully", "code": 200}
-                        var shortName = data['body']['short_name'];
-                        console.log('shortName:'+shortName);
-                        if(shortName){
-                            window.location.href = "http://192.168.0.182:5000/project/"+shortName+"/newtask-token?token="+tokenStr;
-                        }else{
-                            window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
-                        }
-                    },
-                    error: function (xml, error) {
-                        console.log('shortNameError');
-                    }
-                });
+                console.log('getongoingprojectToken:'+tokenStr);
+                var projectToken = {"token": tokenStr};
+                window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
+//                $.ajax({
+//                    type: 'POST',
+//                    url: 'http://192.168.0.182:5000/token/getongoingproject',
+//                    dataType: 'json',
+//                    data: JSON.stringify(projectToken),
+////                    async: false,
+//                    beforeSend: function (xhr) {
+//                        xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+//                        xhr.setRequestHeader('Accept','application/json,text/plain');
+//                        xhr.setRequestHeader("Authorization",tokenStr);
+//                    },
+//                    success: function (data) {
+////                        {"body": {"short_name": "hospital"}, "message": "operate successfully", "code": 200}
+//                        var shortName = data['body']['short_name'];
+//                        console.log('shortName:'+shortName);
+//                        if(shortName){
+////                            jobTask.switchToAnotherProject(shortName);
+//                            console.log('switchToAnotherProjectshortName:'+shortName);
+//                            window.location.href = "http://192.168.0.182:5000/project/"+shortName+"/newtask-token?token="+tokenStr;
+//                        }else{
+//                            console.log('switchToAnotherProjectshortNameError:'+shortName);
+//                            window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
+//                        }
+//                    },
+//                    error: function (xml, error) {
+//                        console.log('shortNameError');
+//                    }
+//                });
             }
         });
 
-        pybossa.run('hospital');
+        pybossa.run('sn');
     })();
 </script>

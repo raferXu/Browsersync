@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-1.7.2.min.js"></script>
+<script>
+    $(function () {
+        var tokenStr = 123;
+        $.ajax({
+            type: 'GET',
+            url: 'http://192.168.0.182:5000/token/getongoingproject',
+            dataType: 'json',
+//                    async: false,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization",tokenStr);
+            },
+//            headers: {
+//                "Access-Control-Allow-Origin":"http://example.edu",
+//                "Access-Control-Allow-Headers":"X-Requested-With"
+//                "token": tokenStr
+//            },
+            success: function (data) {
+//                        {"body": {"short_name": "hospital"}, "message": "operate successfully", "code": 200}
+                var shortName = data['body']['short_name'];
+                console.log('shortName:'+shortName);
+                if(shortName){
+                    window.location.href = "http://192.168.0.182:5000/project/"+shortName+"/newtask-token?token="+tokenStr;
+                }else{
+                    window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
+                }
+            },
+            error: function (xml, error) {
+                console.log('shortNameError');
+            }
+        });
+    })
+</script>
+</body>
+</html>
