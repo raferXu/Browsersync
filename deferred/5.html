@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../二期迭代/pinchzoom-master/dependencies/jquery-1.7.2.min.js"></script>
+<script>
+//    场景2: A、B完成了，再执行C
+    var asyncA = function () {
+        var d = $.Deferred();
+        setTimeout(function () {
+            d.resolve('asyncA');
+        },(3000 + Math.random()*5000));
+        return d.promise();
+    };
+    var asyncB = function () {
+        var d = $.Deferred();
+        setTimeout(function () {
+            d.resolve('asyncB');
+        },(3000 + Math.random()*5000));
+        return d.promise();
+    };
+    var asyncC = function () {
+
+    };
+    $.when(asyncA(),asyncB()).done(function (dataA,dataB) {
+        console.log(dataA);
+        console.log(dataB);
+
+        asyncC();
+    })
+
+</script>
+</body>
+</html>

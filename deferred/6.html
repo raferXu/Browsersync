@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../二期迭代/pinchzoom-master/dependencies/jquery-1.7.2.min.js"></script>
+<script>
+//    then的一般用法：用于done、fail的简化写法
+    $.get('test.php').then(
+        function () {
+            alert('$.get succeeded');
+        },
+        function () {
+            alert('$.get failed');
+        }
+    );
+//    then另一个重要的作用，用来传递deferred对象，实现任务链条
+//    场景1: A执行完了，B执行；B执行完了，C执行；
+
+</script>
+</body>
+</html>
