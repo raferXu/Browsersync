@@ -18,6 +18,20 @@
     );
 //    then另一个重要的作用，用来传递deferred对象，实现任务链条
 //    场景1: A执行完了，B执行；B执行完了，C执行；
+    asyncA().then(function (data) {
+        return asyncB();
+    }).then(function (data) {
+        return asyncC();
+    }).then(function (data) {
+        asyncD();
+    });
+//    如果用then方法进行deferred对象的传递，回调函数必须return一个deferred。
+//    由于then的第一个参数是deferred对象成功时执行的回调，若deferred状态切换到失败，则后续then的成功回调将不再执行，任务链就中断了。
+//    该场景有一定的实践价值，比如一个业务网站，页面上有多个展示模块都是通过ajax问后台拿数据的，
+//    如果页面一进来，同时向后台发好几个ajax请求，会瞬间增加后台IO的压力，
+//    可能会增加用户等待界面反馈数据的时间，造成体验下降。
+//    在这种情况下，把ajax请求作为队列处理是比较合适的，
+//    可按重要性逐步请求获取数据，提高性能和渲染体验。
 
 </script>
 </body>

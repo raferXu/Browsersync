@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #x1{height: 20px;border: 1px solid red;}
+  </style>
+
+</head>
+<body>
+<div id="x1">test</div>
+<img id="img1" alt="">
+<script>
+  var startTime = new Date().getTime();
+  var img = new Image();
+  img.onload = function() {
+    var loadtime = new Date().getTime() - startTime;
+    console.log("image took " + loadtime + "ms to load");
+  };
+  img.src = "piaoju2.jpg";
+</script>
+
+<!--<script>-->
+  <!--var startTime = new Date().getTime();-->
+  <!--function doneLoading() {-->
+    <!--var loadtime = new Date().getTime() - startTime;-->
+    <!--console.log("image took " + loadtime + "ms to load");-->
+  <!--};-->
+<!--</script>-->
+<!--<img src="http://www.whatever.com/testimg.jpg" onload="doneLoading()">-->
+
+</body>
+</html>

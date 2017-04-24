@@ -238,7 +238,7 @@
 
 
         function loadUserProgress() {
-            pybossa.userProgress('hospital').done(function(data){
+            pybossa.userProgress('sn').done(function(data){
                 var pct = Math.round((data.done*100)/data.total);
                 $("#progress").css("width", pct.toString() +"%");
                 $("#progress").attr("title", pct.toString() + "% completed!");
@@ -251,7 +251,6 @@
         pybossa.taskLoaded(function(task, deferred) {
             if ( !$.isEmptyObject(task) ) {
                 // load image from flickr
-              /*
                 var img = $('<img class="billImg"/>');
                 img.load(function() {
                     // continue as soon as the image is loaded
@@ -260,27 +259,6 @@
                 });
                 img.attr('src', task.info.url).css('height', 'auto');
                 task.info.image = img;
-              */
-
-              var startTime = new Date().getTime();
-              var img = $('<img class="billImg"/>');
-              img.load(function() {
-                // continue as soon as the image is loaded
-                var loadtime = new Date().getTime() - startTime;
-                console.log("image took " + loadtime + "ms to load");
-                if(loadtime>5000){
-                  console.log('loadtime>5000');
-                  var unix = Math.round(+new Date()/1000);
-                  startTime = new Date().getTime();
-                  img.attr('src', task.info.url+'?'+unix).css('height', 'auto');
-                }
-
-                deferred.resolve(task);
-                pybossaNotify("", false, "loading");
-              });
-              img.attr('src', task.info.url).css('height', 'auto');
-              task.info.image = img;
-
             }
             else {
                 deferred.resolve(task);
@@ -575,9 +553,8 @@
             }
             else {
                 console.log('getongoingprojectToken:'+tokenStr);
-//                jobTask.switchToAnotherProject(shortName);
-//                var projectToken = tokenStr;
-//                window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
+                var projectToken = tokenStr;
+                window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
 
 //                $.ajax({
 //                    type: 'GET',
@@ -605,57 +582,9 @@
 //                        console.log('shortNameError');
 //                    }
 //                });
-/*
-                $.ajax({
-                    type: 'GET',
-                    url: 'http://192.168.0.182:5000/token/getongoingproject?token='+tokenStr,
-                    dataType: 'json',
-                    success: function (data) {
-                        var shortName = data['body']['short_name'];
-                        if(shortName){
-                            console.log('junge:'+shortName);
-
-                            jobTask.switchToAnotherProject(shortName);
-                            console.log('qunhai');
-
-//                    window.location.href = "http://192.168.0.182:5000/project/"+shortName+"/newtask-token?token="+tokenStr;
-                        }else{
-                            console.log('switchToAnotherProjectshortNameError:'+shortName);
-                            window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
-                        }
-                    },
-                    error: function (xml, error) {
-                        console.log('shortNameError');
-                    }
-                });
-*/
-                $.ajax({
-                    type: 'GET',
-                    async: false,
-                    cache: false,
-                    url: 'http://192.168.0.182:5000/token/getongoingproject?token='+tokenStr,
-//                    url: 'http://192.168.0.182:5000/token/getongoingproject',
-                    dataType: 'json',
-//                    data: JSON.stringify({'token':tokenStr}),
-                    success: function (data) {
-                        console.log(data);
-                        var shortName = data['body']['short_name'];
-                        debugger;
-                        if(shortName){
-                            jobTask.switchToAnotherProject(shortName);
-//                    window.location.href = "http://192.168.0.182:5000/project/"+shortName+"/newtask-token?token="+tokenStr;
-                        }else{
-                            console.log('switchToAnotherProjectshortNameError:'+shortName);
-                            window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
-                        }
-                    },
-                    error: function (xml, error) {
-                        console.log('shortNameError');
-                    }
-                });
             }
         });
 
-        pybossa.run('hospital');
+        pybossa.run('sn');
     })();
 </script>

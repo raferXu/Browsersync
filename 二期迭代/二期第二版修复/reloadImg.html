@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $.ajaxSetup({ cache: false });
+    setInterval(function() {
+      d = new Date();
+      $("#abc1").attr("src", "images/img:="status":.png?"+d.getTime());
+    },1000);
+  });
+</script>
+<!--It is necessary to reload whole page to refresh image when bool variable changes. Is it possible to reload it without refresh?-->
+<!--Problem solved.-->
+<script>
+  setInterval(function() {
+    $.get("variable.htm", function(result){
+      $("#abc1").attr("src", "images/img" + result + ".png");
+    });
+  },1000);
+</script>
+
+
+<input type="button" name="reloadPage" id="reloadPage" value="Refresh Data"/>
+<script>
+  $( "button" ).click(function() {
+    unix = Math.round(+new Date()/1000);
+    $('img').attr('href') = img.attr('href') + '?' + unix; //put question mark after the img links and after that writes a unique number
+  });
+</script>
+</body>
+</html>
