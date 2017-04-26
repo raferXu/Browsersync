@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="showMes" style="display:none;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,1);color:white;text-align:center;font-size:36px;z-index:10000;"></div>
+<script src="jquery-1.7.2.min.js"></script>
+<script>
+  $(function () {
+    $(document).ajaxStart(function(){
+      console.log('ajaxStart');
+      $("#showMes").show();
+    }).ajaxStop(function(){
+      $("#showMes").hide();
+    });
+    $.when($.ajax({
+      type : 'GET',
+      url : 'http://192.168.0.182:5009/token/lottery/getchanceconfig'
+    }),$.ajax({
+      type : 'GET',
+      url : 'http://192.168.0.182:5009/token/lottery/asdf'
+    })).then(function () {
+      alert(0);
+    },function (a,b) {
+      console.log(a=='error');  //false
+      alert(b=='error');  //true
+    });
+  })
+</script>
+</body>
+</html>

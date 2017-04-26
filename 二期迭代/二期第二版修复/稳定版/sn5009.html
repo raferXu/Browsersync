@@ -149,7 +149,11 @@
 
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
+<script>
+//  function jsGetToken() {
+//    return jobTask.receiveNativeToken();
+//  }
+</script>
 <script type="text/javascript">
     (function() {
 
@@ -165,7 +169,13 @@
             }
             return null;
         }
-        var tokenStr = GetQueryString("token") || null;
+        var tokenStr;
+//        var tokenStr = GetQueryString("token") || null;
+
+      //    获取token
+//      tokenStr = jobTask.receiveNativeToken();
+//      tokenStr = jsGetToken();
+//      console.log('tokenStr: ' + tokenStr);
 
 //        console.log('tokenStr: ' + tokenStr);
 
@@ -223,9 +233,8 @@
 
             $(window).on('scroll', function () {
                 $('#toLogin').css('top',$(window).scrollTop());
-                $('#showMes').css('top',$(window).scrollTop());
-                $('#offLine').css('top',$(window).scrollTop());
             });
+
         });
 
         function i18n_translate() {
@@ -397,11 +406,16 @@
                         success: function (data) {
 //                            console.log('str');
 //                            console.log(data);
-                            if(data['result']){
-                                str = data['result'];
-                            }else{
-                                str = '无法识别';
-                            }
+//                            if(data['result']){
+//                                str = data['result'];
+//                            }else{
+//                                str = '无法识别';
+//                            }
+                          if(data){
+                            str = data;
+                          }else{
+                            str = '无法识别';
+                          }
                             $('.showInfo').val(str);
                         },
                         error: function (xml, error) {
@@ -414,7 +428,6 @@
                     });
                 }
                 getStr();
-
 
                 //            loading加载框消失
                 $(document).ajaxStart(function(){
@@ -445,8 +458,9 @@
                     jobTask.launchLoginPage();
                 });
 
+              tokenStr = jobTask.receiveNativeToken() || null;
 
-                //发起ajax请求获取任务统计数据userInfo插入页面中
+              //发起ajax请求获取任务统计数据userInfo插入页面中
                 var userData = {'token': tokenStr,'task_id':task_id};
                 console.log('statistics/userInfo/data');
                 console.log(userData);
@@ -457,7 +471,7 @@
                 $.when(
                     $.ajax({
                         type : 'POST',
-                        url : 'http://192.168.0.182:5000/token/statistics/userInfo',
+                        url : 'http://192.168.0.182:5009/token/statistics/userInfo',
                         data : userData,
                         dataType : 'json',
                         beforeSend: function (xhr) {
@@ -467,10 +481,10 @@
                     }),
                     $.ajax({
                         type : 'GET',
-                        url : 'http://192.168.0.182:5000/token/lottery/getchanceconfig',
+                        url : 'http://192.168.0.182:5009/token/lottery/getchanceconfig',
                         dataType : 'json'
                     })
-                ).then(function (userInfo, lotteryInfo){
+                ).then(function (userInfo, lotteryInfo,remainingChanceInfo){
                     var total_order_num = userInfo[0].body.total_order_num;
                     $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
                     $('.total .num').html(total_order_num);
@@ -488,7 +502,7 @@
                             var remainData = {'token': tokenStr,"threshold_value": interval};
                             $.ajax({
                                 type: 'POST',
-                                url: 'http://192.168.0.182:5000/token/getuserremainingchance',
+                                url: 'http://192.168.0.182:5009/token/getuserremainingchance',
                                 dataType: 'json',
                                 beforeSend: function (xhr) {
                                     xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
@@ -584,7 +598,7 @@
 
 //                $.ajax({
 //                    type: 'GET',
-//                    url: 'http://192.168.0.182:5000/token/getongoingproject',
+//                    url: 'http://192.168.0.182:5009/token/getongoingproject',
 //                    data: JSON.stringify(projectToken),
 //                    dataType: 'json',
 ////                    async: false,
@@ -598,7 +612,7 @@
 //                        if(shortName){
 ////                            jobTask.switchToAnotherProject(shortName);
 //                            console.log('switchToAnotherProjectshortName:'+shortName);
-//                            window.location.href = "http://192.168.0.182:5000/project/"+shortName+"/newtask-token?token="+tokenStr;
+//                            window.location.href = "http://192.168.0.182:5009/project/"+shortName+"/newtask-token?token="+tokenStr;
 //                        }else{
 //                            console.log('switchToAnotherProjectshortNameError:'+shortName);
 //                            window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
@@ -611,7 +625,7 @@
 /*
                 $.ajax({
                     type: 'GET',
-                    url: 'http://192.168.0.182:5000/token/getongoingproject?token='+tokenStr,
+                    url: 'http://192.168.0.182:5009/token/getongoingproject?token='+tokenStr,
                     dataType: 'json',
                     success: function (data) {
                         var shortName = data['body']['short_name'];
@@ -621,7 +635,7 @@
                             jobTask.switchToAnotherProject(shortName);
                             console.log('qunhai');
 
-//                    window.location.href = "http://192.168.0.182:5000/project/"+shortName+"/newtask-token?token="+tokenStr;
+//                    window.location.href = "http://192.168.0.182:5009/project/"+shortName+"/newtask-token?token="+tokenStr;
                         }else{
                             console.log('switchToAnotherProjectshortNameError:'+shortName);
                             window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
@@ -636,8 +650,8 @@
                     type: 'GET',
                     async: false,
                     cache: false,
-//                    url: 'http://192.168.0.182:5000/token/getongoingproject?token='+tokenStr,
-                    url: 'http://192.168.0.182:5000/token/getongoingproject',
+//                    url: 'http://192.168.0.182:5009/token/getongoingproject?token='+tokenStr,
+                    url: 'http://192.168.0.182:5009/token/getongoingproject',
                     dataType: 'json',
 //                    data: JSON.stringify({'token':tokenStr}),
                     beforeSend: function (xhr) {
@@ -646,13 +660,14 @@
                     success: function (data) {
                         console.log(data);
                         var shortName = data['body']['short_name'];
-                        debugger;
+//                        debugger;
                         if(shortName){
                             jobTask.switchToAnotherProject(shortName);
-//                    window.location.href = "http://192.168.0.182:5000/project/"+shortName+"/newtask-token?token="+tokenStr;
+//                    window.location.href = "http://192.168.0.182:5009/project/"+shortName+"/newtask-token?token="+tokenStr;
                         }else{
                             console.log('switchToAnotherProjectshortNameError:'+shortName);
-                            window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
+//                          window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
+                          window.location.href = "http://192.168.0.182:8000/h5/noTask.html";
                         }
                     },
                     error: function (xml, error) {

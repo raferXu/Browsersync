@@ -32,7 +32,8 @@
 <main>
     <div class="wrap">
         <section class="billBox">
-            <div class="imgWrap" style="width:100%;height:1.32rem;">
+            <div class="imgWrap" style="width:100%;height:1.1rem;">
+                <!--<div class="imgWrap" style="width:100%;height:1.32rem;">-->
                 <div class="billImgBox pinch-zoom">
                     <img src="piaoju01.jpg" style="display:none" class="billImg" alt="billImg">
                 </div>
@@ -89,7 +90,8 @@
     });
     $(function () {
         var fontSize = parseInt($('html').css('fontSize'));
-        var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.32*fontSize},maxZoom:8};
+//      var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.32*fontSize},maxZoom:8};
+      var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.1*fontSize},maxZoom:8};
         $('div.pinch-zoom').each(function () {
             new RTP.PinchZoom($(this), opt);
             $(this).on('pz_zoomend',function () {

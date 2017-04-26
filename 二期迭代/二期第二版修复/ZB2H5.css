@@ -98,7 +98,7 @@ main .wrap section.billBox {
 main .wrap section.billBox .billImgBox {
   box-sizing: border-box;
   width: 100%;
-  height: 1.32rem;
+  height: 1.1rem;
   padding: 0 1.25rem;
   background: #fafafa;
   overflow: hidden;
