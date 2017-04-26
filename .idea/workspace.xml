@@ -67,16 +67,25 @@
       <file leaf-file-name="sn5009.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="872">
-              <caret line="354" column="17" lean-forward="true" selection-start-line="342" selection-start-column="0" selection-end-line="354" selection-end-column="17" />
+            <state relative-caret-position="1997">
+              <caret line="456" column="0" lean-forward="true" selection-start-line="456" selection-start-column="0" selection-end-line="456" selection-end-column="0" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#script#2;n#!!top" expanded="false" />
                 <element signature="e#9004#9904#0" expanded="false" />
                 <element signature="e#9924#10912#0" expanded="false" />
+                <element signature="e#11902#12359#0" expanded="false" />
                 <element signature="e#12708#12870#0" expanded="false" />
                 <element signature="e#13528#14906#0" expanded="false" />
                 <element signature="e#15588#16452#0" expanded="false" />
+                <element signature="e#16886#17844#0" expanded="false" />
+                <element signature="e#18607#19106#0" expanded="false" />
+                <element signature="e#19136#19328#0" expanded="false" />
+                <element signature="e#19405#21489#0" expanded="false" />
+                <element signature="e#21664#21880#0" expanded="false" />
+                <element signature="e#21992#22060#0" expanded="false" />
+                <element signature="e#23372#23536#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -109,7 +118,6 @@
       <find>getStr</find>
       <find>abort</find>
       <find>jobTask</find>
-      <find>ajaxStart</find>
       <find>ajaxS</find>
       <find>total</find>
       <find>scroll</find>
@@ -124,6 +132,7 @@
       <find>scr</find>
       <find>imgLoaded</find>
       <find>jobT</find>
+      <find>ajaxStart</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -410,12 +419,12 @@
       <workItem from="1492477979601" duration="143000" />
       <workItem from="1492478810152" duration="69123000" />
       <workItem from="1492996617651" duration="29278000" />
-      <workItem from="1493172748467" duration="14193000" />
+      <workItem from="1493172748467" duration="15469000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175037000" />
+    <option name="totallyTimeSpent" value="176313000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="27" width="1280" height="712" extended-state="0" />
@@ -464,8 +473,14 @@
           <line>578</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009.html</url>
+          <line>343</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -967,16 +982,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="872">
-          <caret line="354" column="17" lean-forward="true" selection-start-line="342" selection-start-column="0" selection-end-line="354" selection-end-column="17" />
+        <state relative-caret-position="1997">
+          <caret line="456" column="0" lean-forward="true" selection-start-line="456" selection-start-column="0" selection-end-line="456" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#script#2;n#!!top" expanded="false" />
             <element signature="e#9004#9904#0" expanded="false" />
             <element signature="e#9924#10912#0" expanded="false" />
+            <element signature="e#11902#12359#0" expanded="false" />
             <element signature="e#12708#12870#0" expanded="false" />
             <element signature="e#13528#14906#0" expanded="false" />
             <element signature="e#15588#16452#0" expanded="false" />
+            <element signature="e#16886#17844#0" expanded="false" />
+            <element signature="e#18607#19106#0" expanded="false" />
+            <element signature="e#19136#19328#0" expanded="false" />
+            <element signature="e#19405#21489#0" expanded="false" />
+            <element signature="e#21664#21880#0" expanded="false" />
+            <element signature="e#21992#22060#0" expanded="false" />
+            <element signature="e#23372#23536#0" expanded="false" />
           </folding>
         </state>
       </provider>

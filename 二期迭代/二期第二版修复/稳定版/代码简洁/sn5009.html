@@ -183,6 +183,7 @@
                 "i18n_question": "¿Ves una cara humana en esta foto?",
             },
         };
+
         $(document).ready(function(){
             userLocale = document.getElementById('PYBOSSA_USER_LOCALE').textContent.trim();
 
@@ -199,7 +200,6 @@
               $('#showMes').css('top',$(window).scrollTop());
               $('#offLine').css('top',$(window).scrollTop());
             });
-
         });
 
         function i18n_translate() {
@@ -347,11 +347,6 @@
                 if(loadImg && getStr){
                   $("#showMes").hide();
                 }
-                if(!tokenStr){
-                  $('html')[0].addEventListener('touchstart',function () {
-                    $('#toLogin').show();
-                  },true);
-                }
               });
 
 //            发送图片获取识别字符串，并放入input中
@@ -383,20 +378,15 @@
                 }
                 getStr();
 
-//                单击未登录的取消按钮
-                $('#cacelBtn').off('touchstart').on('touchstart',function () {
-                    $('#toLogin').hide(300);
-                    $('html')[0].addEventListener('touchstart',function () {
-                        $('#toLogin').show();
-                    },true);
-                });
+              var fontSize = parseInt($('html').css('fontSize'));
+              var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.1*fontSize},maxZoom:6,tapZoomFactor:3};
+              $('div.pinch-zoom').each(function () {
+                new RTP.PinchZoom($(this), opt);
+              });
 
-//                单击登录跳转登录页面
-                $('#loginBtn').off('touchstart').on('touchstart',function () {
-                    jobTask.launchLoginPage();
-                });
-
+//                获取token
               tokenStr = jobTask.receiveNativeToken() || null;
+              $('#task-id').html(task.id);
 
               //发起ajax请求获取任务统计数据userInfo插入页面中
                 var userData = {'token': tokenStr,'task_id':task_id};
@@ -455,23 +445,30 @@
                     }
                 });
 
-                var fontSize = parseInt($('html').css('fontSize'));
-                var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.1*fontSize},maxZoom:6,tapZoomFactor:3};
-                $('div.pinch-zoom').each(function () {
-                    new RTP.PinchZoom($(this), opt);
-                });
-
-                $('#task-id').html(task.id);
-
 //                拿到token判断有没登录
                 if(!tokenStr){
+//                单击未登录的取消按钮
+                  $('#cacelBtn').off('touchstart').on('touchstart',function () {
+                    $('#toLogin').hide(300);
+                    $('html')[0].addEventListener('touchstart',function () {
+                      $('#toLogin').show();
+                    },true);
+                  });
+
+//                单击登录跳转登录页面
+                  $('#loginBtn').off('touchstart').on('touchstart',function () {
+                    jobTask.launchLoginPage();
+                  });
+
+                    $('html')[0].addEventListener('touchstart',function () {
+                      $('#toLogin').show();
+                    },true);
 
                     $('.task_rand_score span').html(0);
                     $('.total .num').html(0);
                     $('.today_order .num').html(0);
 
                 }else{
-
 //                点击任务指引
                     $('.taskGuide').off('touchstart').on('touchstart',function () {
                         jobTask.taskGuide();
@@ -490,11 +487,6 @@
                             var answer = {"text": $('.showInfo').val()};
                             if (typeof answer != 'undefined') {
                                 pybossa.saveTask(task.id, answer).done(function() {
-                                    $(document).ajaxStart(function(){
-                                        $("#showMes").show();
-                                    }).ajaxStop(function(){
-                                        $("#showMes").hide();
-                                    });
                                     deferred.resolve();
                                 });
                                 if ($("#disqus_thread").is(":visible")) {
@@ -521,7 +513,7 @@
                       xhr.setRequestHeader('Authorization',tokenStr);
                     },
                     success: function (data) {
-                        console.log(data);
+                        console.log('getongoingproject： '+data);
                         var shortName = data['body']['short_name'];
                         if(shortName){
                             jobTask.switchToAnotherProject(shortName);
