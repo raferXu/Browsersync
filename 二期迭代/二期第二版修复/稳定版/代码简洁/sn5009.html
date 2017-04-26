@@ -15,17 +15,9 @@
         txt+="URL: " + url + "\n";
         txt+="Line: " + l + "\n\n";
         console.log(txt);
-//        location.href = location.href.replace(/task\/\d*/,'newtask-token');
-        //http://192.168.0.182:5000/project/sn/task/741
-        //http://192.168.0.182:5000/project/sn/newtask-token
     };
 </script>
 <link rel="stylesheet" href="http://192.168.0.182:8000/h5/ZB2H5.css">
-<!--
-    Task DOM for loading the Flickr Images
-    It uses the class="skeleton" to identify the elements that belong to the
-    task.
--->
 <div class="row skeleton"> <!-- Start Skeleton Row-->
     <div class="col-md-6 " style="display:none"><!-- Start of Question and Submission DIV (column) -->
         <h1 id="question"><span id="i18n_question">Do you see a human face in this photo?</span></h1> <!-- The question will be loaded here -->
@@ -47,11 +39,6 @@
         <div class="progress progress-striped">
             <div id="progress" rel="tooltip" title="#" class="progress-bar" style="width: 0%;"></div>
         </div>
-        <!--
-            This project uses Disqus to allow users to provide some feedback.
-            The next section includes a button that when a user clicks on it will
-            load the comments, if any, for the given task
-        -->
         <div id="disqus_show_btn" style="margin-top:5px;">
             <button class="btn btn-primary btn-lg btn-disqus" onclick="loadDisqus()"><i class="icon-comments"></i> <span id="i18n_show_comments">Show comments</span></button>
             <button class="btn btn-lg btn-disqus" onclick="loadDisqus()" style="display:none"><i class="icon-comments"></i> <span id="i18n_hide_comments">Hide comments</span></button>
@@ -70,7 +57,6 @@
         <div class="wrap">
             <section class="billBox">
                 <div class="imgWrap" style="width:100%;height:1.1rem;overflow:hidden">
-                    <!--<div class="imgWrap" style="width:100%;height:1.32rem;overflow:hidden">-->
                     <div class="billImgBox pinch-zoom">
                         <img style="display:none" class="billImg" alt="billImg">
                     </div>
@@ -209,7 +195,9 @@
             });
 
             $(window).on('scroll', function () {
-                $('#toLogin').css('top',$(window).scrollTop());
+              $('#toLogin').css('top',$(window).scrollTop());
+              $('#showMes').css('top',$(window).scrollTop());
+              $('#offLine').css('top',$(window).scrollTop());
             });
 
         });
