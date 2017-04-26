@@ -210,8 +210,6 @@
                 }
             }
         }
-
-
         function loadUserProgress() {
             pybossa.userProgress('hospital').done(function(data){
                 var pct = Math.round((data.done*100)/data.total);
@@ -223,26 +221,31 @@
             });
         }
 
+//        判断图片是否加载完成
+        function imgLoaded(img) {
+            return img.complete && img.naturalHeight !== 0;
+        }
+
         pybossa.taskLoaded(function(task, deferred) {
+
             if ( !$.isEmptyObject(task) ) {
 
-              var startTime = new Date().getTime();
               var img = $('<img class="billImg"/>');
-              img.load(function() {
-                // continue as soon as the image is loaded
-                var loadtime = new Date().getTime() - startTime;
-                if(loadtime>5000){
-                  var unix = Math.round(+new Date()/1000);
-                  startTime = new Date().getTime();
-                  img.attr('src', task.info.url+'?'+unix).css('height', 'auto');
-                }
 
+//        图片加载完成时计算加载时间决定是否重载
+              setTimeout(function () {
+                if(!imgLoaded(img)){
+                  img.attr('src', task.info.url+'?'+Math.random()).css('height', 'auto');
+                }
+              },5000);
+              img.load(function() {
                 deferred.resolve(task);
               });
+
               img.attr('src', task.info.url).css('height', 'auto');
               task.info.image = img;
-
             }
+
             else {
                 deferred.resolve(task);
             }
@@ -298,11 +301,6 @@
                 // 获取展示区域宽高
                 var imgBoxW = $('.billImgBox').width();
                 var imgBoxH = $('.billImgBox').height();
-
-                // 判断图片是否加载完成
-                function imgLoaded(img) {
-                    return img.complete && img.naturalHeight !== 0;
-                }
 
                 // 确保图片加载完成及执行的回调
                 var imgLoadTimer = setInterval(function () {
