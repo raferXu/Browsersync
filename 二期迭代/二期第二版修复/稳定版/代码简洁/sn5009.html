@@ -247,6 +247,7 @@
             }
 
             else {
+              console.log('taskLoaded noTask');
                 deferred.resolve(task);
             }
         });
@@ -503,7 +504,8 @@
                 }
             }
             else {
-                $.ajax({
+              console.log('presentTask noTask');
+              $.ajax({
                     type: 'GET',
                     async: false,
                     cache: false,
