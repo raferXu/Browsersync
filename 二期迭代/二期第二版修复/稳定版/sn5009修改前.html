@@ -1,4 +1,8 @@
 <script>
+  var jobTaskLoaded = false;
+  function nativeLoadCompleted() {
+    jobTaskLoaded = true;
+  }
   function htmlFontSize(){
     var html = document.querySelector("html");
     var width = html.getBoundingClientRect().width;
@@ -15,17 +19,9 @@
     txt+="URL: " + url + "\n";
     txt+="Line: " + l + "\n\n";
     console.log(txt);
-//        location.href = location.href.replace(/task\/\d*/,'newtask-token');
-    //http://192.168.0.182:5000/project/sn/task/741
-    //http://192.168.0.182:5000/project/sn/newtask-token
   };
 </script>
 <link rel="stylesheet" href="http://192.168.0.182:8000/h5/ZB2H5.css">
-<!--
-    Task DOM for loading the Flickr Images
-    It uses the class="skeleton" to identify the elements that belong to the
-    task.
--->
 <div class="row skeleton"> <!-- Start Skeleton Row-->
     <div class="col-md-6 " style="display:none"><!-- Start of Question and Submission DIV (column) -->
         <h1 id="question"><span id="i18n_question">Do you see a human face in this photo?</span></h1> <!-- The question will be loaded here -->
@@ -47,11 +43,6 @@
         <div class="progress progress-striped">
             <div id="progress" rel="tooltip" title="#" class="progress-bar" style="width: 0%;"></div>
         </div>
-        <!--
-            This project uses Disqus to allow users to provide some feedback.
-            The next section includes a button that when a user clicks on it will
-            load the comments, if any, for the given task
-        -->
         <div id="disqus_show_btn" style="margin-top:5px;">
             <button class="btn btn-primary btn-lg btn-disqus" onclick="loadDisqus()"><i class="icon-comments"></i> <span id="i18n_show_comments">Show comments</span></button>
             <button class="btn btn-lg btn-disqus" onclick="loadDisqus()" style="display:none"><i class="icon-comments"></i> <span id="i18n_hide_comments">Hide comments</span></button>
@@ -70,7 +61,6 @@
         <div class="wrap">
             <section class="billBox">
                 <div class="imgWrap" style="width:100%;height:1.1rem;overflow:hidden">
-                    <!--<div class="imgWrap" style="width:100%;height:1.32rem;overflow:hidden">-->
                     <div class="billImgBox pinch-zoom">
                         <img style="display:none" class="billImg" alt="billImg">
                     </div>
@@ -136,7 +126,8 @@
     function loadDisqus() {
       $("#disqus_thread").toggle();
       $(".btn-disqus").toggle();
-      var disqus_shortname = 'pybossa'; // required: replace example with your forum shortname
+      var disqus_shortname = 'pybossa';
+      // required: replace example with your forum shortname
       //var disqus_identifier = taskId;
       var disqus_developer = 1;
 
@@ -149,29 +140,12 @@
 
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
 <script type="text/javascript">
   (function() {
 
     var loadImg = false;
     var getStr = false;
-
-    // 获取token
-    function GetQueryString(name) {
-      var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-      var r = window.location.search.substr(1).match(reg);
-      if(r!=null){
-        return  r[2];
-      }
-      return null;
-    }
-//        var tokenStr = GetQueryString("token") || null;
-
-    //    获取token
-    tokenStr = jobTask.receiveNativeToken();
-    console.log('tokenStr: ' + tokenStr);
-
-//        console.log('tokenStr: ' + tokenStr);
+    var tokenStr;
 
 // Default language
     var userLocale = "en";
@@ -213,7 +187,7 @@
         "i18n_question": "¿Ves una cara humana en esta foto?",
       },
     };
-// Update userLocale with server side information
+
     $(document).ready(function(){
       userLocale = document.getElementById('PYBOSSA_USER_LOCALE').textContent.trim();
 
@@ -227,21 +201,19 @@
 
       $(window).on('scroll', function () {
         $('#toLogin').css('top',$(window).scrollTop());
+        $('#showMes').css('top',$(window).scrollTop());
+        $('#offLine').css('top',$(window).scrollTop());
       });
-
     });
 
     function i18n_translate() {
       var ids = Object.keys(messages[userLocale]);
       for (i=0; i<ids.length; i++) {
-//                console.log("Translating: " + ids[i]);
         if (document.getElementById(ids[i])) {
           document.getElementById(ids[i]).innerHTML = messages[userLocale][ids[i]];
         }
       }
     }
-
-
     function loadUserProgress() {
       pybossa.userProgress('hospital').done(function(data){
         var pct = Math.round((data.done*100)/data.total);
@@ -253,41 +225,33 @@
       });
     }
 
+//        判断图片是否加载完成
+    function imgLoaded(img) {
+      return img.complete && img.naturalHeight !== 0;
+    }
+
     pybossa.taskLoaded(function(task, deferred) {
+
       if ( !$.isEmptyObject(task) ) {
-        // load image from flickr
-          /*
-           var img = $('<img class="billImg"/>');
-           img.load(function() {
-           // continue as soon as the image is loaded
-           deferred.resolve(task);
-           pybossaNotify("", false, "loading");
-           });
-           img.attr('src', task.info.url).css('height', 'auto');
-           task.info.image = img;
-           */
 
-        var startTime = new Date().getTime();
         var img = $('<img class="billImg"/>');
-        img.load(function() {
-          // continue as soon as the image is loaded
-          var loadtime = new Date().getTime() - startTime;
-          console.log("image took " + loadtime + "ms to load");
-          if(loadtime>5000){
-            console.log('loadtime>5000');
-            var unix = Math.round(+new Date()/1000);
-            startTime = new Date().getTime();
-            img.attr('src', task.info.url+'?'+unix).css('height', 'auto');
-          }
 
+//        图片加载完成时计算加载时间决定是否重载
+        setTimeout(function () {
+          if(!imgLoaded(img)){
+            img.attr('src', task.info.url+'?'+Math.random()).css('height', 'auto');
+          }
+        },5000);
+        img.load(function() {
           deferred.resolve(task);
-          pybossaNotify("", false, "loading");
         });
+
         img.attr('src', task.info.url).css('height', 'auto');
         task.info.image = img;
-
       }
+
       else {
+        console.log('taskLoaded noTask');
         deferred.resolve(task);
       }
     });
@@ -343,11 +307,6 @@
         var imgBoxW = $('.billImgBox').width();
         var imgBoxH = $('.billImgBox').height();
 
-        // 判断图片是否加载完成
-        function imgLoaded(img) {
-          return img.complete && img.naturalHeight !== 0;
-        }
-
         // 确保图片加载完成及执行的回调
         var imgLoadTimer = setInterval(function () {
           if(imgLoaded($('.billImg')[0])){
@@ -374,7 +333,6 @@
             'imgWrapW' : imgBoxW,
             'imgWrapH' : imgBoxH
           });
-          // console.log(result);
 
           // billImg
           $('.billImg').css({
@@ -387,7 +345,22 @@
           });
         }
 
-        // 发送图片获取识别字符串，并放入input中
+//            loading加载框消失
+        $(document).ajaxStart(function(){
+        }).ajaxStop(function(){
+          getStr = true;
+          if(loadImg && getStr){
+            $("#showMes").hide();
+          }
+        });
+
+        var fontSize = parseInt($('html').css('fontSize'));
+        var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.1*fontSize},maxZoom:6,tapZoomFactor:3};
+        $('div.pinch-zoom').each(function () {
+          new RTP.PinchZoom($(this), opt);
+        });
+
+//            发送图片获取识别字符串，并放入input中
         var str;
         var urlData = {"url": task.info.url,"type": task.info.type};
         function getStr() {
@@ -398,13 +371,6 @@
             data: JSON.stringify(urlData),
             timeout: 5000,
             success: function (data) {
-//                            console.log('str');
-//                            console.log(data);
-//                            if(data['result']){
-//                                str = data['result'];
-//                            }else{
-//                                str = '无法识别';
-//                            }
               if(data){
                 str = data;
               }else{
@@ -423,288 +389,163 @@
         }
         getStr();
 
+//                获取token
+        var jobTaskLoadedTimer = setInterval(function () {
+          if(jobTaskLoaded){
+            clearInterval(jobTaskLoadedTimer);
+            tokenStr = jobTask.receiveNativeToken();
 
-        //            loading加载框消失
-        $(document).ajaxStart(function(){
-//                    console.log('ajaxStart');
-        }).ajaxStop(function(){
-//                    console.log('ajaxStop');
-          getStr = true;
-          if(loadImg && getStr){
-            $("#showMes").hide();
-          }
-          if(!tokenStr){
-            $('html')[0].addEventListener('touchstart',function () {
-              $('#toLogin').show();
-            },true);
-          }
-        });
-
-//                单击未登录的取消按钮
-        $('#cacelBtn').off('touchstart').on('touchstart',function () {
-          $('#toLogin').hide(300);
-          $('html')[0].addEventListener('touchstart',function () {
-            $('#toLogin').show();
-          },true);
-        });
-
-//                单击登录跳转登录页面
-        $('#loginBtn').off('touchstart').on('touchstart',function () {
-          jobTask.launchLoginPage();
-        });
-
-
-        //发起ajax请求获取任务统计数据userInfo插入页面中
-        var userData = {'token': tokenStr,'task_id':task_id};
-        console.log('statistics/userInfo/data');
-        console.log(userData);
-        userData = JSON.stringify(userData);
-        console.log(userData);
+            //发起ajax请求获取任务统计数据userInfo插入页面中
+            var userData = {'token': tokenStr,'task_id':task_id};
+            userData = JSON.stringify(userData);
 
 //                判断是否需要跳到抽奖页面 getchanceconfig／interval  ＝＝  userInfo／total_order_num ？
-        $.when(
-          $.ajax({
-            type : 'POST',
-            url : 'http://192.168.0.182:5000/token/statistics/userInfo',
-            data : userData,
-            dataType : 'json',
-            beforeSend: function (xhr) {
-              xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
-              xhr.setRequestHeader('Accept','application/json,text/plain');
-            }
-          }),
-          $.ajax({
-            type : 'GET',
-            url : 'http://192.168.0.182:5000/token/lottery/getchanceconfig',
-            dataType : 'json'
-          })
-        ).then(function (userInfo, lotteryInfo,remainingChanceInfo){
-          var total_order_num = userInfo[0].body.total_order_num;
-          $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
-          $('.total .num').html(total_order_num);
-          $('.today_order .num').html(userInfo[0].body.current_day_tasks);
-//                    console.log('total_order_num: ' + total_order_num);
-
-          for(var i=0,len=lotteryInfo[0]['body']['chance_configs'].length;i<len;i++){
-            var interval = lotteryInfo[0]['body']['chance_configs'][i]['interval'];
-//                        var times = lotteryInfo[0]['body']['chance_configs'][i]['times'];
-            var lottery_id = lotteryInfo[0]['body']['chance_configs'][i]['lottery_id'];
-//                        console.log('interval['+i+']: ' + interval);
-
-            if(interval == total_order_num){
-//                            console.log('total_order_numaaaaaaaa'+total_order_num);
-              var remainData = {'token': tokenStr,"threshold_value": interval};
+            $.when(
               $.ajax({
-                type: 'POST',
-                url: 'http://192.168.0.182:5000/token/getuserremainingchance',
-                dataType: 'json',
+                type : 'POST',
+                url : 'http://192.168.0.182:5009/token/statistics/userInfo',
+                data : userData,
+                dataType : 'json',
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
                   xhr.setRequestHeader('Accept','application/json,text/plain');
-                },
-                data: JSON.stringify(remainData),
-                success: function (remainingChanceInfo) {
-                  // {"body": {"remaining_chance": 1}, "message": "operate successfully", "code": 200}
-                  var times = remainingChanceInfo['body']['remaining_chance'];
-                  if(times>0){
-//                                        console.log('geiaaaaaa'+interval);
-                    jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
+                }
+              }),
+              $.ajax({
+                type : 'GET',
+                url : 'http://192.168.0.182:5009/token/lottery/getchanceconfig',
+                dataType : 'json'
+              })
+            ).then(function (userInfo, lotteryInfo,remainingChanceInfo){
+              var total_order_num = userInfo[0].body.total_order_num;
+              $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
+              $('.total .num').html(total_order_num);
+              $('.today_order .num').html(userInfo[0].body.current_day_tasks);
+
+              for(var i=0,len=lotteryInfo[0]['body']['chance_configs'].length;i<len;i++){
+                var interval = lotteryInfo[0]['body']['chance_configs'][i]['interval'];
+                var lottery_id = lotteryInfo[0]['body']['chance_configs'][i]['lottery_id'];
+
+                if(interval == total_order_num){
+                  var remainData = {'token': tokenStr,"threshold_value": interval};
+                  $.ajax({
+                    type: 'POST',
+                    url: 'http://192.168.0.182:5009/token/getuserremainingchance',
+                    dataType: 'json',
+                    beforeSend: function (xhr) {
+                      xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+                      xhr.setRequestHeader('Accept','application/json,text/plain');
+                    },
+                    data: JSON.stringify(remainData),
+                    success: function (remainingChanceInfo) {
+                      var times = remainingChanceInfo['body']['remaining_chance'];
+                      if(times>0){
+                        jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
+                      }
+                    },
+                    error: function () {
+                      console.log('remaining_chanceError');
+                    }
+                  });
+                  break;
+                }
+              }
+            });
+
+//                拿到token判断有没登录
+            if(!tokenStr){
+//                单击未登录的取消按钮
+              $('#cacelBtn').off('touchstart').on('touchstart',function () {
+                $('#toLogin').hide(300);
+                $('html')[0].addEventListener('touchstart',function () {
+                  $('#toLogin').show();
+                },true);
+              });
+
+//                单击登录跳转登录页面
+              $('#loginBtn').off('touchstart').on('touchstart',function () {
+                jobTask.launchLoginPage();
+              });
+
+              $('html')[0].addEventListener('touchstart',function () {
+                $('#toLogin').show();
+              },true);
+
+              $('.task_rand_score span').html(0);
+              $('.total .num').html(0);
+              $('.today_order .num').html(0);
+
+            }else{
+//                点击任务指引
+              $('.taskGuide').off('touchstart').on('touchstart',function () {
+                jobTask.taskGuide();
+              });
+
+//                点击查看
+              $('.more').off('touchstart').on('touchstart',function () {
+                jobTask.checkTaskStatistics();
+              });
+
+//                点击下一张按钮
+              $('.next').off('click').on('click', function(evt) {
+                if(!window.navigator.onLine){
+                  $('#offLine').show();
+                }else{
+                  var answer = {"text": $('.showInfo').val()};
+                  if (typeof answer != 'undefined') {
+                    pybossa.saveTask(task.id, answer).done(function() {
+                      deferred.resolve();
+                    });
+                    if ($("#disqus_thread").is(":visible")) {
+                      $('#disqus_thread').toggle();
+                      $('.btn-disqus').toggle();
+                    }
                   }
-                },
-                error: function () {
-                  console.log('remaining_chanceError');
+                  else {
+                  }
+                  $('.showInfo').val('');
+                  $('.pinch-zoom-container').css('height','auto');
                 }
               });
-              break;
             }
           }
-        });
 
-        var fontSize = parseInt($('html').css('fontSize'));
-        var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.1*fontSize},maxZoom:6,tapZoomFactor:3};
-//              var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.32*fontSize},maxZoom:6,tapZoomFactor:3};
-        $('div.pinch-zoom').each(function () {
-          new RTP.PinchZoom($(this), opt);
-        });
+        },50);
 
         $('#task-id').html(task.id);
 
-//                拿到token判断有没登录
-        if(!tokenStr){
-//                    console.log('没有token');
-          $('.task_rand_score span').html(0);
-          $('.total .num').html(0);
-          $('.today_order .num').html(0);
-
-        }else{
-//                    console.log('有token');
-
-          //                点击任务指引
-          $('.taskGuide').off('touchstart').on('touchstart',function () {
-//                        console.log(1111111);
-            jobTask.taskGuide();
-          });
-
-//                点击查看
-          $('.more').off('touchstart').on('touchstart',function () {
-            jobTask.checkTaskStatistics();
-          });
-
-//                点击下一张按钮
-          $('.next').off('click').on('click', function(evt) {
-            if(!window.navigator.onLine){
-              $('#offLine').show();
-            }else{
-              var answer = {"text": $('.showInfo').val()};
-              if (typeof answer != 'undefined') {
-                pybossa.saveTask(task.id, answer).done(function() {
-
-                  $.ajax({
-                    type: 'GET',
-                    url: 'http://192.168.0.182:5000/token/getongoingproject?token='+tokenStr,
-                    dataType: 'json',
-                    async: false,
-                    success: function (data) {
-                      var shortName = data['body']['short_name'];
-                      if(shortName){
-                        console.log('junge:'+shortName);
-
-//                        jobTask.switchToAnotherProject(shortName);
-                        console.log('qunhai');
-
-                        //                    window.location.href = "http://192.168.0.182:5000/project/"+shortName+"/newtask-token?token="+tokenStr;
-                      }else{
-                        console.log('switchToAnotherProjectshortNameError:'+shortName);
-//                        window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
-                      }
-                    },
-                    error: function (xml, error) {
-                      console.log('shortNameError');
-                    }
-                  });
-
-//                  deferred.resolve();
-                });
-                if ($("#disqus_thread").is(":visible")) {
-                  $('#disqus_thread').toggle();
-                  $('.btn-disqus').toggle();
-                }
-              }
-              else {
-                pybossaNotify("Oops... Something went wrong.", true, "error");
-              }
-              $('.showInfo').val('');
-              $('.pinch-zoom-container').css('height','auto');
-            }
-          });
-        }
-
-//                pybossaNotify("Loading picture...", false, "loading");
       }
       else {
-        console.log('getongoingprojectToken:'+tokenStr);
+        console.log('presentTask noTask');
 
-//        if(flagAAA){
-//          $.ajax({
-//            type: 'GET',
-//            async: false,
-//            cache: false,
-//            url: 'http://192.168.0.182:5009/token/getongoingproject',
-//            dataType: 'json',
-//            beforeSend: function (xhr) {
-//              xhr.setRequestHeader('Authorization',tokenStr);
-//            },
-//            success: function (data) {
-//              console.log('getongoingproject： '+data);
-//              var shortName = data['body']['short_name'];
-//              if(shortName){
-//                jobTask.switchToAnotherProject(shortName);
-//              }else{
-//                window.location.href = "http://192.168.0.182:8000/h5/noTask.html";
-//              }
-//            },
-//            error: function (xml, error) {
-//              console.log('shortNameError');
-//            }
-//          });
-//        }
-        $.ajax({
-          type: 'GET',
-          async: false,
-          cache: false,
-          url: 'http://192.168.0.182:5009/token/getongoingproject',
-          dataType: 'json',
-          beforeSend: function (xhr) {
-            xhr.setRequestHeader('Authorization',tokenStr);
-          },
-          success: function (data) {
-            console.log('getongoingproject： '+data);
-            var shortName = data['body']['short_name'];
-            if(shortName){
-              jobTask.switchToAnotherProject(shortName);
-            }else{
-              window.location.href = "http://192.168.0.182:8000/h5/noTask.html";
-            }
-          },
-          error: function (xml, error) {
-            console.log('shortNameError');
+        var jobTaskLoadedTimer2 = setInterval(function () {
+          if(jobTaskLoaded) {
+            clearInterval(jobTaskLoadedTimer2);
+            tokenStr = jobTask.receiveNativeToken();
+            $.ajax({
+              type: 'GET',
+              async: false,
+              cache: false,
+              url: 'http://192.168.0.182:5009/token/getongoingproject',
+              dataType: 'json',
+              beforeSend: function (xhr) {
+                xhr.setRequestHeader('Authorization',tokenStr);
+              },
+              success: function (data) {
+                console.log('getongoingproject： '+data);
+                var shortName = data['body']['short_name'];
+                if(shortName){
+                  jobTask.switchToAnotherProject(shortName);
+                }else{
+                  window.location.href = "http://192.168.0.182:8000/h5/noTask.html";
+                }
+              },
+              error: function (xml, error) {
+                console.log('shortNameError');
+              }
+            });
           }
-        });
-//                jobTask.switchToAnotherProject(shortName);
-//                var projectToken = tokenStr;
-//                window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
-
-//                $.ajax({
-//                    type: 'GET',
-//                    url: 'http://192.168.0.182:5000/token/getongoingproject',
-//                    data: JSON.stringify(projectToken),
-//                    dataType: 'json',
-////                    async: false,
-//                    beforeSend: function (xhr) {
-//                        xhr.setRequestHeader("Authorization",tokenStr);
-//                    },
-//                    success: function (data) {
-////                        {"body": {"short_name": "hospital"}, "message": "operate successfully", "code": 200}
-//                        var shortName = data['body']['short_name'];
-//                        console.log('shortName:'+shortName);
-//                        if(shortName){
-////                            jobTask.switchToAnotherProject(shortName);
-//                            console.log('switchToAnotherProjectshortName:'+shortName);
-//                            window.location.href = "http://192.168.0.182:5000/project/"+shortName+"/newtask-token?token="+tokenStr;
-//                        }else{
-//                            console.log('switchToAnotherProjectshortNameError:'+shortName);
-//                            window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
-//                        }
-//                    },
-//                    error: function (xml, error) {
-//                        console.log('shortNameError');
-//                    }
-//                });
-          /*
-           $.ajax({
-           type: 'GET',
-           url: 'http://192.168.0.182:5000/token/getongoingproject?token='+tokenStr,
-           dataType: 'json',
-           success: function (data) {
-           var shortName = data['body']['short_name'];
-           if(shortName){
-           console.log('junge:'+shortName);
-
-           jobTask.switchToAnotherProject(shortName);
-           console.log('qunhai');
-
-           //                    window.location.href = "http://192.168.0.182:5000/project/"+shortName+"/newtask-token?token="+tokenStr;
-           }else{
-           console.log('switchToAnotherProjectshortNameError:'+shortName);
-           window.location.href = "http://192.168.0.182:8000/h5/noTask.html?token="+tokenStr;
-           }
-           },
-           error: function (xml, error) {
-           console.log('shortNameError');
-           }
-           });
-           */
-
+        },50);
       }
     });
 

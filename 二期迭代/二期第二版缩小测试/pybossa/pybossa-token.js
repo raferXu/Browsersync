@@ -65,6 +65,7 @@
     }
 
     // 发起请求  为用户分配一个任务
+  // 这是当前用户在本任务页面能获取到下一个任务信息的关键函数
     function _fetchNewTask(projectId, offset) {
         offset = offset || 0;
         return $.ajax({
@@ -220,6 +221,7 @@
                 offset = offset || 0;
                 var def = $.Deferred();
                 var taskId = _getCurrentTaskId(_window.location.pathname);
+              // _fetchNewTask根据projectId获取下一个任务信息，所以在当前页面已经可以知道下一个任务信息了
                 var xhr = (taskId && (previousTask === undefined)) ? _fetchTask(taskId) : _fetchNewTask(project.id, offset);
                 xhr.done(function(task) {
                     // done表示旧任务完成后去获取新分配的任务成功done后再去加载下一个
