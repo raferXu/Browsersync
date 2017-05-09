@@ -101,20 +101,20 @@
     var i = 0;
     var c = 10;
     var imgarr = [];
-    imgarr[0] = "http://192.168.0.182:8000/h5/img/0.JPG";
-    imgarr[1] = "http://192.168.0.182:8000/h5/img/1.JPG";
-    imgarr[2] = "http://192.168.0.182:8000/h5/img/2.JPG";
-    imgarr[3] = "http://192.168.0.182:8000/h5/img/3.JPG";
-    imgarr[4] = "http://192.168.0.182:8000/h5/img/4.JPG";
-    imgarr[5] = "http://192.168.0.182:8000/h5/img/5.JPG";
-    imgarr[6] = "http://192.168.0.182:8000/h5/img/6.JPG";
-    imgarr[7] = "http://192.168.0.182:8000/h5/img/7.JPG";
-    imgarr[8] = "http://192.168.0.182:8000/h5/img/8.JPG";
-    imgarr[9] = "http://192.168.0.182:8000/h5/img/9.JPG";
+    imgarr[0] = "img/0.JPG";
+    imgarr[1] = "img/1.JPG";
+    imgarr[2] = "img/2.JPG";
+    imgarr[3] = "img/3.JPG";
+    imgarr[4] = "img/4.JPG";
+    imgarr[5] = "img/5.JPG";
+    imgarr[6] = "img/6.JPG";
+    imgarr[7] = "img/7.JPG";
+    imgarr[8] = "img/8.JPG";
+    imgarr[9] = "img/9.JPG";
 
     var main = function () {
       var h = aImg[0].height;
-      consle.log(h);
+      console.log(h);
       oWrap.style.height = h + 'px';
       var oPos = document.getElementsByClassName('showInfo')[0];
       var oPosH = oPos.clientHeight;
@@ -194,6 +194,7 @@
     function icall(v) {
       if (v < c) {
         SImage("" + imgarr[v] + "", icall);
+        console.log('toCallMainBefore');
       }
       else if (v >= c) {
         i = 0;

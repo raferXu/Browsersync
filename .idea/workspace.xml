@@ -2,84 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/img/0.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/img/1.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/img/2.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/img/3.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/img/4.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/img/5.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/img/6.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/img/7.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/img/8.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/img/9.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/img/colon.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/img/colon1.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/OK.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/medicineName1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/medicineName2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/medicineName3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/tips1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/tips2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/1使用JS字符串/使用给定的字符补充某字符串的左边或右边.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/1使用JS字符串/去除字符串末尾的空白.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/1使用JS字符串/向字符串中插入一个特殊字符.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/1使用JS字符串/处理textarea的单个行.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/1使用JS字符串/字符串分解为单独的关键字.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/1使用JS字符串/把一个字符串和另一种数据类型连接起来.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/1使用JS字符串/把两个或多个字符串合并为一个.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/1使用JS字符串/检查一个变量是一个非空的字符串.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/1使用JS字符串/比较两个字符串看看是否相同.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/1使用JS字符串/特定的字符是否存在于一个字符串中.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/1使用JS字符串/简介.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/2使用正则表达式/不区分大小写的子字符串匹配.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/2使用正则表达式/使用String.replace和特殊模式在字符串中查找文本并突出显示.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/2使用正则表达式/使用圆括号交换字符串中单词.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/2使用正则表达式/使用新字符串替换所有匹配的子字符串.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/2使用正则表达式/去除字符串开始处和结尾处的空白.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/2使用正则表达式/找到并突出显示一个模式的所有实例.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/2使用正则表达式/搜索特殊字符.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/2使用正则表达式/查找并突出显示一个文本字符串中的所有匹配.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/2使用正则表达式/正则exec方法.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/2使用正则表达式/测试一个字符串是否包含另一个字符串.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/2使用正则表达式/简介.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/2使用正则表达式/转义尖括号而不是进行内容解析.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/2使用正则表达式/验证一个字符串是社会安全号码.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/ISO标准格式日期.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/使用给定的月份年份和日期创建一个Date对象.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/创建一个10天后的日期.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/把ISO格式日期转换为Date对象接受的格式.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/把ISO格式日期转换为JS的Date.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/显示世界时当前日期和时间.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/显示本地当前日期和时间.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/简介.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/记录两事件之间间隔.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testCSS/imgRotate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/4-上翻时钟.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/codeLock.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/complete.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/controlScroll.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/imgLoaded.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/test2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/test3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/test4OK.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/try1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/上翻数字.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/tips1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/tips2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/noTask5000.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/noTask5009.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009存储token.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009过渡确认token.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/ZB2H5.css" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/ZB2H5.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/ZB2H5.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/ZB2H5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/ZB2H5.less" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/ZB2H5.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/noTask.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/noTask.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009复制到5000.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009复制到5000.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版缩小测试/pybossa/fullMin.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版缩小测试/pybossa/fullMin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao/时钟/complete.html" afterPath="$PROJECT_DIR$/zhongbao/时钟/complete.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -120,13 +43,13 @@
       <file leaf-file-name="complete.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/zhongbao/时钟/complete.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1965">
-              <caret line="245" column="47" lean-forward="false" selection-start-line="245" selection-start-column="47" selection-end-line="245" selection-end-column="47" />
+            <state relative-caret-position="210">
+              <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding>
-                <element signature="e#3369#3466#0" expanded="false" />
-                <element signature="e#3549#4583#0" expanded="false" />
-                <element signature="e#5650#5940#0" expanded="false" />
-                <element signature="e#6736#7224#0" expanded="false" />
+                <element signature="e#3080#3177#0" expanded="false" />
+                <element signature="e#3260#4294#0" expanded="false" />
+                <element signature="e#5402#5692#0" expanded="false" />
+                <element signature="e#6488#6976#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -172,8 +95,8 @@
       <find>_fetchProject</find>
       <find>ajax</find>
       <find>touchstart</find>
-      <find>showInfo</find>
       <find>main</find>
+      <find>showInfo</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -485,12 +408,12 @@
       <workItem from="1493727422327" duration="3859000" />
       <workItem from="1493796281870" duration="42975000" />
       <workItem from="1494207422822" duration="5313000" />
-      <workItem from="1494232442733" duration="22801000" />
+      <workItem from="1494232442733" duration="23080000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="320702000" />
+    <option name="totallyTimeSpent" value="320981000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="154" y="24" width="1126" height="711" extended-state="0" />
@@ -1016,13 +939,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao/时钟/complete.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1965">
-          <caret line="245" column="47" lean-forward="false" selection-start-line="245" selection-start-column="47" selection-end-line="245" selection-end-column="47" />
+        <state relative-caret-position="210">
+          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding>
-            <element signature="e#3369#3466#0" expanded="false" />
-            <element signature="e#3549#4583#0" expanded="false" />
-            <element signature="e#5650#5940#0" expanded="false" />
-            <element signature="e#6736#7224#0" expanded="false" />
+            <element signature="e#3080#3177#0" expanded="false" />
+            <element signature="e#3260#4294#0" expanded="false" />
+            <element signature="e#5402#5692#0" expanded="false" />
+            <element signature="e#6488#6976#0" expanded="false" />
           </folding>
         </state>
       </provider>
