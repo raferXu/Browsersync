@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        html{
+            font-size: 100px;
+        }
+        body{
+            margin: 0;
+            font-size: 14px;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .wrap{
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+        .wrap ul{
+            width: 100%;
+            height: 100%;
+        }
+        .wrap li{
+            position: relative;
+            float: left;
+            overflow: hidden;
+            width: 10%;
+            height: 100%;
+        }
+        .wrap div{
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+        .wrap img{
+            width: 100%;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <ul></ul>
+    </div>
+    <script>
+        window.onload = function () {
+
+            var str = "753189572";
+            var oWrap = document.getElementById('wrap');
+            var oUl = oWrap.getElementsByTagName('ul')[0];
+            var html = '';
+            for(var i=0,len=str.length;i<len;i++){
+                html += '<li><div><img src="img/'+str[i]+'.JPG" alt=""><img src="img/'+str[i]+'.JPG" alt=""><img src="img/'+str[i]+'.JPG" alt=""></div></li>';
+            }
+            oUl.innerHTML = html;
+
+            var oDiv = oWrap.getElementsByTagName('div');
+            var aImg = oWrap.getElementsByTagName('img');
+            aImg[0].onload = function () {
+                var h = aImg[0].height;
+                oWrap.style.height = h + 'px';
+                for(var i=0,olen=oDiv.length;i<olen;i++){
+                    oDiv[i].style.top = -h + 'px';
+                    oDiv[i].index = i;
+                    oDiv[i].count = 1;
+                    var eImg = oDiv[i].getElementsByTagName('img');
+                    for(var j=0;j<eImg.length;j++){
+                        eImg[j].index = j;
+                        eImg[j].addEventListener('click',function () {
+                            var This = this;
+                            slied(This.parentNode.index,str,1,h,This.parentNode.count);
+                            This.parentNode.count++;
+                        },false);
+                    }
+                }
+            };
+
+            function play(obj,direct) {
+
+            }
+            //图片切换
+//            1为上滚,-1反向   d
+
+            function slied(n,str,d,h,c){
+
+                var imgs = oDiv[n].getElementsByTagName('img');
+                if(d>0){
+
+                    var next = ((+str[n])+c)%10;
+                    console.log(next);
+                    console.log(imgs[2]);
+                    imgs[2].src = 'img/'+(next)+'.jpg';
+                    move(oDiv[n],'top',-d*2*h,400);
+                    /*
+                    move(oDiv[n],'top',-d*2*h,400,function(){
+                        imgs[1].src = 'img/'+(next)+'.jpg';
+                        imgs[0].src = 'img/'+(next)+'.jpg';
+                        oDiv[n].style.top = -h + 'px';
+                    })
+                    */
+
+                }else{
+                    var prev = ((+str[n])-c)%10;
+                    if(prev<0){
+                        prev = prev%10+10;
+                    }
+                    imgs[0].src = 'img/'+(prev)+'.jpg';
+                    move(oDiv[n],'top',0,400,function(){
+                        imgs[1].src = 'img/'+(prev)+'.jpg';
+                        imgs[2].src = 'img/'+(prev)+'.jpg';
+                        oDiv[n].style.top = -h + 'px';
+                    })
+                }
+
+            }
+
+            function move(obj,attr,target,duration,callback) {
+                var b = parseFloat(getComputedStyle(obj)[attr]);
+                var c = target - b;
+                var d = duration;
+                var now = new Date().getTime();
+                obj[attr] = setInterval(function () {
+                    var t = new Date().getTime() - now;
+                    var value = b + c / d * t;
+                    obj.style[attr] = value + "px";
+                    if (t >= d) {
+                        clearInterval(obj[attr]);
+                        obj.style[attr] = target + "px";
+                        callback && callback();//当到达目标值的时候执行回调函数
+                    }
+                }, 30)
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -135,15 +135,15 @@
                 if(xhr.status==200){
                   var data = JSON.parse(xhr.responseText);
                   console.log(data);
-                  var current_day_tasks = data['body']['current_day_tasks'] || '-';
-                  var plan_score = data['body']['plan_score'] || '-';
+                  var current_day_tasks = data['body']['current_day_tasks'];
+                  var plan_score = data['body']['plan_score'];
                   document.getElementById('current_day_tasks').innerHTML = current_day_tasks;
                   document.getElementById('plan_score').innerHTML = plan_score;
                 }
               }
             };
 
-            xhr.open("POST","http://192.168.0.182:5009/token/task/notTask",true);
+            xhr.open("POST","http://192.168.0.182:5000/token/task/notTask",true);
 
             xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
             xhr.setRequestHeader('Accept','application/json,text/plain');

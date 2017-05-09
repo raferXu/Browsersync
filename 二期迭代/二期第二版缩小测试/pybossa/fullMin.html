@@ -2889,13 +2889,17 @@ function pybossaNotify(msg, showNotification, type) {
     function _fetchNewTask(projectId, offset) {
         offset = offset || 0;
         return $.ajax({
-            url: url + 'token/project/' + projectId + '/newtask', beforeSend: function (request) {
+            url: url + 'token/project/' + projectId + '/newtask',
+            beforeSend: function (request) {
                 if (token === "") {
                     return;
                 } else {
                     request.setRequestHeader("Authorization", token);
                 }
-            }, data: 'offset=' + offset, cache: false, dataType: 'json'
+            },
+            data: 'offset=' + offset,
+            cache: false,
+            dataType: 'json'
         });
     }
 

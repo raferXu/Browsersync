@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Title</title>
+</head>
+<body>
+<div id="loading">
+  <p><img src="http://www.baidu.com/img/baidu_logo.gif" /></p>
+</div>
+<script>
+  var i=0;
+  var c=10;
+  var imgarr=[];
+  imgarr[0]="http://192.168.0.182:8000/h5/img/0.JPG";
+  imgarr[1]="http://192.168.0.182:8000/h5/img/1.JPG";
+  imgarr[2]="http://192.168.0.182:8000/h5/img/2.JPG";
+  imgarr[3]="http://192.168.0.182:8000/h5/img/3.JPG";
+  imgarr[4]="http://192.168.0.182:8000/h5/img/4.JPG";
+  imgarr[5]="http://192.168.0.182:8000/h5/img/5.JPG";
+  imgarr[6]="http://192.168.0.182:8000/h5/img/6.JPG";
+  imgarr[7]="http://192.168.0.182:8000/h5/img/7.JPG";
+  imgarr[8]="http://192.168.0.182:8000/h5/img/8.JPG";
+  imgarr[9]="http://192.168.0.182:8000/h5/img/9.JPG";
+
+  function SImage(url,callback)
+  {
+    var img = new Image();
+      img.onload=function(){
+        if(img.complete==true){
+          i=i+1;
+          callback(i);
+        }
+      };
+    img.src=url;
+  }
+  function icall(v)
+  {
+    if(v<c){
+      SImage(""+imgarr[v]+"",icall);
+    }
+    else if(v>=c){
+      i=0;
+      alert('complete');
+    }
+  }
+  icall(0);
+</script>
+</body>
+</html>

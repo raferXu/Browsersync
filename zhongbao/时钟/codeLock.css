@@ -87,7 +87,7 @@ main {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 main .wrap {
   padding-top: .44rem;
@@ -140,13 +140,38 @@ main .wrap section.billBox .billOperate nav .taskGuide img {
   width: .15rem;
 }
 main .wrap section.billBox .billOperate .showInfo {
+  box-sizing: border-box;
   width: 100%;
   height: .44rem;
   margin-bottom: .1rem;
-  border: 1px solid #ff6000;
   border-radius: 5px;
-  color: #323232;
-  font-size: 0.18rem;
+}
+main .wrap section.billBox .billOperate .showInfo .codeLockWrap {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+main .wrap section.billBox .billOperate .showInfo .codeLockWrap ul {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+main .wrap section.billBox .billOperate .showInfo .codeLockWrap ul li {
+  position: relative;
+  float: left;
+  width: 10%;
+  height: 100%;
+}
+main .wrap section.billBox .billOperate .showInfo .codeLockWrap ul li div {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+main .wrap section.billBox .billOperate .showInfo .codeLockWrap ul li div img {
+  width: 100%;
+  vertical-align: top;
 }
 main .wrap section.billBox .billOperate .textTip {
   -webkit-text-size-adjust: none;

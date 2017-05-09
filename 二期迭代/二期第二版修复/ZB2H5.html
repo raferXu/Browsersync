@@ -22,7 +22,6 @@
             txt+="URL: " + url + "\n";
             txt+="Line: " + l + "\n\n";
             console.log(txt);
-            location.href = location.href;
         };
     </script>
     <link rel="stylesheet" href="ZB2H5.css">
@@ -35,7 +34,7 @@
             <div class="imgWrap" style="width:100%;height:1.1rem;">
                 <!--<div class="imgWrap" style="width:100%;height:1.32rem;">-->
                 <div class="billImgBox pinch-zoom">
-                    <img src="piaoju01.jpg" style="display:none" class="billImg" alt="billImg">
+                    <img src="medicineName1.jpg" style="display:none" class="billImg" alt="billImg">
                 </div>
             </div>
             <p class="task_rand_score">任务奖励(分/单):<span>1</span></p>
@@ -90,8 +89,11 @@
     });
     $(function () {
         var fontSize = parseInt($('html').css('fontSize'));
+//        var opt = {};
 //      var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.32*fontSize},maxZoom:8};
-      var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.1*fontSize},maxZoom:8};
+//      var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.1*fontSize},maxZoom:8};
+        var opt = {zoomFactor:5,offset:{x:6.25*fontSize,y:1.1*fontSize*2},maxZoom:8};
+//      var opt = {zoomFactor:4,offset:{x:5*fontSize,y:1.1*fontSize*1.5},maxZoom:8};//(4-1)/2 =1.5;1.25*4 =5;
         $('div.pinch-zoom').each(function () {
             new RTP.PinchZoom($(this), opt);
             $(this).on('pz_zoomend',function () {
@@ -103,6 +105,13 @@
             $(this).on('pz_doubletap',function () {
                 console.log('pz_doubletap');
             });
+        });
+        var AImg = ['medicineName1.jpg','medicineName2.jpg','medicineName3.jpg'];
+        var i = 0;
+        $('.next').off('touchstart').on('touchstart',function () {
+          i++;
+          i%=3;
+          $('.billImg').attr('src',AImg[i]);
         });
     });
 </script>

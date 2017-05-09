@@ -83,7 +83,7 @@ main{
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   .wrap{
     padding-top: .44rem;
@@ -142,13 +142,44 @@ main{
           }
         }
         .showInfo{
+          box-sizing: border-box;
           width: 100%;
           height: .44rem;
           margin-bottom: .1rem;
-          border: 1px solid @font-color-red;
+          //border: 1px solid #ff6000;
           border-radius: 5px;
-          color: @font-color-normal;
-          font-size: @font-size-big;
+
+          .codeLockWrap {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+
+            ul {
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+
+              li {
+                position: relative;
+                float: left;
+                width: 10%;
+                height: 100%;
+
+                div {
+                  position: absolute;
+                  top: 0;
+                  width: 100%;
+                  padding: 0 5%;
+                  box-sizing: border-box;
+
+                  img {
+                    width: 100%;
+                    vertical-align: top;
+                  }
+                }
+              }
+            }
+          }
         }
         .textTip{
           -webkit-text-size-adjust:none;

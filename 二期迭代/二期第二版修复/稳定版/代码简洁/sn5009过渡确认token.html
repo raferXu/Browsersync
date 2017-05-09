@@ -1,4 +1,9 @@
 <script>
+
+  // loading加载框出现
+  console.log('loading加载框出现');
+  $("#showMes").show();
+
   var jobTaskLoaded = false;
   function nativeLoadCompleted() {
     jobTaskLoaded = true;
@@ -193,8 +198,6 @@
 
       $('body').css('padding','0px');
 
-      // loading加载框出现
-      $("#showMes").show();
       $('#sureBtn').on('touchstart',function () {
         $('#offLine').hide();
       });
@@ -349,6 +352,7 @@
 
 //            loading加载框消失
         $(document).ajaxStart(function(){
+          $("#showMes").show();
         }).ajaxStop(function(){
           getStr = true;
           if(loadImg && getStr){
@@ -405,7 +409,7 @@
             $.when(
               $.ajax({
                 type : 'POST',
-                url : 'http://192.168.0.182:5000/token/statistics/userInfo',
+                url : 'http://192.168.0.182:5009/token/statistics/userInfo',
                 data : userData,
                 dataType : 'json',
                 beforeSend: function (xhr) {
@@ -415,7 +419,7 @@
               }),
               $.ajax({
                 type : 'GET',
-                url : 'http://192.168.0.182:5000/token/lottery/getchanceconfig',
+                url : 'http://192.168.0.182:5009/token/lottery/getchanceconfig',
                 dataType : 'json'
               })
             ).then(function (userInfo, lotteryInfo,remainingChanceInfo){
@@ -432,7 +436,7 @@
                   var remainData = {'token': tokenStr,"threshold_value": interval};
                   $.ajax({
                     type: 'POST',
-                    url: 'http://192.168.0.182:5000/token/getuserremainingchance',
+                    url: 'http://192.168.0.182:5009/token/getuserremainingchance',
                     dataType: 'json',
                     beforeSend: function (xhr) {
                       xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
@@ -502,7 +506,7 @@
                           type: 'GET',
                           async: false,
                           cache: false,
-                          url: 'http://192.168.0.182:5000/token/getongoingproject',
+                          url: 'http://192.168.0.182:5009/token/getongoingproject',
                           dataType: 'json',
                           beforeSend: function (xhr) {
                             xhr.setRequestHeader('Authorization',tokenStr);
@@ -554,7 +558,7 @@
            type: 'GET',
            async: false,
            cache: false,
-           url: 'http://192.168.0.182:5000/token/getongoingproject',
+           url: 'http://192.168.0.182:5009/token/getongoingproject',
            dataType: 'json',
            beforeSend: function (xhr) {
            xhr.setRequestHeader('Authorization',tokenStr);
