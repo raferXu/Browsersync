@@ -381,7 +381,6 @@
           new RTP.PinchZoom($(this), opt);
         });
 
-        var getCurStr;
         function combinationLock(str,button) {
           console.log('combinationLock combinationLock combinationLock');
           var moving = false;
@@ -432,25 +431,24 @@
                 eImg[j].index = j;
 //                      滑动处理
                 var startX, startY;
-                var oMain = document.getElementsByTagName('main')[0];
                 eImg[eImg[j].index].addEventListener('touchstart', function (ev) {
-                  console.log('touchstart');
+//                  $('body')[0].addEventListener('touchstart',function(e){e.preventDefault();});
+                  $('main').addClass('noscroll');
+                  console.log('eImg touchstart');
                   startX = ev.touches[0].pageX;
                   startY = ev.touches[0].pageY;
-                  oMain.className = 'noscroll';
-
+                  document.addEventListener('touchend', function (ev) {console.log('document.touchend');},false);
                 }, false);
-                  eImg[eImg[j].index].addEventListener('touchend', function (ev) {
-                  console.log('touchend');
+                eImg[eImg[j].index].addEventListener('touchend', function (ev) {
+                  console.log('eImg touchend');
+                  $('main').removeClass('noscroll');
                   var endX, endY;
-                  oMain.className = '';
                   endX = ev.changedTouches[0].pageX;
                   endY = ev.changedTouches[0].pageY;
                   var direction = GetSlideDirection(startX, startY, endX, endY);
                   switch (direction) {
 //                        上滑
                     case 1:
-                      console.log(this);
                       var This = this;
                       if (!moving) {
                         moving = true;
@@ -477,17 +475,17 @@
             }
           };
 
-          getCurStr = function() {
+          function getCurStr() {
             var curStr = [];
             for(var i = 0, olen = oDiv.length; i < olen; i++){
               curStr[i] = oDiv[i].count%10;
             }
             console.log(curStr.join(''));
             return curStr.join('');
+          }
+          button.onclick = function () {
+            getCurStr();
           };
-//          button.onclick = function () {
-//            getCurStr();
-//          };
 //            定义图片加载完成时回调
           function SImage(url, callback) {
             var img = new Image();
@@ -588,15 +586,7 @@
             timeout: 5000,
             success: function (data) {
               if(data){
-                if(data.length<10){
-                  var len=10-data.length,f='';
-                  for(var i=0;i<len;i++){
-                    f+='0';
-                  }
-                  str = f + data;
-                }else{
-                  str = data;
-                }
+                str = data;
                 combinationLock(str,$('.next')[0]);
               }else{
                 str = '无法识别';
@@ -640,7 +630,7 @@
                 url : 'http://192.168.0.182:5009/token/lottery/getchanceconfig',
                 dataType : 'json'
               })
-            ).then(function (userInfo, lotteryInfo){
+            ).then(function (userInfo, lotteryInfo,remainingChanceInfo){
               var total_order_num = userInfo[0].body.total_order_num;
               $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
               $('.total .num').html(total_order_num);
@@ -715,8 +705,7 @@
                 if(!window.navigator.onLine){
                   $('#offLine').show();
                 }else{
-                  var answer = getCurStr();
-//                  var answer = {"text": $('.showInfo').val()};
+                  var answer = {"text": $('.showInfo').val()};
                   if (typeof answer != 'undefined') {
                     pybossa.saveTask(task.id, answer).done(function() {
                       console.log('saveTask: ' + tokenStr);

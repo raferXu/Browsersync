@@ -135,8 +135,8 @@
                 if(xhr.status==200){
                   var data = JSON.parse(xhr.responseText);
                   console.log(data);
-                  var current_day_tasks = data['body']['current_day_tasks'] || '-';
-                  var plan_score = data['body']['plan_score'] || '-';
+                  var current_day_tasks = data['body']['current_day_tasks'];
+                  var plan_score = data['body']['plan_score'];
                   document.getElementById('current_day_tasks').innerHTML = current_day_tasks;
                   document.getElementById('plan_score').innerHTML = plan_score;
                 }

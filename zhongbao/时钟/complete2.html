@@ -43,17 +43,17 @@
       border-radius: 5px;
     }
 
-    .wrap {
+    .codeLockWrap {
       width: 80%;
       margin: 0 auto;
     }
 
-    .wrap ul {
+    .codeLockWrap ul {
       width: 100%;
       height: 100%;
     }
 
-    .wrap li {
+    .codeLockWrap li {
       position: relative;
       float: left;
       overflow: hidden;
@@ -61,7 +61,7 @@
       height: 100%;
     }
 
-    .wrap div {
+    .codeLockWrap div {
       position: absolute;
       top: 0;
       width: 100%;
@@ -69,7 +69,7 @@
       box-sizing: border-box;
     }
 
-    .wrap img {
+    .codeLockWrap img {
       width: 100%;
       vertical-align: top;
     }
@@ -98,7 +98,7 @@
 <main>
   <div class="blue"></div>
   <div class="showInfo">
-    <div class="wrap" id="wrap">
+    <div class="codeLockWrap" id="codeLockWrap">
       <ul></ul>
     </div>
   </div>
@@ -112,7 +112,7 @@
 
     var str = "6143812379";
     var moving = false;
-    var oWrap = document.getElementById('wrap');
+    var oWrap = document.getElementById('codeLockWrap');
     var oCSS = document.getElementById('css1');
     var oUl = oWrap.getElementsByTagName('ul')[0];
     var aLi = oUl.getElementsByTagName('li');
@@ -162,11 +162,13 @@
           var startX, startY;
           var oMain = document.getElementsByTagName('main')[0];
           eImg[eImg[j].index].addEventListener('touchstart', function (ev) {
+            console.log('touchstart');
             startX = ev.touches[0].pageX;
             startY = ev.touches[0].pageY;
             oMain.className = 'noscroll';
           }, false);
           eImg[eImg[j].index].addEventListener('touchend', function (ev) {
+            console.log('touchend');
             var endX, endY;
             oMain.className = '';
             endX = ev.changedTouches[0].pageX;
@@ -175,6 +177,7 @@
             switch (direction) {
 //                        上滑
               case 1:
+                console.log(this);
                 var This = this;
                 if (!moving) {
                   moving = true;
