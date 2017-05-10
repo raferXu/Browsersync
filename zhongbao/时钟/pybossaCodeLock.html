@@ -27,7 +27,12 @@
   };
 </script>
 <link rel="stylesheet" href="http://192.168.0.182:8000/h5/codeLock.css">
-<style id="css1"></style>
+<style id="css1">
+    .noscroll{
+        position: fixed;
+        overflow: hidden;
+    }
+</style>
 <div class="row skeleton"> <!-- Start Skeleton Row-->
     <div class="col-md-6 " style="display:none"><!-- Start of Question and Submission DIV (column) -->
         <h1 id="question"><span id="i18n_question">Do you see a human face in this photo?</span></h1> <!-- The question will be loaded here -->
@@ -428,7 +433,7 @@
                 var startX, startY;
                 eImg[eImg[j].index].addEventListener('touchstart', function (ev) {
 //                  $('body')[0].addEventListener('touchstart',function(e){e.preventDefault();});
-//                  $('main').css('overflow','hidden');
+                  $('main').addClass('noscroll');
                   console.log('eImg touchstart');
                   startX = ev.touches[0].pageX;
                   startY = ev.touches[0].pageY;
@@ -436,6 +441,7 @@
                 }, false);
                 eImg[eImg[j].index].addEventListener('touchend', function (ev) {
                   console.log('eImg touchend');
+                  $('main').removeClass('noscroll');
                   var endX, endY;
                   endX = ev.changedTouches[0].pageX;
                   endY = ev.changedTouches[0].pageY;

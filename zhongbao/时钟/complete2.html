@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Title</title>
+  <style id="css1">
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    html {
+      font-size: 100px;
+    }
+
+    body {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    main{
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+    }
+
+    .showInfo{
+      box-sizing: border-box;
+      width: 100%;
+      height: .44rem;
+      margin-bottom: .1rem;
+      border: 1px solid #ff6000;
+      border-radius: 5px;
+    }
+
+    .wrap {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .wrap ul {
+      width: 100%;
+      height: 100%;
+    }
+
+    .wrap li {
+      position: relative;
+      float: left;
+      overflow: hidden;
+      width: 10%;
+      height: 100%;
+    }
+
+    .wrap div {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 0 5%;
+      box-sizing: border-box;
+    }
+
+    .wrap img {
+      width: 100%;
+      vertical-align: top;
+    }
+    .blue{
+      width: 100%;
+      height: 220px;
+      background: blue;
+    }
+    .red{
+      width: 100%;
+      height: 250px;
+      background: red;
+    }
+    .green{
+      width: 100%;
+      height: 100px;
+      background: green;
+    }
+    .noscroll{
+      position: absolute;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <div class="blue"></div>
+  <div class="showInfo">
+    <div class="wrap" id="wrap">
+      <ul></ul>
+    </div>
+  </div>
+  <button id="submit">提交</button>
+  <div class="red"></div>
+  <div class="green"></div>
+</main>
+<script>
+
+  window.onload = function () {
+
+    var str = "6143812379";
+    var moving = false;
+    var oWrap = document.getElementById('wrap');
+    var oCSS = document.getElementById('css1');
+    var oUl = oWrap.getElementsByTagName('ul')[0];
+    var aLi = oUl.getElementsByTagName('li');
+    var html = '';
+
+    for (var i = 0, len = str.length; i < len; i++) {
+      html += '<li><div><img src="img/' + str[i] + '.JPG" alt=""><img src="img/' + str[i] + '.JPG" alt=""><img src="img/' + str[i] + '.JPG" alt=""></div></li>';
+    }
+    oUl.innerHTML = html;
+    for (var i = 0, len = str.length; i < len; i++) {
+      aLi[i].style.width = (100 / aLi.length) + '%';
+    }
+
+    var oDiv = oWrap.getElementsByTagName('div');
+    var aImg = oWrap.getElementsByTagName('img');
+    var i = 0;
+    var c = 10;
+    var imgarr = [];
+    imgarr[0] = "img/0.JPG";
+    imgarr[1] = "img/1.JPG";
+    imgarr[2] = "img/2.JPG";
+    imgarr[3] = "img/3.JPG";
+    imgarr[4] = "img/4.JPG";
+    imgarr[5] = "img/5.JPG";
+    imgarr[6] = "img/6.JPG";
+    imgarr[7] = "img/7.JPG";
+    imgarr[8] = "img/8.JPG";
+    imgarr[9] = "img/9.JPG";
+
+    var main = function () {
+      var h = aImg[0].height;
+      console.log(h);
+      oWrap.style.height = h + 'px';
+      var oPos = document.getElementsByClassName('showInfo')[0];
+      var oPosH = oPos.clientHeight;
+      var oPosPT = (oPosH - h)/2;
+      oPos.style.paddingTop = oPosPT + 'px';
+
+      for (var i = 0, olen = oDiv.length; i < olen; i++) {
+        oDiv[i].style.top = -h + 'px';
+        oDiv[i].index = i;
+        oDiv[i].count = str[i];
+        var eImg = oDiv[i].getElementsByTagName('img');
+        for (var j = 0; j < eImg.length; j++) {
+          eImg[j].index = j;
+//                      滑动处理
+          var startX, startY;
+          var oMain = document.getElementsByTagName('main')[0];
+          eImg[eImg[j].index].addEventListener('touchstart', function (ev) {
+            startX = ev.touches[0].pageX;
+            startY = ev.touches[0].pageY;
+            oMain.className = 'noscroll';
+          }, false);
+          eImg[eImg[j].index].addEventListener('touchend', function (ev) {
+            var endX, endY;
+            oMain.className = '';
+            endX = ev.changedTouches[0].pageX;
+            endY = ev.changedTouches[0].pageY;
+            var direction = GetSlideDirection(startX, startY, endX, endY);
+            switch (direction) {
+//                        上滑
+              case 1:
+                var This = this;
+                if (!moving) {
+                  moving = true;
+                  This.parentNode.count++;
+                  slied(This.parentNode.index, str, 1, h, This.parentNode.count);
+                }
+                break;
+              case 2:
+//                        下滑
+                var This = this;
+                if (!moving) {
+                  moving = true;
+                  This.parentNode.count--;
+                  if (This.parentNode.count < 0) {
+                    This.parentNode.count = This.parentNode.count % 10 + 10;
+                  }
+                  slied(This.parentNode.index, str, -1, h, This.parentNode.count);
+                }
+                break;
+            }
+          }, false);
+        }
+      }
+    };
+
+    function getCurStr() {
+      var curStr = [];
+      for(var i = 0, olen = oDiv.length; i < olen; i++){
+        curStr[i] = oDiv[i].count%10;
+      }
+      console.log(curStr.join(''));
+      return curStr.join('');
+    }
+    var oSubmit = document.getElementById('submit');
+    oSubmit.onclick = function () {
+      getCurStr();
+    };
+//            定义图片加载完成时回调
+    function SImage(url, callback) {
+      var img = new Image();
+      img.onload = function () {
+        if (img.complete == true) {
+          i = i + 1;
+          callback(i);
+        }
+      };
+      img.src = url;
+    }
+
+    function icall(v) {
+      if (v < c) {
+        SImage("" + imgarr[v] + "", icall);
+        console.log('toCallMainBefore');
+      }
+      else if (v >= c) {
+        i = 0;
+        console.log('toCallMain');
+        main();
+      }
+    }
+
+    icall(0);
+
+//            返回角度
+    function GetSlideAngle(dx, dy) {
+      return Math.atan2(dy, dx) * 180 / Math.PI;
+    }
+
+//            根据起点和终点返回方向 1：向上，2：向下，3：向左，4：向右,0：未滑动
+    function GetSlideDirection(startX, startY, endX, endY) {
+      var dy = startY - endY;
+      var dx = endX - startX;
+      var result = 0;
+
+      var angle = GetSlideAngle(dx, dy);
+      if (angle >= 45 && angle < 135) {
+        result = 1;
+      } else if (angle >= -135 && angle < -45) {
+        result = 2;
+      }
+
+      return result;
+    }
+
+//            图片切换
+    function slied(n, str, d, h, c) {
+      var imgs = oDiv[n].getElementsByTagName('img');
+      //1为上滚,-1反向   d
+      if (d > 0) {
+        var next = (c) % 10;
+        imgs[2].src = 'img/' + (next) + '.JPG';
+
+        move(oDiv[n], 'top', -d * 2 * h, 400, function () {
+          imgs[1].src = 'img/' + (next) + '.JPG';
+          oDiv[n].style.top = -h + 'px';
+          moving = false;
+        });
+      } else if (d < 0) {
+        var prev = (c) % 10;
+        imgs[0].src = 'img/' + (prev) + '.JPG';
+
+        move(oDiv[n], 'top', 0, 400, function () {
+          imgs[1].src = 'img/' + (prev) + '.JPG';
+          oDiv[n].style.top = -h + 'px';
+          moving = false;
+        });
+      }
+    }
+
+//            移动动画
+    function move(obj, attr, target, duration, callback) {
+      var b = parseFloat(getComputedStyle(obj)[attr]);
+      var c = target - b;
+      var d = duration;
+      var now = new Date().getTime();
+      obj[attr] = setInterval(function () {
+        var t = new Date().getTime() - now;
+        var value = b + c / d * t;
+        obj.style[attr] = value + "px";
+        if (t >= d) {
+          clearInterval(obj[attr]);
+          obj.style[attr] = target + "px";
+          callback && callback();//当到达目标值的时候执行回调函数
+        }
+      }, 30)
+    }
+  }
+
+</script>
+</body>
+</html>

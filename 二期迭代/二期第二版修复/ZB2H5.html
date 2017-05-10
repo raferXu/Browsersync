@@ -106,17 +106,16 @@
                 console.log('pz_doubletap');
             });
         });
-        var AImg = ['medicineName1.jpg','medicineName2.jpg','medicineName3.jpg'];
+        var AImg = ['medicineName1.jpg','medicineName2.jpg','medicineName3.jpg','medicineName4.jpg','medicineName5.jpg','medicineName6.jpg','medicineName7.jpg','medicineName8.jpg','medicineName9.jpg'];
         var i = 0;
         $('.next').off('touchstart').on('touchstart',function () {
           i++;
-          i%=3;
+          i%=10;
           $('.billImg').attr('src',AImg[i]);
         });
     });
 </script>
 <script>
-
 
 </script>
 </body>
