@@ -88,6 +88,14 @@
         console.log('out');
     });
     $(function () {
+      //              给输入框绑定按软键盘enter时收起软键盘
+      $('.showInfo').bind('keydown', function (e) {
+        var key = e.which;
+        if (key == 13) {
+          e.preventDefault();
+          document.activeElement.blur();
+        }
+      });
         var fontSize = parseInt($('html').css('fontSize'));
 //        var opt = {};
 //      var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.32*fontSize},maxZoom:8};

@@ -482,6 +482,14 @@
               $('.today_order .num').html(0);
 
             }else{
+//              给输入框绑定按软键盘enter时收起软键盘
+              $('.showInfo').bind('keydown', function (e) {
+                var key = e.which;
+                if (key == 13) {
+                  e.preventDefault();
+                  document.activeElement.blur();
+                }
+              });
 //                点击任务指引
               $('.taskGuide').off('touchstart').on('touchstart',function () {
                 jobTask.taskGuide();

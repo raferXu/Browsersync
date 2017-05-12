@@ -133,9 +133,6 @@
 <script src="ZB2H5.js"></script>
 <script type="text/javascript" src="pinchzoom201.js"></script>
 <script type="text/javascript">
-    $('.task_rand_score')[0].addEventListener('touchmove',function (e) {
-        console.log('out');
-    });
     $(function () {
         var fontSize = parseInt($('html').css('fontSize'));
 //        var opt = {};
@@ -161,6 +158,7 @@
           i++;
           i%=10;
           $('.billImg').attr('src',AImg[i]);
+          $('header h1').html(getCurStr());
         });
       var blockStr = {'str':"1234567890"};
 //      var str = "6143812379";
