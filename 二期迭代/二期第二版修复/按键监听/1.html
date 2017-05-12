@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Title</title>
+</head>
+<body>
+<input type="text">
+<script src="../jquery-1.7.2.min.js"></script>
+<script>
+  $(function () {
+    $('input:text:first').focus();
+    var $inp = $('input:text');
+    $inp.bind('keydown', function (e) {
+      var key = e.which;
+      if (key == 13) {
+        e.preventDefault();
+//        var nxtIdx = $inp.index(this) + 1;
+//        $(":input:text:eq(" + nxtIdx + ")").focus();
+        document.activeElement.blur();
+      }
+    });
+  })
+</script>
+</body>
+</html>

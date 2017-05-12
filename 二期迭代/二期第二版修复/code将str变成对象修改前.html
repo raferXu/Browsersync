@@ -162,8 +162,7 @@
           i%=10;
           $('.billImg').attr('src',AImg[i]);
         });
-      var blockStr = {'str':"1234567890"};
-//      var str = "6143812379";
+      var str = "6143812379";
       var moving = false;
       var oWrap = document.getElementById('codeLockWrap');
       var oCSS = document.getElementById('css1');
@@ -171,11 +170,11 @@
       var aLi = oUl.getElementsByTagName('li');
       var html = '';
 
-      for (var i = 0, len = blockStr.str.length; i < len; i++) {
-        html += '<li><div><img src="img/' + blockStr.str[i] + '.JPG" alt=""><img src="img/' + blockStr.str[i] + '.JPG" alt=""><img src="img/' + blockStr.str[i] + '.JPG" alt=""></div></li>';
+      for (var i = 0, len = str.length; i < len; i++) {
+        html += '<li><div><img src="img/' + str[i] + '.JPG" alt=""><img src="img/' + str[i] + '.JPG" alt=""><img src="img/' + str[i] + '.JPG" alt=""></div></li>';
       }
       oUl.innerHTML = html;
-      for (var i = 0, len = blockStr.str.length; i < len; i++) {
+      for (var i = 0, len = str.length; i < len; i++) {
         aLi[i].style.width = (100 / aLi.length) + '%';
       }
 
@@ -207,7 +206,7 @@
         for (var i = 0, olen = oDiv.length; i < olen; i++) {
           oDiv[i].style.top = -h + 'px';
           oDiv[i].index = i;
-          oDiv[i].count = blockStr.str[i];
+          oDiv[i].count = str[i];
           var eImg = oDiv[i].getElementsByTagName('img');
           for (var j = 0; j < eImg.length; j++) {
             eImg[j].index = j;
@@ -235,8 +234,7 @@
                   if (!moving) {
                     moving = true;
                     This.parentNode.count++;
-                    slied(This.parentNode.index, blockStr, 1, h, This.parentNode.count);
-                    console.log('afterSlied'+blockStr.str);
+                    slied(This.parentNode.index, str, 1, h, This.parentNode.count);
                   }
                   break;
                 case 2:
@@ -248,30 +246,21 @@
                     if (This.parentNode.count < 0) {
                       This.parentNode.count = This.parentNode.count % 10 + 10;
                     }
-                    slied(This.parentNode.index, blockStr, -1, h, This.parentNode.count);
+                    slied(This.parentNode.index, str, -1, h, This.parentNode.count);
                   }
                   break;
                 case 3:  //向左
+                    console.log(getCurStr());
                     $('#codeLockWrap li').eq(0).appendTo($('#codeLockWrap ul'));
-                    var strArr = blockStr.str.split('');
+                    var strArr = str.split('');
+                    console.log('strArr: '+strArr);
                     strArr.push(strArr.shift());
-                    blockStr.str = strArr.join('');
-                    for(var i = 0, olen = oDiv.length; i < olen; i++){
-                        oDiv[i].index = i;
-                        oDiv[i].count = blockStr.str[i];
-                    }
+                    console.log('strArr2: '+strArr);
+                    str = strArr.join('');
+                    console.log('str2: '+str);
                   break;
                 case 4:
-                  console.log('right');
-                    var liLen = $('#codeLockWrap li').length;
-                    $('#codeLockWrap li').eq(liLen-1).prependTo($('#codeLockWrap ul'));
-                    var strArr = blockStr.str.split('');
-                    strArr.unshift(strArr.pop());
-                    blockStr.str = strArr.join('');
-                    for(var i = 0, olen = oDiv.length; i < olen; i++){
-                        oDiv[i].index = i;
-                        oDiv[i].count = blockStr.str[i];
-                    }
+                console.log(getCurStr());
                   break;
               }
             }, false);
@@ -338,13 +327,12 @@
         } else if (angle >= -60 && angle < 60) {  //向右
           result = 4;
         }
-console.log('result: '+result);
+
         return result;
       }
 
 //            图片切换
-      function slied(n, strObj, d, h, c) {
-        var str = strObj.str;
+      function slied(n, str, d, h, c) {
         var imgs = oDiv[n].getElementsByTagName('img');
         //1为上滚,-1反向   d
         if (d > 0) {
@@ -356,10 +344,13 @@ console.log('result: '+result);
             oDiv[n].style.top = -h + 'px';
             moving = false;
           });
-          var aStr = str.split('');
-          aStr[n]++;
-          aStr[n]%=10;
-          strObj.str = aStr.join('');
+//          var aStr = str.split('');
+//          console.log(aStr);
+//          aStr[n]++;
+//          aStr[n]%=10;
+//          console.log(aStr);
+//          str = aStr.join('');
+//          console.log(str);
         } else if (d < 0) {
           var prev = (c) % 10;
           imgs[0].src = 'img/' + (prev) + '.JPG';
@@ -369,11 +360,15 @@ console.log('result: '+result);
             oDiv[n].style.top = -h + 'px';
             moving = false;
           });
-          var aStr = str.split('');
-          aStr[n]--;
-          aStr[n] = (aStr[n]+10)%10;
-          strObj.str = aStr.join('');
+//          var aStr = str.split('');
+//          console.log(aStr);
+//          aStr[n]--;
+//          aStr[n] = (aStr[n]+10)%10;
+//          console.log(aStr);
+//          str = aStr.join('');
+//          console.log(str);
         }
+
       }
 
 //            移动动画

@@ -38,7 +38,8 @@
     }
 
     .codeLockWrap {
-        width: 80%;
+        box-sizing: border-box;
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -423,7 +424,7 @@
 //            发送图片获取识别字符串，并放入input中
         var str;
         var urlData = {"url": task.info.url,"type": task.info.type};
-        var getCurStr;
+        var getCurStr,lockDrawDone=false;
         function getStr() {
           var getStrAjax = $.ajax({
             type: 'POST',
@@ -432,17 +433,19 @@
             data: JSON.stringify(urlData),
             timeout: 5000,
             success: function (data) {
+              console.log('data: '+data);
               if(data){
-                if(data.length<10){
-                  var len=10-data.length,f='';
+                var len=10-data[0].length,f='';
+                if(len<10){
                   for(var i=0;i<len;i++){
                     f+='0';
                   }
-                  str = f + data;
+                  str = f + data[0];
                 }else{
-                  str = data;
+                  str = data[0];
                 }
 
+                console.log('str: '+str);
 /*********************************************************************************************/
 //获取必要的DOM和声明必要变量
                 var moving = false;
@@ -533,10 +536,17 @@
                               slied(This.parentNode.index, str, -1, h, This.parentNode.count);
                             }
                             break;
+                          case 3:
+//                alert("向左");
+                            break;
+                          case 4:
+//                alert("向右");
+                            break;
                         }
                       }, false);
                     }
                   }
+                  lockDrawDone = true;
                 };
 //获取某时刻的字符串
                 getCurStr = function () {
@@ -708,7 +718,12 @@
                     success: function (remainingChanceInfo) {
                       var times = remainingChanceInfo['body']['remaining_chance'];
                       if(times>0){
-                        jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
+                        var lockTimer = setInterval(function () {
+                          if(lockDrawDone){
+                            clearInterval(lockTimer);
+                            jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
+                          }
+                        },30);
                       }
                     },
                     error: function () {
