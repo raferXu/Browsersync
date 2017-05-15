@@ -217,62 +217,118 @@
               startX = ev.touches[0].pageX;
               startY = ev.touches[0].pageY;
               oMain.className = 'noscroll';
-            }, false);
-            eImg[eImg[j].index].addEventListener('touchend', function (ev) {
-              console.log('touchend');
-              var endX, endY;
-              oMain.className = '';
-              endX = ev.changedTouches[0].pageX;
-              endY = ev.changedTouches[0].pageY;
-              var direction = GetSlideDirection(startX, startY, endX, endY);
-              switch (direction) {
+
+              var This = this;
+              console.log('touchstart: '+This);
+              console.log(This);
+              document.addEventListener('touchend', function (ev) {
+                var endX, endY;
+                oMain.className = '';
+                endX = ev.changedTouches[0].pageX;
+                endY = ev.changedTouches[0].pageY;
+//                console.log('imgTouchend'+(endY-startY));
+                var direction = GetSlideDirection(startX, startY, endX, endY);
+                switch (direction) {
 //                        上滑
-                case 1:
-                  console.log(this);
-                  var This = this;
-                  if (!moving) {
-                    moving = true;
-                    This.parentNode.count++;
-                    slied(This.parentNode.index, blockStr, 1, h, This.parentNode.count);
-                    console.log('afterSlied'+blockStr.str);
-                  }
-                  break;
-                case 2:
-//                        下滑
-                  var This = this;
-                  if (!moving) {
-                    moving = true;
-                    This.parentNode.count--;
-                    if (This.parentNode.count < 0) {
-                      This.parentNode.count = This.parentNode.count % 10 + 10;
+                  case 1:
+                    if (!moving) {
+                      moving = true;
+                      This.parentNode.count++;
+                      slied(This.parentNode.index, blockStr, 1, h, This.parentNode.count);
+//                      console.log('afterSlied'+blockStr.str);
                     }
-                    slied(This.parentNode.index, blockStr, -1, h, This.parentNode.count);
-                  }
-                  break;
-                case 3:  //向左
+                    break;
+                  case 2:
+//                        下滑
+                    if (!moving) {
+                      moving = true;
+                      This.parentNode.count--;
+                      if (This.parentNode.count < 0) {
+                        This.parentNode.count = This.parentNode.count % 10 + 10;
+                      }
+                      slied(This.parentNode.index, blockStr, -1, h, This.parentNode.count);
+                    }
+                    break;
+                  case 3:  //向左
                     $('#codeLockWrap li').eq(0).appendTo($('#codeLockWrap ul'));
                     var strArr = blockStr.str.split('');
                     strArr.push(strArr.shift());
                     blockStr.str = strArr.join('');
                     for(var i = 0, olen = oDiv.length; i < olen; i++){
-                        oDiv[i].index = i;
-                        oDiv[i].count = blockStr.str[i];
+                      oDiv[i].index = i;
+                      oDiv[i].count = blockStr.str[i];
                     }
-                  break;
-                case 4:
-                  console.log('right');
+                    break;
+                  case 4:
+                    console.log('right');
                     var liLen = $('#codeLockWrap li').length;
                     $('#codeLockWrap li').eq(liLen-1).prependTo($('#codeLockWrap ul'));
                     var strArr = blockStr.str.split('');
                     strArr.unshift(strArr.pop());
                     blockStr.str = strArr.join('');
                     for(var i = 0, olen = oDiv.length; i < olen; i++){
-                        oDiv[i].index = i;
-                        oDiv[i].count = blockStr.str[i];
+                      oDiv[i].index = i;
+                      oDiv[i].count = blockStr.str[i];
                     }
-                  break;
-              }
+                    break;
+                }
+              }, false);
             }, false);
+//            eImg[eImg[j].index].addEventListener('touchend', function (ev) {
+//              var endX, endY;
+//              oMain.className = '';
+//              endX = ev.changedTouches[0].pageX;
+//              endY = ev.changedTouches[0].pageY;
+//              var direction = GetSlideDirection(startX, startY, endX, endY);
+//              switch (direction) {
+////                        上滑
+//                case 1:
+////                  console.log('switchaaaaa'+this);
+////                  console.log(this);
+//                  var This = this;
+//                  if (!moving) {
+//                    moving = true;
+//                    This.parentNode.count++;
+//                    slied(This.parentNode.index, blockStr, 1, h, This.parentNode.count);
+//                    console.log('afterSlied'+blockStr.str);
+//                  }
+//                  break;
+//                case 2:
+////                        下滑
+//                  var This = this;
+//                  if (!moving) {
+//                    moving = true;
+//                    This.parentNode.count--;
+//                    if (This.parentNode.count < 0) {
+//                      This.parentNode.count = This.parentNode.count % 10 + 10;
+//                    }
+//                    slied(This.parentNode.index, blockStr, -1, h, This.parentNode.count);
+//                  }
+//                  break;
+//                case 3:  //向左
+//                    $('#codeLockWrap li').eq(0).appendTo($('#codeLockWrap ul'));
+//                    var strArr = blockStr.str.split('');
+//                    strArr.push(strArr.shift());
+//                    blockStr.str = strArr.join('');
+//                    for(var i = 0, olen = oDiv.length; i < olen; i++){
+//                        oDiv[i].index = i;
+//                        oDiv[i].count = blockStr.str[i];
+//                    }
+//                  break;
+//                case 4:
+//                  console.log('right');
+//                    var liLen = $('#codeLockWrap li').length;
+//                    $('#codeLockWrap li').eq(liLen-1).prependTo($('#codeLockWrap ul'));
+//                    var strArr = blockStr.str.split('');
+//                    strArr.unshift(strArr.pop());
+//                    blockStr.str = strArr.join('');
+//                    for(var i = 0, olen = oDiv.length; i < olen; i++){
+//                        oDiv[i].index = i;
+//                        oDiv[i].count = blockStr.str[i];
+//                    }
+//                  break;
+//              }
+//            }, false);
           }
         }
       };
@@ -309,11 +365,11 @@
       function icall(v) {
         if (v < c) {
           SImage("" + imgarr[v] + "", icall);
-          console.log('toCallMainBefore');
+//          console.log('toCallMainBefore');
         }
         else if (v >= c) {
           i = 0;
-          console.log('toCallMain');
+//          console.log('toCallMain');
           main();
         }
       }
@@ -329,6 +385,7 @@
       function GetSlideDirection(startX, startY, endX, endY) {
         var dy = startY - endY;
         var dx = endX - startX;
+        console.log('dx: '+dx);
         var result = 0;
 
         var angle = GetSlideAngle(dx, dy);
@@ -337,9 +394,13 @@
         } else if (angle >= -135 && angle < -45) {
           result = 2;
         } else if ((angle >= 150 && angle <= 180) || (angle >= -180 && angle < -150)) {  //向左
-          result = 3;
+          if(Math.abs(dx)>5){
+            result = 3;
+          }
         } else if (angle >= -60 && angle < 60) {  //向右
-          result = 4;
+          if(Math.abs(dx)>5){
+            result = 4;
+          }
         }
 console.log('result: '+result);
         return result;
