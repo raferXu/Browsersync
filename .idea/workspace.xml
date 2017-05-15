@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock第一版稳定版.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock第一版稳定版2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/testLock.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html" afterPath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/code.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/code.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/tips1.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/tips1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock绑定父级滑动前版本.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/code父级触摸.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/code父级触摸.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,11 +24,12 @@
       <file leaf-file-name="code父级触摸.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/code父级触摸.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="396" column="29" lean-forward="true" selection-start-line="396" selection-start-column="29" selection-end-line="396" selection-end-column="29" />
+            <state relative-caret-position="134">
+              <caret line="397" column="21" lean-forward="true" selection-start-line="397" selection-start-column="21" selection-end-line="397" selection-end-column="21" />
               <folding>
-                <element signature="e#11238#11316#0" expanded="false" />
-                <element signature="e#17506#17539#0" expanded="false" />
+                <element signature="e#8857#11377#0" expanded="false" />
+                <element signature="e#11394#11472#0" expanded="false" />
+                <element signature="e#17836#17869#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -51,8 +47,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>str</find>
-      <find>blockStr</find>
       <find>recording</find>
       <find>navigator</find>
       <find>MediaDevices</find>
@@ -81,6 +75,8 @@
       <find>loadingShow</find>
       <find>GetSlideDirection</find>
       <find>GetSlideAngle</find>
+      <find>document</find>
+      <find>result</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -149,8 +145,8 @@
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/code.html" />
         <option value="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock第一版稳定版2.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/tips1.html" />
-        <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/code父级触摸.html" />
         <option value="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html" />
+        <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/code父级触摸.html" />
       </list>
     </option>
   </component>
@@ -161,8 +157,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="49" />
-    <option name="y" value="23" />
+    <option name="x" value="101" />
+    <option name="y" value="48" />
     <option name="width" value="1067" />
     <option name="height" value="710" />
   </component>
@@ -405,19 +401,19 @@
       <workItem from="1494378630357" duration="27752000" />
       <workItem from="1494555463640" duration="23987000" />
       <workItem from="1494813252867" duration="13875000" />
-      <workItem from="1494837387558" duration="1286000" />
+      <workItem from="1494837387558" duration="3145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388934000" />
+    <option name="totallyTimeSpent" value="390793000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="23" width="1067" height="710" extended-state="0" />
+    <frame x="101" y="48" width="1067" height="710" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22829269" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31219512" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -513,24 +509,12 @@
           <line>85</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/二期迭代/二期第二版修复/code父级触摸.html</url>
-          <line>223</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
       </breakpoints>
       <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/zhongbao/时钟/codeLock2.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1560">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/noTask5000.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -898,7 +882,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2399">
+        <state relative-caret-position="629">
           <caret line="1489" column="39" lean-forward="true" selection-start-line="1489" selection-start-column="39" selection-end-line="1489" selection-end-column="39" />
           <folding>
             <element signature="n#div#0;n#!!top" expanded="false" />
@@ -951,18 +935,28 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#7;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#7;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#7;n#!!top" expanded="true" />
+            <element signature="e#61580#61639#0" expanded="false" />
             <marker date="1494838712000" expanded="false" signature="65938:66606" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock绑定父级滑动前版本.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/code父级触摸.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="396" column="29" lean-forward="true" selection-start-line="396" selection-start-column="29" selection-end-line="396" selection-end-column="29" />
+        <state relative-caret-position="134">
+          <caret line="397" column="21" lean-forward="true" selection-start-line="397" selection-start-column="21" selection-end-line="397" selection-end-column="21" />
           <folding>
-            <element signature="e#11238#11316#0" expanded="false" />
-            <element signature="e#17506#17539#0" expanded="false" />
+            <element signature="e#8857#11377#0" expanded="false" />
+            <element signature="e#11394#11472#0" expanded="false" />
+            <element signature="e#17836#17869#0" expanded="false" />
           </folding>
         </state>
       </provider>
