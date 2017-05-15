@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/pybossaCrops平台代码精简.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html" afterPath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/ZB2H5.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/ZB2H5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/code.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/code.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/pybossaCrops.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/pybossaCrops.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009过渡确认token.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009过渡确认token.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/0.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/native/pointInfo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock对比本地版.html" afterPath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock对比本地版.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,11 +25,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pybossaCodeLock对比本地版.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pybossaCodeLock对比本地版.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock对比本地版.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-840">
-              <caret line="303" column="32" lean-forward="false" selection-start-line="303" selection-start-column="32" selection-end-line="303" selection-end-column="32" />
+            <state relative-caret-position="-5014">
+              <caret line="424" column="20" lean-forward="false" selection-start-line="424" selection-start-column="17" selection-end-line="424" selection-end-column="20" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
@@ -37,28 +37,10 @@
                 <element signature="e#15381#15644#0" expanded="false" />
                 <element signature="e#15708#16354#0" expanded="false" />
                 <element signature="e#16423#16466#0" expanded="false" />
-                <element signature="e#24169#24249#0" expanded="false" />
-                <element signature="e#24865#25882#0" expanded="false" />
-                <element signature="e#25972#26640#0" expanded="false" />
-                <element signature="e#26861#27031#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="code.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/code.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1605">
-              <caret line="86" column="40" lean-forward="true" selection-start-line="86" selection-start-column="40" selection-end-line="86" selection-end-column="40" />
-              <folding>
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#11528#11558#0" expanded="false" />
-                <element signature="e#11623#11830#0" expanded="false" />
-                <element signature="e#11856#12094#0" expanded="false" />
-                <element signature="e#12169#12229#0" expanded="false" />
-                <element signature="e#14003#14521#0" expanded="false" />
-                <element signature="e#14551#14584#0" expanded="false" />
+                <element signature="e#24305#24385#0" expanded="false" />
+                <element signature="e#25001#26018#0" expanded="false" />
+                <element signature="e#26108#26776#0" expanded="false" />
+                <element signature="e#27006#27176#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -76,20 +58,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>onclick</find>
-      <find>.JPG</find>
-      <find>getCurStr</find>
-      <find>5001</find>
-      <find>Float32Array</find>
-      <find>mergeBuffers</find>
-      <find>ArrayBuffer</find>
       <find>set</find>
       <find>interleave</find>
       <find>writeUTFBytes</find>
       <find>setUint8</find>
       <find>block</find>
       <find>lotter</find>
-      <find>recording</find>
       <find>main</find>
       <find>get</find>
       <find>HZRecorder</find>
@@ -103,9 +77,17 @@
       <find>GetSlideDirection</find>
       <find>touchstart</find>
       <find>showInfo</find>
-      <find>str</find>
       <find>mrzyZcUGfbn3lz78aSaV7jK9nz6prUnft6yf</find>
       <find>next</find>
+      <find>str</find>
+      <find>blockStr</find>
+      <find>recording</find>
+      <find>navigator</find>
+      <find>MediaDevices</find>
+      <find>my-audio</find>
+      <find>myAudio</find>
+      <find>success</find>
+      <find>sampleRate</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -115,6 +97,8 @@
       <replace>showInfo</replace>
       <replace>codeLockWrap</replace>
       <replace>blockStr.str</replace>
+      <replace>MediaDevices</replace>
+      <replace>navigator.mediaDevices</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -123,10 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bookExample/JavaScript Cookbook/2使用正则表达式/搜索特殊字符.html" />
-        <option value="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/简介.html" />
-        <option value="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/显示当前日期和时间.html" />
-        <option value="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/显示世界时当前日期和时间.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/sn5000测试前.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009复制到5000.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/noTask5000.html" />
@@ -166,7 +146,6 @@
         <option value="$PROJECT_DIR$/zhongbao/录音/test1.html" />
         <option value="$PROJECT_DIR$/zhongbao/record-master/html.html" />
         <option value="$PROJECT_DIR$/zhongbao/record-master/js/ly.js" />
-        <option value="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock对比本地版.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/code将str变成对象修改前.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/按键监听/1.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/pybossaCrops.html" />
@@ -174,6 +153,11 @@
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/ZB2H5.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/code.html" />
         <option value="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html" />
+        <option value="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock对比本地版.html" />
+        <option value="$PROJECT_DIR$/zhongbao/native/info.html" />
+        <option value="$PROJECT_DIR$/audio/0.html" />
+        <option value="$PROJECT_DIR$/audio/1.html" />
+        <option value="$PROJECT_DIR$/audio/2.html" />
       </list>
     </option>
   </component>
@@ -184,10 +168,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="18" />
-    <option name="y" value="23" />
-    <option name="width" value="1263" />
-    <option name="height" value="711" />
+    <option name="x" value="184" />
+    <option name="y" value="45" />
+    <option name="width" value="1067" />
+    <option name="height" value="710" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -215,98 +199,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="二期迭代" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="二期迭代" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="二期第二版修复" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="二期迭代" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="二期第二版修复" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="稳定版" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="二期迭代" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="二期第二版修复" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="稳定版" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="代码简洁" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="二期迭代" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="二期第二版修复" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="按键监听" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -352,43 +244,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="zhongbao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="record-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhongbao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="record-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
+              <option name="myItemId" value="audio" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -408,11 +264,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/audio" />
       <recent name="$PROJECT_DIR$/二期迭代/二期第二版修复" />
       <recent name="$PROJECT_DIR$/zhongbao" />
       <recent name="$PROJECT_DIR$/zhongbao/录音" />
       <recent name="$PROJECT_DIR$/zhongbao/时钟" />
-      <recent name="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.pybossaCodeLock.html">
@@ -522,19 +378,19 @@
       <workItem from="1494207422822" duration="5313000" />
       <workItem from="1494232442733" duration="24133000" />
       <workItem from="1494378630357" duration="27752000" />
-      <workItem from="1494555463640" duration="15029000" />
+      <workItem from="1494555463640" duration="23987000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="364815000" />
+    <option name="totallyTimeSpent" value="373773000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="18" y="23" width="1263" height="711" extended-state="0" />
+    <frame x="184" y="45" width="1067" height="710" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23095824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2302439" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -636,40 +492,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/zhongbao/时钟/imgLoaded.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="47" column="11" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="47" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/ZB2H5.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="209" column="16" lean-forward="false" selection-start-line="209" selection-start-column="10" selection-end-line="209" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/tips2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/tips1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版缩小测试/pybossa/urlToken.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="545" column="44" lean-forward="false" selection-start-line="545" selection-start-column="36" selection-end-line="545" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -677,6 +504,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -685,6 +517,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1695">
           <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding>
+            <element signature="e#3080#3177#0" expanded="false" />
+            <element signature="e#3260#4294#0" expanded="false" />
+            <element signature="e#5402#5692#0" expanded="false" />
+            <element signature="e#6488#6976#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -692,6 +530,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -721,6 +562,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="144" column="0" lean-forward="true" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -728,6 +570,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="138" column="61" lean-forward="false" selection-start-line="138" selection-start-column="61" selection-end-line="138" selection-end-column="61" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -757,6 +600,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -780,6 +624,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -787,6 +632,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="83" column="11" lean-forward="true" selection-start-line="83" selection-start-column="11" selection-end-line="83" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -794,6 +640,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
           <caret line="268" column="44" lean-forward="false" selection-start-line="268" selection-start-column="44" selection-end-line="268" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -801,6 +648,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="97" column="6" lean-forward="false" selection-start-line="97" selection-start-column="6" selection-end-line="97" selection-end-column="6" />
+          <folding>
+            <element signature="e#1843#7799#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -816,6 +666,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,7 +860,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
+        <state relative-caret-position="5637">
           <caret line="835" column="0" lean-forward="true" selection-start-line="835" selection-start-column="0" selection-end-line="835" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
@@ -1026,29 +877,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock对比本地版.html">
+    <entry file="file://$PROJECT_DIR$/zhongbao/native/pointInfo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-840">
-          <caret line="303" column="32" lean-forward="false" selection-start-line="303" selection-start-column="32" selection-end-line="303" selection-end-column="32" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="e#14142#15184#0" expanded="false" />
-            <element signature="e#15381#15644#0" expanded="false" />
-            <element signature="e#15708#16354#0" expanded="false" />
-            <element signature="e#16423#16466#0" expanded="false" />
-            <element signature="e#24169#24249#0" expanded="false" />
-            <element signature="e#24865#25882#0" expanded="false" />
-            <element signature="e#25972#26640#0" expanded="false" />
-            <element signature="e#26861#27031#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="240">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/code.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1605">
-          <caret line="86" column="40" lean-forward="true" selection-start-line="86" selection-start-column="40" selection-end-line="86" selection-end-column="40" />
+        <state relative-caret-position="375">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="25" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="e#11528#11558#0" expanded="false" />
@@ -1057,6 +897,49 @@
             <element signature="e#12169#12229#0" expanded="false" />
             <element signature="e#14003#14521#0" expanded="false" />
             <element signature="e#14551#14584#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="81" column="27" lean-forward="false" selection-start-line="81" selection-start-column="27" selection-end-line="81" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="75" column="33" lean-forward="false" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/0.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1231">
+          <caret line="119" column="33" lean-forward="false" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock对比本地版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5014">
+          <caret line="424" column="20" lean-forward="false" selection-start-line="424" selection-start-column="17" selection-end-line="424" selection-end-column="20" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="e#14142#15184#0" expanded="false" />
+            <element signature="e#15381#15644#0" expanded="false" />
+            <element signature="e#15708#16354#0" expanded="false" />
+            <element signature="e#16423#16466#0" expanded="false" />
+            <element signature="e#24305#24385#0" expanded="false" />
+            <element signature="e#25001#26018#0" expanded="false" />
+            <element signature="e#26108#26776#0" expanded="false" />
+            <element signature="e#27006#27176#0" expanded="false" />
           </folding>
         </state>
       </provider>
