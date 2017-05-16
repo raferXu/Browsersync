@@ -1,9 +1,4 @@
 <script>
-
-  // loading加载框出现
-  console.log('loading加载框出现');
-  $("#showMes").show();
-
   var jobTaskLoaded = false;
   function nativeLoadCompleted() {
     jobTaskLoaded = true;
@@ -33,13 +28,12 @@
     width: 100%;
     height: .44rem;
     margin-bottom: .1rem;
-    border: 1px solid #ff6000;
+    /*border: 1px solid #ff6000;*/
     border-radius: 5px;
   }
 
   .codeLockWrap {
-    box-sizing: border-box;
-    width: 100%;
+    width: 85%;
     margin: 0 auto;
   }
 
@@ -198,7 +192,13 @@
 <script type="text/javascript">
   (function() {
 
+    // loading加载框出现
+    console.log('loading加载框出现');
+    $("#showMes").show();
+    console.log('loadingShow');
+
     var loadImg = false;
+    var loadNumImg = false;
     var getStr = false;
     var tokenStr;
 
@@ -373,7 +373,8 @@
             clearInterval(imgLoadTimer);
             imgCallback($('.billImg')[0]);
             loadImg = true;
-            if(loadImg && getStr){
+            if(loadImg && getStr && loadNumImg){
+              console.log('loadingHide');
               $("#showMes").hide();
             }
           }
@@ -407,10 +408,12 @@
 
 //            loading加载框消失
         $(document).ajaxStart(function(){
+          console.log('loadingShow');
           $("#showMes").show();
         }).ajaxStop(function(){
           getStr = true;
-          if(loadImg && getStr){
+          if(loadImg && getStr && loadNumImg){
+            console.log('loadingHide');
             $("#showMes").hide();
           }
         });
@@ -422,7 +425,7 @@
         });
 
 //            发送图片获取识别字符串，并放入input中
-        var str;
+        var blockStr = {'str':"1234567890"};
         var urlData = {"url": task.info.url,"type": task.info.type};
         var getCurStr,lockDrawDone=false;
         function getStr() {
@@ -435,17 +438,17 @@
             success: function (data) {
               console.log('data: '+data);
               if(data){
-                var len=10-data[0].length,f='';
+                var len=10-data.length,f='';
                 if(len<10){
                   for(var i=0;i<len;i++){
                     f+='0';
                   }
-                  str = f + data[0];
+                  blockStr.str = f + data;
                 }else{
-                  str = data[0];
+                  blockStr.str = data;
                 }
 
-                console.log('str: '+str);
+                console.log('blockStr.str: '+blockStr.str);
                 /*********************************************************************************************/
 //获取必要的DOM和声明必要变量
                 var moving = false;
@@ -460,11 +463,11 @@
                 var c = 10;
                 var imgarr = [];
 //将获取的数字数据用图片表示出来
-                for (var i = 0, len = str.length; i < len; i++) {
-                  html += '<li><div><img src="http://192.168.0.182:8000/h5/img/' + str[i] + '.JPG" alt=""><img src="http://192.168.0.182:8000/h5/img/' + str[i] + '.JPG" alt=""><img src="http://192.168.0.182:8000/h5/img/' + str[i] + '.JPG" alt=""></div></li>';
+                for (var i = 0, len = blockStr.str.length; i < len; i++) {
+                  html += '<li><div><img src="http://192.168.0.182:8000/h5/img/' + blockStr.str[i] + '.JPG" alt=""><img src="http://192.168.0.182:8000/h5/img/' + blockStr.str[i] + '.JPG" alt=""><img src="http://192.168.0.182:8000/h5/img/' + blockStr.str[i] + '.JPG" alt=""></div></li>';
                 }
                 oUl.innerHTML = html;
-                for (var i = 0, len = str.length; i < len; i++) {
+                for (var i = 0, len = blockStr.str.length; i < len; i++) {
                   aLi[i].style.width = (100 / aLi.length) + '%';
                 }
 //显示所需所有图片
@@ -480,73 +483,163 @@
                 imgarr[9] = "http://192.168.0.182:8000/h5/img/9.JPG";
 
                 var main = function () {
-//获取图片高度，将ul外层高度设置为图片高度
-                  var h = aImg[0].height;
-                  console.log(h);
-                  oWrap.style.height = h + 'px';
-//居中
-                  var oPos = document.getElementsByClassName('showInfo')[0];
-                  var oPosH = oPos.clientHeight;
-                  var oPosPT = (oPosH - h)/2;
-                  oPos.style.paddingTop = oPosPT + 'px';
+                  var initH = aImg[0].naturalHeight;
+                  var drawPicTimer = setInterval(function () {
+                    var h = aImg[0].height;
+                    console.log(h+'initH'+initH);
+                    if(0<h<initH){
+                      clearInterval(drawPicTimer);
+                      oWrap.style.height = h + 'px';
+                      var oPos = document.getElementsByClassName('showInfo')[0];
+                      var oPosH = oPos.clientHeight;
+                      var oPosPT = (oPosH - h)/2;
+                      oPos.style.paddingTop = oPosPT + 'px';
 
-                  for (var i = 0, olen = oDiv.length; i < olen; i++) {  //每列
-                    oDiv[i].style.top = -h + 'px';
-                    oDiv[i].index = i;
-                    oDiv[i].count = str[i];
-                    var eImg = oDiv[i].getElementsByTagName('img');
-                    for (var j = 0; j < eImg.length; j++) {  //每列的某张图片
-                      eImg[j].index = j;
+                      for (var i = 0, olen = oDiv.length; i < olen; i++) {
+                        oDiv[i].style.top = -h + 'px';
+                        oDiv[i].index = i;
+                        oDiv[i].count = blockStr.str[i];
+                        var eImg = oDiv[i].getElementsByTagName('img');
+                        for (var j = 0; j < eImg.length; j++) {
+                          eImg[j].index = j;
 //                      滑动处理
-                      var startX, startY;
-                      var oMain = document.getElementsByTagName('main')[0];
-                      eImg[eImg[j].index].addEventListener('touchstart', function (ev) {
-                        console.log('touchstart');
-                        startX = ev.touches[0].pageX;
-                        startY = ev.touches[0].pageY;
-                        oMain.className = 'noscroll';
-                      }, false);
-                      eImg[eImg[j].index].addEventListener('touchend', function (ev) {
-                        console.log('touchend');
-                        var endX, endY;
-                        oMain.className = '';
-                        endX = ev.changedTouches[0].pageX;
-                        endY = ev.changedTouches[0].pageY;
-                        var direction = GetSlideDirection(startX, startY, endX, endY);
-                        switch (direction) {
+                          var startX, startY;
+                          var oMain = document.getElementsByTagName('main')[0];
+
+                          eImg[eImg[j].index].ontouchstart = function (ev) {
+                            console.log('touchstart');
+                            startX = ev.touches[0].pageX;
+                            startY = ev.touches[0].pageY;
+                            oMain.className = 'noscroll';
+
+                            var This = this;
+                            console.log('touchstart: '+This);
+                            console.log(This);
+                            document.ontouchend = function (ev) {
+                              var endX, endY;
+                              oMain.className = '';
+                              endX = ev.changedTouches[0].pageX;
+                              endY = ev.changedTouches[0].pageY;
+//                console.log('imgTouchend'+(endY-startY));
+                              var direction = GetSlideDirection(startX, startY, endX, endY);
+                              console.log('touchend: '+This);
+                              console.log(This);
+                              switch (direction) {
 //                        上滑
-                          case 1:
-                            console.log(this);
-                            var This = this;
-                            if (!moving) {
-                              moving = true;
-                              This.parentNode.count++;
-                              slied(This.parentNode.index, str, 1, h, This.parentNode.count);
-                            }
-                            break;
-                          case 2:
+                                case 1:
+                                  if (!moving) {
+                                    console.log('上滑');
+                                    moving = true;
+                                    This.parentNode.count++;
+                                    slied(This.parentNode.index, blockStr, 1, h, This.parentNode.count);
+//                      console.log('afterSlied'+blockStr.str);
+                                  }
+                                  break;
+                                case 2:
 //                        下滑
-                            var This = this;
-                            if (!moving) {
-                              moving = true;
-                              This.parentNode.count--;
-                              if (This.parentNode.count < 0) {
-                                This.parentNode.count = This.parentNode.count % 10 + 10;
+                                  if (!moving) {
+                                    console.log('下滑');
+                                    moving = true;
+                                    This.parentNode.count--;
+                                    if (This.parentNode.count < 0) {
+                                      This.parentNode.count = This.parentNode.count % 10 + 10;
+                                    }
+                                    slied(This.parentNode.index, blockStr, -1, h, This.parentNode.count);
+                                  }
+                                  break;
+                                case 3:  //向左
+                                  console.log('向左');
+                                  $('#codeLockWrap li').eq(0).appendTo($('#codeLockWrap ul'));
+                                  var strArr = blockStr.str.split('');
+                                  strArr.push(strArr.shift());
+                                  blockStr.str = strArr.join('');
+                                  for(var i = 0, olen = oDiv.length; i < olen; i++){
+                                    oDiv[i].index = i;
+                                    oDiv[i].count = blockStr.str[i];
+                                  }
+                                  break;
+                                case 4:
+                                  console.log('right');
+                                  var liLen = $('#codeLockWrap li').length;
+                                  $('#codeLockWrap li').eq(liLen-1).prependTo($('#codeLockWrap ul'));
+                                  var strArr = blockStr.str.split('');
+                                  strArr.unshift(strArr.pop());
+                                  blockStr.str = strArr.join('');
+                                  for(var i = 0, olen = oDiv.length; i < olen; i++){
+                                    oDiv[i].index = i;
+                                    oDiv[i].count = blockStr.str[i];
+                                  }
+                                  break;
                               }
-                              slied(This.parentNode.index, str, -1, h, This.parentNode.count);
-                            }
-                            break;
-                          case 3:
-//                alert("向左");
-                            break;
-                          case 4:
-//                alert("向右");
-                            break;
+                            };
+                          };
+                          /*
+                           eImg[eImg[j].index].addEventListener('touchstart', function (ev) {
+                           console.log('touchstart');
+                           startX = ev.touches[0].pageX;
+                           startY = ev.touches[0].pageY;
+                           oMain.className = 'noscroll';
+                           }, false);
+                           eImg[eImg[j].index].addEventListener('touchend', function (ev) {
+                           console.log('touchend');
+                           var endX, endY;
+                           oMain.className = '';
+                           endX = ev.changedTouches[0].pageX;
+                           endY = ev.changedTouches[0].pageY;
+                           var direction = GetSlideDirection(startX, startY, endX, endY);
+                           switch (direction) {
+                           //                        上滑
+                           case 1:
+                           console.log(this);
+                           var This = this;
+                           if (!moving) {
+                           moving = true;
+                           This.parentNode.count++;
+                           slied(This.parentNode.index, blockStr, 1, h, This.parentNode.count);
+                           console.log('afterSlied'+blockStr.str);
+                           }
+                           break;
+                           case 2:
+                           //                        下滑
+                           var This = this;
+                           if (!moving) {
+                           moving = true;
+                           This.parentNode.count--;
+                           if (This.parentNode.count < 0) {
+                           This.parentNode.count = This.parentNode.count % 10 + 10;
+                           }
+                           slied(This.parentNode.index, blockStr, -1, h, This.parentNode.count);
+                           }
+                           break;
+                           case 3:  //向左
+                           $('#codeLockWrap li').eq(0).appendTo($('#codeLockWrap ul'));
+                           var strArr = blockStr.str.split('');
+                           strArr.push(strArr.shift());
+                           blockStr.str = strArr.join('');
+                           for(var i = 0, olen = oDiv.length; i < olen; i++){
+                           oDiv[i].index = i;
+                           oDiv[i].count = blockStr.str[i];
+                           }
+                           break;
+                           case 4:
+                           console.log('right');
+                           var liLen = $('#codeLockWrap li').length;
+                           $('#codeLockWrap li').eq(liLen-1).prependTo($('#codeLockWrap ul'));
+                           var strArr = blockStr.str.split('');
+                           strArr.unshift(strArr.pop());
+                           blockStr.str = strArr.join('');
+                           for(var i = 0, olen = oDiv.length; i < olen; i++){
+                           oDiv[i].index = i;
+                           oDiv[i].count = blockStr.str[i];
+                           }
+                           break;
+                           }
+                           }, false);
+                           */
                         }
-                      }, false);
+                      }
                     }
-                  }
-                  lockDrawDone = true;
+                  },30);
                 };
 //获取某时刻的字符串
                 getCurStr = function () {
@@ -557,10 +650,6 @@
                   console.log(curStr.join(''));
                   return curStr.join('');
                 };
-//                var oSubmit = document.getElementById('submit');
-//                oSubmit.onclick = function () {
-//                  getCurStr();
-//                };
 //定义某图片的加载及完成时回调
                 function SImage(url, callback) {
                   var img = new Image();
@@ -569,6 +658,9 @@
                       i = i + 1;
                       callback(i);
                     }
+                  };
+                  img.onerror = function () {
+                    img.src = 'img/'+blockStr.str[i]+'.JPG?t='+Math.random();
                   };
                   img.src = url;
                 }
@@ -581,6 +673,11 @@
                   else if (v >= c) {
                     i = 0;
                     console.log('toCallMain');
+                    loadNumImg = true;
+                    if(loadImg && getStr && loadNumImg){
+                      console.log('loadingHide');
+                      $("#showMes").hide();
+                    }
                     main();
                   }
                 }
@@ -603,13 +700,23 @@
                     result = 1;
                   } else if (angle >= -135 && angle < -45) {
                     result = 2;
+                  } else if ((angle >= 150 && angle <= 180) || (angle >= -180 && angle < -150)) {  //向左
+                    if(Math.abs(dx)>5){
+                      result = 3;
+                    }
+                  } else if (angle >= -60 && angle < 60) {  //向右
+                    if(Math.abs(dx)>5){
+                      result = 4;
+                    }
                   }
-
+                  console.log('result: '+result);
                   return result;
                 }
 
 //            图片切换
-                function slied(n, str, d, h, c) {
+                function slied(n, strObj, d, h, c) {
+                  console.log('hhhhhh: '+h);
+                  var str = strObj.str;
                   var imgs = oDiv[n].getElementsByTagName('img');
                   //1为上滚,-1反向   d
                   if (d > 0) {
@@ -621,6 +728,10 @@
                       oDiv[n].style.top = -h + 'px';
                       moving = false;
                     });
+                    var aStr = str.split('');
+                    aStr[n]++;
+                    aStr[n]%=10;
+                    strObj.str = aStr.join('');
                   } else if (d < 0) {
                     var prev = (c) % 10;
                     imgs[0].src = 'http://192.168.0.182:8000/h5/img/' + (prev) + '.JPG';
@@ -630,6 +741,10 @@
                       oDiv[n].style.top = -h + 'px';
                       moving = false;
                     });
+                    var aStr = str.split('');
+                    aStr[n]--;
+                    aStr[n] = (aStr[n]+10)%10;
+                    strObj.str = aStr.join('');
                   }
                 }
 
@@ -672,6 +787,7 @@
           if(jobTaskLoaded){
             clearInterval(jobTaskLoadedTimer);
             tokenStr = jobTask.receiveNativeToken();
+            console.log('receiveNativeToken: '+tokenStr);
 
             //发起ajax请求获取任务统计数据userInfo插入页面中
             var userData = {'token': tokenStr,'task_id':task_id};

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock绑定父级滑动前版本.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/code父级触摸.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/code父级触摸.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html" afterPath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock绑定父级滑动前版本.html" afterPath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock绑定父级滑动前版本.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao/时钟/testLock.html" afterPath="$PROJECT_DIR$/zhongbao/时钟/testLock.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/tips1.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/tips1.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,16 +23,55 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="code父级触摸.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/code父级触摸.html">
+      <file leaf-file-name="pybossaCodeLock.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="397" column="21" lean-forward="true" selection-start-line="397" selection-start-column="21" selection-end-line="397" selection-end-column="21" />
+            <state relative-caret-position="94">
+              <caret line="658" column="47" lean-forward="false" selection-start-line="658" selection-start-column="47" selection-end-line="658" selection-end-column="47" />
               <folding>
-                <element signature="e#8857#11377#0" expanded="false" />
-                <element signature="e#11394#11472#0" expanded="false" />
-                <element signature="e#17836#17869#0" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="e#11144#11185#0" expanded="false" />
+                <element signature="e#13428#14470#0" expanded="false" />
+                <element signature="e#14667#14986#0" expanded="false" />
+                <element signature="e#15050#15696#0" expanded="false" />
+                <element signature="e#28554#29045#0" expanded="false" />
+                <element signature="e#29761#29841#0" expanded="false" />
+                <element signature="e#32392#33060#0" expanded="false" />
+                <marker date="1494901004000" expanded="false" signature="24609:24867" ph="{...}" />
+                <marker date="1494901004000" expanded="false" signature="24966:27998" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/图片加载/1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="407">
+              <caret line="36" column="55" lean-forward="true" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -47,36 +88,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>recording</find>
-      <find>navigator</find>
-      <find>MediaDevices</find>
-      <find>my-audio</find>
-      <find>myAudio</find>
-      <find>success</find>
-      <find>sampleRate</find>
-      <find>5009</find>
-      <find>next</find>
-      <find>submit</find>
-      <find>getCurstr</find>
-      <find>getCurStr</find>
-      <find>SImage</find>
-      <find>main</find>
       <find>touchend</find>
       <find>geton</find>
       <find>auth</find>
       <find>xhr</find>
       <find>get</find>
-      <find>jobTaskLoaded</find>
       <find>nativeLoadCompleted</find>
-      <find>slied</find>
       <find>loadImg</find>
       <find>showMes</find>
       <find>hide</find>
       <find>loadingShow</find>
       <find>GetSlideDirection</find>
       <find>GetSlideAngle</find>
-      <find>document</find>
+      <find>jobTaskLoaded</find>
+      <find>codeLockWrap</find>
+      <find>163</find>
+      <find>submit</find>
+      <find>next</find>
       <find>result</find>
+      <find>lag</find>
+      <find>F</find>
+      <find>slied</find>
+      <find>document</find>
+      <find>prevent</find>
+      <find>answer</find>
+      <find>_fetchTask</find>
+      <find>_saveTaskRun</find>
+      <find>_createTaskRun</find>
+      <find>save</find>
+      <find>i18n_working_task</find>
+      <find>block</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -96,8 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/ISO标准格式日期.html" />
-        <option value="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/把ISO格式日期转换为Date对象接受的格式.html" />
         <option value="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/把ISO格式日期转换为JS的Date.html" />
         <option value="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/使用给定的月份年份和日期创建一个Date对象.html" />
         <option value="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/创建一个10天后的日期.html" />
@@ -141,12 +180,14 @@
         <option value="$PROJECT_DIR$/audio/0.html" />
         <option value="$PROJECT_DIR$/audio/1.html" />
         <option value="$PROJECT_DIR$/audio/2.html" />
-        <option value="$PROJECT_DIR$/zhongbao/时钟/testLock.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/code.html" />
         <option value="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock第一版稳定版2.html" />
-        <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/tips1.html" />
-        <option value="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/code父级触摸.html" />
+        <option value="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock绑定父级滑动前版本.html" />
+        <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/tips1.html" />
+        <option value="$PROJECT_DIR$/zhongbao/时钟/testLock.html" />
+        <option value="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html" />
+        <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/图片加载/1.html" />
       </list>
     </option>
   </component>
@@ -157,10 +198,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="101" />
-    <option name="y" value="48" />
-    <option name="width" value="1067" />
-    <option name="height" value="710" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="716" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -223,11 +263,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="zhongbao" />
+              <option name="myItemId" value="二期迭代" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="时钟" />
+              <option name="myItemId" value="二期第二版修复" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="图片加载" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -274,7 +318,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="web.server" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -401,21 +445,22 @@
       <workItem from="1494378630357" duration="27752000" />
       <workItem from="1494555463640" duration="23987000" />
       <workItem from="1494813252867" duration="13875000" />
-      <workItem from="1494837387558" duration="3145000" />
+      <workItem from="1494837387558" duration="11510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="390793000" />
+    <option name="totallyTimeSpent" value="399158000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="101" y="48" width="1067" height="710" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="716" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31219512" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1914378" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32698414" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -427,7 +472,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -509,19 +553,18 @@
           <line>85</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html</url>
+          <line>581</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/noTask5000.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="144" column="0" lean-forward="true" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/noTask5009.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -540,6 +583,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1608">
           <caret line="161" column="33" lean-forward="false" selection-start-line="161" selection-start-column="33" selection-end-line="161" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -579,13 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版缩小测试/pybossa/pybossa-token.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="268" column="44" lean-forward="false" selection-start-line="268" selection-start-column="44" selection-end-line="268" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao/时钟/complete2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
@@ -601,6 +638,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -790,17 +828,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1231">
           <caret line="119" column="33" lean-forward="false" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock对比本地版.html" />
-    <entry file="file://$PROJECT_DIR$/zhongbao/时钟/testLock.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="835" column="0" lean-forward="true" selection-start-line="835" selection-start-column="0" selection-end-line="835" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/code.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-225">
@@ -819,6 +851,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -868,24 +901,89 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/tips1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+        <state relative-caret-position="1485">
+          <caret line="103" column="44" lean-forward="true" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
           <folding>
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#3177#3711#0" expanded="false" />
+            <marker date="1494845715000" expanded="false" signature="3236:3770" ph="{...}" />
+            <marker date="1494845715000" expanded="false" signature="3858:4803" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/code父级触摸.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="213" column="38" lean-forward="false" selection-start-line="213" selection-start-column="38" selection-end-line="213" selection-end-column="38" />
+          <folding>
+            <element signature="e#8519#11392#0" expanded="false" />
+            <element signature="e#8857#11377#0" expanded="false" />
+            <element signature="e#11394#11472#0" expanded="false" />
+            <element signature="e#17836#17869#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock绑定父级滑动前版本.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="646" column="30" lean-forward="false" selection-start-line="646" selection-start-column="25" selection-end-line="646" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版缩小测试/pybossa/pybossa-token.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <caret line="296" column="50" lean-forward="true" selection-start-line="296" selection-start-column="50" selection-end-line="296" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao/时钟/testLock.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7934">
+          <caret line="234" column="39" lean-forward="true" selection-start-line="234" selection-start-column="39" selection-end-line="234" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/图片加载/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="36" column="55" lean-forward="true" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="1489" column="39" lean-forward="true" selection-start-line="1489" selection-start-column="39" selection-end-line="1489" selection-end-column="39" />
+        <state relative-caret-position="94">
+          <caret line="658" column="47" lean-forward="false" selection-start-line="658" selection-start-column="47" selection-end-line="658" selection-end-column="47" />
           <folding>
-            <element signature="n#div#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -909,54 +1007,15 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="e#14178#15220#0" expanded="false" />
-            <element signature="e#15417#15736#0" expanded="false" />
-            <element signature="e#15800#16446#0" expanded="false" />
-            <element signature="e#26280#26360#0" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#2;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#7;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#7;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#7;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#7;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#7;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#7;n#!!top" expanded="true" />
-            <element signature="e#61580#61639#0" expanded="false" />
-            <marker date="1494838712000" expanded="false" signature="65938:66606" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock绑定父级滑动前版本.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/code父级触摸.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="397" column="21" lean-forward="true" selection-start-line="397" selection-start-column="21" selection-end-line="397" selection-end-column="21" />
-          <folding>
-            <element signature="e#8857#11377#0" expanded="false" />
-            <element signature="e#11394#11472#0" expanded="false" />
-            <element signature="e#17836#17869#0" expanded="false" />
+            <element signature="e#11144#11185#0" expanded="false" />
+            <element signature="e#13428#14470#0" expanded="false" />
+            <element signature="e#14667#14986#0" expanded="false" />
+            <element signature="e#15050#15696#0" expanded="false" />
+            <element signature="e#28554#29045#0" expanded="false" />
+            <element signature="e#29761#29841#0" expanded="false" />
+            <element signature="e#32392#33060#0" expanded="false" />
+            <marker date="1494901004000" expanded="false" signature="24609:24867" ph="{...}" />
+            <marker date="1494901004000" expanded="false" signature="24966:27998" ph="{...}" />
           </folding>
         </state>
       </provider>

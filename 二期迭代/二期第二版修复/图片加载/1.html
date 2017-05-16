@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<img src="无效地址.jpg" alt="图片简介" />
+<script type="text/javascript">
+  window.onload = function() {
+    var imgs = document.getElementsByTagName("img");
+    for(var i = 0; i < imgs.length; i++) {
+      (function(a) {
+        var img = new Image();
+        img.onerror = function() {
+          if(imgs[a].getAttribute("alt")) {
+            var txt = document.createTextNode(imgs[a].alt);
+            imgs[a].parentNode.insertBefore(txt, imgs[a]);
+          }
+          imgs[a].style.display = "none";
+        };
+        img.src = imgs[a].src;
+      })(i);
+    }
+  };
+
+  function SImage(url, callback) {
+    var img = new Image();
+    img.onload = function () {
+      if (img.complete == true) {
+        i = i + 1;
+        callback(i);
+      }
+    };
+    img.onerror = function() {
+      if(imgs[i].getAttribute("alt")) {
+        var txt = document.createTextNode(imgs[i].alt);
+        imgs[i].parentNode.insertBefore(txt, imgs[i]);
+      }
+      imgs[i].style.display = "none";
+    };
+    img.src = url;
+  }
+</script>
+</body>
+</html>
