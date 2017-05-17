@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .num{
+      width: 122px;
+      height: 172px;
+      line-height: 172px;
+      text-align: center;
+      background-color: #000;
+      color: #fff;
+      font-size: 150px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+<ul>
+  <li><img src="http://192.168.0.182:8000/h5/img/10.JPG" alt="0"></li>
+  <li><img src="http://192.168.0.182:8000/h5/img/1.JPG" alt="1"></li>
+  <li><img src="http://192.168.0.182:8000/h5/img/2.JPG" alt="2"></li>
+  <li><img src="http://192.168.0.182:8000/h5/img/3.JPG" alt="3"></li>
+  <li><img src="http://192.168.0.182:8000/h5/img/4.JPG" alt="4"></li>
+  <li><img src="http://192.168.0.182:8000/h5/img/5.JPG" alt="5"></li>
+  <li><img src="http://192.168.0.182:8000/h5/img/6.JPG" alt="6"></li>
+  <li><img src="http://192.168.0.182:8000/h5/img/7.JPG" alt="7"></li>
+  <li><img src="http://192.168.0.182:8000/h5/img/8.JPG" alt="8"></li>
+  <li><img src="http://192.168.0.182:8000/h5/img/9.JPG" alt="9"></li>
+</ul>
+<script>
+
+  var imgarr = [];
+  imgarr[0] = "http://192.168.0.182:8000/h5/img/0.JPG";
+  imgarr[1] = "http://192.168.0.182:8000/h5/img/1.JPG";
+  imgarr[2] = "http://192.168.0.182:8000/h5/img/2.JPG";
+  imgarr[3] = "http://192.168.0.182:8000/h5/img/3.JPG";
+  imgarr[4] = "http://192.168.0.182:8000/h5/img/4.JPG";
+  imgarr[5] = "http://192.168.0.182:8000/h5/img/5.JPG";
+  imgarr[6] = "http://192.168.0.182:8000/h5/img/6.JPG";
+  imgarr[7] = "http://192.168.0.182:8000/h5/img/7.JPG";
+  imgarr[8] = "http://192.168.0.182:8000/h5/img/8.JPG";
+  imgarr[9] = "http://192.168.0.182:8000/h5/img/9.JPG";
+/*
+  function SImage(url, callback) {
+    var img = new Image();
+    img.onload = function () {
+      if (img.complete == true) {
+        i = i + 1;
+        callback(i);
+      }
+    };
+    img.onerror = function() {
+      if(this.getAttribute("alt")) {
+        var txt = document.createTextNode(this.alt);
+        this.parentNode.insertBefore(txt, this);
+      }
+      this.style.display = "none";
+    };
+    img.src = url;
+  }
+  function icall(v) {
+    if (v < c) {
+      SImage("" + imgarr[v] + "", icall);
+      console.log('loading');
+    }
+    else if (v >= c) {
+      i = 0;
+      console.log('loaded');
+    }
+  }
+  icall(0);
+*/
+
+  window.onload = function() {
+    var imgs = document.getElementsByTagName("img");
+    for(var i = 0; i < imgs.length; i++) {
+      (function(a) {
+        var img = new Image();
+        img.onerror = function() {
+          if(imgs[a].getAttribute("alt")) {
+            var txt = document.createTextNode(imgs[a].alt);
+            imgs[a].parentNode.className = "num";
+            imgs[a].parentNode.insertBefore(txt, imgs[a]);
+          }
+          imgs[a].style.display = "none";
+        };
+        img.src = imgs[a].src;
+      })(i);
+    }
+  };
+</script>
+</body>
+</html>

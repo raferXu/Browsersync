@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <style>
+    .num{display:inline-block;width:48px;height:80px;line-heigh:80px;text-align:center;border:1px solid red;font-size:60px;color:#fff;background-color:#000;}
+  </style>
 </head>
 <body>
-<img src="无效地址.jpg" alt="图片简介" />
+<div>
+  <img src="无效地址.jpg" alt="1" />
+</div>
 <script type="text/javascript">
   window.onload = function() {
     var imgs = document.getElementsByTagName("img");
@@ -15,6 +20,7 @@
         img.onerror = function() {
           if(imgs[a].getAttribute("alt")) {
             var txt = document.createTextNode(imgs[a].alt);
+            imgs[a].parentNode.className = "num";
             imgs[a].parentNode.insertBefore(txt, imgs[a]);
           }
           imgs[a].style.display = "none";
@@ -23,24 +29,6 @@
       })(i);
     }
   };
-
-  function SImage(url, callback) {
-    var img = new Image();
-    img.onload = function () {
-      if (img.complete == true) {
-        i = i + 1;
-        callback(i);
-      }
-    };
-    img.onerror = function() {
-      if(imgs[i].getAttribute("alt")) {
-        var txt = document.createTextNode(imgs[i].alt);
-        imgs[i].parentNode.insertBefore(txt, imgs[i]);
-      }
-      imgs[i].style.display = "none";
-    };
-    img.src = url;
-  }
 </script>
 </body>
 </html>

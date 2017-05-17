@@ -303,7 +303,7 @@
         img.load(function() {
           deferred.resolve(task);
         });
-console.log('taskLoadedtask: '+task);
+        console.log('taskLoadedtask: '+task);
         img.attr('src', task.info.url).css('height', 'auto');
         task.info.image = img;
       }
@@ -477,23 +477,23 @@ console.log('taskLoadedtask: '+task);
                 imgarr[9] = "http://192.168.0.182:8000/h5/img/9.JPG";
 
 //将获取的数字数据用图片表示出来
-                    for (var i = 0, len = blockStr.str.length; i < len; i++) {
-                      html += '<li><div><img src="http://192.168.0.182:8000/h5/img/' + blockStr.str[i] + '.JPG" alt=""><img src="http://192.168.0.182:8000/h5/img/' + blockStr.str[i] + '.JPG" alt=""><img src="http://192.168.0.182:8000/h5/img/' + blockStr.str[i] + '.JPG" alt=""></div></li>';
-                    }
-                    console.log('ulHtml: '+html);
-                    oUl.innerHTML = html;
-                    for (var i = 0, len = blockStr.str.length; i < len; i++) {
-                      aLi[i].style.width = (100 / aLi.length) + '%';
-                    }
+                for (var i = 0, len = blockStr.str.length; i < len; i++) {
+                  html += '<li><div><img src="http://192.168.0.182:8000/h5/img/' + blockStr.str[i] + '.JPG" alt=""><img src="http://192.168.0.182:8000/h5/img/' + blockStr.str[i] + '.JPG" alt=""><img src="http://192.168.0.182:8000/h5/img/' + blockStr.str[i] + '.JPG" alt=""></div></li>';
+                }
+                console.log('ulHtml: '+html);
+                oUl.innerHTML = html;
+                for (var i = 0, len = blockStr.str.length; i < len; i++) {
+                  aLi[i].style.width = (100 / aLi.length) + '%';
+                }
 
 
 
                 var main = function () {
-                  var initH = aImg[0].naturalHeight-1;
+                  var initH = aImg[0].naturalHeight;
                   var drawPicTimer = setInterval(function () {
                     var h = aImg[0].height;
+                    console.log(h+'initH'+initH);
                     if(0<h<initH){
-                      console.log(h+'initH'+initH);
                       clearInterval(drawPicTimer);
                       oWrap.style.height = h + 'px';
                       var oPos = document.getElementsByClassName('showInfo')[0];
@@ -585,68 +585,68 @@ console.log('taskLoadedtask: '+task);
                             };
                           };
                           /*
-                          eImg[eImg[j].index].addEventListener('touchstart', function (ev) {
-                            console.log('touchstart');
-                            startX = ev.touches[0].pageX;
-                            startY = ev.touches[0].pageY;
-                            oMain.className = 'noscroll';
-                          }, false);
-                          eImg[eImg[j].index].addEventListener('touchend', function (ev) {
-                            console.log('touchend');
-                            var endX, endY;
-                            oMain.className = '';
-                            endX = ev.changedTouches[0].pageX;
-                            endY = ev.changedTouches[0].pageY;
-                            var direction = GetSlideDirection(startX, startY, endX, endY);
-                            switch (direction) {
-//                        上滑
-                              case 1:
-                                console.log(this);
-                                var This = this;
-                                if (!moving) {
-                                  moving = true;
-                                  This.parentNode.count++;
-                                  slied(This.parentNode.index, blockStr, 1, h, This.parentNode.count);
-                                  console.log('afterSlied'+blockStr.str);
-                                }
-                                break;
-                              case 2:
-//                        下滑
-                                var This = this;
-                                if (!moving) {
-                                  moving = true;
-                                  This.parentNode.count--;
-                                  if (This.parentNode.count < 0) {
-                                    This.parentNode.count = This.parentNode.count % 10 + 10;
-                                  }
-                                  slied(This.parentNode.index, blockStr, -1, h, This.parentNode.count);
-                                }
-                                break;
-                              case 3:  //向左
-                                $('#codeLockWrap li').eq(0).appendTo($('#codeLockWrap ul'));
-                                var strArr = blockStr.str.split('');
-                                strArr.push(strArr.shift());
-                                blockStr.str = strArr.join('');
-                                for(var i = 0, olen = oDiv.length; i < olen; i++){
-                                  oDiv[i].index = i;
-                                  oDiv[i].count = blockStr.str[i];
-                                }
-                                break;
-                              case 4:
-                                console.log('right');
-                                var liLen = $('#codeLockWrap li').length;
-                                $('#codeLockWrap li').eq(liLen-1).prependTo($('#codeLockWrap ul'));
-                                var strArr = blockStr.str.split('');
-                                strArr.unshift(strArr.pop());
-                                blockStr.str = strArr.join('');
-                                for(var i = 0, olen = oDiv.length; i < olen; i++){
-                                  oDiv[i].index = i;
-                                  oDiv[i].count = blockStr.str[i];
-                                }
-                                break;
-                            }
-                          }, false);
-                          */
+                           eImg[eImg[j].index].addEventListener('touchstart', function (ev) {
+                           console.log('touchstart');
+                           startX = ev.touches[0].pageX;
+                           startY = ev.touches[0].pageY;
+                           oMain.className = 'noscroll';
+                           }, false);
+                           eImg[eImg[j].index].addEventListener('touchend', function (ev) {
+                           console.log('touchend');
+                           var endX, endY;
+                           oMain.className = '';
+                           endX = ev.changedTouches[0].pageX;
+                           endY = ev.changedTouches[0].pageY;
+                           var direction = GetSlideDirection(startX, startY, endX, endY);
+                           switch (direction) {
+                           //                        上滑
+                           case 1:
+                           console.log(this);
+                           var This = this;
+                           if (!moving) {
+                           moving = true;
+                           This.parentNode.count++;
+                           slied(This.parentNode.index, blockStr, 1, h, This.parentNode.count);
+                           console.log('afterSlied'+blockStr.str);
+                           }
+                           break;
+                           case 2:
+                           //                        下滑
+                           var This = this;
+                           if (!moving) {
+                           moving = true;
+                           This.parentNode.count--;
+                           if (This.parentNode.count < 0) {
+                           This.parentNode.count = This.parentNode.count % 10 + 10;
+                           }
+                           slied(This.parentNode.index, blockStr, -1, h, This.parentNode.count);
+                           }
+                           break;
+                           case 3:  //向左
+                           $('#codeLockWrap li').eq(0).appendTo($('#codeLockWrap ul'));
+                           var strArr = blockStr.str.split('');
+                           strArr.push(strArr.shift());
+                           blockStr.str = strArr.join('');
+                           for(var i = 0, olen = oDiv.length; i < olen; i++){
+                           oDiv[i].index = i;
+                           oDiv[i].count = blockStr.str[i];
+                           }
+                           break;
+                           case 4:
+                           console.log('right');
+                           var liLen = $('#codeLockWrap li').length;
+                           $('#codeLockWrap li').eq(liLen-1).prependTo($('#codeLockWrap ul'));
+                           var strArr = blockStr.str.split('');
+                           strArr.unshift(strArr.pop());
+                           blockStr.str = strArr.join('');
+                           for(var i = 0, olen = oDiv.length; i < olen; i++){
+                           oDiv[i].index = i;
+                           oDiv[i].count = blockStr.str[i];
+                           }
+                           break;
+                           }
+                           }, false);
+                           */
                         }
                       }
                     }

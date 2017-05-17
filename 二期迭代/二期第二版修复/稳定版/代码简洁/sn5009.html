@@ -1,25 +1,30 @@
 <script>
-    var jobTaskLoaded = false;
-    function nativeLoadCompleted() {
-      jobTaskLoaded = true;
-    }
-    function htmlFontSize(){
-        var html = document.querySelector("html");
-        var width = html.getBoundingClientRect().width;
-        html.style.fontSize = width / 3.75 + "px";
-    }
+
+  // loading加载框出现
+  console.log('loading加载框出现');
+  $("#showMes").show();
+
+  var jobTaskLoaded = false;
+  function nativeLoadCompleted() {
+    jobTaskLoaded = true;
+  }
+  function htmlFontSize(){
+    var html = document.querySelector("html");
+    var width = html.getBoundingClientRect().width;
+    html.style.fontSize = width / 3.75 + "px";
+  }
+  htmlFontSize();
+  window.addEventListener("resize",function(){
     htmlFontSize();
-    window.addEventListener("resize",function(){
-        htmlFontSize();
-    },false);
-    window.onerror = function (msg,url,l) {
-        var txt = '';
-        txt="There was an error on this page.\n\n";
-        txt+="Error: " + msg + "\n";
-        txt+="URL: " + url + "\n";
-        txt+="Line: " + l + "\n\n";
-        console.log(txt);
-    };
+  },false);
+  window.onerror = function (msg,url,l) {
+    var txt = '';
+    txt="There was an error on this page.\n\n";
+    txt+="Error: " + msg + "\n";
+    txt+="URL: " + url + "\n";
+    txt+="Line: " + l + "\n\n";
+    console.log(txt);
+  };
 </script>
 <link rel="stylesheet" href="http://192.168.0.182:8000/h5/ZB2H5.css">
 <div class="row skeleton"> <!-- Start Skeleton Row-->
@@ -124,431 +129,467 @@
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     function loadDisqus() {
-        $("#disqus_thread").toggle();
-        $(".btn-disqus").toggle();
-        var disqus_shortname = 'pybossa';
-        // required: replace example with your forum shortname
-        //var disqus_identifier = taskId;
-        var disqus_developer = 1;
+      $("#disqus_thread").toggle();
+      $(".btn-disqus").toggle();
+      var disqus_shortname = 'pybossa';
+      // required: replace example with your forum shortname
+      //var disqus_identifier = taskId;
+      var disqus_developer = 1;
 
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
     }
 
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script type="text/javascript">
-    (function() {
+  (function() {
 
-        var loadImg = false;
-        var getStr = false;
-        var tokenStr;
+    var loadImg = false;
+    var getStr = false;
+    var tokenStr;
 
 // Default language
-        var userLocale = "en";
+    var userLocale = "en";
 // Translations
-        var messages = {"en": {
-            "i18n_welldone": "Well done!",
-            "i18n_welldone_text": "Your answer has been saved",
-            "i18n_loading_next_task": "Loading next task...",
-            "i18n_task_completed": "The task has been completed!",
-            "i18n_thanks": "Thanks a lot!",
-            "i18n_congratulations": "Congratulations",
-            "i18n_congratulations_text": "You have participated in all available tasks!",
-            "i18n_yes": "Yes",
-            "i18n_no_photo": "No photo",
-            "i18n_i_dont_know": "I don't know",
-            "i18n_working_task": "You are working now on task:",
-            "i18n_tasks_completed": "You have completed:",
-            "i18n_tasks_from": "tasks from",
-            "i18n_show_comments": "Show comments:",
-            "i18n_hide_comments": "Hide comments:",
-            "i18n_question": "Do you see a human face in this photo?",
-        },
-            "es": {
-                "i18n_welldone": "Bien hecho!",
-                "i18n_welldone_text": "Tu respuesta ha sido guardada",
-                "i18n_loading_next_task": "Cargando la siguiente tarea...",
-                "i18n_task_completed": "La tarea ha sido completadas!",
-                "i18n_thanks": "Muchísimas gracias!",
-                "i18n_congratulations": "Enhorabuena",
-                "i18n_congratulations_text": "Has participado en todas las tareas disponibles!",
-                "i18n_yes": "Sí",
-                "i18n_no_photo": "No hay foto",
-                "i18n_i_dont_know": "No lo sé",
-                "i18n_working_task": "Estás trabajando en la tarea:",
-                "i18n_tasks_completed": "Has completado:",
-                "i18n_tasks_from": "tareas de",
-                "i18n_show_comments": "Mostrar comentarios",
-                "i18n_hide_comments": "Ocultar comentarios",
-                "i18n_question": "¿Ves una cara humana en esta foto?",
-            },
-        };
+    var messages = {"en": {
+      "i18n_welldone": "Well done!",
+      "i18n_welldone_text": "Your answer has been saved",
+      "i18n_loading_next_task": "Loading next task...",
+      "i18n_task_completed": "The task has been completed!",
+      "i18n_thanks": "Thanks a lot!",
+      "i18n_congratulations": "Congratulations",
+      "i18n_congratulations_text": "You have participated in all available tasks!",
+      "i18n_yes": "Yes",
+      "i18n_no_photo": "No photo",
+      "i18n_i_dont_know": "I don't know",
+      "i18n_working_task": "You are working now on task:",
+      "i18n_tasks_completed": "You have completed:",
+      "i18n_tasks_from": "tasks from",
+      "i18n_show_comments": "Show comments:",
+      "i18n_hide_comments": "Hide comments:",
+      "i18n_question": "Do you see a human face in this photo?",
+    },
+      "es": {
+        "i18n_welldone": "Bien hecho!",
+        "i18n_welldone_text": "Tu respuesta ha sido guardada",
+        "i18n_loading_next_task": "Cargando la siguiente tarea...",
+        "i18n_task_completed": "La tarea ha sido completadas!",
+        "i18n_thanks": "Muchísimas gracias!",
+        "i18n_congratulations": "Enhorabuena",
+        "i18n_congratulations_text": "Has participado en todas las tareas disponibles!",
+        "i18n_yes": "Sí",
+        "i18n_no_photo": "No hay foto",
+        "i18n_i_dont_know": "No lo sé",
+        "i18n_working_task": "Estás trabajando en la tarea:",
+        "i18n_tasks_completed": "Has completado:",
+        "i18n_tasks_from": "tareas de",
+        "i18n_show_comments": "Mostrar comentarios",
+        "i18n_hide_comments": "Ocultar comentarios",
+        "i18n_question": "¿Ves una cara humana en esta foto?",
+      },
+    };
 
-        $(document).ready(function(){
-            userLocale = document.getElementById('PYBOSSA_USER_LOCALE').textContent.trim();
+    $(document).ready(function(){
+      userLocale = document.getElementById('PYBOSSA_USER_LOCALE').textContent.trim();
 
-            $('body').css('padding','0px');
+      $('body').css('padding','0px');
 
-            // loading加载框出现
-            $("#showMes").show();
-            $('#sureBtn').on('touchstart',function () {
-                $('#offLine').hide();
-            });
+      $('#sureBtn').on('touchstart',function () {
+        $('#offLine').hide();
+      });
 
-            $(window).on('scroll', function () {
-              $('#toLogin').css('top',$(window).scrollTop());
-              $('#showMes').css('top',$(window).scrollTop());
-              $('#offLine').css('top',$(window).scrollTop());
-            });
-        });
+      $(window).on('scroll', function () {
+        $('#toLogin').css('top',$(window).scrollTop());
+        $('#showMes').css('top',$(window).scrollTop());
+        $('#offLine').css('top',$(window).scrollTop());
+      });
+    });
 
-        function i18n_translate() {
-            var ids = Object.keys(messages[userLocale]);
-            for (i=0; i<ids.length; i++) {
-                if (document.getElementById(ids[i])) {
-                    document.getElementById(ids[i]).innerHTML = messages[userLocale][ids[i]];
-                }
-            }
+    function i18n_translate() {
+      var ids = Object.keys(messages[userLocale]);
+      for (i=0; i<ids.length; i++) {
+        if (document.getElementById(ids[i])) {
+          document.getElementById(ids[i]).innerHTML = messages[userLocale][ids[i]];
         }
-        function loadUserProgress() {
-            pybossa.userProgress('hospital').done(function(data){
-                var pct = Math.round((data.done*100)/data.total);
-                $("#progress").css("width", pct.toString() +"%");
-                $("#progress").attr("title", pct.toString() + "% completed!");
-                $("#progress").tooltip({'placement': 'left'});
-                $("#total").text(data.total);
-                $("#done").text(data.done);
-            });
-        }
+      }
+    }
+    function loadUserProgress() {
+      pybossa.userProgress('hospital').done(function(data){
+        var pct = Math.round((data.done*100)/data.total);
+        $("#progress").css("width", pct.toString() +"%");
+        $("#progress").attr("title", pct.toString() + "% completed!");
+        $("#progress").tooltip({'placement': 'left'});
+        $("#total").text(data.total);
+        $("#done").text(data.done);
+      });
+    }
 
 //        判断图片是否加载完成
-        function imgLoaded(img) {
-            return img.complete && img.naturalHeight !== 0;
-        }
+    function imgLoaded(img) {
+      return img.complete && img.naturalHeight !== 0;
+    }
 
-        pybossa.taskLoaded(function(task, deferred) {
+    pybossa.taskLoaded(function(task, deferred) {
 
-            if ( !$.isEmptyObject(task) ) {
+      if ( !$.isEmptyObject(task) ) {
 
-              var img = $('<img class="billImg"/>');
+        var img = $('<img class="billImg"/>');
 
 //        图片加载完成时计算加载时间决定是否重载
-              setTimeout(function () {
-                if(!imgLoaded(img)){
-                  img.attr('src', task.info.url+'?'+Math.random()).css('height', 'auto');
-                }
-              },5000);
-              img.load(function() {
-                deferred.resolve(task);
-              });
-
-              img.attr('src', task.info.url).css('height', 'auto');
-              task.info.image = img;
-            }
-
-            else {
-              console.log('taskLoaded noTask');
-              deferred.resolve(task);
-            }
+        setTimeout(function () {
+          if(!imgLoaded(img)){
+            img.attr('src', task.info.url+'?'+Math.random()).css('height', 'auto');
+          }
+        },5000);
+        img.load(function() {
+          deferred.resolve(task);
         });
 
-        pybossa.presentTask(function(task, deferred) {
-            if ( !$.isEmptyObject(task) ) {
-                loadUserProgress();
-                i18n_translate();
+        img.attr('src', task.info.url).css('height', 'auto');
+        task.info.image = img;
+      }
 
-                $('.pinch-zoom').html('').append(task.info.image);
-                var task_id = task.id;
+      else {
+        console.log('taskLoaded noTask');
+        console.log('taskLoaded noTask: ' + tokenStr);
 
-                // 计算图片最终大小和移动的坐标
-                function calc(config) {
+        deferred.resolve(task);
+      }
+    });
 
-                    // 获取图片原始大小
-                    var initImgW = config.imgInitW || 0;
-                    var initImgH = config.imgInitH || 0;
+    pybossa.presentTask(function(task, deferred) {
+      if ( !$.isEmptyObject(task) ) {
+        loadUserProgress();
+        i18n_translate();
 
-                    // 获取图片展示框大小
-                    var imgWrapW = config.imgWrapW || 0;
-                    var imgWrapH = config.imgWrapH || 0;
+        $('.pinch-zoom').html('').append(task.info.image);
+        var task_id = task.id;
 
-                    // 确定水平还是垂直方向占满
-                    var direct = (imgWrapW / initImgW * initImgH < imgWrapH) ? 'h' : 'v';
-                    var scale = 1, scaleImgH, scaleImgW,pdt,pdl;
+        // 计算图片最终大小和移动的坐标
+        function calc(config) {
 
-                    // 确定缩放比、缩放后的宽高及留白大小
-                    if(direct == 'h'){
-                        scale = imgWrapW / initImgW;
-                        scaleImgW = imgWrapW;
-                        scaleImgH = initImgH * scale;
-                        pdt = (imgWrapH - scaleImgH) / 2;
-                        pdl = 0;
-                    }else{
-                        scale = imgWrapH / initImgH;
-                        scaleImgH = imgWrapH;
-                        scaleImgW = initImgW * scale;
-                        pdl = (imgWrapW - scaleImgW) / 2;
-                        pdt = 0;
-                    }
+          // 获取图片原始大小
+          var initImgW = config.imgInitW || 0;
+          var initImgH = config.imgInitH || 0;
 
-                    // 返回显示在屏幕的图片的宽高和左边及上边的留白
-                    return {
-                        'fw' : scaleImgW,
-                        'fh' : scaleImgH,
-                        'pl' : pdl,
-                        'pt' : pdt
-                    };
-                }
+          // 获取图片展示框大小
+          var imgWrapW = config.imgWrapW || 0;
+          var imgWrapH = config.imgWrapH || 0;
 
-                // 获取展示区域宽高
-                var imgBoxW = $('.billImgBox').width();
-                var imgBoxH = $('.billImgBox').height();
+          // 确定水平还是垂直方向占满
+          var direct = (imgWrapW / initImgW * initImgH < imgWrapH) ? 'h' : 'v';
+          var scale = 1, scaleImgH, scaleImgW,pdt,pdl;
 
-                // 确保图片加载完成及执行的回调
-                var imgLoadTimer = setInterval(function () {
-                    if(imgLoaded($('.billImg')[0])){
-                        clearInterval(imgLoadTimer);
-                        imgCallback($('.billImg')[0]);
-                        loadImg = true;
-                        if(loadImg && getStr){
-                            $("#showMes").hide();
-                        }
-                    }
-                },100);
+          // 确定缩放比、缩放后的宽高及留白大小
+          if(direct == 'h'){
+            scale = imgWrapW / initImgW;
+            scaleImgW = imgWrapW;
+            scaleImgH = initImgH * scale;
+            pdt = (imgWrapH - scaleImgH) / 2;
+            pdl = 0;
+          }else{
+            scale = imgWrapH / initImgH;
+            scaleImgH = imgWrapH;
+            scaleImgW = initImgW * scale;
+            pdl = (imgWrapW - scaleImgW) / 2;
+            pdt = 0;
+          }
 
-                // 定义图片加载后的回调
-                function imgCallback(img) {
+          // 返回显示在屏幕的图片的宽高和左边及上边的留白
+          return {
+            'fw' : scaleImgW,
+            'fh' : scaleImgH,
+            'pl' : pdl,
+            'pt' : pdt
+          };
+        }
 
-                    // 获取图片原始宽高
-                    var imgInitH = img.naturalHeight;
-                    var imgInitW = img.naturalWidth;
+        // 获取展示区域宽高
+        var imgBoxW = $('.billImgBox').width();
+        var imgBoxH = $('.billImgBox').height();
 
-                    //计算图片最终显示的大小及留白
-                    var result = calc({
-                        'imgInitW' : imgInitW,
-                        'imgInitH' : imgInitH,
-                        'imgWrapW' : imgBoxW,
-                        'imgWrapH' : imgBoxH
-                    });
+        // 确保图片加载完成及执行的回调
+        var imgLoadTimer = setInterval(function () {
+          if(imgLoaded($('.billImg')[0])){
+            clearInterval(imgLoadTimer);
+            imgCallback($('.billImg')[0]);
+            loadImg = true;
+            if(loadImg && getStr){
+              $("#showMes").hide();
+            }
+          }
+        },100);
 
-                    // billImg
-                    $('.billImg').css({
-                        'width' : result.fw +'px',
-                        'height' : result.fh + 'px',
-                        'marginTop' : result.pt +'px',
-                        'marginLeft' : result.pl +'px',
-                        // 'transform':'rotate(90deg)',
-                        'display' : 'inline-block'
-                    });
-                }
+        // 定义图片加载后的回调
+        function imgCallback(img) {
+
+          // 获取图片原始宽高
+          var imgInitH = img.naturalHeight;
+          var imgInitW = img.naturalWidth;
+
+          //计算图片最终显示的大小及留白
+          var result = calc({
+            'imgInitW' : imgInitW,
+            'imgInitH' : imgInitH,
+            'imgWrapW' : imgBoxW,
+            'imgWrapH' : imgBoxH
+          });
+
+          // billImg
+          $('.billImg').css({
+            'width' : result.fw +'px',
+            'height' : result.fh + 'px',
+            'marginTop' : result.pt +'px',
+            'marginLeft' : result.pl +'px',
+            // 'transform':'rotate(90deg)',
+            'display' : 'inline-block'
+          });
+        }
 
 //            loading加载框消失
-              $(document).ajaxStart(function(){
-              }).ajaxStop(function(){
-                getStr = true;
-                if(loadImg && getStr){
-                  $("#showMes").hide();
-                }
-              });
-
-              var fontSize = parseInt($('html').css('fontSize'));
-              var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.1*fontSize},maxZoom:6,tapZoomFactor:3};
-              $('div.pinch-zoom').each(function () {
-                new RTP.PinchZoom($(this), opt);
-              });
-
-//            发送图片获取识别字符串，并放入input中
-                var str;
-                var urlData = {"url": task.info.url,"type": task.info.type};
-                function getStr() {
-                    var getStrAjax = $.ajax({
-                        type: 'POST',
-                        url: 'http://192.168.0.88:5001/ocr_api/block_rec',
-                        dataType: 'json',
-                        data: JSON.stringify(urlData),
-                        timeout: 5000,
-                        success: function (data) {
-                          if(data){
-                            str = data;
-                          }else{
-                            str = '无法识别';
-                          }
-                            $('.showInfo').val(str);
-                        },
-                        error: function (xml, error) {
-                            console.log('strError');
-                            if(error == "timeout"){
-                                getStrAjax.abort();
-                                getStr();
-                            }
-                        }
-                    });
-                }
-                getStr();
-
-//                获取token
-              var jobTaskLoadedTimer = setInterval(function () {
-                if(jobTaskLoaded){
-                  clearInterval(jobTaskLoadedTimer);
-                  tokenStr = jobTask.receiveNativeToken();
-
-                  //发起ajax请求获取任务统计数据userInfo插入页面中
-                  var userData = {'token': tokenStr,'task_id':task_id};
-                  userData = JSON.stringify(userData);
-
-//                判断是否需要跳到抽奖页面 getchanceconfig／interval  ＝＝  userInfo／total_order_num ？
-                  $.when(
-                    $.ajax({
-                      type : 'POST',
-                      url : 'http://192.168.0.182:5009/token/statistics/userInfo',
-                      data : userData,
-                      dataType : 'json',
-                      beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
-                        xhr.setRequestHeader('Accept','application/json,text/plain');
-                      }
-                    }),
-                    $.ajax({
-                      type : 'GET',
-                      url : 'http://192.168.0.182:5009/token/lottery/getchanceconfig',
-                      dataType : 'json'
-                    })
-                  ).then(function (userInfo, lotteryInfo,remainingChanceInfo){
-                    var total_order_num = userInfo[0].body.total_order_num;
-                    $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
-                    $('.total .num').html(total_order_num);
-                    $('.today_order .num').html(userInfo[0].body.current_day_tasks);
-
-                    for(var i=0,len=lotteryInfo[0]['body']['chance_configs'].length;i<len;i++){
-                      var interval = lotteryInfo[0]['body']['chance_configs'][i]['interval'];
-                      var lottery_id = lotteryInfo[0]['body']['chance_configs'][i]['lottery_id'];
-
-                      if(interval == total_order_num){
-                        var remainData = {'token': tokenStr,"threshold_value": interval};
-                        $.ajax({
-                          type: 'POST',
-                          url: 'http://192.168.0.182:5009/token/getuserremainingchance',
-                          dataType: 'json',
-                          beforeSend: function (xhr) {
-                            xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
-                            xhr.setRequestHeader('Accept','application/json,text/plain');
-                          },
-                          data: JSON.stringify(remainData),
-                          success: function (remainingChanceInfo) {
-                            var times = remainingChanceInfo['body']['remaining_chance'];
-                            if(times>0){
-                              jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
-                            }
-                          },
-                          error: function () {
-                            console.log('remaining_chanceError');
-                          }
-                        });
-                        break;
-                      }
-                    }
-                  });
-
-//                拿到token判断有没登录
-                  if(!tokenStr){
-//                单击未登录的取消按钮
-                    $('#cacelBtn').off('touchstart').on('touchstart',function () {
-                      $('#toLogin').hide(300);
-                      $('html')[0].addEventListener('touchstart',function () {
-                        $('#toLogin').show();
-                      },true);
-                    });
-
-//                单击登录跳转登录页面
-                    $('#loginBtn').off('touchstart').on('touchstart',function () {
-                      jobTask.launchLoginPage();
-                    });
-
-                    $('html')[0].addEventListener('touchstart',function () {
-                      $('#toLogin').show();
-                    },true);
-
-                    $('.task_rand_score span').html(0);
-                    $('.total .num').html(0);
-                    $('.today_order .num').html(0);
-
-                  }else{
-//                点击任务指引
-                    $('.taskGuide').off('touchstart').on('touchstart',function () {
-                      jobTask.taskGuide();
-                    });
-
-//                点击查看
-                    $('.more').off('touchstart').on('touchstart',function () {
-                      jobTask.checkTaskStatistics();
-                    });
-
-//                点击下一张按钮
-                    $('.next').off('click').on('click', function(evt) {
-                      if(!window.navigator.onLine){
-                        $('#offLine').show();
-                      }else{
-                        var answer = {"text": $('.showInfo').val()};
-                        if (typeof answer != 'undefined') {
-                          pybossa.saveTask(task.id, answer).done(function() {
-                            deferred.resolve();
-                          });
-                          if ($("#disqus_thread").is(":visible")) {
-                            $('#disqus_thread').toggle();
-                            $('.btn-disqus').toggle();
-                          }
-                        }
-                        else {
-                        }
-                        $('.showInfo').val('');
-                        $('.pinch-zoom-container').css('height','auto');
-                      }
-                    });
-                  }
-                }
-
-              },50);
-
-              $('#task-id').html(task.id);
-
-            }
-            else {
-              console.log('presentTask noTask');
-
-              var jobTaskLoadedTimer2 = setInterval(function () {
-                if(jobTaskLoaded) {
-                  clearInterval(jobTaskLoadedTimer2);
-                  tokenStr = jobTask.receiveNativeToken();
-                  $.ajax({
-                    type: 'GET',
-                    async: false,
-                    cache: false,
-                    url: 'http://192.168.0.182:5009/token/getongoingproject',
-                    dataType: 'json',
-                    beforeSend: function (xhr) {
-                      xhr.setRequestHeader('Authorization',tokenStr);
-                    },
-                    success: function (data) {
-                      console.log('getongoingproject： '+data);
-                      var shortName = data['body']['short_name'];
-                      if(shortName){
-                        jobTask.switchToAnotherProject(shortName);
-                      }else{
-                        window.location.href = "http://192.168.0.182:8000/h5/noTask.html";
-                      }
-                    },
-                    error: function (xml, error) {
-                      console.log('shortNameError');
-                    }
-                  });
-                }
-              },50);
-            }
+        $(document).ajaxStart(function(){
+          $("#showMes").show();
+        }).ajaxStop(function(){
+          getStr = true;
+          if(loadImg && getStr){
+            $("#showMes").hide();
+          }
         });
 
-        pybossa.run('hospital');
-    })();
+        var fontSize = parseInt($('html').css('fontSize'));
+        var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.1*fontSize},maxZoom:6,tapZoomFactor:3};
+        $('div.pinch-zoom').each(function () {
+          new RTP.PinchZoom($(this), opt);
+        });
+
+//            发送图片获取识别字符串，并放入input中
+        var str;
+        var urlData = {"url": task.info.url,"type": task.info.type};
+        function getStr() {
+          var getStrAjax = $.ajax({
+            type: 'POST',
+            url: 'http://192.168.0.88:5001/ocr_api/block_rec',
+            dataType: 'json',
+            data: JSON.stringify(urlData),
+            timeout: 5000,
+            success: function (data) {
+              if(data){
+                str = data;
+              }else{
+                str = '无法识别';
+              }
+              $('.showInfo').val(str);
+            },
+            error: function (xml, error) {
+              console.log('strError');
+              if(error == "timeout"){
+                getStrAjax.abort();
+                getStr();
+              }
+            }
+          });
+        }
+        getStr();
+
+//                获取token
+        var jobTaskLoadedTimer = setInterval(function () {
+          if(jobTaskLoaded){
+            clearInterval(jobTaskLoadedTimer);
+            tokenStr = jobTask.receiveNativeToken();
+
+            //发起ajax请求获取任务统计数据userInfo插入页面中
+            var userData = {'token': tokenStr,'task_id':task_id};
+            userData = JSON.stringify(userData);
+
+//                判断是否需要跳到抽奖页面 getchanceconfig／interval  ＝＝  userInfo／total_order_num ？
+            $.when(
+              $.ajax({
+                type : 'POST',
+                url : 'http://192.168.0.182:5009/token/statistics/userInfo',
+                data : userData,
+                dataType : 'json',
+                beforeSend: function (xhr) {
+                  xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+                  xhr.setRequestHeader('Accept','application/json,text/plain');
+                }
+              }),
+              $.ajax({
+                type : 'GET',
+                url : 'http://192.168.0.182:5009/token/lottery/getchanceconfig',
+                dataType : 'json'
+              })
+            ).then(function (userInfo, lotteryInfo,remainingChanceInfo){
+              var total_order_num = userInfo[0].body.total_order_num;
+              $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
+              $('.total .num').html(total_order_num);
+              $('.today_order .num').html(userInfo[0].body.current_day_tasks);
+
+              for(var i=0,len=lotteryInfo[0]['body']['chance_configs'].length;i<len;i++){
+                var interval = lotteryInfo[0]['body']['chance_configs'][i]['interval'];
+                var lottery_id = lotteryInfo[0]['body']['chance_configs'][i]['lottery_id'];
+
+                if(interval == total_order_num){
+                  var remainData = {'token': tokenStr,"threshold_value": interval};
+                  $.ajax({
+                    type: 'POST',
+                    url: 'http://192.168.0.182:5009/token/getuserremainingchance',
+                    dataType: 'json',
+                    beforeSend: function (xhr) {
+                      xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+                      xhr.setRequestHeader('Accept','application/json,text/plain');
+                    },
+                    data: JSON.stringify(remainData),
+                    success: function (remainingChanceInfo) {
+                      var times = remainingChanceInfo['body']['remaining_chance'];
+                      if(times>0){
+                        jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
+                      }
+                    },
+                    error: function () {
+                      console.log('remaining_chanceError');
+                    }
+                  });
+                  break;
+                }
+              }
+            });
+
+//                拿到token判断有没登录
+            if(!tokenStr){
+//                单击未登录的取消按钮
+              $('#cacelBtn').off('touchstart').on('touchstart',function () {
+                $('#toLogin').hide(300);
+                $('html')[0].addEventListener('touchstart',function () {
+                  $('#toLogin').show();
+                },true);
+              });
+
+//                单击登录跳转登录页面
+              $('#loginBtn').off('touchstart').on('touchstart',function () {
+                jobTask.launchLoginPage();
+              });
+
+              $('html')[0].addEventListener('touchstart',function () {
+                $('#toLogin').show();
+              },true);
+
+              $('.task_rand_score span').html(0);
+              $('.total .num').html(0);
+              $('.today_order .num').html(0);
+
+            }else{
+//              给输入框绑定按软键盘enter时收起软键盘
+              $('.showInfo').bind('keydown', function (e) {
+                var key = e.which;
+                if (key == 13) {
+                  e.preventDefault();
+                  document.activeElement.blur();
+                }
+              });
+//                点击任务指引
+              $('.taskGuide').off('touchstart').on('touchstart',function () {
+                jobTask.taskGuide();
+              });
+
+//                点击查看
+              $('.more').off('touchstart').on('touchstart',function () {
+                jobTask.checkTaskStatistics();
+              });
+
+//                点击下一张按钮
+              $('.next').off('click').on('click', function(evt) {
+                if(!window.navigator.onLine){
+                  $('#offLine').show();
+                }else{
+                  var answer = {"text": $('.showInfo').val()};
+                  if (typeof answer != 'undefined') {
+                    pybossa.saveTask(task.id, answer).done(function() {
+                      console.log('saveTask: ' + tokenStr);
+                      if(jumpProjectFlag){
+                        $.ajax({
+                          type: 'GET',
+                          async: false,
+                          cache: false,
+                          url: 'http://192.168.0.182:5009/token/getongoingproject',
+                          dataType: 'json',
+                          beforeSend: function (xhr) {
+                            xhr.setRequestHeader('Authorization',tokenStr);
+                          },
+                          success: function (data) {
+                            console.log('getongoingproject： '+data);
+                            var shortName = data['body']['short_name'];
+                            if(shortName){
+                              jobTask.switchToAnotherProject(shortName);
+                            }else{
+                              window.location.href = "http://192.168.0.182:8000/h5/noTask.html";
+                            }
+                          },
+                          error: function (xml, error) {
+                            console.log('shortNameError');
+                          }
+                        });
+                      }
+
+                      deferred.resolve();
+                    });
+                    if ($("#disqus_thread").is(":visible")) {
+                      $('#disqus_thread').toggle();
+                      $('.btn-disqus').toggle();
+                    }
+                  }
+                  else {
+                  }
+                  $('.showInfo').val('');
+                  $('.pinch-zoom-container').css('height','auto');
+                }
+              });
+            }
+          }
+
+        },50);
+
+        $('#task-id').html(task.id);
+
+      }
+      else {
+        console.log('presentTask noTask');
+          /*
+           var jobTaskLoadedTimer2 = setInterval(function () {
+           if(jobTaskLoaded) {
+           clearInterval(jobTaskLoadedTimer2);
+           tokenStr = jobTask.receiveNativeToken();
+           $.ajax({
+           type: 'GET',
+           async: false,
+           cache: false,
+           url: 'http://192.168.0.182:5009/token/getongoingproject',
+           dataType: 'json',
+           beforeSend: function (xhr) {
+           xhr.setRequestHeader('Authorization',tokenStr);
+           },
+           success: function (data) {
+           console.log('getongoingproject： '+data);
+           var shortName = data['body']['short_name'];
+           if(shortName){
+           jobTask.switchToAnotherProject(shortName);
+           }else{
+           window.location.href = "http://192.168.0.182:8000/h5/noTask.html";
+           }
+           },
+           error: function (xml, error) {
+           console.log('shortNameError');
+           }
+           });
+           }
+           },50);
+           */
+      }
+    });
+
+    pybossa.run('hospital');
+  })();
 </script>

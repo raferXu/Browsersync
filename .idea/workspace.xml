@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao/时钟/交差前卡住版.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html" afterPath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock绑定父级滑动前版本.html" afterPath="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock绑定父级滑动前版本.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao/时钟/testLock.html" afterPath="$PROJECT_DIR$/zhongbao/时钟/testLock.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/tips1.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/tips1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/图片加载/1.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/图片加载/1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009过渡确认token.html" afterPath="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009过渡确认token.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,8 +28,8 @@
       <file leaf-file-name="pybossaCodeLock.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="658" column="47" lean-forward="false" selection-start-line="658" selection-start-column="47" selection-end-line="658" selection-end-column="47" />
+            <state relative-caret-position="196">
+              <caret line="696" column="25" lean-forward="true" selection-start-line="696" selection-start-column="25" selection-end-line="696" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -53,14 +55,85 @@
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
                 <element signature="e#11144#11185#0" expanded="false" />
-                <element signature="e#13428#14470#0" expanded="false" />
-                <element signature="e#14667#14986#0" expanded="false" />
-                <element signature="e#15050#15696#0" expanded="false" />
-                <element signature="e#28554#29045#0" expanded="false" />
-                <element signature="e#29761#29841#0" expanded="false" />
-                <element signature="e#32392#33060#0" expanded="false" />
-                <marker date="1494901004000" expanded="false" signature="24609:24867" ph="{...}" />
-                <marker date="1494901004000" expanded="false" signature="24966:27998" ph="{...}" />
+                <element signature="e#13512#14554#0" expanded="false" />
+                <element signature="e#14751#15070#0" expanded="false" />
+                <element signature="e#15134#15780#0" expanded="false" />
+                <element signature="e#28744#29264#0" expanded="false" />
+                <element signature="e#29980#30060#0" expanded="false" />
+                <marker date="1494987481000" expanded="false" signature="24799:25057" ph="{...}" />
+                <marker date="1494987481000" expanded="false" signature="25156:28188" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pybossaCrops.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/pybossaCrops.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3460">
+              <caret line="242" column="18" lean-forward="false" selection-start-line="242" selection-start-column="11" selection-end-line="242" selection-end-column="18" />
+              <folding>
+                <element signature="n#main#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="e#20414#21999#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="交差前卡住版.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zhongbao/时钟/交差前卡住版.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="542">
+              <caret line="963" column="0" lean-forward="true" selection-start-line="963" selection-start-column="0" selection-end-line="963" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sn5009过渡确认token.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009过渡确认token.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="425" column="68" lean-forward="false" selection-start-line="425" selection-start-column="53" selection-end-line="425" selection-end-column="68" />
+              <folding>
+                <element signature="e#20005#20065#0" expanded="false" />
+                <element signature="e#20138#20193#0" expanded="false" />
+                <element signature="e#23215#24220#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/图片加载/2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+              <folding>
+                <element signature="e#1634#2268#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -69,9 +142,11 @@
       <file leaf-file-name="1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/图片加载/1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="36" column="55" lean-forward="true" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
-              <folding />
+            <state relative-caret-position="210">
+              <caret line="30" column="4" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="30" selection-end-column="4" />
+              <folding>
+                <element signature="e#389#905#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,23 +163,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>touchend</find>
-      <find>geton</find>
-      <find>auth</find>
-      <find>xhr</find>
-      <find>get</find>
-      <find>nativeLoadCompleted</find>
-      <find>loadImg</find>
-      <find>showMes</find>
-      <find>hide</find>
-      <find>loadingShow</find>
-      <find>GetSlideDirection</find>
-      <find>GetSlideAngle</find>
-      <find>jobTaskLoaded</find>
-      <find>codeLockWrap</find>
       <find>163</find>
       <find>submit</find>
-      <find>next</find>
       <find>result</find>
       <find>lag</find>
       <find>F</find>
@@ -115,9 +175,24 @@
       <find>_fetchTask</find>
       <find>_saveTaskRun</find>
       <find>_createTaskRun</find>
-      <find>save</find>
       <find>i18n_working_task</find>
+      <find>SImage</find>
+      <find>imgarr</find>
+      <find>main</find>
+      <find>naturalHeight</find>
+      <find>loadNumImg</find>
+      <find>ajax</find>
+      <find>billImg</find>
+      <find>debugger</find>
+      <find>onerror</find>
       <find>block</find>
+      <find>task</find>
+      <find>next</find>
+      <find>showInfo</find>
+      <find>getCurStr</find>
+      <find>save</find>
+      <find>nativeLoadCompleted</find>
+      <find>timeout</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -137,10 +212,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/把ISO格式日期转换为JS的Date.html" />
-        <option value="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/使用给定的月份年份和日期创建一个Date对象.html" />
-        <option value="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/创建一个10天后的日期.html" />
-        <option value="$PROJECT_DIR$/bookExample/JavaScript Cookbook/3日期时间和定时器/记录两事件之间间隔.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009存储token.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版缩小测试/pybossa/fullMin.html" />
         <option value="$PROJECT_DIR$/testCSS/imgRotate.html" />
@@ -173,7 +244,6 @@
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/code将str变成对象修改前.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/按键监听/1.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/pybossaCrops.html" />
-        <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009过渡确认token.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/ZB2H5.html" />
         <option value="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock对比本地版.html" />
         <option value="$PROJECT_DIR$/zhongbao/native/info.html" />
@@ -186,8 +256,13 @@
         <option value="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock绑定父级滑动前版本.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/tips1.html" />
         <option value="$PROJECT_DIR$/zhongbao/时钟/testLock.html" />
-        <option value="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html" />
+        <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009.html" />
+        <option value="$PROJECT_DIR$/二期迭代/pybossaCrops.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/图片加载/1.html" />
+        <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009过渡确认token.html" />
+        <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/图片加载/2.html" />
+        <option value="$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html" />
+        <option value="$PROJECT_DIR$/zhongbao/时钟/交差前卡住版.html" />
       </list>
     </option>
   </component>
@@ -198,7 +273,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="1" />
+    <option name="y" value="25" />
     <option name="width" value="1280" />
     <option name="height" value="716" />
   </component>
@@ -263,15 +339,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="二期迭代" />
+              <option name="myItemId" value="zhongbao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="二期第二版修复" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="图片加载" />
+              <option name="myItemId" value="时钟" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -445,19 +517,19 @@
       <workItem from="1494378630357" duration="27752000" />
       <workItem from="1494555463640" duration="23987000" />
       <workItem from="1494813252867" duration="13875000" />
-      <workItem from="1494837387558" duration="11510000" />
+      <workItem from="1494837387558" duration="22069000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="399158000" />
+    <option name="totallyTimeSpent" value="409717000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="716" extended-state="0" />
+    <frame x="1" y="25" width="1280" height="716" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1914378" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24151857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32698414" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -520,7 +592,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009.html</url>
-          <line>348</line>
+          <line>353</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -555,7 +627,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html</url>
-          <line>581</line>
+          <line>587</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
@@ -565,39 +637,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/noTask5009.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="138" column="61" lean-forward="false" selection-start-line="138" selection-start-column="61" selection-end-line="138" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao/时钟/codeLock.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1425">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao/时钟/codeLock.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1608">
-          <caret line="161" column="33" lean-forward="false" selection-start-line="161" selection-start-column="33" selection-end-line="161" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock修改answer前.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao/时钟/codeLock2.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="162" column="33" lean-forward="false" selection-start-line="162" selection-start-column="33" selection-end-line="162" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -752,18 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009过渡确认token.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="491" column="17" lean-forward="true" selection-start-line="484" selection-start-column="0" selection-end-line="491" selection-end-column="17" />
-          <folding>
-            <element signature="e#19997#20057#0" expanded="false" />
-            <element signature="e#20130#20185#0" expanded="false" />
-            <element signature="e#23207#24212#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/ZB2H5.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -782,17 +814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="7" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/pybossaCrops.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="450" column="49" lean-forward="true" selection-start-line="450" selection-start-column="49" selection-end-line="450" selection-end-column="49" />
-          <folding>
-            <element signature="n#main#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="e#20414#21999#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -971,18 +992,146 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="595" column="0" lean-forward="true" selection-start-line="595" selection-start-column="0" selection-end-line="595" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/二期迭代/pybossaCrops.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8055">
+          <caret line="537" column="0" lean-forward="true" selection-start-line="537" selection-start-column="0" selection-end-line="537" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009过渡确认token.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="425" column="68" lean-forward="false" selection-start-line="425" selection-start-column="53" selection-end-line="425" selection-end-column="68" />
+          <folding>
+            <element signature="e#20005#20065#0" expanded="false" />
+            <element signature="e#20138#20193#0" expanded="false" />
+            <element signature="e#23215#24220#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/图片加载/2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding>
+            <element signature="e#1634#2268#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/图片加载/1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="36" column="55" lean-forward="true" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
-          <folding />
+        <state relative-caret-position="210">
+          <caret line="30" column="4" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="30" selection-end-column="4" />
+          <folding>
+            <element signature="e#389#905#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao/时钟/交差前卡住版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="963" column="0" lean-forward="true" selection-start-line="963" selection-start-column="0" selection-end-line="963" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/pybossaCrops.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3460">
+          <caret line="242" column="18" lean-forward="false" selection-start-line="242" selection-start-column="11" selection-end-line="242" selection-end-column="18" />
+          <folding>
+            <element signature="n#main#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="e#20414#21999#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="658" column="47" lean-forward="false" selection-start-line="658" selection-start-column="47" selection-end-line="658" selection-end-column="47" />
+        <state relative-caret-position="196">
+          <caret line="696" column="25" lean-forward="true" selection-start-line="696" selection-start-column="25" selection-end-line="696" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1008,14 +1157,13 @@
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
             <element signature="e#11144#11185#0" expanded="false" />
-            <element signature="e#13428#14470#0" expanded="false" />
-            <element signature="e#14667#14986#0" expanded="false" />
-            <element signature="e#15050#15696#0" expanded="false" />
-            <element signature="e#28554#29045#0" expanded="false" />
-            <element signature="e#29761#29841#0" expanded="false" />
-            <element signature="e#32392#33060#0" expanded="false" />
-            <marker date="1494901004000" expanded="false" signature="24609:24867" ph="{...}" />
-            <marker date="1494901004000" expanded="false" signature="24966:27998" ph="{...}" />
+            <element signature="e#13512#14554#0" expanded="false" />
+            <element signature="e#14751#15070#0" expanded="false" />
+            <element signature="e#15134#15780#0" expanded="false" />
+            <element signature="e#28744#29264#0" expanded="false" />
+            <element signature="e#29980#30060#0" expanded="false" />
+            <marker date="1494987481000" expanded="false" signature="24799:25057" ph="{...}" />
+            <marker date="1494987481000" expanded="false" signature="25156:28188" ph="{...}" />
           </folding>
         </state>
       </provider>
