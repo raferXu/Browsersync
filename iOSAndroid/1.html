@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <style>
+    html{font-size: 100px;}
+  </style>
+  <script>
+    function htmlFontSize(){
+      var html = document.querySelector("html");
+      var width = html.getBoundingClientRect().width;
+      html.style.fontSize = width / 3.75 + "px";
+    }
+    htmlFontSize();
+    window.addEventListener("resize",function(){
+      htmlFontSize();
+    },false);
+    window.onerror = function (msg,url,l) {
+      var txt = '';
+      txt="There was an error on this page.\n\n";
+      txt+="Error: " + msg + "\n";
+      txt+="URL: " + url + "\n";
+      txt+="Line: " + l + "\n\n";
+      console.log(txt);
+    };
+    var u = navigator.userAgent,
+      app = navigator.appVersion;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    console.log('isAndroid: '+isAndroid);
+    console.log('isiOS: '+isiOS);
+  </script>
+  <style>
+    header h1{font-size: 24px;text-align: center}
+    .ios{
+      font-size: 36px;
+      text-align: center;
+    }
+    .android{
+      font-size: 26px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>这是标题</h1>
+</header>
+<script>
+  var oHeader = document.getElementsByTagName('header')[0];
+  var oH1 = document.getElementsByTagName('h1')[0];
+  if(isAndroid){
+    oH1.className = 'android';
+  }
+</script>
+</body>
+</html>
