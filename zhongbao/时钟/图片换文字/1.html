@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Title</title>
+  <script>
+    function htmlFontSize(){
+      var html = document.querySelector("html");
+      var width = html.getBoundingClientRect().width;
+      html.style.fontSize = width / 3.75 + "px";
+    }
+    htmlFontSize();
+    window.addEventListener("resize",function(){
+      htmlFontSize();
+    },false);
+  </script>
+  <style>
+    html{font-size: 100px}
+    span{
+      display: inline-block;
+      width: .26rem;
+      height: .37rem;
+      line-height: .37rem;
+      border-radius: .03rem;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      font-size: .36rem;
+    }
+    span:not(:last-child){
+      margin-right: .1rem;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span>
+</div>
+</body>
+</html>

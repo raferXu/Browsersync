@@ -33,35 +33,26 @@
   }
 
   .codeLockWrap {
-    width: 85%;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
     margin: 0 auto;
+    font-size: 0;
   }
 
-  .codeLockWrap ul {
-    width: 100%;
-    height: 100%;
+  .codeLockWrap input{
+    display: inline-block;
+    width: .28rem;
+    height: .44rem;
+    line-height: .44rem;
+    border-radius: .03rem;
+    background-color: #323232;
+    color: #fff;
+    text-align: center;
+    font-size: .36rem;
   }
 
-  .codeLockWrap li {
-    position: relative;
-    float: left;
-    overflow: hidden;
-    width: 10%;
-    height: 100%;
-  }
-
-  .codeLockWrap div {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding: 0 5%;
-    box-sizing: border-box;
-  }
-
-  .codeLockWrap img {
-    width: 100%;
-    vertical-align: top;
-  }
   .noscroll{
     position: absolute;
     overflow: hidden;
@@ -119,7 +110,9 @@
           </nav>
           <div class="showInfo">
             <div class="codeLockWrap" id="codeLockWrap">
-              <ul></ul>
+              <!--<input value="0" type="number" onblur="if(!value)value='0'" oninput="if(value.length>1)value=value.slice(1)" />-->
+              <input value="0" type="number"/><input value="0" type="number"/><input value="0" type="number"/><input value="0" type="number"/><input value="0" type="number"/>
+              <input value="0" type="number"/><input value="0" type="number"/><input value="0" type="number"/><input value="0" type="number"/><input value="0" type="number"/>
             </div>
           </div>
           <p class="textTip tc">请适当修改，保证票据内容与文本输入框一致</p>
@@ -374,7 +367,7 @@
             clearInterval(imgLoadTimer);
             imgCallback($('.billImg')[0]);
             loadImg = true;
-            if(loadImg && getStr && loadNumImg){
+            if(loadImg && getStr){
               console.log('loadingHide');
               $("#showMes").hide();
             }
@@ -413,7 +406,7 @@
           $("#showMes").show();
         }).ajaxStop(function(){
           getStr = true;
-          if(loadImg && getStr && loadNumImg){
+          if(loadImg && getStr){
             console.log('loadingHide');
             $("#showMes").hide();
           }
@@ -451,140 +444,38 @@
 
                 console.log('blockStr.str: '+blockStr.str);
                 /*********************************************************************************************/
-//获取必要的DOM和声明必要变量
-                var moving = false;
-                var oWrap = document.getElementById('codeLockWrap');
-                var oCSS = document.getElementById('css1');
-                var oUl = oWrap.getElementsByTagName('ul')[0];
-                var aLi = oUl.getElementsByTagName('li');
-                var html = '';
-                var oDiv = oWrap.getElementsByTagName('div');
-                var aImg = oWrap.getElementsByTagName('img');
-                var i = 0;
-                var c = 10;
-                var imgarr = [];
 
-//显示所需所有图片
-                imgarr[0] = "http://192.168.0.182:8000/h5/img/0.JPG";
-                imgarr[1] = "http://192.168.0.182:8000/h5/img/1.JPG";
-                imgarr[2] = "http://192.168.0.182:8000/h5/img/2.JPG";
-                imgarr[3] = "http://192.168.0.182:8000/h5/img/3.JPG";
-                imgarr[4] = "http://192.168.0.182:8000/h5/img/4.JPG";
-                imgarr[5] = "http://192.168.0.182:8000/h5/img/5.JPG";
-                imgarr[6] = "http://192.168.0.182:8000/h5/img/6.JPG";
-                imgarr[7] = "http://192.168.0.182:8000/h5/img/7.JPG";
-                imgarr[8] = "http://192.168.0.182:8000/h5/img/8.JPG";
-                imgarr[9] = "http://192.168.0.182:8000/h5/img/9.JPG";
+//返回角度
+                function GetSlideAngle(dx, dy) {
+                  return Math.atan2(dy, dx) * 180 / Math.PI;
+                }
+
+//根据起点和终点返回方向 1：向上，2：向下，3：向左，4：向右,0：未滑动
+                function GetSlideDirection(startX, startY, endX, endY) {
+                  var dy = startY - endY;
+                  var dx = endX - startX;
+                  var result = 0;
+
+                  var angle = GetSlideAngle(dx, dy);
+                  if (angle >= 45 && angle < 135) {
+                    result = 1;
+                  } else if (angle >= -135 && angle < -45) {
+                    result = 2;
+                  } else if ((angle >= 150 && angle <= 180) || (angle >= -180 && angle < -150)) {  //向左
+                    if(Math.abs(dx)>5){
+                      result = 3;
+                    }
+                  } else if (angle >= -60 && angle < 60) {  //向右
+                    if(Math.abs(dx)>5){
+                      result = 4;
+                    }
+                  }
+                  console.log('result: '+result);
+                  return result;
+                }
 
 //将获取的数字数据用图片表示出来
-                for (var i = 0, len = blockStr.str.length; i < len; i++) {
-                  html += '<li><div><img src="http://192.168.0.182:8000/h5/img/' + blockStr.str[i] + '.JPG" alt=""><img src="http://192.168.0.182:8000/h5/img/' + blockStr.str[i] + '.JPG" alt=""><img src="http://192.168.0.182:8000/h5/img/' + blockStr.str[i] + '.JPG" alt=""></div></li>';
-                }
-                console.log('ulHtml: '+html);
-                oUl.innerHTML = html;
-                for (var i = 0, len = blockStr.str.length; i < len; i++) {
-                  aLi[i].style.width = (100 / aLi.length) + '%';
-                }
-
-
-
-                var main = function () {
-                  var initH = aImg[0].naturalHeight-1;
-                  var drawPicTimer = setInterval(function () {
-                    var h = aImg[0].height;
-                    if(0<h<initH){
-                      console.log(h+'initH'+initH);
-                      clearInterval(drawPicTimer);
-                      oWrap.style.height = h + 'px';
-                      var oPos = document.getElementsByClassName('showInfo')[0];
-                      var oPosH = oPos.clientHeight;
-                      var oPosPT = (oPosH - h)/2;
-                      oPos.style.paddingTop = oPosPT + 'px';
-
-                      for (var i = 0, olen = oDiv.length; i < olen; i++) {
-                        oDiv[i].style.top = -h + 'px';
-                        oDiv[i].index = i;
-                        oDiv[i].count = blockStr.str[i];
-                        var eImg = oDiv[i].getElementsByTagName('img');
-                        for (var j = 0; j < eImg.length; j++) {
-                          eImg[j].index = j;
-//                      滑动处理
-                          var startX, startY;
-                          var oMain = document.getElementsByTagName('main')[0];
-                          var same = false;
-
-                          eImg[eImg[j].index].ontouchstart = function (ev) {
-                            console.log('touchstart');
-                            same = true;
-                            startX = ev.touches[0].pageX;
-                            startY = ev.touches[0].pageY;
-                            oMain.className = 'noscroll';
-
-                            var This = this;
-                            console.log('touchstart: '+This);
-                            console.log(This);
-                            document.ontouchend = function (ev) {
-                              if(same){
-                                same = false;
-                                var endX, endY;
-                                oMain.className = '';
-                                endX = ev.changedTouches[0].pageX;
-                                endY = ev.changedTouches[0].pageY;
-//                console.log('imgTouchend'+(endY-startY));
-                                var direction = GetSlideDirection(startX, startY, endX, endY);
-                                console.log('touchend: '+This);
-                                console.log(This);
-                                switch (direction) {
-//                        上滑
-                                  case 1:
-                                    if (!moving) {
-                                      console.log('上滑');
-                                      moving = true;
-                                      This.parentNode.count++;
-                                      slied(This.parentNode.index, blockStr, 1, h, This.parentNode.count);
-//                      console.log('afterSlied'+blockStr.str);
-                                    }
-                                    break;
-                                  case 2:
-//                        下滑
-                                    if (!moving) {
-                                      console.log('下滑');
-                                      moving = true;
-                                      This.parentNode.count--;
-                                      if (This.parentNode.count < 0) {
-                                        This.parentNode.count = This.parentNode.count % 10 + 10;
-                                      }
-                                      slied(This.parentNode.index, blockStr, -1, h, This.parentNode.count);
-                                    }
-                                    break;
-                                  case 3:  //向左
-                                    console.log('向左');
-                                    $('#codeLockWrap li').eq(0).appendTo($('#codeLockWrap ul'));
-                                    var strArr = blockStr.str.split('');
-                                    strArr.push(strArr.shift());
-                                    blockStr.str = strArr.join('');
-                                    for(var i = 0, olen = oDiv.length; i < olen; i++){
-                                      oDiv[i].index = i;
-                                      oDiv[i].count = blockStr.str[i];
-                                    }
-                                    break;
-                                  case 4:
-                                    console.log('right');
-                                    var liLen = $('#codeLockWrap li').length;
-                                    $('#codeLockWrap li').eq(liLen-1).prependTo($('#codeLockWrap ul'));
-                                    var strArr = blockStr.str.split('');
-                                    strArr.unshift(strArr.pop());
-                                    blockStr.str = strArr.join('');
-                                    for(var i = 0, olen = oDiv.length; i < olen; i++){
-                                      oDiv[i].index = i;
-                                      oDiv[i].count = blockStr.str[i];
-                                    }
-                                    break;
-                                }
-                              }
-                            };
-                          };
-                          /*
+/*
                            eImg[eImg[j].index].addEventListener('touchstart', function (ev) {
                            console.log('touchstart');
                            startX = ev.touches[0].pageX;
@@ -647,136 +538,37 @@
                            }
                            }, false);
                            */
-                        }
-                      }
+                var aInput = $('#codeLockWrap input');
+                var nowValue;
+                for(var i=0;i<10;i++){
+                  aInput[i].value = blockStr.str[i];
+                  aInput[i].onfocus = function () {
+                    nowValue = this.value;
+                    this.value = '';
+                  };
+                  aInput[i].onblur = function () {
+                    if(!this.value){
+                      this.value = nowValue;
                     }
-                  },30);
-                };
+                  };
+                }
+//按下软键盘确认键后收起键盘
+                $('.showInfo').bind('keydown', function (e) {
+                  var key = e.which;
+                  if (key == 13) {
+                    e.preventDefault();
+                    document.activeElement.blur();
+                  }
+                });
 //获取某时刻的字符串
                 getCurStr = function () {
                   var curStr = [];
-                  for(var i = 0, olen = oDiv.length; i < olen; i++){
-                    curStr[i] = oDiv[i].count%10;
+                  for(var i = 0, olen = aInput.length; i < olen; i++){
+                    curStr[i] = aInput[i].value;
                   }
                   console.log(curStr.join(''));
                   return curStr.join('');
                 };
-//定义某图片的加载及完成时回调
-                function SImage(url, callback) {
-                  var img = new Image();
-                  img.onload = function () {
-                    if (img.complete == true) {
-                      i = i + 1;
-                      callback(i);
-                    }
-                  };
-                  img.onerror = function () {
-                    console.log('imgErrorLoad');
-                    img.src = 'http://192.168.0.182:8000/h5/img/'+blockStr.str[i]+'.JPG?t='+Math.random();
-                  };
-                  img.src = url;
-                }
-//判断所有图片是否都加载完，没的话继续加载，完成的话执行main函数
-                function icall(v) {
-                  if (v < c) {
-                    SImage("" + imgarr[v] + "", icall);
-                    console.log('toCallMainBefore');
-                  }
-                  else if (v >= c) {
-                    i = 0;
-                    console.log('toCallMain');
-                    loadNumImg = true;
-                    if(loadImg && getStr && loadNumImg){
-                      console.log('loadingHide');
-                      $("#showMes").hide();
-                    }
-                    main();
-                  }
-                }
-
-                icall(0);
-
-//            返回角度
-                function GetSlideAngle(dx, dy) {
-                  return Math.atan2(dy, dx) * 180 / Math.PI;
-                }
-
-//            根据起点和终点返回方向 1：向上，2：向下，3：向左，4：向右,0：未滑动
-                function GetSlideDirection(startX, startY, endX, endY) {
-                  var dy = startY - endY;
-                  var dx = endX - startX;
-                  var result = 0;
-
-                  var angle = GetSlideAngle(dx, dy);
-                  if (angle >= 45 && angle < 135) {
-                    result = 1;
-                  } else if (angle >= -135 && angle < -45) {
-                    result = 2;
-                  } else if ((angle >= 150 && angle <= 180) || (angle >= -180 && angle < -150)) {  //向左
-                    if(Math.abs(dx)>5){
-                      result = 3;
-                    }
-                  } else if (angle >= -60 && angle < 60) {  //向右
-                    if(Math.abs(dx)>5){
-                      result = 4;
-                    }
-                  }
-                  console.log('result: '+result);
-                  return result;
-                }
-
-//            图片切换
-                function slied(n, strObj, d, h, c) {
-                  console.log('hhhhhh: '+h);
-                  var str = strObj.str;
-                  var imgs = oDiv[n].getElementsByTagName('img');
-                  //1为上滚,-1反向   d
-                  if (d > 0) {
-                    var next = (c) % 10;
-                    imgs[2].src = 'http://192.168.0.182:8000/h5/img/' + (next) + '.JPG';
-
-                    move(oDiv[n], 'top', -d * 2 * h, 400, function () {
-                      imgs[1].src = 'http://192.168.0.182:8000/h5/img/' + (next) + '.JPG';
-                      oDiv[n].style.top = -h + 'px';
-                      moving = false;
-                    });
-                    var aStr = str.split('');
-                    aStr[n]++;
-                    aStr[n]%=10;
-                    strObj.str = aStr.join('');
-                  } else if (d < 0) {
-                    var prev = (c) % 10;
-                    imgs[0].src = 'http://192.168.0.182:8000/h5/img/' + (prev) + '.JPG';
-
-                    move(oDiv[n], 'top', 0, 400, function () {
-                      imgs[1].src = 'http://192.168.0.182:8000/h5/img/' + (prev) + '.JPG';
-                      oDiv[n].style.top = -h + 'px';
-                      moving = false;
-                    });
-                    var aStr = str.split('');
-                    aStr[n]--;
-                    aStr[n] = (aStr[n]+10)%10;
-                    strObj.str = aStr.join('');
-                  }
-                }
-
-//            移动动画
-                function move(obj, attr, target, duration, callback) {
-                  var b = parseFloat(getComputedStyle(obj)[attr]);
-                  var c = target - b;
-                  var d = duration;
-                  var now = new Date().getTime();
-                  obj[attr] = setInterval(function () {
-                    var t = new Date().getTime() - now;
-                    var value = b + c / d * t;
-                    obj.style[attr] = value + "px";
-                    if (t >= d) {
-                      clearInterval(obj[attr]);
-                      obj.style[attr] = target + "px";
-                      callback && callback();//当到达目标值的时候执行回调函数
-                    }
-                  }, 5)
-                }
                 /*********************************************************************************************/
 
               }else{
@@ -812,6 +604,7 @@
                 url : 'http://192.168.0.182:5009/token/statistics/userInfo',
                 data : userData,
                 dataType : 'json',
+                timeout: 5000,
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
                   xhr.setRequestHeader('Accept','application/json,text/plain');
@@ -820,6 +613,7 @@
               $.ajax({
                 type : 'GET',
                 url : 'http://192.168.0.182:5009/token/lottery/getchanceconfig',
+                timeout: 5000,
                 dataType : 'json'
               })
             ).then(function (userInfo, lotteryInfo){
@@ -838,6 +632,7 @@
                     type: 'POST',
                     url: 'http://192.168.0.182:5009/token/getuserremainingchance',
                     dataType: 'json',
+                    timeout: 5000,
                     beforeSend: function (xhr) {
                       xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
                       xhr.setRequestHeader('Accept','application/json,text/plain');
@@ -912,6 +707,7 @@
                           type: 'GET',
                           async: false,
                           cache: false,
+                          timeout: 5000,
                           url: 'http://192.168.0.182:5009/token/getongoingproject',
                           dataType: 'json',
                           beforeSend: function (xhr) {
