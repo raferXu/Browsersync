@@ -73,7 +73,7 @@
       navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
   if (navigator.getUserMedia){
-    navigator.getUserMedia({video:true}, success, function(e) {
+    navigator.getUserMedia({audio:true}, success, function(e) {
       // alert('捕获失败！');
     });
   } else alert('不支持getUserMedia');
@@ -184,7 +184,6 @@
   }
 
   function success(e){
-    console.log(window.URL.createObjectURL(e));
     // creates the audio context
     audioContext = window.AudioContext || window.webkitAudioContext;
     context = new audioContext();

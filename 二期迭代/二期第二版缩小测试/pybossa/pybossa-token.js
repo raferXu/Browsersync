@@ -323,7 +323,7 @@
     // 获取token值后返回_run调用结果
     pybossa.run = function (projectname, _window) {
         token = $("#token").data("token");
-        console.log(token);
+        console.log('$("#token").data("token") '+token);
         return _run(projectname, _window);
     };
 

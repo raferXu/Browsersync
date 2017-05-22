@@ -42,8 +42,7 @@
   <button class="btn-end">结束录制 </button>
 </div>
 <p class="output">点击“开始录制”按钮开始录音</p>
-<div class="my-audio">
-  <video></video></div>
+<div class="my-audio"></div>
 <h2>测试结果：</h2>
 <table>
   <tr><th>系统支持：</th><td>android chrome，且有数据丢失</td></tr>
@@ -70,20 +69,14 @@
 
   // feature detection
   if (!navigator.getUserMedia)
-    navigator.getUserMedia = navigator.getUserMedia || navigator.mediaDevices.getUserMedia ||
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
       navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
-  if (navigator.mediaDevices.getUserMedia){
-    console.log('navigator.mediaDevices.getUserMedia');
-    navigator.mediaDevices.getUserMedia({audio:true})
-      .then(function(mediaStream) {
-        var video = document.querySelector('video');
-        video.src = window.URL.createObjectURL(mediaStream);
-        success(mediaStream);
-      })
-      .catch(function(error) {});
+  if (navigator.getUserMedia){
+    navigator.getUserMedia({audio:true}, success, function(e) {
+      // alert('捕获失败！');
+    });
   } else alert('不支持getUserMedia');
-
 
 
   // if R is pressed, we start recording
@@ -191,7 +184,6 @@
   }
 
   function success(e){
-    console.log(window.URL.createObjectURL(e));
     // creates the audio context
     audioContext = window.AudioContext || window.webkitAudioContext;
     context = new audioContext();
