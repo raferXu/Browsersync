@@ -46,38 +46,38 @@
     }
 </style>
 <div class="row skeleton"> <!-- Start Skeleton Row-->
-    <div class="col-md-6 " style="display:none"><!-- Start of Question and Submission DIV (column) -->
-        <h1 id="question"><span id="i18n_question">Do you see a human face in this photo?</span></h1> <!-- The question will be loaded here -->
-        <div id="answer"> <!-- Start DIV for the submission buttons -->
-            <!-- If the user clicks this button, the saved answer will be value="yes"-->
-            <button class="btn btn-success btn-answer" value='Yes'><i class="icon icon-white icon-thumbs-up"></i> <span id="i18n_yes">Yes</span></button>
-            <!-- If the user clicks this button, the saved answer will be value="no"-->
-            <button class="btn btn-danger btn-answer" value='No'><i class="icon icon-white icon-thumbs-down"></i> No</button>
-            <!-- If the user clicks this button, the saved answer will be value="NoPhoto"-->
-            <button class="btn btn-answer" value='NoPhoto'><i class="icon icon-exclamation"></i> <span id="i18n_no_photo">No photo</span></button>
-            <!-- If the user clicks this button, the saved answer will be value="NotKnown"-->
-            <button class="btn btn-answer" value='NotKnown'><i class="icon icon-white icon-question-sign"></i> <span id="i18n_i_dont_know">I don't know</span></button>
-        </div><!-- End of DIV for the submission buttons -->
-        <!-- Feedback items for the user -->
-        <p><span id="i18n_working_task">You are working now on task:</span> <span id="task-id" class="label label-warning">#</span></p>
-        <p><span id="i18n_tasks_completed">You have completed:</span> <span id="done" class="label label-info"></span> <span id="i18n_tasks_from">tasks from</span>
-            <!-- Progress progress-bar for the user -->
-            <span id="total" class="label label-inverse"></span></p>
-        <div class="progress progress-striped">
-            <div id="progress" rel="tooltip" title="#" class="progress-bar" style="width: 0%;"></div>
-        </div>
-        <div id="disqus_show_btn" style="margin-top:5px;">
-            <button class="btn btn-primary btn-lg btn-disqus" onclick="loadDisqus()"><i class="icon-comments"></i> <span id="i18n_show_comments">Show comments</span></button>
-            <button class="btn btn-lg btn-disqus" onclick="loadDisqus()" style="display:none"><i class="icon-comments"></i> <span id="i18n_hide_comments">Hide comments</span></button>
-        </div><!-- End of Disqus Button section -->
-        <!-- Disqus thread for the given task -->
-        <div id="disqus_thread" style="margin-top:5px;display:none"></div>
-    </div><!-- End of Question and Submission DIV (column) -->
-    <div class="col-md-6" style="display:none"><!-- Start of Photo DIV (column) -->
-        <a id="photo-link" href="#">
-            <img id="photo" src="http://i.imgur.com/GeHxzb7.png" style="max-width=100%">
-        </a>
-    </div><!-- End of Photo DIV (columnt) -->
+    <!--<div class="col-md-6 " style="display:none">&lt;!&ndash; Start of Question and Submission DIV (column) &ndash;&gt;-->
+    <!--<h1 id="question"><span id="i18n_question">Do you see a human face in this photo?</span></h1> &lt;!&ndash; The question will be loaded here &ndash;&gt;-->
+    <!--<div id="answer"> &lt;!&ndash; Start DIV for the submission buttons &ndash;&gt;-->
+    <!--&lt;!&ndash; If the user clicks this button, the saved answer will be value="yes"&ndash;&gt;-->
+    <!--<button class="btn btn-success btn-answer" value='Yes'><i class="icon icon-white icon-thumbs-up"></i> <span id="i18n_yes">Yes</span></button>-->
+    <!--&lt;!&ndash; If the user clicks this button, the saved answer will be value="no"&ndash;&gt;-->
+    <!--<button class="btn btn-danger btn-answer" value='No'><i class="icon icon-white icon-thumbs-down"></i> No</button>-->
+    <!--&lt;!&ndash; If the user clicks this button, the saved answer will be value="NoPhoto"&ndash;&gt;-->
+    <!--<button class="btn btn-answer" value='NoPhoto'><i class="icon icon-exclamation"></i> <span id="i18n_no_photo">No photo</span></button>-->
+    <!--&lt;!&ndash; If the user clicks this button, the saved answer will be value="NotKnown"&ndash;&gt;-->
+    <!--<button class="btn btn-answer" value='NotKnown'><i class="icon icon-white icon-question-sign"></i> <span id="i18n_i_dont_know">I don't know</span></button>-->
+    <!--</div>&lt;!&ndash; End of DIV for the submission buttons &ndash;&gt;-->
+    <!--&lt;!&ndash; Feedback items for the user &ndash;&gt;-->
+    <!--<p><span id="i18n_working_task">You are working now on task:</span> <span id="task-id" class="label label-warning">#</span></p>-->
+    <!--<p><span id="i18n_tasks_completed">You have completed:</span> <span id="done" class="label label-info"></span> <span id="i18n_tasks_from">tasks from</span>-->
+    <!--&lt;!&ndash; Progress progress-bar for the user &ndash;&gt;-->
+    <!--<span id="total" class="label label-inverse"></span></p>-->
+    <!--<div class="progress progress-striped">-->
+    <!--<div id="progress" rel="tooltip" title="#" class="progress-bar" style="width: 0%;"></div>-->
+    <!--</div>-->
+    <!--<div id="disqus_show_btn" style="margin-top:5px;">-->
+    <!--<button class="btn btn-primary btn-lg btn-disqus" onclick="loadDisqus()"><i class="icon-comments"></i> <span id="i18n_show_comments">Show comments</span></button>-->
+    <!--<button class="btn btn-lg btn-disqus" onclick="loadDisqus()" style="display:none"><i class="icon-comments"></i> <span id="i18n_hide_comments">Hide comments</span></button>-->
+    <!--</div>&lt;!&ndash; End of Disqus Button section &ndash;&gt;-->
+    <!--&lt;!&ndash; Disqus thread for the given task &ndash;&gt;-->
+    <!--<div id="disqus_thread" style="margin-top:5px;display:none"></div>-->
+    <!--</div>&lt;!&ndash; End of Question and Submission DIV (column) &ndash;&gt;-->
+    <!--<div class="col-md-6" style="display:none">&lt;!&ndash; Start of Photo DIV (column) &ndash;&gt;-->
+    <!--<a id="photo-link" href="#">-->
+    <!--<img id="photo" src="http://i.imgur.com/GeHxzb7.png" style="max-width=100%">-->
+    <!--</a>-->
+    <!--</div>&lt;!&ndash; End of Photo DIV (columnt) &ndash;&gt;-->
 
     <header><h1 class="tc fwn">平安众包</h1></header>
     <main>
@@ -142,10 +142,10 @@
     </div>
 </div>
 <!--<div id="loginOut" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">-->
-    <!--<div style="position:absolute;top:50%;left:50%;width:80%;webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">-->
-        <!--<p style="vertical-align:middle;display:table-cell;width:100%;height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box;text-align:left;padding:.1rem;"><span style="vertical-align:middle;display:inline-block;">本帐号已在其它设备登录，您已被迫下线，请确认是否本人操作。</span></p>-->
-        <!--<p id="loginOutBtn" class="l" style="width:100%;height:.48rem;line-height:.48rem;margin:0;color:#ff6000">确定</p>-->
-    <!--</div>-->
+<!--<div style="position:absolute;top:50%;left:50%;width:80%;webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">-->
+<!--<p style="vertical-align:middle;display:table-cell;width:100%;height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box;text-align:left;padding:.1rem;"><span style="vertical-align:middle;display:inline-block;">本帐号已在其它设备登录，您已被迫下线，请确认是否本人操作。</span></p>-->
+<!--<p id="loginOutBtn" class="l" style="width:100%;height:.48rem;line-height:.48rem;margin:0;color:#ff6000">确定</p>-->
+<!--</div>-->
 <!--</div>-->
 <script type="text/javascript" src="http://192.168.0.182:8000/h5/pinchzoom201.js"></script>
 <script type="text/javascript">
@@ -177,45 +177,45 @@
     var tokenStr;
 
 // Default language
-    var userLocale = "en";
+//    var userLocale = "en";
 // Translations
-    var messages = {"en": {
-      "i18n_welldone": "Well done!",
-      "i18n_welldone_text": "Your answer has been saved",
-      "i18n_loading_next_task": "Loading next task...",
-      "i18n_task_completed": "The task has been completed!",
-      "i18n_thanks": "Thanks a lot!",
-      "i18n_congratulations": "Congratulations",
-      "i18n_congratulations_text": "You have participated in all available tasks!",
-      "i18n_yes": "Yes",
-      "i18n_no_photo": "No photo",
-      "i18n_i_dont_know": "I don't know",
-      "i18n_working_task": "You are working now on task:",
-      "i18n_tasks_completed": "You have completed:",
-      "i18n_tasks_from": "tasks from",
-      "i18n_show_comments": "Show comments:",
-      "i18n_hide_comments": "Hide comments:",
-      "i18n_question": "Do you see a human face in this photo?",
-    },
-      "es": {
-        "i18n_welldone": "Bien hecho!",
-        "i18n_welldone_text": "Tu respuesta ha sido guardada",
-        "i18n_loading_next_task": "Cargando la siguiente tarea...",
-        "i18n_task_completed": "La tarea ha sido completadas!",
-        "i18n_thanks": "Muchísimas gracias!",
-        "i18n_congratulations": "Enhorabuena",
-        "i18n_congratulations_text": "Has participado en todas las tareas disponibles!",
-        "i18n_yes": "Sí",
-        "i18n_no_photo": "No hay foto",
-        "i18n_i_dont_know": "No lo sé",
-        "i18n_working_task": "Estás trabajando en la tarea:",
-        "i18n_tasks_completed": "Has completado:",
-        "i18n_tasks_from": "tareas de",
-        "i18n_show_comments": "Mostrar comentarios",
-        "i18n_hide_comments": "Ocultar comentarios",
-        "i18n_question": "¿Ves una cara humana en esta foto?",
-      },
-    };
+//    var messages = {"en": {
+//      "i18n_welldone": "Well done!",
+//      "i18n_welldone_text": "Your answer has been saved",
+//      "i18n_loading_next_task": "Loading next task...",
+//      "i18n_task_completed": "The task has been completed!",
+//      "i18n_thanks": "Thanks a lot!",
+//      "i18n_congratulations": "Congratulations",
+//      "i18n_congratulations_text": "You have participated in all available tasks!",
+//      "i18n_yes": "Yes",
+//      "i18n_no_photo": "No photo",
+//      "i18n_i_dont_know": "I don't know",
+//      "i18n_working_task": "You are working now on task:",
+//      "i18n_tasks_completed": "You have completed:",
+//      "i18n_tasks_from": "tasks from",
+//      "i18n_show_comments": "Show comments:",
+//      "i18n_hide_comments": "Hide comments:",
+//      "i18n_question": "Do you see a human face in this photo?",
+//    },
+//      "es": {
+//        "i18n_welldone": "Bien hecho!",
+//        "i18n_welldone_text": "Tu respuesta ha sido guardada",
+//        "i18n_loading_next_task": "Cargando la siguiente tarea...",
+//        "i18n_task_completed": "La tarea ha sido completadas!",
+//        "i18n_thanks": "Muchísimas gracias!",
+//        "i18n_congratulations": "Enhorabuena",
+//        "i18n_congratulations_text": "Has participado en todas las tareas disponibles!",
+//        "i18n_yes": "Sí",
+//        "i18n_no_photo": "No hay foto",
+//        "i18n_i_dont_know": "No lo sé",
+//        "i18n_working_task": "Estás trabajando en la tarea:",
+//        "i18n_tasks_completed": "Has completado:",
+//        "i18n_tasks_from": "tareas de",
+//        "i18n_show_comments": "Mostrar comentarios",
+//        "i18n_hide_comments": "Ocultar comentarios",
+//        "i18n_question": "¿Ves una cara humana en esta foto?",
+//      },
+//    };
 
     $(document).ready(function(){
 
@@ -228,7 +228,7 @@
         $('header h1').addClass('androidHeader');
       }
 
-      userLocale = document.getElementById('PYBOSSA_USER_LOCALE').textContent.trim();
+//      userLocale = document.getElementById('PYBOSSA_USER_LOCALE').textContent.trim();
 
       $('body').css('padding','0px');
 
@@ -243,24 +243,24 @@
       });
     });
 
-    function i18n_translate() {
-      var ids = Object.keys(messages[userLocale]);
-      for (i=0; i<ids.length; i++) {
-        if (document.getElementById(ids[i])) {
-          document.getElementById(ids[i]).innerHTML = messages[userLocale][ids[i]];
-        }
-      }
-    }
-    function loadUserProgress() {
-      pybossa.userProgress('sn').done(function(data){
-        var pct = Math.round((data.done*100)/data.total);
-        $("#progress").css("width", pct.toString() +"%");
-        $("#progress").attr("title", pct.toString() + "% completed!");
-        $("#progress").tooltip({'placement': 'left'});
-        $("#total").text(data.total);
-        $("#done").text(data.done);
-      });
-    }
+//    function i18n_translate() {
+//      var ids = Object.keys(messages[userLocale]);
+//      for (i=0; i<ids.length; i++) {
+//        if (document.getElementById(ids[i])) {
+//          document.getElementById(ids[i]).innerHTML = messages[userLocale][ids[i]];
+//        }
+//      }
+//    }
+//    function loadUserProgress() {
+//      pybossa.userProgress('sn').done(function(data){
+//        var pct = Math.round((data.done*100)/data.total);
+//        $("#progress").css("width", pct.toString() +"%");
+//        $("#progress").attr("title", pct.toString() + "% completed!");
+//        $("#progress").tooltip({'placement': 'left'});
+//        $("#total").text(data.total);
+//        $("#done").text(data.done);
+//      });
+//    }
 
 //        判断图片是否加载完成
     function imgLoaded(img) {
@@ -298,8 +298,8 @@
 
     pybossa.presentTask(function(task, deferred) {
       if ( !$.isEmptyObject(task) ) {
-        loadUserProgress();
-        i18n_translate();
+//        loadUserProgress();
+//        i18n_translate();
         console.log('运行presentTasktask函数时拿到的任务为: '+task);
 
         $('.pinch-zoom').html('').append(task.info.image);
