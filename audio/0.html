@@ -74,10 +74,9 @@
 
   if (navigator.getUserMedia){
     navigator.getUserMedia({audio:true}, success, function(e) {
-      // alert('捕获失败！');
+       alert('捕获失败！');
     });
   } else alert('不支持getUserMedia');
-
 
   // if R is pressed, we start recording
 
@@ -103,7 +102,6 @@
 
     // we create our wav file
     var buffer = new ArrayBuffer(44 + interleaved.length * 2);
-
 
     var view = new DataView(buffer);
 
@@ -141,6 +139,7 @@
     var reader = new FileReader();
     reader.onload = function(event){
       var audio = window.document.createElement('audio');
+      console.log(event.target.result);
       audio.src = event.target.result;
       audio.controls = true;
       myAudio.appendChild(audio);
@@ -149,7 +148,6 @@
     reader.readAsDataURL(blob);
 
   });
-
 
   function interleave(leftChannel, rightChannel){
     var length = leftChannel.length + rightChannel.length;
@@ -213,6 +211,7 @@
     recorder = context.createScriptProcessor(bufferSize, 2, 2);
 
     recorder.onaudioprocess = function(e){
+      console.log('onaudioprocess');
       if (!recording) return;
       var left = e.inputBuffer.getChannelData (0);
       var right = e.inputBuffer.getChannelData (1);
@@ -221,12 +220,13 @@
       leftchannel.push (new Float32Array (left));
       rightchannel.push (new Float32Array (right));
       recordingLength += bufferSize;
-    }
+    };
 
     // we connect the recorder
     volume.connect (recorder);
     recorder.connect (context.destination);
   }
+
 </script>
 </body>
 </html>

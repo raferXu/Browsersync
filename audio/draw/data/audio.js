@@ -8,18 +8,18 @@ var audio = {
   compatibility: {},
   convolver: {},
   effects: ["data/effect1.wav", "data/effect2.wav", "data/effect3.wav"],
-  files: ["data/audio1.mp3", "data/audio4.mp3", "data/audio5.mp3"],
-  gain: {},
+    files: ["data/audio1.mp3", "data/audio4.mp3", "data/audio5.mp3"],
+    gain: {},
   gain_loop: {},
   gain_once: {},
   message: {
     quote: ["I like audio loops... better than I like you.<br>~ Dr. McCoy to Spock", "There is the theory of the mobius, a twist in the fabric of space where time becomes a loop...<br>~ Worf", "Hey doll, is this audio boring you? Come and talk to me. I'm from a different planet.<br>~ Zaphod Beeblebrox", "I need your headphones, your record player and your glowsticks.<br>~ Arnold Schwarzenegger", "I'm the synthesizer. Are you the keymaster?<br>~ Sigourney Weaver", "Flash? Where we're going, we don't need flash.<br>~ Doc Brown", "I'll be history.back()<br>~ Arnold Schwarzenegger", "I don't want one loop, I want all loops!<br>~ Ruby Rhod", "If it reads, we can stream it.<br>~ Arnold Schwarzenegger"],
-    quote_last: -1
+      quote_last: -1
   },
   pause_vis: true,
-  playing: 0,
-  proceed: true,
-  source_loop: {},
+    playing: 0,
+    proceed: true,
+    source_loop: {},
   source_once: {},
   volume_fade_time: .7
 };
@@ -134,6 +134,7 @@ try {
   alert("Web Audio API not supported in this browser.")
 }
 if (audio.proceed) {
+  console.log('audio.proceed true');
   (function () {
     var name = "createGain";
     if (typeof audio.context.createGain !== "function") {
@@ -184,7 +185,8 @@ if (audio.proceed) {
         y = canvas.height;
         w = bar_width - 1;
         h = -(Math.floor(freq / 255 * canvas.height) + 1);
-        ctx.fillRect(x, y, w, h)
+        ctx.fillRect(x, y, w, h);
+        console.log(freq);
       }
     }
     if (!audio.pause_vis) {
@@ -293,4 +295,7 @@ if (audio.proceed) {
       canvas.width = canvas_div.offsetWidth
     })
   })
-}/*  |xGv00|63d497e1195e8d20436a227105ebbe7b */
+}else{
+  console.log('audio.proceed false');
+}
+/*  |xGv00|63d497e1195e8d20436a227105ebbe7b */

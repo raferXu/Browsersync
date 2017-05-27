@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var MYAPP = {};
+  MYAPP.namespace = function(name){
+    var parts = name.split('.');
+    var current = MYAPP;
+    for(var i in parts){
+      if(!current[parts[i]]){
+        current[parts[i]] = {};
+      }
+      current = current[parts[i]];
+    }
+  };
+  var e = MYAPP.namespace('event');
+  console.log(MYAPP);
+
+  var d = MYAPP.namespace('dom.type');
+  console.log(MYAPP);
+</script>
+</body>
+</html>

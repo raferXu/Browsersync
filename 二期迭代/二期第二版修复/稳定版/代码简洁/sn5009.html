@@ -6,6 +6,7 @@
 
   var jobTaskLoaded = false;
   function nativeLoadCompleted() {
+    console.log('本地nativeLoadCompleted函数被native调用');
     jobTaskLoaded = true;
   }
   function htmlFontSize(){
@@ -138,6 +139,12 @@
         </div>
     </div>
 </div>
+<!--<div id="loginOut" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">-->
+<!--<div style="position:absolute;top:50%;left:50%;width:80%;webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">-->
+<!--<p style="vertical-align:middle;display:table-cell;width:100%;height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box;text-align:left;padding:.1rem;"><span style="vertical-align:middle;display:inline-block;">本帐号已在其它设备登录，您已被迫下线，请确认是否本人操作。</span></p>-->
+<!--<p id="loginOutBtn" class="l" style="width:100%;height:.48rem;line-height:.48rem;margin:0;color:#ff6000">确定</p>-->
+<!--</div>-->
+<!--</div>-->
 <script type="text/javascript" src="http://192.168.0.182:8000/h5/pinchzoom201.js"></script>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -215,6 +222,7 @@
       var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
       var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
       if(isAndroid){
+        console.log('这是安卓机！');
         $('header h1').addClass('androidHeader');
       }
 
@@ -266,6 +274,7 @@
 //        图片加载完成时计算加载时间决定是否重载
         setTimeout(function () {
           if(!imgLoaded(img)){
+            console.log('图片加载超过5秒，重新加载中...');
             img.attr('src', task.info.url+'?'+Math.random()).css('height', 'auto');
           }
         },5000);
@@ -279,7 +288,7 @@
 
       else {
         console.log('taskLoaded noTask');
-        console.log('taskLoaded noTask: ' + tokenStr);
+        console.log('运行taskLoaded函数时候已经没有任务了');
 
         deferred.resolve(task);
       }
@@ -289,6 +298,7 @@
       if ( !$.isEmptyObject(task) ) {
         loadUserProgress();
         i18n_translate();
+        console.log('运行presentTasktask函数时拿到的任务为: '+task);
 
         $('.pinch-zoom').html('').append(task.info.image);
         var task_id = task.id;
@@ -315,12 +325,16 @@
             scaleImgH = initImgH * scale;
             pdt = (imgWrapH - scaleImgH) / 2;
             pdl = 0;
+            console.log('水平方面撑满屏幕， 缩放倍数为'+scale+'，缩放后宽度为'+scaleImgW+'，高度为'+scaleImgH+'，上边留白'+pdt+'，左边留白0');
+
           }else{
             scale = imgWrapH / initImgH;
             scaleImgH = imgWrapH;
             scaleImgW = initImgW * scale;
             pdl = (imgWrapW - scaleImgW) / 2;
             pdt = 0;
+            console.log('水平方面撑满屏幕， 缩放倍数为'+scale+'，缩放后宽度为'+scaleImgW+'，高度为'+scaleImgH+'，上边留白0，左边留白'+pdl);
+
           }
 
           // 返回显示在屏幕的图片的宽高和左边及上边的留白
@@ -339,10 +353,12 @@
         // 确保图片加载完成及执行的回调
         var imgLoadTimer = setInterval(function () {
           if(imgLoaded($('.billImg')[0])){
+            console.log('图片加载完成');
             clearInterval(imgLoadTimer);
             imgCallback($('.billImg')[0]);
             loadImg = true;
             if(loadImg && getStr){
+              console.log('图片和ajax请求均完成');
               $("#showMes").hide();
             }
           }
@@ -380,6 +396,7 @@
         }).ajaxStop(function(){
           getStr = true;
           if(loadImg && getStr){
+            console.log('图片和ajax请求均完成');
             $("#showMes").hide();
           }
         });
@@ -401,8 +418,12 @@
             data: JSON.stringify(urlData),
             timeout: 5000,
             success: function (data) {
+
+              console.group("算法接口block_rec返回的信息");
               console.log('block_rec data: '+data);
               console.log(data);
+              console.groupEnd();
+
               if(data){
                 str = data["text"];
               }else{
@@ -411,8 +432,9 @@
               $('.showInfo').val(str);
             },
             error: function (xml, error) {
-              console.log('strError');
+              console.log('block_rec:strError');
               if(error == "timeout"){
+                console.log('block_rec:timeout');
                 getStrAjax.abort();
                 getStrFun();
               }
@@ -426,6 +448,7 @@
           if(jobTaskLoaded){
             clearInterval(jobTaskLoadedTimer);
             tokenStr = jobTask.receiveNativeToken();
+            console.log('调用native方法receiveNativeToken后返回的token值： '+tokenStr);
 
             //发起ajax请求获取任务统计数据userInfo插入页面中
             var userData = {'token': tokenStr,'task_id':task_id};
@@ -451,10 +474,28 @@
                 dataType : 'json'
               })
             ).then(function (userInfo, lotteryInfo){
+
+//              if(userInfo[0]['code'] == 604){
+//                console.log('statistics/userInfo接口返回的信息code为604，token超时！');
+//
+////                $("#showMes").hide();
+////                $('#loginOutBtn').off('touchstart').on('touchstart',function () {
+//                console.log('调用native方法notifyToRelogin去到登录页面！');
+//                jobTask.notifyToRelogin();
+////                });
+////                $('#loginOut').show();
+//              }
+
+              console.group('statistics/userInfo接口返回的信息：');
               console.log('userInfo data: '+userInfo);
               console.log(userInfo);
+              console.groupEnd();
+
+              console.group('lottery/getchanceconfig接口返回的信息：');
               console.log('getchanceconfig data: '+lotteryInfo);
               console.log(lotteryInfo);
+              console.groupEnd();
+
               var total_order_num = userInfo[0].body.total_order_num;
               $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
               $('.total .num').html(total_order_num);
@@ -478,8 +519,11 @@
                       },
                       data: JSON.stringify(remainData),
                       success: function (remainingChanceInfo) {
+                        console.group('getuserremainingchance接口返回的信息：');
                         console.log('getuserremainingchance data: '+remainingChanceInfo);
                         console.log(remainingChanceInfo);
+                        console.groupEnd();
+
                         var times = remainingChanceInfo['body']['remaining_chance'];
                         if(times>0){
                           jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
@@ -503,6 +547,7 @@
 //                拿到token判断有没登录
             if(!tokenStr){
 //                单击未登录的取消按钮
+              console.log('没有拿到token值！');
               $('#cacelBtn').off('touchstart').on('touchstart',function () {
                 $('#toLogin').hide(300);
                 $('html')[0].addEventListener('touchstart',function () {
@@ -524,6 +569,7 @@
               $('.today_order .num').html(0);
 
             }else{
+              console.log('拿到了token值，为 '+tokenStr);
 //              给输入框绑定按软键盘enter时收起软键盘
               $('.showInfo').bind('keydown', function (e) {
                 var key = e.which;
@@ -564,8 +610,11 @@
                               xhr.setRequestHeader('Authorization',tokenStr);
                             },
                             success: function (data) {
+                              console.group('getongoingproject接口返回的信息：');
                               console.log('getongoingproject data： '+data);
                               console.log(data);
+                              console.groupEnd();
+
                               var shortName = data['body']['short_name'];
                               if(shortName){
                                 jobTask.switchToAnotherProject(shortName);
@@ -593,12 +642,16 @@
                     }
                   }
                   else {
+                    console.log('typeof answer的值为undefined');
                   }
                   $('.showInfo').val('');
                   $('.pinch-zoom-container').css('height','auto');
                 }
               });
             }
+          }else{
+            console.log('jobTaskLoaded is false');
+            console.log('本地nativeLoadCompleted函数没有被native调用');
           }
 
         },50);
@@ -608,6 +661,8 @@
       }
       else {
         console.log('presentTask noTask');
+        console.log('运行presentTask函数时候已经没有任务了');
+
       }
     });
 

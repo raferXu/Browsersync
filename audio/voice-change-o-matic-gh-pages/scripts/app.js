@@ -25,10 +25,10 @@ analyser.minDecibels = -90;
 analyser.maxDecibels = -10;
 analyser.smoothingTimeConstant = 0.85;
 
-var distortion = audioCtx.createWaveShaper();
+var distortion = audioCtx.createWaveShaper();  //给音频添加失真效果
 var gainNode = audioCtx.createGain();
-var biquadFilter = audioCtx.createBiquadFilter();
-var convolver = audioCtx.createConvolver();
+var biquadFilter = audioCtx.createBiquadFilter();  //指定多个不同的一般滤波器类型的双二阶滤波器
+var convolver = audioCtx.createConvolver();  //音频应用混响效果
 
 // distortion curve for the waveshaper, thanks to Kevin Ennis
 // http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion
@@ -45,7 +45,7 @@ function makeDistortionCurve(amount) {
     curve[i] = ( 3 + k ) * x * 20 * deg / ( Math.PI + k * Math.abs(x) );
   }
   return curve;
-};
+}
 
 // grab audio track via XHR for convolver node
 
@@ -57,11 +57,19 @@ ajaxRequest.open('GET', 'https://mdn.github.io/voice-change-o-matic/audio/concer
 
 ajaxRequest.responseType = 'arraybuffer';
 
-
 ajaxRequest.onload = function() {
   var audioData = ajaxRequest.response;
 
   audioCtx.decodeAudioData(audioData, function(buffer) {
+    // 用于异步解码音频文件中的 ArrayBuffer.
+    // ArrayBuffer数据可以通过XMLHttpRequest和FileReader来获取.
+    // AudioBuffer是通过AudioContext采样率进行解码的,然后通过回调返回结果.
+    // 使用XHR加载一个音轨,设置请求的responsetype为ArrayBuffer使它返回一个arraybuffer数据，
+    // 然后存储在audioData变量中.
+    // 然后我们将这个arraybuffer数据置于decodeAudioData()方法中使用，
+    // 当成功解码PCM Data后通过回调返回,
+    // 将返回的结果通过AudioContext.createBufferSource()接口进行处理并获得一个AudioBufferSourceNode,
+    // 将源连接至AudioContext.destination并将它设置为循环的.
       concertHallBuffer = buffer;
       soundSource = audioCtx.createBufferSource();
       soundSource.buffer = concertHallBuffer;
@@ -70,7 +78,7 @@ ajaxRequest.onload = function() {
   //soundSource.connect(audioCtx.destination);
   //soundSource.loop = true;
   //soundSource.start();
-}
+};
 
 ajaxRequest.send();
 
@@ -176,16 +184,18 @@ function visualize() {
 
   } else if(visualSetting == "frequencybars") {
     analyser.fftSize = 256;
-    var bufferLength = analyser.frequencyBinCount;
-    console.log(bufferLength);
+    var bufferLength = analyser.frequencyBinCount;  //可视化的数据值的数量.
+    console.log(bufferLength);  //128
     var dataArray = new Uint8Array(bufferLength);
 
     canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
 
     function draw() {
+      // AudioContext 创建一个 AnalyserNode,
+      // 然后用 requestAnimationFrame 和 <canvas> 去反复收集当前音频的频率数据, 并绘制为一个柱状风格的输出(频谱).
       drawVisual = requestAnimationFrame(draw);
 
-      analyser.getByteFrequencyData(dataArray);
+      analyser.getByteFrequencyData(dataArray);  //将当前频率数据复制到传入其中的Uint8Array
 
       canvasCtx.fillStyle = 'rgb(0, 0, 0)';
       canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
@@ -202,7 +212,7 @@ function visualize() {
 
         x += barWidth + 1;
       }
-    };
+    }
 
     draw();
 
@@ -242,11 +252,11 @@ function voiceChange() {
 visualSelect.onchange = function() {
   window.cancelAnimationFrame(drawVisual);
   visualize();
-}
+};
 
 voiceSelect.onchange = function() {
   voiceChange();
-}
+};
 
 mute.onclick = voiceMute;
 

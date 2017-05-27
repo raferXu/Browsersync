@@ -1,6 +1,7 @@
 <script>
   var jobTaskLoaded = false;
   function nativeLoadCompleted() {
+    console.log('本地nativeLoadCompleted函数被native调用');
     jobTaskLoaded = true;
   }
   function htmlFontSize(){
@@ -164,6 +165,12 @@
     <p id="sureBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
   </div>
 </div>
+<!--<div id="loginOut" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">-->
+<!--<div style="position:absolute;top:50%;left:50%;width:80%;webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">-->
+<!--<p style="vertical-align:middle;display:table-cell;width:100%;height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box;text-align:left;padding:.1rem;"><span style="vertical-align:middle;display:inline-block;">本帐号已在其它设备登录，您已被迫下线，请确认是否本人操作。</span></p>-->
+<!--<p id="loginOutBtn" class="l" style="width:100%;height:.48rem;line-height:.48rem;margin:0;color:#ff6000">确定</p>-->
+<!--</div>-->
+<!--</div>-->
 <div id="toLogin" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:24px;z-index:9998;">
   <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
     <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">未登录</p>
@@ -314,7 +321,7 @@
 //图片加载完成时计算加载时间决定是否重载
         setTimeout(function () {
           if(!imgLoaded(img)){
-            console.log('图片加载超时');
+            console.log('图片加载超过5秒，重新加载中...');
             img.attr('src', task.info.url+'?'+Math.random()).css('height', 'auto');
           }
         },5000);
@@ -328,7 +335,7 @@
 
       else {
         console.log('taskLoaded noTask');
-        console.log('taskLoaded noTask: ' + tokenStr);
+        console.log('运行taskLoaded函数时候已经没有任务了');
 
         deferred.resolve(task);
       }
@@ -338,7 +345,7 @@
       if ( !$.isEmptyObject(task) ) {
         loadUserProgress();
         i18n_translate();
-        console.log('presentTasktask: '+task);
+        console.log('运行presentTasktask函数时拿到的任务为: '+task);
 
         $('.pinch-zoom').html('').append(task.info.image);
         var task_id = task.id;
@@ -396,7 +403,7 @@
             imgCallback($('.billImg')[0]);
             loadImg = true;
             if(loadImg && getStr){
-              console.log('loadingHide');
+              console.log('图片和ajax请求均完成');
               $("#showMes").hide();
             }
           }
@@ -435,7 +442,7 @@
         }).ajaxStop(function(){
           getStr = true;
           if(loadImg && getStr){
-            console.log('loadingHide');
+            console.log('图片和ajax请求均完成');
             $("#showMes").hide();
           }
         });
@@ -449,7 +456,7 @@
 //            发送图片获取识别字符串，并放入input中
         var blockStr = {'str':"1234567890"};
         var urlData = {"url": task.info.url,"type": task.info.type};
-        var getCurStr = function(){},lockDrawDone=false;
+        var getCurStr=function(){},lockDrawDone=false;
         function getStrFun() {
           var getStrAjax = $.ajax({
             type: 'POST',
@@ -458,8 +465,10 @@
             data: JSON.stringify(urlData),
             timeout: 5000,
             success: function (data) {
+              console.group("算法接口block_rec返回的信息");
               console.log('block_rec data: '+data);
               console.log(data);
+              console.groupEnd();
               if(data["text"]){
                 var len=10-data["text"].length,f='';
                 if(len<10){
@@ -531,70 +540,7 @@
                   $('main').removeClass('noscroll');
                 });
 
-//将获取的数字数据用图片表示出来
-/*
-                           eImg[eImg[j].index].addEventListener('touchstart', function (ev) {
-                           console.log('touchstart');
-                           startX = ev.touches[0].pageX;
-                           startY = ev.touches[0].pageY;
-                           oMain.className = 'noscroll';
-                           }, false);
-                           eImg[eImg[j].index].addEventListener('touchend', function (ev) {
-                           console.log('touchend');
-                           var endX, endY;
-                           oMain.className = '';
-                           endX = ev.changedTouches[0].pageX;
-                           endY = ev.changedTouches[0].pageY;
-                           var direction = GetSlideDirection(startX, startY, endX, endY);
-                           switch (direction) {
-                           //                        上滑
-                           case 1:
-                           console.log(this);
-                           var This = this;
-                           if (!moving) {
-                           moving = true;
-                           This.parentNode.count++;
-                           slied(This.parentNode.index, blockStr, 1, h, This.parentNode.count);
-                           console.log('afterSlied'+blockStr.str);
-                           }
-                           break;
-                           case 2:
-                           //                        下滑
-                           var This = this;
-                           if (!moving) {
-                           moving = true;
-                           This.parentNode.count--;
-                           if (This.parentNode.count < 0) {
-                           This.parentNode.count = This.parentNode.count % 10 + 10;
-                           }
-                           slied(This.parentNode.index, blockStr, -1, h, This.parentNode.count);
-                           }
-                           break;
-                           case 3:  //向左
-                           $('#codeLockWrap li').eq(0).appendTo($('#codeLockWrap ul'));
-                           var strArr = blockStr.str.split('');
-                           strArr.push(strArr.shift());
-                           blockStr.str = strArr.join('');
-                           for(var i = 0, olen = oDiv.length; i < olen; i++){
-                           oDiv[i].index = i;
-                           oDiv[i].count = blockStr.str[i];
-                           }
-                           break;
-                           case 4:
-                           console.log('right');
-                           var liLen = $('#codeLockWrap li').length;
-                           $('#codeLockWrap li').eq(liLen-1).prependTo($('#codeLockWrap ul'));
-                           var strArr = blockStr.str.split('');
-                           strArr.unshift(strArr.pop());
-                           blockStr.str = strArr.join('');
-                           for(var i = 0, olen = oDiv.length; i < olen; i++){
-                           oDiv[i].index = i;
-                           oDiv[i].count = blockStr.str[i];
-                           }
-                           break;
-                           }
-                           }, false);
-                           */
+//将获取的数字数据表示出来
                 var aInput = $('#codeLockWrap input');
                 var nowValue;
                 for(var i=0;i<10;i++){
@@ -608,6 +554,7 @@
                       this.value = nowValue;
                     }
                   };
+//                  为方便测试当输入后自动定位到下一个输入框
                   aInput[i].onkeyup = function () {
                     this.blur();
                     var This = this;
@@ -655,10 +602,9 @@
 //获取token
         var jobTaskLoadedTimer = setInterval(function () {
           if(jobTaskLoaded){
-            console.log('jobTaskLoaded变为true了');
             clearInterval(jobTaskLoadedTimer);
             tokenStr = jobTask.receiveNativeToken();
-            console.log('receiveNativeToken: '+tokenStr);
+            console.log('调用native方法receiveNativeToken后返回的token值： '+tokenStr);
 
 //发起ajax请求获取任务统计数据userInfo插入页面中
             var userData = {'token': tokenStr,'task_id':task_id};
@@ -684,10 +630,27 @@
                 dataType : 'json'
               })
             ).then(function (userInfo, lotteryInfo){
+
+              if(userInfo[0]['code'] == 604){
+                console.log('statistics/userInfo接口返回的信息code为604，token超时！');
+
+//                $("#showMes").hide();
+//                $('#loginOutBtn').off('touchstart').on('touchstart',function () {
+                console.log('调用native方法notifyToRelogin去到登录页面！');
+                jobTask.notifyToRelogin();
+//                });
+//                $('#loginOut').show();
+              }
+
+              console.group('statistics/userInfo接口返回的信息：');
               console.log('userInfo data: '+userInfo);
               console.log(userInfo);
+              console.groupEnd();
+
+              console.group('lottery/getchanceconfig接口返回的信息：');
               console.log('getchanceconfig data: '+lotteryInfo);
               console.log(lotteryInfo);
+              console.groupEnd();
               var total_order_num = userInfo[0].body.total_order_num;
               $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
               $('.total .num').html(total_order_num);
@@ -711,8 +674,11 @@
                       },
                       data: JSON.stringify(remainData),
                       success: function (remainingChanceInfo) {
+                        console.group('getuserremainingchance接口返回的信息：');
                         console.log('getuserremainingchance data: '+remainingChanceInfo);
                         console.log(remainingChanceInfo);
+                        console.groupEnd();
+
                         var times = remainingChanceInfo['body']['remaining_chance'];
                         if(times>0){
                           var lockTimer = setInterval(function () {
@@ -740,7 +706,8 @@
 
 //拿到token判断有没登录
             if(!tokenStr){
-              console.log('token没拿到');
+              console.log('没有拿到token值！');
+
 //单击未登录的取消按钮
               $('#cacelBtn').off('touchstart').on('touchstart',function () {
                 $('#toLogin').hide(300);
@@ -765,7 +732,8 @@
               $('.today_order .num').html(0);
 
             }else{
-              console.log('token拿到了');
+              console.log('拿到了token值，为 '+tokenStr);
+
 //点击任务指引
               $('.taskGuide').off('touchstart').on('touchstart',function () {
                 console.log('taskGuideBtntouchstart');
@@ -779,7 +747,7 @@
               });
 
 //点击下一张按钮
-              $('.next').off('click').on('click', function(evt) {
+              $('.next').off('touchstart').on('touchstart', function(evt) {
                 console.log('nextBtnClick');
                 if(!window.navigator.onLine){
                   $('#offLine').show();
@@ -801,8 +769,11 @@
                               xhr.setRequestHeader('Authorization',tokenStr);
                             },
                             success: function (data) {
+                              console.group('getongoingproject接口返回的信息：');
                               console.log('getongoingproject data： '+data);
                               console.log(data);
+                              console.groupEnd();
+
                               var shortName = data['body']['short_name'];
                               if(shortName){
                                 jobTask.switchToAnotherProject(shortName);
@@ -830,6 +801,7 @@
                     }
                   }
                   else {
+                    console.log('typeof answer的值为undefined');
                   }
                   $('.showInfo').val('');
                   $('.pinch-zoom-container').css('height','auto');
@@ -837,7 +809,8 @@
               });
             }
           }else{
-            console.log('nativeLoadCompleted函数没被native调用，jobTaskLoaded还是false');
+            console.log('jobTaskLoaded is false');
+            console.log('本地nativeLoadCompleted函数没有被native调用');
           }
 
         },50);
@@ -847,6 +820,8 @@
       }
       else {
         console.log('presentTask noTask');
+        console.log('运行presentTask函数时候已经没有任务了');
+
       }
     });
 

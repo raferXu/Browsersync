@@ -1,4 +1,6 @@
 <script>
+  var source = 'http://192.168.0.182:8000';
+  var interface = 'http://192.168.0.182:5009';
 
   // loading加载框出现
   console.log('loading加载框出现');
@@ -95,7 +97,7 @@
                     </nav>
                     <input type="text" class="showInfo tc bsb">
                     <p class="textTip tc">请适当修改，保证票据内容与文本输入框一致</p>
-                    <input type="button" class="next tc bsb" value="下一张" id="submit">
+                    <input type="button" class="next tc bsb" value="下一张">
                 </div>
             </section>
             <div class="divide"></div>
@@ -250,7 +252,7 @@
       }
     }
     function loadUserProgress() {
-      pybossa.userProgress('hospital').done(function(data){
+      pybossa.userProgress('sn').done(function(data){
         var pct = Math.round((data.done*100)/data.total);
         $("#progress").css("width", pct.toString() +"%");
         $("#progress").attr("title", pct.toString() + "% completed!");
@@ -459,7 +461,7 @@
             $.when(
               $.ajax({
                 type : 'POST',
-                url : 'http://192.168.0.182:5009/token/statistics/userInfo',
+                url : ''+interface+'/token/statistics/userInfo',
                 data : userData,
                 dataType : 'json',
                 timeout: 5000,
@@ -472,7 +474,7 @@
               }),
               $.ajax({
                 type : 'GET',
-                url : 'http://192.168.0.182:5009/token/lottery/getchanceconfig',
+                url : ''+interface+'/token/lottery/getchanceconfig',
                 timeout: 5000,
                 dataType : 'json'
               })
@@ -514,7 +516,7 @@
                   function getuserremainingchanceFun() {
                     var getuserremainingchanceAjax = $.ajax({
                       type: 'POST',
-                      url: 'http://192.168.0.182:5009/token/lottery/getuserremainingchance',
+                      url: ''+interface+'/token/lottery/getuserremainingchance',
                       dataType: 'json',
                       timeout: 5000,
                       beforeSend: function (xhr) {
@@ -608,7 +610,7 @@
                             type: 'GET',
                             async: false,
                             cache: false,
-                            url: 'http://192.168.0.182:5009/token/getongoingproject',
+                            url: ''+interface+'/token/getongoingproject',
                             dataType: 'json',
                             timeout: 5000,
                             beforeSend: function (xhr) {
@@ -671,6 +673,6 @@
       }
     });
 
-    pybossa.run('hospital');
+    pybossa.run('sn');
   })();
 </script>
