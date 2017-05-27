@@ -86,6 +86,7 @@ var jumpProjectFlag = false;
                 console.log(data);
                 console.log(data['id']);
                 if(!data['id']){
+
                     jumpProjectFlag = true;
                 }
             },
@@ -182,20 +183,20 @@ var jumpProjectFlag = false;
         return _saveTaskRun(taskrun).then(function(data) {return data;});
     }
 
-    function _getCurrentTaskId(url) {
-        console.log('url: '+url);
-        pathArray = url.split('/');
-        if (url.indexOf('/task/')!=-1) {
-            var l = pathArray.length;
-            var i = 0;
-            for (i=0;i<l;i++) {
-                if (pathArray[i]=='task') {
-                    return pathArray[i+1];
-                }
-            }
-        }
-        return false;
-    }
+    // function _getCurrentTaskId(url) {
+    //     console.log('url: '+url);
+    //     pathArray = url.split('/');
+    //     if (url.indexOf('/task/')!=-1) {
+    //         var l = pathArray.length;
+    //         var i = 0;
+    //         for (i=0;i<l;i++) {
+    //             if (pathArray[i]=='task') {
+    //                 return pathArray[i+1];
+    //             }
+    //         }
+    //     }
+    //     return false;
+    // }
 
     // fallback for user defined action
     var _taskLoaded = function(task, deferred) {
@@ -229,9 +230,10 @@ var jumpProjectFlag = false;
             function getNextTask(offset, previousTask) {
                 offset = offset || 0;
                 var def = $.Deferred();
-                var taskId = _getCurrentTaskId(_window.location.pathname);
+                // var taskId = _getCurrentTaskId(_window.location.pathname);
+                var taskId = previousTask.id || 0;
 
-                console.log('previousTask: '+previousTask);
+                console.log('getNextTask函数的第二个参数previousTask的值为: '+previousTask);
                 console.log(previousTask);
                 console.log('taskId:'+taskId);
 
@@ -258,18 +260,19 @@ var jumpProjectFlag = false;
                 var nextLoaded = getNextTask(1, task),
                 taskSolved = $.Deferred(),
                 nextUrl;
-                console.log('nextUrltask.id:'+task.id);
-                if (task.id) {
 
-                    if (url != '/') {
-                        nextUrl = url + '/project/' + projectname + '/task/' + task.id;
-                    }
-                    else {
-                        nextUrl = '/project/' + projectname + '/task/' + task.id;
-                    }
-                    console.log(nextUrl);
-                    history.pushState({}, "Title", nextUrl);
-                }
+                // console.log('nextUrltask.id:'+task.id);
+                // if (task.id) {
+                //
+                //     if (url != '/') {
+                //         nextUrl = url + '/project/' + projectname + '/task/' + task.id;
+                //     }
+                //     else {
+                //         nextUrl = '/project/' + projectname + '/task/' + task.id;
+                //     }
+                //     console.log(nextUrl);
+                //     history.pushState({}, "Title", nextUrl);
+                // }
 
                 _presentTask(task, taskSolved);
                 $.when(nextLoaded, taskSolved).done(loop);
@@ -294,14 +297,14 @@ var jumpProjectFlag = false;
         }
     };
 
-    pybossa.getCurrentTaskId = function (url) {
-        if (url !== undefined) {
-            return _getCurrentTaskId(url);
-        }
-        else {
-            return _getCurrentTaskId(window.location.pathname);
-        }
-    };
+    // pybossa.getCurrentTaskId = function (url) {
+    //     if (url !== undefined) {
+    //         return _getCurrentTaskId(url);
+    //     }
+    //     else {
+    //         return _getCurrentTaskId(window.location.pathname);
+    //     }
+    // };
 
     pybossa.userProgress = function (projectname) {
         return _userProgress( projectname );
