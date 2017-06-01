@@ -29,14 +29,6 @@
     console.log(txt);
   };
 
-  $.ajax({
-    type: 'HEAD', // 获取头信息，type=HEAD即可
-    url : window.location.href.replace('task\/\d*','newtask-token'),
-    complete: function( xhr,data ){
-      console.log('window.location.href HEAD');
-      console.log(xhr.getAllResponseHeaders());
-    }
-  });
 </script>
 <link rel="stylesheet" href="http://192.168.0.182:8000/h5/ZB2H5.css">
 <style>
@@ -46,75 +38,50 @@
     }
 </style>
 <div class="row skeleton"> <!-- Start Skeleton Row-->
-    <!--<div class="col-md-6 " style="display:none">&lt;!&ndash; Start of Question and Submission DIV (column) &ndash;&gt;-->
-        <!--<h1 id="question"><span id="i18n_question">Do you see a human face in this photo?</span></h1> &lt;!&ndash; The question will be loaded here &ndash;&gt;-->
-        <!--<div id="answer"> &lt;!&ndash; Start DIV for the submission buttons &ndash;&gt;-->
-            <!--&lt;!&ndash; If the user clicks this button, the saved answer will be value="yes"&ndash;&gt;-->
-            <!--<button class="btn btn-success btn-answer" value='Yes'><i class="icon icon-white icon-thumbs-up"></i> <span id="i18n_yes">Yes</span></button>-->
-            <!--&lt;!&ndash; If the user clicks this button, the saved answer will be value="no"&ndash;&gt;-->
-            <!--<button class="btn btn-danger btn-answer" value='No'><i class="icon icon-white icon-thumbs-down"></i> No</button>-->
-            <!--&lt;!&ndash; If the user clicks this button, the saved answer will be value="NoPhoto"&ndash;&gt;-->
-            <!--<button class="btn btn-answer" value='NoPhoto'><i class="icon icon-exclamation"></i> <span id="i18n_no_photo">No photo</span></button>-->
-            <!--&lt;!&ndash; If the user clicks this button, the saved answer will be value="NotKnown"&ndash;&gt;-->
-            <!--<button class="btn btn-answer" value='NotKnown'><i class="icon icon-white icon-question-sign"></i> <span id="i18n_i_dont_know">I don't know</span></button>-->
-        <!--</div>&lt;!&ndash; End of DIV for the submission buttons &ndash;&gt;-->
-        <!--&lt;!&ndash; Feedback items for the user &ndash;&gt;-->
-        <!--<p><span id="i18n_working_task">You are working now on task:</span> <span id="task-id" class="label label-warning">#</span></p>-->
-        <!--<p><span id="i18n_tasks_completed">You have completed:</span> <span id="done" class="label label-info"></span> <span id="i18n_tasks_from">tasks from</span>-->
-            <!--&lt;!&ndash; Progress progress-bar for the user &ndash;&gt;-->
-            <!--<span id="total" class="label label-inverse"></span></p>-->
-        <!--<div class="progress progress-striped">-->
-            <!--<div id="progress" rel="tooltip" title="#" class="progress-bar" style="width: 0%;"></div>-->
-        <!--</div>-->
-        <!--<div id="disqus_show_btn" style="margin-top:5px;">-->
-            <!--<button class="btn btn-primary btn-lg btn-disqus" onclick="loadDisqus()"><i class="icon-comments"></i> <span id="i18n_show_comments">Show comments</span></button>-->
-            <!--<button class="btn btn-lg btn-disqus" onclick="loadDisqus()" style="display:none"><i class="icon-comments"></i> <span id="i18n_hide_comments">Hide comments</span></button>-->
-        <!--</div>&lt;!&ndash; End of Disqus Button section &ndash;&gt;-->
-        <!--&lt;!&ndash; Disqus thread for the given task &ndash;&gt;-->
-        <!--<div id="disqus_thread" style="margin-top:5px;display:none"></div>-->
-    <!--</div>&lt;!&ndash; End of Question and Submission DIV (column) &ndash;&gt;-->
-    <!--<div class="col-md-6" style="display:none">&lt;!&ndash; Start of Photo DIV (column) &ndash;&gt;-->
-        <!--<a id="photo-link" href="#">-->
-            <!--<img id="photo" src="http://i.imgur.com/GeHxzb7.png" style="max-width=100%">-->
-        <!--</a>-->
-    <!--</div>&lt;!&ndash; End of Photo DIV (columnt) &ndash;&gt;-->
-
     <header><h1 class="tc fwn">平安众包</h1></header>
     <main>
         <div class="wrap">
             <section class="billBox">
                 <div class="imgWrap" style="width:100%;height:1.1rem;overflow:hidden">
-                    <div class="billImgBox pinch-zoom">
-                        <img style="display:none" class="billImg" alt="billImg">
+                    <div id="billImgBox" class="billImgBox pinch-zoom">
+                        <img id="billImg" style="display:none" class="billImg" alt="billImg">
                     </div>
                 </div>
-                <p class="task_rand_score">任务奖励:<span>100</span>(分/单)</p>
+                <p class="task_rand_score" id="scoreBox">任务奖励:<span id="score">100</span>(分/单)</p>
                 <div class="billOperate">
                     <nav class="clearfloat">
-                        <img src="http://192.168.0.182:8000/h5/billIcon.png" alt="billIcon" class="icon l">
+                        <!--<img src="http://192.168.0.182:8000/h5/billIcon.png" alt="billIcon" class="icon l">-->
+                        <img src="http://192.168.0.88:8088/f/446e249c45/?dl=1" alt="billIcon" class="icon l">
                         <span class="l">票据显示</span>
-                        <span class="taskGuide r"><img src="http://192.168.0.182:8000/h5/taskGuide.png" alt="taskGuide"></span>
+                        <span id="taskGuideBox" class="taskGuide r">
+                            <!--<img src="http://192.168.0.182:8000/h5/taskGuide.png" alt="taskGuide">-->
+                            <img id="taskGuide" src="http://192.168.0.88:8088/f/c3975c7402/?dl=1" alt="taskGuide">
+                        </span>
                     </nav>
-                    <input type="text" class="showInfo tc bsb">
+                    <input id="answerInput" type="text" class="showInfo tc bsb">
                     <p class="textTip tc">请适当修改，保证票据内容与文本输入框一致</p>
-                    <input type="button" class="next tc bsb" value="下一张">
+                    <input id="next" type="button" class="next tc bsb" value="下一张">
                 </div>
             </section>
             <div class="divide"></div>
             <section class="countBox">
                 <nav class="clearfloat">
-                    <img src="http://192.168.0.182:8000/h5/count.png" alt="count" class="icon l">
+                    <!--<img src="http://192.168.0.182:8000/h5/count.png" alt="count" class="icon l">-->
+                    <img src="http://192.168.0.88:8088/f/eca759ceed/?dl=1" alt="count" class="icon l">
                     <span class="l">任务统计</span>
-                    <span class="more r"><img src="http://192.168.0.182:8000/h5/more.png" alt="more"></span>
+                    <span id="moreBox" class="more r">
+                        <!--<img src="http://192.168.0.182:8000/h5/more.png" alt="more">-->
+                        <img id="more" src="http://192.168.0.88:8088/f/0395068ec2/?dl=1" alt="more">
+                    </span>
                 </nav>
                 <div class="clearfloat countInfo">
-                    <div class="l tc total today_order">
+                    <div id="today_orderBox" class="l tc total today_order">
                         <p>今日提交(单):</p>
-                        <p class="num">0</p>
+                        <p id="today_order" class="num">0</p>
                     </div>
-                    <div class="l tc total">
+                    <div id="totalBox" class="l tc total">
                         <p>累计提交(单):</p>
-                        <p class="num">0</p>
+                        <p id="total" class="num">0</p>
                     </div>
                 </div>
             </section>
@@ -123,7 +90,7 @@
 </div><!-- End of Skeleton Row -->
 <div id="showMes" style="display:none;position:absolute;left:0;right:0;top:0;bottom:0;background:transparent;color:white;text-align:center;font-size:36px;z-index:10000;">
     <div style="position:absolute;top:50%;left:50%;width:1.2rem;height:.65rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(0,0,0,.7);border-radius:.1rem">
-        <img src="http://192.168.0.182:8000/loading.png" alt="loading" style="display:block;width:.36rem;height:.36rem;margin:.15rem auto;animation:change 2s linear infinite;-webkit-animation:change 2s linear infinite;">
+        <img src="http://192.168.0.88:8088/f/3ab45ddf35/?dl=1" alt="loading" style="display:block;width:.36rem;height:.36rem;margin:.15rem auto;animation:change 2s linear infinite;-webkit-animation:change 2s linear infinite;">
     </div>
 </div>
 <div id="offLine" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
@@ -141,12 +108,13 @@
         </div>
     </div>
 </div>
-<!--<div id="loginOut" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">-->
-    <!--<div style="position:absolute;top:50%;left:50%;width:80%;webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">-->
-        <!--<p style="vertical-align:middle;display:table-cell;width:100%;height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box;text-align:left;padding:.1rem;"><span style="vertical-align:middle;display:inline-block;">本帐号已在其它设备登录，您已被迫下线，请确认是否本人操作。</span></p>-->
-        <!--<p id="loginOutBtn" class="l" style="width:100%;height:.48rem;line-height:.48rem;margin:0;color:#ff6000">确定</p>-->
-    <!--</div>-->
-<!--</div>-->
+<div id="answerTip" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+        <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">请输入与图像信息一致的内容。</p>
+        <p id="answerTipBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
+    </div>
+</div>
+
 <script type="text/javascript" src="http://192.168.0.182:8000/h5/pinchzoom201.js"></script>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -176,47 +144,6 @@
     var getStr = false;
     var tokenStr;
 
-// Default language
-//    var userLocale = "en";
-// Translations
-//    var messages = {"en": {
-//      "i18n_welldone": "Well done!",
-//      "i18n_welldone_text": "Your answer has been saved",
-//      "i18n_loading_next_task": "Loading next task...",
-//      "i18n_task_completed": "The task has been completed!",
-//      "i18n_thanks": "Thanks a lot!",
-//      "i18n_congratulations": "Congratulations",
-//      "i18n_congratulations_text": "You have participated in all available tasks!",
-//      "i18n_yes": "Yes",
-//      "i18n_no_photo": "No photo",
-//      "i18n_i_dont_know": "I don't know",
-//      "i18n_working_task": "You are working now on task:",
-//      "i18n_tasks_completed": "You have completed:",
-//      "i18n_tasks_from": "tasks from",
-//      "i18n_show_comments": "Show comments:",
-//      "i18n_hide_comments": "Hide comments:",
-//      "i18n_question": "Do you see a human face in this photo?",
-//    },
-//      "es": {
-//        "i18n_welldone": "Bien hecho!",
-//        "i18n_welldone_text": "Tu respuesta ha sido guardada",
-//        "i18n_loading_next_task": "Cargando la siguiente tarea...",
-//        "i18n_task_completed": "La tarea ha sido completadas!",
-//        "i18n_thanks": "Muchísimas gracias!",
-//        "i18n_congratulations": "Enhorabuena",
-//        "i18n_congratulations_text": "Has participado en todas las tareas disponibles!",
-//        "i18n_yes": "Sí",
-//        "i18n_no_photo": "No hay foto",
-//        "i18n_i_dont_know": "No lo sé",
-//        "i18n_working_task": "Estás trabajando en la tarea:",
-//        "i18n_tasks_completed": "Has completado:",
-//        "i18n_tasks_from": "tareas de",
-//        "i18n_show_comments": "Mostrar comentarios",
-//        "i18n_hide_comments": "Ocultar comentarios",
-//        "i18n_question": "¿Ves una cara humana en esta foto?",
-//      },
-//    };
-
     $(document).ready(function(){
 
       var u = navigator.userAgent,
@@ -227,8 +154,6 @@
         console.log('这是安卓机！');
         $('header h1').addClass('androidHeader');
       }
-
-//      userLocale = document.getElementById('PYBOSSA_USER_LOCALE').textContent.trim();
 
       $('body').css('padding','0px');
 
@@ -243,25 +168,6 @@
       });
     });
 
-//    function i18n_translate() {
-//      var ids = Object.keys(messages[userLocale]);
-//      for (i=0; i<ids.length; i++) {
-//        if (document.getElementById(ids[i])) {
-//          document.getElementById(ids[i]).innerHTML = messages[userLocale][ids[i]];
-//        }
-//      }
-//    }
-//    function loadUserProgress() {
-//      pybossa.userProgress('hospital').done(function(data){
-//        var pct = Math.round((data.done*100)/data.total);
-//        $("#progress").css("width", pct.toString() +"%");
-//        $("#progress").attr("title", pct.toString() + "% completed!");
-//        $("#progress").tooltip({'placement': 'left'});
-//        $("#total").text(data.total);
-//        $("#done").text(data.done);
-//      });
-//    }
-
 //        判断图片是否加载完成
     function imgLoaded(img) {
       return img.complete && img.naturalHeight !== 0;
@@ -271,7 +177,7 @@
 
       if ( !$.isEmptyObject(task) ) {
 
-        var img = $('<img class="billImg"/>');
+        var img = $('<img id="billImg" class="billImg"/>');
 
 //        图片加载完成时计算加载时间决定是否重载
         setTimeout(function () {
@@ -298,8 +204,6 @@
 
     pybossa.presentTask(function(task, deferred) {
       if ( !$.isEmptyObject(task) ) {
-//        loadUserProgress();
-//        i18n_translate();
         console.log('运行presentTasktask函数时拿到的任务为: '+task);
 
         $('.pinch-zoom').html('').append(task.info.image);
@@ -480,17 +384,6 @@
               })
             ).then(function (userInfo, lotteryInfo){
 
-//              if(userInfo[0]['code'] == 604){
-//                console.log('statistics/userInfo接口返回的信息code为604，token超时！');
-//
-////                $("#showMes").hide();
-////                $('#loginOutBtn').off('touchstart').on('touchstart',function () {
-//                  console.log('调用native方法notifyToRelogin去到登录页面！');
-//                  jobTask.notifyToRelogin();
-////                });
-////                $('#loginOut').show();
-//              }
-
               console.group('statistics/userInfo接口返回的信息：');
               console.log('userInfo data: '+userInfo);
               console.log(userInfo);
@@ -511,7 +404,6 @@
                 var lottery_id = lotteryInfo[0]['body']['chance_configs'][i]['lottery_id'];
 
                 if(interval == total_order_num){
-//                  var remainData = {'token': tokenStr,"threshold_value": interval};
                   var remainData = {"threshold_value": interval};
                   function getuserremainingchanceFun() {
                     var getuserremainingchanceAjax = $.ajax({
@@ -600,9 +492,10 @@
                 if(!window.navigator.onLine){
                   $('#offLine').show();
                 }else{
-                  var answer = {"text": $('.showInfo').val()};
-                  if (typeof answer != 'undefined') {
-                    pybossa.saveTask(task.id, answer).done(function() {
+                  var answer = $('.showInfo').val();
+                  if (answer) {
+                    var answerJson = {"text": answer};
+                    pybossa.saveTask(task.id, answerJson).done(function() {
                       console.log('saveTask: ' + tokenStr);
                       if(jumpProjectFlag){
                         function getongoingprojectFun() {
@@ -647,9 +540,12 @@
                       $('#disqus_thread').toggle();
                       $('.btn-disqus').toggle();
                     }
-                  }
-                  else {
-                    console.log('typeof answer的值为undefined');
+                  } else {
+                    console.log('answer的值为空');
+                    $('#answerTipBtn').off('click').on('click',function () {
+                      $('#answerTip').hide();
+                    });
+                    $('#answerTip').show();
                   }
                   $('.showInfo').val('');
                   $('.pinch-zoom-container').css('height','auto');
@@ -660,7 +556,6 @@
             console.log('jobTaskLoaded is false');
             console.log('本地nativeLoadCompleted函数没有被native调用');
           }
-
         },50);
 
         $('#task-id').html(task.id);

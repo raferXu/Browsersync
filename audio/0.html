@@ -128,7 +128,7 @@
 //    WAVE文件是由若干个Chunk组成的。按照在文件中的出现位置包括：RIFF WAVE
 //    Chunk, Format Chunk, Fact Chunk(可选), Data Chunk。
 
-
+//    把字节数据格式化成wav的格式的过程
     // RIFF chunk descriptor
     writeUTFBytes(view, 0, 'RIFF');  //资源交换文件标志RIFF
     view.setUint32(4, 44 + interleaved.length * 2, true);  //从下个地址开始到文件尾的总字节数,文件总长
