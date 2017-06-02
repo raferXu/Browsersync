@@ -63,18 +63,19 @@
             <div class="divide"></div>
             <section class="countBox">
                 <nav class="clearfloat">
-                    <img src="http://192.168.0.182:8000/h5/count.png" alt="count" class="icon l">
+                    <img src="http://192.168.0.88:8088/f/eca759ceed/?dl=1" alt="count" class="icon l">
                     <span class="l">任务统计</span>
-                    <span class="more r"><img src="http://192.168.0.182:8000/h5/more.png" alt="more"></span>
-                </nav>
+                    <span id="moreBox" class="more r">
+                        <img id="more" src="http://192.168.0.88:8088/f/0395068ec2/?dl=1" alt="more">
+                    </span>                </nav>
                 <div class="clearfloat countInfo">
-                    <div class="l tc total today_order">
+                    <div id="today_orderBox" class="l tc total today_order">
                         <p>今日提交(单):</p>
-                        <p class="num">0</p>
+                        <p id="today_order" class="num">0</p>
                     </div>
-                    <div class="l tc total">
+                    <div id="totalBox" class="l tc total">
                         <p>累计提交(单):</p>
-                        <p class="num">0</p>
+                        <p id="total" class="num">0</p>
                     </div>
                 </div>
             </section>
@@ -101,6 +102,14 @@
         </div>
     </div>
 </div>
+<div id="answerTip" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+        <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">请输入与图像信息一致的内容。</p>
+        <p id="answerTipBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
+    </div>
+</div>
+
+
 <script type="text/javascript" src="http://192.168.0.182:8000/h5/pinchzoom201.js"></script>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -176,6 +185,8 @@
           deferred.resolve(task);
         });
 
+        console.log('task: '+task);
+        console.log(task);
         img.attr('src', task.info.url).css('height', 'auto');
         task.info.image = img;
       }

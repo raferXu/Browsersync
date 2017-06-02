@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/rxTest/1.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/rxTest/1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/rxTest/t.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/rxTest/base64.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/rxTest/blob.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/shengwen/1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/shengwen/jquery-1.7.2.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/audio/0.html" afterPath="$PROJECT_DIR$/audio/0.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack sample project/.idea/workspace.xml" afterPath="$PROJECT_DIR$/webpack sample project/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/crops.html" afterPath="$PROJECT_DIR$/众包三期/crops.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/date.html" afterPath="$PROJECT_DIR$/众包三期/date.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/hospital.html" afterPath="$PROJECT_DIR$/众包三期/hospital.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/lock.html" afterPath="$PROJECT_DIR$/众包三期/lock.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/sn.html" afterPath="$PROJECT_DIR$/众包三期/sn.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/total.html" afterPath="$PROJECT_DIR$/众包三期/total.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,22 +31,125 @@
       <file leaf-file-name="0.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/audio/0.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="131" column="28" lean-forward="true" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
-              <folding />
+            <state relative-caret-position="370">
+              <caret line="41" column="11" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding>
+                <element signature="n#script#0;n#body#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crops.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="a.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/audio/voice-change-o-matic-gh-pages/环境嘈杂测试demo/a.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-330">
+              <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+              <folding>
+                <element signature="e#1547#2105#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/audio/shengwen/1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="212" column="7" lean-forward="false" selection-start-line="212" selection-start-column="7" selection-end-line="212" selection-end-column="7" />
+              <folding>
+                <element signature="e#1353#1506#0" expanded="false" />
+                <element signature="e#1566#3850#0" expanded="false" />
+                <element signature="e#3904#4244#0" expanded="false" />
+                <element signature="e#4303#4598#0" expanded="false" />
+                <element signature="e#4648#4788#0" expanded="false" />
+                <element signature="e#4813#5605#0" expanded="false" />
+                <element signature="e#5647#6453#0" expanded="false" />
+                <marker date="1496392455000" expanded="false" signature="7127:7451" ph="{&quot;url&quot;: 'http://vprc-core.pingan.com.cn/vprc_core_portal/rest/api/getSpeechText'...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crops.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/众包三期/crops.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="515" column="9" lean-forward="true" selection-start-line="515" selection-start-column="9" selection-end-line="515" selection-end-column="9" />
+            <state relative-caret-position="29">
+              <caret line="90" column="200" lean-forward="true" selection-start-line="90" selection-start-column="200" selection-end-line="90" selection-end-column="200" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#5668#6236#0" expanded="false" />
+                <element signature="n#div#3;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="e#6494#7062#0" expanded="false" />
+                <element signature="e#7355#8061#0" expanded="false" />
+                <element signature="e#14816#16295#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lock.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/众包三期/lock.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="407">
+              <caret line="148" column="6" lean-forward="false" selection-start-line="148" selection-start-column="6" selection-end-line="148" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#div#3;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#div#4;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="e#7286#7830#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hospital.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/众包三期/hospital.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-915">
+              <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#div#3;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="e#6913#7481#0" expanded="false" />
+                <element signature="e#18120#18919#0" expanded="false" />
+                <element signature="e#20105#21862#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sn.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/众包三期/sn.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-990">
+              <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#div#3;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="e#6913#7481#0" expanded="false" />
+                <element signature="e#18120#18919#0" expanded="false" />
+                <element signature="e#20105#21862#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -57,8 +158,8 @@
       <file leaf-file-name="total.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/众包三期/total.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="179" column="33" lean-forward="true" selection-start-line="179" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+            <state relative-caret-position="1008">
+              <caret line="179" column="50" lean-forward="true" selection-start-line="179" selection-start-column="50" selection-end-line="179" selection-end-column="50" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
@@ -79,71 +180,15 @@
       <file leaf-file-name="date.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/众包三期/date.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="570" column="21" lean-forward="false" selection-start-line="570" selection-start-column="21" selection-end-line="570" selection-end-column="21" />
+            <state relative-caret-position="199">
+              <caret line="110" column="7" lean-forward="true" selection-start-line="110" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#div#3;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="e#6913#7481#0" expanded="false" />
-                <element signature="e#18120#18919#0" expanded="false" />
-                <element signature="e#20105#21862#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hospital.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/众包三期/hospital.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="565" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="573" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#div#3;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="e#6913#7481#0" expanded="false" />
-                <element signature="e#18120#18919#0" expanded="false" />
-                <element signature="e#20105#21862#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lock.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/众包三期/lock.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="119" column="16" lean-forward="true" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#6614#7158#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sn.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/众包三期/sn.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="179" column="29" lean-forward="true" selection-start-line="179" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#div#3;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#div#4;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
@@ -160,23 +205,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loadUserProgress</find>
-      <find>messages</find>
-      <find>?</find>
-      <find>newtask-token</find>
-      <find>PYBOSSA_USER_LOCALE</find>
-      <find>hos</find>
       <find>h5/</find>
       <find>userLocale</find>
-      <find>8000</find>
       <find>http://192.168.0.182:8000/h5</find>
       <find>/static/h5</find>
       <find>noTask</find>
@@ -186,8 +224,6 @@
       <find>sampleRate</find>
       <find>answer</find>
       <find>tokenStr</find>
-      <find>ajax</find>
-      <find>billImg</find>
       <find>source</find>
       <find>http://192.168.0.182:8000</find>
       <find>score</find>
@@ -196,8 +232,17 @@
       <find>today_order</find>
       <find>total</find>
       <find>hospital</find>
-      <find>lock</find>
       <find>sn</find>
+      <find>?</find>
+      <find>billImg</find>
+      <find>lock</find>
+      <find>jpg</find>
+      <find>8000</find>
+      <find>ajax</find>
+      <find>$.ajax</find>
+      <find>$</find>
+      <find>be</find>
+      <find>answerTip</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -225,9 +270,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/console/console.time.html" />
-        <option value="$PROJECT_DIR$/console/console.trace.html" />
-        <option value="$PROJECT_DIR$/console/console.group.html" />
         <option value="$PROJECT_DIR$/zhongbaoTest/多行文字垂直居中.html" />
         <option value="$PROJECT_DIR$/audio/draw/1.html" />
         <option value="$PROJECT_DIR$/二期迭代/二期第二版修复/pybossaCropsInit.html" />
@@ -269,11 +311,14 @@
         <option value="$PROJECT_DIR$/audio/rxTest/1.css" />
         <option value="$PROJECT_DIR$/audio/rxTest/1.js" />
         <option value="$PROJECT_DIR$/audio/rxTest/t.html" />
-        <option value="$PROJECT_DIR$/audio/0.html" />
         <option value="$PROJECT_DIR$/众包三期/total.html" />
         <option value="$PROJECT_DIR$/众包三期/date.html" />
         <option value="$PROJECT_DIR$/众包三期/hospital.html" />
         <option value="$PROJECT_DIR$/众包三期/sn.html" />
+        <option value="$PROJECT_DIR$/audio/rxTest/base64.html" />
+        <option value="$PROJECT_DIR$/audio/0.html" />
+        <option value="$PROJECT_DIR$/audio/rxTest/blob.html" />
+        <option value="$PROJECT_DIR$/audio/shengwen/1.html" />
         <option value="$PROJECT_DIR$/众包三期/crops.html" />
         <option value="$PROJECT_DIR$/众包三期/lock.html" />
       </list>
@@ -289,10 +334,10 @@
     <handled-path value="$PROJECT_DIR$/webpack sample project/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="54" />
-    <option name="y" value="109" />
-    <option name="width" value="1225" />
-    <option name="height" value="679" />
+    <option name="x" value="13" />
+    <option name="y" value="71" />
+    <option name="width" value="1241" />
+    <option name="height" value="678" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -322,6 +367,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="众包三期" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="二期迭代" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="二期迭代" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="二期第二版缩小测试" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -403,6 +480,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="shengwen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="audio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="rxTest" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -426,11 +521,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/audio/shengwen" />
       <recent name="$PROJECT_DIR$/二期迭代" />
       <recent name="$PROJECT_DIR$/audio/rxTest" />
       <recent name="$PROJECT_DIR$/众包三期/资源路径改为相对路径" />
       <recent name="$PROJECT_DIR$/pybossa整理" />
-      <recent name="$PROJECT_DIR$/二期迭代/二期第二版缩小测试/pybossa" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/audio/voice-change-o-matic-gh-pages" />
@@ -548,19 +643,19 @@
       <workItem from="1494837387558" duration="81765000" />
       <workItem from="1495589994145" duration="68468000" />
       <workItem from="1495985872694" duration="219000" />
-      <workItem from="1496193378457" duration="23375000" />
+      <workItem from="1496193378457" duration="32341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="561475000" />
+    <option name="totallyTimeSpent" value="570441000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="109" width="1225" height="679" extended-state="0" />
-    <editor active="true" />
+    <frame x="13" y="71" width="1241" height="678" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1783601" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17597999" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -658,71 +753,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009过渡确认token.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-266">
-          <caret line="47" column="54" lean-forward="false" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
-          <folding>
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#!!top" expanded="false" />
-            <element signature="e#10245#11099#0" expanded="false" />
-            <element signature="e#12214#12607#0" expanded="false" />
-            <element signature="e#12658#12719#0" expanded="false" />
-            <element signature="e#12769#13401#0" expanded="false" />
-            <element signature="e#16574#17340#0" expanded="false" />
-            <element signature="e#21584#21644#0" expanded="false" />
-            <element signature="e#21717#21772#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="97" column="26" lean-forward="true" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#2;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#3;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009group.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="99" column="22" lean-forward="true" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao/时钟/pybossaCodeLock.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-386">
-          <caret line="132" column="62" lean-forward="false" selection-start-line="132" selection-start-column="62" selection-end-line="132" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/audio/1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2336">
@@ -822,6 +852,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="49" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="678" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -991,16 +1022,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/audio/voice-change-o-matic-gh-pages/环境嘈杂测试demo/a.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1009">
-          <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-          <folding>
-            <element signature="e#1547#2105#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/audio/rxTest/imgLoad.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1043,14 +1064,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/audio/0.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="131" column="28" lean-forward="true" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/二期迭代/hospital.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1059,10 +1072,109 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/audio/rxTest/base64.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/shengwen/jquery-1.7.2.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/rxTest/blob.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/0.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="41" column="11" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="n#script#0;n#body#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/voice-change-o-matic-gh-pages/环境嘈杂测试demo/a.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-330">
+          <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+          <folding>
+            <element signature="e#1547#2105#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/shengwen/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="212" column="7" lean-forward="false" selection-start-line="212" selection-start-column="7" selection-end-line="212" selection-end-column="7" />
+          <folding>
+            <element signature="e#1353#1506#0" expanded="false" />
+            <element signature="e#1566#3850#0" expanded="false" />
+            <element signature="e#3904#4244#0" expanded="false" />
+            <element signature="e#4303#4598#0" expanded="false" />
+            <element signature="e#4648#4788#0" expanded="false" />
+            <element signature="e#4813#5605#0" expanded="false" />
+            <element signature="e#5647#6453#0" expanded="false" />
+            <marker date="1496392455000" expanded="false" signature="7127:7451" ph="{&quot;url&quot;: 'http://vprc-core.pingan.com.cn/vprc_core_portal/rest/api/getSpeechText'...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/众包三期/date.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="110" column="7" lean-forward="true" selection-start-line="110" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#div#4;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="e#6913#7481#0" expanded="false" />
+            <element signature="e#18120#18919#0" expanded="false" />
+            <element signature="e#20105#21862#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/众包三期/lock.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="148" column="6" lean-forward="false" selection-start-line="148" selection-start-column="6" selection-end-line="148" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#div#4;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="e#7286#7830#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/众包三期/hospital.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="565" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="573" selection-end-column="0" />
+        <state relative-caret-position="-915">
+          <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
           <folding>
             <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
@@ -1079,10 +1191,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/众包三期/date.html">
+    <entry file="file://$PROJECT_DIR$/众包三期/sn.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="570" column="21" lean-forward="false" selection-start-line="570" selection-start-column="21" selection-end-line="570" selection-end-column="21" />
+        <state relative-caret-position="-990">
+          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
@@ -1101,8 +1213,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/众包三期/total.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="179" column="33" lean-forward="true" selection-start-line="179" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+        <state relative-caret-position="1008">
+          <caret line="179" column="50" lean-forward="true" selection-start-line="179" selection-start-column="50" selection-end-line="179" selection-end-column="50" />
           <folding>
             <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
@@ -1121,43 +1233,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/众包三期/crops.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="515" column="9" lean-forward="true" selection-start-line="515" selection-start-column="9" selection-end-line="515" selection-end-column="9" />
+        <state relative-caret-position="29">
+          <caret line="90" column="200" lean-forward="true" selection-start-line="90" selection-start-column="200" selection-end-line="90" selection-end-column="200" />
           <folding>
             <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#5668#6236#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/众包三期/sn.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="179" column="29" lean-forward="true" selection-start-line="179" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#div#3;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="e#6913#7481#0" expanded="false" />
-            <element signature="e#18120#18919#0" expanded="false" />
-            <element signature="e#20105#21862#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/众包三期/lock.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="119" column="16" lean-forward="true" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#6614#7158#0" expanded="false" />
+            <element signature="e#6494#7062#0" expanded="false" />
+            <element signature="e#7355#8061#0" expanded="false" />
+            <element signature="e#14816#16295#0" expanded="false" />
           </folding>
         </state>
       </provider>

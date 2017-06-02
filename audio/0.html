@@ -163,6 +163,7 @@
     // android chrome audio不支持blob
     var reader = new FileReader();
     reader.onload = function(event){
+//      console.log(reader.result);
       var audio = window.document.createElement('audio');
       console.log(event.target.result);
       audio.src = event.target.result;
