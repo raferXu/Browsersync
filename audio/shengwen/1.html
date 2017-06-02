@@ -101,6 +101,10 @@
         audio.src = event.target.result;
         audio.controls = true;
         myAudio.appendChild(audio);
+
+//        voice1 = event.target.result;
+//        c.push(voice1);
+//        console.log(c);
       };
       // 转换base64
       reader.readAsDataURL(blob);
@@ -109,10 +113,26 @@
       reader2.onload = function(event){
         voice1 = event.target.result;
         c.push(voice1);
-        console.log(c);
+        console.log(voice1);
       };
       // 转换base64
       reader2.readAsDataURL(blob2);
+
+      var regJson = {"speechText":"6","type":"register","appId":"10007","scene":"dmz_cll","serialNumber":"GOOD00001000420170425339876","userId":"u902","voice1":c[0],"voice2":c[0],"voice3":c[0]};
+      $.ajax({
+        url: 'http://vprc-core.pingan.com.cn/vprc_core_portal/rest/api/register_new',
+        type: 'POST',
+        data: regJson,
+        dataType : 'json',
+        success: function (data) {
+          console.log('suc');
+          console.log(data);
+        },
+        error: function (err) {
+          console.log('err');
+          console.log(err);
+        }
+      });
 
     });
 
@@ -195,22 +215,6 @@
         regAjax();
       }
     },1000);
-
-    var regJson = {"speechText":"12","type":"register","appId":"1007","scene":"dmz_cll","serialNumber":"GOOD00001000420170425339876","userId":"u902","voice1":c[0],"voice2":c[1],"voice3":c[2]};
-    $.ajax({
-      url: 'http://vprc-core.pingan.com.cn/vprc_core_portal/rest/api/gold/register',
-      type: 'POST',
-      data: regJson,
-      dataType : 'json',
-      success: function (data) {
-        console.log('suc');
-        console.log(data);
-      },
-      error: function (err) {
-        console.log('err');
-        console.log(err);
-      }
-    });
   });
 /*
   var speechText = {"appId":"10007","scene":"dmz_cll","userId":"test-test-test","type":"1"};
