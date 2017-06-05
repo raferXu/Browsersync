@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>visible妙用</title>
+</head>
+<body>
+
+overflow不为visible值时会引起元素BFC块状格式化上下文；
+
+IE7下按钮内文字越多，文字两侧padding留白越大；
+解决方案：对按钮添加overflow:visible即可实现留白固定；
+
+IE7浏览器默认html滚动条类似overflow-y为scroll；
+IE8＋默认html滚动条类似overflow为auto；
+想要去除页面滚动条：html{overflow:hidden;}
+
+获取滚动高度
+chrome：document.body.scrollTop;
+其它：document.documentElement.scrollTop;
+
+引用了overflow的元素在部分浏览器下会导致该元素的padding-bottom的缺少，
+从而导致元素内容高度scrollHeight的错误显示；
+
+元素可用宽度clientWidth;
+IE7+ / Chrome / FireFox 的滚动条宽度均是17像素；
+
+overflow:auto的潜在布局隐患：
+滚动条会占用容器空间；
+
+水平居中跳动问题的修复：
+1、html{overflow-y:scroll;}  //确定就是会出现滚动条；
+2、.container{padding-left:calc(100vw - 100%);}
+100vw指浏览器宽度；
+100%指可用内容宽度；
+
+移动端回弹滚动：
+-webkit-overflow-scrolling:touch;
+自定义滚动条：
+::-webkit-scrollbar{width: 8px; height: 8px;}
+::-webkit-scrollbar-thumb{background-color: rgba(0,0,0,.3); border-radius: 6px;}
+::-webkit-scrollbar-track{background-color: rgba(0,0,0,.3); border-radius: 6px;}
+
+</body>
+</html>

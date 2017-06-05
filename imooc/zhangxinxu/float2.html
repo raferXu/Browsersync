@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /*fix适用于包含浮动元素的父元素上*/
+    /*浮动在老IE会触发hasLayout*/
+    .fix:after{
+      content: '';
+      display: table;
+      clear: both;
+    }
+    .fix{
+      *zoom: 1;
+    }
+    button{float: left}
+    /*浮动可让元素块状化和去空格，*/
+    /*&nbsp;在页面是占据空间的，而键盘空格在页面是不占用空间的*/
+    /*浮动本质是图文环绕，所以*/
+    /*<button>1</button>&nbsp;<button>2</button>&nbsp;<button>3</button>&nbsp;<button>4</button>*/
+    /*在button都浮动后相当于*/
+    /*<button>1</button><button>2</button><button>3</button><button>4</button>&nbsp;&nbsp;&nbsp;*/
+    /*所以最后一个button后面有3个占位的&nbsp;字符*/
+    /*键盘空格也会由此效果，但是因为键盘空格在页面是不占用空间，所以视觉上好像最后面没有间隙*/
+
+    /*单侧固定，另一侧自适应*/
+    /*width+float*/
+    /*padding-left/margin-left*/
+
+
+
+  </style>
+</head>
+<body>
+<!--<button>1</button>-->
+<!--<button>2</button>-->
+<!--<button>3</button>-->
+<!--<button>4</button>-->
+<!--<input type="submit" value="click">-->
+<button>1</button>&nbsp;<button>2</button>&nbsp;<button>3</button>&nbsp;<button>4</button>
+<input type="submit" value="click">
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .l1{
+      float: left;
+      width: 100px;
+      margin-right: 22px;
+    }
+    .r1{
+      min-height: 190px;
+      background-color: #f00;
+      overflow: hidden;
+      /*overflow作用就是与左边浮动元素进行隔离，但仍在同一行*/
+    }
+    .l2{
+      float: left;
+      width: 100px;
+      margin-right: 22px;
+    }
+    .r2{
+      min-height: 190px;
+      background-color: #f00;
+    }
+    .l3{
+      float: left;
+      width: 100px;
+      margin-right: 22px;
+    }
+    .r3{
+      min-height: 190px;
+      background-color: #f00;
+      clear: left;
+    }
+
+    .cell{
+      /*两栏自适应布局*/
+      display: table-cell; width: 2000px;  //IE8+ BRFC特性
+      *display: inline-block; *width: auto;  //IE7- 伪BFC特性
+    }
+  </style>
+</head>
+<body>
+<div>
+  overflow作用：
+  1、对父元素应用overflow:hidden/auto/scroll可以保证在子元素浮动时父元素高度不塌陷；
+  2、不会导致对子元素应用上下外边距跳到对父元素应用现象；
+  3、overflow与两栏自适应布局
+</div>
+<div class="of">
+  <img src="../img/1.JPG" alt="" class="l1">
+  <div class="r1">
+    <img src="../img/2.JPG" alt="">
+  </div>
+</div>
+<div class="of">
+  <img src="../img/1.JPG" alt="" class="l2">
+  <div class="r2">
+    <img src="../img/2.JPG" alt="">
+  </div>
+</div>
+<div class="of">
+  <img src="../img/1.JPG" alt="" class="l3">
+  <div class="r3">
+    <img src="../img/2.JPG" alt="">
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+CSS3的resize属性可以拉伸元素尺寸，像textarea默认可拉伸效果；
+resize: both/horizontal/vertical;
+注意只有元素的overflow不为visible时resize才其作用；textarea默认overflow为auto；
+resize拖拽区域大小为17像素＊17像素；和滚动条宽度一致，是同一区域的东西；
+<button style="resize: both">btn1</button>
+<button style="overflow:hidden;resize:both">btn2</button>
+
+ellipsis文字溢出点点点省略
+<button style="width:100px;white-space:nowrap;text-overflow:ellipsis;">我是一个按钮，宽度仅200像素</button>
+<br>
+<button style="width:100px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden">我是另一个按钮，宽度仅200像素</button>
+</body>
+</html>

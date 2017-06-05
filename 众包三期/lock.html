@@ -309,6 +309,7 @@
             if(loadImg && getStr){
               console.log('图片和ajax请求均完成');
               $("#showMes").hide();
+              $('<span id="pageLoaded"></span>').appendTo($('body'));
             }
           }
         },100);
@@ -348,6 +349,7 @@
           if(loadImg && getStr){
             console.log('图片和ajax请求均完成');
             $("#showMes").hide();
+            $('<span id="pageLoaded"></span>').appendTo($('body'));
           }
         });
 
