@@ -333,7 +333,7 @@
         function getStrFun() {
           var getStrAjax = $.ajax({
             type: 'POST',
-            url: 'http://192.168.0.88:5001/ocr_api/block_rec',
+            url: 'http://192.168.0.88:5001/ocr_api/block_rec?post_process=0',
             dataType: 'json',
             data: JSON.stringify(urlData),
             timeout: 5000,
