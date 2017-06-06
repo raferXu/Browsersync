@@ -165,7 +165,7 @@
     reader.onload = function(event){
 //      console.log(reader.result);
       var audio = window.document.createElement('audio');
-      console.log(event.target.result);
+      console.log(event.target.result.split(',')[1]);
       audio.src = event.target.result;
       audio.controls = true;
       myAudio.appendChild(audio);
