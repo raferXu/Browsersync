@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>crowdsourcing_interface_doc_iter3</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">L1</h1>
+
+<h2 id="toc_1">0、锁 1.5天</h2>
+
+<h2 id="toc_2">1、获取所有Project  OK</h2>
+
+<p><strong>请求</strong>：token/project?all=1<br>
+<strong>method</strong>: get<br>
+<strong>输入</strong>：<br>
+Header:
+Authorization: token 
+<strong>输出</strong>：<br>
+list[dict]  </p>
+
+<div><pre><code class="language-none">[  
+    {  
+        attributes of a project   
+    }, 
+    {  
+        attributes of a project   
+    }
+]  </code></pre></div>
+
+<h2 id="toc_3">2、查询支出明细 OK</h2>
+
+<p><strong>请求</strong>：token/score/record/spending   </p>
+
+<p><strong>method</strong>: post  </p>
+
+<p><strong>输入</strong>:<br>
+Header:
+Authorization: token </p>
+
+<p>Json:<br>
+pageno: Integer//页码<br>
+pagenum: String //每页显示条数</p>
+
+<p><strong>输入示例</strong>： 
+<code>
+{
+    &quot;pageno&quot;:1,
+    &quot;pagenum&quot;:15
+}
+</code><br>
+<strong>输出</strong>:<br>
+String code //状态码<br>
+String message //返回码说明<br>
+String body //报文体<br>
+body:<br>
+list[dict]</p>
+
+<p>[<br>
+    {<br>
+        title: Unicode,//明细名称<br>
+        bonus_number: int,//明细分值<br>
+        bonus_type:int,//明细所属。1：任务获取； 2：抽奖获取； 3：支出<br>
+        record_time: Text//时间<br>
+    }<br>
+]  </p>
+
+<p><strong>输出示例</strong>：<br>
+失败:<br>
+<code>
+{&quot;body&quot;: {&quot;result&quot;: -1}, &quot;message&quot;: &quot;param error&quot;, &quot;code&quot;: 602}  
+</code></p>
+
+<p>成功：<br>
+<code>
+{&quot;body&quot;: {&quot;records&quot;: [{&quot;bonus_type&quot;: 1, &quot;bonus_number&quot;: 2300, &quot;record_time&quot;: &quot;2017-05-11 11:58:05&quot;, &quot;title&quot;: &quot;\u63d0\u4ea45\u5355\uff0c\u65b0\u589e\u6821\u9a8c\u6210\u529f5\u5355&quot;}]}, &quot;message&quot;: &quot;operate successfully&quot;, &quot;code&quot;: 200}
+</code>
+<code>
+{&quot;body&quot;: {}, &quot;message&quot;: &quot;operate successfully&quot;, &quot;code&quot;: 200}
+</code></p>
+
+<p><strong>返回码定义</strong>:<br>
+token_overtime_code
+token_not_valid_code<br>
+param_error_code<br>
+success_code</p>
+
+<h2 id="toc_4">3、查询收入明细 OK</h2>
+
+<p>查询bonus type 为1,2，user_id的所有数据
+<strong>请求</strong>：token/score/record/income<br>
+其余同上  </p>
+
+<h2 id="toc_5">5、积分兑换 OK</h2>
+
+<p><strong>请求</strong>：token/score/exchangerealscore  </p>
+
+<p><strong>method</strong>: post  </p>
+
+<p><strong>输入</strong>:<br>
+Header:
+Authorization: token </p>
+
+<p>Json:<br>
+score: Integer//需要兑换的积分数量<br>
+binding_phone: String //万里通绑定手机号</p>
+
+<p><strong>输入示例</strong>： 
+<code>
+{
+    &quot;score&quot;:3,
+    &quot;binding_phone&quot;:&quot;15209999999&quot;
+}
+</code><br>
+<strong>输出</strong>:<br>
+String code //状态码
+String message //返回码说明
+String body //报文体</p>
+
+<p><strong>输出示例</strong>：<br>
+失败:<br>
+<code>
+{&quot;body&quot;: {&quot;result&quot;: -1}, &quot;message&quot;: &quot;param error&quot;, &quot;code&quot;: 602}  
+</code></p>
+
+<p>成功：<br>
+<code>
+{&quot;body&quot;: {&quot;score&quot;: 3}, &quot;message&quot;: &quot;operate successfully&quot;, &quot;code&quot;: 200}
+</code></p>
+
+<p><strong>返回码定义</strong>:<br>
+anonymous_cant_exchange_score_code<br>
+token_overtime_code<br>
+exceed_day_frequency_limit_code<br>
+param_error_code<br>
+no_enough_score_code<br>
+success_code</p>
+
+<h2 id="toc_6">8、判断旧密码是否正确 OK</h2>
+
+<p><strong>请求</strong>：token/user/checkoriginalpw<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：<br>
+token<br>
+original_password: Unicode //旧密码 </p>
+
+<p><strong>输出</strong>： 
+result:True/Flase </p>
+
+<h2 id="toc_7">10、实名认证 加数据到数据库，人工验证</h2>
+
+<p>新建实名认证表
+- id
+- user_id
+- full_name//base = unicode(base, &lsquo;utf-8&rsquo;, errors=&lsquo;replace&rsquo;)<br>
+- ID_number
+- state </p>
+
+<p><strong>请求</strong>：token/user/realnameauthentication<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：<br>
+token<br>
+full_name: Unicode //真实姓名<br>
+id_number: String //身份证号<br>
+id_front_photo<br>
+id_back_photo<br>
+user_photo<br>
+<strong>输出</strong>：<br>
+token_overtime_code<br>
+token_not_valid_code<br>
+anonymous_cant_exchange_score_code<br>
+param_error_code<br>
+success_code  </p>
+
+<h2 id="toc_8">11、实名认证 查询是否已经验证成功</h2>
+
+<p>查询实名认证表<br>
+<strong>请求</strong>：token/user/checkauthentication<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：<br>
+token      </p>
+
+<p><strong>输出</strong>：<br>
+status: 0: validating, 1: pass, 2: fail, 3: haven&rsquo;t applied  </p>
+
+<p>token_overtime_code<br>
+token_not_valid_code<br>
+anonymous_cant_exchange_score_code<br>
+success_code  //已认证  </p>
+
+<h2 id="toc_9">12、询问是否已经超时 1 hour</h2>
+
+<p>查询是否还有contribution_guard,无则超时<br>
+project增加字段，超时时间<br>
+<strong>请求</strong>：token/task/checkiftimeout<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：<br>
+token<br>
+task_id: Integer //当前任务id  </p>
+
+<p><strong>输出</strong>：<br>
+超时或否   </p>
+
+<h2 id="toc_10">13、查询所获奖品记录  OK</h2>
+
+<p><strong>请求</strong>：token/lottery/harvestprizerecord<br>
+<strong>method</strong>: get<br>
+<strong>输入</strong>：<br>
+token   </p>
+
+<p><strong>输出</strong>：<br>
+一个list, 存储了奖品名，获奖时间，领取状态，收奖地址，承运公司，快递单号<br>
+[<br>
+    {<br>
+        type:{1,2}, //1:积分 2：实物<br>
+        info:{<br>
+                    prize: Unicode，//奖品名<br>
+                    type: Integer, //奖品类别 1: 积分，2： 实物<br>
+                    time: Text, //获奖时间<br>
+                    state: Integer, //领取状态<br>
+                    address: Unicode, //收货地址<br>
+                    company: Unicode， //承运公司<br>
+                    express_no: Unicode //快递单号<br>
+                }<br>
+    }<br>
+]    </p>
+
+<h2 id="toc_11">14、查询是否超出一分钟可提交任务次数</h2>
+
+<p>待定<br>
+<strong>请求</strong>：token/task/tasknumberlimit<br>
+<strong>method</strong>: get<br>
+<strong>输入</strong>：<br>
+token   </p>
+
+<p><strong>输出</strong>：<br>
+到达与否  </p>
+
+<h2 id="toc_12">15、问题反馈 OK</h2>
+
+<p>向数据库添加信息<br>
+添加字段，问题状态<br>
+<strong>请求</strong>：token/feedback/save<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：<br>
+token<br>
+classification：Integer //分类 1-积分发放 2-申请兼职 3-任务查找 4-其他<br>
+emergency: Integer //紧急程度 1-非常紧急 2-紧急 3-一般<br>
+remark: Unicode //问题说明  </p>
+
+<h1 id="toc_13">L2</h1>
+
+<h2 id="toc_14">16、查询是否过了锁定时间（） //后台为用户加上是否被锁定字段（查询距离最后一个任务有多久）2 hour</h2>
+
+<p>新建黑名单表，<br>
+用户id,<br>
+用户ip,<br>
+封锁类型（ip or id）,<br>
+封锁时间<br>
+创建时间<br>
+查询用户最后一次任务时间，<br>
+state<br>
+查询黑名单<br>
+判断是否超过<br>
+如果超过，黑名单记录标记为history。  </p>
+
+<p><strong>请求</strong>：token/blacklist/ifpasslockedperiod<br>
+<strong>method</strong>: get<br>
+<strong>输入</strong>：<br>
+token    </p>
+
+<p><strong>输出</strong>：<br>
+到达与否   </p>
+
+<h2 id="toc_15">17、返回所有黑名单</h2>
+
+<p><strong>请求</strong>：token/blacklist/showall 
+<strong>method</strong>: get<br>
+<strong>输入</strong>：<br>
+token    </p>
+
+<p><strong>输出</strong>：<br>
+[<br>
+    {<br>
+        user_id: Integer //用户id,<br>
+        user_ip: Text //用户ip,<br>
+        type: Integer //封锁类型（ip or id）,<br>
+        period: Integer //封锁时间<br>
+        create_time: Text //记录创建时间<br>
+        state： Integer //状态<br>
+    }
+]</p>
+
+<h1 id="toc_16">管理后台接口 1 hour</h1>
+
+<h2 id="toc_17">4、按需显示任务 OK</h2>
+
+<p>主要问题在于对时间的处理<br>
+每次都会返回所有project shortname，page count
+初次进入页面时，可把除pageno以外的字段留空，则返回所有task的前pagenum个，以及将所有task计算在内时的页数。</p>
+
+<p><strong>请求</strong>：token/manage/task/listtask<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：<br>
+token<br>
+project_short_name: Unicode //project short name<br>
+start_time: Text //起始时间<br>
+end_time: Text //截止时间<br>
+state: Integer //任务状态 “uncollected”,&ldquo;ongoing&rdquo;,&ldquo;validating&rdquo;,&ldquo;validated&rdquo;<br>
+task_id: Integer //任务ID<br>
+page_no: Integer //页码，默认为1，不能为空<br>
+page_count:Integer //每页显示条数</p>
+
+<p><strong>输入示例</strong>:   </p>
+
+<div><pre><code class="language-none">{
+    &quot;project_short_name&quot;:&quot;&quot;,
+    &quot;start_time&quot; : &quot;&quot;,
+    &quot;end_time&quot; : &quot;&quot;,
+    &quot;state&quot; : &quot;completed&quot;,
+    &quot;task_id&quot; : &quot;&quot;,
+    &quot;page_no&quot; : 1,
+    &quot;page_count&quot; : &quot;&quot;
+}</code></pre></div>
+
+<p><strong>输出</strong>：<br>
+page 
+tasks<br>
+project_names<br>
+<strong>输出示例</strong>:  </p>
+
+<div><pre><code class="language-none">{
+  &quot;body&quot;: {
+    &quot;page&quot;: 1,
+    &quot;tasks&quot;: [
+      {
+        &quot;status&quot;: &quot;validated&quot;,
+        &quot;project&quot;: &quot;hospital&quot;,
+        &quot;score&quot;: 600,
+        &quot;time&quot;: &quot;2017-05-11 11:26:31&quot;,
+        &quot;url&quot;: &quot;http://192.168.0.182:8000/tiny_img/hospital/10_19_hospital.jpg&quot;,
+        &quot;pic&quot;: &quot;http://192.168.0.182:8000/tiny_img/hospital/10_19_hospital.jpg&quot;,
+        &quot;id&quot;: 1792
+      }
+    ],
+    &quot;project_names&quot;: [
+      &quot;hospital&quot;,
+      &quot;sn&quot;
+    ]
+  },
+  &quot;message&quot;: &quot;operate successfully&quot;,
+  &quot;code&quot;: 200
+}</code></pre></div>
+
+<h2 id="toc_18">5、显示任务详情</h2>
+
+<p><strong>请求</strong>：token/task/<task\_id><br>
+<strong>method</strong>: get<br>
+<strong>输入</strong>：<br>
+token   </p>
+
+<p><strong>输出</strong>：<br>
+一个任务的所有信息  </p>
+
+<h2 id="toc_19">6、更改任务url或积分 OK</h2>
+
+<p><strong>请求</strong>：token/manage/task/update<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：<br>
+token<br>
+task_id: Integer //任务id<br>
+URL: Text //图片url<br>
+score: Integer //新的积分值<br>
+<strong>输入示例</strong>:   </p>
+
+<div><pre><code class="language-none">{
+    “task_id”:1,
+    &quot;url&quot;:&quot;http//a.b.c/aaa.jpg&quot;,
+    &quot;score&quot;:15
+}</code></pre></div>
+
+<p><strong>输出</strong>：<br>
+success code  </p>
+
+<h2 id="toc_20">7、返回校验失败的任务 0.5 hour</h2>
+
+<p><strong>请求</strong>：token/manage/task/retrievevalidationfailtask 
+<strong>method</strong>: post<br>
+<strong>输入</strong>：<br>
+headr： Authorization: token<br>
+project_short_name: String<br>
+page_no: Integer<br>
+page_count: Integer<br>
+<strong>输入示例</strong>:   </p>
+
+<div><pre><code class="language-none">{
+    &quot;project_short_name&quot;:&quot;&quot;,
+    &quot;page_no&quot; : 1,
+    &quot;page_count&quot; : &quot;&quot;
+}</code></pre></div>
+
+<p><strong>输出</strong>：<br>
+page 
+urls<br>
+project_names<br>
+<strong>输出示例</strong>:</p>
+
+<h2 id="toc_21">8、任务结果汇总 OK</h2>
+
+<p>查询所有验证过的taskrun<br>
+<strong>请求</strong>：token/manage/task/summary<br>
+<strong>method</strong>: get<br>
+<strong>输入</strong>： 
+header: Authorization: token  </p>
+
+<p>project_short_name : String<br>
+start_time: String<br>
+end_time: String<br>
+task_id :Integer<br>
+page_no=: Integer<br>
+page_count: Integer<br>
+user_id: Integer<br>
+<strong>输入示例</strong>:   </p>
+
+<div><pre><code class="language-none">{
+    &quot;project_short_name&quot;:&quot;&quot;,
+    &quot;start_time&quot;:&quot;2017-05-18&quot;,
+    &quot;end_time&quot;: &quot;2017-05-19&quot;,
+    &quot;task_id&quot;:1489,
+    &quot;user_id&quot;:2,
+    &quot;page_no&quot; : 1,
+    &quot;page_count&quot; : 15
+}</code></pre></div>
+
+<p><strong>输出</strong>：  </p>
+
+<p><strong>输出示例</strong>：  </p>
+
+<div><pre><code class="language-none">{
+  &quot;body&quot;: {
+    &quot;tasks&quot;: [
+      {
+        &quot;system_judge&quot;: [
+          2,
+          2,
+          2
+        ],
+        &quot;latest_judge&quot;: [
+          1,
+          1,
+          2
+        ],
+        &quot;answer_list&quot;: [
+        &quot;XXXXXX医院&quot;，
+        &quot;YYYYYY医院&quot;，
+        &quot;ZZZZZZ医院&quot;
+        ],
+        &quot;pic&quot;: &quot;http://192.168.0.182:8000/tiny_img/hospital/10_19_hospital.jpg&quot;,
+        &quot;project&quot;: &quot;hospital&quot;,
+        &quot;user_ids&quot;: [
+          255,
+          256,
+          254
+        ],
+        &quot;result&quot;: &quot;&quot;,
+        &quot;validation_time&quot;: &quot;2017-05-17 18:03:06&quot;,
+
+        &quot;id&quot;: 1402 //任务id
+      }
+    ],
+    &quot;page&quot;: 1,
+    &quot;project_names&quot;: [
+      &quot;crops&quot;,
+      &quot;sn&quot;,
+      &quot;lock&quot;,
+      &quot;hospital&quot;,
+      &quot;total&quot;,
+      &quot;date&quot;
+    ]
+  },
+  &quot;message&quot;: &quot;operate successfully&quot;,
+  &quot;code&quot;: 200
+}</code></pre></div>
+
+<h2 id="toc_22">9、更改结果判定（用户做出的结果是否是正确的）3 hour</h2>
+
+<p>新建一张表，modify_judge_result<br>
+- id<br>
+- task_run_id<br>
+- user_id<br>
+- type(加分or减分)
+- 原来结果
+- 新结果
+- 创建时间
+重新计算用户准确率并更新
+<strong>请求</strong>：token/manage/task/rejudgeresult<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：<br>
+token<br>
+task_id: Integer //任务Id<br>
+new_result: {user_id:True/False}//新的判定  </p>
+
+<h2 id="toc_23">11、新建任务  OK</h2>
+
+<p><strong>请求</strong>：token/manage/task/addtask<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：<br>
+token<br>
+project_short_name：Integer //所属项目<br>
+urls: [String] //图片url<br>
+score: Integer //批量传任务时，这个值无效</p>
+
+<h2 id="toc_24">12、新建项目</h2>
+
+<p><strong>请求</strong>：token/manage/project/create<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：<br>
+token<br>
+project_short_name：Integer //所属项目<br>
+difficulty: Integer 
+type: String
+presenter： String</p>
+
+<h2 id="toc_25">1、用户管理-积分明细  OK</h2>
+
+<p><strong>请求</strong>：token/manage/user/scoredetail<br>
+<strong>method</strong>: get<br>
+<strong>输入</strong>： </p>
+
+<p><strong>输入示例</strong>:   </p>
+
+<div><pre><code class="language-none">header: Authorization: token 
+
+{
+    &quot;user_id&quot;:2,                //Integer
+    &quot;total_score&quot;:500000,   //Integer
+    &quot;exchanged_score&quot;:500, //Integer
+    &quot;page_no&quot; : 1,          //Integer
+    &quot;page_count&quot; : 15       //Integer  
+}
+</code></pre></div>
+
+<p><strong>输出</strong>： </p>
+
+<div><pre><code class="language-none">{
+    &quot;body&quot;: {
+    
+        &quot;score_details&quot;: [
+        {
+            &quot;user_id&quot;: &quot;&quot;,                  //Integer 用户id  
+            &quot;completed_tasks_count&quot;:&quot;&quot;,     //Integer 已完成任务数  
+            &quot;validated_tasks_count&quot;:&quot;&quot;,     //Integer 已通过校验的任务数,已验证      
+            &quot;precision&quot;:&quot;&quot;,                     //float 0-1 正确率，需转换为百分比  
+            &quot;exchanged_score&quot;:&quot;&quot;,           //Integer 申请兑换积分数（累计）  
+            “retrieved_real_score&quot;:&quot;&quot;,  //Integer 实际发放兑换积分数  
+            &quot;total_score&quot;:&quot;&quot;,               //Integer 总积分  
+            &quot;task_score&quot;: &quot;&quot;,               //Integer 任务积分  
+            &quot;lottery_score&quot;: &quot;&quot;             //Integer 获奖积分 
+        }
+                ]
+                
+        &quot;page&quot;: &quot;&quot;,                             //Integer 总页数
+        
+            }, 
+    &quot;message&quot;: &quot;operate successfully&quot;, &quot;code&quot;: 200
+}
+
+ </code></pre></div>
+
+<h2 id="toc_26">1.1、用户管理-积分明细 用户积分详情 OK</h2>
+
+<p><strong>请求</strong>：token/manage/user/personaldetail<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：   </p>
+
+<div><pre><code class="language-none">header: Authorization: token    
+
+{
+    &quot;user_id&quot;:32，           //Integer 用户id
+    &quot;page_no&quot; : 1,          //Integer 页码
+    &quot;page_count&quot; : 20       //Integer 每页显示条数
+}</code></pre></div>
+
+<p><strong>输出</strong>： </p>
+
+<div><pre><code class="language-none">
+{
+    &quot;body&quot;: {
+        &quot;taskruns&quot;: [
+        {
+            &quot;task_id&quot;:1890,                     //Integer 任务id  
+            &quot;time&quot;:&quot;2017-05-27&quot;,            //String 完成时间 
+            &quot;pic&quot;:&quot;...&quot;,                        //String 任务图片url     
+            &quot;answer&quot;: &quot;上海交通大学附属新华医院&quot;,  
+                                                //Unicode 用户答案 
+            &quot;judge&quot;: 1,                     //Integer 答案判定   0：未校验 1： 正确； 2： 错误
+            &quot;score&quot;:500,                        //Integer 任务积分
+        }
+                ]
+        &quot;page&quot;: 3,                          //Integer 总页数
+            }, 
+    &quot;message&quot;: &quot;operate successfully&quot;, &quot;code&quot;: 200
+}</code></pre></div>
+
+<h2 id="toc_27">2、用户管理-问题反馈 显示 OK</h2>
+
+<p><strong>请求</strong>：token/manage/user/feedbacksummary<br>
+<strong>method</strong>: get<br>
+<strong>输入</strong>：   </p>
+
+<div><pre><code class="language-none">header: Authorization: token 
+
+{
+    &quot;start_time&quot;:&quot;&quot;,        //String 开始时间
+    &quot;end_time&quot;:&quot;&quot;,          //String 结束时间
+    &quot;classification&quot;:&quot;&quot;,    //Integer 问题分类  &quot;&quot;:全部； 1： 积分发放；2： 抽奖礼品； 3： 万里通兑换； 4： 其他 
+    &quot;emergency&quot;:&quot;&quot;,             //Integer 紧急程度 “”： 全部； 1： 非常紧急； 2： 紧急； 3： 一般
+    &quot;state&quot;:&quot;&quot;,                 //Integer 解决状态 “”：全部； 1： 已处理； 2： 未处理
+    &quot;id&quot;:&quot;&quot;,                    //Integer 问题流水号
+    &quot;user_id&quot;:&quot;&quot;,           //Integer 用户id
+    &quot;page_no&quot; : 1,          //Integer 一定要输入
+    &quot;page_count&quot; : &quot;&quot;       //Integer  
+}
+</code></pre></div>
+
+<p><strong>输出</strong>： </p>
+
+<div><pre><code class="language-none">
+{
+    &quot;body&quot;: {
+        &quot;feedbacks&quot;: [
+        {
+            &quot;id&quot;:&quot;&quot;,                //Integer 问题流水号   
+            &quot;time&quot;:&quot;&quot;,          //String 时间  
+            &quot;user_id&quot;:&quot;&quot;,           //Integer 反馈用户id  
+            &quot;classification&quot;:&quot;&quot;,    //Integer 分类 &quot;&quot;:全部； 1： 积分发放；2： 抽奖礼品； 3： 万里通兑换； 4： 其他    
+            &quot;emergency&quot;:&quot;&quot;,     //Integer 紧急程度 “”： 全部； 1： 非常紧急； 2： 紧急； 3： 一般     
+            &quot;remark&quot;: &quot;&quot;,           //Unicode 问题描述 
+            &quot;state&quot;: &quot;&quot;,            //Integer 处理状态  “”：全部； 1： 已处理； 2： 未处理
+        }
+                ]
+        &quot;page&quot;: &quot;&quot;,                             //Integer 总页数
+            }, 
+    &quot;message&quot;: &quot;operate successfully&quot;, &quot;code&quot;: 200
+}</code></pre></div>
+
+<h2 id="toc_28">3、用户管理-问题反馈 编辑 OK</h2>
+
+<p><strong>请求</strong>：token/manage/user/feedbackupdate<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：   </p>
+
+<div><pre><code class="language-none">header: Authorization: token 
+
+{
+    &quot;id&quot;:&quot;&quot;,            //Integer 问题流水号
+    &quot;state&quot;:&quot;&quot;      //Integer 解决状态 “”：全部； 1： 已处理； 2： 未处理
+}
+</code></pre></div>
+
+<p><strong>输出</strong>： </p>
+
+<p>success</p>
+
+<h2 id="toc_29">4、结算处理-结算明细 显示 OK</h2>
+
+<p><strong>请求</strong>：token/manage/settlement<br>
+<strong>method</strong>: get<br>
+<strong>输入</strong>：   </p>
+
+<div><pre><code class="language-none">
+header: Authorization: token
+
+{
+    &quot;start_time&quot;: &quot;&quot;    ,       //String 开始时间   
+    &quot;end_time&quot;: &quot;&quot;,         //String 结束时间  
+    &quot;state&quot;：&quot;&quot;,             //Integer 结算状态 “”：全部； 0：未结算， 1：已结算   
+    &quot;user_id&quot; :&quot;&quot;,          //Integer 用户id  
+    &quot;page_no&quot;:&quot;&quot;,           //Integer  一定要输入  
+    &quot;page_count&quot;: &quot;&quot;        //Integer
+}
+</code></pre></div>
+
+<p><strong>输出</strong>： </p>
+
+<div><pre><code class="language-none">{
+    &quot;body&quot;: {
+        &quot;settlements&quot;: [
+        {
+            &quot;id&quot;:&quot;&quot;,                //Integer 结算流水号   
+            &quot;time&quot;:&quot;&quot;,          //String 时间  
+            &quot;user_id&quot;:&quot;&quot;,           //Integer 用户id  
+            &quot;real_name&quot;:&quot;&quot;, //Unicode 用户真实姓名   
+            &quot;settle_score&quot;:&quot;&quot;,      //Integer 结算积分
+            &quot;state&quot;: &quot;&quot;,            //Integer 处理状态  0：未结算， 1：已结算
+        }
+                ]
+        &quot;page&quot;: &quot;&quot;,                             //Integer 总页数
+            }, 
+    &quot;message&quot;: &quot;operate successfully&quot;, &quot;code&quot;: 200
+}</code></pre></div>
+
+<h2 id="toc_30">5、结算处理-结算明细 编辑</h2>
+
+<p><strong>请求</strong>：token/manage/settlement/update<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：   </p>
+
+<div><pre><code class="language-none">header: Authorization: token    
+
+{
+    &quot;settlements&quot;:[
+                        {
+                            &quot;id:&quot;&quot;  //Integer 结算流水号   
+                            &quot;state&quot;:&quot;&quot;  //Integer 处理状态  0：未结算， 1：已结算
+                        }
+    ]
+}</code></pre></div>
+
+<p><strong>输出</strong>： 
+success_message</p>
+
+<h2 id="toc_31">6、结算处理-结算明细 导出</h2>
+
+<p><strong>请求</strong>：token/manage/settlement/export<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：   </p>
+
+<div><pre><code class="language-none">header: Authorization: token  
+
+{
+    &quot;settlements&quot;:[id] //Integer 结算流水号
+}</code></pre></div>
+
+<p><strong>输出</strong>： 
+success_message</p>
+
+<h2 id="toc_32">7、数据管理-数据统计 月相关数据显示</h2>
+
+<p><strong>请求</strong>：token/manage/datastatistics/month<br>
+<strong>method</strong>: get<br>
+<strong>输入</strong>：   </p>
+
+<div><pre><code class="language-none">
+header: Authorization: token
+
+{
+    &quot;start_time&quot;: &quot;&quot;    ,       //String 开始时间   
+    &quot;end_time&quot;: &quot;&quot;,         //String 结束时间  
+    &quot;page_no&quot;:&quot;&quot;,           //Integer  一定要输入  
+    &quot;page_count&quot;: &quot;&quot;        //Integer
+}
+</code></pre></div>
+
+<p><strong>输出</strong>： </p>
+
+<div><pre><code class="language-none">{
+    &quot;body&quot;: {
+        &quot;month_statistics&quot;: [
+        {
+            &quot;date&quot;:&quot;&quot;,                      //String 月份  
+            &quot;total_user&quot;:&quot;&quot;,                //Integer 总用户数  
+            &quot;month_new_users&quot;:&quot;&quot;,           //Integer 月新增用户数 
+            &quot;month_remaining_users&quot;:&quot;&quot;, //Integer 月存留用户数   
+            &quot;remaining_rate&quot;:&quot;&quot;,            //Float 0-1 上月存留率
+            
+        }
+                ]
+        &quot;page&quot;: &quot;&quot;,                             //Integer 总页数
+            }, 
+    &quot;message&quot;: &quot;operate successfully&quot;, &quot;code&quot;: 200
+}</code></pre></div>
+
+<h2 id="toc_33">8、数据管理-数据统计 月相关数据导出</h2>
+
+<p><strong>请求</strong>：token/manage/datastatistics/month/export<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：   </p>
+
+<div><pre><code class="language-none">header: Authorization: token  
+
+{
+    &quot;start_time&quot;: &quot;&quot;    ,       //String 开始时间   
+    &quot;end_time&quot;: &quot;&quot;,         //String 结束时间  
+}</code></pre></div>
+
+<p><strong>输出</strong>： 
+success_message</p>
+
+<h2 id="toc_34">9、数据管理-数据统计 日相关数据显示</h2>
+
+<p><strong>请求</strong>：token/manage/datastatistics/day<br>
+<strong>method</strong>: get<br>
+<strong>输入</strong>：   </p>
+
+<div><pre><code class="language-none">
+header: Authorization: token
+
+{
+    &quot;start_time&quot;: &quot;&quot;    ,       //String 开始时间   
+    &quot;end_time&quot;: &quot;&quot;,         //String 结束时间  
+    &quot;page_no&quot;:&quot;&quot;,           //Integer  一定要输入  
+    &quot;page_count&quot;: &quot;&quot;        //Integer
+}
+</code></pre></div>
+
+<p><strong>输出</strong>： </p>
+
+<div><pre><code class="language-none">{
+    &quot;body&quot;: {
+        &quot;day_statistics&quot;: [
+        {
+            &quot;date&quot;:&quot;&quot;,                      //String 日期  
+            &quot;total_user&quot;:&quot;&quot;,                //Integer 总用户数  
+            &quot;day_new_users&quot;:&quot;&quot;,             //Integer 日新增用户数 
+            &quot;day_active_users&quot;:&quot;&quot;,          //Integer 日活跃用户数   
+            
+        }
+                ]
+        &quot;page&quot;: &quot;&quot;,                             //Integer 总页数
+            }, 
+    &quot;message&quot;: &quot;operate successfully&quot;, &quot;code&quot;: 200
+}</code></pre></div>
+
+<h2 id="toc_35">10、数据管理-数据统计 日相关数据导出</h2>
+
+<p><strong>请求</strong>：token/manage/datastatistics/day/export<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：   </p>
+
+<div><pre><code class="language-none">header: Authorization: token  
+
+{
+    &quot;dates&quot;:[date] //String 日期
+}</code></pre></div>
+
+<p><strong>输出</strong>： 
+success_message</p>
+
+<h2 id="toc_36">11、运营管理-抽奖运营 显示</h2>
+
+<p><strong>请求</strong>：token/manage/lottery/lotteryconfig<br>
+<strong>method</strong>: get<br>
+<strong>输入</strong>：   </p>
+
+<div><pre><code class="language-none">
+header: Authorization: token
+
+{
+    &quot;page_no&quot;:&quot;&quot;,           //Integer  一定要输入  
+    &quot;page_count&quot;: &quot;&quot;        //Integer
+}
+</code></pre></div>
+
+<p><strong>输出</strong>： </p>
+
+<div><pre><code class="language-none">{
+    &quot;body&quot;: {
+        on_prize&quot;: [
+        {
+            &quot;id&quot;:&quot;&quot;                 //Integer 奖品id
+            &quot;name&quot;:&quot;&quot;,              //Unicode 奖品名称   
+            &quot;prize_value&quot;:&quot;&quot;,       //Float 奖品价值  
+            &quot;prize_pic&quot;:&quot;&quot;,             //String 奖品图片 
+            &quot;probability&quot;:&quot;&quot;,       //Float 中奖概率   
+            &quot;stock&quot;:&quot;&quot;,             //Integer 库存（剩余数）
+            &quot;state&quot;: &quot;&quot;,                //Boolean 处理状态  True： on； False： off
+        },
+        off_prize&quot;: [
+        {
+            &quot;id&quot;:&quot;&quot;                 //Integer 奖品id
+            &quot;name&quot;:&quot;&quot;,              //Unicode 奖品名称   
+            &quot;prize_value&quot;:&quot;&quot;,       //Float 奖品价值  
+            &quot;prize_pic&quot;:&quot;&quot;,             //String 奖品图片 
+            &quot;probability&quot;:&quot;&quot;,       //Float 中奖概率   
+            &quot;stock&quot;:&quot;&quot;,             //Integer 库存（剩余数）
+            &quot;state&quot;: &quot;&quot;,                //Boolean 处理状态  True： on； False： off
+        }
+                ]
+        &quot;page&quot;: &quot;&quot;,                             //Integer 总页数
+            }, 
+    &quot;message&quot;: &quot;operate successfully&quot;, &quot;code&quot;: 200
+}</code></pre></div>
+
+<h2 id="toc_37">12、运营管理-抽奖运营 编辑、新增</h2>
+
+<p><strong>请求</strong>：token/manage/lottery/edit<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：   </p>
+
+<div><pre><code class="language-none">header: Authorization: token    
+
+{
+    on_prize&quot;: [
+        {
+            &quot;id&quot;:&quot;&quot;                 //Integer 奖品id
+            &quot;name&quot;:&quot;&quot;,              //Unicode 奖品名称   
+            &quot;prize_value&quot;:&quot;&quot;,       //Float 奖品价值  
+            &quot;prize_pic&quot;:&quot;&quot;,             //String 奖品图片 
+            &quot;probability&quot;:&quot;&quot;,       //Float 中奖概率   
+            &quot;stock&quot;:&quot;&quot;,             //Integer 库存（剩余数）
+            &quot;state&quot;: &quot;&quot;,                //Boolean 处理状态  True： on； False： off
+        },
+        off_prize&quot;: [
+        {
+            &quot;id&quot;:&quot;&quot;                 //Integer 奖品id
+            &quot;name&quot;:&quot;&quot;,              //Unicode 奖品名称   
+            &quot;prize_value&quot;:&quot;&quot;,       //Float 奖品价值  
+            &quot;prize_pic&quot;:&quot;&quot;,             //String 奖品图片 
+            &quot;probability&quot;:&quot;&quot;,       //Float 中奖概率   
+            &quot;stock&quot;:&quot;&quot;,             //Integer 库存（剩余数）
+            &quot;state&quot;: &quot;&quot;,                //Boolean 处理状态  True： on； False： off
+        }
+                ]
+}</code></pre></div>
+
+<p><strong>输出</strong>： 
+success_message</p>
+
+<h2 id="toc_38">13、运营管理-奖品派发 显示</h2>
+
+<p><strong>请求</strong>：token/manage/lottery/prizedistribution<br>
+<strong>method</strong>: get<br>
+<strong>输入</strong>：   </p>
+
+<div><pre><code class="language-none">header: Authorization: token 
+
+{
+    &quot;start_time&quot;:&quot;&quot;,        //String 开始时间
+    &quot;end_time&quot;:&quot;&quot;,          //String 结束时间
+    &quot;state&quot;:&quot;&quot;,                 //Integer 派发状态 &quot;&quot;:全部 1：是 2：否
+    “prize”：“”，             //String 奖品名。须全名
+    &quot;user_id&quot;:&quot;&quot;,           //Integer 用户id
+    &quot;page_no&quot; : 1,          //Integer 一定要输入
+    &quot;page_count&quot; : &quot;&quot;       //Integer  
+}
+</code></pre></div>
+
+<p><strong>输出</strong>： </p>
+
+<div><pre><code class="language-none">
+{
+    &quot;body&quot;: {
+        &quot;prize_records&quot;: [
+        {
+            &quot;id&quot;:&quot;&quot;                 //Integer 中奖纪录id
+            &quot;user_id&quot;:&quot;&quot;,           //Integer 用户id  
+            &quot;prize_name&quot;:&quot;&quot;,        //String 奖品名  
+            &quot;time&quot;:&quot;&quot;,              //String 中奖时间  
+            &quot;state&quot;: &quot;&quot;,                //Integer 派发状态。True:是， False：否
+        }
+                ]
+        &quot;page&quot;: &quot;&quot;,                             //Integer 总页数
+            }, 
+    &quot;message&quot;: &quot;operate successfully&quot;, &quot;code&quot;: 200
+}
+</code></pre></div>
+
+<h2 id="toc_39">14、运营管理-奖品派发 详细信息 显示</h2>
+
+<p><strong>请求</strong>：token/manage/lottery/prizedistribution/details<br>
+<strong>method</strong>: get<br>
+<strong>输入</strong>：   </p>
+
+<div><pre><code class="language-none">header: Authorization: token 
+
+{
+    &quot;id&quot;:&quot;&quot;,        //Integer 中奖纪录id
+}
+</code></pre></div>
+
+<p><strong>输出</strong>： </p>
+
+<div><pre><code class="language-none">
+{
+    &quot;body&quot;: {
+                &quot;id&quot;:&quot;&quot;,                        //Integer 记录id
+                &quot;user_id&quot;: &quot;&quot;,              //Integer 用户id
+                &quot;name&quot;:&quot;&quot;,                  //Unicode 奖品名称
+                &quot;receiver_name&quot;:&quot;&quot;,         //Unicode 收货人姓名
+                &quot;receiver_phone&quot;:&quot;&quot;,        //String 收货人手机号
+                &quot;address&quot;:&quot;&quot;,                   //Unicode 详细地址
+                &quot;company&quot;:&quot;&quot;,                   //Unicode 承运公司 留空时显示为文本框
+                &quot;transaction_id&quot;：&quot;&quot;         //Unicode 承运单号 留空时显示为文本框
+                
+            }, 
+    &quot;message&quot;: &quot;operate successfully&quot;, &quot;code&quot;: 200
+}
+</code></pre></div>
+
+<h2 id="toc_40">15、运营管理-奖品派发 详细信息 更新</h2>
+
+<p><strong>请求</strong>：token/manage/lottery/prizedistribution/updatedetails<br>
+<strong>method</strong>: post<br>
+<strong>输入</strong>：   </p>
+
+<div><pre><code class="language-none">header: Authorization: token    
+
+{
+    &quot;id&quot;:&quot;&quot;,                    //Integer 记录id
+    &quot;company&quot;:&quot;&quot;,               //Unicode 承运公司 必须不为空
+    &quot;transaction_id&quot;：&quot;&quot;     //Unicode 承运单号 必须不为空
+}</code></pre></div>
+
+<p><strong>输出</strong>： 
+success_message</p>
+
+
+
+
+</body>
+
+</html>

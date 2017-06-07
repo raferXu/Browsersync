@@ -28,47 +28,12 @@
   };
 
 </script>
-<link rel="stylesheet" href="/static/h5/codeLock3.css">
-<style id="css1">
+<link rel="stylesheet" href="/static/h5/ZB2H5.css">
+<style>
     .androidHeader{
         margin-left: .15rem;
         text-align: left;
     }
-    .showInfo{
-        box-sizing: border-box;
-        width: 100%;
-        height: .44rem;
-        margin-bottom: .1rem;
-        /*border: 1px solid #ff6000;*/
-        border-radius: 5px;
-    }
-
-    .codeLockWrap {
-        display: -webkit-flex;
-        display: flex;
-        justify-content: space-between;
-        width: 95%;
-        margin: 0 auto;
-        font-size: 0;
-    }
-
-    .codeLockWrap input{
-        display: inline-block;
-        width: .28rem;
-        height: .44rem;
-        line-height: .44rem;
-        border-radius: .03rem;
-        background-color: #323232;
-        color: #fff;
-        text-align: center;
-        font-size: .36rem;
-    }
-
-    .noscroll{
-        position: absolute;
-        overflow: hidden;
-    }
-
     #btns{
         width: 100%;
         display: -webkit-flex;
@@ -98,18 +63,12 @@
                         <img src="/static/h5/billIcon.png" alt="billIcon" class="icon l">
                         <span class="l">票据显示</span>
                         <span id="taskGuideBox" class="taskGuide r">
-                 <img id="taskGuide" src="/static/h5/taskGuide.png" alt="taskGuide">
-            </span>
+                            <!--<img src="http://192.168.0.182:8000/h5/taskGuide.png" alt="taskGuide">-->
+                            <img id="taskGuide" src="/static/h5/taskGuide.png" alt="taskGuide">
+                        </span>
                     </nav>
-                    <div class="showInfo">
-                        <div class="codeLockWrap" id="codeLockWrap">
-                            <!--<input value="0" type="number" onblur="if(!value)value='0'" oninput="if(value.length>1)value=value.slice(1)" />-->
-                            <input id="n1" value="0" type="number"/><input id="n2" value="0" type="number"/><input id="n3" value="0" type="number"/><input id="n4" value="0" type="number"/><input id="n5" value="0" type="number"/>
-                            <input id="n6" value="0" type="number"/><input id="n7" value="0" type="number"/><input id="n8" value="0" type="number"/>
-                        </div>
-                    </div>
+                    <input id="answerInput" type="text" class="showInfo tc bsb">
                     <p class="textTip tc">请适当修改，保证票据内容与文本输入框一致</p>
-                    <!--<input id="next" type="button" class="next tc bsb" value="下一张">-->
                     <div id="btns" class="btns">
                         <input id="indistinct" type="button" class="next tc bsb" value="看不清">
                         <input id="next" type="button" class="next tc bsb" value="下一张">
@@ -119,11 +78,13 @@
             <div class="divide"></div>
             <section class="countBox">
                 <nav class="clearfloat">
+                    <!--<img src="http://192.168.0.182:8000/h5/count.png" alt="count" class="icon l">-->
                     <img src="/static/h5/count.png" alt="count" class="icon l">
                     <span class="l">任务统计</span>
                     <span id="moreBox" class="more r">
-               <img id="more" src="/static/h5/more.png" alt="more">
-          </span>
+                        <!--<img src="http://192.168.0.182:8000/h5/more.png" alt="more">-->
+                        <img id="more" src="/static/h5/more.png" alt="more">
+                    </span>
                 </nav>
                 <div class="clearfloat countInfo">
                     <div id="today_orderBox" class="l tc total today_order">
@@ -160,7 +121,7 @@
     </div>
 </div>
 <div id="answerTip" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
-    <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+    <div style="position:absolute;top:50%;left:50%;width:80%;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
         <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">请输入与图像信息一致的内容。</p>
         <p id="answerTipBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
     </div>
@@ -169,6 +130,7 @@
 <script type="text/javascript" src="/static/h5/pinchzoom201.js"></script>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+
     /* * * DON'T EDIT BELOW THIS LINE * * */
     function loadDisqus() {
       $("#disqus_thread").toggle();
@@ -184,40 +146,26 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
       })();
     }
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<script>
 
 </script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script type="text/javascript">
   (function() {
 
-    // loading加载框出现
-    console.log('loading加载框出现');
-    $("#showMes").show();
-    console.log('loadingShow');
-
     var loadImg = false;
-    var loadNumImg = false;
     var getStr = false;
     var tokenStr;
 
     $(document).ready(function(){
-//判断是安卓机还是苹果机
+
       var u = navigator.userAgent,
         app = navigator.appVersion;
       var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
       var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
       if(isAndroid){
-        console.log('这是安卓机');
+        console.log('这是安卓机！');
         $('header h1').addClass('androidHeader');
-      }else{
-        console.log('这是苹果机');
       }
-
-      document.body.addEventListener('touchmove', function (event) {
-        event.preventDefault();
-      }, false);
 
       $('body').css('padding','0px');
 
@@ -232,7 +180,7 @@
       });
     });
 
-//判断图片是否加载完成
+//        判断图片是否加载完成
     function imgLoaded(img) {
       return img.complete && img.naturalHeight !== 0;
     }
@@ -243,7 +191,7 @@
 
         var img = $('<img id="billImg" class="billImg"/>');
 
-//图片加载完成时计算加载时间决定是否重载
+//        图片加载完成时计算加载时间决定是否重载
         setTimeout(function () {
           if(!imgLoaded(img)){
             console.log('图片加载超过5秒，重新加载中...');
@@ -253,7 +201,7 @@
         img.load(function() {
           deferred.resolve(task);
         });
-        console.log('taskLoadedtask: '+task);
+
         img.attr('src', task.info.url).css('height', 'auto');
         task.info.image = img;
       }
@@ -268,8 +216,6 @@
 
     pybossa.presentTask(function(task, deferred) {
       if ( !$.isEmptyObject(task) ) {
-//        loadUserProgress();
-//        i18n_translate();
         console.log('运行presentTasktask函数时拿到的任务为: '+task);
 
         $('.pinch-zoom').html('').append(task.info.image);
@@ -298,6 +244,7 @@
             pdt = (imgWrapH - scaleImgH) / 2;
             pdl = 0;
             console.log('水平方面撑满屏幕， 缩放倍数为'+scale+'，缩放后宽度为'+scaleImgW+'，高度为'+scaleImgH+'，上边留白'+pdt+'，左边留白0');
+
           }else{
             scale = imgWrapH / initImgH;
             scaleImgH = imgWrapH;
@@ -305,6 +252,7 @@
             pdl = (imgWrapW - scaleImgW) / 2;
             pdt = 0;
             console.log('水平方面撑满屏幕， 缩放倍数为'+scale+'，缩放后宽度为'+scaleImgW+'，高度为'+scaleImgH+'，上边留白0，左边留白'+pdl);
+
           }
 
           // 返回显示在屏幕的图片的宽高和左边及上边的留白
@@ -316,7 +264,7 @@
           };
         }
 
-        // 获取图片展示区域宽高
+        // 获取展示区域宽高
         var imgBoxW = $('.billImgBox').width();
         var imgBoxH = $('.billImgBox').height();
 
@@ -362,7 +310,6 @@
 
 //            loading加载框消失
         $(document).ajaxStart(function(){
-          console.log('loadingShow');
           $("#showMes").show();
         }).ajaxStop(function(){
           getStr = true;
@@ -372,8 +319,6 @@
           }
         });
 
-        $.ajaxSetup({});
-
         var fontSize = parseInt($('html').css('fontSize'));
         var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.1*fontSize},maxZoom:6,tapZoomFactor:3};
         $('div.pinch-zoom').each(function () {
@@ -381,9 +326,8 @@
         });
 
 //            发送图片获取识别字符串，并放入input中
-        var blockStr = {'str':"1234567890"};
+        var str;
         var urlData = {"url": task.info.url,"type": task.info.type};
-        var getCurStr=function(){},lockDrawDone=false;
         function getStrFun() {
           var getStrAjax = $.ajax({
             type: 'POST',
@@ -392,134 +336,23 @@
             data: JSON.stringify(urlData),
             timeout: 5000,
             success: function (data) {
+
               console.group("算法接口block_rec返回的信息");
               console.log('block_rec data: '+data);
               console.log(data);
               console.groupEnd();
-              if(data["text"]){
-                var len=8-data["text"].length,f='';
-                if(len>0){
-                  for(var i=0;i<len;i++){
-                    f+='0';
-                  }
-                  blockStr.str = f + data["text"];
-                }else{
-                  blockStr.str = data["text"];
-                }
 
-                  /*********************************************************************************************/
-
-//返回角度
-                function GetSlideAngle(dx, dy) {
-                  return Math.atan2(dy, dx) * 180 / Math.PI;
-                }
-
-//根据起点和终点返回方向 1：向上，2：向下，3：向左，4：向右,0：未滑动
-                function GetSlideDirection(startX, startY, endX, endY) {
-                  var dy = startY - endY;
-                  var dx = endX - startX;
-                  var result = 0;
-
-                  var angle = GetSlideAngle(dx, dy);
-                  if (angle >= 45 && angle < 135) {
-                    result = 1;
-                  } else if (angle >= -135 && angle < -45) {
-                    result = 2;
-                  } else if ((angle >= 150 && angle <= 180) || (angle >= -180 && angle < -150)) {  //向左
-                    if(Math.abs(dx)>5){
-                      result = 3;
-                    }
-                  } else if (angle >= -60 && angle < 60) {  //向右
-                    if(Math.abs(dx)>5){
-                      result = 4;
-                    }
-                  }
-                  console.log('result: '+result);
-                  return result;
-                }
-
-//给数字输入框父元素添加滑动事件
-                var startX,startY;
-                $('#codeLockWrap').off('touchstart').on('touchstart',function (e) {
-                  console.log('codeLockWrap Touchstart');
-                  console.log(e);
-                  startX = e.originalEvent.touches[0].pageX;
-                  startY = e.originalEvent.touches[0].pageY;
-                  $('main').addClass('noscroll');
-                });
-                $('#codeLockWrap').off('touchend').on('touchend',function (e) {
-                  console.log('codeLockWrap Touchend');
-                  var endX = e.originalEvent.changedTouches[0].pageX;
-                  var endY = e.originalEvent.changedTouches[0].pageY;
-                  var direction = GetSlideDirection(startX, startY, endX, endY);
-                  switch (direction){
-                    case 3:
-                      console.log('向左');
-                      $('#codeLockWrap input').eq(0).appendTo($('#codeLockWrap'));
-                      break;
-                    case 4:
-                      console.log('right');
-                      var liLen = $('#codeLockWrap input').length;
-                      $('#codeLockWrap input').eq(liLen-1).prependTo($('#codeLockWrap'));
-                      break;
-                  }
-                  $('main').removeClass('noscroll');
-                });
-
-//将获取的数字数据表示出来
-                var aInput = $('#codeLockWrap input');
-                var nowValue;
-                for(var i=0;i<8;i++){
-                  aInput[i].value = blockStr.str[i];
-                  aInput[i].onfocus = function () {
-                    nowValue = this.value;
-                    this.value = '';
-                  };
-                  aInput[i].onblur = function () {
-                    if(!this.value){
-                      this.value = nowValue;
-                    }
-                  };
-//                  为方便测试当输入后自动定位到下一个输入框
-                  aInput[i].onkeyup = function () {
-                    this.blur();
-                    var This = this;
-                    setTimeout(function () {
-                      if($(This).next()){
-                        $(This).next().focus();
-                      }
-                    },100);
-                  };
-                }
-//按下软键盘确认键后收起键盘
-                $('.showInfo').bind('keydown', function (e) {
-                  var key = e.which;
-                  if (key == 13) {
-                    e.preventDefault();
-                    document.activeElement.blur();
-                  }
-                });
-//获取某时刻的字符串
-                getCurStr = function () {
-                  var curStr = [];
-                  for(var i = 0, olen = aInput.length; i < olen; i++){
-                    curStr[i] = aInput[i].value;
-                  }
-                  console.log('curStr.join: '+curStr.join(''));
-                  return curStr.join('');
-                };
-                  /*********************************************************************************************/
-
+              if(data){
+                str = data["text"];
               }else{
-                blockStr.str = '00000000';
+                str = '';
               }
+              $('.showInfo').val(str);
             },
             error: function (xml, error) {
-              console.log('block_rec Error');
-              getCurStr = function () {
-                return '00000000';
-              };
+              console.log('block_rec:strError');
               if(error == "timeout"){
+                console.log('block_rec:timeout');
                 getStrAjax.abort();
                 getStrFun();
               }
@@ -528,23 +361,24 @@
         }
         getStrFun();
 
-//获取token
-        var jobTaskLoadedTimer = setInterval(function() {
+//                获取token
+        var jobTaskLoadedTimer = setInterval(function () {
           if(jobTaskLoaded){
-            clearInterval(jobTaskLoadedTimer);
             var receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
             var interface;
+            clearInterval(jobTaskLoadedTimer);
             console.log('调用native方法receiveNativeToken后返回的: '+receiveNativeTokenJson);
             console.log(receiveNativeTokenJson);
             tokenStr = receiveNativeTokenJson['token'];
             interface = receiveNativeTokenJson['url'];
             console.log('调用native方法receiveNativeToken后返回的请求url: '+interface+', 返回的token的值： '+tokenStr);
 
-//发起ajax请求获取任务统计数据userInfo插入页面中
+            //发起ajax请求获取任务统计数据userInfo插入页面中
+//            var userData = {'token': tokenStr,'task_id':task_id};
             var userData = {'task_id':task_id};
             userData = JSON.stringify(userData);
 
-//判断是否需要跳到抽奖页面 getchanceconfig／interval  ＝＝  userInfo／total_order_num ？
+//                判断是否需要跳到抽奖页面 getchanceconfig／interval  ＝＝  userInfo／total_order_num ？
             $.when(
               $.ajax({
                 type : 'POST',
@@ -556,6 +390,7 @@
                   xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
                   xhr.setRequestHeader('Accept','application/json,text/plain');
                   xhr.setRequestHeader('Authorization',tokenStr);
+
                 }
               }),
               $.ajax({
@@ -566,11 +401,6 @@
               })
             ).then(function (userInfo, lotteryInfo){
 
-              var userInfoCode = userInfo[0].code;
-              console.log('userInfoCode: '+userInfoCode);
-              var lotteryInfoCode = lotteryInfo[0].code;
-              console.log('lotteryInfoCode: '+lotteryInfoCode);
-
               console.group('statistics/userInfo接口返回的信息：');
               console.log('userInfo data: '+userInfo);
               console.log(userInfo);
@@ -580,74 +410,54 @@
               console.log('getchanceconfig data: '+lotteryInfo);
               console.log(lotteryInfo);
               console.groupEnd();
-              if(userInfoCode == 200){
-                var total_order_num = userInfo[0].body.total_order_num;
-                $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
-                $('.total .num').html(total_order_num);
-                $('.today_order .num').html(userInfo[0].body.current_day_tasks);
 
-                for(var i=0,len=lotteryInfo[0]['body']['chance_configs'].length;i<len;i++){
-                  var interval = lotteryInfo[0]['body']['chance_configs'][i]['interval'];
-                  var lottery_id = lotteryInfo[0]['body']['chance_configs'][i]['lottery_id'];
+              var total_order_num = userInfo[0].body.total_order_num;
+              $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
+              $('.total .num').html(total_order_num);
+              $('.today_order .num').html(userInfo[0].body.current_day_tasks);
 
-                  if(interval == total_order_num){
-//                  var remainData = {'token': tokenStr,"threshold_value": interval};
-                    var remainData = {"threshold_value": interval};
-                    function getuserremainingchanceFun() {
-                      var getuserremainingchanceAjax = $.ajax({
-                        type: 'POST',
-                        url: ''+interface+'/token/lottery/getuserremainingchance',
-                        dataType: 'json',
-                        timeout: 5000,
-                        beforeSend: function (xhr) {
-                          xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
-                          xhr.setRequestHeader('Accept','application/json,text/plain');
-                          xhr.setRequestHeader('Authorization',tokenStr);
-                        },
-                        data: JSON.stringify(remainData),
-                        success: function (remainingChanceInfo) {
+              for(var i=0,len=lotteryInfo[0]['body']['chance_configs'].length;i<len;i++){
+                var interval = lotteryInfo[0]['body']['chance_configs'][i]['interval'];
+                var lottery_id = lotteryInfo[0]['body']['chance_configs'][i]['lottery_id'];
 
-                          var getuserremainingchanceCode = remainingChanceInfo.code;
-                          console.log('remainingChanceInfo[0].code: '+getuserremainingchanceCode);
+                if(interval == total_order_num){
+                  var remainData = {"threshold_value": interval};
+                  function getuserremainingchanceFun() {
+                    var getuserremainingchanceAjax = $.ajax({
+                      type: 'POST',
+                      url: ''+interface+'/token/lottery/getuserremainingchance',
+                      dataType: 'json',
+                      timeout: 5000,
+                      beforeSend: function (xhr) {
+                        xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+                        xhr.setRequestHeader('Accept','application/json,text/plain');
+                        xhr.setRequestHeader('Authorization',tokenStr);
+                      },
+                      data: JSON.stringify(remainData),
+                      success: function (remainingChanceInfo) {
+                        console.group('getuserremainingchance接口返回的信息：');
+                        console.log('getuserremainingchance data: '+remainingChanceInfo);
+                        console.log(remainingChanceInfo);
+                        console.groupEnd();
 
-                          console.group('getuserremainingchance接口返回的信息：');
-                          console.log('getuserremainingchance data: '+remainingChanceInfo);
-                          console.log(remainingChanceInfo);
-                          console.groupEnd();
-
-                          if(getuserremainingchanceCode == 200){
-                            var times = remainingChanceInfo['body']['remaining_chance'];
-                            if(times>0){
-                              var lockTimer = setInterval(function () {
-                                if(lockDrawDone){
-                                  clearInterval(lockTimer);
-                                  jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
-                                }
-                              },30);
-                            }
-                          }else if(getuserremainingchanceCode == 604){
-                            console.log('getuserremainingchanceCode604');
-//                            jobTask.notifyToRelogin();
-                          }
-                        },
-                        error: function () {
-                          console.log('remaining_chanceError');
-                          if(error == "timeout"){
-                            getuserremainingchanceAjax.abort();
-                            getuserremainingchanceFun();
-                          }
+                        var times = remainingChanceInfo['body']['remaining_chance'];
+                        if(times>0){
+                          jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
                         }
-                      });
-                    }
-                    getuserremainingchanceFun();
-                    break;
+                      },
+                      error: function () {
+                        console.log('remaining_chanceError');
+                        if(error == "timeout"){
+                          getuserremainingchanceAjax.abort();
+                          getuserremainingchanceFun();
+                        }
+                      }
+                    });
                   }
+                  getuserremainingchanceFun();
+                  break;
                 }
-              }else if(userInfoCode == 604){
-                console.log('userInfoCode604');
-//                jobTask.notifyToRelogin();
               }
-
             });
 
 //点击任务指引
@@ -662,11 +472,10 @@
               jobTask.checkTaskStatistics();
             });
 
-//拿到token判断有没登录
+//                拿到token判断有没登录
             if(!tokenStr){
+//                单击未登录的取消按钮
               console.log('没有拿到token值！');
-
-//单击未登录的取消按钮
               $('#cacelBtn').off('click').on('click',function () {
                 $('#toLogin').hide(300);
                 $('html')[0].addEventListener('click',function () {
@@ -674,14 +483,12 @@
                 },true);
               });
 
-//单击登录跳转登录页面
+//                单击登录跳转登录页面
               $('#loginBtn').off('click').on('click',function () {
-                console.log('loginBtnTouchstart');
                 jobTask.launchLoginPage();
               });
 
               $('html')[0].addEventListener('click',function () {
-                console.log('htmlPageTouchstart');
                 $('#toLogin').show();
               },true);
 
@@ -691,10 +498,17 @@
 
             }else{
               console.log('拿到了token值，为 '+tokenStr);
+//              给输入框绑定按软键盘enter时收起软键盘
+              $('.showInfo').bind('keydown', function (e) {
+                var key = e.which;
+                if (key == 13) {
+                  e.preventDefault();
+                  document.activeElement.blur();
+                }
+              });
 
-//点击下一张按钮
+//                点击下一张按钮
               $('#next,#indistinct').off('click').on('click', function(evt) {
-//                $(this).siblings().prop('disabled',true);]
                 console.log('提交按钮#next或#indistinct已经单击！！！');
                 $("#showMes").show();
                 var clickWhich = $(this).attr('id')=='indistinct';
@@ -702,12 +516,10 @@
                 if(!window.navigator.onLine){
                   $('#offLine').show();
                 }else{
-                  console.log('clickWhich: '+clickWhich);
-                  var answer = clickWhich ? {"text": '看不清'} : {"text": getCurStr()};
-                  console.log('answer: '+answer);
-                  console.log(answer);
+                  var answer = clickWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
                   if (answer["text"]) {
-                    pybossa.saveTask(task.id, answer).done(function() {
+                    var answerJson = {"text": answer};
+                    pybossa.saveTask(task.id, answerJson).done(function() {
                       console.log('saveTask: ' + tokenStr);
                       if(jumpProjectFlag){
                         function getongoingprojectFun() {
@@ -715,36 +527,27 @@
                             type: 'GET',
                             async: false,
                             cache: false,
-                            timeout: 5000,
                             url: ''+interface+'/token/getongoingproject',
                             dataType: 'json',
+                            timeout: 5000,
                             beforeSend: function (xhr) {
                               xhr.setRequestHeader('Authorization',tokenStr);
                             },
                             success: function (data) {
-
-                              var getongoingprojectCode = data.code;
-                              console.log('remainingChanceInfo[0].code: '+getongoingprojectCode);
-
                               console.group('getongoingproject接口返回的信息：');
                               console.log('getongoingproject data： '+data);
                               console.log(data);
                               console.groupEnd();
 
-                              if(getongoingprojectCode == 200){
-                                var shortName = data['body']['short_name'];
-                                if(shortName){
-                                  jobTask.switchToAnotherProject(shortName);
-                                }else{
-                                  window.location.href = "/static/h5/noTask.html";
-                                }
-                              }else if(getongoingprojectCode == 604){
-                                console.log('getongoingprojectCode604');
-//                                jobTask.notifyToRelogin();
+                              var shortName = data['body']['short_name'];
+                              if(shortName){
+                                jobTask.switchToAnotherProject(shortName);
+                              }else{
+                                window.location.href = "/static/h5/noTask.html";
                               }
                             },
                             error: function (xml, error) {
-                              console.log('getongoingprojectError');
+                              console.log('shortNameError');
                               if(error == "timeout"){
                                 getongoingprojectAjax.abort();
                                 getongoingprojectFun();
@@ -764,8 +567,7 @@
                       $('#disqus_thread').toggle();
                       $('.btn-disqus').toggle();
                     }
-                  }
-                  else {
+                  } else {
                     $("#showMes").hide();
                     console.log('answer的值为空');
                     $('#answerTipBtn').off('click').on('click',function () {
@@ -780,7 +582,6 @@
             console.log('jobTaskLoaded is false');
             console.log('本地nativeLoadCompleted函数没有被native调用');
           }
-
         },50);
 
         $('#task-id').html(task.id);

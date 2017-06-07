@@ -121,7 +121,7 @@
     </div>
 </div>
 <div id="answerTip" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
-    <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+    <div style="position:absolute;top:50%;left:50%;width:80%;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
         <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">请输入与图像信息一致的内容。</p>
         <p id="answerTipBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
     </div>
@@ -331,7 +331,7 @@
         function getStrFun() {
           var getStrAjax = $.ajax({
             type: 'POST',
-            url: 'http://192.168.0.88:5001/ocr_api/block_rec?post_process=0',
+            url: 'http://192.168.0.88:5001/ocr_api/block_rec',
             dataType: 'json',
             data: JSON.stringify(urlData),
             timeout: 5000,
@@ -364,9 +364,9 @@
 //                获取token
         var jobTaskLoadedTimer = setInterval(function () {
           if(jobTaskLoaded){
+            clearInterval(jobTaskLoadedTimer);
             var receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
             var interface;
-            clearInterval(jobTaskLoadedTimer);
             console.log('调用native方法receiveNativeToken后返回的: '+receiveNativeTokenJson);
             console.log(receiveNativeTokenJson);
             tokenStr = receiveNativeTokenJson['token'];
@@ -401,6 +401,11 @@
               })
             ).then(function (userInfo, lotteryInfo){
 
+              var userInfoCode = userInfo[0].code;
+              console.log('userInfoCode: '+userInfoCode);
+              var lotteryInfoCode = lotteryInfo[0].code;
+              console.log('lotteryInfoCode: '+lotteryInfoCode);
+
               console.group('statistics/userInfo接口返回的信息：');
               console.log('userInfo data: '+userInfo);
               console.log(userInfo);
@@ -411,64 +416,75 @@
               console.log(lotteryInfo);
               console.groupEnd();
 
-              var total_order_num = userInfo[0].body.total_order_num;
-              $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
-              $('.total .num').html(total_order_num);
-              $('.today_order .num').html(userInfo[0].body.current_day_tasks);
+              if(userInfoCode == 200){
+                var total_order_num = userInfo[0].body.total_order_num;
+                $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
+                $('.total .num').html(total_order_num);
+                $('.today_order .num').html(userInfo[0].body.current_day_tasks);
 
-              for(var i=0,len=lotteryInfo[0]['body']['chance_configs'].length;i<len;i++){
-                var interval = lotteryInfo[0]['body']['chance_configs'][i]['interval'];
-                var lottery_id = lotteryInfo[0]['body']['chance_configs'][i]['lottery_id'];
+                for(var i=0,len=lotteryInfo[0]['body']['chance_configs'].length;i<len;i++){
+                  var interval = lotteryInfo[0]['body']['chance_configs'][i]['interval'];
+                  var lottery_id = lotteryInfo[0]['body']['chance_configs'][i]['lottery_id'];
 
-                if(interval == total_order_num){
-                  var remainData = {"threshold_value": interval};
-                  function getuserremainingchanceFun() {
-                    var getuserremainingchanceAjax = $.ajax({
-                      type: 'POST',
-                      url: ''+interface+'/token/lottery/getuserremainingchance',
-                      dataType: 'json',
-                      timeout: 5000,
-                      beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
-                        xhr.setRequestHeader('Accept','application/json,text/plain');
-                        xhr.setRequestHeader('Authorization',tokenStr);
-                      },
-                      data: JSON.stringify(remainData),
-                      success: function (remainingChanceInfo) {
-                        console.group('getuserremainingchance接口返回的信息：');
-                        console.log('getuserremainingchance data: '+remainingChanceInfo);
-                        console.log(remainingChanceInfo);
-                        console.groupEnd();
+                  if(interval == total_order_num){
+                    var remainData = {"threshold_value": interval};
+                    function getuserremainingchanceFun() {
+                      var getuserremainingchanceAjax = $.ajax({
+                        type: 'POST',
+                        url: ''+interface+'/token/lottery/getuserremainingchance',
+                        dataType: 'json',
+                        timeout: 5000,
+                        beforeSend: function (xhr) {
+                          xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+                          xhr.setRequestHeader('Accept','application/json,text/plain');
+                          xhr.setRequestHeader('Authorization',tokenStr);
+                        },
+                        data: JSON.stringify(remainData),
+                        success: function (remainingChanceInfo) {
+                          var getuserremainingchanceCode = remainingChanceInfo.code;
+                          console.log('remainingChanceInfo[0].code: '+getuserremainingchanceCode);
 
-                        var times = remainingChanceInfo['body']['remaining_chance'];
-                        if(times>0){
-                          jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
+                          console.group('getuserremainingchance接口返回的信息：');
+                          console.log('getuserremainingchance data: '+remainingChanceInfo);
+                          console.log(remainingChanceInfo);
+                          console.groupEnd();
+
+                          if(getuserremainingchanceCode == 200){
+                            var times = remainingChanceInfo['body']['remaining_chance'];
+                            if(times>0){
+                              jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
+                            }
+                          }else if(getuserremainingchanceCode == 604){
+//                            jobTask.notifyToRelogin();
+                          }
+                        },
+                        error: function () {
+                          console.log('remaining_chanceError');
+                          if(error == "timeout"){
+                            getuserremainingchanceAjax.abort();
+                            getuserremainingchanceFun();
+                          }
                         }
-                      },
-                      error: function () {
-                        console.log('remaining_chanceError');
-                        if(error == "timeout"){
-                          getuserremainingchanceAjax.abort();
-                          getuserremainingchanceFun();
-                        }
-                      }
-                    });
+                      });
+                    }
+                    getuserremainingchanceFun();
+                    break;
                   }
-                  getuserremainingchanceFun();
-                  break;
                 }
+              }else if(userInfoCode == 604){
+//                jobTask.notifyToRelogin();
               }
             });
 
-//点击任务指引
+//                点击任务指引
             $('.taskGuide').off('click').on('click',function () {
-              console.log('taskGuideBtnclick');
+              console.log('taskGuideBtnClick');
               jobTask.taskGuide();
             });
 
-//点击查看
+//                点击查看
             $('.more').off('click').on('click',function () {
-              console.log('nextBtnClick');
+              console.log('moreBtnClick');
               jobTask.checkTaskStatistics();
             });
 
@@ -534,16 +550,22 @@
                               xhr.setRequestHeader('Authorization',tokenStr);
                             },
                             success: function (data) {
+                              var getongoingprojectCode = data.code;
+                              console.log('remainingChanceInfo[0].code: '+getongoingprojectCode);
                               console.group('getongoingproject接口返回的信息：');
                               console.log('getongoingproject data： '+data);
                               console.log(data);
                               console.groupEnd();
 
-                              var shortName = data['body']['short_name'];
-                              if(shortName){
-                                jobTask.switchToAnotherProject(shortName);
-                              }else{
-                                window.location.href = "/static/h5/noTask.html";
+                              if(getongoingprojectCode == 200){
+                                var shortName = data['body']['short_name'];
+                                if(shortName){
+                                  jobTask.switchToAnotherProject(shortName);
+                                }else{
+                                  window.location.href = "/static/h5/noTask.html";
+                                }
+                              }else if(getongoingprojectCode == 604){
+//                                jobTask.notifyToRelogin();
                               }
                             },
                             error: function (xml, error) {

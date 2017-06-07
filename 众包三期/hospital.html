@@ -364,9 +364,9 @@
 //                获取token
         var jobTaskLoadedTimer = setInterval(function () {
           if(jobTaskLoaded){
+            clearInterval(jobTaskLoadedTimer);
             var receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
             var interface;
-            clearInterval(jobTaskLoadedTimer);
             console.log('调用native方法receiveNativeToken后返回的: '+receiveNativeTokenJson);
             console.log(receiveNativeTokenJson);
             tokenStr = receiveNativeTokenJson['token'];
@@ -401,6 +401,11 @@
               })
             ).then(function (userInfo, lotteryInfo){
 
+              var userInfoCode = userInfo[0].code;
+              console.log('userInfoCode: '+userInfoCode);
+              var lotteryInfoCode = lotteryInfo[0].code;
+              console.log('lotteryInfoCode: '+lotteryInfoCode);
+
               console.group('statistics/userInfo接口返回的信息：');
               console.log('userInfo data: '+userInfo);
               console.log(userInfo);
@@ -411,52 +416,63 @@
               console.log(lotteryInfo);
               console.groupEnd();
 
-              var total_order_num = userInfo[0].body.total_order_num;
-              $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
-              $('.total .num').html(total_order_num);
-              $('.today_order .num').html(userInfo[0].body.current_day_tasks);
+              if(userInfoCode == 200){
+                var total_order_num = userInfo[0].body.total_order_num;
+                $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
+                $('.total .num').html(total_order_num);
+                $('.today_order .num').html(userInfo[0].body.current_day_tasks);
 
-              for(var i=0,len=lotteryInfo[0]['body']['chance_configs'].length;i<len;i++){
-                var interval = lotteryInfo[0]['body']['chance_configs'][i]['interval'];
-                var lottery_id = lotteryInfo[0]['body']['chance_configs'][i]['lottery_id'];
+                for(var i=0,len=lotteryInfo[0]['body']['chance_configs'].length;i<len;i++){
+                  var interval = lotteryInfo[0]['body']['chance_configs'][i]['interval'];
+                  var lottery_id = lotteryInfo[0]['body']['chance_configs'][i]['lottery_id'];
 
-                if(interval == total_order_num){
-                  var remainData = {"threshold_value": interval};
-                  function getuserremainingchanceFun() {
-                    var getuserremainingchanceAjax = $.ajax({
-                      type: 'POST',
-                      url: ''+interface+'/token/lottery/getuserremainingchance',
-                      dataType: 'json',
-                      timeout: 5000,
-                      beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
-                        xhr.setRequestHeader('Accept','application/json,text/plain');
-                        xhr.setRequestHeader('Authorization',tokenStr);
-                      },
-                      data: JSON.stringify(remainData),
-                      success: function (remainingChanceInfo) {
-                        console.group('getuserremainingchance接口返回的信息：');
-                        console.log('getuserremainingchance data: '+remainingChanceInfo);
-                        console.log(remainingChanceInfo);
-                        console.groupEnd();
+                  if(interval == total_order_num){
+                    var remainData = {"threshold_value": interval};
+                    function getuserremainingchanceFun() {
+                      var getuserremainingchanceAjax = $.ajax({
+                        type: 'POST',
+                        url: ''+interface+'/token/lottery/getuserremainingchance',
+                        dataType: 'json',
+                        timeout: 5000,
+                        beforeSend: function (xhr) {
+                          xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+                          xhr.setRequestHeader('Accept','application/json,text/plain');
+                          xhr.setRequestHeader('Authorization',tokenStr);
+                        },
+                        data: JSON.stringify(remainData),
+                        success: function (remainingChanceInfo) {
+                          var getuserremainingchanceCode = remainingChanceInfo.code;
+                          console.log('remainingChanceInfo[0].code: '+getuserremainingchanceCode);
 
-                        var times = remainingChanceInfo['body']['remaining_chance'];
-                        if(times>0){
-                          jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
+                          console.group('getuserremainingchance接口返回的信息：');
+                          console.log('getuserremainingchance data: '+remainingChanceInfo);
+                          console.log(remainingChanceInfo);
+                          console.groupEnd();
+
+                          if(getuserremainingchanceCode == 200){
+                            var times = remainingChanceInfo['body']['remaining_chance'];
+                            if(times>0){
+                              jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
+                            }
+                          }else if(getuserremainingchanceCode == 604){
+//                            jobTask.notifyToRelogin();
+                          }
+                        },
+                        error: function () {
+                          console.log('remaining_chanceError');
+                          if(error == "timeout"){
+                            getuserremainingchanceAjax.abort();
+                            getuserremainingchanceFun();
+                          }
                         }
-                      },
-                      error: function () {
-                        console.log('remaining_chanceError');
-                        if(error == "timeout"){
-                          getuserremainingchanceAjax.abort();
-                          getuserremainingchanceFun();
-                        }
-                      }
-                    });
+                      });
+                    }
+                    getuserremainingchanceFun();
+                    break;
                   }
-                  getuserremainingchanceFun();
-                  break;
                 }
+              }else if(userInfoCode == 604){
+//                jobTask.notifyToRelogin();
               }
             });
 
@@ -534,16 +550,23 @@
                               xhr.setRequestHeader('Authorization',tokenStr);
                             },
                             success: function (data) {
+                              var getongoingprojectCode = data.code;
+                              console.log('remainingChanceInfo[0].code: '+getongoingprojectCode);
+
                               console.group('getongoingproject接口返回的信息：');
                               console.log('getongoingproject data： '+data);
                               console.log(data);
                               console.groupEnd();
 
-                              var shortName = data['body']['short_name'];
-                              if(shortName){
-                                jobTask.switchToAnotherProject(shortName);
-                              }else{
-                                window.location.href = "/static/h5/noTask.html";
+                              if(getongoingprojectCode == 200){
+                                var shortName = data['body']['short_name'];
+                                if(shortName){
+                                  jobTask.switchToAnotherProject(shortName);
+                                }else{
+                                  window.location.href = "/static/h5/noTask.html";
+                                }
+                              }else if(getongoingprojectCode == 604){
+//                                jobTask.notifyToRelogin();
                               }
                             },
                             error: function (xml, error) {

@@ -1,5 +1,9 @@
 <script>
 
+  // loading加载框出现
+  console.log('loading加载框出现');
+  $("#showMes").show();
+
   var jobTaskLoaded = false;
   function nativeLoadCompleted() {
     console.log('本地nativeLoadCompleted函数被native调用');
@@ -22,7 +26,6 @@
     txt+="Line: " + l + "\n\n";
     console.log(txt);
   };
-  console.log(window.location.href.replace('task\/\d*','newtask-token'));
 
 </script>
 <link rel="stylesheet" href="/static/h5/codeLock3.css">
@@ -393,7 +396,7 @@
               console.groupEnd();
               if(data["text"]){
                 var len=10-data["text"].length,f='';
-                if(len<10){
+                if(len>0){
                   for(var i=0;i<len;i++){
                     f+='0';
                   }
@@ -435,7 +438,7 @@
 
 //给数字输入框父元素添加滑动事件
                 var startX,startY;
-                $('#codeLockWrap').off('click').on('click',function (e) {
+                $('#codeLockWrap').off('touchstart').on('touchstart',function (e) {
                   console.log('codeLockWrap Touchstart');
                   console.log(e);
                   startX = e.originalEvent.touches[0].pageX;
@@ -506,11 +509,14 @@
                 /*********************************************************************************************/
 
               }else{
-                str = '';
+                blockStr.str = '0000000000';
               }
             },
             error: function (xml, error) {
               console.log('block_rec Error');
+              getCurStr = function () {
+                return '0000000000';
+              };
               if(error == "timeout"){
                 getStrAjax.abort();
                 getStrFun();
@@ -521,11 +527,11 @@
         getStrFun();
 
 //获取token
-        var jobTaskLoadedTimer = setInterval(function mainToken() {
+        var jobTaskLoadedTimer = setInterval(function () {
           if(jobTaskLoaded){
+            clearInterval(jobTaskLoadedTimer);
             var receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
             var interface;
-            clearInterval(jobTaskLoadedTimer);
             console.log('调用native方法receiveNativeToken后返回的: '+receiveNativeTokenJson);
             console.log(receiveNativeTokenJson);
             tokenStr = receiveNativeTokenJson['token'];
@@ -558,6 +564,11 @@
               })
             ).then(function (userInfo, lotteryInfo){
 
+              var userInfoCode = userInfo[0].code;
+              console.log('userInfoCode: '+userInfoCode);
+              var lotteryInfoCode = lotteryInfo[0].code;
+              console.log('lotteryInfoCode: '+lotteryInfoCode);
+
               console.group('statistics/userInfo接口返回的信息：');
               console.log('userInfo data: '+userInfo);
               console.log(userInfo);
@@ -567,58 +578,71 @@
               console.log('getchanceconfig data: '+lotteryInfo);
               console.log(lotteryInfo);
               console.groupEnd();
-              var total_order_num = userInfo[0].body.total_order_num;
-              $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
-              $('.total .num').html(total_order_num);
-              $('.today_order .num').html(userInfo[0].body.current_day_tasks);
 
-              for(var i=0,len=lotteryInfo[0]['body']['chance_configs'].length;i<len;i++){
-                var interval = lotteryInfo[0]['body']['chance_configs'][i]['interval'];
-                var lottery_id = lotteryInfo[0]['body']['chance_configs'][i]['lottery_id'];
+              if(userInfoCode == 200){
+                var total_order_num = userInfo[0].body.total_order_num;
+                $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
+                $('.total .num').html(total_order_num);
+                $('.today_order .num').html(userInfo[0].body.current_day_tasks);
 
-                if(interval == total_order_num){
+                for(var i=0,len=lotteryInfo[0]['body']['chance_configs'].length;i<len;i++){
+                  var interval = lotteryInfo[0]['body']['chance_configs'][i]['interval'];
+                  var lottery_id = lotteryInfo[0]['body']['chance_configs'][i]['lottery_id'];
+
+                  if(interval == total_order_num){
 //                  var remainData = {'token': tokenStr,"threshold_value": interval};
-                  var remainData = {"threshold_value": interval};
-                  function getuserremainingchanceFun() {
-                    var getuserremainingchanceAjax = $.ajax({
-                      type: 'POST',
-                      url: ''+interface+'/token/lottery/getuserremainingchance',
-                      dataType: 'json',
-                      timeout: 5000,
-                      beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
-                        xhr.setRequestHeader('Accept','application/json,text/plain');
-                        xhr.setRequestHeader('Authorization',tokenStr);
-                      },
-                      data: JSON.stringify(remainData),
-                      success: function (remainingChanceInfo) {
-                        console.group('getuserremainingchance接口返回的信息：');
-                        console.log('getuserremainingchance data: '+remainingChanceInfo);
-                        console.log(remainingChanceInfo);
-                        console.groupEnd();
+                    var remainData = {"threshold_value": interval};
+                    function getuserremainingchanceFun() {
+                      var getuserremainingchanceAjax = $.ajax({
+                        type: 'POST',
+                        url: ''+interface+'/token/lottery/getuserremainingchance',
+                        dataType: 'json',
+                        timeout: 5000,
+                        beforeSend: function (xhr) {
+                          xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+                          xhr.setRequestHeader('Accept','application/json,text/plain');
+                          xhr.setRequestHeader('Authorization',tokenStr);
+                        },
+                        data: JSON.stringify(remainData),
+                        success: function (remainingChanceInfo) {
 
-                        var times = remainingChanceInfo['body']['remaining_chance'];
-                        if(times>0){
-                          var lockTimer = setInterval(function () {
-                            if(lockDrawDone){
-                              clearInterval(lockTimer);
-                              jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
+                          var getuserremainingchanceCode = remainingChanceInfo.code;
+                          console.log('remainingChanceInfo[0].code: '+getuserremainingchanceCode);
+
+                          console.group('getuserremainingchance接口返回的信息：');
+                          console.log('getuserremainingchance data: '+remainingChanceInfo);
+                          console.log(remainingChanceInfo);
+                          console.groupEnd();
+
+                          if(getuserremainingchanceCode == 200){
+                            var times = remainingChanceInfo['body']['remaining_chance'];
+                            if(times>0){
+                              var lockTimer = setInterval(function () {
+                                if(lockDrawDone){
+                                  clearInterval(lockTimer);
+                                  jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
+                                }
+                              },30);
                             }
-                          },30);
+                          }else if(getuserremainingchanceCode == 604){
+//                            jobTask.notifyToRelogin();
+                          }
+                        },
+                        error: function () {
+                          console.log('remaining_chanceError');
+                          if(error == "timeout"){
+                            getuserremainingchanceAjax.abort();
+                            getuserremainingchanceFun();
+                          }
                         }
-                      },
-                      error: function () {
-                        console.log('remaining_chanceError');
-                        if(error == "timeout"){
-                          getuserremainingchanceAjax.abort();
-                          getuserremainingchanceFun();
-                        }
-                      }
-                    });
+                      });
+                    }
+                    getuserremainingchanceFun();
+                    break;
                   }
-                  getuserremainingchanceFun();
-                  break;
                 }
+              }else if(userInfoCode == 604){
+//                jobTask.notifyToRelogin();
               }
             });
 
@@ -665,7 +689,7 @@
               console.log('拿到了token值，为 '+tokenStr);
 
 //点击下一张按钮
-              $('#next,#indistinct').off('click').on('click', function(evt) {
+              $('#next,#indistinct').off('click').on('click', function() {
 //                $(this).siblings().prop('disabled',true);]
                 console.log('提交按钮#next或#indistinct已经单击！！！');
                 $("#showMes").show();
@@ -692,16 +716,24 @@
                               xhr.setRequestHeader('Authorization',tokenStr);
                             },
                             success: function (data) {
+
+                              var getongoingprojectCode = data.code;
+                              console.log('remainingChanceInfo[0].code: '+getongoingprojectCode);
+
                               console.group('getongoingproject接口返回的信息：');
                               console.log('getongoingproject data： '+data);
                               console.log(data);
                               console.groupEnd();
 
-                              var shortName = data['body']['short_name'];
-                              if(shortName){
-                                jobTask.switchToAnotherProject(shortName);
-                              }else{
-                                window.location.href = "/static/h5/noTask.html";
+                              if(getongoingprojectCode == 200){
+                                var shortName = data['body']['short_name'];
+                                if(shortName){
+                                  jobTask.switchToAnotherProject(shortName);
+                                }else{
+                                  window.location.href = "/static/h5/noTask.html";
+                                }
+                              }else if(getongoingprojectCode == 604){
+//                                jobTask.notifyToRelogin();
                               }
                             },
                             error: function (xml, error) {
