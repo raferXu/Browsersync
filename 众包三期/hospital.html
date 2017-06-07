@@ -1,6 +1,4 @@
 <script>
-  var source = 'http://192.168.0.182:8000';
-  var interface = 'http://192.168.0.182:5009';
 
   // loading加载框出现
   console.log('loading加载框出现');
@@ -366,9 +364,14 @@
 //                获取token
         var jobTaskLoadedTimer = setInterval(function () {
           if(jobTaskLoaded){
+            var receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
+            var interface;
             clearInterval(jobTaskLoadedTimer);
-            tokenStr = jobTask.receiveNativeToken();
-            console.log('调用native方法receiveNativeToken后返回的token值： '+tokenStr);
+            console.log('调用native方法receiveNativeToken后返回的: '+receiveNativeTokenJson);
+            console.log(receiveNativeTokenJson);
+            tokenStr = receiveNativeTokenJson['token'];
+            interface = receiveNativeTokenJson['url'];
+            console.log('调用native方法receiveNativeToken后返回的请求url: '+interface+', 返回的token的值： '+tokenStr);
 
             //发起ajax请求获取任务统计数据userInfo插入页面中
 //            var userData = {'token': tokenStr,'task_id':task_id};
