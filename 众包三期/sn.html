@@ -365,12 +365,20 @@
         var jobTaskLoadedTimer = setInterval(function () {
           if(jobTaskLoaded){
             clearInterval(jobTaskLoadedTimer);
-            var receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
-            var interface;
+            var tokenStr = sessionStorage.getItem("token") || null;
+            var interface = sessionStorage.getItem("url") || null;
+            var receiveNativeTokenJson;
+            if(!tokenStr || !interface){
+              console.log('! tokenStrStorage && ! interface');
+              receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
+              tokenStr = receiveNativeTokenJson['token'];
+              interface = receiveNativeTokenJson['url'];
+              sessionStorage.setItem("token",tokenStr);
+              sessionStorage.setItem("url",interface);
+            }
+//alert(tokenStr);
             console.log('调用native方法receiveNativeToken后返回的: '+receiveNativeTokenJson);
             console.log(receiveNativeTokenJson);
-            tokenStr = receiveNativeTokenJson['token'];
-            interface = receiveNativeTokenJson['url'];
             console.log('调用native方法receiveNativeToken后返回的请求url: '+interface+', 返回的token的值： '+tokenStr);
 
             //发起ajax请求获取任务统计数据userInfo插入页面中
@@ -562,7 +570,7 @@
                                 if(shortName){
                                   jobTask.switchToAnotherProject(shortName);
                                 }else{
-                                  window.location.href = "/static/h5/noTask.html";
+                                  window.location.href = "http://192.168.0.182:8000/h5/noTask.html";
                                 }
                               }else if(getongoingprojectCode == 604){
 //                                jobTask.notifyToRelogin();

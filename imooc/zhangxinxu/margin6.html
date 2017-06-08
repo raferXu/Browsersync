@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .father{
+      height: 200px;
+      position: relative;
+      background-color: #00b3ee;
+    }
+    .son{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #0000FF;
+      /*拉伸特性*/
+    }
+    .son1{
+      width: 500px;
+      height: 100px;
+    }
+    .son2{
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+<div class="father">
+  <!--son被自动拉伸填充满这个容器-->
+  <div class="son"></div>
+</div>
+<div>宽高的设置限制了absolute元素自动填满容器</div>
+<div class="father">
+  <!--宽高的设置限制了absolute元素自动填满容器-->
+  <div class="son son1"></div>
+</div>
+<div>auto自动平分被变更的尺寸空间,IE8+才支持</div>
+<div class="father">
+  <!--margin:auto自动平分被变更的尺寸空间-->
+  <div class="son son1 son2"></div>
+</div>
+</body>
+</html>

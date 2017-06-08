@@ -2,30 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/customization/data8/2/1ga9lfxr.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/customization/data8/3/2twq2zis.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/customization/data8/5/316ucdmu.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/customization/data8/6/3e6lqr2f.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/customization/data8/7/wgtypvxw.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/customization/data8/a/3a3xv4ij.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/noTaskBg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/file-cache/d7aee7a5-19cb-493a-b702-439add1746c6/crowdsourcing_interface_doc_full.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/file-cache/d7aee7a5-19cb-493a-b702-439add1746c6/crowdsourcing_interface_doc_iter3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/date修改成密码锁前.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/noTask.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/任意门/test2.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/accounts.db" afterPath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/accounts.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/config.db" afterPath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/config.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/customization/data8/1/vlymp3oq.d" afterPath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/customization/data8/1/vlymp3oq.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/customization/data8/5/902gnbhu.d" afterPath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/customization/data8/5/902gnbhu.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/file-cache.db" afterPath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/file-cache.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/repo.db" afterPath="$PROJECT_DIR$/ZBsource/Seafile/.seafile-data/repo.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imooc/zhangxinxu/margin.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imooc/zhangxinxu/margin1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imooc/zhangxinxu/margin2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imooc/zhangxinxu/margin3.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imooc/zhangxinxu/margin4.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imooc/zhangxinxu/margin5.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imooc/zhangxinxu/margin6.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imooc/zhangxinxu/margin7.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imooc/zhangxinxu/margin8.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/任意门/test1.html" afterPath="$PROJECT_DIR$/任意门/test1.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/crops.html" afterPath="$PROJECT_DIR$/众包三期/crops.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/date.html" afterPath="$PROJECT_DIR$/众包三期/date.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/hospital.html" afterPath="$PROJECT_DIR$/众包三期/hospital.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/lock.html" afterPath="$PROJECT_DIR$/众包三期/lock.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/noTask.html" afterPath="$PROJECT_DIR$/众包三期/noTask.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/sn.html" afterPath="$PROJECT_DIR$/众包三期/sn.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/total.html" afterPath="$PROJECT_DIR$/众包三期/total.html" />
     </list>
@@ -44,17 +35,13 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="date.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/众包三期/date.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="532" column="28" lean-forward="true" selection-start-line="532" selection-start-column="28" selection-end-line="532" selection-end-column="28" />
+            <state relative-caret-position="269">
+              <caret line="753" column="58" lean-forward="true" selection-start-line="753" selection-start-column="58" selection-end-line="753" selection-end-column="58" />
               <folding>
-                <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
                 <element signature="e#11192#12447#0" expanded="false" />
                 <element signature="e#12646#12987#0" expanded="false" />
                 <element signature="e#13051#13697#0" expanded="false" />
@@ -63,24 +50,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sn.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/众包三期/sn.html">
+      <file leaf-file-name="hospital.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/众包三期/hospital.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="371" column="55" lean-forward="true" selection-start-line="371" selection-start-column="12" selection-end-line="371" selection-end-column="55" />
+            <state relative-caret-position="209">
+              <caret line="580" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="638" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#div#3;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
                 <element signature="e#6947#7515#0" expanded="false" />
                 <element signature="e#12904#13769#0" expanded="false" />
-                <element signature="e#16196#19191#0" expanded="false" />
-                <element signature="e#19736#20505#0" expanded="false" />
+                <element signature="e#20591#21360#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lock.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/众包三期/lock.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="744" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="799" selection-end-column="0" />
+              <folding>
+                <element signature="e#10555#11810#0" expanded="false" />
+                <element signature="e#12009#12350#0" expanded="false" />
+                <element signature="e#12414#13060#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -89,9 +82,69 @@
       <file leaf-file-name="noTask.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/众包三期/noTask.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="144" column="13" lean-forward="true" selection-start-line="144" selection-start-column="13" selection-end-line="144" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="total.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/众包三期/total.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="578" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="631" selection-end-column="0" />
+              <folding>
+                <element signature="n#div#3;n#!!top" expanded="false" />
+                <element signature="e#6947#7515#0" expanded="false" />
+                <element signature="e#12904#13769#0" expanded="false" />
+                <element signature="e#16577#19572#0" expanded="false" />
+                <element signature="e#20117#20886#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crops.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/众包三期/crops.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="536" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="591" selection-end-column="0" />
+              <folding>
+                <element signature="n#div#3;n#!!top" expanded="false" />
+                <element signature="e#6642#7210#0" expanded="false" />
+                <element signature="e#22834#22958#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sn.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/众包三期/sn.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="579" column="60" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="629" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,20 +162,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>source</find>
-      <find>receiveNativeToken</find>
-      <find>url</find>
-      <find>getchanceconfig</find>
-      <find>receiveNativeTokenJson</find>
-      <find>interface</find>
-      <find>将获取的数字数据表示出来</find>
-      <find>tokenStr</find>
-      <find>603</find>
-      <find>$.ajax</find>
-      <find>ajax</find>
-      <find>200</find>
-      <find>获取token</find>
-      <find>code</find>
       <find>receiveNativeToken()</find>
       <find>mainToken</find>
       <find>clearInterval(jobTaskLoadedTimer);</find>
@@ -139,6 +178,20 @@
       <find>block_rec Error</find>
       <find>getCurStr</find>
       <find>header</find>
+      <find>task_id</find>
+      <find>tokenS</find>
+      <find>click</find>
+      <find>receiveNativeToken</find>
+      <find>localStorage</find>
+      <find>sessionStorage</find>
+      <find>tokenStr</find>
+      <find>alert</find>
+      <find>receive</find>
+      <find>no</find>
+      <find>toekn</find>
+      <find>touchstart</find>
+      <find>getongoingproject</find>
+      <find>noTask.html</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -159,6 +212,7 @@
       <replace>total</replace>
       <replace>/static/h5</replace>
       <replace>/static</replace>
+      <replace>touchstart</replace>
       <replace>click</replace>
     </replaceStrings>
   </component>
@@ -168,15 +222,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/audio/rxTest/blob.html" />
-        <option value="$PROJECT_DIR$/audio/voice-change-o-matic-gh-pages/环境嘈杂测试demo/a.html" />
-        <option value="$PROJECT_DIR$/audio/rxTest/iconText.html" />
-        <option value="$PROJECT_DIR$/imooc/CSS3/toolTops/index.html" />
-        <option value="$PROJECT_DIR$/imooc/CSS3/toolTops/css/style.css" />
-        <option value="$PROJECT_DIR$/imooc/zhangxinxu/float2.html" />
-        <option value="$PROJECT_DIR$/imooc/zhangxinxu/float1.html" />
-        <option value="$PROJECT_DIR$/imooc/zhangxinxu/float3.html" />
-        <option value="$PROJECT_DIR$/imooc/zhangxinxu/absolute.html" />
         <option value="$PROJECT_DIR$/imooc/zhangxinxu/absolute1.html" />
         <option value="$PROJECT_DIR$/imooc/zhangxinxu/absolute2.html" />
         <option value="$PROJECT_DIR$/imooc/zhangxinxu/absolute3.html" />
@@ -212,12 +257,21 @@
         <option value="$PROJECT_DIR$/众包三期/yiqian/template.html" />
         <option value="$PROJECT_DIR$/任意门/test2.html" />
         <option value="$PROJECT_DIR$/任意门/test1.html" />
-        <option value="$PROJECT_DIR$/众包三期/hospital.html" />
-        <option value="$PROJECT_DIR$/众包三期/sn.html" />
+        <option value="$PROJECT_DIR$/imooc/zhangxinxu/margin1.html" />
+        <option value="$PROJECT_DIR$/imooc/zhangxinxu/margin2.html" />
+        <option value="$PROJECT_DIR$/imooc/zhangxinxu/margin3.html" />
+        <option value="$PROJECT_DIR$/imooc/zhangxinxu/margin4.html" />
+        <option value="$PROJECT_DIR$/imooc/zhangxinxu/margin5.html" />
+        <option value="$PROJECT_DIR$/imooc/zhangxinxu/margin6.html" />
+        <option value="$PROJECT_DIR$/imooc/zhangxinxu/margin.html" />
+        <option value="$PROJECT_DIR$/imooc/zhangxinxu/margin7.html" />
+        <option value="$PROJECT_DIR$/imooc/zhangxinxu/margin8.html" />
         <option value="$PROJECT_DIR$/众包三期/total.html" />
-        <option value="$PROJECT_DIR$/众包三期/crops.html" />
+        <option value="$PROJECT_DIR$/众包三期/hospital.html" />
         <option value="$PROJECT_DIR$/众包三期/date.html" />
         <option value="$PROJECT_DIR$/众包三期/lock.html" />
+        <option value="$PROJECT_DIR$/众包三期/crops.html" />
+        <option value="$PROJECT_DIR$/众包三期/sn.html" />
         <option value="$PROJECT_DIR$/众包三期/noTask.html" />
       </list>
     </option>
@@ -232,9 +286,9 @@
     <handled-path value="$PROJECT_DIR$/webpack sample project/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="10" />
-    <option name="y" value="96" />
-    <option name="width" value="1188" />
+    <option name="x" value="42" />
+    <option name="y" value="77" />
+    <option name="width" value="1075" />
     <option name="height" value="665" />
   </component>
   <component name="ProjectView">
@@ -252,8 +306,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -312,6 +366,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="二期迭代" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="二期第二版修复" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="稳定版" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="二期迭代" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="二期第二版修复" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="稳定版" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="代码简洁" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -326,6 +428,11 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -453,21 +560,23 @@
       <workItem from="1495985872694" duration="219000" />
       <workItem from="1496193378457" duration="80876000" />
       <workItem from="1496729394874" duration="4432000" />
-      <workItem from="1496797228121" duration="17831000" />
+      <workItem from="1496797228121" duration="25317000" />
+      <workItem from="1496883398061" duration="8329000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="641239000" />
+    <option name="totallyTimeSpent" value="657054000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="96" width="1188" height="665" extended-state="1" />
+    <frame x="42" y="77" width="1075" height="665" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20942408" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21490803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32460734" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -479,7 +588,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3257329" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -563,111 +671,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/absolute8.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/absolute9.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="48" column="7" lean-forward="false" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/absolute10.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="28" column="40" lean-forward="false" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/absolute.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="65" column="50" lean-forward="false" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/absolute布局.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="110" column="7" lean-forward="false" selection-start-line="110" selection-start-column="7" selection-end-line="110" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/absolute11.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="41" column="21" lean-forward="false" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/overflow1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/overflow2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/overflow4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="43" lean-forward="false" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/overflow3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="40" column="58" lean-forward="false" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/overflow5.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/overflow失效妙用.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/依赖overflow的其他样式.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/overflow选项卡技术.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/border1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/border2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -826,18 +829,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/任意门/test2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="62" column="40" lean-forward="true" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/任意门/test2.html" />
     <entry file="file://$PROJECT_DIR$/任意门/test1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="716">
@@ -850,73 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/众包三期/hospital.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="569" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="622" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#4;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="false" />
-            <element signature="e#6947#7515#0" expanded="false" />
-            <element signature="e#12904#13769#0" expanded="false" />
-            <element signature="e#19736#20505#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/众包三期/total.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="564" column="55" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="621" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#4;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="false" />
-            <element signature="e#6947#7515#0" expanded="false" />
-            <element signature="e#12904#13769#0" expanded="false" />
-            <element signature="e#16196#19191#0" expanded="false" />
-            <element signature="e#19736#20505#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/众包三期/crops.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="527" column="31" lean-forward="true" selection-start-line="527" selection-start-column="31" selection-end-line="527" selection-end-column="31" />
-          <folding>
-            <element signature="n#div#3;n#!!top" expanded="false" />
-            <element signature="e#6642#7210#0" expanded="false" />
-            <element signature="e#22436#22560#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/众包三期/lock.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="510" column="20" lean-forward="true" selection-start-line="510" selection-start-column="20" selection-end-line="510" selection-end-column="20" />
-          <folding>
-            <element signature="e#10555#11810#0" expanded="false" />
-            <element signature="e#12009#12350#0" expanded="false" />
-            <element signature="e#12414#13060#0" expanded="false" />
-            <element signature="e#26971#29691#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -940,19 +868,152 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1804">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/margin2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="70" column="7" lean-forward="true" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#1225#1231#0" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/margin3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/margin4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/margin5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/margin6.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="39" column="29" lean-forward="false" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/margin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/margin7.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/margin1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="38" column="12" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imooc/zhangxinxu/margin8.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版缩小测试/ZB2H5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-754">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版缩小测试/location.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/二期迭代/hospital.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1860">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/pybossa01.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="201" column="28" lean-forward="false" selection-start-line="201" selection-start-column="20" selection-end-line="201" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/pybossa02.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="150" column="29" lean-forward="false" selection-start-line="150" selection-start-column="21" selection-end-line="150" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/二期迭代/二期第二版修复/稳定版/代码简洁/sn5009存储token.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="407" column="19" lean-forward="true" selection-start-line="402" selection-start-column="18" selection-end-line="407" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/众包三期/date.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="532" column="28" lean-forward="true" selection-start-line="532" selection-start-column="28" selection-end-line="532" selection-end-column="28" />
+        <state relative-caret-position="269">
+          <caret line="753" column="58" lean-forward="true" selection-start-line="753" selection-start-column="58" selection-end-line="753" selection-end-column="58" />
           <folding>
-            <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
             <element signature="e#11192#12447#0" expanded="false" />
             <element signature="e#12646#12987#0" expanded="false" />
             <element signature="e#13051#13697#0" expanded="false" />
@@ -960,31 +1021,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/众包三期/hospital.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="580" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="638" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#3;n#!!top" expanded="false" />
+            <element signature="e#6947#7515#0" expanded="false" />
+            <element signature="e#12904#13769#0" expanded="false" />
+            <element signature="e#20591#21360#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/众包三期/total.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="578" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="631" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#3;n#!!top" expanded="false" />
+            <element signature="e#6947#7515#0" expanded="false" />
+            <element signature="e#12904#13769#0" expanded="false" />
+            <element signature="e#16577#19572#0" expanded="false" />
+            <element signature="e#20117#20886#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/众包三期/crops.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="536" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="591" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#3;n#!!top" expanded="false" />
+            <element signature="e#6642#7210#0" expanded="false" />
+            <element signature="e#22834#22958#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/众包三期/sn.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="371" column="55" lean-forward="true" selection-start-line="371" selection-start-column="12" selection-end-line="371" selection-end-column="55" />
+        <state relative-caret-position="269">
+          <caret line="579" column="60" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="629" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#div#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="e#6947#7515#0" expanded="false" />
-            <element signature="e#12904#13769#0" expanded="false" />
-            <element signature="e#16196#19191#0" expanded="false" />
-            <element signature="e#19736#20505#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/众包三期/lock.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="744" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="799" selection-end-column="0" />
+          <folding>
+            <element signature="e#10555#11810#0" expanded="false" />
+            <element signature="e#12009#12350#0" expanded="false" />
+            <element signature="e#12414#13060#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/众包三期/noTask.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+        <state relative-caret-position="360">
+          <caret line="144" column="13" lean-forward="true" selection-start-line="144" selection-start-column="13" selection-end-line="144" selection-end-column="13" />
           <folding />
         </state>
       </provider>
