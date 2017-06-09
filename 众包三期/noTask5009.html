@@ -103,11 +103,9 @@
 <script>
   var jobTaskLoadedTimer2 = setInterval(function () {
     if(jobTaskLoaded) {
-      console.log('jobTaskLoaded is true');
       clearInterval(jobTaskLoadedTimer2);
-      var tokenStr = JSON.parse(jobTask.receiveNativeToken())['token'];
-      var url = JSON.parse(jobTask.receiveNativeToken())['url'];
-      console.log(tokenStr);
+      var tokenStr = jobTask.receiveNativeToken()['token'];
+      var url = jobTask.receiveNativeToken()['url'];
       if(tokenStr){
         function ajaxFunction(){
           var xmlHttp;
@@ -157,8 +155,6 @@
         xhr.send(null);
 
       }
-    }else{
-      console.log('jobTaskLoaded is false');
     }
   },50);
 

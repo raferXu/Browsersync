@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+padding大小超过宽高时候，最后宽度为padding值外加最小内容宽度;
+如内容为文字而且宽度为8cm得div，设置左右padding为8cm；
+最后div的宽度为左右分别8cm的padding加单个文字的宽度，而且文字竖向排列；
+
+对于inline元素，水平padding影响尺寸；
+垂直padding不影响尺寸，但会影响背景色(占据空间)；
+即垂直padding增大时虽然周围元素没有被撑开，但是如果给元素添加背景，
+会发现背景色被撑大，只是不会影响其他元素；
+而且当撑大到超过父元素高度时，虽然clientHeight大小不变，但是scrollHeight会增大；
+</body>
+</html>

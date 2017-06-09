@@ -566,7 +566,9 @@
                               console.log(data);
                               console.groupEnd();
 
-                              if(getongoingprojectCode == 200){
+                              if(getongoingprojectCode == 905){
+                                window.location.href = "http://192.168.0.182:8000/h5/noTask.html";
+                              }else if(getongoingprojectCode == 200){
                                 var shortName = data['body']['short_name'];
                                 if(shortName){
                                   jobTask.switchToAnotherProject(shortName);
@@ -575,7 +577,7 @@
                                   window.location.href = "http://192.168.0.182:8000/h5/noTask.html";
                                 }
                               }else if(getongoingprojectCode == 604){
-//                                jobTask.notifyToRelogin();
+                                jobTask.notifyToRelogin();
                               }
                             },
                             error: function (xml, error) {

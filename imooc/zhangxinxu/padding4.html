@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>inline水平元素的padding百分比</title>
+  <style>
+    span{
+      padding:50%;background-color:green;font-size:0
+    }
+  </style>
+</head>
+<body>
+<!--1、同样相对于宽度计算；-->
+
+<!--2、默认的高度宽度有差异；空inline元素加padding高宽也不等，所以要加上font－size为0；-->
+<!--inline元素的垂直padding会让'幽灵空白节点'显示，通过font－size为0让它不显示；-->
+<span></span>
+
+<!--3、padding会断行；因为文字被强行换行后，换行的文字的padding也跟着换行了；-->
+<!--<span style="padding:50%;background-color: red">-->
+  <!--内有蚊子若干-->
+<!--</span>-->
+
+</body>
+</html>
