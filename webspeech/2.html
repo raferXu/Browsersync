@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input x-webkit-speech lang="zh-CN" />
+<script>
+  var sr = new webkitSpeechRecognition();
+
+  sr.lang = "en-GB";
+
+  sr.interimResults = true;// false by default
+
+  sr.onresult = function(evt) {
+
+    for (var i = 0; i < evt.results.length; ++i) {
+
+      console.log(evt.results[i][0].transcript);
+
+    }
+
+  };
+
+  sr.start();
+
+  sr.onstart = function() { console.log("onstart"); }
+
+  sr.onend = function() { console.log("onend"); }
+
+  sr.onspeechstart = function() { console.info("speech start"); }
+
+  sr.onspeechend = function() { console.info("speech end"); }
+</script>
+</body>
+</html>

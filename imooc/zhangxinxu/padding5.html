@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+ol/li元素内置padding-left单位是px；
+当字体为12-14px时，列表序号padding为22-25px时可以实现序号和下面内容左对齐；
+
+radio/checkbox无内置padding；其他表单元素有padding；
+button按钮padding值在ff下设置为0时依然有padding，
+解决方法就是给按钮添加button::-moz-focus-inner{padding:0;}
+IE浏览器左右padding随内容文件增多而变大，
+解决方法给按钮添加button{overflow:visible;}
+
+padding与高度计算不兼容
+button{line-heigh:20px;padding:10px;border:none;}
+IE8+ : 40px;   true
+Chrome : 40px;    true
+FF : 42px;   false
+IE7 : 45px;   false
+所以一般都用a标签去模拟按钮；
+不过当必须要用button时，如使用button默认行为实现表单回车提交；
+<button id="btn"></button>
+<label for="btn">按钮</label>
+label{
+  display: inline-block;
+  line-height: 20px;
+  padding: 10px;
+}
+#btn{  //可访问性隐藏
+  z-index: -1; 或绝对定位到页面之外；
+}
+
+
+
+</body>
+</html>

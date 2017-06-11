@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>body全局数值行高使用经验1.4</title>
+  <style>
+    .p1{
+      background-color: red;
+      line-height: 1.5;
+    }
+    .p2{
+      background-color: green;
+      line-height: 150%;
+      /*line-height: 1.5em; 效果等于150%*/
+    }
+    .c{
+      font-size: 60px;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+l行高默认normal对应的具体数值和字体有关；
+
+行高继承性：IE8+;
+input框等默认行高是normal，使用inherit可以让文本框样式可控性更强；
+
+line-height: 1.5;
+line-height: 150%;
+line-height: 1.5em;
+应用元素有差别，
+line-height: 1.5;所有可继承元素根据font-size重计算行高；
+line-height: 150% / 1.5em; 将计算行高后的值直接继承给下面的元素；
+
+<div class="p1">
+  line-height: 1.5;
+  <div class="c">我的font-size为60px～</div>
+</div>
+<div class="p2">
+  line-height: 150%;
+  <div class="c">我的font-size为60px～</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+relative是相对自身定位，而且无侵入特性；
+无侵入应用：元素拖拽；
+
+top/bottom和left/right对立属性同时存在时的表现是：
+1、绝对定位是拉伸；
+2、相对定位是斗争；top和left更胜；
+
+relative
+1、提高层叠上下文
+2、当relative的z-index不为auto时，新建层叠上下文与层级控制；
+当relative的z-index为auto时限制不了绝对定位的子元素的层叠问题；
+不过IE7及以下relative的z-index为auto时也会新建层叠上下文，所以很容易出现层级覆盖bug；
+
+relative最小化影响原则：
+尽力避免使用；
+
+
+</body>
+</html>

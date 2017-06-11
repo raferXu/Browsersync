@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+relative对absolute限制作用：
+1\限制left、top、right、bottom定位；
+
+2\限制z-index层级；
+绝对定位a和绝对定位b正常情况下哪个z-index层级高就在上面；
+但如果两个绝对定位a和b外面都有相对定位元素，则谁在上面是由外面的相对定位元素决定；
+
+3\限制在overflow下的嚣张气焰；
+绝对定位元素不受overflow影响，我行我素；
+但是当父元素为relative时则父元素的overflow对不管是不是绝对定位元素都一视同仁；
+
+relative与fixed ？
+只能限制z-index层级；
+
+</body>
+</html>
