@@ -383,7 +383,8 @@
 //            发送图片获取识别字符串，并放入input中
         var blockStr = {'str':"1234567890"};
         var urlData = {"url": task.info.url,"type": task.info.type};
-        var getCurStr=function(){},lockDrawDone=false;
+        var getCurStr=function(){};
+//        var lockDrawDone=false;
         function getStrFun() {
           var getStrAjax = $.ajax({
             type: 'POST',
@@ -627,10 +628,10 @@
                             var times = remainingChanceInfo['body']['remaining_chance'];
                             if(times>0){
                               var lockTimer = setInterval(function () {
-                                if(lockDrawDone){
+//                                if(lockDrawDone){
                                   clearInterval(lockTimer);
                                   jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
-                                }
+//                                }
                               },30);
                             }
                           }else if(getuserremainingchanceCode == 604){
