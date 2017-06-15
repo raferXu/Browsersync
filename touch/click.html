@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <title>Title</title>
+  <style>
+    body{
+      height: 1000px;
+    }
+  </style>
+</head>
+<body>
+test touch
+<script>
+  document.ontouchstart = function (e) {
+    e.preventDefault();
+    document.body.innerHTML = ('touchstart;');
+  };
+  document.ontouchmove = function (e) {
+    document.body.innerHTML += ('touchmove;');
+  };
+  document.ontouchend = function (e) {
+//    e.preventDefault();
+    document.body.innerHTML += ('touchend;');
+  };
+  document.onclick = function (e) {
+    document.body.innerHTML += ('click;');
+  };
+</script>
+</body>
+</html>

@@ -121,6 +121,11 @@
         <p id="answerTipBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
     </div>
 </div>
+<div id="failData" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <div style="position:absolute;top:50%;left:50%;width:80%;height:.8rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+        <p style="width:100%;height:.8rem;line-height:.8rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">数据获取失败。</p>
+    </div>
+</div>
 
 <script type="text/javascript" src="/static/h5/pinchzoom201.js"></script>
 <script type="text/javascript">
@@ -155,7 +160,13 @@
           console.log('获取数据太久了导致3秒后自动提交');
           $("#failData").hide();
           $('.showInfo').val('获取数据失败');
-          $('#next').trigger('click');
+          if(tokenStr){
+            console.log('页面刷不出来有token可以直接跳到下一个任务');
+            $('#next').trigger('click');
+          }else{
+            location.href = location.href;
+            console.log('页面刷不出来而且没有token只能刷新当前页面');
+          }
         },3000);
       }
     },15000);
@@ -200,24 +211,98 @@
 
         var img = $('<img id="billImg" class="billImg"/>');
 
-//        图片加载完成时计算加载时间决定是否重载
-        setTimeout(function () {
-          if(!imgLoaded(img)){
-            console.log('图片加载超过5秒，重新加载中...');
-            if(!task.info.url.split('?')[1]){
-              img.attr('src', task.info.url+'?'+Math.random()).css('height', 'auto');
-            }else{
-              img.attr('src', task.info.url+'&'+Math.random()).css('height', 'auto');
-            }          }
-        },5000);
-        img.load(function() {
-          deferred.resolve(task);
-        });
+        // "/token/img/f21f58bb72613e09530e5be11ed41505",  interface
+        var imgUrl = task.info.url;
+        if(/^\/token\/img/.test(imgUrl)){
+          console.log('url是/token/img开头的接口');
+          function getImgFn() {
+            var getImgNeedPortTimer = setInterval(function () {
+              console.log('开始确定native是否调用了本地js方法');
+              if(jobTaskLoaded){
+                clearInterval(getImgNeedPortTimer);
+                var interface = sessionStorage.getItem("url") || null;
+                var receiveNativeTokenJson;
+                if(!interface){
+                  console.log('! interface');
+                  receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
+                  interface = receiveNativeTokenJson['url'];
+                  sessionStorage.setItem("url",interface);
+                }
+                var getImgAjax = $.ajax({
+                  type: 'GET',
+                  async: false,
+                  cache: false,
+                  url: ''+interface+imgUrl,
+                  dataType: 'json',
+                  timeout: 5000,
+                  success: function (data) {
 
-        console.log('task: '+task);
-        console.log(task);
-        img.attr('src', task.info.url).css('height', 'auto');
-        task.info.image = img;
+                    var getImgAjaxCode = data.code;
+                    console.log('getImgAjax.code: '+getImgAjaxCode);
+
+                    console.group('getImgAjax接口返回的信息：');
+                    console.log('getImgAjax data： '+data);
+                    console.log(data);
+                    console.groupEnd();
+
+                    if(getImgAjaxCode == 200){
+                      console.log('获取图片url的base64数据成功！');
+                      imgUrl = data['body']['base64'];
+                      setTimeout(function () {
+                        if(!imgLoaded(img)){
+                          console.log('图片加载超过5秒，重新加载中...');
+                          if(!imgUrl.split('?')[1]){
+                            img.attr('src', imgUrl+'?'+Math.random()).css('height', 'auto');
+                          }else{
+                            img.attr('src', imgUrl+'&'+Math.random()).css('height', 'auto');
+                          }          }
+                      },5000);
+                      img.load(function() {
+                        deferred.resolve(task);
+                      });
+
+                      console.log('task: '+task);
+                      console.log(task);
+                      img.attr('src', imgUrl).css('height', 'auto');
+                      task.info.image = img;
+                    }else{
+                      console.log('getImgAjax调用失败，状态码为: '+getImgAjaxCode);
+                    }
+                  },
+                  error: function (xml, error) {
+                    console.log('/token/img Error');
+                    if(error == "timeout"){
+                      console.log('/token/img Error timeout');
+                      getImgAjax.abort();
+                      getImgFn();
+                    }
+                  }
+                });
+              }
+            },50);
+          }
+          getImgFn();
+        }else{
+          console.log('url是可以直接显示的路径,为： '+imgUrl);
+//        图片加载完成时计算加载时间决定是否重载
+          setTimeout(function () {
+            if(!imgLoaded(img)){
+              console.log('图片加载超过5秒，重新加载中...');
+              if(!imgUrl.split('?')[1]){
+                img.attr('src', imgUrl+'?'+Math.random()).css('height', 'auto');
+              }else{
+                img.attr('src', imgUrl+'&'+Math.random()).css('height', 'auto');
+              }          }
+          },5000);
+          img.load(function() {
+            deferred.resolve(task);
+          });
+
+          console.log('task: '+task);
+          console.log(task);
+          img.attr('src', imgUrl).css('height', 'auto');
+          task.info.image = img;
+        }
       }
 
       else {
