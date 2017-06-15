@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body{height: 435px}
+  </style>
+</head>
+<body>
+<script>
+  console.log('屏幕高度 '+window.screen.height);
+  console.log('屏幕去除底部菜单高度 '+window.screen.availHeight);
+  console.log('浏览器窗口距离屏幕顶部距离 '+window.scrollTop);  //这个有问题，window根本没有scrollTop属性
+  console.log('浏览器外部高度 '+window.outerHeight);
+  console.log('浏览器去除顶部菜单栏和底部滚动条的高度 '+window.innerHeight);
+</script>
+</body>
+</html>

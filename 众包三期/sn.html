@@ -126,6 +126,11 @@
         <p id="answerTipBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
     </div>
 </div>
+<div id="failData" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <div style="position:absolute;top:50%;left:50%;width:80%;height:.8rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+        <p style="width:100%;height:.8rem;line-height:.8rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">数据获取失败。</p>
+    </div>
+</div>
 
 <script type="text/javascript" src="/static/h5/pinchzoom201.js"></script>
 <script type="text/javascript">
@@ -151,7 +156,19 @@
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script type="text/javascript">
   (function() {
-
+    setTimeout(function () {
+      if(!loadImg || !getStr){
+        console.log('获取数据太久了');
+        $("#showMes").hide();
+        $("#failData").show();
+        setTimeout(function () {
+          console.log('获取数据太久了导致3秒后自动提交');
+          $("#failData").hide();
+          $('.showInfo').val('获取数据失败');
+          $('#next').trigger('click');
+        },3000);
+      }
+    },15000);
     var loadImg = false;
     var getStr = false;
     var tokenStr;
@@ -177,11 +194,14 @@
         $('#toLogin').css('top',$(window).scrollTop());
         $('#showMes').css('top',$(window).scrollTop());
         $('#offLine').css('top',$(window).scrollTop());
+        $('#failData').css('top',$(window).scrollTop());
       });
     });
 
 //        判断图片是否加载完成
     function imgLoaded(img) {
+      console.log('img.complete: '+img.complete);
+      console.log('img.naturalHeight: '+img.naturalHeight);
       return img.complete && img.naturalHeight !== 0;
     }
 
@@ -195,8 +215,11 @@
         setTimeout(function () {
           if(!imgLoaded(img)){
             console.log('图片加载超过5秒，重新加载中...');
-            img.attr('src', task.info.url+'?'+Math.random()).css('height', 'auto');
-          }
+            if(!task.info.url.split('?')[1]){
+              img.attr('src', task.info.url+'?'+Math.random()).css('height', 'auto');
+            }else{
+              img.attr('src', task.info.url+'&'+Math.random()).css('height', 'auto');
+            }          }
         },5000);
         img.load(function() {
           deferred.resolve(task);
@@ -215,6 +238,9 @@
     });
 
     pybossa.presentTask(function(task, deferred) {
+
+
+
       if ( !$.isEmptyObject(task) ) {
         console.log('运行presentTasktask函数时拿到的任务为: '+task);
 
@@ -469,6 +495,7 @@
                         error: function () {
                           console.log('remaining_chanceError');
                           if(error == "timeout"){
+                            console.log('remaining_chance timeout');
                             getuserremainingchanceAjax.abort();
                             getuserremainingchanceFun();
                           }
@@ -566,14 +593,15 @@
                               console.groupEnd();
 
                               if(getongoingprojectCode == 905){
-                                window.location.href = "http://192.168.0.182:8000/h5/noTask.html";
+                                window.location.href = "/static/h5/noTask.html";
                               }else if(getongoingprojectCode == 200){
                                 var shortName = data['body']['short_name'];
+                                console.log('shortName: '+shortName);
                                 if(shortName){
                                   jobTask.switchToAnotherProject(shortName);
                                 }else{
 //                                  window.location.href = "/static/h5/noTask.html";
-                                  window.location.href = "http://192.168.0.182:8000/h5/noTask.html";
+                                  window.location.href = "/static/h5/noTask.html";
                                 }
                               }else if(getongoingprojectCode == 604){
                                 jobTask.notifyToRelogin();
@@ -582,6 +610,7 @@
                             error: function (xml, error) {
                               console.log('shortNameError');
                               if(error == "timeout"){
+                                console.log('shortNameError timeout');
                                 getongoingprojectAjax.abort();
                                 getongoingprojectFun();
                               }

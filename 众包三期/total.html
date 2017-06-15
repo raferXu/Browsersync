@@ -151,7 +151,19 @@
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script type="text/javascript">
   (function() {
-
+    setTimeout(function () {
+      if(!loadImg || !getStr){
+        console.log('获取数据太久了');
+        $("#showMes").hide();
+        $("#failData").show();
+        setTimeout(function () {
+          console.log('获取数据太久了导致3秒后自动提交');
+          $("#failData").hide();
+          $('.showInfo').val('获取数据失败');
+          $('#next').trigger('click');
+        },3000);
+      }
+    },15000);
     var loadImg = false;
     var getStr = false;
     var tokenStr;
@@ -182,6 +194,8 @@
 
 //        判断图片是否加载完成
     function imgLoaded(img) {
+      console.log('img.complete: '+img.complete);
+      console.log('img.naturalHeight: '+img.naturalHeight);
       return img.complete && img.naturalHeight !== 0;
     }
 
@@ -195,8 +209,11 @@
         setTimeout(function () {
           if(!imgLoaded(img)){
             console.log('图片加载超过5秒，重新加载中...');
-            img.attr('src', task.info.url+'?'+Math.random()).css('height', 'auto');
-          }
+            if(!task.info.url.split('?')[1]){
+              img.attr('src', task.info.url+'?'+Math.random()).css('height', 'auto');
+            }else{
+              img.attr('src', task.info.url+'&'+Math.random()).css('height', 'auto');
+            }          }
         },5000);
         img.load(function() {
           deferred.resolve(task);
@@ -215,6 +232,9 @@
     });
 
     pybossa.presentTask(function(task, deferred) {
+
+
+
       if ( !$.isEmptyObject(task) ) {
         console.log('运行presentTasktask函数时拿到的任务为: '+task);
 
@@ -567,14 +587,15 @@
                               console.groupEnd();
 
                               if(getongoingprojectCode == 905){
-                                window.location.href = "http://192.168.0.182:8000/h5/noTask.html";
+                                window.location.href = "/static/h5/noTask.html";
                               }else if(getongoingprojectCode == 200){
                                 var shortName = data['body']['short_name'];
+                                console.log('shortName: '+shortName);
                                 if(shortName){
                                   jobTask.switchToAnotherProject(shortName);
                                 }else{
 //                                  window.location.href = "/static/h5/noTask.html";
-                                  window.location.href = "http://192.168.0.182:8000/h5/noTask.html";
+                                  window.location.href = "/static/h5/noTask.html";
                                 }
                               }else if(getongoingprojectCode == 604){
                                 jobTask.notifyToRelogin();

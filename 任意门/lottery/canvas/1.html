@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body{margin: 0;}
+    canvas{
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+<div class="lotteryContent">
+  <canvas height="500" width="500" id="lotteryCvs"></canvas>
+  <button id="btnLottery">开始抽奖</button>
+</div>
+<script src="../../../audio/shengwen/jquery-1.7.2.min.js"></script>
+<script>
+
+  function runLottery(Elem){
+    var context = Elem.getContext('2d');
+    const WIDTH = Elem.width;
+    const HEIGHT = Elem.height;
+    var as = new Image();
+    as.src = 'img/as.jpg';
+//    var pin = new Image();
+//    pin.src = 'img/pin.png';
+    context.translate(WIDTH/2,HEIGHT/2);
+    as.onload = function () {
+      context.drawImage(as,-as.width/2,-as.height/2);
+    };
+//    pin.onload = function () {
+//      context.drawImage(pin,-pin.width/2-10,-pin.height/2-10);
+//    }
+    var pie = Math.PI/20;
+    var startTime, endTime, loop;
+    this.start = function () {
+      context.rotate(pie);
+      context.drawImage(as,-as.width/2,-as.height/2);
+//      context.rotate(-Math.PI/10);
+//      context.drawImage(pin,-pin.width/2,-pin.height/2);
+
+      startTime = new Date().getTime();
+
+      loop = setInterval(function () {
+        pie += Math.PI/20;
+        context.rotate(pie);
+        context.drawImage(as,-as.width/2,-as.height/2);
+
+        endTime = new Date().getTime();
+        if(endTime - startTime >= 3000){
+          clearInterval(loop);
+        }
+
+      },20);
+    }
+  }
+
+</script>
+<script>
+  $(function () {
+    var lottery = new runLottery($('#lotteryCvs')[0]);
+    $('#btnLottery').click(function () {
+      lottery.start();
+    });
+  })
+</script>
+</body>
+</html>
