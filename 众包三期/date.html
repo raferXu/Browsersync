@@ -37,7 +37,7 @@
     .showInfo{
         box-sizing: border-box;
         width: 100%;
-        height: .44rem;
+        /*height: .44rem;*/
         margin-bottom: .1rem;
         /*border: 1px solid #ff6000;*/
         border-radius: 5px;
@@ -52,22 +52,26 @@
         font-size: 0;
     }
 
-    .codeLockWrap input{
+    .codeLockWrap input, .divideTip{
         display: inline-block;
         width: .28rem;
         height: .44rem;
         line-height: .44rem;
-        border-radius: .03rem;
-        background-color: #323232;
-        color: #fff;
+        color: #323232;
+        font-weight: 400;
         text-align: center;
-        font-size: .36rem;
+        font-size: .32rem;
+        font-family: "PingFang SC";
+    }
+    .codeLockWrap input{
+        border-radius: .04rem;
+        background-color: #dcdcdc;
     }
 
-    .noscroll{
-        position: absolute;
-        overflow: hidden;
-    }
+    /*.noscroll{*/
+        /*position: absolute;*/
+        /*overflow: hidden;*/
+    /*}*/
 
     #btns{
         width: 100%;
@@ -94,18 +98,24 @@
                 </div>
                 <p class="task_rand_score" id="scoreBox">任务奖励:<span id="score">100</span>(分/单)</p>
                 <div class="billOperate">
-                    <nav class="clearfloat">
+                    <nav class="clearfloat" style="margin-bottom: 0">
                         <img src="/static/h5/billIcon.png" alt="billIcon" class="icon l">
                         <span class="l">票据显示</span>
                         <span id="taskGuideBox" class="taskGuide r">
-                 <img id="taskGuide" src="/static/h5/taskGuide.png" alt="taskGuide">
-            </span>
+                             <img id="taskGuide" src="/static/h5/taskGuide.png" alt="taskGuide">
+                        </span>
                     </nav>
                     <div class="showInfo">
+                        <div style="height: .3rem;margin-bottom: .1rem;display: flex;display: -webkit-flex;font-size: 18px;align-items: flex-end;">
+                            <div style="flex: 2;text-align: center;position: relative;right: -.06rem;">年</div>
+                            <div style="flex: 2;text-align: center;">月</div>
+                            <div style="flex: 1;text-align: center;position: relative;left: -6px;">日</div>
+                        </div>
                         <div class="codeLockWrap" id="codeLockWrap">
                             <!--<input value="0" type="number" onblur="if(!value)value='0'" oninput="if(value.length>1)value=value.slice(1)" />-->
-                            <input id="n1" value="0" type="number"/><input id="n2" value="0" type="number"/><input id="n3" value="0" type="number"/><input id="n4" value="0" type="number"/><input id="n5" value="0" type="number"/>
-                            <input id="n6" value="0" type="number"/><input id="n7" value="0" type="number"/><input id="n8" value="0" type="number"/>
+                            <input id="n1" value="1" type="number"/><input id="n2" value="9" type="number"/><input id="n3" value="8" type="number"/><input id="n4" value="7" type="number"/><span class="divideTip">－</span>
+                            <input id="n5" value="0" type="number"/><input id="n6" value="6" type="number"/><span class="divideTip">－</span>
+                            <input id="n7" value="2" type="number"/><input id="n8" value="3" type="number"/>
                         </div>
                     </div>
                     <p class="textTip tc">请适当修改，保证票据内容与文本输入框一致</p>
