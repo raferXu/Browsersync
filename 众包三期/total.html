@@ -78,11 +78,9 @@
             <div class="divide"></div>
             <section class="countBox">
                 <nav class="clearfloat">
-                    <!--<img src="http://192.168.0.182:8000/h5/count.png" alt="count" class="icon l">-->
                     <img src="/static/h5/count.png" alt="count" class="icon l">
                     <span class="l">任务统计</span>
                     <span id="moreBox" class="more r">
-                        <!--<img src="http://192.168.0.182:8000/h5/more.png" alt="more">-->
                         <img id="more" src="/static/h5/more.png" alt="more">
                     </span>
                 </nav>
@@ -208,7 +206,7 @@
       if ( !$.isEmptyObject(task) ) {
 
         var img = $('<img id="billImg" class="billImg"/>');
-
+/*
 //        图片加载完成时计算加载时间决定是否重载
         setTimeout(function () {
           if(!imgLoaded(img)){
@@ -222,9 +220,108 @@
         img.load(function() {
           deferred.resolve(task);
         });
-
         img.attr('src', task.info.url).css('height', 'auto');
         task.info.image = img;
+*/
+        var imgUrl = task.info.url;
+        if(/^\/token\/img/.test(imgUrl)){
+          console.log('url是/token/img开头的接口');
+          function getImgFn() {
+            var getImgNeedPortTimer = setInterval(function () {
+              console.log('开始确定native是否调用了本地js方法');
+
+              if(jobTaskLoaded){
+                clearInterval(getImgNeedPortTimer);
+                var tokenStr = sessionStorage.getItem("token") || null;
+                var interface = sessionStorage.getItem("url") || null;
+                var receiveNativeTokenJson;
+                if(!tokenStr || !interface){
+                  console.log('! tokenStrStorage && ! interface');
+                  receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
+                  tokenStr = receiveNativeTokenJson['token'];
+                  interface = receiveNativeTokenJson['url'];
+                  sessionStorage.setItem("token",tokenStr);
+                  sessionStorage.setItem("url",interface);
+                }
+                var getImgAjax = $.ajax({
+                  type: 'GET',
+                  async: false,
+                  cache: false,
+                  url: ''+interface+imgUrl,
+                  dataType: 'json',
+                  timeout: 5000,
+                  success: function (data) {
+
+                    var getImgAjaxCode = data.code;
+                    console.log('getImgAjax.code: '+getImgAjaxCode);
+                    console.group('getImgAjax接口返回的信息：');
+                    console.log('getImgAjax data： '+data);
+                    console.log(data);
+                    console.groupEnd();
+
+                    if(getImgAjaxCode == 200){
+                      console.log('获取图片url的base64数据成功！');
+                      var imgUrlbase64 = 'data:image/jpeg;base64,'+data['body']['base64'];
+//                      setTimeout(function () {
+//                        if(!imgLoaded(img)){
+//                          console.log('图片加载超过5秒，重新加载中...266行');
+//                          if(!imgUrlbase64.split('?')[1]){
+//                            img.attr('src', imgUrlbase64+'?'+Math.random()).css('height', 'auto');
+//                          }else{
+//                            img.attr('src', imgUrlbase64+'&'+Math.random()).css('height', 'auto');
+//                          }
+//                        }
+//                      },5000);
+                      img.load(function() {
+                        deferred.resolve(task);
+                      });
+
+                      console.log('task: '+task);
+                      console.log(task);
+
+                      console.log('获取的base64数据后的路径为： '+imgUrlbase64);
+                      img.attr('src', imgUrlbase64).css('height', 'auto');
+                      console.log('task.info.image = img中的img为： '+img);
+                      console.log(img);
+                      task.info.image = img[0];
+                    }else{
+                      console.log('getImgAjax调用失败，状态码为: '+getImgAjaxCode);
+                    }
+                  },
+                  error: function (xml, error) {
+                    console.log('/token/img Error');
+                    if(error == "timeout"){
+                      console.log('/token/img Error timeout');
+                      getImgAjax.abort();
+                      getImgFn();
+                    }
+                  }
+                });
+              }
+            },50);
+          }
+          getImgFn();
+        }else{
+          console.log('url是可以直接显示的路径,为： '+imgUrl);
+//        图片加载完成时计算加载时间决定是否重载
+//          setTimeout(function () {
+//            if(!imgLoaded(img)){
+//              console.log('图片加载超过5秒，重新加载中...308行');
+//              if(!imgUrl.split('?')[1]){
+//                img.attr('src', imgUrl+'?'+Math.random()).css('height', 'auto');
+//              }else{
+//                img.attr('src', imgUrl+'&'+Math.random()).css('height', 'auto');
+//              }          }
+//          },5000);
+          img.load(function() {
+            deferred.resolve(task);
+          });
+
+          console.log('task: '+task);
+          console.log(task);
+          img.attr('src', imgUrl).css('height', 'auto');
+          task.info.image = img;
+        }
       }
 
       else {
@@ -303,6 +400,8 @@
               console.log('图片和ajax请求均完成');
               $("#showMes").hide();
             }
+          }else{
+            console.log("imgLoaded($('.billImg')[0])图片加载失败");
           }
         },100);
 
@@ -338,7 +437,7 @@
         }).ajaxStop(function(){
           getStr = true;
           if(loadImg && getStr){
-            console.log('图片和ajax请求均完成');
+            console.log('图片和ajax请求均完成444');
             $("#showMes").hide();
           }
         });
@@ -350,6 +449,7 @@
         });
 
 //            发送图片获取识别字符串，并放入input中
+        /*
         var str;
         var urlData = {"url": task.info.url,"type": task.info.type};
         function getStrFun() {
@@ -384,6 +484,9 @@
           });
         }
         getStrFun();
+        */
+        var str = task.info.answer || '';
+        $('.showInfo').val(str);
 
 //                获取token
         var jobTaskLoadedTimer = setInterval(function () {

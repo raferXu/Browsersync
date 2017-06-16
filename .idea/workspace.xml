@@ -2,30 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/touch/click.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/jiaoben3218/crops.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/jiaoben3218/css/mobiscroll.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/jiaoben3218/css/mobiscroll_002.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/jiaoben3218/css/mobiscroll_003.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/jiaoben3218/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/jiaoben3218/js/jquery-1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/jiaoben3218/js/jquery.1.7.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/jiaoben3218/js/mobiscroll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/jiaoben3218/js/mobiscroll_002.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/jiaoben3218/js/mobiscroll_003.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/jiaoben3218/js/mobiscroll_004.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/jiaoben3218/js/mobiscroll_005.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/jiaoben3218/说明.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/众包三期/jiaoben3218/说明.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testCSS/多重描边效果.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/crops.html" afterPath="$PROJECT_DIR$/众包三期/crops.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/date.html" afterPath="$PROJECT_DIR$/众包三期/date.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/hospital.html" afterPath="$PROJECT_DIR$/众包三期/hospital.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/lock.html" afterPath="$PROJECT_DIR$/众包三期/lock.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testCSS/imgBase64.html" afterPath="$PROJECT_DIR$/testCSS/imgBase64.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/total.html" afterPath="$PROJECT_DIR$/众包三期/total.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/yiqian/date.html" afterPath="$PROJECT_DIR$/众包三期/yiqian/date.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/yiqian/hospital.html" afterPath="$PROJECT_DIR$/众包三期/yiqian/hospital.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/众包三期/yiqian/lock.html" afterPath="$PROJECT_DIR$/众包三期/yiqian/lock.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,8 +47,8 @@
       <file leaf-file-name="crops.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/众包三期/crops.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="213" column="48" lean-forward="false" selection-start-line="213" selection-start-column="48" selection-end-line="213" selection-end-column="48" />
+            <state relative-caret-position="-2674">
+              <caret line="201" column="28" lean-forward="true" selection-start-line="201" selection-start-column="28" selection-end-line="201" selection-end-column="28" />
               <folding>
                 <element signature="n#div#3;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
@@ -76,12 +56,39 @@
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
                 <element signature="e#7199#7767#0" expanded="false" />
                 <element signature="e#7986#8532#0" expanded="false" />
-                <element signature="e#9395#9566#0" expanded="false" />
+                <element signature="e#9864#12723#0" expanded="false" />
                 <element signature="e#10601#12642#0" expanded="false" />
                 <element signature="e#13906#15163#0" expanded="false" />
                 <element signature="e#20452#22400#0" expanded="false" />
                 <element signature="e#25036#27266#0" expanded="false" />
                 <element signature="e#27612#27736#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="total.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/众包三期/total.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-267">
+              <caret line="180" column="49" lean-forward="true" selection-start-line="180" selection-start-column="49" selection-end-line="180" selection-end-column="49" />
+              <folding>
+                <element signature="n#div#3;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+                <element signature="e#7306#7874#0" expanded="false" />
+                <element signature="e#8093#8437#0" expanded="false" />
+                <element signature="e#9623#10216#0" expanded="false" />
+                <element signature="e#10371#13633#0" expanded="false" />
+                <element signature="e#11259#13584#0" expanded="false" />
+                <element signature="e#12028#12076#0" expanded="false" />
+                <element signature="e#13669#14409#0" expanded="false" />
+                <element signature="e#18057#19120#0" expanded="false" />
+                <element signature="e#21970#24965#0" expanded="false" />
+                <element signature="e#25510#26279#0" expanded="false" />
+                <marker date="1497582165000" expanded="false" signature="9687:10037" ph="{...}" />
+                <marker date="1497582165000" expanded="false" signature="10073:10118" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -100,22 +107,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lockDrawDone</find>
-      <find>/static/</find>
-      <find>noTask</find>
-      <find>box-shadow</find>
-      <find>@font-color-normal</find>
-      <find>block</find>
-      <find>console.log</find>
-      <find>noscroll</find>
-      <find>scrollTop</find>
       <find>遮罩</find>
       <find>layer</find>
       <find>wrap</find>
       <find>overflow</find>
       <find>absolute</find>
       <find>preventDefault</find>
-      <find>?</find>
       <find>setTimeout</find>
       <find>loadImg</find>
       <find>getongoingprojectFun</find>
@@ -130,6 +127,16 @@
       <find>$.ajax</find>
       <find>inter</find>
       <find>jobTaskLoaded</find>
+      <find>img.natural</find>
+      <find>billImg</find>
+      <find>img.naturalHeight</find>
+      <find>imgLoaded</find>
+      <find>图片加载超过5秒，重新加载中...</find>
+      <find>图片和ajax请求均完成</find>
+      <find>imgload</find>
+      <find>block</find>
+      <find>?</find>
+      <find>/token/img开头的接口</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -166,7 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/imooc/zhangxinxu/relative2.html" />
         <option value="$PROJECT_DIR$/imooc/zhangxinxu/vertical-align.html" />
         <option value="$PROJECT_DIR$/imooc/zhangxinxu/vertical-align和line-height.html" />
         <option value="$PROJECT_DIR$/imooc/zhangxinxu/line-height1.html" />
@@ -201,7 +207,6 @@
         <option value="$PROJECT_DIR$/width/2.html" />
         <option value="$PROJECT_DIR$/testCSS/闪烁.html" />
         <option value="$PROJECT_DIR$/testCSS/box-shadow.html" />
-        <option value="$PROJECT_DIR$/testCSS/imgBase64.html" />
         <option value="$PROJECT_DIR$/任意门/start/index.html" />
         <option value="$PROJECT_DIR$/imooc/zhangxinxu/blog/letter-spacing.html" />
         <option value="$PROJECT_DIR$/zhongbaoTest/setTimeout.html" />
@@ -213,10 +218,12 @@
         <option value="$PROJECT_DIR$/众包三期/yiqian/date.html" />
         <option value="$PROJECT_DIR$/众包三期/lock.html" />
         <option value="$PROJECT_DIR$/众包三期/date.html" />
-        <option value="$PROJECT_DIR$/众包三期/total.html" />
         <option value="$PROJECT_DIR$/众包三期/hospital.html" />
         <option value="$PROJECT_DIR$/众包三期/jiaoben3218/crops.html" />
         <option value="$PROJECT_DIR$/众包三期/crops.html" />
+        <option value="$PROJECT_DIR$/testCSS/imgBase64.html" />
+        <option value="$PROJECT_DIR$/testCSS/多重描边效果.html" />
+        <option value="$PROJECT_DIR$/众包三期/total.html" />
       </list>
     </option>
   </component>
@@ -230,9 +237,9 @@
     <handled-path value="$PROJECT_DIR$/webpack sample project/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="366" />
-    <option name="y" value="67" />
-    <option name="width" value="905" />
+    <option name="x" value="27" />
+    <option name="y" value="57" />
+    <option name="width" value="1224" />
     <option name="height" value="696" />
   </component>
   <component name="ProjectView">
@@ -507,19 +514,19 @@
       <workItem from="1496924108112" duration="53580000" />
       <workItem from="1497233738578" duration="7858000" />
       <workItem from="1497397532905" duration="17163000" />
-      <workItem from="1497488063058" duration="19728000" />
+      <workItem from="1497488063058" duration="25946000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="776431000" />
+    <option name="totallyTimeSpent" value="782649000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="366" y="67" width="905" height="696" extended-state="0" />
+    <frame x="27" y="57" width="1224" height="696" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18539977" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13536379" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32343236" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -647,14 +654,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/audio/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/width/1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -689,16 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="151" column="35" lean-forward="false" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testCSS/imgBase64.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="82" column="48" lean-forward="false" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="48" />
-          <folding>
-            <element signature="n#src#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -870,7 +859,7 @@
         <state relative-caret-position="183">
           <caret line="544" column="66" lean-forward="false" selection-start-line="544" selection-start-column="66" selection-end-line="544" selection-end-column="66" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1011,9 +1000,9 @@
         <state relative-caret-position="100">
           <caret line="150" column="8" lean-forward="true" selection-start-line="150" selection-start-column="8" selection-end-line="150" selection-end-column="8" />
           <folding>
-            <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="false" />
             <element signature="e#8781#9125#0" expanded="false" />
             <element signature="e#11644#12899#0" expanded="false" />
             <element signature="e#13098#13439#0" expanded="false" />
@@ -1027,9 +1016,9 @@
         <state relative-caret-position="195">
           <caret line="158" column="14" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="830" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="false" />
             <element signature="e#9427#9771#0" expanded="false" />
             <element signature="e#10021#10777#0" expanded="false" />
             <element signature="e#11043#11930#0" expanded="false" />
@@ -1043,9 +1032,9 @@
           <caret line="133" column="73" lean-forward="true" selection-start-line="133" selection-start-column="73" selection-end-line="133" selection-end-column="73" />
           <folding>
             <element signature="n#div#3;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="false" />
             <element signature="e#7503#8071#0" expanded="false" />
             <element signature="e#21805#22574#0" expanded="false" />
           </folding>
@@ -1075,21 +1064,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/众包三期/total.html">
+    <entry file="file://$PROJECT_DIR$/任意门/start/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="109" column="148" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="658" selection-end-column="0" />
+        <state relative-caret-position="1980">
+          <caret line="132" column="23" lean-forward="false" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/众包三期/jiaoben3218/crops.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="628" column="0" lean-forward="true" selection-start-line="628" selection-start-column="0" selection-end-line="628" selection-end-column="0" />
           <folding>
-            <element signature="n#div#3;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="e#7503#8071#0" expanded="false" />
-            <element signature="e#8290#8634#0" expanded="false" />
-            <element signature="e#14118#14983#0" expanded="false" />
-            <element signature="e#17791#20786#0" expanded="false" />
-            <element signature="e#21331#22100#0" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testCSS/多重描边效果.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1101,11 +1119,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/任意门/start/index.html">
+    <entry file="file://$PROJECT_DIR$/testCSS/imgBase64.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="132" column="23" lean-forward="false" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="240">
+          <caret line="82" column="26" lean-forward="true" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
+          <folding>
+            <element signature="n#src#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1118,41 +1138,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/众包三期/jiaoben3218/crops.html">
+    <entry file="file://$PROJECT_DIR$/众包三期/total.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="628" column="0" lean-forward="true" selection-start-line="628" selection-start-column="0" selection-end-line="628" selection-end-column="0" />
+        <state relative-caret-position="-267">
+          <caret line="180" column="49" lean-forward="true" selection-start-line="180" selection-start-column="49" selection-end-line="180" selection-end-column="49" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+            <element signature="e#7306#7874#0" expanded="false" />
+            <element signature="e#8093#8437#0" expanded="false" />
+            <element signature="e#9623#10216#0" expanded="false" />
+            <element signature="e#10371#13633#0" expanded="false" />
+            <element signature="e#11259#13584#0" expanded="false" />
+            <element signature="e#12028#12076#0" expanded="false" />
+            <element signature="e#13669#14409#0" expanded="false" />
+            <element signature="e#18057#19120#0" expanded="false" />
+            <element signature="e#21970#24965#0" expanded="false" />
+            <element signature="e#25510#26279#0" expanded="false" />
+            <marker date="1497582165000" expanded="false" signature="9687:10037" ph="{...}" />
+            <marker date="1497582165000" expanded="false" signature="10073:10118" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/众包三期/crops.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="213" column="48" lean-forward="false" selection-start-line="213" selection-start-column="48" selection-end-line="213" selection-end-column="48" />
+        <state relative-caret-position="-2674">
+          <caret line="201" column="28" lean-forward="true" selection-start-line="201" selection-start-column="28" selection-end-line="201" selection-end-column="28" />
           <folding>
             <element signature="n#div#3;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
@@ -1160,7 +1174,7 @@
             <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
             <element signature="e#7199#7767#0" expanded="false" />
             <element signature="e#7986#8532#0" expanded="false" />
-            <element signature="e#9395#9566#0" expanded="false" />
+            <element signature="e#9864#12723#0" expanded="false" />
             <element signature="e#10601#12642#0" expanded="false" />
             <element signature="e#13906#15163#0" expanded="false" />
             <element signature="e#20452#22400#0" expanded="false" />
