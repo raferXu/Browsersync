@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+
+  </style>
+</head>
+<body>
+<input type="text">
+<div id="toLogin" style="display:block;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,0);color:#ff6000;text-align:center;font-size:24px;z-index:9998;">
+  <div id="loginTextBox" style="display:none;position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+    <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">未登录</p>
+    <div class="clearfloat" style="width:100%;height:.38rem;line-height:.38rem">
+      <p id="cacelBtn" class="l" style="width:50%;color:#ff6000;border-right:1px solid #c8c8c8;box-sizing:border-box">取消</p>
+      <p id="loginBtn" class="l" style="width:50%;color:#ff6000">登录</p>
+    </div>
+  </div>
+</div>
+<script>
+
+  var loginBox = document.getElementById('toLogin');
+  var loginTextBox = document.getElementById('loginTextBox');
+  document.onclick = function () {
+    console.log(1);
+    loginBox.style.background = 'rgba(0,0,0,.3)';
+    loginTextBox.style.display = 'block';
+  }
+</script>
+</body>
+</html>

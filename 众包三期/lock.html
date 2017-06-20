@@ -44,9 +44,9 @@
   }
 
   .codeLockWrap {
-    display: -webkit-flex;
-    display: flex;
-    justify-content: space-between;
+    /*display: -webkit-flex;*/
+    /*display: flex;*/
+    /*justify-content: space-between;*/
     width: 95%;
     margin: 0 auto;
     font-size: 0;
@@ -63,7 +63,8 @@
     font-weight: 400;
     text-align: center;
     font-size: .32rem;
-    font-family: "PingFang SC";
+    font-family: "Arial";
+    margin-left: 1.2%;
   }
 
   .noscroll{
@@ -73,15 +74,18 @@
 
   #btns{
     width: 100%;
-    display: -webkit-flex;
-    display: flex;
-    justify-content: space-between;
+    /*display: -webkit-flex;*/
+    /*display: flex;*/
+    /*justify-content: space-between;*/
   }
   #next{
-    width: 48%;
+    box-sizing: border-box;
+    width: 47.5%;
+    margin-left: 4%;
   }
   #indistinct{
-    width: 48%;
+    box-sizing: border-box;
+    width: 47.5%;
   }
 </style>
 <div class="row skeleton"> <!-- Start Skeleton Row-->
@@ -206,8 +210,8 @@
         setTimeout(function () {
           console.log('获取数据太久了导致3秒后自动提交');
           $("#failData").hide();
-          $('.showInfo').val('获取数据失败');
-          $('#next').trigger('click');
+//          $('.showInfo').val('获取数据失败');
+          $('#next').trigger('touchstart');
         },3000);
       }
     },15000);
@@ -236,7 +240,7 @@
 
       $('body').css('padding','0px');
 
-      $('#sureBtn').on('click',function () {
+      $('#sureBtn').on('touchstart',function () {
         $('#offLine').hide();
       });
 
@@ -257,7 +261,7 @@
     pybossa.taskLoaded(function(task, deferred) {
 
       if ( !$.isEmptyObject(task) ) {
-
+/*
         var img = $('<img id="billImg" class="billImg"/>');
 
 //图片加载完成时计算加载时间决定是否重载
@@ -277,6 +281,126 @@
         console.log('taskLoadedtask: '+task);
         img.attr('src', task.info.url).css('height', 'auto');
         task.info.image = img;
+        */
+
+        var img = $('<img id="billImg" class="billImg"/>');
+        /*
+         //        图片加载完成时计算加载时间决定是否重载
+         setTimeout(function () {
+         if(!imgLoaded(img)){
+         console.log('图片加载超过5秒，重新加载中...');
+         if(!task.info.url.split('?')[1]){
+         img.attr('src', task.info.url+'?'+Math.random()).css('height', 'auto');
+         }else{
+         img.attr('src', task.info.url+'&'+Math.random()).css('height', 'auto');
+         }          }
+         },5000);
+         img.load(function() {
+         deferred.resolve(task);
+         });
+         img.attr('src', task.info.url).css('height', 'auto');
+         task.info.image = img;
+         */
+        var imgUrl = task.info.url;
+        if(/^\/token\/img/.test(imgUrl)){
+          console.log('url是/token/img开头的接口');
+          function getImgFn() {
+            var getImgNeedPortTimer = setInterval(function () {
+              console.log('开始确定native是否调用了本地js方法');
+
+              if(jobTaskLoaded){
+                clearInterval(getImgNeedPortTimer);
+                var tokenStr = sessionStorage.getItem("token") || null;
+                var interface = sessionStorage.getItem("url") || null;
+                var receiveNativeTokenJson;
+                if(!tokenStr || !interface){
+                  console.log('! tokenStrStorage && ! interface');
+                  receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
+                  tokenStr = receiveNativeTokenJson['token'];
+                  interface = receiveNativeTokenJson['url'];
+                  sessionStorage.setItem("token",tokenStr);
+                  sessionStorage.setItem("url",interface);
+                }
+                var getImgAjax = $.ajax({
+                  type: 'GET',
+                  async: false,
+                  cache: false,
+                  url: ''+interface+imgUrl,
+                  dataType: 'json',
+                  timeout: 5000,
+                  success: function (data) {
+
+                    var getImgAjaxCode = data.code;
+                    console.log('getImgAjax.code: '+getImgAjaxCode);
+                    console.group('getImgAjax接口返回的信息：');
+                    console.log('getImgAjax data： '+data);
+                    console.log(data);
+                    console.groupEnd();
+
+                    if(getImgAjaxCode == 200){
+                      console.log('获取图片url的base64数据成功！');
+                      var imgUrlbase64 = 'data:image/jpeg;base64,'+data['body']['base64'];
+//                      setTimeout(function () {
+//                        if(!imgLoaded(img)){
+//                          console.log('图片加载超过5秒，重新加载中...266行');
+//                          if(!imgUrlbase64.split('?')[1]){
+//                            img.attr('src', imgUrlbase64+'?'+Math.random()).css('height', 'auto');
+//                          }else{
+//                            img.attr('src', imgUrlbase64+'&'+Math.random()).css('height', 'auto');
+//                          }
+//                        }
+//                      },5000);
+                      img.load(function() {
+                        deferred.resolve(task);
+                      });
+
+                      console.log('task: '+task);
+                      console.log(task);
+
+                      console.log('获取的base64数据后的路径为： '+imgUrlbase64);
+                      img.attr('src', imgUrlbase64).css('height', 'auto');
+                      console.log('task.info.image = img中的img为： '+img);
+                      console.log(img);
+                      task.info.image = img[0];
+                    }else{
+                      console.log('getImgAjax调用失败，状态码为: '+getImgAjaxCode);
+                    }
+                  },
+                  error: function (xml, error) {
+                    console.log('/token/img Error');
+                    if(error == "timeout"){
+                      console.log('/token/img Error timeout');
+                      getImgAjax.abort();
+                      getImgFn();
+                    }
+                  }
+                });
+              }
+            },50);
+          }
+          getImgFn();
+        }else{
+          console.log('url是可以直接显示的路径,为： '+imgUrl);
+//        图片加载完成时计算加载时间决定是否重载
+//          setTimeout(function () {
+//            if(!imgLoaded(img)){
+//              console.log('图片加载超过5秒，重新加载中...308行');
+//              if(!imgUrl.split('?')[1]){
+//                img.attr('src', imgUrl+'?'+Math.random()).css('height', 'auto');
+//              }else{
+//                img.attr('src', imgUrl+'&'+Math.random()).css('height', 'auto');
+//              }          }
+//          },5000);
+          img.load(function() {
+            deferred.resolve(task);
+          });
+
+          console.log('task: '+task);
+          console.log(task);
+          img.attr('src', imgUrl).css('height', 'auto');
+          task.info.image = img;
+        }
+
       }
 
       else {
@@ -284,6 +408,12 @@
         console.log('运行taskLoaded函数时候已经没有任务了');
 
         deferred.resolve(task);
+        var refreshLoadedTimer = setInterval(function () {
+          if(jobTaskLoaded){
+            clearInterval(refreshTimer);
+            jobTask.refreshCurrentPage();
+          }
+        },50);
       }
     });
 
@@ -402,33 +532,48 @@
           new RTP.PinchZoom($(this), opt);
         });
 
+        var imgStartX,imgStartY;
+        $('.imgWrap').off('touchstart').on('touchstart',function (e) {
+          console.log('imgWrap Touchstart');
+          console.log(e);
+          imgStartX = e.originalEvent.touches[0].pageX;
+          imgStartY = e.originalEvent.touches[0].pageY;
+//                  $('main').addClass('noscroll');
+        });
+        $('.imgWrap').off('touchend').on('touchend',function (e) {
+          console.log('imgWrap Touchend');
+          var endX = e.originalEvent.changedTouches[0].pageX;
+          var endY = e.originalEvent.changedTouches[0].pageY;
+          var direction = GetSlideDirection(imgStartX, imgStartY, endX, endY);
+          switch (direction){
+            case 3:
+              console.log('imgWrap向左');
+              e.preventDefault();
+              break;
+            case 4:
+              console.log('imgWrap right');
+              e.preventDefault();
+              break;
+          }
+//                  $('main').removeClass('noscroll');
+        });
+
+
 //            发送图片获取识别字符串，并放入input中
-        var blockStr = {'str':"1234567890"};
-        var urlData = {"url": task.info.url,"type": task.info.type};
-        var getCurStr=function(){};
-//        var lockDrawDone=false;
-        function getStrFun() {
-          var getStrAjax = $.ajax({
-            type: 'POST',
-            url: 'http://192.168.0.88:5001/ocr_api/block_rec',
-            dataType: 'json',
-            data: JSON.stringify(urlData),
-            timeout: 5000,
-            success: function (data) {
-              console.group("算法接口block_rec返回的信息");
-              console.log('block_rec data: '+data);
-              console.log(data);
-              console.groupEnd();
-              if(data["text"]){
-                var len=10-data["text"].length,f='';
-                if(len>0){
-                  for(var i=0;i<len;i++){
-                    f+='0';
-                  }
-                  blockStr.str = f + data["text"];
-                }else{
-                  blockStr.str = data["text"];
-                }
+        var blockStr = {'str':'0000000000'};
+        blockStr.str = task.info.alg_answer || blockStr.str;
+
+        var blockStrLen=10-blockStr.str.length,f='';
+        if(blockStrLen>0){
+          for(var i=0;i<blockStrLen;i++){
+            f+='0';
+          }
+          blockStr.str = f + blockStr.str;
+        }else{
+          blockStr.str = blockStr.str;
+        }
+
+//        $('.showInfo').val(blockStr.str);
 
                 /*********************************************************************************************/
 
@@ -503,6 +648,7 @@
                       this.value = nowValue;
                     }
                   };
+
 //                  为方便测试当输入后自动定位到下一个输入框
                   aInput[i].onkeyup = function () {
                     this.blur();
@@ -514,6 +660,7 @@
                     },100);
                   };
                 }
+
 //按下软键盘确认键后收起键盘
                 $('.showInfo').bind('keydown', function (e) {
                   var key = e.which;
@@ -522,9 +669,12 @@
                     document.activeElement.blur();
                   }
                 });
+
 //获取某时刻的字符串
+                var getCurStr=function(){};
                 getCurStr = function () {
                   var curStr = [];
+                  var aInput = $('#codeLockWrap input');
                   for(var i = 0, olen = aInput.length; i < olen; i++){
                     curStr[i] = aInput[i].value;
                   }
@@ -533,23 +683,154 @@
                 };
                 /*********************************************************************************************/
 
-              }else{
-                blockStr.str = '0000000000';
-              }
-            },
-            error: function (xml, error) {
-              console.log('block_rec Error');
-              getCurStr = function () {
-                return '0000000000';
-              };
-              if(error == "timeout"){
-                getStrAjax.abort();
-                getStrFun();
-              }
-            }
-          });
-        }
-        getStrFun();
+
+//        var blockStr = {'str':"1234567890"};
+//        var urlData = {"url": task.info.url,"type": task.info.type};
+//        var getCurStr=function(){};
+////        var lockDrawDone=false;
+//        function getStrFun() {
+//          var getStrAjax = $.ajax({
+//            type: 'POST',
+//            url: 'http://192.168.0.88:5001/ocr_api/block_rec',
+//            dataType: 'json',
+//            data: JSON.stringify(urlData),
+//            timeout: 5000,
+//            success: function (data) {
+//              console.group("算法接口block_rec返回的信息");
+//              console.log('block_rec data: '+data);
+//              console.log(data);
+//              console.groupEnd();
+//              if(data["text"]){
+//                var len=10-data["text"].length,f='';
+//                if(len>0){
+//                  for(var i=0;i<len;i++){
+//                    f+='0';
+//                  }
+//                  blockStr.str = f + data["text"];
+//                }else{
+//                  blockStr.str = data["text"];
+//                }
+//
+//                /*********************************************************************************************/
+//
+////返回角度
+//                function GetSlideAngle(dx, dy) {
+//                  return Math.atan2(dy, dx) * 180 / Math.PI;
+//                }
+//
+////根据起点和终点返回方向 1：向上，2：向下，3：向左，4：向右,0：未滑动
+//                function GetSlideDirection(startX, startY, endX, endY) {
+//                  var dy = startY - endY;
+//                  var dx = endX - startX;
+//                  var result = 0;
+//
+//                  var angle = GetSlideAngle(dx, dy);
+//                  if (angle >= 45 && angle < 135) {
+//                    result = 1;
+//                  } else if (angle >= -135 && angle < -45) {
+//                    result = 2;
+//                  } else if ((angle >= 150 && angle <= 180) || (angle >= -180 && angle < -150)) {  //向左
+//                    if(Math.abs(dx)>5){
+//                      result = 3;
+//                    }
+//                  } else if (angle >= -60 && angle < 60) {  //向右
+//                    if(Math.abs(dx)>5){
+//                      result = 4;
+//                    }
+//                  }
+//                  console.log('result: '+result);
+//                  return result;
+//                }
+//
+////给数字输入框父元素添加滑动事件
+//                var startX,startY;
+//                $('#codeLockWrap').off('touchstart').on('touchstart',function (e) {
+//                  console.log('codeLockWrap Touchstart');
+//                  console.log(e);
+//                  startX = e.originalEvent.touches[0].pageX;
+//                  startY = e.originalEvent.touches[0].pageY;
+////                  $('main').addClass('noscroll');
+//                });
+//                $('#codeLockWrap').off('touchend').on('touchend',function (e) {
+//                  console.log('codeLockWrap Touchend');
+//                  var endX = e.originalEvent.changedTouches[0].pageX;
+//                  var endY = e.originalEvent.changedTouches[0].pageY;
+//                  var direction = GetSlideDirection(startX, startY, endX, endY);
+//                  switch (direction){
+//                    case 3:
+//                      console.log('向左');
+//                      $('#codeLockWrap input').eq(0).appendTo($('#codeLockWrap'));
+//                      break;
+//                    case 4:
+//                      console.log('right');
+//                      var liLen = $('#codeLockWrap input').length;
+//                      $('#codeLockWrap input').eq(liLen-1).prependTo($('#codeLockWrap'));
+//                      break;
+//                  }
+////                  $('main').removeClass('noscroll');
+//                });
+//
+////将获取的数字数据表示出来
+//                var aInput = $('#codeLockWrap input');
+//                var nowValue;
+//                for(var i=0;i<10;i++){
+//                  aInput[i].value = blockStr.str[i];
+//                  aInput[i].onfocus = function () {
+//                    nowValue = this.value;
+//                    this.value = '';
+//                  };
+//                  aInput[i].onblur = function () {
+//                    if(!this.value){
+//                      this.value = nowValue;
+//                    }
+//                  };
+////                  为方便测试当输入后自动定位到下一个输入框
+//                  aInput[i].onkeyup = function () {
+//                    this.blur();
+//                    var This = this;
+//                    setTimeout(function () {
+//                      if($(This).next()){
+//                        $(This).next().focus();
+//                      }
+//                    },100);
+//                  };
+//                }
+////按下软键盘确认键后收起键盘
+//                $('.showInfo').bind('keydown', function (e) {
+//                  var key = e.which;
+//                  if (key == 13) {
+//                    e.preventDefault();
+//                    document.activeElement.blur();
+//                  }
+//                });
+////获取某时刻的字符串
+//                getCurStr = function () {
+//                  var curStr = [];
+//                  for(var i = 0, olen = aInput.length; i < olen; i++){
+//                    curStr[i] = aInput[i].value;
+//                  }
+//                  console.log(curStr.join(''));
+//                  return curStr.join('');
+//                };
+//                /*********************************************************************************************/
+//
+//              }else{
+//                blockStr.str = '0000000000';
+//              }
+//            },
+//            error: function (xml, error) {
+//              console.log('block_rec Error');
+//              getCurStr = function () {
+//                return '0000000000';
+//              };
+//              if(error == "timeout"){
+//                getStrAjax.abort();
+//                getStrFun();
+//              }
+//            }
+//          });
+//        }
+//        getStrFun();
 
 //获取token
         var jobTaskLoadedTimer = setInterval(function () {
@@ -683,14 +964,14 @@
             });
 
 //点击任务指引
-            $('.taskGuide').off('click').on('click',function () {
-              console.log('taskGuideBtnclick');
+            $('.taskGuide').off('touchstart').on('touchstart',function () {
+              console.log('taskGuideBtntouchstart');
               jobTask.taskGuide();
             });
 
 //点击查看
-            $('.more').off('click').on('click',function () {
-              console.log('nextBtnClick');
+            $('.more').off('touchstart').on('touchstart',function () {
+              console.log('nextBtntouchstart');
               jobTask.checkTaskStatistics();
             });
 
@@ -699,20 +980,20 @@
               console.log('没有拿到token值！');
 
 //单击未登录的取消按钮
-              $('#cacelBtn').off('click').on('click',function () {
+              $('#cacelBtn').off('touchstart').on('touchstart',function () {
                 $('#toLogin').hide(300);
-                $('html')[0].addEventListener('click',function () {
+                $('html')[0].addEventListener('touchstart',function () {
                   $('#toLogin').show();
                 },true);
               });
 
 //单击登录跳转登录页面
-              $('#loginBtn').off('click').on('click',function () {
+              $('#loginBtn').off('touchstart').on('touchstart',function () {
                 console.log('loginBtnTouchstart');
                 jobTask.launchLoginPage();
               });
 
-              $('html')[0].addEventListener('click',function () {
+              $('html')[0].addEventListener('touchstart',function () {
                 console.log('htmlPageTouchstart');
                 $('#toLogin').show();
               },true);
@@ -725,18 +1006,19 @@
               console.log('拿到了token值，为 '+tokenStr);
 
 //点击下一张按钮
-              $('#next,#indistinct').off('click').on('click', function() {
+              $('#next,#indistinct').off('touchstart').on('touchstart', function() {
 //                $(this).siblings().prop('disabled',true);]
                 console.log('提交按钮#next或#indistinct已经单击！！！');
                 $("#showMes").show();
-                var clickWhich = $(this).attr('id')=='indistinct';
-                console.log('nextBtnClick');
+                var touchstartWhich = $(this).attr('id')=='indistinct';
+                console.log('nextBtntouchstart');
                 if(!window.navigator.onLine){
                   $('#offLine').show();
                 }else{
-                  console.log('clickWhich: '+clickWhich);
-                  var answer = clickWhich ? {"text": '看不清'} : {"text": getCurStr()};
+                  console.log('touchstartWhich: '+touchstartWhich);
+                  var answer = touchstartWhich ? {"text": '看不清'} : {"text": getCurStr()};
                   if (answer["text"]) {
+//                    alert(answer["text"]);
                     pybossa.saveTask(task.id, answer).done(function() {
                       console.log('saveTask: ' + tokenStr);
                       if(jumpProjectFlag){
@@ -788,7 +1070,7 @@
                         getongoingprojectFun();
                       }
 
-                      $('.showInfo').val('');
+//                      $('.showInfo').val('');
                       $('.pinch-zoom-container').css('height','auto');
 
                       deferred.resolve();
@@ -801,7 +1083,7 @@
                   else {
                     $("#showMes").hide();
                     console.log('answer的值为空');
-                    $('#answerTipBtn').off('click').on('click',function () {
+                    $('#answerTipBtn').off('touchstart').on('touchstart',function () {
                       $('#answerTip').hide();
                     });
                     $('#answerTip').show();
@@ -822,10 +1104,16 @@
       else {
         console.log('presentTask noTask');
         console.log('运行presentTask函数时候已经没有任务了');
-
+        var refreshTimer = setInterval(function () {
+          if(jobTaskLoaded){
+            clearInterval(refreshTimer);
+            jobTask.refreshCurrentPage();
+          }
+        },50);
       }
     });
 
     pybossa.run('lock');
+
   })();
 </script>

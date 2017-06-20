@@ -208,24 +208,139 @@
     pybossa.taskLoaded(function(task, deferred) {
 
       if ( !$.isEmptyObject(task) ) {
+          /*
+           var img = $('<img id="billImg" class="billImg"/>');
+
+           // "/token/img/f21f58bb72613e09530e5be11ed41505",  interface
+           var imgUrl = task.info.url;
+           if(/^\/token\/img/.test(imgUrl)){
+           console.log('url是/token/img开头的接口');
+           function getImgFn() {
+           var getImgNeedPortTimer = setInterval(function () {
+           console.log('开始确定native是否调用了本地js方法');
+           if(jobTaskLoaded){
+           clearInterval(getImgNeedPortTimer);
+           var interface = sessionStorage.getItem("url") || null;
+           var receiveNativeTokenJson;
+           if(!interface){
+           console.log('! interface');
+           receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
+           interface = receiveNativeTokenJson['url'];
+           sessionStorage.setItem("url",interface);
+           }
+           var getImgAjax = $.ajax({
+           type: 'GET',
+           async: false,
+           cache: false,
+           url: ''+interface+imgUrl,
+           dataType: 'json',
+           timeout: 5000,
+           success: function (data) {
+
+           var getImgAjaxCode = data.code;
+           console.log('getImgAjax.code: '+getImgAjaxCode);
+
+           console.group('getImgAjax接口返回的信息：');
+           console.log('getImgAjax data： '+data);
+           console.log(data);
+           console.groupEnd();
+
+           if(getImgAjaxCode == 200){
+           console.log('获取图片url的base64数据成功！');
+           imgUrl = data['body']['base64'];
+           setTimeout(function () {
+           if(!imgLoaded(img)){
+           console.log('图片加载超过5秒，重新加载中...');
+           if(!imgUrl.split('?')[1]){
+           img.attr('src', imgUrl+'?'+Math.random()).css('height', 'auto');
+           }else{
+           img.attr('src', imgUrl+'&'+Math.random()).css('height', 'auto');
+           }          }
+           },5000);
+           img.load(function() {
+           deferred.resolve(task);
+           });
+
+           console.log('task: '+task);
+           console.log(task);
+           img.attr('src', imgUrl).css('height', 'auto');
+           task.info.image = img;
+           }else{
+           console.log('getImgAjax调用失败，状态码为: '+getImgAjaxCode);
+           }
+           },
+           error: function (xml, error) {
+           console.log('/token/img Error');
+           if(error == "timeout"){
+           console.log('/token/img Error timeout');
+           getImgAjax.abort();
+           getImgFn();
+           }
+           }
+           });
+           }
+           },50);
+           }
+           getImgFn();
+           }else{
+           console.log('url是可以直接显示的路径,为： '+imgUrl);
+           //        图片加载完成时计算加载时间决定是否重载
+           setTimeout(function () {
+           if(!imgLoaded(img)){
+           console.log('图片加载超过5秒，重新加载中...');
+           if(!imgUrl.split('?')[1]){
+           img.attr('src', imgUrl+'?'+Math.random()).css('height', 'auto');
+           }else{
+           img.attr('src', imgUrl+'&'+Math.random()).css('height', 'auto');
+           }          }
+           },5000);
+           img.load(function() {
+           deferred.resolve(task);
+           });
+
+           console.log('task: '+task);
+           console.log(task);
+           img.attr('src', imgUrl).css('height', 'auto');
+           task.info.image = img;
+           }
+           */
 
         var img = $('<img id="billImg" class="billImg"/>');
-
-        // "/token/img/f21f58bb72613e09530e5be11ed41505",  interface
+          /*
+           //        图片加载完成时计算加载时间决定是否重载
+           setTimeout(function () {
+           if(!imgLoaded(img)){
+           console.log('图片加载超过5秒，重新加载中...');
+           if(!task.info.url.split('?')[1]){
+           img.attr('src', task.info.url+'?'+Math.random()).css('height', 'auto');
+           }else{
+           img.attr('src', task.info.url+'&'+Math.random()).css('height', 'auto');
+           }          }
+           },5000);
+           img.load(function() {
+           deferred.resolve(task);
+           });
+           img.attr('src', task.info.url).css('height', 'auto');
+           task.info.image = img;
+           */
         var imgUrl = task.info.url;
         if(/^\/token\/img/.test(imgUrl)){
           console.log('url是/token/img开头的接口');
           function getImgFn() {
             var getImgNeedPortTimer = setInterval(function () {
               console.log('开始确定native是否调用了本地js方法');
+
               if(jobTaskLoaded){
                 clearInterval(getImgNeedPortTimer);
+                var tokenStr = sessionStorage.getItem("token") || null;
                 var interface = sessionStorage.getItem("url") || null;
                 var receiveNativeTokenJson;
-                if(!interface){
-                  console.log('! interface');
+                if(!tokenStr || !interface){
+                  console.log('! tokenStrStorage && ! interface');
                   receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
+                  tokenStr = receiveNativeTokenJson['token'];
                   interface = receiveNativeTokenJson['url'];
+                  sessionStorage.setItem("token",tokenStr);
                   sessionStorage.setItem("url",interface);
                 }
                 var getImgAjax = $.ajax({
@@ -239,7 +354,6 @@
 
                     var getImgAjaxCode = data.code;
                     console.log('getImgAjax.code: '+getImgAjaxCode);
-
                     console.group('getImgAjax接口返回的信息：');
                     console.log('getImgAjax data： '+data);
                     console.log(data);
@@ -247,24 +361,29 @@
 
                     if(getImgAjaxCode == 200){
                       console.log('获取图片url的base64数据成功！');
-                      imgUrl = data['body']['base64'];
-                      setTimeout(function () {
-                        if(!imgLoaded(img)){
-                          console.log('图片加载超过5秒，重新加载中...');
-                          if(!imgUrl.split('?')[1]){
-                            img.attr('src', imgUrl+'?'+Math.random()).css('height', 'auto');
-                          }else{
-                            img.attr('src', imgUrl+'&'+Math.random()).css('height', 'auto');
-                          }          }
-                      },5000);
+                      var imgUrlbase64 = 'data:image/jpeg;base64,'+data['body']['base64'];
+//                      setTimeout(function () {
+//                        if(!imgLoaded(img)){
+//                          console.log('图片加载超过5秒，重新加载中...266行');
+//                          if(!imgUrlbase64.split('?')[1]){
+//                            img.attr('src', imgUrlbase64+'?'+Math.random()).css('height', 'auto');
+//                          }else{
+//                            img.attr('src', imgUrlbase64+'&'+Math.random()).css('height', 'auto');
+//                          }
+//                        }
+//                      },5000);
                       img.load(function() {
                         deferred.resolve(task);
                       });
 
                       console.log('task: '+task);
                       console.log(task);
-                      img.attr('src', imgUrl).css('height', 'auto');
-                      task.info.image = img;
+
+                      console.log('获取的base64数据后的路径为： '+imgUrlbase64);
+                      img.attr('src', imgUrlbase64).css('height', 'auto');
+                      console.log('task.info.image = img中的img为： '+img);
+                      console.log(img);
+                      task.info.image = img[0];
                     }else{
                       console.log('getImgAjax调用失败，状态码为: '+getImgAjaxCode);
                     }
@@ -285,15 +404,15 @@
         }else{
           console.log('url是可以直接显示的路径,为： '+imgUrl);
 //        图片加载完成时计算加载时间决定是否重载
-          setTimeout(function () {
-            if(!imgLoaded(img)){
-              console.log('图片加载超过5秒，重新加载中...');
-              if(!imgUrl.split('?')[1]){
-                img.attr('src', imgUrl+'?'+Math.random()).css('height', 'auto');
-              }else{
-                img.attr('src', imgUrl+'&'+Math.random()).css('height', 'auto');
-              }          }
-          },5000);
+//          setTimeout(function () {
+//            if(!imgLoaded(img)){
+//              console.log('图片加载超过5秒，重新加载中...308行');
+//              if(!imgUrl.split('?')[1]){
+//                img.attr('src', imgUrl+'?'+Math.random()).css('height', 'auto');
+//              }else{
+//                img.attr('src', imgUrl+'&'+Math.random()).css('height', 'auto');
+//              }          }
+//          },5000);
           img.load(function() {
             deferred.resolve(task);
           });
@@ -303,6 +422,7 @@
           img.attr('src', imgUrl).css('height', 'auto');
           task.info.image = img;
         }
+
       }
 
       else {
@@ -310,6 +430,7 @@
         console.log('运行taskLoaded函数时候已经没有任务了');
 
         deferred.resolve(task);
+        jobTask.refreshCurrentPage();
       }
     });
 
@@ -425,6 +546,31 @@
         var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.1*fontSize},maxZoom:6,tapZoomFactor:3};
         $('div.pinch-zoom').each(function () {
           new RTP.PinchZoom($(this), opt);
+        });
+        var imgStartX,imgStartY;
+        $('.imgWrap').off('touchstart').on('touchstart',function (e) {
+          console.log('imgWrap Touchstart');
+          console.log(e);
+          imgStartX = e.originalEvent.touches[0].pageX;
+          imgStartY = e.originalEvent.touches[0].pageY;
+//                  $('main').addClass('noscroll');
+        });
+        $('.imgWrap').off('touchend').on('touchend',function (e) {
+          console.log('imgWrap Touchend');
+          var endX = e.originalEvent.changedTouches[0].pageX;
+          var endY = e.originalEvent.changedTouches[0].pageY;
+          var direction = GetSlideDirection(imgStartX, imgStartY, endX, endY);
+          switch (direction){
+            case 3:
+              console.log('imgWrap向左');
+              e.preventDefault();
+              break;
+            case 4:
+              console.log('imgWrap right');
+              e.preventDefault();
+              break;
+          }
+//                  $('main').removeClass('noscroll');
         });
 
 //                获取token
@@ -690,7 +836,7 @@
       else {
         console.log('presentTask noTask');
         console.log('运行presentTask函数时候已经没有任务了');
-
+        jobTask.refreshCurrentPage();
       }
     });
 

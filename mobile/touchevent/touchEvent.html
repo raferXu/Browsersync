@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no">
+  <title>Title</title>
+  <style>
+    #div1{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      color: #fff;
+      font-size: 50px;
+    }
+  </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+  /*
+    当给某元素点击事件绑定函数后，事件函数默认的第一个参数就是事件对象
+    事件对象指用户在浏览器触发了某个行为时记录用户操作时一些细节信息的集合
+
+    touches: 当前 屏幕 所有手指列表
+    targetTouches: 当前 DOM元素 上的手指列表
+    changedTouches: 涉及当前 事件 的手指列表
+   */
+  document.addEventListener('touchstart',function (e) {
+    e.preventDefault();
+  });
+  var div = document.getElementById('div1');
+  div.addEventListener('touchstart',function (e) {
+    this.innerHTML = e.touches.length;
+  });
+
+//  移动端事件(四)8:11
+</script>
+</body>
+</html>

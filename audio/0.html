@@ -45,9 +45,13 @@
   <tr><th>系统支持：</th><td>android chrome，且有数据丢失</td></tr>
   <tr><th>其它问题：</th><td>android audio不支持blob</td></tr>
 </table>
+
+<script src="../audio/shengwen/jquery-1.7.2.min.js"></script>
 <script>
+$(function () {
+  var voiceArr = [];
   // lib
-  var $ = function(className){return document.querySelector(className)};
+  var $$ = function(className){return document.querySelector(className)};
 
   // variables
   var leftchannel = [];
@@ -71,13 +75,13 @@
 
   if (navigator.getUserMedia){
     navigator.getUserMedia({audio:true}, success, function(e) {
-       alert('捕获失败！');
+      alert('捕获失败！');
     });
   } else alert('不支持getUserMedia');
 
   // if R is pressed, we start recording
 
-  $('.btn-start').addEventListener('click', function(e){
+  $$('.btn-start').addEventListener('click', function(e){
     recording = true;
     // reset the buffers for the new recording
     leftchannel.length = rightchannel.length = 0;
@@ -85,7 +89,7 @@
     outputElement.innerHTML = '正在录制...';
   });
 
-  $('.btn-end').addEventListener('click', function(e){
+  $$('.btn-end').addEventListener('click', function(e){
     // we stop recording
     recording = false;
 
@@ -165,7 +169,56 @@
     reader.onload = function(event){
 //      console.log(reader.result);
       var audio = window.document.createElement('audio');
-      console.log(event.target.result.split(',')[1]);
+
+//      console.log(event.target.result.split(',')[1]);
+      var voiceSample = event.target.result.split(',')[1];
+      voiceArr.push(voiceSample);
+      if(voiceArr.length == 1){
+        alert('3段语音了，可以发请求了');
+//        {"speechText":"15915375","type":"register","appId":"10007","scene":"dmz_cll","serialNumber":"GOOD00001000420170425339876","userId":"u902341","voice1":""}
+//        {"data":{"returnCode":"201","returnMsg":"用户已注册","returnData":{"code":"201","msg":"用户已注册"},"returnFlag":"FAIL","serialNum":"FRS1497838478977BrrqU6m6"},"responseCode":"00","responseMsg":"操作成功"}
+//        var data = {"speechText":"245","type":"register","appId":"10007","scene":"dmz_cll","serialNumber":"GOOD00001000420170425339876","userId":"u902349","voice1":voiceArr[0],"voice2":voiceArr[1],"voice3":voiceArr[2]};
+
+        /*
+         var data = {"speechText":"15915375","type":"register","appId":"10007","scene":"dmz_cll","serialNumber":"GOOD00001000420170425339876","userId":"u902341","voice1":"","voice2":"","voice3":""}
+         data = JSON.stringify(data);
+         var xhr = new XMLHttpRequest();
+         xhr.open('POST','http://vprc-core.pingan.com.cn/vprc_core_portal/rest/api/register_new',true);
+         xhr.onreadystatechange = doResult;
+         xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+         xhr.setRequestHeader('Accept','application/json,text/plain');
+         xhr.send(data);
+
+         function doResult() {
+         if(xhr.readyState == 4){
+         if(xhr.status == 200){
+         console.log(xhr.responseText);
+         }
+         }
+         }
+         */
+
+        var remainData = {"speechText":"15915375","type":"register","appId":"10007","scene":"dmz_cll","serialNumber":"GOOD00001000420170425339876","userId":"u902341","voice1":"","voice2":"","voice3":""}
+        $.ajax({
+          type: 'POST',
+//          url: 'http://vprc-core.pingan.com.cn/vprc_core_portal/rest/api/register_new',
+          url: 'https://test-vprc-core.pingan.com.cn:56443/vprc_core_portal/rest/api/register_new',
+//          dataType: 'json',
+          timeout: 5000,
+          beforeSend: function (xhr) {
+            xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+            xhr.setRequestHeader('Accept','application/json,text/plain');
+          },
+          data: JSON.stringify(remainData),
+          success: function (remainingChanceInfo) {
+            console.log(remainingChanceInfo);
+          },
+          error: function () {
+            console.log('Error');
+          }
+        })
+      }
+
       audio.src = event.target.result;
       audio.controls = true;
       myAudio.appendChild(audio);
@@ -257,6 +310,8 @@
 //  样本大小      数据格式            最小值    最大值
 //  8位PCM       unsigned int         0       225
 //  16位PCM      int                -32767    32767
+});
+
 
 </script>
 </body>

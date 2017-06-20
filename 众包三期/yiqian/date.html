@@ -37,7 +37,7 @@
     .showInfo{
         box-sizing: border-box;
         width: 100%;
-        height: .44rem;
+        /*height: .44rem;*/
         margin-bottom: .1rem;
         /*border: 1px solid #ff6000;*/
         border-radius: 5px;
@@ -52,22 +52,26 @@
         font-size: 0;
     }
 
-    .codeLockWrap input{
+    .codeLockWrap input, .divideTip{
         display: inline-block;
         width: .28rem;
         height: .44rem;
         line-height: .44rem;
-        border-radius: .03rem;
-        background-color: #323232;
-        color: #fff;
+        color: #323232;
+        font-weight: 400;
         text-align: center;
-        font-size: .36rem;
+        font-size: .32rem;
+        font-family: "PingFang SC";
+    }
+    .codeLockWrap input{
+        border-radius: .04rem;
+        background-color: #dcdcdc;
     }
 
-    .noscroll{
-        position: absolute;
-        overflow: hidden;
-    }
+    /*.noscroll{*/
+    /*position: absolute;*/
+    /*overflow: hidden;*/
+    /*}*/
 
     #btns{
         width: 100%;
@@ -94,18 +98,24 @@
                 </div>
                 <p class="task_rand_score" id="scoreBox">任务奖励:<span id="score">100</span>(分/单)</p>
                 <div class="billOperate">
-                    <nav class="clearfloat">
+                    <nav class="clearfloat" style="margin-bottom: 0">
                         <img src="/static/h5/billIcon.png" alt="billIcon" class="icon l">
                         <span class="l">票据显示</span>
                         <span id="taskGuideBox" class="taskGuide r">
-                 <img id="taskGuide" src="/static/h5/taskGuide.png" alt="taskGuide">
-            </span>
+                             <img id="taskGuide" src="/static/h5/taskGuide.png" alt="taskGuide">
+                        </span>
                     </nav>
                     <div class="showInfo">
+                        <div style="height: .3rem;margin-bottom: .1rem;display: flex;display: -webkit-flex;font-size: 18px;align-items: flex-end;">
+                            <div style="flex: 2;text-align: center;position: relative;right: -.06rem;">年</div>
+                            <div style="flex: 2;text-align: center;">月</div>
+                            <div style="flex: 1;text-align: center;position: relative;left: -6px;">日</div>
+                        </div>
                         <div class="codeLockWrap" id="codeLockWrap">
                             <!--<input value="0" type="number" onblur="if(!value)value='0'" oninput="if(value.length>1)value=value.slice(1)" />-->
-                            <input id="n1" value="0" type="number"/><input id="n2" value="0" type="number"/><input id="n3" value="0" type="number"/><input id="n4" value="0" type="number"/><input id="n5" value="0" type="number"/>
-                            <input id="n6" value="0" type="number"/><input id="n7" value="0" type="number"/><input id="n8" value="0" type="number"/>
+                            <input id="n1" value="1" type="number"/><input id="n2" value="9" type="number"/><input id="n3" value="8" type="number"/><input id="n4" value="7" type="number"/><span class="divideTip">－</span>
+                            <input id="n5" value="0" type="number"/><input id="n6" value="6" type="number"/><span class="divideTip">－</span>
+                            <input id="n7" value="2" type="number"/><input id="n8" value="3" type="number"/>
                         </div>
                     </div>
                     <p class="textTip tc">请适当修改，保证票据内容与文本输入框一致</p>
@@ -165,6 +175,11 @@
         <p id="answerTipBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
     </div>
 </div>
+<div id="failData" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <div style="position:absolute;top:50%;left:50%;width:80%;height:.8rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+        <p style="width:100%;height:.8rem;line-height:.8rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">数据获取失败。</p>
+    </div>
+</div>
 
 <script type="text/javascript" src="/static/h5/pinchzoom201.js"></script>
 <script type="text/javascript">
@@ -192,6 +207,20 @@
 <script type="text/javascript">
   (function() {
 
+    setTimeout(function () {
+      if(!loadImg || !getStr){
+        console.log('获取数据太久了');
+        $("#showMes").hide();
+        $("#failData").show();
+        setTimeout(function () {
+          console.log('获取数据太久了导致3秒后自动提交');
+          $("#failData").hide();
+          $('.showInfo').val('获取数据失败');
+          $('#next').trigger('click');
+        },3000);
+      }
+    },15000);
+
     // loading加载框出现
     console.log('loading加载框出现');
     $("#showMes").show();
@@ -215,10 +244,6 @@
         console.log('这是苹果机');
       }
 
-      document.body.addEventListener('touchmove', function (event) {
-        event.preventDefault();
-      }, false);
-
       $('body').css('padding','0px');
 
       $('#sureBtn').on('click',function () {
@@ -234,6 +259,8 @@
 
 //判断图片是否加载完成
     function imgLoaded(img) {
+      console.log('img.complete: '+img.complete);
+      console.log('img.naturalHeight: '+img.naturalHeight);
       return img.complete && img.naturalHeight !== 0;
     }
 
@@ -247,8 +274,11 @@
         setTimeout(function () {
           if(!imgLoaded(img)){
             console.log('图片加载超过5秒，重新加载中...');
-            img.attr('src', task.info.url+'?'+Math.random()).css('height', 'auto');
-          }
+            if(!task.info.url.split('?')[1]){
+              img.attr('src', task.info.url+'?'+Math.random()).css('height', 'auto');
+            }else{
+              img.attr('src', task.info.url+'&'+Math.random()).css('height', 'auto');
+            }          }
         },5000);
         img.load(function() {
           deferred.resolve(task);
@@ -267,6 +297,7 @@
     });
 
     pybossa.presentTask(function(task, deferred) {
+
       if ( !$.isEmptyObject(task) ) {
 //        loadUserProgress();
 //        i18n_translate();
