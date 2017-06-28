@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="static/h5/jquery-1.7.2.min.js"></script>
+  <script src="static/h5/pybossa-token.js"></script>
+</head>
+<body>
 <script>
 
   function device() {
@@ -37,200 +46,196 @@
   };
 
 </script>
-<link rel="stylesheet" href="/static/h5/codeLock3.css">
+<link rel="stylesheet" href="static/h5/codeLock3.css">
 <style id="css1">
-    .androidHeader{
-        margin-left: .15rem;
-        text-align: left;
-    }
-    .showInfo{
-        box-sizing: border-box;
-        width: 100%;
-        /*height: .44rem;*/
-        margin-bottom: .1rem;
-        /*border: 1px solid #ff6000;*/
-        border-radius: 5px;
-    }
+  .androidHeader{
+    margin-left: .15rem;
+    text-align: left;
+  }
+  .showInfo{
+    box-sizing: border-box;
+    width: 100%;
+    /*height: .44rem;*/
+    margin-bottom: .1rem;
+    /*border: 1px solid #ff6000;*/
+    border-radius: 5px;
+  }
 
-    .codeLockWrap {
-        /*display: flex;*/
-        /*display: -webkit-box;*/
-        /*justify-content: space-between;*/
-        width: 95%;
-        margin: 0 auto;
-        font-size: 0;
-    }
+  .codeLockWrap {
+    /*display: flex;*/
+    /*display: -webkit-box;*/
+    /*justify-content: space-between;*/
+    width: 95%;
+    margin: 0 auto;
+    font-size: 0;
+  }
 
-    .codeLockWrap input, .divideTip{
-        display: inline-block;
-        width: .28rem;
-        height: .44rem;
-        line-height: .44rem;
-        color: #323232;
-        font-weight: 400;
-        text-align: center;
-        font-size: .32rem;
-        font-family: "Arial";
-    }
-    .divideTip{
-        position: relative;
-        left: -3px;
-    }
-    .codeLockWrap input{
-        border-radius: .04rem;
-        background-color: #dcdcdc;
-        margin-right: 2%;
-    }
-    .codeLockWrap .last{
-        margin-right: 0;
-    }
+  .codeLockWrap input, .divideTip{
+    display: inline-block;
+    width: .28rem;
+    height: .44rem;
+    line-height: .44rem;
+    color: #323232;
+    font-weight: 400;
+    text-align: center;
+    font-size: .32rem;
+    font-family: "Arial";
+  }
+  .codeLockWrap input{
+    border-radius: .04rem;
+    background-color: #dcdcdc;
+    margin-right: 2%;
+  }
+  .codeLockWrap .last{
+    margin-right: 0;
+  }
 
-    /*.noscroll{*/
-        /*position: absolute;*/
-        /*overflow: hidden;*/
-    /*}*/
+  /*.noscroll{*/
+  /*position: absolute;*/
+  /*overflow: hidden;*/
+  /*}*/
 
-    #btns{
-        width: 100%;
-        /*display: -webkit-flex;*/
-        /*display: flex;*/
-        /*justify-content: space-between;*/
-    }
-    #next{
-        box-sizing: border-box;
-        width: 47.5%;
-        margin-left: 4%;
-    }
-    #indistinct{
-        box-sizing: border-box;
-        width: 47.5%;
-    }
+  #btns{
+    width: 100%;
+    /*display: -webkit-flex;*/
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+  }
+  #next{
+    box-sizing: border-box;
+    width: 47.5%;
+    margin-left: 4%;
+  }
+  #indistinct{
+    box-sizing: border-box;
+    width: 47.5%;
+  }
 
-    .bgHide{
-        background-color: rgba(0,0,0,0);
-    }
-    .bgShow{
-        background-color: rgba(0,0,0,0.3);
-    }
+  .bgHide{
+    background-color: rgba(0,0,0,0);
+  }
+  .bgShow{
+    background-color: rgba(0,0,0,0.3);
+  }
 </style>
 <div class="row skeleton"> <!-- Start Skeleton Row-->
-    <header><h1 class="tc fwn">平安众包</h1></header>
-    <main>
-        <div class="wrap">
-            <section class="billBox">
-                <div class="imgWrap" style="width:100%;height:1.1rem;overflow:hidden">
-                    <div id="billImgBox" class="billImgBox pinch-zoom">
-                        <img id="billImg" style="display:none" class="billImg" alt="billImg">
-                    </div>
-                </div>
-                <p class="task_rand_score" id="scoreBox">任务奖励:<span id="score">100</span>(分/单)</p>
-                <div class="billOperate">
-                    <nav class="clearfloat" style="margin-bottom: 0">
-                        <img src="/static/h5/billIcon.png" alt="billIcon" class="icon l">
-                        <span class="l">票据显示</span>
-                        <span id="taskGuideBox" class="taskGuide r">
+  <header><h1 class="tc fwn">平安众包</h1></header>
+  <main>
+    <div class="wrap">
+      <section class="billBox">
+        <div class="imgWrap" style="width:100%;height:1.1rem;overflow:hidden">
+          <div id="billImgBox" class="billImgBox pinch-zoom">
+            <img id="billImg" style="display:none" class="billImg" alt="billImg">
+          </div>
+        </div>
+        <p class="task_rand_score" id="scoreBox">任务奖励:<span id="score">100</span>(分/单)</p>
+        <div class="billOperate">
+          <nav class="clearfloat" style="margin-bottom: 0">
+            <img src="/static/h5/billIcon.png" alt="billIcon" class="icon l">
+            <span class="l">票据显示</span>
+            <span id="taskGuideBox" class="taskGuide r">
                              <img id="taskGuide" src="/static/h5/taskGuide.png" alt="taskGuide">
                         </span>
-                    </nav>
-                    <div class="showInfo">
-                        <!--<div style="height: .3rem;margin-bottom: .1rem;display: flex;display: -webkit-flex;font-size: 18px;align-items: flex-end;">-->
-                            <!--<div style="flex: 2;text-align: center;position: relative;right: -.06rem;">年</div>-->
-                            <!--<div style="flex: 2;text-align: center;">月</div>-->
-                            <!--<div style="flex: 1;text-align: center;position: relative;left: -6px;">日</div>-->
-                        <!--</div>-->
-                        <div style="height: .3rem;margin-bottom: .1rem;font-size: 18px;padding-top: .08rem;box-sizing: border-box">
-                            <div style="float: left;width: 40%;text-align: center;position: relative;right: -.06rem;">年</div>
-                            <div style="float: left;width: 40%;text-align: center;">月</div>
-                            <div style="float: left;width: 20%;text-align: center;position: relative;left: -.06rem;">日</div>
-                        </div>
-                        <div class="codeLockWrap" id="codeLockWrap">
-                            <!--<input value="0" type="number" onblur="if(!value)value='0'" oninput="if(value.length>1)value=value.slice(1)" />-->
-                            <input id="n1" value="1" type="number"/><input id="n2" value="9" type="number"/><input id="n3" value="8" type="number"/><input id="n4" value="7" type="number"/><span class="divideTip">/</span>
-                            <input id="n5" value="0" type="number"/><input id="n6" value="6" type="number"/><span class="divideTip">/</span>
-                            <input id="n7" value="2" type="number"/><input class="last" id="n8" value="3" type="number"/>
-                        </div>
-                    </div>
-                    <p class="textTip tc">请适当修改，保证票据内容与文本输入框一致</p>
-                    <!--<input id="next" type="button" class="next tc bsb" value="下一张">-->
-                    <div id="btns" class="btns">
-                        <input id="indistinct" type="button" class="next tc bsb" value="看不清">
-                        <input id="next" type="button" class="next tc bsb" value="下一张">
-                    </div>
-                </div>
-            </section>
-            <div class="divide"></div>
-            <section class="countBox">
-                <nav class="clearfloat">
-                    <img src="/static/h5/count.png" alt="count" class="icon l">
-                    <span class="l">任务统计</span>
-                    <span id="moreBox" class="more r">
+          </nav>
+          <div class="showInfo">
+            <!--<div style="height: .3rem;margin-bottom: .1rem;display: flex;display: -webkit-flex;font-size: 18px;align-items: flex-end;">-->
+            <!--<div style="flex: 2;text-align: center;position: relative;right: -.06rem;">年</div>-->
+            <!--<div style="flex: 2;text-align: center;">月</div>-->
+            <!--<div style="flex: 1;text-align: center;position: relative;left: -6px;">日</div>-->
+            <!--</div>-->
+            <div style="height: .3rem;margin-bottom: .1rem;font-size: 18px;padding-top: .08rem;box-sizing: border-box">
+              <div style="float: left;width: 40%;text-align: center;position: relative;right: -.06rem;">年</div>
+              <div style="float: left;width: 40%;text-align: center;">月</div>
+              <div style="float: left;width: 20%;text-align: center;position: relative;left: -.06rem;">日</div>
+            </div>
+            <div class="codeLockWrap" id="codeLockWrap">
+              <!--<input value="0" type="number" onblur="if(!value)value='0'" oninput="if(value.length>1)value=value.slice(1)" />-->
+              <input id="n1" value="1" type="number"/><input id="n2" value="9" type="number"/><input id="n3" value="8" type="number"/><input id="n4" value="7" type="number"/><span class="divideTip">－</span>
+              <input id="n5" value="0" type="number"/><input id="n6" value="6" type="number"/><span class="divideTip">－</span>
+              <input id="n7" value="2" type="number"/><input class="last" id="n8" value="3" type="number"/>
+            </div>
+          </div>
+          <p class="textTip tc">请适当修改，保证票据内容与文本输入框一致</p>
+          <!--<input id="next" type="button" class="next tc bsb" value="下一张">-->
+          <div id="btns" class="btns">
+            <input id="indistinct" type="button" class="next tc bsb" value="看不清">
+            <input id="next" type="button" class="next tc bsb" value="下一张">
+          </div>
+        </div>
+      </section>
+      <div class="divide"></div>
+      <section class="countBox">
+        <nav class="clearfloat">
+          <img src="/static/h5/count.png" alt="count" class="icon l">
+          <span class="l">任务统计</span>
+          <span id="moreBox" class="more r">
                <img id="more" src="/static/h5/more.png" alt="more">
           </span>
-                </nav>
-                <div class="clearfloat countInfo">
-                    <div id="today_orderBox" class="l tc total today_order">
-                        <p>今日提交(单):</p>
-                        <p id="today_order" class="num">0</p>
-                    </div>
-                    <div id="totalBox" class="l tc total">
-                        <p>累计提交(单):</p>
-                        <p id="total" class="num">0</p>
-                    </div>
-                </div>
-            </section>
+        </nav>
+        <div class="clearfloat countInfo">
+          <div id="today_orderBox" class="l tc total today_order">
+            <p>今日提交(单):</p>
+            <p id="today_order" class="num">0</p>
+          </div>
+          <div id="totalBox" class="l tc total">
+            <p>累计提交(单):</p>
+            <p id="total" class="num">0</p>
+          </div>
         </div>
-    </main>
+      </section>
+    </div>
+  </main>
 </div><!-- End of Skeleton Row -->
 <div id="showMes" style="display:none;position:absolute;left:0;right:0;top:0;bottom:0;background:transparent;color:white;text-align:center;font-size:36px;z-index:10000;">
-    <div style="position:absolute;top:50%;left:50%;width:1.2rem;height:.65rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(0,0,0,.7);border-radius:.1rem">
-        <img src="/static/h5/loading.png" alt="loading" style="display:block;width:.36rem;height:.36rem;margin:.15rem auto;animation:change 2s linear infinite;-webkit-animation:change 2s linear infinite;">
-    </div>
+  <div style="position:absolute;top:50%;left:50%;width:1.2rem;height:.65rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(0,0,0,.7);border-radius:.1rem">
+    <img src="/static/h5/loading.png" alt="loading" style="display:block;width:.36rem;height:.36rem;margin:.15rem auto;animation:change 2s linear infinite;-webkit-animation:change 2s linear infinite;">
+  </div>
 </div>
 <div id="offLine" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
-    <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
-        <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">网络不给力,请检查网络设置</p>
-        <p id="sureBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
-    </div>
+  <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+    <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">网络不给力,请检查网络设置</p>
+    <p id="sureBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
+  </div>
 </div>
 <div id="toLogin" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;color:#ff6000;text-align:center;font-size:24px;z-index:9998;">
-    <div style="display:none;position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
-        <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">未登录</p>
-        <div class="clearfloat" style="width:100%;height:.38rem;line-height:.38rem">
-            <p id="cacelBtn" class="l" style="width:50%;color:#ff6000;border-right:1px solid #c8c8c8;box-sizing:border-box">取消</p>
-            <p id="loginBtn" class="l" style="width:50%;color:#ff6000">登录</p>
-        </div>
+  <div style="display:none;position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+    <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">未登录</p>
+    <div class="clearfloat" style="width:100%;height:.38rem;line-height:.38rem">
+      <p id="cacelBtn" class="l" style="width:50%;color:#ff6000;border-right:1px solid #c8c8c8;box-sizing:border-box">取消</p>
+      <p id="loginBtn" class="l" style="width:50%;color:#ff6000">登录</p>
     </div>
+  </div>
 </div>
 <div id="answerTip" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
-    <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
-        <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">请输入与图像信息一致的内容。</p>
-        <p id="answerTipBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
-    </div>
+  <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+    <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">请输入与图像信息一致的内容。</p>
+    <p id="answerTipBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
+  </div>
 </div>
 <div id="failData" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
-    <div style="position:absolute;top:50%;left:50%;width:80%;height:.8rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
-        <p style="width:100%;height:.8rem;line-height:.8rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">数据获取失败。</p>
-    </div>
+  <div style="position:absolute;top:50%;left:50%;width:80%;height:.8rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+    <p style="width:100%;height:.8rem;line-height:.8rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">数据获取失败。</p>
+  </div>
 </div>
 
 <script type="text/javascript" src="/static/h5/pinchzoom201.js"></script>
 <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    function loadDisqus() {
-      $("#disqus_thread").toggle();
-      $(".btn-disqus").toggle();
-      var disqus_shortname = 'pybossa';
-      // required: replace example with your forum shortname
-      //var disqus_identifier = taskId;
-      var disqus_developer = 1;
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  function loadDisqus() {
+    $("#disqus_thread").toggle();
+    $(".btn-disqus").toggle();
+    var disqus_shortname = 'pybossa';
+    // required: replace example with your forum shortname
+    //var disqus_identifier = taskId;
+    var disqus_developer = 1;
 
-      (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    }
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  }
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script>
@@ -252,6 +257,11 @@
         },3000);
       }
     },15000);
+
+    // loading加载框出现
+    console.log('loading加载框出现');
+    $("#showMes").show();
+    console.log('loadingShow');
 
     var loadImg = false;
     var loadNumImg = false;
@@ -384,6 +394,12 @@
         console.log('taskLoaded noTask');
         console.log('运行taskLoaded函数时候已经没有任务了');
         deferred.resolve(task);
+        var refreshLoadedTimer = setInterval(function () {
+          if(jobTaskLoaded){
+            clearInterval(refreshTimer);
+            jobTask.refreshCurrentPage();
+          }
+        },50);
       }
     });
 
@@ -396,6 +412,7 @@
 
         $('.pinch-zoom').html('').append(task.info.image);
         var task_id = task.id;
+        outId = task.id;
 
         // 计算图片最终大小和移动的坐标
         function calc(config) {
@@ -485,7 +502,7 @@
 //            loading加载框消失
         $(document).ajaxStart(function(){
           console.log('loadingShow');
-//          $("#showMes").show();
+          $("#showMes").show();
         }).ajaxStop(function(){
           getStr = true;
           if(loadImg && getStr){
@@ -499,35 +516,6 @@
         $('div.pinch-zoom').each(function () {
           new RTP.PinchZoom($(this), opt);
         });
-
-//返回角度
-        function GetSlideAngle(dx, dy) {
-          return Math.atan2(dy, dx) * 180 / Math.PI;
-        }
-
-//根据起点和终点返回方向 1：向上，2：向下，3：向左，4：向右,0：未滑动
-        function GetSlideDirection(startX, startY, endX, endY) {
-          var dy = startY - endY;
-          var dx = endX - startX;
-          var result = 0;
-
-          var angle = GetSlideAngle(dx, dy);
-          if (angle >= 45 && angle < 135) {
-            result = 1;
-          } else if (angle >= -135 && angle < -45) {
-            result = 2;
-          } else if ((angle >= 150 && angle <= 180) || (angle >= -180 && angle < -150)) {  //向左
-            if(Math.abs(dx)>5){
-              result = 3;
-            }
-          } else if (angle >= -60 && angle < 60) {  //向右
-            if(Math.abs(dx)>5){
-              result = 4;
-            }
-          }
-          console.log('result: '+result);
-          return result;
-        }
 
         var imgStartX,imgStartY;
         $('.imgWrap').off(touchstart).on(touchstart,function (e) {
@@ -552,6 +540,7 @@
               e.preventDefault();
               break;
           }
+//                  $('main').removeClass('noscroll');
         });
 
 //            发送图片获取识别字符串，并放入input中
@@ -568,6 +557,8 @@
         }else{
           blockStr.str = blockStr.str;
         }
+
+//        $('.showInfo').val(blockStr.str);
 
         //将获取的数字数据表示出来
         var aInput = $('#codeLockWrap input');
@@ -717,8 +708,8 @@
                             if(times>0){
                               var lockTimer = setInterval(function () {
 //                                if(lockDrawDone){
-                                  clearInterval(lockTimer);
-                                  jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
+                                clearInterval(lockTimer);
+                                jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
 //                                }
                               },30);
                             }
@@ -798,7 +789,7 @@
               $('#next,#indistinct').off(touchstart).on(touchstart, function(evt) {
 //                $(this).siblings().prop('disabled',true);]
                 console.log('提交按钮#next或#indistinct已经单击！！！');
-//                $("#showMes").show();
+                $("#showMes").show();
                 var touchstartWhich = $(this).attr('id')=='indistinct';
                 console.log('nextBtntouchstart');
                 if(!window.navigator.onLine){
@@ -870,7 +861,7 @@
                     }
                   }
                   else {
-//                    $("#showMes").hide();
+                    $("#showMes").hide();
                     console.log('answer的值为空');
                     $('#answerTipBtn').off(touchstart).on(touchstart,function () {
                       $('#answerTip').hide();
@@ -905,3 +896,6 @@
     pybossa.run('date');
   })();
 </script>
+
+</body>
+</html>

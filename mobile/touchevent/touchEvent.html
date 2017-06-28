@@ -29,8 +29,13 @@
     e.preventDefault();
   });
   var div = document.getElementById('div1');
-  div.addEventListener('touchstart',function (e) {
-    this.innerHTML = e.touches.length;
+//  div.addEventListener('touchstart',function (e) {
+//    this.innerHTML = e.touches.length;
+//  });
+  div.addEventListener('touchmove',function (e) {
+//    this.innerHTML = e.touches.length;
+//    this.innerHTML = e.targetTouches.length;
+    this.innerHTML = e.changedTouches.length;
   });
 
 //  移动端事件(四)8:11

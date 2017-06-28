@@ -1,5 +1,14 @@
 <script>
 
+  function device() {
+    var isMobile = /Mobile/i.test(navigator.userAgent);
+    if(!isMobile){
+      touchstart = 'click';
+    }
+  }
+  var touchstart = 'touchstart';
+  device();
+
   // loading加载框出现
   console.log('loading加载框出现');
   $("#showMes").show();
@@ -165,7 +174,7 @@
           console.log('获取数据太久了导致3秒后自动提交');
           $("#failData").hide();
           $('.showInfo').val('获取数据失败');
-          $('#next').trigger('touchstart');
+          $('#next').trigger(touchstart);
         },3000);
       }
     },15000);
@@ -186,7 +195,7 @@
 
       $('body').css('padding','0px');
 
-      $('#sureBtn').on('touchstart',function () {
+      $('#sureBtn').on(touchstart,function () {
         $('#offLine').hide();
       });
 
@@ -205,7 +214,6 @@
     }
 
     pybossa.taskLoaded(function(task, deferred) {
-
       if ( !$.isEmptyObject(task) ) {
 
         var img = $('<img id="billImg" class="billImg"/>');
@@ -294,18 +302,10 @@
         console.log('taskLoaded noTask');
         console.log('运行taskLoaded函数时候已经没有任务了');
         deferred.resolve(task);
-        var refreshLoadedTimer = setInterval(function () {
-          if(jobTaskLoaded){
-            clearInterval(refreshTimer);
-            jobTask.refreshCurrentPage();
-          }
-        },50);
       }
     });
 
     pybossa.presentTask(function(task, deferred) {
-
-
 
       if ( !$.isEmptyObject(task) ) {
         console.log('运行presentTasktask函数时拿到的任务为: '+task);
@@ -404,7 +404,7 @@
 
 //            loading加载框消失
         $(document).ajaxStart(function(){
-          $("#showMes").show();
+//          $("#showMes").show();
         }).ajaxStop(function(){
           getStr = true;
           if(loadImg && getStr){
@@ -420,7 +420,7 @@
         });
 
         var imgStartX,imgStartY;
-        $('.imgWrap').off('touchstart').on('touchstart',function (e) {
+        $('.imgWrap').off(touchstart).on(touchstart,function (e) {
           console.log('imgWrap Touchstart');
           console.log(e);
           imgStartX = e.originalEvent.touches[0].pageX;
@@ -572,13 +572,13 @@
             });
 
 //                点击任务指引
-            $('.taskGuide').off('touchstart').on('touchstart',function () {
+            $('.taskGuide').off(touchstart).on(touchstart,function () {
               console.log('taskGuideBtntouchstart');
               jobTask.taskGuide();
             });
 
 //                点击查看
-            $('.more').off('touchstart').on('touchstart',function () {
+            $('.more').off(touchstart).on(touchstart,function () {
               console.log('moreBtntouchstart');
               jobTask.checkTaskStatistics();
             });
@@ -587,9 +587,9 @@
             if(!tokenStr){
 //                单击未登录的取消按钮
               console.log('没有拿到token值！');
-              $('#cacelBtn').off('touchstart').on('touchstart',function () {
+              $('#cacelBtn').off(touchstart).on(touchstart,function () {
                 $('#toLogin').hide(300);
-                $('html')[0].addEventListener('touchstart',function () {
+                $('html')[0].addEventListener(touchstart,function () {
                   $('#toLogin').show();
 
                   $('input').each(function () {
@@ -599,11 +599,11 @@
               });
 
 //                单击登录跳转登录页面
-              $('#loginBtn').off('touchstart').on('touchstart',function () {
+              $('#loginBtn').off(touchstart).on(touchstart,function () {
                 jobTask.launchLoginPage();
               });
 
-              $('html')[0].addEventListener('touchstart',function () {
+              $('html')[0].addEventListener(touchstart,function () {
                 $('#toLogin').show();
 
                 $('input').each(function () {
@@ -627,9 +627,8 @@
               });
 
 //                点击下一张按钮
-              $('#next,#indistinct').off('touchstart').on('touchstart', function(evt) {
+              $('#next,#indistinct').off(touchstart).on(touchstart, function(evt) {
                 console.log('提交按钮#next或#indistinct已经单击！！！');
-                $("#showMes").show();
                 var touchstartWhich = $(this).attr('id')=='indistinct';
                 console.log('nextBtntouchstart');
                 if(!window.navigator.onLine){
@@ -667,7 +666,6 @@
                                 if(shortName){
                                   jobTask.switchToAnotherProject(shortName);
                                 }else{
-//                                  window.location.href = "/static/h5/noTask.html";
                                   window.location.href = "/static/h5/noTask.html";
                                 }
                               }else if(getongoingprojectCode == 604){
@@ -696,9 +694,8 @@
                       $('.btn-disqus').toggle();
                     }
                   } else {
-                    $("#showMes").hide();
                     console.log('answer的值为空');
-                    $('#answerTipBtn').off('touchstart').on('touchstart',function () {
+                    $('#answerTipBtn').off(touchstart).on(touchstart,function () {
                       $('#answerTip').hide();
                     });
                     $('#answerTip').show();

@@ -1,7 +1,15 @@
 <script>
 
+  function device() {
+    var isMobile = /Mobile/i.test(navigator.userAgent);
+    if(!isMobile){
+      touchstart = 'click';
+    }
+  }
+  var touchstart = 'touchstart';
+  device();
+
   // loading加载框出现
-  console.log('loading加载框出现');
   $("#showMes").show();
 
   var jobTaskLoaded = false;
@@ -39,14 +47,10 @@
     width: 100%;
     height: .44rem;
     margin-bottom: .1rem;
-    /*border: 1px solid #ff6000;*/
     border-radius: 5px;
   }
 
   .codeLockWrap {
-    /*display: -webkit-flex;*/
-    /*display: flex;*/
-    /*justify-content: space-between;*/
     width: 95%;
     margin: 0 auto;
     font-size: 0;
@@ -66,17 +70,8 @@
     font-family: "Arial";
     margin-left: 1.2%;
   }
-
-  .noscroll{
-    position: absolute;
-    overflow: hidden;
-  }
-
   #btns{
     width: 100%;
-    /*display: -webkit-flex;*/
-    /*display: flex;*/
-    /*justify-content: space-between;*/
   }
   #next{
     box-sizing: border-box;
@@ -86,6 +81,13 @@
   #indistinct{
     box-sizing: border-box;
     width: 47.5%;
+  }
+
+  .bgHide{
+    background-color: rgba(0,0,0,0);
+  }
+  .bgShow{
+    background-color: rgba(0,0,0,0.3);
   }
 </style>
 <div class="row skeleton"> <!-- Start Skeleton Row-->
@@ -156,8 +158,8 @@
     <p id="sureBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
   </div>
 </div>
-<div id="toLogin" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:24px;z-index:9998;">
-  <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+<div id="toLogin" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;color:#ff6000;text-align:center;font-size:24px;z-index:9998;">
+  <div style="display:none;position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
     <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">未登录</p>
     <div class="clearfloat" style="width:100%;height:.38rem;line-height:.38rem">
       <p id="cacelBtn" class="l" style="width:50%;color:#ff6000;border-right:1px solid #c8c8c8;box-sizing:border-box">取消</p>
@@ -204,46 +206,41 @@
   (function() {
     setTimeout(function () {
       if(!loadImg || !getStr){
-        console.log('获取数据太久了');
         $("#showMes").hide();
         $("#failData").show();
         setTimeout(function () {
           console.log('获取数据太久了导致3秒后自动提交');
           $("#failData").hide();
-//          $('.showInfo').val('获取数据失败');
-          $('#next').trigger('touchstart');
+          $('#next').trigger(touchstart);
         },3000);
       }
     },15000);
-    // loading加载框出现
-    console.log('loading加载框出现');
-    $("#showMes").show();
-    console.log('loadingShow');
 
     var loadImg = false;
     var loadNumImg = false;
     var getStr = false;
     var tokenStr;
-
-    $(document).ready(function(){
-//判断是安卓机还是苹果机
+    var android;
+    function isAndroidFn() {
       var u = navigator.userAgent,
         app = navigator.appVersion;
       var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
       var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-      if(isAndroid){
+      return isAndroid;
+    }
+    android = isAndroidFn();
+    $(document).ready(function(){
+//判断是安卓机还是苹果机
+      if(android){
         console.log('这是安卓机');
         $('header h1').addClass('androidHeader');
       }else{
         console.log('这是苹果机');
       }
-
       $('body').css('padding','0px');
-
-      $('#sureBtn').on('touchstart',function () {
+      $('#sureBtn').on(touchstart,function () {
         $('#offLine').hide();
       });
-
       $(window).on('scroll', function () {
         $('#toLogin').css('top',$(window).scrollTop());
         $('#showMes').css('top',$(window).scrollTop());
@@ -253,30 +250,22 @@
 
 //判断图片是否加载完成
     function imgLoaded(img) {
-      console.log('img.complete: '+img.complete);
-      console.log('img.naturalHeight: '+img.naturalHeight);
       return img.complete && img.naturalHeight !== 0;
     }
-
     pybossa.taskLoaded(function(task, deferred) {
-
       if ( !$.isEmptyObject(task) ) {
-
         var img = $('<img id="billImg" class="billImg"/>');
         var imgUrl = task.info.url;
         if(/^\/token\/img/.test(imgUrl)){
           console.log('url是/token/img开头的接口');
           function getImgFn() {
             var getImgNeedPortTimer = setInterval(function () {
-              console.log('开始确定native是否调用了本地js方法');
-
               if(jobTaskLoaded){
                 clearInterval(getImgNeedPortTimer);
                 var tokenStr = sessionStorage.getItem("token") || null;
                 var interface = sessionStorage.getItem("url") || null;
                 var receiveNativeTokenJson;
                 if(!tokenStr || !interface){
-                  console.log('! tokenStrStorage && ! interface');
                   receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
                   tokenStr = receiveNativeTokenJson['token'];
                   interface = receiveNativeTokenJson['url'];
@@ -291,28 +280,13 @@
                   dataType: 'json',
                   timeout: 10000,
                   success: function (data) {
-
                     var getImgAjaxCode = data.code;
-                    console.log('getImgAjax.code: '+getImgAjaxCode);
-                    console.group('getImgAjax接口返回的信息：');
-                    console.log('getImgAjax data： '+data);
-                    console.log(data);
-                    console.groupEnd();
-
                     if(getImgAjaxCode == 200){
-                      console.log('获取图片url的base64数据成功！');
                       var imgUrlbase64 = 'data:image/jpeg;base64,'+data['body']['base64'];
                       img.load(function() {
                         deferred.resolve(task);
                       });
-
-                      console.log('task: '+task);
-                      console.log(task);
-
-                      console.log('获取的base64数据后的路径为： '+imgUrlbase64);
                       img.attr('src', imgUrlbase64).css('height', 'auto');
-                      console.log('task.info.image = img中的img为： '+img);
-                      console.log(img);
                       task.info.image = img[0];
                     }else{
                       console.log('getImgAjax调用失败，状态码为: '+getImgAjaxCode);
@@ -320,7 +294,6 @@
                   },
                   error: function (xml, error) {
                     console.log('/token/img Error');
-
                     if(error == "timeout"){
                       console.log('/token/img Error timeout');
                       getImgAjax.abort();
@@ -337,53 +310,34 @@
           img.load(function() {
             deferred.resolve(task);
           });
-
-          console.log('task: '+task);
-          console.log(task);
           img.attr('src', imgUrl).css('height', 'auto');
           task.info.image = img;
         }
-
       }
-
       else {
-        console.log('taskLoaded noTask');
         console.log('运行taskLoaded函数时候已经没有任务了');
-
         deferred.resolve(task);
-        var refreshLoadedTimer = setInterval(function () {
-          if(jobTaskLoaded){
-            clearInterval(refreshTimer);
-            jobTask.refreshCurrentPage();
-          }
-        },50);
       }
     });
 
     pybossa.presentTask(function(task, deferred) {
-
       if ( !$.isEmptyObject(task) ) {
         console.log('运行presentTasktask函数时拿到的任务为: '+task);
-
         $('.pinch-zoom').html('').append(task.info.image);
         var task_id = task.id;
 
-        // 计算图片最终大小和移动的坐标
+// 计算图片最终大小和移动的坐标
         function calc(config) {
-
-          // 获取图片原始大小
+// 获取图片原始大小
           var initImgW = config.imgInitW || 0;
           var initImgH = config.imgInitH || 0;
-
-          // 获取图片展示框大小
+// 获取图片展示框大小
           var imgWrapW = config.imgWrapW || 0;
           var imgWrapH = config.imgWrapH || 0;
-
-          // 确定水平还是垂直方向占满
+// 确定水平还是垂直方向占满
           var direct = (imgWrapW / initImgW * initImgH < imgWrapH) ? 'h' : 'v';
           var scale = 1, scaleImgH, scaleImgW,pdt,pdl;
-
-          // 确定缩放比、缩放后的宽高及留白大小
+// 确定缩放比、缩放后的宽高及留白大小
           if(direct == 'h'){
             scale = imgWrapW / initImgW;
             scaleImgW = imgWrapW;
@@ -399,8 +353,7 @@
             pdt = 0;
             console.log('水平方面撑满屏幕， 缩放倍数为'+scale+'，缩放后宽度为'+scaleImgW+'，高度为'+scaleImgH+'，上边留白0，左边留白'+pdl);
           }
-
-          // 返回显示在屏幕的图片的宽高和左边及上边的留白
+// 返回显示在屏幕的图片的宽高和左边及上边的留白
           return {
             'fw' : scaleImgW,
             'fh' : scaleImgH,
@@ -408,41 +361,33 @@
             'pt' : pdt
           };
         }
-
-        // 获取图片展示区域宽高
+// 获取图片展示区域宽高
         var imgBoxW = $('.billImgBox').width();
         var imgBoxH = $('.billImgBox').height();
-
-        // 确保图片加载完成及执行的回调
+// 确保图片加载完成及执行的回调
         var imgLoadTimer = setInterval(function () {
           if(imgLoaded($('.billImg')[0])){
-            console.log('图片加载完成');
             clearInterval(imgLoadTimer);
             imgCallback($('.billImg')[0]);
             loadImg = true;
             if(loadImg && getStr){
-              console.log('图片和ajax请求均完成');
               $("#showMes").hide();
             }
           }
         },100);
-
-        // 定义图片加载后的回调
+// 定义图片加载后的回调
         function imgCallback(img) {
-
-          // 获取图片原始宽高
+// 获取图片原始宽高
           var imgInitH = img.naturalHeight;
           var imgInitW = img.naturalWidth;
-
-          //计算图片最终显示的大小及留白
+// 计算图片最终显示的大小及留白
           var result = calc({
             'imgInitW' : imgInitW,
             'imgInitH' : imgInitH,
             'imgWrapW' : imgBoxW,
             'imgWrapH' : imgBoxH
           });
-
-          // billImg
+// billImg
           $('.billImg').css({
             'width' : result.fw +'px',
             'height' : result.fh + 'px',
@@ -452,27 +397,21 @@
             'display' : 'inline-block'
           });
         }
-
-//            loading加载框消失
+// loading加载框消失
         $(document).ajaxStart(function(){
-          console.log('loadingShow');
-          $("#showMes").show();
         }).ajaxStop(function(){
           getStr = true;
           if(loadImg && getStr){
-            console.log('图片和ajax请求均完成');
             $("#showMes").hide();
           }
         });
-
         var fontSize = parseInt($('html').css('fontSize'));
         var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.1*fontSize},maxZoom:6,tapZoomFactor:3};
         $('div.pinch-zoom').each(function () {
           new RTP.PinchZoom($(this), opt);
         });
-
         var imgStartX,imgStartY;
-        $('.imgWrap').off('touchstart').on('touchstart',function (e) {
+        $('.imgWrap').off(touchstart).on(touchstart,function (e) {
           console.log('imgWrap Touchstart');
           console.log(e);
           imgStartX = e.originalEvent.touches[0].pageX;
@@ -485,7 +424,7 @@
           var direction = GetSlideDirection(imgStartX, imgStartY, endX, endY);
           switch (direction){
             case 3:
-              console.log('imgWrap向左');
+              console.log('imgWrap left');
               e.preventDefault();
               break;
             case 4:
@@ -494,12 +433,9 @@
               break;
           }
         });
-
-
-//            发送图片获取识别字符串，并放入input中
+// 发送图片获取识别字符串，并放入input中
         var blockStr = {'str':'0000000000'};
         blockStr.str = task.info.alg_answer || blockStr.str;
-
         var blockStrLen=10-blockStr.str.length,f='';
         if(blockStrLen>0){
           for(var i=0;i<blockStrLen;i++){
@@ -509,14 +445,10 @@
         }else{
           blockStr.str = blockStr.str;
         }
-
-                /*********************************************************************************************/
-
-//返回角度
+// 返回角度
                 function GetSlideAngle(dx, dy) {
                   return Math.atan2(dy, dx) * 180 / Math.PI;
                 }
-
 //根据起点和终点返回方向 1：向上，2：向下，3：向左，4：向右,0：未滑动
                 function GetSlideDirection(startX, startY, endX, endY) {
                   var dy = startY - endY;
@@ -537,27 +469,21 @@
                       result = 4;
                     }
                   }
-                  console.log('result: '+result);
                   return result;
                 }
-
 //给数字输入框父元素添加滑动事件
                 var startX,startY;
-                $('#codeLockWrap').off('touchstart').on('touchstart',function (e) {
-                  console.log('codeLockWrap Touchstart');
-                  console.log(e);
+                $('#codeLockWrap').off(touchstart).on(touchstart,function (e) {
                   startX = e.originalEvent.touches[0].pageX;
                   startY = e.originalEvent.touches[0].pageY;
-//                  $('main').addClass('noscroll');
                 });
                 $('#codeLockWrap').off('touchend').on('touchend',function (e) {
-                  console.log('codeLockWrap Touchend');
                   var endX = e.originalEvent.changedTouches[0].pageX;
                   var endY = e.originalEvent.changedTouches[0].pageY;
                   var direction = GetSlideDirection(startX, startY, endX, endY);
                   switch (direction){
                     case 3:
-                      console.log('向左');
+                      console.log('left');
                       $('#codeLockWrap input').eq(0).appendTo($('#codeLockWrap'));
                       break;
                     case 4:
@@ -567,7 +493,6 @@
                       break;
                   }
                 });
-
 //将获取的数字数据表示出来
                 var aInput = $('#codeLockWrap input');
                 var nowValue;
@@ -582,22 +507,19 @@
                       this.value = nowValue;
                     }
                   };
-
 //为方便测试当输入后自动定位到下一个输入框
                   aInput[i].onkeyup = function () {
                     this.blur();
                     var This = this;
-
-                    /*
-                    setTimeout(function () {
-                      if($(This).next()){
-                        $(This).next().focus();
-                      }
-                    },100);
-                    */
+                    if(android){
+                      setTimeout(function () {
+                        if($(This).next()){
+                          $(This).next().focus();
+                        }
+                      },100);
+                    }
                   };
                 }
-
 //按下软键盘确认键后收起键盘
                 $('.showInfo').bind('keydown', function (e) {
                   var key = e.which;
@@ -606,7 +528,6 @@
                     document.activeElement.blur();
                   }
                 });
-
 //获取某时刻的字符串
                 var getCurStr=function(){};
                 getCurStr = function () {
@@ -615,11 +536,8 @@
                   for(var i = 0, olen = aInput.length; i < olen; i++){
                     curStr[i] = aInput[i].value;
                   }
-                  console.log(curStr.join(''));
                   return curStr.join('');
                 };
-                /*********************************************************************************************/
-
 //获取token
         var jobTaskLoadedTimer = setInterval(function () {
           if(jobTaskLoaded){
@@ -628,21 +546,15 @@
             var interface = sessionStorage.getItem("url") || null;
             var receiveNativeTokenJson;
             if(!tokenStr || !interface){
-              console.log('! tokenStrStorage && ! interface');
               receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
               tokenStr = receiveNativeTokenJson['token'];
               interface = receiveNativeTokenJson['url'];
               sessionStorage.setItem("token",tokenStr);
               sessionStorage.setItem("url",interface);
             }
-            console.log('调用native方法receiveNativeToken后返回的: '+receiveNativeTokenJson);
-            console.log(receiveNativeTokenJson);
-            console.log('调用native方法receiveNativeToken后返回的请求url: '+interface+', 返回的token的值： '+tokenStr);
-
 //发起ajax请求获取任务统计数据userInfo插入页面中
             var userData = {'task_id':task_id};
             userData = JSON.stringify(userData);
-
 //判断是否需要跳到抽奖页面 getchanceconfig／interval  ＝＝  userInfo／total_order_num ？
             $.when(
               $.ajax({
@@ -664,36 +576,16 @@
                 dataType : 'json'
               })
             ).then(function (userInfo, lotteryInfo){
-
               var userInfoCode = userInfo[0].code;
               var lotteryInfoCode = lotteryInfo[0].code;
-
-              console.log('userInfoCode: '+userInfoCode);
-              console.log('lotteryInfoCode: '+lotteryInfoCode);
-
-              console.group('statistics/userInfo接口返回的信息：');
-              console.log('userInfo data: '+userInfo);
-              console.log(userInfo);
-              console.groupEnd();
-
-              console.group('lottery/getchanceconfig接口返回的信息：');
-              console.log('getchanceconfig data: '+lotteryInfo);
-              console.log(lotteryInfo);
-              console.groupEnd();
-
               if(userInfoCode == 200){
                 var total_order_num = userInfo[0].body.total_order_num;
                 $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
                 $('.total .num').html(total_order_num);
                 $('.today_order .num').html(userInfo[0].body.current_day_tasks);
-
                 for(var i=0,len=lotteryInfo[0]['body']['chance_configs'].length;i<len;i++){
                   var interval = lotteryInfo[0]['body']['chance_configs'][i]['interval'];
                   var lottery_id = lotteryInfo[0]['body']['chance_configs'][i]['lottery_id'];
-
-                  console.log(interval);
-                  console.log(lottery_id);
-
                   if(interval == total_order_num){
                     var remainData = {"threshold_value": interval};
                     function getuserremainingchanceFun() {
@@ -709,27 +601,17 @@
                         },
                         data: JSON.stringify(remainData),
                         success: function (remainingChanceInfo) {
-
                           var getuserremainingchanceCode = remainingChanceInfo.code;
-                          console.log('remainingChanceInfo[0].code: '+getuserremainingchanceCode);
-
-                          console.group('getuserremainingchance接口返回的信息：');
-                          console.log('getuserremainingchance data: '+remainingChanceInfo);
-                          console.log(remainingChanceInfo);
-                          console.groupEnd();
-
                           if(getuserremainingchanceCode == 200){
                             var times = remainingChanceInfo['body']['remaining_chance'];
                             if(times>0){
                               var lockTimer = setInterval(function () {
-//                                if(lockDrawDone){
                                   clearInterval(lockTimer);
                                   jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
-//                                }
                               },30);
                             }
                           }else if(getuserremainingchanceCode == 604){
-//                            jobTask.notifyToRelogin();
+                            jobTask.notifyToRelogin();
                           }
                         },
                         error: function () {
@@ -746,74 +628,51 @@
                   }
                 }
               }else if(userInfoCode == 604){
-//                jobTask.notifyToRelogin();
               }
             });
-
 //点击任务指引
-            $('.taskGuide').off('touchstart').on('touchstart',function () {
-              console.log('taskGuideBtntouchstart');
+            $('.taskGuide').off(touchstart).on(touchstart,function () {
               jobTask.taskGuide();
             });
-
 //点击查看
-            $('.more').off('touchstart').on('touchstart',function () {
-              console.log('nextBtntouchstart');
+            $('.more').off(touchstart).on(touchstart,function () {
               jobTask.checkTaskStatistics();
             });
-
 //拿到token判断有没登录
             if(!tokenStr){
               console.log('没有拿到token值！');
-
+              $('#toLogin').removeClass().addClass('bgHide').show();
 //单击未登录的取消按钮
-              $('#cacelBtn').off('touchstart').on('touchstart',function () {
-                $('#toLogin').hide(300);
-                $('html')[0].addEventListener('touchstart',function () {
-                  $('#toLogin').show();
-
-                  $('input').each(function () {
-                    $(this).blur();
-                  });
+              $('#cacelBtn').off(touchstart).on(touchstart,function () {
+                $('#toLogin>div').hide();
+                $('#toLogin').removeClass().addClass('bgHide');
+                $('html')[0].addEventListener(touchstart,function () {
+                  $('#toLogin').removeClass().addClass('bgShow');
+                  $('#toLogin>div').show();
                 },true);
               });
-
 //单击登录跳转登录页面
-              $('#loginBtn').off('touchstart').on('touchstart',function () {
-                console.log('loginBtnTouchstart');
+              $('#loginBtn').off(touchstart).on(touchstart,function () {
                 jobTask.launchLoginPage();
               });
-
-              $('html')[0].addEventListener('touchstart',function () {
-                console.log('htmlPageTouchstart');
-                $('#toLogin').show();
-
-                $('input').each(function () {
-                  $(this).blur();
-                });
+              $('html')[0].addEventListener(touchstart,function () {
+                $('#toLogin').removeClass().addClass('bgShow');
+                $('#toLogin>div').show();
               },true);
-
               $('.task_rand_score span').html(0);
               $('.total .num').html(0);
               $('.today_order .num').html(0);
-
             }else{
               console.log('拿到了token值，为 '+tokenStr);
-
+              $('#toLogin').hide();
 //点击下一张按钮
-              $('#next,#indistinct').off('touchstart').on('touchstart', function() {
-//                $(this).siblings().prop('disabled',true);]
-                console.log('提交按钮#next或#indistinct已经单击！！！');
-                $("#showMes").show();
+              $('#next,#indistinct').off(touchstart).on(touchstart, function() {
                 var touchstartWhich = $(this).attr('id')=='indistinct';
-                console.log('nextBtntouchstart');
                 if(!window.navigator.onLine){
                   $('#offLine').show();
                 }else{
-                  console.log('touchstartWhich: '+touchstartWhich);
                   var answer = touchstartWhich ? {"text": '看不清'} : {"text": getCurStr()};
                   if (answer["text"]) {
-//                    alert(answer["text"]);
                     pybossa.saveTask(task.id, answer).done(function() {
                       console.log('saveTask: ' + tokenStr);
                       if(jumpProjectFlag){
@@ -829,15 +688,7 @@
                               xhr.setRequestHeader('Authorization',tokenStr);
                             },
                             success: function (data) {
-
                               var getongoingprojectCode = data.code;
-                              console.log('remainingChanceInfo[0].code: '+getongoingprojectCode);
-
-                              console.group('getongoingproject接口返回的信息：');
-                              console.log('getongoingproject data： '+data);
-                              console.log(data);
-                              console.groupEnd();
-
                               if(getongoingprojectCode == 905){
                                 window.location.href = "/static/h5/noTask.html";
                               }else if(getongoingprojectCode == 200){
@@ -846,7 +697,6 @@
                                 if(shortName){
                                   jobTask.switchToAnotherProject(shortName);
                                 }else{
-//                                  window.location.href = "/static/h5/noTask.html";
                                   window.location.href = "/static/h5/noTask.html";
                                 }
                               }else if(getongoingprojectCode == 604){
@@ -864,10 +714,7 @@
                         }
                         getongoingprojectFun();
                       }
-
-//                      $('.showInfo').val('');
                       $('.pinch-zoom-container').css('height','auto');
-
                       deferred.resolve();
                     });
                     if ($("#disqus_thread").is(":visible")) {
@@ -876,9 +723,8 @@
                     }
                   }
                   else {
-                    $("#showMes").hide();
                     console.log('answer的值为空');
-                    $('#answerTipBtn').off('touchstart').on('touchstart',function () {
+                    $('#answerTipBtn').off(touchstart).on(touchstart,function () {
                       $('#answerTip').hide();
                     });
                     $('#answerTip').show();
@@ -887,17 +733,12 @@
               });
             }
           }else{
-            console.log('jobTaskLoaded is false');
             console.log('本地nativeLoadCompleted函数没有被native调用');
           }
-
         },50);
-
         $('#task-id').html(task.id);
-
       }
       else {
-        console.log('presentTask noTask');
         console.log('运行presentTask函数时候已经没有任务了');
         var refreshTimer = setInterval(function () {
           if(jobTaskLoaded){
@@ -907,8 +748,6 @@
         },50);
       }
     });
-
     pybossa.run('sn');
-
   })();
 </script>
