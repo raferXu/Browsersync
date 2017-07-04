@@ -30,6 +30,7 @@ pybossa.taskLoaded(function(task, deferred) {
                 task.info.image = img[0];
               }else{
                 console.log('getImgAjax调用失败，状态码为: '+getImgAjaxCode);
+                deferred.resolve(task);
               }
             },
             error: function (xml, error) {

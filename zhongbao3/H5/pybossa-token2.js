@@ -4,9 +4,6 @@ var jumpProjectFlag = false;
     var url = '/';  //默认为／开头的请求url
     var myTaskId = {'id':''};
     function _fetchProject(projectname) {
-      console.log("_fetchProject函数参数projectname: "+projectname);
-      console.log(projectname);
-      console.log("_fetchProject发送ajax的url: url + 'token/project'");
       return $.ajax({
             url: url + 'token/project',
             beforeSend: function (request)
@@ -95,9 +92,6 @@ var jumpProjectFlag = false;
         });
     }
     function _saveTaskRun(taskrun) {
-        console.log("_saveTaskRun函数参数taskrun: "+taskrun);
-        console.log(taskrun);
-        console.log("_saveTaskRun发送ajax的url： url + 'token/taskrun'");
         return $.ajax({
             type: 'POST',
             url: url + 'token/taskrun',
@@ -123,8 +117,6 @@ var jumpProjectFlag = false;
         });
     }
     function _getProject(projectname){
-      console.log("_getProject函数参数projectname: "+projectname);
-      console.log(projectname);
       return _fetchProject(projectname)
         .then(function(data) {return data[0];});
     }
@@ -140,162 +132,79 @@ var jumpProjectFlag = false;
       console.log(task);
       return { question: project.description, task: task};
     }
-    function _addAnswerToTask(task, answer) {
-      console.log("_addAnswerToTask函数第一参数task: "+task+", 第二参数answer："+answer);
-      console.log(task);
-      console.log(answer);
-      task.answer = answer;
-        return task;
-    }
-    function _createTaskRun(answer, task) {
-      console.log("_createTaskRun函数第一参数answer: "+answer+", 第二参数task："+task);
-      console.log(answer);
-      console.log(task);
-      task = _addAnswerToTask(task, answer);
-        var taskrun = {
-            'project_id': task.project_id,
-            'task_id': task.id,
-            'info': task.answer
-        };
-        taskrun = JSON.stringify(taskrun);
-        return _saveTaskRun(taskrun).then(function(data) {return data;});
-    }
-    var _taskLoaded = function(task, deferred) {
-      console.log("_taskLoaded函数第一参数task: "+task+", 第二参数deferred："+deferred);
-      console.log(task);
-      console.log(deferred);
+    var _taskLoaded = function(task, deferred) {  //初始化定义_taskLoaded变量
       deferred.resolve(task);
     };
-    var _presentTask = function(task, deferred) {
-      console.log("_presentTask函数第一参数task: "+task+", 第二参数deferred："+deferred);
-      console.log(task);
-      console.log(deferred);
+    var _presentTask = function(task, deferred) {  //初始化定义_presentTask变量
         deferred.resolve(task);
     };
-    function _setUserTaskLoaded (userFunc) {
-      console.log("_setUserTaskLoaded函数参数userFunc: "+userFunc);
-      console.log(userFunc);
-      _taskLoaded = userFunc;
-    }
-    function _setUserPresentTask (userFunc) {
-      console.log("_setUserPresentTask函数参数userFunc: "+userFunc);
-      console.log(userFunc);
-      _presentTask = userFunc;
-    }
     function _resolveNextTaskLoaded(task, deferred) {
-      console.log("_resolveNextTaskLoaded函数第一参数task: "+task+", 第二参数deferred："+deferred);
-      console.log(task);
-      console.log(deferred);
         var udef = $.Deferred();
-        _taskLoaded(task, udef);
+      // 新建的udef延迟对象的状态是由taskLoaded里的第二参数deferred状态确定,
+      // 当它的状态成功(也就是taskLoaded运行完)后才会触发_resolveNextTaskLoaded第二参数deferred的状态改变
+        _taskLoaded(task, udef);  //taskLoaded参数的运行在这行代码
         udef.done(function(task) {
             deferred.resolve(task);
         });
     }
     function _run (projectname, _window) {
-      console.log("_run函数第一参数projectname: "+projectname+", 第二参数_window："+_window);
-      console.log(projectname);
-      console.log(_window);
       _window = _window || window;
         _fetchProject(projectname).done(function(project) {
             project = project[0];
             function getNextTask(offset, previousTask) {
-              console.log("getNextTask函数第一参数offset: "+offset+", 第二参数previousTask："+previousTask);
-              console.log(offset);
-              console.log(previousTask);
                 offset = offset || 0;
                 var def = $.Deferred();
-                // var taskId = _getCurrentTaskId(_window.location.pathname);
                 var taskId = myTaskId.id;
-              (taskId && (previousTask === undefined)) ? console.log('(taskId && (previousTask === undefined))最终值为true，调用了_fetchNewTask') : console.log('(taskId && (previousTask === undefined))最终值为false，调用了_fetchNewTask');
-              console.log('taskId: '+taskId);
-              console.log('previousTask === undefined: '+ (previousTask === undefined));
-              // var xhr = (taskId && (previousTask === undefined)) ? _fetchTask(taskId) : _fetchNewTask(project.id, offset);
                 var xhr = (taskId && (previousTask === undefined)) ? _fetchNewTask(project.id, 0) : _fetchNewTask(project.id, offset);
                 xhr.done(function(task) {
-                  console.log('previousTask: '+previousTask);
-                  console.log(previousTask);
-                  console.log('done后的参数task: '+task);
-                  console.log(task);
-                  console.log('task.id: '+task.id);
-                  // console.log('previousTask.id: '+previousTask.id);
                     if (previousTask && task.id === previousTask.id) {
-                        console.log('previousTask && task.id === previousTask.id 的最终值为true，先调用了_fetchNewTask后才去调用_resolveNextTaskLoaded');
                         var secondTry = _fetchNewTask(project.id, offset)
                         .done(function(secondTask){
                             _resolveNextTaskLoaded(secondTask, def);
                         });
                     }
                     else {
-                      console.log('previousTask && task.id === previousTask.id 的最终值为false，直接调用_resolveNextTaskLoaded');
                       _resolveNextTaskLoaded(task, def);
                     }
                 });
-                return def.promise();
+                return def.promise();  //返回的是_resolveNextTaskLoaded第二参数deferred的状态
             }
 
             function loop(task) {
-              // alert('loop');
-              console.log("loop函数的参数task: "+task);
-              console.log(task);
+              // nextLoaded是_resolveNextTaskLoaded的状态，即由taskLoaded里的第二参数deferred状态决定
                 var nextLoaded = getNextTask(1, task),
-                taskSolved = $.Deferred(),
-                nextUrl;
+                taskSolved = $.Deferred();
                 if(task.id) myTaskId.id = task.id;
-                console.log('myTaskId.id被赋值了，为：'+task.id);
-                // if (task.id) {
-                //
-                //     myTaskId = task.id;
-                //
-                //     if (url != '/') {
-                //         nextUrl = url + '/project/' + projectname + '/task/' + task.id;
-                //     }
-                //     else {
-                //         nextUrl = '/project/' + projectname + '/task/' + task.id;
-                //     }
-                //     console.log(nextUrl);
-                //     // history.pushState({}, "Title", nextUrl);
-                // }
 
-                _presentTask(task, taskSolved);  //saveTask函数运行后才会触发taskSolved完成状态
+                //这里_presentTask已经被赋值为了pybossa.presentTask的参数函数，所以实质是调用了参数函数
+                //saveTask函数运行后才会触发taskSolved完成状态
+                _presentTask(task, taskSolved);
+
+                //只有taskLoaded和presentTask的第二参数deferred状态改变成功后才会loop
                 $.when(nextLoaded, taskSolved).done(loop);
             }
             getNextTask(0, undefined).done(loop);
         });
     }
-    pybossa.saveTask = function (taskId, answer) {
-      console.log("pybossa.saveTask函数第一参数taskId: "+taskId+", 第二参数answer："+answer);
-      console.log(taskId);
-      console.log(answer);
-
-        if (typeof(taskId) === "number") {
-            console.log("taskId为number,所以调用了_fetchTask后才去调用_createTaskRun");
-            return _fetchTask(taskId).then(_createTaskRun.bind(undefined, answer));
-        }
-        if (typeof(taskId) === "object") {
-          console.log("taskId为object,所以直接调用_createTaskRun");
-
-          var task = taskId;
-          return _createTaskRun(answer, task);
-        }
+    pybossa.saveTask = function (task, answer) {
+      var taskrun = {
+        'project_id': task.project_id,
+        'task_id': task.id,
+        'info': answer
+      };
+      //这里必须要有return，而且_saveTaskRun返回的是一个延迟对象，所以pybossa.saveTask().done()后面的done才不会报错
+      return _saveTaskRun(JSON.stringify(taskrun));
     };
     pybossa.run = function (projectname, _window) {
-      console.log("pybossa.run函数第一参数projectname: "+projectname+", 第二参数_window："+_window);
-      console.log(projectname);
-      console.log(_window);
-
         token = $("#token").data("token");
-        console.log("token: "+token);
-        return _run(projectname, _window);
+        _run(projectname, _window);
     };
-    pybossa.taskLoaded = function (userFunc) {
-      console.log("pybossa.taskLoaded函数参数userFunc: "+userFunc);
-      console.log(userFunc);
-        return _setUserTaskLoaded( userFunc );
+
+    //pybossa.taskLoaded和pybossa.presentTask的调用都只是赋值而已，真正的运行都是在run里
+    pybossa.taskLoaded = function (userFunc) {  //原始的taskLoaded运行后只是把参数传给了_taskLoaded，并没有调用
+      _taskLoaded = userFunc;
     };
-    pybossa.presentTask = function (userFunc) {
-      console.log("pybossa.presentTask函数参数userFunc: "+userFunc);
-      console.log(userFunc);
-      return _setUserPresentTask( userFunc );
+    pybossa.presentTask = function (userFunc) {  //原始的presentTask运行后只是把参数传给了_presentTask，并没有调用
+      _presentTask = userFunc;
     };
 } (window.pybossa = window.pybossa || {}, jQuery));
