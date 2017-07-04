@@ -9,6 +9,7 @@ var gToken, gInterface;
 var getCurStr=function(){};
 var jobTaskLoaded = false;
 var touchstart = 'touchstart';
+var isMobile;
 var getDataFailTimer = setTimeout(function () {
   if(!loadImg || !getStr){
     getDataFail();
@@ -16,6 +17,9 @@ var getDataFailTimer = setTimeout(function () {
   }
 },15000);
 var android = true;
+function nativeLoadCompleted() {
+  jobTaskLoaded = true;
+}
 function isAndroidFn() {
   var u = navigator.userAgent,
     app = navigator.appVersion;
@@ -39,9 +43,10 @@ $(document).ajaxStart(function(){}).ajaxStop(function(){
   }
 });
 function device() {
-  var isMobile = /Mobile/i.test(navigator.userAgent);
+  isMobile = /Mobile/i.test(navigator.userAgent);
   if(!isMobile){
     touchstart = 'click';
+  }else{
   }
 }
 function htmlFontSize(){

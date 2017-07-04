@@ -43,14 +43,9 @@ function normalSubmit(task,answer,tokenStr,interface,deferred) {
         }
         getongoingprojectFun();
       }
-
       $('.pinch-zoom-container').css('height','auto');
       deferred.resolve();
     });
-    if ($("#disqus_thread").is(":visible")) {
-      $('#disqus_thread').toggle();
-      $('.btn-disqus').toggle();
-    }
   }
   else {
     $("#showMes").hide();

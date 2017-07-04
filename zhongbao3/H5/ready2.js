@@ -4,7 +4,7 @@
 // loading加载框出现
 $("#showMes").show();
 
-if(!isMobile){
+if(!/Mobile/i.test(navigator.userAgent)){
   $('#codeLockWrap input').attr('type','text');
 }else{
   $('#codeLockWrap input').attr('type','number');
