@@ -1,12 +1,31 @@
-<script>
-  var myPort = 'http://192.168.0.122:3000/Browersync/zhongbao3/';
-  function nativeLoadCompleted() {
-    jobTaskLoaded = true;
-  }
-</script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/init.js"></script>
 <link rel="stylesheet" href="http://192.168.0.122:3000/Browersync/zhongbao3/h5/codeLock3.css">
 <link rel="stylesheet" href="http://192.168.0.122:3000/Browersync/zhongbao3/h5/later.css">
+<!--<link rel="stylesheet" href="/static/h5/codeLock3.css">-->
+<style id="css1">
+    .codeLockWrap input, .divideTip{
+        display: inline-block;
+        width: .28rem;
+        height: .44rem;
+        line-height: .44rem;
+        color: #323232;
+        font-weight: 400;
+        text-align: center;
+        font-size: .32rem;
+        font-family: "Arial";
+    }
+    .divideTip{
+        position: relative;
+        left: -3px;
+    }
+    .codeLockWrap input{
+        border-radius: .04rem;
+        background-color: #dcdcdc;
+        margin-right: 2%;
+    }
+    .codeLockWrap .last{
+        margin-right: 0;
+    }
+</style>
 <div class="row skeleton"> <!-- Start Skeleton Row-->
     <header><h1 class="tc fwn">平安众包</h1></header>
     <main>
@@ -26,7 +45,18 @@
                              <img id="taskGuide" src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/taskGuide.png" alt="taskGuide">
                         </span>
                     </nav>
-                    <input id="answerInput" type="text" class="showInfo tc bsb">
+                    <div class="showInfo">
+                        <div style="height: .3rem;margin-bottom: .1rem;display: flex;display: -webkit-flex;font-size: 18px;align-items: flex-end;">
+                            <div style="flex: 2;text-align: center;position: relative;right: -.06rem;">年</div>
+                            <div style="flex: 2;text-align: center;">月</div>
+                            <div style="flex: 1;text-align: center;position: relative;left: -6px;">日</div>
+                        </div>
+                        <div class="codeLockWrap" id="codeLockWrap">
+                            <input id="n1" value="1" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input id="n2" value="9" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input id="n3" value="8" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input id="n4" value="7" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><span class="divideTip">/</span>
+                            <input id="n5" value="0" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input id="n6" value="6" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><span class="divideTip">/</span>
+                            <input id="n7" value="2" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input class="last" id="n8" value="3" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/>
+                        </div>
+                    </div>
                     <p class="textTip tc">请适当修改，保证文本输入框与图片内容一致</p>
                     <div id="btns" class="btns">
                         <input id="indistinct" type="button" class="next tc bsb" value="看不清">
@@ -56,7 +86,7 @@
             </section>
         </div>
     </main>
-</div><!-- End of Skeleton Row -->
+</div>
 <div id="showMes" style="display:none;position:absolute;left:0;right:0;top:0;bottom:0;background:transparent;color:white;text-align:center;font-size:36px;z-index:10000;">
     <div style="position:absolute;top:50%;left:50%;width:1.2rem;height:.65rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(0,0,0,.7);border-radius:.1rem">
         <img src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/loading.png" alt="loading" style="display:block;width:.36rem;height:.36rem;margin:.15rem auto;animation:change 2s linear infinite;-webkit-animation:change 2s linear infinite;">
@@ -79,7 +109,7 @@
 </div>
 <div id="answerTip" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
     <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
-        <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">请输入与图像信息一致的内容。</p>
+        <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">请输入与图像一致的信息内容。</p>
         <p id="answerTipBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
     </div>
 </div>
@@ -88,91 +118,75 @@
         <p style="width:100%;height:.8rem;line-height:.8rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">数据获取失败。</p>
     </div>
 </div>
-<script type="text/javascript" src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/pinchzoom.js"></script>
 <script type="text/javascript">
-  // loading加载框出现
-//  $("#showMes").show();
-
-  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-  /* * * DON'T EDIT BELOW THIS LINE * * */
-  function loadDisqus() {
-    $("#disqus_thread").toggle();
-    $(".btn-disqus").toggle();
-    var disqus_shortname = 'pybossa';
-    var disqus_developer = 1;
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  }
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    function loadDisqus() {
+      $("#disqus_thread").toggle();
+      $(".btn-disqus").toggle();
+      var disqus_shortname = 'pybossa';
+      var disqus_developer = 1;
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    }
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/init.js"></script>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/pybossa-token3.js"></script>
+<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/pinchzoom.js"></script>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/ready.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/taskLoad.js"></script>
+<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/taskLoad2.js"></script>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/swipeLR.js"></script>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/imgHandle.js"></script>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/inputSwipe.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/setInputVal2.js"></script>
+<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/setInputVal.js"></script>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/nativeLoad.js"></script>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/noToken.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/submit.js"></script>
+<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/submit2.js"></script>
 <script type="text/javascript">
-
-  pybossa.presentTask(function(task, deferred) {
-
-    if ( !$.isEmptyObject(task) ) {
-      console.log('运行presentTasktask函数时拿到的任务为: '+task);
-      imgHandleFn(task);
-      setInputVal(task);
-
+    pybossa.presentTask(function(task, deferred) {
+      if ( !$.isEmptyObject(task) ) {
+        console.log('运行presentTask函数时拿到的任务为: '+task);
+        imgHandleFn(task);
+        setInputVal(task,8,'01234567');
 //获取token
-      var jobTaskLoadedTimer = setInterval(function() {
-        if(jobTaskLoaded){
-          clearInterval(jobTaskLoadedTimer);
-          var tokenStr = getTokenAndPort().tokenStr;
-          var interface = getTokenAndPort().interface;
-          showPageData(task,tokenStr,interface);
-          bindJumpNative();
-
+        var jobTaskLoadedTimer = setInterval(function() {
+          if(jobTaskLoaded){
+            clearInterval(jobTaskLoadedTimer);
+            var tokenStr = getTokenAndPort().tokenStr;
+            var interface = getTokenAndPort().interface;
+            showPageData(task,tokenStr,interface);
+            bindJumpNative();
 //拿到token判断有没登录
-          if(!tokenStr){
-            console.log('没有拿到token值！');
-            noTokenHandle();
-          }else{
-            console.log('拿到了token值，为 '+tokenStr);
-            $('#toLogin').hide();
-
+            if(!tokenStr){
+              console.log('没有拿到token值！');
+              noTokenHandle();
+            }else{
+              console.log('拿到了token值，为 '+tokenStr);
+              $('#toLogin').hide();
 //点击下一张按钮
-            $('#next,#indistinct').off(touchstart).on(touchstart, function() {
-              $("#showMes").show();
-              var touchstartWhich = $(this).attr('id')=='indistinct';
-              if(!window.navigator.onLine){
-                $('#offLine').show();
-              }else{
-                var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
-                normalSubmit(task,answer,tokenStr,interface,deferred);
-              }
-            });
+              $('#next,#indistinct').off(touchstart).on(touchstart, function() {
+                $("#showMes").show();
+                var touchstartWhich = $(this).attr('id')=='indistinct';
+                if(!window.navigator.onLine){
+                  $('#offLine').show();
+                }else{
+                  var answer = touchstartWhich ? {"text": '看不清'} : {"text": getCurStr()};
+                  normalSubmit(task,answer,tokenStr,interface,deferred);
+                }
+              });
+            }
+          }else{
+            console.log('本地nativeLoadCompleted函数没有被native调用');
           }
-        }else{
-          console.log('jobTaskLoaded is false');
-          console.log('本地nativeLoadCompleted函数没有被native调用');
-        }
-      },50);
-    }
-    else {
-      console.log('运行presentTask函数时候已经没有任务了,自动重新刷新页面获取可用任务');
-      var refreshTimer = setInterval(function () {
-        if(jobTaskLoaded){
-          clearInterval(refreshTimer);
-          jobTask.refreshCurrentPage();
-        }
-      },50);
-    }
-  });
-
-  pybossa.run('total');
-
+        },50);
+      }
+      else {
+        console.log('运行presentTask函数时候已经没有任务了,自动重新刷新页面获取可用任务');
+      }
+    });
+    pybossa.run('date');
 </script>

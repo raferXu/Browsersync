@@ -114,6 +114,8 @@ var jumpProjectFlag = false;
                   // alert('task.id: '+task.id);  //920   920      950   972
                   // alert(previousTask);         //undefined  object   undefined  object
                     if (previousTask && task.id === previousTask.id) {
+                      def.resolve(task);
+                      /*
                     // alert(222);  没有登陆会先弹出111，再弹出222
                     //   也就是匿名登录状态下_fetchNewTask返回的都是当前任务，跟offset无关
                         var secondTry = _fetchNewTask(project.id, offset)
@@ -121,6 +123,7 @@ var jumpProjectFlag = false;
                           // alert('secondTask.id: '+secondTask.id);  //920
                             _resolveNextTaskLoaded(secondTask, def);
                         });
+                        */
                     }
                     else {
                       // alert(111);    登录后会弹出两次111

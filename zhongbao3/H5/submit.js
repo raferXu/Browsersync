@@ -3,7 +3,7 @@
  */
 function normalSubmit(task,answer,tokenStr,interface,deferred) {
   if (answer["text"]) {
-    pybossa.saveTask(task.id, answer).done(function() {
+    pybossa.saveTask(task, answer).done(function() {
       if(jumpProjectFlag){
         function getongoingprojectFun() {
           var getongoingprojectAjax = $.ajax({

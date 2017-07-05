@@ -103,6 +103,7 @@
         _fetchProject(projectname).done(function(project) {
         //_fetchProject返回的是一个xhr对象,请求成功后返回的data[0]是一个含id、short_name、presenter等的project对象
             project = project[0];
+            /*
             function getNextTask(offset, previousTask) {
                 offset = offset || 0;
                 var def = $.Deferred();
@@ -113,13 +114,8 @@
                   // alert('task.id: '+task.id);  //920   920      950   972
                   // alert(previousTask);         //undefined  object   undefined  object
                     if (previousTask && task.id === previousTask.id) {
-                    // alert(222);  没有登陆会先弹出111，再弹出222
-                    //   也就是匿名登录状态下_fetchNewTask返回的都是当前任务，跟offset无关
-                        var secondTry = _fetchNewTask(project.id, offset)
-                        .done(function(secondTask){
-                          // alert('secondTask.id: '+secondTask.id);  //920
-                            _resolveNextTaskLoaded(secondTask, def);
-                        });
+                      def.resolve(task);
+                      // 因为匿名下调用_fetchNewTask返回的任务同一project都是同一task，所以也不必_resolveNextTaskLoaded同一个任务，直接resolve
                     }
                     else {
                       // alert(111);    登录后会弹出两次111
@@ -146,6 +142,36 @@
             }
           //第一次触发loop是当taskLoaded里的deferred状态成功后,即出现deferred.resolve()即可触发
             getNextTask(0, undefined).done(loop);
+            */
+
+          function getNextTask(offset, previousTask) {
+            offset = offset || 0;
+            var def = $.Deferred(),taskSolved = $.Deferred();
+            var taskId = myTaskId.id;  //第一次为空,loop中的getNextTask执行后才有值
+            var xhr = _fetchNewTask(project.id, offset);
+            // _fetchNewTask返回的是xhr对象,成功后返回的数据是一个含id、project_id、url等的对象
+            xhr.done(function(task) {
+              // alert('task.id: '+task.id);  //920   920      950   972
+              // alert(previousTask);         //undefined  object   undefined  object
+              if (previousTask && task.id === previousTask.id) {
+                def.resolve(task);
+                // 因为匿名下调用_fetchNewTask返回的任务同一project都是同一task，所以也不必_resolveNextTaskLoaded同一个任务，直接resolve
+              }
+              else {
+                // alert(111);    登录后会弹出两次111
+                _resolveNextTaskLoaded(task, def);
+                def.done(function () {
+                  _presentTask(task, taskSolved);
+                });
+              }
+              if(task.id) myTaskId.id = task.id;
+            });
+            taskSolved.done(loop);
+          }
+          function loop(task) {
+            getNextTask(1, task);
+          }
+          getNextTask(0, undefined);
         });
     }
     pybossa.saveTask = function (task, answer) {
