@@ -1,5 +1,4 @@
-//简化版完成
-var jumpProjectFlag = false;
+    var jumpProjectFlag = false;
 (function(pybossa, $, undefined) {
     var token="";
     var url = '/';  //默认为／开头的请求url
