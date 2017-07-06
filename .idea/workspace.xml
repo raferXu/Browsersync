@@ -2,33 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/5010/date3x.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/5010/dateInit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/5010/date加载下一个任务最终版.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/5010/hospital3x.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/5010/hospitalInit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/5010/sn3x.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/5010/snInit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/5010/totalInit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/H5/common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/H5/common.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/H5/num.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/H5/submit3.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/H5/zb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/H5/zb.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_002.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_003.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/js/jquery-1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/js/jquery.1.7.2.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_003.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_004.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_005.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/说明.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/说明.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/codeLock3.css" afterPath="$PROJECT_DIR$/zhongbao3/H5/codeLock3.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/imgHandle.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/imgHandle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/later.css" afterPath="$PROJECT_DIR$/zhongbao3/H5/later.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/pybossa-token2.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/pybossa-token2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/pybossa-token3.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/pybossa-token3.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/setInputVal.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/setInputVal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/submit2.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/submit2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/taskLoad2.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/taskLoad2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/date2.html" afterPath="$PROJECT_DIR$/zhongbao3/date2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/date3.html" afterPath="$PROJECT_DIR$/zhongbao3/date3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/total2.html" afterPath="$PROJECT_DIR$/zhongbao3/total2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/zb.css" afterPath="$PROJECT_DIR$/zhongbao3/H5/zb.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,7 +33,18 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jiaoben3218/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1351">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -192,8 +191,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="41" />
-    <option name="y" value="67" />
+    <option name="x" value="46" />
+    <option name="y" value="66" />
     <option name="width" value="1210" />
     <option name="height" value="638" />
   </component>
@@ -212,6 +211,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -224,10 +224,6 @@
               <option name="myItemId" value="Browersync" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhongbao3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -239,13 +235,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="5010" />
+              <option name="myItemId" value="jiaoben3218" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -265,18 +260,18 @@
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/5010" />
-      <recent name="$PROJECT_DIR$/zhongbao3/H5" />
-      <recent name="$PROJECT_DIR$/zhongbao3" />
-      <recent name="$PROJECT_DIR$/calc" />
-      <recent name="$PROJECT_DIR$/Grid" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/zhongbao3/H5" />
       <recent name="$PROJECT_DIR$/众包三期/pybossa/static/h5" />
       <recent name="$PROJECT_DIR$/众包三期/pybossa/static" />
       <recent name="$PROJECT_DIR$/audio/voice-change-o-matic-gh-pages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/5010" />
+      <recent name="$PROJECT_DIR$/zhongbao3/H5" />
+      <recent name="$PROJECT_DIR$/zhongbao3" />
+      <recent name="$PROJECT_DIR$/calc" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.pybossaCodeLock.html">
@@ -410,21 +405,21 @@
       <workItem from="1499044249128" duration="36273000" />
       <workItem from="1499217050209" duration="19894000" />
       <workItem from="1499303715993" duration="12676000" />
+      <workItem from="1499331808543" duration="82000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1057093000" />
+    <option name="totallyTimeSpent" value="1057175000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="67" width="1210" height="638" extended-state="0" />
+    <frame x="46" y="66" width="1210" height="638" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2089041" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2114726" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32051283" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -436,6 +431,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32051283" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -548,8 +544,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/calc/1.html" />
-    <entry file="file://$PROJECT_DIR$/mobile/inputReadonly.html" />
     <entry file="file://$PROJECT_DIR$/zhongbao3/sn.html" />
     <entry file="file://$PROJECT_DIR$/zhongbao3/H5/init2.js" />
     <entry file="file://$PROJECT_DIR$/zhongbao3/date.html" />
@@ -558,7 +552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4110">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -568,7 +561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="41" column="35" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -576,51 +568,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="65" column="5" lean-forward="false" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
-          <folding>
-            <element signature="e#187#1053#0" expanded="false" />
-            <element signature="e#1100#2265#0" expanded="false" />
-            <element signature="e#2298#3325#0" expanded="false" />
-            <element signature="e#3361#4268#0" expanded="false" />
-            <element signature="e#4306#4497#0" expanded="false" />
-            <element signature="e#4532#4725#0" expanded="false" />
-            <element signature="e#5028#5215#0" expanded="false" />
-            <element signature="e#5258#5698#0" expanded="false" />
-            <element signature="e#5746#5915#0" expanded="false" />
-            <element signature="e#5965#6137#0" expanded="false" />
-            <element signature="e#6182#6312#0" expanded="false" />
-            <element signature="e#6357#6489#0" expanded="false" />
-            <element signature="e#6542#6841#0" expanded="false" />
-            <element signature="e#6883#10474#0" expanded="false" />
-            <element signature="e#9721#9738#0" expanded="false" />
-            <element signature="e#10524#11076#0" expanded="false" />
-            <element signature="e#11128#11410#0" expanded="false" />
-            <element signature="e#11457#11604#0" expanded="false" />
-            <element signature="e#11652#11799#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/init.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2580">
-          <caret line="172" column="13" lean-forward="false" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/init.html" />
     <entry file="file://$PROJECT_DIR$/zhongbao3/date2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="150" column="36" lean-forward="true" selection-start-line="150" selection-start-column="36" selection-end-line="150" selection-end-column="36" />
-          <folding>
-            <element signature="n#style#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#!!top" expanded="false" />
-            <element signature="n#script#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -628,7 +583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -654,7 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="1" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="30" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -662,13 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="111" column="3" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="111" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!block;n#calc#0" expanded="false" />
-            <element signature="n#!!block;n#imgCallback#0" expanded="false" />
-            <element signature="n#!!block;n#imgHandleFn#0" expanded="false" />
-            <element signature="e#2440#2539#0" expanded="false" />
-            <element signature="e#2599#2980#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -676,35 +622,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
           <caret line="43" column="3" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="43" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/date3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="153" column="19" lean-forward="false" selection-start-line="153" selection-start-column="8" selection-end-line="153" selection-end-column="19" />
-          <folding>
-            <element signature="n#style#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#!!top" expanded="false" />
-            <element signature="n#script#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/date3.html" />
     <entry file="file://$PROJECT_DIR$/zhongbao3/H5/nativeLoad.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="103" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!block;n#showPageData#0" expanded="false" />
-            <element signature="n#!!block;n#bindJumpNative#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -712,9 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="31" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!block;n#noTokenHandle#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -737,7 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -755,14 +676,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/zb.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/zb.less" />
     <entry file="file://$PROJECT_DIR$/zhongbao3/H5/ready.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -782,30 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
           <caret line="737" column="0" lean-forward="true" selection-start-line="737" selection-start-column="0" selection-end-line="737" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -813,16 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="149" column="49" lean-forward="true" selection-start-line="149" selection-start-column="49" selection-end-line="149" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#!!top" expanded="false" />
-            <element signature="n#script#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -830,75 +710,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/common.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="277" column="1" lean-forward="false" selection-start-line="277" selection-start-column="1" selection-end-line="277" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/zb.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/common.less" />
+    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/zb.css" />
     <entry file="file://$PROJECT_DIR$/5010/dateInit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="148" column="25" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="881" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#nav#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="150" column="48" lean-forward="false" selection-start-line="150" selection-start-column="41" selection-end-line="150" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/common.css" />
     <entry file="file://$PROJECT_DIR$/zhongbao3/H5/codeLock3.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,16 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-376">
           <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-          <folding>
-            <element signature="n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#!!top" expanded="false" />
-            <element signature="n#script#0;n#!!top" expanded="false" />
-            <element signature="n#script#3;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -962,7 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="110" column="26" lean-forward="true" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -970,19 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
-          <folding>
-            <element signature="e#204#259#0" expanded="false" />
-            <element signature="e#309#365#0" expanded="false" />
-            <element signature="e#407#1106#0" expanded="false" />
-            <element signature="e#1153#2222#0" expanded="false" />
-            <element signature="e#2258#3011#0" expanded="false" />
-            <element signature="e#3064#3378#0" expanded="false" />
-            <element signature="e#4330#4781#0" expanded="false" />
-            <element signature="e#6030#6296#0" expanded="false" />
-            <element signature="e#6348#6434#0" expanded="false" />
-            <element signature="e#6549#6631#0" expanded="false" />
-            <element signature="e#6679#6764#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -990,134 +794,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/taskLoad2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-532">
-          <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/taskLoad2.js" />
     <entry file="file://$PROJECT_DIR$/zhongbao3/H5/setInputVal2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/submit2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/submit3.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/num.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="43" column="2" lean-forward="false" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!doc;n#setInputVal#0" expanded="false" />
-            <element signature="e#873#1054#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/zb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc;n#setInputVal#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/submit2.js" />
+    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/submit3.js" />
+    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/num.js" />
+    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/zb.js" />
     <entry file="file://$PROJECT_DIR$/5010/hospitalInit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="636" column="53" lean-forward="true" selection-start-line="636" selection-start-column="0" selection-end-line="637" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/pybossa-token3.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="0" column="33" lean-forward="true" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
-          <folding>
-            <element signature="e#165#220#0" expanded="false" />
-            <element signature="e#270#326#0" expanded="false" />
-            <element signature="e#368#1067#0" expanded="false" />
-            <marker date="1499250607000" expanded="false" signature="3671:4691" ph="{...}" />
-            <marker date="1499250607000" expanded="false" signature="4724:5452" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="1147" column="22" lean-forward="true" selection-start-line="1147" selection-start-column="22" selection-end-line="1147" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-            <element signature="e#340#429#0" expanded="false" />
-            <element signature="n#!!block;n#nativeLoadCompleted#0" expanded="false" />
-            <element signature="n#!!block;n#isAndroidFn#0" expanded="false" />
-            <element signature="e#834#905#0" expanded="false" />
-            <element signature="e#992#1067#0" expanded="false" />
-            <element signature="n#!!block;n#device#0" expanded="false" />
-            <element signature="n#!!block;n#htmlFontSize#0" expanded="false" />
-            <element signature="e#1434#1455#0" expanded="false" />
-            <element signature="e#1502#1676#0" expanded="false" />
-            <element signature="e#1733#8295#0" expanded="false" />
-            <element signature="e#1857#1912#0" expanded="false" />
-            <element signature="e#1960#2016#0" expanded="false" />
-            <element signature="e#2056#2615#0" expanded="false" />
-            <element signature="e#8377#33499#0" expanded="false" />
-            <element signature="n#!!block;n#getDataFail#0" expanded="false" />
-            <element signature="n#!!block;n#autoRelogin#0" expanded="false" />
-            <element signature="e#33901#34157#0" expanded="false" />
-            <element signature="n#!!block;n#imgLoaded#0" expanded="false" />
-            <element signature="n#!!block;n#getTokenAndPort#0" expanded="false" />
-            <element signature="e#34880#34986#0" expanded="false" />
-            <element signature="n#!!block;n#GetSlideAngle#0" expanded="false" />
-            <element signature="n#!!block;n#calc#0" expanded="false" />
-            <element signature="n#!!block;n#imgCallback#0" expanded="false" />
-            <element signature="n#!!block;n#imgHandleFn#0" expanded="false" />
-            <element signature="e#40167#40266#0" expanded="false" />
-            <element signature="e#40326#40707#0" expanded="false" />
-            <element signature="e#40828#40921#0" expanded="false" />
-            <element signature="e#40986#42007#0" expanded="false" />
-            <element signature="e#41210#42005#0" expanded="false" />
-            <element signature="n#!!block;n#showPageData#0" expanded="false" />
-            <element signature="e#42305#42705#0" expanded="false" />
-            <element signature="e#42719#42850#0" expanded="false" />
-            <element signature="n#!!block;n#bindJumpNative#0" expanded="false" />
-            <element signature="n#!!block;n#noTokenHandle#0" expanded="false" />
-            <element signature="n#!!block;n#normalSubmit#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/pybossa-token3.js" />
+    <entry file="file://$PROJECT_DIR$/zhongbao3/H5/common.js" />
     <entry file="file://$PROJECT_DIR$/5010/hospital3x.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-496">
           <caret line="87" column="35" lean-forward="true" selection-start-line="87" selection-start-column="35" selection-end-line="87" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jiaoben3218/js/jquery-1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jiaoben3218/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1351">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
