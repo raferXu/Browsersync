@@ -1,9 +1,10 @@
 /**
- * Created by raferxu on 17/6/30.
+ * Created by raferxu on 17/7/6.
  */
 function setInputVal(task,n,ds) {
   var blockStr = {'str':''+ds};
   blockStr.str = task.info.alg_answer || blockStr.str;
+  blockStr.str = blockStr.str.replace(/[^0-9]/g,'0');
   var blockStrLen = n - blockStr.str.length, f = '';
   if(blockStrLen>0){
     for(var i=0;i<blockStrLen;i++){
@@ -41,3 +42,19 @@ getCurStr = function () {
   }
   return curStr.join('');
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

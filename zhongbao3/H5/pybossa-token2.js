@@ -1,4 +1,4 @@
-//简化版完成
+//原始简化版完成
 var jumpProjectFlag = false;
 (function(pybossa, $, undefined) {
     var token="";

@@ -89,7 +89,6 @@ function imgHandleFn(task) {
     new RTP.PinchZoom($(this), opt);
   });
 }
-
 // 左右滑动阻止默认
 var imgStartX,imgStartY;
 $('.imgWrap').off(touchstart).on(touchstart,function (e) {

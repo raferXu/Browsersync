@@ -1,6 +1,7 @@
 /**
  * Created by raferxu on 17/6/29.
  */
+<!--不同在于要在taskLoaded里就判断task是否为空-->
 pybossa.taskLoaded(function(task, deferred) {
 
   if ( !$.isEmptyObject(task) ) {

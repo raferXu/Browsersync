@@ -1,32 +1,6 @@
+<link rel="stylesheet" href="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common.css">
 <link rel="stylesheet" href="http://192.168.0.122:3000/Browersync/zhongbao3/h5/codeLock3.css">
-<link rel="stylesheet" href="http://192.168.0.122:3000/Browersync/zhongbao3/h5/later.css">
-<!--<link rel="stylesheet" href="/static/h5/codeLock3.css">-->
-<style id="css1">
-    .codeLockWrap input, .divideTip{
-        display: inline-block;
-        width: .28rem;
-        height: .44rem;
-        line-height: .44rem;
-        color: #323232;
-        font-weight: 400;
-        text-align: center;
-        font-size: .32rem;
-        font-family: "Arial";
-    }
-    .divideTip{
-        position: relative;
-        left: -3px;
-    }
-    .codeLockWrap input{
-        border-radius: .04rem;
-        background-color: #dcdcdc;
-        margin-right: 2%;
-    }
-    .codeLockWrap .last{
-        margin-right: 0;
-    }
-</style>
-<div class="row skeleton"> <!-- Start Skeleton Row-->
+<div class="row skeleton">
     <header><h1 class="tc fwn">平安众包</h1></header>
     <main>
         <div class="wrap">
@@ -46,15 +20,9 @@
                         </span>
                     </nav>
                     <div class="showInfo">
-                        <div style="height: .3rem;margin-bottom: .1rem;display: flex;display: -webkit-flex;font-size: 18px;align-items: flex-end;">
-                            <div style="flex: 2;text-align: center;position: relative;right: -.06rem;">年</div>
-                            <div style="flex: 2;text-align: center;">月</div>
-                            <div style="flex: 1;text-align: center;position: relative;left: -6px;">日</div>
-                        </div>
                         <div class="codeLockWrap" id="codeLockWrap">
-                            <input id="n1" value="1" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input id="n2" value="9" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input id="n3" value="8" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input id="n4" value="7" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><span class="divideTip">/</span>
-                            <input id="n5" value="0" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input id="n6" value="6" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><span class="divideTip">/</span>
-                            <input id="n7" value="2" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input class="last" id="n8" value="3" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/>
+                            <input id="n1" value="0" type="number"/><input id="n2" value="1" type="number"/><input id="n3" value="2" type="number"/><input id="n4" value="3" type="number"/><input id="n5" value="4" type="number"/>
+                            <input id="n6" value="5" type="number"/><input id="n7" value="6" type="number"/><input id="n8" value="7" type="number"/><input id="n9" value="8" type="number"/><input id="n10" value="9" type="number"/>
                         </div>
                     </div>
                     <p class="textTip tc">请适当修改，保证文本输入框与图片内容一致</p>
@@ -134,24 +102,14 @@
     }
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/init.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/pybossa-token2.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/pinchzoom.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/ready.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/taskLoad.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/swipeLR.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/imgHandle.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/inputSwipe.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/setInputVal.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/nativeLoad.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/noToken.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/submit2.js"></script>
+<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common.js"></script>
+<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/num.js"></script>
 <script type="text/javascript">
     pybossa.presentTask(function(task, deferred) {
       if ( !$.isEmptyObject(task) ) {
         console.log('运行presentTask函数时拿到的任务为: '+task);
         imgHandleFn(task);
-        setInputVal(task,8,'01234567');
+        setInputVal(task,10,'0123456789');
 //获取token
         var jobTaskLoadedTimer = setInterval(function() {
           if(jobTaskLoaded){
@@ -186,13 +144,8 @@
       }
       else {
         console.log('运行presentTask函数时候已经没有任务了,自动重新刷新页面获取可用任务');
-        var refreshTimer = setInterval(function () {
-          if(jobTaskLoaded){
-            clearInterval(refreshTimer);
-            jobTask.refreshCurrentPage();
-          }
-        },50);
+        console.log('只加载本次任务，不会出现这个日志');
       }
     });
-    pybossa.run('date');
+    pybossa.run('sn');
 </script>

@@ -1,4 +1,3 @@
-    var jumpProjectFlag = false;
 (function(pybossa, $, undefined) {
     var token="";
     var url = '/';  //默认为／开头的请求url
@@ -169,7 +168,7 @@
             taskSolved.done(loop);
           }
           function loop(task) {
-            getNextTask(1, task);
+            getNextTask(0, task);  //这里offset都是为0，不能为1
           }
           getNextTask(0, undefined);
         });

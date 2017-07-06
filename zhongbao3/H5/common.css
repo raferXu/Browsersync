@@ -1,0 +1,276 @@
+/*reset*/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-align: center;
+}
+ul {
+  list-style: none;
+  width: auto;
+  padding: 0;
+  margin: 0;
+}
+input {
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+/*common*/
+.l {
+  float: left;
+}
+.r {
+  float: right;
+}
+/*清除浮动代码*/
+.clearfloat:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+.clearfloat {
+  zoom: 1;
+}
+.tc {
+  text-align: center;
+}
+.fwn {
+  font-weight: normal;
+}
+.bsb {
+  box-sizing: border-box;
+}
+/*page*/
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 100px;
+}
+body {
+  width: 100%;
+  height: 100%;
+  color: #333;
+  padding: 0;
+  background-color: #FFF;
+  font-size: .14rem;
+  font-weight: 200;
+}
+/*header*/
+header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: .44rem;
+  background: #fff url(headerBg.png) no-repeat;
+  background-size: 100% 100%;
+}
+header h1 {
+  line-height: .44rem;
+  font-size: 0.18rem;
+  color: #fff;
+}
+main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+main .wrap {
+  padding-top: .44rem;
+}
+main .wrap section.billBox {
+  width: 100%;
+}
+main .wrap section.billBox .billImgBox {
+  box-sizing: border-box;
+  width: 100%;
+  height: 1.1rem;
+  padding: 0 1.25rem;
+  background: #fafafa;
+  overflow: hidden;
+}
+main .wrap section.billBox .task_rand_score {
+  height: .3rem;
+  line-height: .3rem;
+  text-align: center;
+  font-size: .14rem;
+  color: #828282;
+  border-bottom: 5px solid #f0f0f0;
+}
+main .wrap section.billBox .billOperate {
+  margin: .15rem;
+}
+main .wrap section.billBox .billOperate nav {
+  box-sizing: border-box;
+  margin-bottom: .2rem;
+  font-size: 0.14rem;
+}
+main .wrap section.billBox .billOperate nav .icon {
+  height: .16rem;
+  margin-right: .05rem;
+  vertical-align: middle;
+}
+main .wrap section.billBox .billOperate nav .taskGuide,
+main .wrap section.billBox .billOperate nav .more {
+  color: #ff6000;
+}
+main .wrap section.billBox .billOperate nav .taskGuide {
+  position: relative;
+  top: -0.1rem;
+  right: -0.1rem;
+  padding: .1rem;
+}
+main .wrap section.billBox .billOperate nav .taskGuide img {
+  position: relative;
+  top: 3px;
+  width: .15rem;
+}
+main .wrap section.billBox .billOperate .next {
+  width: 100%;
+  height: .44rem;
+  border: 1px solid #ff6000;
+  border-radius: 5px;
+  color: white;
+  background: #ff6000;
+  font-size: 0.18rem;
+}
+main .wrap section.billBox .billOperate .textTip {
+  -webkit-text-size-adjust: none;
+  margin-bottom: .4rem;
+  color: #828282;
+  font-size: .14rem;
+}
+main .wrap .divide {
+  width: 100%;
+  height: .05rem;
+  background: #f0f0f0;
+}
+main .wrap section.countBox {
+  box-sizing: border-box;
+  width: 100%;
+  padding: .15rem .15rem 0;
+}
+main .wrap section.countBox nav {
+  box-sizing: border-box;
+  font-size: 0.14rem;
+}
+main .wrap section.countBox nav .icon {
+  height: .16rem;
+  margin-right: .05rem;
+  vertical-align: middle;
+}
+main .wrap section.countBox nav .more {
+  position: relative;
+  top: -0.1rem;
+  right: -0.1rem;
+  padding: .1rem;
+  color: #ff6000;
+  font-size: 0.14rem;
+}
+main .wrap section.countBox nav .more img {
+  position: relative;
+  top: 3px;
+  width: .15rem;
+}
+main .wrap section.countBox .countInfo {
+  -webkit-text-size-adjust: none;
+  width: 100%;
+  margin-bottom: .15rem;
+  font-size: 0.11rem;
+  color: #828282;
+  line-height: 1;
+}
+main .wrap section.countBox .countInfo > div {
+  width: 50%;
+}
+main .wrap section.countBox .countInfo > div > p:not(:last-child) {
+  margin-bottom: .1rem;
+  color: #828282;
+}
+main .wrap section.countBox .countInfo .today_order {
+  box-sizing: border-box;
+  position: relative;
+}
+main .wrap section.countBox .countInfo .today_order:after {
+  content: "";
+  /*:before和:after必带技能，重要性为满5颗星*/
+  display: block;
+  position: absolute;
+  /*日常绝对定位*/
+  top: -0.05rem;
+  width: 0;
+  height: .52rem;
+  right: 0;
+  border-right: 1px solid #c8c8c8;
+}
+main .wrap section.countBox .countInfo .today_order > p {
+  font-size: .14rem;
+}
+main .wrap section.countBox .countInfo .total {
+  margin-top: .09rem;
+}
+main .wrap section.countBox .countInfo .total > p {
+  font-size: .14rem;
+}
+main .wrap section.countBox .countInfo .total .num {
+  color: #323232;
+  font-size: 0.18rem;
+}
+@keyframes change {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes change {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+.androidHeader {
+  margin-left: .15rem;
+  text-align: left;
+}
+#btns {
+  width: 100%;
+}
+#next {
+  box-sizing: border-box;
+  width: 47.5%;
+  margin-left: 3%;
+}
+#indistinct {
+  box-sizing: border-box;
+  width: 47.5%;
+}
+.bgHide {
+  background-color: rgba(0, 0, 0, 0);
+}
+.bgShow {
+  background-color: rgba(0, 0, 0, 0.3);
+}

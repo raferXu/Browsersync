@@ -1,6 +1,7 @@
 /**
  * Created by raferxu on 17/6/30.
  */
+// submit1 和 submit2 没区别
 function normalSubmit(task,answer,tokenStr,interface,deferred) {
   if (answer["text"]) {
     pybossa.saveTask(task, answer).done(function() {
