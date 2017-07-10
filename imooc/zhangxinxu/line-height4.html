@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>行高的实际应用</title>
+</head>
+<body>
+1、图片垂直居中
+外层容器设置行高，内层图片设置vertical-align:middle;  IE8+
+
+2、多行文本垂直居中
+外层容器设置行高，
+内层设置vertical-align:middle;同时文字行内块状化，同时重置外部继承的行高为normal
+
+3、代替height，避免老IE下的haslayout(会冲破父级限制)；
+
+常用代码
+{height: 20px;line-height: 20px;}
+实际上只需要写
+{line-height: 20px;}
+
+
+</body>
+</html>

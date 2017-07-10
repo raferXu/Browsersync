@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function multi(){
+    var n = {},stuff,j = 0,len=arguments.length;
+    for(j=0;j<len;j++){
+      stuff = arguments[j];
+      for(var i in stuff){
+        n[i] = stuff[i];
+      }
+    }
+    return n;
+  }
+  var shape = {
+    name:'shape',
+    toString:function(){return this.name;}
+  };
+  var two = {
+    name:'2D',
+    dimensions:2
+  };
+  var three = multi(shape,two,{
+    name:'three',
+    getArea:function(){return this.side*this.height/2;},
+    side:5,
+    height:10
+  });
+  console.log(three.getArea());
+</script>
+</body>
+</html>

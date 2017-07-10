@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript">
+//    window.onload事件是在文档内容完全加载完毕再去执行事件处理函数，当然文档流已经关闭了，
+// 这个时候执行doucment.writ()函数会自动调用document.open()函数创建一个新的文档流，
+// 并写入新的内容，再通过浏览器展现，这样就会覆盖原来的内容。
+
+//原来的文档内容并没有被清空，这是因为当前文档流是由浏览器所创建，并且document.wirte()函数身处其中，
+// 也就是执行此函数的时候文档流并没有被关闭，这个时候不会调用document.open()函数创建新文档流，所以也就不会被覆盖了。
+
+//文档流是由浏览器创建，无权限手动关闭，document.close()函数只能够关闭由document.open()函数创建的文档流。
+    window.onload = function () {
+      document.write('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"></head><body><h1>换成标题</h1></body></html>');
+    }
+  </script>
+  <link rel="stylesheet" href="http://192.168.0.88:8088/f/f3f038e4a0/?dl=1">
+</head>
+<body>
+<img src="http://192.168.0.88:8088/f/ee8e3fbf4e/?dl=1" alt="">
+
+</body>
+</html>

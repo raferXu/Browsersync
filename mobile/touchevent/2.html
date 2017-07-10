@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no">
+  <title>Title</title>
+  <style>
+    #div1{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+  /*
+  移动端三大事件：
+    手指按下：ontouchstart
+    手指移动：ontouchmove
+    手指抬起：ontouchend
+  */
+  var div = document.getElementById('div1');
+
+//  在移动端开发的时候浏览器的模拟器时好时坏，一般不用on的方式绑定时间函数，要用事件绑定方式addEventListener；
+//  div.ontouchstart = function () {
+//    alert(1);
+//  };
+
+//  div.addEventListener('touchstart',function () {
+//    console.log('按下');
+//  });
+//  div.addEventListener('touchmove',function () {
+//    console.log('移动');
+//  });
+
+  div.addEventListener('mouseup',function () {
+    //鼠标抬起mouseup时机比touchend要慢(300ms延迟)，
+    //而且当有移动move的时候不触发mouseup事件
+    console.log('鼠标抬起');
+  });
+  div.addEventListener('touchend',function () {
+    console.log('抬起');
+  });
+</script>
+</body>
+</html>

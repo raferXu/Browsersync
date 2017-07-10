@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .img2{
+      display: block;
+      float: left;
+      /*absolute能去除浮动*/
+      position: absolute;
+      /*IE7下运用absolute所有元素都会行内块，解决方案就是在绝对定位元素外面再套一层空的div即可*/
+    }
+  </style>
+</head>
+<body>
+<div class="out">
+  <img class="img1" src="../img/1.JPG" alt="">
+  <img class="img2" src="../img/2.JPG" alt="">
+  <img class="img3" src="../img/3.JPG" alt="">
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .out{
+      text-align: center;
+    }
+    img{
+      position: absolute;
+      width: 50px;
+      margin-left: -25px;
+    }
+    .fix{
+      width: 800px;
+      height: 1000px;
+      margin: 0 auto;
+      border: 1px solid red;
+      text-align: right;
+    }
+    .course{
+      display: inline;
+      position: fixed;
+      width: 30px;
+      margin-left: 20px;
+      bottom: 10px;
+    }
+    .icon{
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: url("../img/count.png");
+      background-size: 100%;
+    }
+    /*text-align对绝对定位元素不起作用，只对&nbsp;有作用，但因为绝对定位元素是相对于自身原来所在位置，即紧跟在空格后面，所以此位置图片左边缘相当于已经居中*/
+  </style>
+</head>
+<body>
+<div class="out">
+  &nbsp;
+  <img src="../img/1.JPG" alt="">
+</div>
+<div class="fix">
+  <div class="con">1234</div>
+
+  &nbsp;
+  <div class="course">
+    <a class="icon" href="#"></a><a class="icon" href="#"></a><a class="icon" href="#"></a>
+  </div>
+</div>
+</body>
+</html>

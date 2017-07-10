@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>把信息存储到你本地的计算机</title>
+</head>
+<body>
+和cookie相似，区别是它是为了更大容量存储设计的。
+Cookie的大小是受限的，并且每次你请求一个新的页面的时候cookie都会被发送过去。
+HTML5的storage是存储在你的计算机上，网站在页面加载完毕后可以通过Javascript来获取这些数据。
+本地存储和cookie一样提供了把数据保存到本地的能力，页面刷新或者关掉浏览器后，数据依然存在
+虽然不同浏览器的标准可能不一样，主流的一般都在5~10M，比cookie的4k强多了
+本地存储的数据不会被发到服务器，与cookie相比，节省带宽，加快响应速度
+
+建议是使用特征检查
+window.localStorage && window.localStorage.getItem
+
+key(i)：获取第i个数据的key
+可以像操作一个Object一样操作localStorage
+唯一不同的是，对于一个不存在的字段notExist，localStorage.getItem(‘notExist’)会返回null，
+而localStorage[‘notExist’]则返回undefined。
+本地存储只能存字符串数据，所有数据在写入的时候会被隐式调用toString方法转为字符串
+
+当本地存储满了，再往里面写数据，将会触发error（这点和cookie的表现不一样），
+因此一个严谨的脚本应该捕捉写localStorage的错误
+
+浏览器不支持本地存储怎么办
+对于IE6和IE7，有userData，可以提供最多1024kb的空间，
+虽然userData可以设置有效期，但是仍然存在写满报错的问题，
+并且userData创建的存储文件不能被枚举，因此需要人为地维护。
+另外还可以使用内嵌flash控件，使用flash的本地存储空间，flash默认提供100kb，使用更多需要用户授权。
+
+<script>
+
+  var FIVE_MB = new Array(5*1024*512).join('囧');
+  var FIVE_MB2 = new Array(5*1024*512).join('囧');
+  try{
+    localStorage.setItem('x',FIVE_MB);
+    localStorage.setItem('x2',FIVE_MB2);
+  }catch(e){
+    console.info('Oops');
+  }
+</script>
+</body>
+</html>

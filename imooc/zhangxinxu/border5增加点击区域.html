@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    input[type=checkbox]{
+      width: 36px;
+      height: 36px;
+    }
+    .checkbox{
+      /*firefox有点效果*/
+      /*chrome下面三行注释，只要把input宽高变大即可*/
+      border: 32px solid transparent;
+      outline: none;
+      box-shadow: inset 0 1px, inset 1px 0, inset -1px 0, inset 0 -1px;
+      background-color: #fff;
+      background-clip: content-box;
+      color: #d0d0d5;
+    }
+  </style>
+</head>
+<body>
+<input type="checkbox">
+<input type="checkbox" class="checkbox">
+</body>
+</html>

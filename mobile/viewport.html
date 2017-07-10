@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function () {
+      var w = window.screen.width;
+      var targetW = 320;
+      var scale = w / targetW;
+      var meta = document.createElement('meta');
+      meta.name = 'viewport';
+      meta.content='user-scalable=no,initial-scale='+scale+',minimum-scale='+scale+',maximum-scale='+scale+'';
+      document.head.appendChild(meta);
+    })();
+  </script>
+  <!--<meta name="viewport" content="user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">-->
+  <title>viewport适配</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    .box{
+      width: 80px;
+      height: 100px;
+      float: left;
+    }
+    .box1{
+      background-color: red;
+    }
+    .box2{
+      background-color: orange;
+    }
+    .box3{
+      background-color: green;
+    }
+    .box4{
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+<div class="box box1"></div>
+<div class="box box2"></div>
+<div class="box box3"></div>
+<div class="box box4"></div>
+</body>
+</html>

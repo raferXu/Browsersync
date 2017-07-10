@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<img src="http://192.168.0.88:8088/seafhttp/files/8edeb069-ee51-4d6c-9b4b-a03bc2a96505/colon1.JPG" alt="">
+<img src="http://192.168.0.88:8088/seafhttp/files/49025f0a-99c6-43b1-9728-1138845fc362/OK.png" alt="">
+<script>
+  window.onload = function () {
+    var i = 1;
+    var oImg = document.images[0];
+
+//    oImg.onclick = function () {
+//      i++;
+//      console.log(i);
+//      this.src = i + '.JPG';
+//    };
+//    oImg.onerror = function () {
+//      this.src = 'colon.JPG';
+//    };
+
+    oImg.onerror = function () {
+      this.onclick = function () {
+        this.src = 'colon.JPG';
+      };
+    };
+  }
+</script>
+</body>
+</html>

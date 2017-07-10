@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    html,body {
+      width:100vw;
+      min-height:100vh;
+      margin:0;
+      padding:0;
+    }
+    body {
+      display:grid;
+      grid-template-rows:150px auto 100px;
+      grid-template-columns:minmax(200px,3fr)9fr;
+      grid-template-areas:"header header"
+      "nav content"
+      "nav footer";
+    }
+    header {
+      grid-area:header;
+    }
+    nav {
+      grid-area:nav;
+    }
+  </style>
+</head>
+<body>
+  <header>header</header>
+  <nav>nav</nav>
+  <main>main</main>
+  <footer>footer</footer>
+</body>
+</html>

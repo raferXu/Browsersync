@@ -1,0 +1,320 @@
+
+<!DOCTYPE HTML>
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Tencent-TGideas">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <title>捕捉用户麦克风getUserMedia</title>
+  <style>
+    body,dl,dd,ul,li,p{margin: 0;padding: 0;font-size: 12px;line-height: 22px;font-family: arial}
+    body{width: 100%;overflow-x: hidden;}
+    h2,h3{margin: 0;padding: 0;}
+    h1{text-align: center;}
+    h2{margin-top: 10px;}
+    table{width: 100%;}
+    table td, table th{padding: 3px;}
+    table th{background-color: #cee;}
+    dl{margin-top: 10px;}
+    dl{padding: 3px;}
+    dt{font-weight: bold;}
+    dl dt{padding: 5px;background-color: #cee;}
+    video{display: block;height: 100px;margin: 10px auto;}
+    .fuc{padding: 10px;background-color: #eee;overflow: hidden;}
+    .fuc button{float: left;padding: 10px;}
+    .fuc .btn-end{float: right;}
+    .output{padding: 10px;text-align: center;}
+
+  </style>
+  <!-- 设计：brucewan | 重构：brucewan | 创建：2015-05-12 10:04:45 | 更新：| 团队博客：http://tgideas.qq.com/ -->
+</head>
+<body>
+<h1>捕捉用户麦克风getUserMedia</h1>
+<div class="fuc">
+  <button class="btn-start">开始录制 </button>
+  <button class="btn-end">结束录制 </button>
+</div>
+<p class="output">点击“开始录制”按钮开始录音</p>
+<div class="my-audio"></div>
+<h2>测试结果：</h2>
+<table>
+  <tr><th>系统支持：</th><td>android chrome，且有数据丢失</td></tr>
+  <tr><th>其它问题：</th><td>android audio不支持blob</td></tr>
+</table>
+
+<script src="../audio/shengwen/jquery-1.7.2.min.js"></script>
+<script>
+$(function () {
+  var voiceArr = [];
+  // lib
+  var $$ = function(className){return document.querySelector(className)};
+
+  // variables
+  var leftchannel = [];
+  var rightchannel = [];
+  var recorder = null;
+  var recording = false;
+  var recordingLength = 0;
+  var volume = null;
+  var audioInput = null;
+  var sampleRate = null;
+  var audioContext = null;
+  var context = null;
+  var outputElement = document.querySelector('.output');
+  var myAudio = document.querySelector('.my-audio');
+  var outputString;
+
+  // feature detection
+  if (!navigator.getUserMedia)
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+      navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
+  if (navigator.getUserMedia){
+    navigator.getUserMedia({audio:true}, success, function(e) {
+      alert('捕获失败！');
+    });
+  } else alert('不支持getUserMedia');
+
+  // if R is pressed, we start recording
+
+  $$('.btn-start').addEventListener('click', function(e){
+    recording = true;
+    // reset the buffers for the new recording
+    leftchannel.length = rightchannel.length = 0;
+    recordingLength = 0;
+    outputElement.innerHTML = '正在录制...';
+  });
+
+  $$('.btn-end').addEventListener('click', function(e){
+    // we stop recording
+    recording = false;
+
+    outputElement.innerHTML = '录制完成！';
+
+    // we flat the left and right channels down
+    var leftBuffer = mergeBuffers ( leftchannel, recordingLength );
+    var rightBuffer = mergeBuffers ( rightchannel, recordingLength );
+    // we interleave both channels together
+    var interleaved = interleave ( leftBuffer, rightBuffer );
+
+    // we create our wav file
+    var buffer = new ArrayBuffer(44 + interleaved.length * 2);
+
+    var view = new DataView(buffer);
+
+//    大部分多媒体文件都依循着一种结构来存放信息,称为资源互换文件格式(Resources Interchange File Format),简称RIFF。
+// 比如声音的WAV文件,视频的AVI文件,动画的MMM文件等均是由此结构衍生出来的.
+// 所以,要掌握多媒体文件格式,首先得认识RIFF的结构
+//    RIFF的结构
+//    其基本组成单位是chunk(即块),每个chunk由辨识码4Byte,数据大小4Byte和数据组成
+//    以"RIFF"和以"UST"为辨识码的chunk。针对这两种chunk,RIFF又从原先的"裸数据"中切出4Byte作为"格式辨别码",
+//    即由辨识码4Byte,数据大小4Byte,格式辨别码4Byte和数据组成
+//    RIFF的结构它相当于一个根目录,而格式辨识码则相当于具体的盘符如C:,D:等等.
+// Windows下的各种多媒体文件格式就如同在磁盘机下规定只能存放怎样的目录,而在该目录下仅能存放何种数据.
+
+//    WAV格式文件主要有两种文件头.
+//      标准的44字节文件头
+//          包含两个chunk:<fmt—chunk>,<wave—data>
+//      58字节文件头
+//          多了一个fact子块
+
+//    "data"子块中装的是真正的声音数据.
+//    PCM : WAVE_FORMAT_PCM一种数据格式,即脉冲编码调制(Pulse Code Modulation).
+
+//    通常解压缩后得到的文件仅仅是裸数据,不能正常播放声音.
+// 了解了WAV文件格式后,就可以按照标准的44字节格式,
+// 在解码数据前编写一个正确的WAV文件头,使其成为一个有效的WAV文件.
+
+//    WAVE文件是由若干个Chunk组成的。按照在文件中的出现位置包括：RIFF WAVE
+//    Chunk, Format Chunk, Fact Chunk(可选), Data Chunk。
+
+//    把字节数据格式化成wav的格式的过程
+    // RIFF chunk descriptor
+    writeUTFBytes(view, 0, 'RIFF');  //资源交换文件标志RIFF
+    view.setUint32(4, 44 + interleaved.length * 2, true);  //从下个地址开始到文件尾的总字节数,文件总长
+    writeUTFBytes(view, 8, 'WAVE');  //WAVE文件标志,WAV就是波形音频文件(Wave Audio)
+    // FMT sub-chunk
+    writeUTFBytes(view, 12, 'fmt ');  //波形格式标志，最后以为是空格
+    view.setUint32(16, 16, true);  //过滤字节,块长度
+    view.setUint16(20, 1, true);  //PCM格式种类，1表示线性PCM编码
+    // stereo (2 channels)
+    view.setUint16(22, 2, true);  //通道数，2表示双声道
+    view.setUint32(24, sampleRate, true);  //采样频率
+    view.setUint32(28, sampleRate * 4, true);  //数据传输速率，即每秒平均字节数
+    view.setUint16(32, 4, true);  //数据块对齐
+    view.setUint16(34, 16, true);  //每样本bit数
+    // data sub-chunk
+    writeUTFBytes(view, 36, 'data');  //data文件标志
+    view.setUint32(40, interleaved.length * 2, true);  //数据块总长
+
+    // write the PCM samples
+    var lng = interleaved.length;
+    var index = 44;
+    var volume = 1;
+    for (var i = 0; i < lng; i++){
+      //把原始麦克风采样完的数据，每四个字节为一段，乘以一个系数后，舍掉两个字节再保存
+      view.setInt16(index, interleaved[i] * (0x7FFF * volume), true);
+      index += 2;
+    }
+
+    var blob = new Blob ( [ view ], { type : 'audio/mpeg' } );
+//    console.log(blob);
+
+    // android chrome audio不支持blob
+    var reader = new FileReader();
+    reader.onload = function(event){
+//      console.log(reader.result);
+      var audio = window.document.createElement('audio');
+
+//      console.log(event.target.result.split(',')[1]);
+      var voiceSample = event.target.result.split(',')[1];
+      voiceArr.push(voiceSample);
+      if(voiceArr.length == 1){
+        alert('3段语音了，可以发请求了');
+//        {"speechText":"15915375","type":"register","appId":"10007","scene":"dmz_cll","serialNumber":"GOOD00001000420170425339876","userId":"u902341","voice1":""}
+//        {"data":{"returnCode":"201","returnMsg":"用户已注册","returnData":{"code":"201","msg":"用户已注册"},"returnFlag":"FAIL","serialNum":"FRS1497838478977BrrqU6m6"},"responseCode":"00","responseMsg":"操作成功"}
+//        var data = {"speechText":"245","type":"register","appId":"10007","scene":"dmz_cll","serialNumber":"GOOD00001000420170425339876","userId":"u902349","voice1":voiceArr[0],"voice2":voiceArr[1],"voice3":voiceArr[2]};
+
+        /*
+         var data = {"speechText":"15915375","type":"register","appId":"10007","scene":"dmz_cll","serialNumber":"GOOD00001000420170425339876","userId":"u902341","voice1":"","voice2":"","voice3":""}
+         data = JSON.stringify(data);
+         var xhr = new XMLHttpRequest();
+         xhr.open('POST','http://vprc-core.pingan.com.cn/vprc_core_portal/rest/api/register_new',true);
+         xhr.onreadystatechange = doResult;
+         xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+         xhr.setRequestHeader('Accept','application/json,text/plain');
+         xhr.send(data);
+
+         function doResult() {
+         if(xhr.readyState == 4){
+         if(xhr.status == 200){
+         console.log(xhr.responseText);
+         }
+         }
+         }
+         */
+
+        var remainData = {"speechText":"15915375","type":"register","appId":"10007","scene":"dmz_cll","serialNumber":"GOOD00001000420170425339876","userId":"u902341","voice1":"","voice2":"","voice3":""}
+        $.ajax({
+          type: 'POST',
+//          url: 'htt://vprc-core.pingan.com.cn/vprc_core_portal/rest/api/register_new',
+          url: 'https://test-vprc-core.pingan.com.cn:56443/vprc_core_portal/rest/api/register_new',
+//          dataType: 'json',
+          timeout: 5000,
+          beforeSend: function (xhr) {
+            xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+            xhr.setRequestHeader('Accept','application/json,text/plain');
+          },
+          data: JSON.stringify(remainData),
+          success: function (remainingChanceInfo) {
+            console.log(remainingChanceInfo);
+          },
+          error: function () {
+            console.log('Error');
+          }
+        })
+      }
+
+      audio.src = event.target.result;
+      audio.controls = true;
+      myAudio.appendChild(audio);
+    };
+    // 转换base64
+    reader.readAsDataURL(blob);
+
+  });
+
+//  双声道的文件，采样数据按时间先后顺序交叉地存入。
+  function interleave(leftChannel, rightChannel){
+    var length = leftChannel.length + rightChannel.length;
+    var result = new Float32Array(length);
+
+    var inputIndex = 0;
+
+    for (var index = 0; index < length; ){
+      result[index++] = leftChannel[inputIndex];
+      result[index++] = rightChannel[inputIndex];
+      inputIndex++;
+    }
+    return result;
+  }
+
+  function mergeBuffers(channelBuffer, recordingLength){
+    var result = new Float32Array(recordingLength);
+    var offset = 0;
+    var lng = channelBuffer.length;
+    for (var i = 0; i < lng; i++){
+      var buffer = channelBuffer[i];
+      result.set(buffer, offset);
+      offset += buffer.length;
+    }
+    return result;
+  }
+
+  function writeUTFBytes(view, offset, string){
+    var lng = string.length;
+    for (var i = 0; i < lng; i++){
+      view.setUint8(offset + i, string.charCodeAt(i));
+    }
+  }
+
+  function success(e){
+//    console.log('successFunctionEvent: '+window.URL.createObjectURL(e));
+    // creates the audio context
+    audioContext = window.AudioContext || window.webkitAudioContext;
+    context = new audioContext();
+
+    // we query the context sample rate (varies depending on platforms)
+    sampleRate = context.sampleRate;
+
+//    console.log('context.sampleRate: '+context.sampleRate);
+
+    // creates a gain node
+    volume = context.createGain();
+//    console.log(volume);
+
+    // creates an audio node from the microphone incoming stream
+    audioInput = context.createMediaStreamSource(e);
+
+    // connect the stream to the gain node
+    audioInput.connect(volume);
+
+    /* From the spec: This value controls how frequently the audioprocess event is
+     dispatched and how many sample-frames need to be processed each call.
+     Lower values for buffer size will result in a lower (better) latency.
+     Higher values will be necessary to avoid audio breakup and glitches */
+    var bufferSize = 2048;
+    recorder = context.createScriptProcessor(bufferSize, 2, 2);
+
+    recorder.onaudioprocess = function(e){
+      console.log('onaudioprocess');
+      if (!recording) return;
+      var left = e.inputBuffer.getChannelData (0);
+      var right = e.inputBuffer.getChannelData (1);
+//      console.log('left: '+left);
+      // we clone the samples
+      leftchannel.push (new Float32Array (left));
+      rightchannel.push (new Float32Array (right));
+      recordingLength += bufferSize;
+    };
+
+    // we connect the recorder
+    volume.connect (recorder);
+    recorder.connect (context.destination);
+  }
+
+//  样本大小      数据格式            最小值    最大值
+//  8位PCM       unsigned int         0       225
+//  16位PCM      int                -32767    32767
+});
+
+
+</script>
+</body>
+</html>
+
+<!--[if !IE]>|xGv00|3b026421f8e2440e34087c5f1a1c846d<![endif]-->

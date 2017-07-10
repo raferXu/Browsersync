@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no">
+  <title>移动端的点透问题</title>
+  <style>
+    #div1{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: .5;
+    }
+  </style>
+</head>
+<body>
+<a href="https://www.baidu.com">点我呀</a>
+<div id="div1">
+</div>
+<script>
+  /*
+    移动端的点透问题：
+      当上层元素发生点击的时候，下层元素也有点击特性；
+      300ms之后，如果上层元素消失或者隐藏，目标点就会漂移到下层元素身上，触发点击行为
+
+    解决方法：
+      阻止pc事件，即对touchstart添加e.preventDefault();
+
+   e.preventDefault()的利弊：
+   好处：
+    IOS10设置meta禁止用户缩放是不可行，但是e.preventDefault()可以解决此问题;
+    解决IOS10移除隐藏的问题;
+    禁止系统默认的滚动条\橡皮筋效果;
+    禁止长按选中文字或图片;
+    解决点透问题;
+   弊端：
+    也阻止了焦点元素获取焦点;
+      可以通过给焦点元素阻止冒泡e.stopPropagation()来解决;
+
+  */
+  document.addEventListener('touchstart',function (e) {
+    e.preventDefault();
+  });
+
+  var div = document.getElementById('div1');
+  div.addEventListener('touchend',end);
+  function end() {
+    this.style.display = 'none';
+  }
+</script>
+</body>
+</html>

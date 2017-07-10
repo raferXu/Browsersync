@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /*宽高满屏效果*/
+    .overlaly1{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+    .overlay2{
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      /*这里没有设置宽高也能实现，因为absolute的拉伸和宽高是可以相互替代的*/
+      /*即绝对定位方向的爆裂拉伸特性*/
+      /*IE7及以上才兼容*/
+      /*position: absolute;left: 0;top: 0;width: 50%;*/
+      /*等同于*/
+      /*position: absolute;left: 0;top: 0;right: 50%;*/
+      /*同理，实现距离右侧200像素的全屏自适应的容器层*/
+      /*使用拉伸直接*/
+      /*position:absolute;left:0;right:200px;*/
+      /*而用width只能使用CSS3 calc计算*/
+      /*position:absolute;left:0;width:calc(100%-200px);*/
+    }
+  </style>
+</head>
+<body>
+
+</body>
+</html>

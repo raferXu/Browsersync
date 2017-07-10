@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<img src="http://192.168.0.88:8088/seafhttp/files/286c3dfe-c849-4dfc-9234-cf659e36d6ae/billIcon.png" alt="">
+<script>
+  var token;
+  var invocation = new XMLHttpRequest();
+  var url = 'http://192.168.0.88:8088/api2/auth-token/';
+  function getSeafileApiToken() {
+    if(invocation) {
+      invocation.open('POST', url, false);
+      invocation.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      invocation.onreadystatechange = function() {
+        if(invocation.readyState == 4 && invocation.status == 200) {
+          console.log(invocation.responseText);
+          var tokenJson = JSON.parse(invocation.responseText);
+          token = tokenJson.token;
+
+          document.cookie="remember_user_token="+token;
+        }
+      };
+
+      invocation.send("username=raferxu@163.com&password=xu3109000026");
+    }
+  }
+
+  getSeafileApiToken();
+/*
+  var invocation2 = new XMLHttpRequest();
+  var url = 'http://192.168.0.88:8088/api2/account/info/';
+  function getAccountInfo() {
+    if(invocation2) {
+      invocation2.open('GET', url, true);
+      invocation2.setRequestHeader("Authorization", token);
+      invocation2.setRequestHeader("Accept", "application/json;indent=4");
+      invocation2.onreadystatechange = function() {
+        if(invocation2.readyState == 4 && invocation2.status == 200) {
+          console.log(invocation2.responseText);
+        }
+      };
+
+      invocation2.send(null);
+    }
+  }
+
+  getAccountInfo();
+  */
+
+</script>
+</body>
+</html>
