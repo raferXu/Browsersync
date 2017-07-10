@@ -1,5 +1,60 @@
 <link rel="stylesheet" href="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common.css">
-<link rel="stylesheet" href="http://192.168.0.122:3000/Browersync/zhongbao3/h5/codeLock3.css">
+<link rel="stylesheet" href="http://192.168.0.122:3000/Browersync/zhongbao3/h5/zb.css">
+<style>
+    #keyboardWrap{
+        /*display:none;*/
+        width:100%;
+        height:100%;
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        background:rgba(0,0,0,.3);
+        color:#ff6000;
+        text-align:center;
+        font-size:.24rem;
+        z-index:9999;
+    }
+    .keyboard{
+        position:absolute;
+        bottom:0;
+        left:0;
+        width:100%;
+        padding: .1rem .2rem;
+        background:rgba(255,255,255,1);
+    }
+    .keyboardT{
+        height: .2rem;
+        text-align: right;
+    }
+    #arrowDown{
+        position: relative;
+    }
+    #arrowDown:after, #arrowDown:before {
+        border: 10px solid transparent;
+        border-top: 10px solid #fff;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: -.2rem;
+        content: ' '
+    }
+    #arrowDown:before {
+        border-top-color: #f00;
+        top: 2px;
+    }
+    .keyboardM{
+
+    }
+    .keyboardL{
+        width: 40%;
+    }
+    .keyboardR{
+        width: 40%;
+    }
+</style>
 <div class="row skeleton">
     <header><h1 class="tc fwn">平安众包</h1></header>
     <main>
@@ -19,12 +74,7 @@
                              <img id="taskGuide" src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/taskGuide.png" alt="taskGuide">
                         </span>
                     </nav>
-                    <div class="showInfo">
-                        <div class="codeLockWrap" id="codeLockWrap">
-                            <input class="ansNum" id="n1" value="0" type="number"/><input class="ansNum" id="n2" value="1" type="number"/><input class="ansNum" id="n3" value="2" type="number"/><input class="ansNum" id="n4" value="3" type="number"/><input class="ansNum" id="n5" value="4" type="number"/>
-                            <input class="ansNum" id="n6" value="5" type="number"/><input class="ansNum" id="n7" value="6" type="number"/><input class="ansNum" id="n8" value="7" type="number"/><input class="ansNum" id="n9" value="8" type="number"/><input class="ansNum" id="n10" value="9" type="number"/>
-                        </div>
-                    </div>
+                    <input style="background-color:#fff" id="answerInput" type="text" class="showInfo tc bsb" disabled="disabled">
                     <p class="textTip tc">请适当修改，保证文本输入框与图片内容一致</p>
                     <div id="btns" class="btns">
                         <input id="indistinct" type="button" class="next tc bsb" value="看不清">
@@ -86,6 +136,56 @@
         <p style="width:100%;height:.8rem;line-height:.8rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">数据获取失败。</p>
     </div>
 </div>
+<div id="keyboardWrap" style="">
+    <div class="keyboard" style="">
+        <div class="keyboardT">
+            <span id="arrowDown"></span>
+        </div>
+        <div class="keyboardM">
+            <div class="keyboardL">
+                <div class="row">
+                    <div>万</div>
+                    <div>仟</div>
+                    <div>佰</div>
+                </div>
+                <div class="row">
+                    <div>角</div>
+                    <div>分</div>
+                    <div>拾</div>
+                </div>
+                <div class="row">
+                    <div>圆</div>
+                    <div>元</div>
+                </div>
+                <div class="row">
+                    <div>整</div>
+                </div>
+            </div>
+            <div class="keyboardR">
+                <div class="row">
+                    <div>壹</div>
+                    <div>贰</div>
+                    <div>叁</div>
+                </div>
+                <div class="row">
+                    <div>肆</div>
+                    <div>伍</div>
+                    <div>陆</div>
+                </div>
+                <div class="row">
+                    <div>柒</div>
+                    <div>捌</div>
+                    <div>玖</div>
+                </div>
+                <div class="row">
+                    <div>零</div>
+                    <div>X</div>
+                </div>
+            </div>
+        </div>
+        <div class="keyboardB"></div>
+    </div>
+</div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -103,14 +203,14 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/inputSwipe.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/num.js"></script>
+<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/zb.js"></script>
 <script type="text/javascript">
     pybossa.presentTask(function(task, deferred) {
       if ( !$.isEmptyObject(task) ) {
         console.log('运行presentTask函数时拿到的任务为: '+task);
+        console.log(task);
         imgHandleFn(task);
-        setInputVal(task,10,'0123456789',blockStr);
+        setInputVal(task);
 //获取token
         var jobTaskLoadedTimer = setInterval(function() {
           if(jobTaskLoaded){
@@ -133,7 +233,7 @@
                 if(!window.navigator.onLine){
                   $('#offLine').show();
                 }else{
-                  var answer = touchstartWhich ? {"text": '看不清'} : {"text": getCurStr()};
+                  var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
                   normalSubmit(task,answer,tokenStr,interface,deferred);
                 }
               });
@@ -148,5 +248,5 @@
         console.log('只加载本次任务，不会出现这个日志');
       }
     });
-    pybossa.run('sn');
+    pybossa.run('total');
 </script>

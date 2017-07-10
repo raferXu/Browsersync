@@ -203,3 +203,18 @@
 .android-ics.light .dwwms .dw-li:after {
     text-shadow: 0 0 5px #31b6e7;
 }
+
+.android-ics .dwv{
+    color: #ff6000;
+    border-bottom-color: #ff6000;
+}
+.dwl{
+    color: #ff6000;
+}
+.android-ics .dw .dwwol{
+    border-top-color: #ff6000;
+    border-bottom-color: #ff6000;
+}
+.dwo{
+    opacity: .5;
+}

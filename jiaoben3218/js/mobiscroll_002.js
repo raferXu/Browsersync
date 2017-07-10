@@ -570,6 +570,11 @@
                     if (that.hide(false, 'set') !== false) {
                         that.setValue(false, true);
                         event('onSelect', [that.val]);
+                        blockStr.str = that.val;
+                      for(var i=0;i<8;i++) {
+                        var aInput = $('#codeLockWrap input.ansNum');
+                        aInput[i].value = blockStr.str[i];
+                      }
                     }
                 });
 
@@ -813,7 +818,8 @@
     }
     
     function calc(t, val, dir, anim, orig) {
-        val = constrain(val, min, max);
+
+      val = constrain(val, min, max);
 
         var cell = $('.dw-li', t).eq(val),
             o = orig === undefined ? val : orig,
@@ -824,8 +830,9 @@
         inst.temp[idx] = cell.attr('data-val');
         
         inst.scroll(t, idx, val, time, orig);
-        
-        setTimeout(function () {
+      // console.log(t, idx, val, time, orig);
+
+      setTimeout(function () {
             // Validate
             inst.validate(idx, dir, time, orig);
         }, 10);

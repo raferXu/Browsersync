@@ -6,3 +6,7 @@ function setInputVal(task) {
   var str = task.info.alg_answer || '';
   $('.showInfo').val(str);
 }
+
+$('#answerInput').off(touchstart).on(touchstart, function() {
+  $('#keyboard').show();
+});
