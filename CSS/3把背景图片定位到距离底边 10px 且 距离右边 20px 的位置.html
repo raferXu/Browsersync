@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>把背景图片定位到距离底边 10px 且 距离右边 20px 的位置</title>
+</head>
+<body>
+仍然以左上角偏移的思路来考虑,
+其实 就是希望它有一个100% - 20px的水平偏移量,以及100% - 10px的垂直 偏移量。
+谢天谢地,calc() 函数允许我们执行此类运算,
+它可以完美地在 background-position 属性中使用:
+
+background: url("code-pirate.svg") no-repeat;
+background-position: calc(100% - 20px) calc(100% - 10px);
+
+请不要忘记在 calc() 函数 内部的 - 和 + 运算符的两侧各加 一个空白符,
+否则会产生解析错 误!这个规则如此怪异,是为了 向前兼容:
+未来,在 calc() 内部 可能会允许使用关键字,而这些 关键字可能会包含连字符(即减 号)。
+
+</body>
+</html>

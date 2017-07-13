@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+padding: 10px;
+background: url(code-pirate.svg) no-repeat #58a;
+background-position: right 10px bottom 10px;
+每次改动内边距的值时,我们都需要在三个地方更新这个值!
+
+
+默认情况下,background-position 是以 padding box 为准的,这样边 框才不会遮住背景图片。因此,top left默认指的是padding box的左上 角。
+
+padding: 10px;
+background: url("code-pirate.svg") no-repeat #58a bottom right; /* 或 100% 100% */
+background-origin: content-box;
+</body>
+</html>

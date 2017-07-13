@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .callout { position: relative; width: 200px; height: 80px; background-color: red; border: 1px solid green;}
+    .callout::before { content: "";
+      position: absolute;
+      top: -.4em; left: 1em; padding: .35em; background: inherit; border: inherit; border-right: 0; border-bottom: 0; transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+要把 表单元素的字体设定为与页面的其他部分相同,你并不需要重复指定字体属 性,只需利用 inherit 的特性即可:
+input, select, button { font: inherit; }
+
+要把超链接的颜色设定为与页面中其他文本相同,还是要用 inherit:
+a { color: inherit; }
+
+在创建提 示框的时候,你可能希望它的小箭头能够自动继承背景和边框的样式
+<div class="callout"></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{width: 300px;height: 200px;}
+    div{
+      background: yellowgreen;
+      border: 10px solid #655;
+      outline: 5px solid deeppink;
+    }
+    .o{border-radius: 25px}
+    .p{outline-offset: -25px}
+    .q{outline-offset: 10px}
+  </style>
+</head>
+<body>
+<div></div>
+<div class="o"></div>
+<div class="p"></div>
+<div class="q"></div>
+
+有一些需要注意的地方。
+如上所述,它只适用于双层“边框”的场景,因为 outline 并不能 接受用逗号分隔的多个值。
+边框不一定会贴合 border-radius 属性产生的圆角,因此如果元素 是圆角的,它的描边可能还是直角的
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>按钮定制</title>
+  <style>
+    button {
+      padding: .3em .8em;
+      border: 1px solid rgba(0,0,0,.1);
+      background: #58a linear-gradient(hsla(0,0%,100%,.2),
+      transparent);
+      /*推 荐 使 用 HSLA 而 不 是 RGBA 来产生半透明的白色,因 为它的字符长度更短,敲起来也 更快。这归功于它的重复度更低。*/
+      border-radius: .2em;
+      box-shadow: 0 .05em .25em rgba(0,0,0,.5); color: white;
+      text-shadow: 0 -.05em .05em rgba(0,0,0,.5);
+      font-size: 125%; line-height: 1.5;
+    }
+    button.cancel { background-color: #c00;
+    }
+    button.ok { background-color: #6b0;
+    }
+  </style>
+</head>
+<body>
+padding: 6px 16px;
+border: 1px solid #446d88;
+background: #58a linear-gradient(#77a0bb, #58a); border-radius: 4px;
+box-shadow: 0 1px 5px gray;
+color: white;
+text-shadow: 0 -1px 1px #335166;
+font-size: 20px;
+line-height: 30px;
+
+这段代码在可维护性方面存在一些问题
+如果我们决定改变字号11(可能是为了生成 一个更大、更重要的按钮),就得同时调整行高,因为这两个属性都写成了 绝对值。
+当某些值相互依赖时,应该把 它们的相互关系用代码表达出来。
+
+在这个例子中,行高是字号的 1.5 倍。因 此,把代码改成下面这样会更易维护:
+font-size: 20px;
+line-height: 1.5;
+
+为什么还把字号定为绝对长度值呢?
+font-size: 125%; /* 假设父级的字号是 16px */
+line-height: 1.5;
+
+假设我们要创建一个红色的取消按钮,或者一个绿 色的确定按钮,该怎么做呢?
+其实只要把半透明的黑色或白色叠加在主色调上,即可产生主色调的亮 色和暗色变体,这样就能简单地化解这个难题了:
+
+<button class="ok">OK</button>
+<button class="cancel">cancel</button>
+
+
+
+
+</body>
+</html>
