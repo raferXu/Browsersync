@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<ul id="wrap">
+  <li>item1</li>
+  <li>item2</li>
+  <li>item3</li>
+  <li>item4</li>
+  <li>item5</li>
+</ul>
+<script src="js/jquery.1.7.2.min.js"></script>
+<script>
+  $(function(){
+
+    // 普通事件
+    $('li').click(function(){
+      $(this).css('background', '#D4DFE6');
+    });
+
+
+    // 动态添加DOM节点
+    $('#addBtn').click(function(){
+      $('#wrap').append( $('<li>item'+ ($('li').length + 1) +'</li>') );
+    });
+
+    /**
+     * 事件委托
+     */
+
+    // jQuery 1.9已废弃
+    /*$('li').live('click', function(){
+     $(this).css('background', '#D4DFE6');
+     });*/
+
+    // jQuery的delegate写法
+    $('#wrap').delegate('li', 'click', function(ev){
+
+      // this 指向委托的对象 li
+      $(this).css('background', '#D4DFE6');
+
+      // 找到父级 ul#wrap
+      $(ev.delegateTarget).css('border', '2px solid #f00');
+    });
+
+    // jQuery的on的写法
+    $('#wrap').on('click', 'li', function(ev) {
+      // this 指向委托的对象 li
+      $(this).css('background', '#D4DFE6');
+
+      // 找到父级 ul#wrap
+      $(ev.delegateTarget).css('border', '2px solid #f00');
+    })
+
+
+    // js原生写法
+    var _wrap = document.getElementById('wrap');
+    _wrap.addEventListener('click', function(ev){
+      var ev = ev || event;
+      if( ev.target.nodeName == 'LI' ) {
+        ev.target.style.background = '#8EC0E4';
+        console.log( ev.target.innerHTML );
+      }
+
+      // 找到父级 ul#wrap
+      this.style.border = '2px solid #f00';
+    });
+
+  });
+</script>
+</body>
+</html>

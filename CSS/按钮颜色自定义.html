@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    button {
+      padding: .3em .8em;
+      border: 1px solid rgba(0,0,0,.1);
+      background: #58a linear-gradient(hsla(0,0%,100%,.2),
+      transparent);
+      /*推 荐 使 用 HSLA 而 不 是 RGBA 来产生半透明的白色,因 为它的字符长度更短,敲起来也 更快。这归功于它的重复度更低。*/
+      border-radius: .2em;
+      box-shadow: 0 .05em .25em rgba(0,0,0,.5); color: white;
+      text-shadow: 0 -.05em .05em rgba(0,0,0,.5);
+      font-size: 125%; line-height: 1.5;
+    }
+    button.cancel { background-color: #c00;
+    }
+    button.ok { background-color: #6b0;
+    }
+  </style>
+</head>
+<body>
+<button class="ok">OK</button>
+<button class="cancel">cancel</button>
+</body>
+</html>

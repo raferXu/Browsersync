@@ -14,6 +14,8 @@ var gToken, gInterface;
 var getCurStr=function(){};
 var jobTaskLoaded = false;
 var touchstart = 'touchstart';
+var touchmove = 'touchmove';
+var touchend = 'touchend';
 var isMobile;
 var getDataFailTimer = setTimeout(function () {
   if(!loadImg || !getStr){
@@ -50,6 +52,8 @@ function device() {
   isMobile = /Mobile/i.test(navigator.userAgent);
   if(!isMobile){
     touchstart = 'click';
+    touchend = 'mouseup';
+    touchmove = 'mousemove';
   }else{
   }
 }
@@ -178,46 +182,6 @@ window.onerror = function (msg,url,l) {
     _fetchProject(projectname).done(function(project) {
       //_fetchProject返回的是一个xhr对象,请求成功后返回的data[0]是一个含id、short_name、presenter等的project对象
       project = project[0];
-      /*
-       function getNextTask(offset, previousTask) {
-       offset = offset || 0;
-       var def = $.Deferred();
-       var taskId = myTaskId.id;  //第一次为空,loop中的getNextTask执行后才有值
-       var xhr = _fetchNewTask(project.id, offset);
-       // _fetchNewTask返回的是xhr对象,成功后返回的数据是一个含id、project_id、url等的对象
-       xhr.done(function(task) {
-       // alert('task.id: '+task.id);  //920   920      950   972
-       // alert(previousTask);         //undefined  object   undefined  object
-       if (previousTask && task.id === previousTask.id) {
-       def.resolve(task);
-       // 因为匿名下调用_fetchNewTask返回的任务同一project都是同一task，所以也不必_resolveNextTaskLoaded同一个任务，直接resolve
-       }
-       else {
-       // alert(111);    登录后会弹出两次111
-       _resolveNextTaskLoaded(task, def);
-       }
-       });
-       return def.promise();  //返回的是_resolveNextTaskLoaded第二参数deferred的状态
-       }
-       function loop(task) {
-       // getNextTask返回的是_resolveNextTaskLoaded第二参数deferred的状态
-       // nextLoaded是_resolveNextTaskLoaded的状态,即由taskLoaded里的第二参数deferred状态决定
-       var nextLoaded = getNextTask(1, task),
-       taskSolved = $.Deferred();
-       if(task.id) myTaskId.id = task.id;
-
-       // 这里_presentTask已经被赋值为了pybossa.presentTask的参数函数,所以实质是调用了参数函数
-       // 即运行presentTask的参数函数
-       // presentTask里的saveTask函数运行后才会触发taskSolved完成状态
-       _presentTask(task, taskSolved);
-
-       // 第二次及以后只有taskLoaded和presentTask的第二参数deferred状态改变成功后才会loop
-       // loop参数是从nextLoaded那里得到的
-       $.when(nextLoaded, taskSolved).done(loop);
-       }
-       //第一次触发loop是当taskLoaded里的deferred状态成功后,即出现deferred.resolve()即可触发
-       getNextTask(0, undefined).done(loop);
-       */
 
       function getNextTask(offset, previousTask) {
         offset = offset || 0;
@@ -233,7 +197,6 @@ window.onerror = function (msg,url,l) {
             // 因为匿名下调用_fetchNewTask返回的任务同一project都是同一task，所以也不必_resolveNextTaskLoaded同一个任务，直接resolve
           }
           else {
-            // alert(111);    登录后会弹出两次111
             _resolveNextTaskLoaded(task, def);
             def.done(function () {
               _presentTask(task, taskSolved);
@@ -259,7 +222,15 @@ window.onerror = function (msg,url,l) {
     return _saveTaskRun(JSON.stringify(taskrun));
   };
   pybossa.run = function (projectname, _window) {
-    token = $("#token").data("token");
+    if(isMobile){
+      token = $("#token").data("token");
+      tokenStr = token;
+    }else{
+      // token = localStorage.getItem('token');
+      token = location.search.split('?')[1];
+      console.log('token: '+token);
+      tokenStr = location.search.split('?')[1];
+    }
     _run(projectname, _window);
   };
   //pybossa.taskLoaded和pybossa.presentTask的调用都只是赋值而已,真正的运行都是在run里
@@ -302,7 +273,6 @@ window.onerror = function (msg,url,l) {
         this.update();
         // default enable.
         this.enable();
-
       },
       sum = function (a, b) {
         return a + b;
@@ -1118,19 +1088,29 @@ function imgLoaded(img) {
   return img.complete && img.naturalHeight !== 0;
 }
 function getTokenAndPort() {
-  var tokenStr = sessionStorage.getItem("token") || null;
-  var interface = sessionStorage.getItem("url") || null;
-  var receiveNativeTokenJson;
-  if(!tokenStr || !interface){
-    receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
-    tokenStr = receiveNativeTokenJson['token'];
-    interface = receiveNativeTokenJson['url'];
-    sessionStorage.setItem("token",tokenStr);
-    sessionStorage.setItem("url",interface);
-  }
+  // alert('getTokenAndPort: '+tokenStr);
+
+  // var tokenStr = sessionStorage.getItem("token") || null;
+  // var interface = sessionStorage.getItem("url") || null;
+  // var receiveNativeTokenJson;
+  // if(!tokenStr || !interface){
+  //   receiveNativeTokenJson = JSON.parse(jobTask.receiveNativeToken());
+  //   tokenStr = receiveNativeTokenJson['token'];
+  //   interface = receiveNativeTokenJson['url'];
+  //   sessionStorage.setItem("token",tokenStr);
+  //   sessionStorage.setItem("url",interface);
+  // }
+  // alert(location.origin==interface);
+  // gToken = tokenStr;
+  // gInterface = interface;
+  // return {'tokenStr':tokenStr,'interface':interface};
+
+  var interface = location.origin;
   gToken = tokenStr;
   gInterface = interface;
+
   return {'tokenStr':tokenStr,'interface':interface};
+
 }
 //按下软键盘确认键后收起键盘
 $('.showInfo').bind('keydown', function (e) {
@@ -1145,6 +1125,7 @@ $('.showInfo').bind('keydown', function (e) {
 // taskLoad2.js
 pybossa.taskLoaded(function(task, deferred) {
   if ( !$.isEmptyObject(task) ) {
+    // alert($("#token").data("token"));
     console.log('运行taskLoaded函数时拿到的任务为: '+task);
     console.log(task);
 
@@ -1182,6 +1163,8 @@ pybossa.taskLoaded(function(task, deferred) {
                 console.log('/token/img接口timeout');
                 getImgAjax.abort();
                 getImgFn();
+              }else{
+                deferred.resolve(task);
               }
             }
           });
@@ -1310,6 +1293,7 @@ function imgCallback(img) {
 function imgHandleFn(task) {
   // 确保图片加载完成及执行的回调
   var imgLoadTimer = setInterval(function () {
+    alert($('.billImg')[0]);
     if(imgLoaded($('.billImg')[0])){
       clearInterval(imgLoadTimer);
       imgCallback($('.billImg')[0]);
@@ -1525,7 +1509,6 @@ function noTokenHandle() {
 //submit.js
 function normalSubmit(task,answer,tokenStr,interface,deferred) {
   if (answer["text"]) {
-    // alert(answer["text"]);
     pybossa.saveTask(task, answer).done(function() {
       $('.pinch-zoom-container').css('height','auto');
       deferred.resolve();

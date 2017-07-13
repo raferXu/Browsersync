@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      width: 100px;
+      height: 60px;
+      background: tan;
+      border-radius: .8em;
+      padding: 1em;
+      box-shadow: 0 0 0 .4em #655;
+      /*按需调整box-shadow的第四个值*/
+      outline: .6em solid #655;
+    }
+    /*基本上受益于两个事实:描边并不会跟着元素的圆角走(因而显示出直角, 参见图 2-16),但 box-shadow 却是会的(参见图 2-17)。因此,如果我们 把这两者叠加到一起,box-shadow 会刚好填补描边和容器圆角之间的空隙, 这两者的组合达成了我们想要的效果。*/
+  </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

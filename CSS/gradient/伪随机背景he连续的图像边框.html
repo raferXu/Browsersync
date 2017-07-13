@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      width: 500px;
+      height: 150px;
+    }
+    .one{
+      background: linear-gradient(90deg,
+      #fb3 15%, #655 0, #655 40%,
+      #ab4 0, #ab4 65%, hsl(20, 40%, 90%) 0); background-size: 80px 100%;
+    }
+    .one2{
+      background: hsl(20, 40%, 90%); background-image:
+        linear-gradient(90deg, #fb3 10px, transparent 0),
+        linear-gradient(90deg, #ab4 20px, transparent 0),
+        linear-gradient(90deg, #655 20px, transparent 0);
+      background-size: 80px 100%, 60px 100%, 40px 100%;
+    }
+    .one3{
+      background: hsl(20, 40%, 90%); background-image:
+        linear-gradient(90deg, #fb3 11px, transparent 0),
+        linear-gradient(90deg, #ab4 23px, transparent 0),
+        linear-gradient(90deg, #655 41px, transparent 0);
+      background-size: 41px 100%, 61px 100%, 83px 100%;
+    }
+    .two{
+      padding: 1em;
+      border: 1em solid transparent;
+      background: linear-gradient(white, white) padding-box,
+      repeating-linear-gradient(-45deg,
+          red 0, red 12.5%,
+          transparent 0, transparent 25%,
+          #58a 0, #58a 37.5%,
+          transparent 0, transparent 50%)
+      0 / 5em 5em;
+    }
+    .two2{
+      padding: 1em;
+      border: 16px solid transparent;
+      border-image: 16 repeating-linear-gradient(-45deg,
+      red 0, red 1em,
+      transparent 0, transparent 2em,
+      #58a 0, #58a 3em,
+      transparent 0, transparent 4em);
+    }
+    @keyframes ants { to { background-position: 100% } }
+    .marching-ants { padding: 1em;
+      border: 1px solid transparent; background:
+        linear-gradient(white, white) padding-box,
+        repeating-linear-gradient(-45deg,
+        black 0, black 25%, white 0, white 50%
+        ) 0 / .6em .6em;
+      animation: ants 12s linear infinite; }
+      .three{
+        border-top: .2em solid transparent;
+        border-image: 100% 0 0 linear-gradient(90deg,
+        currentColor 4em,
+        transparent 0);
+        padding-top: 1em;
+      }
+  </style>
+</head>
+<body>
+<div class="one"></div>
+<hr>
+<div class="one2"></div>
+<hr>
+<div class="one3"></div>
+<hr>
+<div class="two"></div>
+<hr>
+<div class="two2"></div>
+不过 border-image 方法存在一些问题。
+ 每当我们改变 border-image-slice 时,都需要同时修改 border-
+width 来让它们相互匹配。 由于我们不能在border-image-slice属性中使用em单位,只能把
+图 2-60 现实世界里的老式信封
+边框厚度指定为像素单位。
+ 条纹的宽度需要在色标的位置信息中写好,因此我们在改变条纹宽 小提示
+度时,需要修改四处
+<hr>
+<div class="marching-ants"></div>
+<hr>
+假设我们需要一个顶部边框被裁切的效果,就像 一般的脚注那样。我们所需要的就是 border-image 属性再加上一条由渐 变生成的垂直条纹,并把要裁切的长度在渐变中写好。边框线的粗细交给 border-width 来控制。
+<div class="three"></div>
+<hr>
+</body>
+</html>

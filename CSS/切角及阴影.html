@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .one{
+      width: 400px;
+      height: 250px;
+      border: 1px solid red;
+      background: #58a; background:
+        linear-gradient(135deg,  transparent 87px, #58a 0)
+        top left,
+        linear-gradient(-135deg, transparent 0px, #58a 0)
+        top right,
+        linear-gradient(-45deg, transparent 0px, #58a 0)
+        bottom right,
+        linear-gradient(45deg, transparent 87px, #58a 0)
+        bottom left;
+      background-size: 50% 50%; background-repeat: no-repeat;
+    }
+    .two{
+      width: 100px;
+      height: 60px;
+      border: 1px solid red;
+      position: relative;
+    }
+    s{
+      position:absolute;
+      top:-20px;
+      *top:-22px;
+      left:20px;
+      display:block;
+      height:0;
+      width:0;
+      font-size: 0;
+      line-height: 0;
+      border-color:transparent transparent #666 transparent;
+      border-style:dashed dashed solid dashed;
+      border-width:10px;
+    }
+    i{position:absolute;
+      top:-9px;
+      *top:-9px;
+      left:-10px;
+      display:block;
+      height:0;
+      width:0;
+      font-size: 0;
+      line-height: 0;
+      border-color:transparent transparent #fff transparent;
+      border-style:dashed dashed solid dashed;
+      border-width:10px;
+    }
+    .text{
+      position: absolute;
+      border: 1px solid red;
+      border-left: none;
+      padding: 3px 12px;
+      left: 26px;
+      top: 12px;
+    }
+    .arrow{
+      top: 17px;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 1px solid red;
+      border-right: none;
+      border-top: none;
+      transform: rotate(45deg);
+      left: 15px;
+    }
+    .three{
+      box-sizing: border-box;
+      width: 100px;
+      height: 60px;
+      border: 1px solid red;
+      padding: 15px 25px;
+    }
+    .my{
+      position: relative;
+      box-sizing: border-box;
+      display: inline-block;
+      width: 50px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border: 1px solid red;
+      border-left-color: transparent;
+      background-color: white;
+      filter: drop-shadow(1px 2px 2px #aaa);
+    }
+    .my:before{
+      position: absolute;
+      top: 3px;
+      left: -11px;
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border: 1px solid red;
+      transform: rotate(45deg);
+      border-right-color: transparent;
+      border-top-color: transparent;
+    }
+  </style>
+</head>
+<body>
+<div class="one"></div>
+<hr>
+<div class="two">
+  <s>
+    <i></i>
+  </s>
+  <span class="arrow"></span>
+  <span class="text">X</span>
+</div>
+<div class="three">
+  <span class="my">X</span>
+</div>
+</body>
+</html>

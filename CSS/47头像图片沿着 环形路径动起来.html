@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    @keyframes spin {
+      to { transform: rotate(1turn); }
+    }
+
+    .avatar {
+      animation: spin 3s infinite linear;
+      transform-origin: 50% 250px;
+    }
+
+    .avatar > img {
+      animation: inherit;
+      animation-direction: reverse;
+    }
+
+    /* Anything below this is just styling */
+
+    .avatar {
+      width: 70px;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .avatar > img {
+      display: block;
+      width: inherit;
+    }
+
+    .path {
+      width: 500px; height: 500px;
+      padding: 30px;
+      border-radius: 50%;
+      background: #fb3;
+    }
+  </style>
+</head>
+<body>
+<div class="path">
+  <div class="avatar">
+    <img src="../zhongbao3/H5/count.png" />
+  </div>
+</div>
+</body>
+</html>

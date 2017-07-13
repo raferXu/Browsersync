@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+要 为一个元素添加一道 10px 宽的边框,但左侧不加边框。
+border-width: 10px 10px 10px 0;
+只要这一条声明就可以搞定了,但如果日后要改动边框的宽度,你需要 同时改三个地方。
+
+如果把它拆成两条声明的话,改起来就容易多了,而且可 读性或许更好一些:
+border-width: 10px; border-left-width: 0;
+</body>
+</html>

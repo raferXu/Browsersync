@@ -2,34 +2,41 @@
 <link rel="stylesheet" href="http://192.168.0.122:3000/Browersync/zhongbao3/h5/zb.css">
 <style>
     #keyboardWrap{
-        /*display:none;*/
-        width:100%;
-        height:100%;
-        position:absolute;
-        left:0;
-        right:0;
-        top:0;
-        bottom:0;
-        background:rgba(0,0,0,.3);
-        color:#ff6000;
-        text-align:center;
-        font-size:.24rem;
-        z-index:9999;
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0);
+        color: #ff6000;
+        text-align: center;
+        font-size: .24rem;
+        z-index: 9999;
     }
     .keyboard{
         position:absolute;
-        bottom:0;
-        left:0;
-        width:100%;
+        /*bottom:0;*/
+        bottom: -2.5rem;
+        left: 0;
+        width: 100%;
         padding: .1rem .2rem;
-        background:rgba(255,255,255,1);
+        border-top: 1px solid #f0f0f0;
+        background: rgba(255,255,255,1);
     }
     .keyboardT{
         height: .2rem;
+        margin-bottom: .1rem;
         text-align: right;
     }
     #arrowDown{
         position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        top: -20px;
     }
     #arrowDown:after, #arrowDown:before {
         border: 10px solid transparent;
@@ -37,22 +44,85 @@
         width: 0;
         height: 0;
         position: absolute;
-        top: 0;
-        left: -.2rem;
+        top: 17px;
+        left: 10px;
         content: ' '
     }
     #arrowDown:before {
         border-top-color: #f00;
-        top: 2px;
+        top: 20px;
     }
     .keyboardM{
-
+        display: flex;
+        justify-content: space-between;
+        display: -webkit-box;
+        -webkit-box-pack: justify;
     }
     .keyboardL{
-        width: 40%;
+        width: 47%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-box-pack: justify;
     }
     .keyboardR{
-        width: 40%;
+        width: 47%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-box-pack: justify;
+    }
+    .rowR{
+        display: flex;
+        justify-content: space-between;
+        display: -webkit-box;
+        -webkit-box-pack: justify;
+        margin-bottom: .05rem;
+    }
+    .rowR>div{
+        box-sizing: border-box;
+        padding: .02rem .1rem;
+        border: 1px solid #ccc;
+        border-radius: .1rem;
+        /*-webkit-box-shadow: 1px 1px 3px #7a7a7a;*/
+        /*-moz-box-shadow: 1px 1px 3px #7a7a7a;*/
+        /*box-shadow: 1px 1px 3px #7a7a7a;    */
+    }
+    .item1>div{
+        width: 100%;
+    }
+    .item2>div{
+        width: 47%;
+    }
+    #keyboardM .delTxt{
+        font-weight: 700;
+        position: relative;
+        border-color: transparent;
+    }
+    .text{
+        position: absolute;
+        border: 1px solid #ccc;
+        border-left: none;
+        padding: 0 12px;
+        left: 25px;
+        top: 6px;
+        font-size: 18px;
+        /*-webkit-box-shadow: 1px 1px 3px #7a7a7a;*/
+    }
+    .arrow{
+        top: 10px;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #ccc;
+        border-right: none;
+        border-top: none;
+        transform: rotate(45deg);
+        left: 15px;
     }
 </style>
 <div class="row skeleton">
@@ -141,45 +211,48 @@
         <div class="keyboardT">
             <span id="arrowDown"></span>
         </div>
-        <div class="keyboardM">
+        <div id="keyboardM" class="keyboardM">
             <div class="keyboardL">
-                <div class="row">
-                    <div>万</div>
-                    <div>仟</div>
-                    <div>佰</div>
+                <div class="rowR">
+                    <div class="zi">万</div>
+                    <div class="zi">仟</div>
+                    <div class="zi">佰</div>
                 </div>
-                <div class="row">
-                    <div>角</div>
-                    <div>分</div>
-                    <div>拾</div>
+                <div class="rowR">
+                    <div class="zi">角</div>
+                    <div class="zi">分</div>
+                    <div class="zi">拾</div>
                 </div>
-                <div class="row">
-                    <div>圆</div>
-                    <div>元</div>
+                <div class="rowR item2">
+                    <div class="zi">圆</div>
+                    <div class="zi">元</div>
                 </div>
-                <div class="row">
-                    <div>整</div>
+                <div class="rowR item1">
+                    <div class="zi">整</div>
                 </div>
             </div>
             <div class="keyboardR">
-                <div class="row">
-                    <div>壹</div>
-                    <div>贰</div>
-                    <div>叁</div>
+                <div class="rowR">
+                    <div class="zi">壹</div>
+                    <div class="zi">贰</div>
+                    <div class="zi">叁</div>
                 </div>
-                <div class="row">
-                    <div>肆</div>
-                    <div>伍</div>
-                    <div>陆</div>
+                <div class="rowR">
+                    <div class="zi">肆</div>
+                    <div class="zi">伍</div>
+                    <div class="zi">陆</div>
                 </div>
-                <div class="row">
-                    <div>柒</div>
-                    <div>捌</div>
-                    <div>玖</div>
+                <div class="rowR">
+                    <div class="zi">柒</div>
+                    <div class="zi">捌</div>
+                    <div class="zi">玖</div>
                 </div>
-                <div class="row">
-                    <div>零</div>
-                    <div>X</div>
+                <div class="rowR item2">
+                    <div class="zi">零</div>
+                    <div id="delTxt" class="delTxt">
+                        <span class="arrow"></span>
+                        <span class="text">X</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -187,6 +260,7 @@
     </div>
 </div>
 <script type="text/javascript">
+//    alert($("#token").data("token"));
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     /* * * DON'T EDIT BELOW THIS LINE * * */
     function loadDisqus() {
@@ -203,7 +277,7 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/zb.js"></script>
+<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/zb2.js"></script>
 <script type="text/javascript">
     pybossa.presentTask(function(task, deferred) {
       if ( !$.isEmptyObject(task) ) {

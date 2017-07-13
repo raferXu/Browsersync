@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      width: 300px;
+      height: 300px;
+    }
+    .one{
+      background: white;
+      background-image: linear-gradient(90deg,
+      rgba(200,0,0,.5) 50%, transparent 0),
+      linear-gradient(
+          rgba(200,0,0,.5) 50%, transparent 0); background-size: 30px 30px;
+    }
+    .two{
+      background: #58a; background-image:
+        linear-gradient(white 1px, transparent 0),
+        linear-gradient(90deg, white 1px, transparent 0); background-size: 30px 30px;
+    }
+    .two2{
+      background: #58a; background-image:
+        linear-gradient(white 2px, transparent 0),
+        linear-gradient(90deg, white 2px, transparent 0),
+        linear-gradient(hsla(0,0%,100%,.3) 1px,
+        transparent 0),
+        linear-gradient(90deg, hsla(0,0%,100%,.3) 1px,
+        transparent 0);
+      background-size: 75px 75px, 75px 75px,
+      15px 15px, 15px 15px;
+    }
+    .three{
+      background: #655;
+      background-image: radial-gradient(tan 30%, transparent 0); background-size: 30px 30px;
+    }
+    .three2{
+      background: #655;
+      background-image: radial-gradient(tan 30%, transparent 0),
+      radial-gradient(tan 30%, transparent 0); background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+      /*请注意,为了达到效果,第二层背景的偏移定位值必须是贴片宽高的一 半。不幸的是,这意味着如果要改动贴片的尺寸,需要修改四处。虽然可能 还没到不可收拾的地步,但这样的代码就快要跌入不可维护的深渊。如果你 在使用预处理器,就赶紧把它转换成这个 mixin 吧:*/
+    /*@mixin polka($size, $dot, $base, $accent) { SCSS background: $base;*/
+      /*background-image:*/
+          /*radial-gradient($accent $dot, transparent 0),*/
+          /*radial-gradient($accent $dot, transparent 0); background-size: $size $size; background-position: 0 0, $size/2 $size/2;*/
+    /*}*/
+    /*以后在创建波点图案时,我们就可以像这样调用它:*/
+    /*@include polka(30px, 30%, #655, tan);*/
+    }
+    .four{
+      background: #eee; background-image:
+        linear-gradient(45deg, #bbb 25%, transparent 0),
+        linear-gradient(45deg, transparent 75%, #bbb 0),
+        linear-gradient(45deg, #bbb 25%, transparent 0),
+        linear-gradient(45deg, transparent 75%, #bbb 0);
+      background-position: 0 0, 15px 15px,
+      15px 15px, 30px 30px;
+      background-size: 30px 30px;
+    }
+    .four2{
+      background: #eee;
+      background-image:linear-gradient(45deg,
+      rgba(0,0,0,.25) 25%, transparent 0,
+      transparent 75%, rgba(0,0,0,.25) 0),
+      linear-gradient(45deg,
+          rgba(0,0,0,.25) 25%, transparent 0,
+          transparent 75%, rgba(0,0,0,.25) 0);
+      background-position: 0 0, 15px 15px; background-size: 30px 30px;
+    }
+  </style>
+</head>
+<body>
+<div class="one"></div>
+<br>
+<div class="two"></div>
+<br>
+<div class="two2"></div>
+<br>
+<div class="three"></div>
+<br>
+<div class="three2"></div>
+<br>
+<div class="four"></div>
+<br>
+<div class="four2"></div>
+<br>
+</body>
+</html>
