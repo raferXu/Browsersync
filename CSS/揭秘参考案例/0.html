@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS揭秘</title>
+  <style>
+    body{
+      margin: 0;
+      display: flex;
+      flex-flow: row wrap;
+      align-content: flex-start;
+    }
+    p{margin: 0;}
+    h6{
+      margin: 0;
+      padding-bottom: 5px;
+      border-bottom: 1px solid blue;
+      -webkit-text-stroke: 0.5px white;
+      color: #000;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    html,body{
+      width: 100%;
+    }
+    body>div{
+      box-sizing: border-box;
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid red;
+      text-align: center;
+      flex: 0 0 30%;
+    }
+    body>div>div{
+      height: 300px;
+    }
+
+    /*0*/
+    .body{
+      background: #655;
+      background-image: radial-gradient(tan 20%, transparent 0),
+      radial-gradient(tan 20%, transparent 0);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+    }
+
+    /*1*/
+    .body1 button {
+      padding: .3em .8em;
+      border: 1px solid rgba(0,0,0,.1);
+      background: #58a linear-gradient(hsla(0,0%,100%,.2),
+      transparent);
+      /*推 荐 使 用 HSLA 而 不 是 RGBA 来产生半透明的白色,因 为它的字符长度更短,敲起来也 更快。这归功于它的重复度更低。*/
+      border-radius: .2em;
+      box-shadow: 0 .05em .25em rgba(0,0,0,.5); color: white;
+      text-shadow: 0 -.05em .05em rgba(0,0,0,.5);
+      font-size: 125%; line-height: 1.5;
+    }
+    .body1 button.cancel { background-color: #c00;
+    }
+    .body1 button.ok { background-color: #6b0;
+    }
+
+    /*2*/
+    .bg2{background-color: green}
+    .w div{width: 200px; height: 100px; background-color: red;border: 10px solid hsla(0,0%,100%,.5)}
+    .w .clip{background-clip: padding-box}
+
+    /*2.2*/
+    .boxs .bb div{width: 200px; height: 80px;margin-bottom: 15px;}
+    .boxs .t{
+      background: yellowgreen;
+      box-shadow: 0 0 0 10px #655, 0 0 0 25px deeppink;
+    }
+    .boxs .h{
+      background: yellowgreen;
+      box-shadow: 0 0 0 35px #655, 0 0 0 45px deeppink, 0 2px 5px 55px rgba(0,0,0,.6);
+      /*可以在这些“边框”的底下再加一 层常规的投影*/
+    }
+
+    /*2.3*/
+    .boxs2 .fb{
+      width: 200px;
+      height: 50px;
+      background: yellowgreen;
+      border: 10px solid #655;
+      outline: 5px dashed deeppink;
+    }
+    .boxs2 .fb2{
+      width: 200px;
+      height: 60px;
+      margin-top: 10px;
+      background: black;
+      border: 10px solid black;
+      border-radius: 15px;
+      outline: 2px dashed white;
+      outline-offset: -20px;
+    }
+    .boxs2 .fb3{
+      width: 200px;
+      height: 60px;
+      margin-top: 10px;
+      background: black;
+      border: 3px solid green;
+      border-radius: 15px;
+      outline: 2px solid black;
+    }
+
+    /*3.1*/
+    .bjdw .w{
+      width: 220px;
+      height: 220px;
+      border: 1px solid red;
+      background: url(../../zhongbao3/H5/billIcon.png) no-repeat bottom right #58a;
+      background-position: right 20px bottom 10px;
+    }
+
+    /*3.2*/
+    .bjdw2 .w{
+      padding: 10px;
+      width: 220px;
+      height: 220px;
+      border: 1px solid red;
+      background: url(../../zhongbao3/H5/billIcon.png) no-repeat bottom right #58a;
+      background-origin: content-box;
+    }
+
+    /*3.3*/
+    .bjdw3 .w{
+      width: 220px;
+      height: 220px;
+      border: 1px solid red;
+      background: url(../../zhongbao3/H5/billIcon.png) no-repeat bottom right #58a;
+      background-position: calc(100% - 20px) calc(100% - 10px);
+    }
+
+    /*3.4*/
+    .nyj div{
+      width: 200px;
+      height: 100px;
+      background: tan;
+      border-radius: 8px;
+      padding: 3px;
+      box-shadow: 0 0 0 5px #655;
+      outline: 6px solid #655;
+    }
+
+    /*9.1*/
+    .bty div {
+      display: inline-block;
+      width: 16em;
+      height: 10em;
+      margin: 1em;
+      background: #fb3;
+      border-radius: 50% / 100% 100% 0 0;
+    }
+
+    /*9.2*/
+    .sfy div {
+      display: inline-block;
+      width: 16em;
+      height: 10em;
+      margin: 1em;
+      background: #fb3;
+      border-radius: 100% 0 0 0;
+    }
+
+    /*10*/
+    .px .button {
+      position: relative;
+      display: inline-block;
+      padding: .5em 1em;
+      border: 0; margin: .5em;
+      background: transparent;
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+      font: bold 200%/1 sans-serif;
+    }
+
+    .px .button::before {
+      content: ''; /* To generate the box */
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      background: #58a;
+      transform: skew(45deg);
+    }
+
+  </style>
+</head>
+<body>
+
+<div>
+  <h6>xxx</h6>
+  <div class="body"></div>
+</div>
+
+<div>
+  <h6>0 - 无图片背景</h6>
+  <div class="body"></div>
+</div>
+
+<div>
+  <h6>1 - 按钮颜色自定义</h6>
+  <div class="body1">
+    <button class="ok">OK</button>
+    <button class="cancel">cancel</button>
+  </div>
+</div>
+
+<div class="bg2">
+  <h6>2 - 背景会被边框覆盖吗</h6>
+  <div class="w">
+    <div></div>
+    <div class="clip"></div>
+  </div>
+</div>
+
+<div class="boxs">
+  <h6>2.2 - box-shadow不占空间</h6>
+  <div class="bb">
+    <div class="t"></div>
+    <div class="h"></div>
+  </div>
+</div>
+
+<div class="boxs2">
+  <h6>2.3 - outline缝边效果(虚线＋负值)</h6>
+  <div class="fb"></div>
+  <div class="fb2"></div>
+  <div class="fb3"></div>
+  <p>1\只适用于双层“边框”的场景,因为 outline 并不能 接受用逗号分隔的多个值。2\元素 是圆角的,它的描边可能还是直角的</p>
+</div>
+
+<div class="bjdw">
+  <h6>3.1 - 灵活的背景定位</h6>
+  <p>想让背景图片跟右边缘保持 20px 的偏移量,同时跟底边保持 10px 的偏移量</p>
+  <div class="w"></div>
+  <p>background-position: right 20px bottom 10px;</p>
+</div>
+
+<div class="bjdw2">
+  <h6>3.2 - 灵活的背景定位</h6>
+  <p>给背景图片设置距离某个角的偏移量时</p>
+  <div class="w"></div>
+  <p>background-origin: content-box;偏移量与容器的内边距一致。</p>
+</div>
+
+<div class="bjdw3">
+  <h6>3.3 - 灵活的背景定位calc()</h6>
+  <p>想让背景图片跟右边缘保持 20px 的偏移量,同时跟底边保持 10px 的偏移量;</p>
+  <div class="w"></div>
+  <p>仍然以左上角偏移的思路来考虑,其实 就是希望它有一个100% - 20px的水平偏移量,以及100% - 10px的垂直 偏移量。</p>
+</div>
+
+<div class="nyj">
+  <h6>4 - 直角边框内角圆角</h6>
+  <div class=""></div>
+  <p>扩张半径5需要比描边的宽度值6小,但它同时又要比 ( 根号2 −1)*8 大; </p>
+</div>
+
+<div class="">
+  <h6>9.1 - 半椭圆</h6>
+  <div class="bty">
+    <div></div>
+  </div>
+</div>
+
+<div class="">
+  <h6>9.2 - 四分之一椭圆</h6>
+  <div class="sfy">
+    <div></div>
+  </div>
+</div>
+
+<div>
+  <h6>10 - 平行四边形</h6>
+  <div class="px">
+    <a href="#yolo" class="button"><div>Click me</div></a>
+    <button class="button"><div>Click me</div></button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
