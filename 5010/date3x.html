@@ -117,11 +117,11 @@
         imgHandleFn(task);
         setInputVal(task,8,'01234567');
 //获取token
-        var jobTaskLoadedTimer = setInterval(function() {
-          if(jobTaskLoaded){
-            clearInterval(jobTaskLoadedTimer);
-            var tokenStr = getTokenAndPort().tokenStr;
-            var interface = getTokenAndPort().interface;
+//        var jobTaskLoadedTimer = setInterval(function() {
+//          if(jobTaskLoaded){
+//            clearInterval(jobTaskLoadedTimer);
+//            var tokenStr = getTokenAndPort().tokenStr;
+            var interface = gInterface;
             showPageData(task,tokenStr,interface);
             bindJumpNative();
 //拿到token判断有没登录
@@ -143,10 +143,10 @@
                 }
               });
             }
-          }else{
-            console.log('本地nativeLoadCompleted函数没有被native调用');
-          }
-        },50);
+//          }else{
+//            console.log('本地nativeLoadCompleted函数没有被native调用');
+//          }
+//        },50);
       }
       else {
         console.log('运行presentTask函数时候已经没有任务了,自动重新刷新页面获取可用任务');

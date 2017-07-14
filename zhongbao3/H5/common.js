@@ -10,7 +10,8 @@ var loadImg = false;
 var loadNumImg = false;
 var getStr = false;
 var tokenStr;
-var gToken, gInterface;
+var gToken;
+var gInterface = location.origin;
 var getCurStr=function(){};
 var jobTaskLoaded = false;
 var touchstart = 'touchstart';
@@ -24,6 +25,8 @@ var getDataFailTimer = setTimeout(function () {
   }
 },15000);
 var android = true;
+var once = true;
+var first = false;  // token/project/hospital/projecttutorial接口返回结果
 function nativeLoadCompleted() {
   jobTaskLoaded = true;
 }
@@ -46,6 +49,10 @@ $(document).ajaxStart(function(){}).ajaxStop(function(){
   getStr = true;
   if(loadImg && getStr){
     $("#showMes").hide();
+    if(once && first){
+      showGuideText();
+      once = false;
+    }
   }
 });
 function device() {
@@ -225,6 +232,9 @@ window.onerror = function (msg,url,l) {
     if(isMobile){
       token = $("#token").data("token");
       tokenStr = token;
+      gToken = tokenStr;
+      // alert(gToken);
+      // alert(gInterface);
     }else{
       // token = localStorage.getItem('token');
       token = location.search.split('?')[1];
@@ -1074,7 +1084,7 @@ function getDataFail() {
 }
 function autoRelogin() {
   $("#failData").hide();
-  // jobTask.notifyToRelogin();
+  jobTask.launchLoginPage();
 }
 $(window).on('scroll', function () {
   $('#toLogin').css('top',$(window).scrollTop());
@@ -1088,8 +1098,6 @@ function imgLoaded(img) {
   return img.complete && img.naturalHeight !== 0;
 }
 function getTokenAndPort() {
-  // alert('getTokenAndPort: '+tokenStr);
-
   // var tokenStr = sessionStorage.getItem("token") || null;
   // var interface = sessionStorage.getItem("url") || null;
   // var receiveNativeTokenJson;
@@ -1106,8 +1114,8 @@ function getTokenAndPort() {
   // return {'tokenStr':tokenStr,'interface':interface};
 
   var interface = location.origin;
-  gToken = tokenStr;
-  gInterface = interface;
+  // gToken = tokenStr;
+  // gInterface = location.origin;
 
   return {'tokenStr':tokenStr,'interface':interface};
 
@@ -1120,6 +1128,17 @@ $('.showInfo').bind('keydown', function (e) {
     document.activeElement.blur();
   }
 });
+function showGuideText() {
+  $('#guideTips').show().on('click',function () {
+    $(this).hide();
+  });
+  var guideTextTimer = setTimeout(function () {
+    clearTimeout(guideTextTimer);
+    if(!$('#guideTips').is(':hidden')){
+      $('#guideTips').hide();
+    }
+  },2000);
+}
 
 
 // taskLoad2.js
@@ -1133,6 +1152,7 @@ pybossa.taskLoaded(function(task, deferred) {
     var imgUrl = task.info.url;
     function getImgFn() {
       var getImgNeedPortTimer = setInterval(function () {
+        /*
         if(jobTaskLoaded){
           clearInterval(getImgNeedPortTimer);
           var interface = getTokenAndPort().interface;
@@ -1169,6 +1189,39 @@ pybossa.taskLoaded(function(task, deferred) {
             }
           });
         }
+        */
+        var getImgAjax = $.ajax({
+          type: 'GET',
+          async: false,
+          cache: false,
+          url: ''+gInterface+imgUrl,
+          dataType: 'json',
+          timeout: 10000,
+          success: function (data) {
+            var getImgAjaxCode = data.code;
+            if(getImgAjaxCode == 200){
+              var imgUrlbase64 = 'data:image/jpeg;base64,'+data['body']['base64'];
+              img.load(function() {
+                deferred.resolve(task);
+              });
+              img.attr('src', imgUrlbase64).css('height', 'auto');
+              task.info.image = img[0];
+            }else{
+              console.log('getImgAjax调用失败，状态码为: '+getImgAjaxCode);
+              deferred.resolve(task);
+            }
+          },
+          error: function (xml, error) {
+            console.log('/token/img接口Error');
+            if(error == "timeout"){
+              console.log('/token/img接口timeout');
+              getImgAjax.abort();
+              getImgFn();
+            }else{
+              deferred.resolve(task);
+            }
+          }
+        });
       },50);
     }
     if(/^\/token\/img/.test(imgUrl)){
@@ -1293,7 +1346,7 @@ function imgCallback(img) {
 function imgHandleFn(task) {
   // 确保图片加载完成及执行的回调
   var imgLoadTimer = setInterval(function () {
-    alert($('.billImg')[0]);
+    // alert($('.billImg')[0]);
     if(imgLoaded($('.billImg')[0])){
       clearInterval(imgLoadTimer);
       imgCallback($('.billImg')[0]);
@@ -1301,6 +1354,10 @@ function imgHandleFn(task) {
       if(loadImg && getStr){
         console.log('图片和ajax请求均完成');
         $("#showMes").hide();
+        if(once && first){
+          showGuideText();
+          once = false;
+        }
       }
     }
   },100);
@@ -1377,6 +1434,7 @@ $('#codeLockWrap').off('touchend').on('touchend',function (e) {
   }
 });
 */
+
 
 // nativeLoad.js
 function showPageData(task,tokenStr,interface) {
@@ -1508,6 +1566,7 @@ function noTokenHandle() {
 
 //submit.js
 function normalSubmit(task,answer,tokenStr,interface,deferred) {
+  once = true;
   if (answer["text"]) {
     pybossa.saveTask(task, answer).done(function() {
       $('.pinch-zoom-container').css('height','auto');

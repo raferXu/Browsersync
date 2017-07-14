@@ -96,6 +96,13 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
       })();
     }
+    
+    if(!/Mobile/i.test(navigator.userAgent)){
+      $.getScript('http://192.168.0.122:3000/Browersync/zhongbao3/h5/nativeFn.js',function () {
+        nativeLoadCompleted();
+      });
+    }
+
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common.js"></script>
@@ -108,36 +115,37 @@
         imgHandleFn(task);
         setInputVal(task);
 //获取token
-        var jobTaskLoadedTimer = setInterval(function() {
-          if(jobTaskLoaded){
-            clearInterval(jobTaskLoadedTimer);
-            var tokenStr = getTokenAndPort().tokenStr;
-            var interface = getTokenAndPort().interface;
-            showPageData(task,tokenStr,interface);
-            bindJumpNative();
-//拿到token判断有没登录
-            if(!tokenStr){
-              console.log('没有拿到token值！');
-              noTokenHandle();
-            }else{
-              console.log('拿到了token值，为 '+tokenStr);
-              $('#toLogin').hide();
-//点击下一张按钮
-              $('#next,#indistinct').off(touchstart).on(touchstart, function() {
-                $("#showMes").show();
-                var touchstartWhich = $(this).attr('id')=='indistinct';
-                if(!window.navigator.onLine){
-                  $('#offLine').show();
+//        var jobTaskLoadedTimer = setInterval(function() {
+//          if(jobTaskLoaded){
+//                clearInterval(jobTaskLoadedTimer);
+//              var tokenStr = getTokenAndPort().tokenStr;
+//              var interface = getTokenAndPort().interface;
+                var interface = gInterface;
+                showPageData(task,tokenStr,interface);
+                bindJumpNative();
+    //拿到token判断有没登录
+                if(!tokenStr){
+                  console.log('没有拿到token值！');
+                  noTokenHandle();
                 }else{
-                  var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
-                  normalSubmit(task,answer,tokenStr,interface,deferred);
+                  console.log('拿到了token值，为 '+tokenStr);
+                  $('#toLogin').hide();
+    //点击下一张按钮
+                  $('#next,#indistinct').off(touchstart).on(touchstart, function() {
+                    $("#showMes").show();
+                    var touchstartWhich = $(this).attr('id')=='indistinct';
+                    if(!window.navigator.onLine){
+                      $('#offLine').show();
+                    }else{
+                      var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
+                      normalSubmit(task,answer,tokenStr,interface,deferred);
+                    }
+                  });
                 }
-              });
-            }
-          }else{
-            console.log('本地nativeLoadCompleted函数没有被native调用');
-          }
-        },50);
+//          }else{
+//            console.log('本地nativeLoadCompleted函数没有被native调用');
+//          }
+//        },50);
       }
       else {
         console.log('运行presentTask函数时候已经没有任务了,自动重新刷新页面获取可用任务');
