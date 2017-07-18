@@ -537,9 +537,15 @@
                 }
                 html += '</tr></table></div></div>';
             }
-          // html += (s.display != 'inline' ? '<div class="dwbc' + (s.button3 ? ' dwbc-p' : '') + '"><span class="dwbw dwb-s"><span class="dwb">' + s.setText + '</span></span>' + (s.button3 ? '<span class="dwbw dwb-n"><span class="dwb">' + s.button3Text + '</span></span>' : '') + '<span class="dwbw dwb-c"><span class="dwb">' + s.cancelText + '</span></span></div></div>' : '<div class="dwcc"></div>') + '</div></div></div>';
+            // html += (s.display != 'inline' ? '<div class="dwbc' + (s.button3 ? ' dwbc-p' : '') + '"><span class="dwbw dwb-s"><span class="dwb">' + s.setText + '</span></span>' + (s.button3 ? '<span class="dwbw dwb-n"><span class="dwb">' + s.button3Text + '</span></span>' : '') + '<span class="dwbw dwb-c"><span class="dwb">' + s.cancelText + '</span></span></div></div>' : '<div class="dwcc"></div>') + '</div></div></div>';
+
+            /***************************************/
+
           html += (s.display != 'inline' ? '<div class="dwbc' + (s.button3 ? ' dwbc-p' : '') + '"><span style="width:100%" class="dwbw dwb-s"><span class="dwb">' + s.setText + '</span></span>' + (s.button3 ? '<span class="dwbw dwb-n"><span class="dwb">' + s.button3Text + '</span></spans>' : '') + '</div></div>' : '<div class="dwcc"></div>') + '</div></div></div>';
-            dw = $(html);
+
+            /***************************************/
+
+          dw = $(html);
 
             scrollToPos();
             
@@ -571,30 +577,36 @@
                     if (that.hide(false, 'set') !== false) {
                         that.setValue(false, true);
                         event('onSelect', [that.val]);
-                        blockStr.str = that.val;
+
+                        /***************************************/
+
+                      blockStr.str = that.val;
                       for(var i=0;i<8;i++) {
                         var aInput = $('#codeLockWrap input.ansNum');
                         aInput[i].value = blockStr.str[i];
                       }
+
+                        /***************************************/
+
                     }
                 });
 
-                that.tap($('.dwb-c span', dw), function (event) {
+                that.tap($('.dwb-c span', dw), function () {
                     that.cancel();
                 });
 
-/***************************************/
+                /***************************************/
+
               that.tap($('.dwbg', dw), function (e) {
-                // alert('dwbg');
                 e.stopPropagation();
-                // that.cancel();
               });
               that.tap($('.dw-persp', dw), function () {
                 that.cancel();
               });
-/***************************************/
 
-                if (s.button3) {
+                /***************************************/
+
+              if (s.button3) {
                     that.tap($('.dwb-n span', dw), s.button3);
                 }
 
@@ -717,7 +729,6 @@
         */
         that.cancel = function () {
             if (that.hide(false, 'cancel') !== false) {
-                // console.log('onCancel: '+that.val);
                 event('onCancel', [that.val]);
             }
         };
@@ -831,8 +842,7 @@
     }
     
     function calc(t, val, dir, anim, orig) {
-
-      val = constrain(val, min, max);
+        val = constrain(val, min, max);
 
         var cell = $('.dw-li', t).eq(val),
             o = orig === undefined ? val : orig,
@@ -843,9 +853,8 @@
         inst.temp[idx] = cell.attr('data-val');
         
         inst.scroll(t, idx, val, time, orig);
-      // console.log(t, idx, val, time, orig);
-
-      setTimeout(function () {
+        
+        setTimeout(function () {
             // Validate
             inst.validate(idx, dir, time, orig);
         }, 10);

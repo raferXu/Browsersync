@@ -2,10 +2,6 @@
 <link rel="stylesheet" href="http://192.168.0.122:3000/Browersync/zhongbao3/h5/codeLock3.css">
 <link href="http://192.168.0.122:3000/Browersync/jiaoben3218/css/mobiscroll_002.css" rel="stylesheet" type="text/css">
 <link href="http://192.168.0.122:3000/Browersync/jiaoben3218/css/mobiscroll_003.css" rel="stylesheet" type="text/css">
-<div id="dateRange">
-    <span class="max">2020</span>
-    <span class="min">2000</span>
-</div>
 <div class="row skeleton">
     <header><h1 class="tc fwn">平安众包</h1></header>
     <main>
@@ -68,6 +64,10 @@
         </div>
     </main>
 </div>
+<div id="dateRange" style="display:none;">
+    <span class="max">2020</span>
+    <span class="min">2000</span>
+</div>
 <div id="showMes" style="display:none;position:absolute;left:0;right:0;top:0;bottom:0;background:transparent;color:white;text-align:center;font-size:36px;z-index:10000;">
     <div style="position:absolute;top:50%;left:50%;width:1.2rem;height:.65rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(0,0,0,.7);border-radius:.1rem">
         <img src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/loading.png" alt="loading" style="display:block;width:.36rem;height:.36rem;margin:.15rem auto;animation:change 2s linear infinite;-webkit-animation:change 2s linear infinite;">
@@ -99,6 +99,11 @@
         <p style="width:100%;height:.8rem;line-height:.8rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">数据获取失败。</p>
     </div>
 </div>
+<div id="k1q1" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <div style="position:absolute;top:1.89rem;width:100%;height:2.08rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+        <p style="width:100%;height:.8rem;line-height:.8rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">数据获取失败。</p>
+    </div>
+</div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -121,30 +126,32 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common2.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/jiaoben3218/js/mobiscroll_002.js" type="text/javascript"></script>
+<script src="http://192.168.0.122:3000/Browersync/jiaoben3218/js/mobiscroll_002x.js" type="text/javascript"></script>
 <script src="http://192.168.0.122:3000/Browersync/jiaoben3218/js/mobiscroll_004.js" type="text/javascript"></script>
 <script src="http://192.168.0.122:3000/Browersync/jiaoben3218/js/mobiscroll.js" type="text/javascript"></script>
 <script src="http://192.168.0.122:3000/Browersync/jiaoben3218/js/mobiscroll_003.js" type="text/javascript"></script>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/num2.js"></script>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/dateScroll.js"></script>
 <script>
+  /*
   //实现滚动条无法滚动
-//  var mo=function(e){e.preventDefault();};
+  var mo=function(e){e.preventDefault();};
 
-  /***禁止滑动***/
-//  function stop(){
-//    document.body.style.overflow='hidden';
-//    document.addEventListener("touchmove",mo,false);//禁止页面滑动
-//  }
+  //禁止滑动
+  function stop(){
+    document.body.style.overflow='hidden';
+    document.addEventListener("touchmove",mo,false);//禁止页面滑动
+  }
 
-  /***取消滑动限制***/
-//  function move(){
-//    document.body.style.overflow='';//出现滚动条
-//    document.removeEventListener("touchmove",mo,false);
-//  }
-//  $('#codeLockWrap')[0].addEventListener('touchstart',function () {
-//    stop();
-//  },true);
+  //取消滑动限制
+  function move(){
+    document.body.style.overflow='';//出现滚动条
+    document.removeEventListener("touchmove",mo,false);
+  }
+  $('#toLogin')[0].addEventListener('touchstart',function () {
+    stop();
+  },true);
+  */
 </script>
 <script type="text/javascript">
     pybossa.presentTask(function(task, deferred) {

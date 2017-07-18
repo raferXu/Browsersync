@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<button class="btn">click</button>
+<div class="txt"></div>
+
+<script src="../jiaoben3218/js/jquery.1.7.2.min.js"></script>
+<script>
+  $(function () {
+    var $btn = $('.btn');
+    var $txt = $('.txt');
+
+    function clickFunc(event) {
+      $txt.append('<p>普通： 触发了一次单击click</p>');
+    }
+    function dblclickFunc(event) {
+      $txt.append('<p>普通： 触发了一次双击dblclick</p>');
+    }
+
+    //普通的单击双击
+    $btn.on('click', clickFunc);
+    $btn.on('dblclick', dblclickFunc);
+  })
+</script>
+</body>
+</html>

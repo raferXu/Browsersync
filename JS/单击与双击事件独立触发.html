@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<button class="btn2">click</button>
+<div class="txt"></div>
+
+<script src="../jiaoben3218/js/jquery.1.7.2.min.js"></script>
+<script>
+  $(function () {
+    var $btn2 = $('.btn2');
+    var $txt = $('.txt');
+
+    function clickFunc2(event) {
+      if (!timer) {
+        timer = setTimeout(function() {
+          $txt.append('<p class="important-txt">优化后： 触发了一次单击click2</p>');
+          clearTimeout(timer);
+          timer = null;
+        }, 400);
+      }
+    }
+    function dblclickFunc2(event) {
+      clearTimeout(timer);
+      timer = null;
+      $txt.append('<p class="important-txt">优化后： 触发了一次双击dblclick2</p>');
+    }
+
+    //优化后的单击双击
+    $btn2.on('click', clickFunc2);
+    $btn2.on('dblclick', dblclickFunc2);
+  })
+</script>
+</body>
+</html>
