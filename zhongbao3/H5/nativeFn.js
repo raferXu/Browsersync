@@ -5,7 +5,9 @@ var jobTask = {};
 jobTask.taskGuide = function () {
   alert('任务指引暂时不能查看');
 };
-jobTask.launchLoginPage = function () {};
+jobTask.launchLoginPage = function () {
+  alert('正在跳到登录页面');
+};
 jobTask.lotteryConfigInterval = function () {
   alert('抽奖系统故障');
 };
@@ -16,5 +18,5 @@ jobTask.notifyToRelogin = function () {
   alert('异地登录了');
 };
 jobTask.refreshCurrentPage = function () {
-  alert('刷新页面获取可用任务或调转至无任务页面');
+  alert('任务做完了');
 };

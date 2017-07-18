@@ -99,8 +99,11 @@
         width: 47%;
     }
     #keyboardM .delTxt{
-        font-weight: 700;
         position: relative;
+        /*top: -.03rem;*/
+        /*right: 0;*/
+        /*padding-right: 0;*/
+        font-weight: 700;
         border-color: transparent;
     }
     .text{
@@ -144,7 +147,7 @@
                              <img id="taskGuide" src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/taskGuide.png" alt="taskGuide">
                         </span>
                     </nav>
-                    <input style="background-color:#fff" id="answerInput" type="text" class="showInfo tc bsb" disabled="disabled">
+                    <input style="background-color:#fff" id="answerInput" type="text" class="showInfo tc bsb" readonly="readonly">
                     <p class="textTip tc">请适当修改，保证文本输入框与图片内容一致</p>
                     <div id="btns" class="btns">
                         <input id="indistinct" type="button" class="next tc bsb" value="看不清">
@@ -196,7 +199,7 @@
     </div>
 </div>
 <div id="answerTip" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
-    <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+    <div style="position:absolute;top:50%;left:50%;width:2.8rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
         <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">请输入与图像一致的信息内容。</p>
         <p id="answerTipBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
     </div>
@@ -227,8 +230,9 @@
                     <div class="zi">圆</div>
                     <div class="zi">元</div>
                 </div>
-                <div class="rowR item1">
+                <div class="rowR item2">
                     <div class="zi">整</div>
+                    <div class="zi">零</div>
                 </div>
             </div>
             <div class="keyboardR">
@@ -248,7 +252,7 @@
                     <div class="zi">玖</div>
                 </div>
                 <div class="rowR item2">
-                    <div class="zi">零</div>
+                    <div id="sureTotalBtn">确认</div>
                     <div id="delTxt" class="delTxt">
                         <span class="arrow"></span>
                         <span class="text">X</span>
@@ -276,7 +280,7 @@
     }
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common.js"></script>
+<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common2.js"></script>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/zb2.js"></script>
 <script type="text/javascript">
     pybossa.presentTask(function(task, deferred) {

@@ -16,7 +16,7 @@ function keyboardEvent(str) {
     // alert(111);
     $('.keyboard').animate({'bottom': 0});
   });
-  $('#arrowDown').off(touchstart).on(touchstart, function(e) {
+  $('#arrowDown, #sureTotalBtn').off(touchstart).on(touchstart, function(e) {
     e.preventDefault();
     $('.keyboard').animate({'bottom': '-2.5rem'},function () {
       $('#keyboardWrap').hide();

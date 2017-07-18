@@ -537,7 +537,8 @@
                 }
                 html += '</tr></table></div></div>';
             }
-            html += (s.display != 'inline' ? '<div class="dwbc' + (s.button3 ? ' dwbc-p' : '') + '"><span class="dwbw dwb-s"><span class="dwb">' + s.setText + '</span></span>' + (s.button3 ? '<span class="dwbw dwb-n"><span class="dwb">' + s.button3Text + '</span></span>' : '') + '<span class="dwbw dwb-c"><span class="dwb">' + s.cancelText + '</span></span></div></div>' : '<div class="dwcc"></div>') + '</div></div></div>';
+          // html += (s.display != 'inline' ? '<div class="dwbc' + (s.button3 ? ' dwbc-p' : '') + '"><span class="dwbw dwb-s"><span class="dwb">' + s.setText + '</span></span>' + (s.button3 ? '<span class="dwbw dwb-n"><span class="dwb">' + s.button3Text + '</span></span>' : '') + '<span class="dwbw dwb-c"><span class="dwb">' + s.cancelText + '</span></span></div></div>' : '<div class="dwcc"></div>') + '</div></div></div>';
+          html += (s.display != 'inline' ? '<div class="dwbc' + (s.button3 ? ' dwbc-p' : '') + '"><span style="width:100%" class="dwbw dwb-s"><span class="dwb">' + s.setText + '</span></span>' + (s.button3 ? '<span class="dwbw dwb-n"><span class="dwb">' + s.button3Text + '</span></spans>' : '') + '</div></div>' : '<div class="dwcc"></div>') + '</div></div></div>';
             dw = $(html);
 
             scrollToPos();
@@ -578,9 +579,20 @@
                     }
                 });
 
-                that.tap($('.dwb-c span', dw), function () {
+                that.tap($('.dwb-c span', dw), function (event) {
                     that.cancel();
                 });
+
+/***************************************/
+              that.tap($('.dwbg', dw), function (e) {
+                // alert('dwbg');
+                e.stopPropagation();
+                // that.cancel();
+              });
+              that.tap($(document), function () {
+                that.cancel();
+              });
+/***************************************/
 
                 if (s.button3) {
                     that.tap($('.dwb-n span', dw), s.button3);
@@ -705,6 +717,7 @@
         */
         that.cancel = function () {
             if (that.hide(false, 'cancel') !== false) {
+                // console.log('onCancel: '+that.val);
                 event('onCancel', [that.val]);
             }
         };

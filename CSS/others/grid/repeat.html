@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #container {
+      display: grid;
+      grid-template-columns: repeat(2, 50px 1fr) 100px;
+      /*循环2次，即50px 1fr 50px 1fr；然后对紧跟着的后面一个设为100px;最后效果占满一行*/
+      grid-gap: 5px;
+      box-sizing: border-box;
+      height: 200px;
+      width: 100%;
+      background-color: #8cffa0;
+      padding: 10px;
+    }
+
+    #container > div {
+      background-color: #8ca0ff;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+  <div>
+    This item is 50 pixels wide.
+  </div>
+  <div>
+    Item with flexible width.
+  </div>
+  <div>
+    This item is 50 pixels wide.
+  </div>
+  <div>
+    Item with flexible width.
+  </div>
+  <div>
+    Inflexible item of 100 pixels width.
+  </div>
+</div>
+</body>
+</html>

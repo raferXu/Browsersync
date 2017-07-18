@@ -177,7 +177,6 @@
       text-decoration: none;
       font: bold 200%/1 sans-serif;
     }
-
     .px .button::before {
       content: ''; /* To generate the box */
       position: absolute;
@@ -187,6 +186,226 @@
       transform: skew(45deg);
     }
 
+    /*11*/
+    .lx .diamond {
+      width: 150px;
+      height: 150px;
+      transform: rotate(45deg);
+      overflow: hidden;
+      margin: 50px;
+    }
+    .lx .diamond img {
+      max-width: 100%;
+      transform: rotate(-45deg) scale(1.42);
+      z-index: -1;
+      position: relative;
+    }
+
+    /*11.2*/
+    .lx2 img {
+      max-width: 150px;
+      margin: 5px;
+      -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+      clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+      transition: 1s;
+    }
+    .lx2 img:hover {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    /*12*/
+    .qj div {
+      background: #58a;
+      background: linear-gradient(135deg, transparent 15px, #58a 0) top left,
+      linear-gradient(-135deg, transparent 15px, #58a 0) top right,
+      linear-gradient(-45deg, transparent 15px, #58a 0) bottom right,
+      linear-gradient(45deg, transparent 15px, #58a 0) bottom left;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+      padding: 1em 1.2em;
+      max-width: 12em;
+      color: white;
+      font: 150%/1.6 Baskerville, Palatino, serif;
+    }
+
+    /*12.2*/
+    .qj2 div {
+      background: #58a;
+      background: linear-gradient(135deg, transparent 15px, #58a 0) top left,
+      linear-gradient(-135deg, transparent 31px, #58a 0) top right,
+      linear-gradient(-45deg, transparent 31px, #58a 0) bottom right,
+      linear-gradient(45deg, transparent 15px, #58a 0) bottom left;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+      padding: 1em 1.2em;
+      width: 200px;
+      height: 40px;
+      color: white;
+      font: 150%/1.6 Baskerville, Palatino, serif;
+    }
+
+    /*12.3*/
+    .qj3 div {
+      border: 21px solid transparent;
+      border-image: 1 url('data:image/svg+xml,\
+	                      <svg xmlns="http://www.w3.org/2000/svg" width="3" height="3" fill="%2358a">\
+	                      <polygon points="0,1 1,0 2,0 3,1 3,2 2,3 1,3 0,2" />\
+	                      </svg>');
+      background: #58a;
+      background-clip: padding-box;
+
+      padding: .2em .3em;
+      max-width: 12em;
+      color: white;
+      font: 150%/1.6 Baskerville, Palatino, serif;
+    }
+
+    /*12.4*/
+    .qj4 div {
+      background: #58a;
+      -webkit-clip-path:
+          polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px),
+          calc(100% - 20px) 100%,
+          20px 100%, 0 calc(100% - 20px), 0 20px);
+      clip-path:
+          polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px),
+          calc(100% - 20px) 100%,
+          20px 100%, 0 calc(100% - 20px), 0 20px);
+
+      padding: 1em 1.2em;
+      max-width: 12em;
+      color: white;
+      font: 150%/1.6 Baskerville, Palatino, serif;
+    }
+
+    /*12.5*/
+    .hx div {
+      background: #58a;
+      background:	radial-gradient(circle at top left, transparent 15px, #58a 0) top left,
+      radial-gradient(circle at top right, transparent 15px, #58a 0) top right,
+      radial-gradient(circle at bottom right, transparent 15px, #58a 0) bottom right,
+      radial-gradient(circle at bottom left, transparent 15px, #58a 0) bottom left;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+
+      padding: 1em 1.2em;
+      max-width: 12em;
+      color: white;
+      font: 130%/1.6 Baskerville, Palatino, serif;
+    }
+
+    /*13*/
+    .txbq .tab {
+      position: relative; display: inline-block; padding: .5em 1em .35em; color: white;
+    }
+    .txbq .tab::before {
+      content: ''; /* 用伪元素来生成一个矩形 */ position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0; z-index: -1;
+      background: #58a;
+      transform: perspective(.5em) rotateX(5deg);
+    }
+
+    /*13.2*/
+    .txbq2 {
+      padding-bottom: 3px;
+      font: 16px/2 Frutiger LT Std, sans-serif;
+    }
+    .txbq2 nav {
+      position: relative;
+      z-index: 1;
+      padding-left: 1em;
+    }
+    .txbq2 nav > a {
+      position: relative;
+      display: inline-block;
+      padding: .3em 1em 0;
+      color: inherit;
+      text-decoration: none;
+      margin: 0 -.3em;
+    }
+    .txbq2 nav > a::before,
+    .txbq2 main {
+      border: .1em solid rgba(0,0,0,.4);
+    }
+    .txbq2 nav a::before {
+      content: ''; /* To generate the box */
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      border-bottom: none;
+      border-radius: .5em .5em 0 0;
+      background: #ccc linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,0));
+      box-shadow: 0 .15em white inset;
+      transform: scale(1.1, 1.3) perspective(.5em) rotateX(5deg);
+      transform-origin: bottom;
+    }
+    .txbq2 nav a.selected { z-index: 2;}
+    .txbq2 nav a.selected::before {
+      background-color: #eee;
+      margin-bottom: -.08em;
+    }
+    .txbq2 main {
+      display: block;
+      margin-bottom: 1em;
+      background: #eee;
+      padding: .5em;
+      border-radius: .15em;
+    }
+    .txbq2 nav.left > a::before {
+      transform: scale(1.2, 1.3) perspective(.5em) rotateX(5deg);
+      transform-origin: bottom left;
+    }
+    .txbq2 nav.right { padding-left: 2em; }
+    .txbq2 nav.right > a::before {
+      transform: scale(1.2, 1.3) perspective(.5em) rotateX(5deg);
+      transform-origin: bottom right;
+    }
+
+    /*14*/
+    .bt .pie {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: yellowgreen;
+      background-image: linear-gradient(to right, transparent 50%, currentColor 0);
+      color: #655;
+    }
+    .bt .pie::before {
+      content: '';
+      display: block;
+      margin-left: 50%;
+      height: 100%;
+      border-radius: 0 100% 100% 0 / 50%;
+      background-color: inherit;
+      transform-origin: left;
+      animation: spin 3s linear infinite, bg 6s step-end infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(.5turn); }
+    }
+    @keyframes bg {
+      50% { background: currentColor; }
+    }
+
+    .bt .pie2, .bt .pie3 {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: yellowgreen;
+      background-image: linear-gradient(to right, transparent 50%, currentColor 0);
+      color: #655;
+    }
+    .bt .pie2::before, .bt .pie3::before {
+      content: '';
+      display: block;
+      margin-left: 50%;
+      height: 100%;
+      border-radius: 0 100% 100% 0 / 50%; background: #655;
+      transform-origin: left;
+      transform: rotate(.1turn);
+    }
+    .bt .pie3::before {
+      transform: rotate(.3turn);
+    }
   </style>
 </head>
 <body>
@@ -282,15 +501,104 @@
   </div>
 </div>
 
+<div>
+  <h6>11 - 菱形 基于变形的方案</h6>
+  <div class="lx">
+    <div class="diamond">
+      <img src="http://csssecrets.io/images/adamcatlace.jpg" />
+    </div>
+  </div>
+</div>
+
+<div>
+  <h6>11.2 - 菱形 裁切路径的方案</h6>
+  <div class="lx2">
+    <img src="http://csssecrets.io/images/adamcatlace.jpg" />
+    <img src="http://csssecrets.io/images/adam-sleeping.jpg" />
+  </div>
+</div>
 
 
+<div>
+  <h6>12 － 切角效果</h6>
+  <div class="qj">
+    <div>Hey, focus! You’re supposed to be looking at my corners, not reading my text. The text is just placeholder!</div>
+  </div>
+</div>
 
+<div>
+  <h6>12.2 － 切角效果2</h6>
+  <div class="qj2">
+    <div></div>
+  </div>
+</div>
 
+<div>
+  <h6>12.3 － 切角效果3 内联SVG与border-image方案</h6>
+  <div class="qj3">
+    <div>内联SVG与border-image方案</div>
+  </div>
+</div>
 
+<div>
+  <h6>12.4 － 切角效果4 路径裁切方案</h6>
+  <div class="qj4">
+    <div>切角效果4 路径裁切方案</div>
+  </div>
+</div>
 
+<div>
+  <h6>12.5 － 弧形切角效果</h6>
+  <div class="hx">
+    <div>弧形切角效果</div>
+  </div>
+</div>
 
+<div>
+  <h6>13 － 梯形标签页</h6>
+  <div class="txbq">
+    <div class="tab">梯形标签页</div>
+  </div>
+</div>
 
+<div>
+  <h6>13.2 － 梯形标签页2</h6>
+  <div class="txbq2">
+    <nav>
+      <a href="#">Home</a>
+      <a href="#" class="selected">Projects</a>
+      <a href="#">About</a>
+    </nav>
+    <main>
+      Content area
+    </main>
+    <nav class="left">
+      <a href="#">Home</a>
+      <a href="#" class="selected">Projects</a>
+      <a href="#">About</a>
+    </nav>
+    <main>
+      Content area
+    </main>
+    <nav class="right">
+      <a href="#">Home</a>
+      <a href="#" class="selected">Projects</a>
+      <a href="#">About</a>
+    </nav>
+    <main>
+      Content area
+    </main>
+  </div>
+</div>
 
+<div>
+  <h6>14 饼图效果</h6>
+  <div class="bt">
+    <div class="pie"></div>
+    <div class="pie2"></div>
+    <div class="pie3"></div>
+  </div>
+</div>
 
 </body>
 </html>

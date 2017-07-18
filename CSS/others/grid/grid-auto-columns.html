@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body{margin: 0}
+    #grid {
+      height: 100px;
+      display: grid;
+      grid-template-areas: "a a";
+      /*如果grid-template-areas为"a a a"时因为grid-template-column只有两个值，而且存在grid-auto-columns，所以第三个值设为grid-auto-columns*/
+      grid-gap: 10px;
+      grid-template-columns: 50px 1fr;
+      /* 默认奇数50px，偶数剩余空间 */
+      grid-auto-columns: 200px;
+    }
+
+    #grid > div {
+      background-color: lime;
+    }
+  </style>
+</head>
+<body>
+<div id="grid">
+  <div id="item1"></div>
+  <div id="item2"></div>
+  <div id="item3"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+{% extends "/base_app1.html" %}
+
+{% set active_page = "projects"  %}
+{% set active_project = project.short_name %}
+{% set jstop = True %}
+
+{% block content %}
+  {% assets filters="jsmin", output="js/gen/full.min.js",
+            "js/vendor/jquery-2.2.3.js", "js/vendor/bootstrap.js",
+            "js/vendor/modernizr.min.js", "js/flashmessages.js",
+            "js/pybossa/pybossa-token.js",
+            "js/pybossa-player/dist/pybossa-player.min.js"
+            %}
+            <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+  <script>
+      Modernizr.load({
+          test: window.JSON,
+          nope: '{{url_for('static', filename='js/vendor/json2.min.js')}}'
+      });
+
+      var isMobile = /Mobile/i.test(navigator.userAgent);
+      function nativeLoadCompleted() {
+        jobTaskLoaded = true;
+      }
+      if(!isMobile) {
+        $.getScript('http://192.168.0.122:3000/Browersync/zhongbao3/h5/nativeFn.js', function () {
+          nativeLoadCompleted();
+        });
+      }
+
+  </script>
+
+  <div class="container">
+      <div id="token" data-token="{{token}}"></div>
+      {% if invite_new_volunteers %}
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                {{ _("Sorry, you've contributed to all the tasks for this project, but this project still needs more volunteers, so please spread the word!") }}
+                </p>
+            </div>
+        </div>
+      {% endif %}
+
+      {{ project.info.task_presenter|safe }}
+
+      <div id='PYBOSSA_USER_LOCALE' hidden>
+          {% if token_user.is_anonymous %}
+            enproject
+            {% else %}
+            {{ token_user.locale }}
+          {% endif %}
+      </div>
+  </div>
+{% endblock %}
+
+{% block extrajs %}
+  {% include "_flash_messages.html" %}
+{% endblock %}
+

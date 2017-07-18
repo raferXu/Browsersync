@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chrome默认冒泡</title>
+  <style>
+    .i{
+      width: 800px;
+      height: 800px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+<div id="d1" class="w">
+  <div id="d2" class="m">
+    <div id="d3" class="i"></div>
+  </div>
+</div>
+<script src="js/jquery.1.7.2.min.js"></script>
+<script>
+  /*
+  $(function () {
+    // 默认冒泡，从内往外
+    $('body').click(function () {
+      alert('body');
+    });
+    $('.w').click(function () {
+      alert('w');
+    });
+    $('.m').click(function () {
+      alert('m');
+    });
+    $('.i').click(function () {
+      alert('i');
+    });
+  });
+  */
+
+  //第三个参数是false，是绑定在冒泡阶段
+  /*
+  document.getElementById('d1').addEventListener('click', function(){
+    console.log('d1 clicked');
+  }, false);
+  document.getElementById('d2').addEventListener('click', function(){
+    console.log('d2 clicked');
+  }, false);
+  document.getElementById('d3').addEventListener('click', function(){
+    console.log('d3 clicked');
+  }, false);
+  */
+
+  // d1, d3, d2
+  // 因为d1是捕获，而且又在最外面，所以最先触发
+  // d3是冒泡，又在最里面，所以冒泡阶段最先触发
+  document.getElementById('d1').addEventListener('click', function(){
+    console.log('d1 clicked');
+  }, true);
+  document.getElementById('d2').addEventListener('click', function(){
+    console.log('d2 clicked');
+  }, false);
+  document.getElementById('d3').addEventListener('click', function(){
+    console.log('d3 clicked');
+  }, false);
+</script>
+</body>
+</html>
