@@ -139,7 +139,9 @@ window.onerror = function (msg,url,l) {
       success: function (data) {
         console.log("url + 'token/project/' + projectId + '/newtask' success");
         console.log(data);
-        if(!data['id']){
+        if(data.code == 808){
+
+        } else if(!data['id']){
           jumpProjectFlag = true;
         }
       },
@@ -157,6 +159,7 @@ window.onerror = function (msg,url,l) {
     return $.ajax({
       type: 'POST',
       url: url + 'token/taskrun',
+      async: false,
       beforeSend: function (request)
       {
         if (token==="") {
@@ -237,9 +240,9 @@ window.onerror = function (msg,url,l) {
       tokenStr = token;
       gToken = tokenStr;
     }else{
-      tokenStr = token = location.search.split('?')[1] || "";
-      console.log('token: '+token);
-      // token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzODAwMTM4MDA2IiwidGltZSI6IjIwMTctMDctMTQgMDE6Mjg6MjEifQ.J0HO_8vO6iYBFXufBjAiq13Dib6MQKaA5PSUK2KLqN0';
+      // tokenStr = token = location.search.split('?')[1] || "";
+      // console.log('token: '+token);
+      token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzMDg4ODg4ODg2IiwidGltZSI6IjIwMTctMDctMTggMDk6MTg6MzYifQ.yASKbBnkJg-PsovmT_wurknjMsLFe_0KkoxUgH3jmRU';
     }
     nowProject = projectname;
     _run(projectname, _window);
@@ -1536,16 +1539,58 @@ function noTokenHandle() {
 //submit.js
 function normalSubmit(task,answer,tokenStr,interface,deferred) {
   if (answer["text"]) {
-    pybossa.saveTask(task, answer).done(function() {
-      $('.pinch-zoom-container').css('height','auto');
-      deferred.resolve();
+    pybossa.saveTask(task, answer).done(function (data) {
+      console.log('saveTask: ' + data);
+      console.log(data);
+      $('.pinch-zoom-container').css('height', 'auto');
+      // deferred.resolve();
+      // fsjz(2, 2, deferred);
+      if(data.code == 808){
+        fsjz(data['body']['k'], data['body']['q'], deferred);
+      }else {
+        deferred.resolve();
+      }
     });
   }
   else {
     $("#showMes").hide();
-    $('#answerTipBtn').off(touchstart).on(touchstart,function () {
+    $('#answerTipBtn').off(touchstart).on(touchstart, function () {
       $('#answerTip').hide();
     });
     $('#answerTip').show();
   }
+}
+
+
+//防刷
+function fsjz(k, q, deferred) {
+  var fsArr = [
+    "亲 请认真答题哦！否则系统会认定您存在刷分行为而封号哦！",
+    "您已经连续答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理。请认真答题，谢谢！",
+    "因您连续答错三道测试题，系统认定您存在刷分行为，将会永久封号。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分可以照常兑换。",
+    "您在短时间内已经答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理。请认真答题，谢谢！",
+    "因您在短时间内答错三道测试题，系统认定您存在刷分行为，将会封号24小时。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分不受影响。"
+  ];
+  if(k==1){
+    $('#fsText').html(fsArr[0]);
+  }else if(k==2){
+    if(q==2){
+      $('#fsText').html(fsArr[3]);
+    }else{
+      $('#fsText').html(fsArr[1]);
+    }
+  }else if(k==3){
+    if(q==3){
+      $('#fsText').html(fsArr[4]);
+    }else{
+      $('#fsText').html(fsArr[2]);
+    }
+  }
+  $('#kqfs').show();
+  $('#kqfs .kqfh, #kqfs .kqqr').on(touchstart,function () {
+    $('#kqfs').hide();
+    if(k==1 || k==2){
+      deferred.resolve();
+    }
+  });
 }

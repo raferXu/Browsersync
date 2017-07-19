@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div cscs="123" id="cl1" onclick="f(this)">asdfasdf</div>
+<div cscs="1234" id="cl2" onclick="f2()">asdf</div>
+<script>
+
+  function f(a) {
+    console.log(a.getAttribute('cscs'));  //123
+    console.log(a.cscs);  //undefined
+  }
+  function f2() {
+    console.log(this);  //window
+  }
+</script>
+</body>
+</html>

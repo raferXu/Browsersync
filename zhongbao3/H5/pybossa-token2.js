@@ -152,6 +152,7 @@ var jumpProjectFlag = false;
             getNextTask(0, undefined).done(loop);
         });
     }
+
     pybossa.saveTask = function (task, answer) {
       var taskrun = {
         'project_id': task.project_id,
