@@ -10,26 +10,28 @@
         right: 0;
         top: 0;
         bottom: 0;
-        background: rgba(0,0,0,0);
-        color: #ff6000;
+        color: #323232;
         text-align: center;
         font-size: .24rem;
         z-index: 9999;
     }
     .keyboard{
         position:absolute;
-        /*bottom:0;*/
-        bottom: -2.5rem;
+        top: 0rem;
+        /*bottom: -2.5rem;*/
         left: 0;
         width: 100%;
-        padding: .1rem .2rem;
-        border-top: 1px solid #f0f0f0;
-        background: rgba(255,255,255,1);
+        padding-bottom: .1rem;
+        background: #d1d5dc;
     }
     .keyboardT{
-        height: .2rem;
+        padding: .1rem .2rem;
+        height: .3rem;
+        background: #fff;
         margin-bottom: .1rem;
         text-align: right;
+        border-top: 1px solid #a9b1bc;
+        border-bottom: 1px solid #a9b1bc;
     }
     #arrowDown{
         position: relative;
@@ -49,7 +51,7 @@
         content: ' '
     }
     #arrowDown:before {
-        border-top-color: #f00;
+        border-top-color: #323232;
         top: 20px;
     }
     .keyboardM{
@@ -57,6 +59,7 @@
         justify-content: space-between;
         display: -webkit-box;
         -webkit-box-pack: justify;
+        padding: 0 .2rem;
     }
     .keyboardL{
         width: 47%;
@@ -86,11 +89,11 @@
     .rowR>div{
         box-sizing: border-box;
         padding: .02rem .1rem;
-        border: 1px solid #ccc;
         border-radius: .1rem;
-        /*-webkit-box-shadow: 1px 1px 3px #7a7a7a;*/
-        /*-moz-box-shadow: 1px 1px 3px #7a7a7a;*/
-        /*box-shadow: 1px 1px 3px #7a7a7a;    */
+        background: #fff;
+        -webkit-box-shadow: 0 1px 0 #7a7a7a;
+        -moz-box-shadow: 0 1px 0 #7a7a7a;
+        box-shadow: 0 1px 0 #7a7a7a;
     }
     .item1>div{
         width: 100%;
@@ -98,30 +101,31 @@
     .item2>div{
         width: 47%;
     }
+    .keyboardB{
+        padding: 0 .2rem;
+    }
     #keyboardM .delTxt{
         position: relative;
-        /*top: -.03rem;*/
-        /*right: 0;*/
-        /*padding-right: 0;*/
         font-weight: 700;
         border-color: transparent;
+        background: #aeb3bd;
     }
     .text{
         position: absolute;
-        border: 1px solid #ccc;
+        border: 1px solid #323232;
         border-left: none;
         padding: 0 12px;
         left: 25px;
-        top: 6px;
+        top: 5px;
         font-size: 18px;
         /*-webkit-box-shadow: 1px 1px 3px #7a7a7a;*/
     }
     .arrow{
-        top: 10px;
+        top: 9px;
         position: absolute;
         width: 20px;
         height: 20px;
-        border: 1px solid #ccc;
+        border: 1px solid #323232;
         border-right: none;
         border-top: none;
         transform: rotate(45deg);
@@ -129,7 +133,11 @@
     }
 </style>
 <div class="row skeleton">
-    <header><h1 class="tc fwn">平安众包</h1></header>
+    <header>
+        <span class="xxzx r"><i></i></span>
+        <span class="phb l"><i></i></span>
+        <h1 class="tc fwn">平安众包</h1>
+    </header>
     <main>
         <div class="wrap">
             <section class="billBox">
@@ -140,15 +148,16 @@
                 </div>
                 <p class="task_rand_score" id="scoreBox">任务奖励:<span id="score">100</span>(分/单)</p>
                 <div class="billOperate">
-                    <nav class="clearfloat" style="margin-bottom: 0">
+                    <nav class="clearfloat">
                         <img src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/billIcon.png" alt="billIcon" class="icon l">
-                        <span class="l">票据显示</span>
+                        <span class="l">校对数据</span>
                         <span id="taskGuideBox" class="taskGuide r">
                              <img id="taskGuide" src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/taskGuide.png" alt="taskGuide">
                         </span>
+                        <span class="r" id="guideTips">点击此查看任务指引</span>
                     </nav>
                     <input style="background-color:#fff" id="answerInput" type="text" class="showInfo tc bsb" readonly="readonly">
-                    <p class="textTip tc">请适当修改，保证文本输入框与图片内容一致</p>
+                    <p class="textTip" style="padding-left:2px">请保证文本输入框与图片内容一致 <span id="gzsm" class="r" style="color:#ff6000;padding-right:2px">规则说明</span></p>
                     <div id="btns" class="btns">
                         <input id="indistinct" type="button" class="next tc bsb" value="看不清">
                         <input id="next" type="button" class="next tc bsb" value="下一张">
@@ -159,7 +168,7 @@
             <section class="countBox">
                 <nav class="clearfloat">
                     <img src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/count.png" alt="count" class="icon l">
-                    <span class="l">任务统计</span>
+                    <span class="l rwtj">任务统计</span>
                     <span id="moreBox" class="more r">
                        <img id="more" src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/more.png" alt="more">
                     </span>
@@ -178,12 +187,15 @@
         </div>
     </main>
 </div>
+
+
+
 <div id="showMes" style="display:none;position:absolute;left:0;right:0;top:0;bottom:0;background:transparent;color:white;text-align:center;font-size:36px;z-index:10000;">
     <div style="position:absolute;top:50%;left:50%;width:1.2rem;height:.65rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(0,0,0,.7);border-radius:.1rem">
         <img src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/loading.png" alt="loading" style="display:block;width:.36rem;height:.36rem;margin:.15rem auto;animation:change 2s linear infinite;-webkit-animation:change 2s linear infinite;">
     </div>
 </div>
-<div id="offLine" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+<div id="offLine" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.7);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
     <div style="position:absolute;top:50%;left:50%;width:2.4rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
         <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">网络不给力,请检查网络设置</p>
         <p id="sureBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
@@ -198,38 +210,32 @@
         </div>
     </div>
 </div>
-<div id="answerTip" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+<div id="answerTip" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.7);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
     <div style="position:absolute;top:50%;left:50%;width:2.8rem;height:1.2rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
         <p style="width:100%;height:.82rem;line-height:.82rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">请输入与图像一致的信息内容。</p>
         <p id="answerTipBtn" class="l" style="width:100%;height:.38rem;line-height:.38rem;color:#ff6000">确定</p>
     </div>
 </div>
-<div id="failData" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+<div id="failData" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.7);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
     <div style="position:absolute;top:50%;left:50%;width:80%;height:.8rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
         <p style="width:100%;height:.8rem;line-height:.8rem;color:#323232;border-bottom:1px solid #c8c8c8;box-sizing:border-box">数据获取失败。</p>
     </div>
 </div>
-<div id="kqfs" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
-    <div style="position:absolute;top:2.08rem;width:100%;background:rgba(255,255,255,1);border: 1px solid #323232;padding:0 10px;">
-        <h3 style="font-size:20px;padding:10px 0;color:#323232;font-weight:500;">提示</h3>
-        <p id="fsText" style="width:100%;color:#323232;box-sizing:border-box;min-height:1rem;line-height:1.5;text-align:left;"></p>
-        <!--<p style="width:100%;color:#323232;box-sizing:border-box;min-height:1rem;line-height:1.5;text-align:left;">您已经连续答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理。请认真答题，谢谢！</p>-->
-        <!--<p style="width:100%;color:#323232;box-sizing:border-box;min-height:1rem;line-height:1.5;text-align:left;">您在短时间内已经答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理。请认真答题，谢谢！</p>-->
-        <!--<p style="width:100%;color:#323232;box-sizing:border-box;min-height:1rem;line-height:1.5;text-align:left;">-->
-            <!--因您连续答错三道测试题，系统认定您存在刷分行为，将会永久封号。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。-->
-            <!--您在今日完成的所有任务将被判定为无效，过往任务已得积分可以照常兑换。-->
-        <!--</p>-->
-        <!--<p style="width:100%;color:#323232;box-sizing:border-box;height:1rem;line-height:1.5;text-align:left;">因您在短时间内答错三道测试题，系统认定您存在刷分行为，将会封号24小时。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。-->
-            <!--您在今日完成的所有任务将被判定为无效，过往任务已得积分不受影响。</p>-->
-        <p><a style="color:#ff6000;" href="#">任务指引</a></p>
-        <p class="kq-btns" style="padding:.1rem 0;">
+
+<div id="kqfs" style="display:none;box-sizing:border-box;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.7);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <div style="position:absolute;top:50%;left:50%;width:2.75rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius: 10px;padding:.3rem .15rem .15rem;">
+        <h3 style="font-size:18px;padding-bottom:.3rem;color:#323232;">警 告</h3>
+        <p id="fsText" style="font-size:14px;width:100%;color:#828282;box-sizing:border-box;line-height:1.5;text-align:left;margin-bottom:30px"></p>
+        <p class="kq-btns" style="padding:0;">
             <input class="kqfh" type="button" value="返回">
             <input class="kqqr" type="button" value="确认">
         </p>
+        <p style="margin-top:.15rem;"><a style="color:#ff6000;" href="#">任务指引</a></p>
     </div>
 </div>
-<div id="keyboardWrap" style="">
-    <div class="keyboard" style="">
+
+<div id="keyboardWrap" style="overflow: hidden">
+    <div id="keyboard" class="keyboard">
         <div class="keyboardT">
             <span id="arrowDown"></span>
         </div>
@@ -283,67 +289,63 @@
     </div>
 </div>
 <script type="text/javascript">
-//    alert($("#token").data("token"));
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    function loadDisqus() {
-      $("#disqus_thread").toggle();
-      $(".btn-disqus").toggle();
-      var disqus_shortname = 'pybossa';
-      var disqus_developer = 1;
-      (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    }
+  //    alert($("#token").data("token"));
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  function loadDisqus() {
+    $("#disqus_thread").toggle();
+    $(".btn-disqus").toggle();
+    var disqus_shortname = 'pybossa';
+    var disqus_developer = 1;
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  }
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common2.js"></script>
 <script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/zb2.js"></script>
 <script type="text/javascript">
-    pybossa.presentTask(function(task, deferred) {
-      if ( !$.isEmptyObject(task) ) {
-        console.log('运行presentTask函数时拿到的任务为: '+task);
-        console.log(task);
-        imgHandleFn(task);
-        setInputVal(task);
-//获取token
-//        var jobTaskLoadedTimer = setInterval(function() {
-//          if(jobTaskLoaded){
-//            clearInterval(jobTaskLoadedTimer);
-//            var tokenStr = getTokenAndPort().tokenStr;
-            var interface = gInterface;
-            showPageData(task,tokenStr,interface);
-            bindJumpNative();
+  pybossa.presentTask(function(task, deferred) {
+    if ( !$.isEmptyObject(task) ) {
+      var boardH = document.documentElement.offsetHeight;
+      $('.keyboard').css('top', parseInt(boardH)+'px');
+      var boardW = document.documentElement.offsetWidth;
+      //      alert(parseInt(boardH-boardW*7/12));
+      var boardT = parseInt(boardH-boardW*7/12) + 'px';
+      console.log('运行presentTask函数时拿到的任务为: '+task);
+      console.log(task);
+      imgHandleFn(task);
+      setInputVal(task,boardH,boardT);
+      var interface = gInterface;
+      showPageData(task,tokenStr,interface);
+      bindJumpNative();
 //拿到token判断有没登录
-            if(!tokenStr){
-              console.log('没有拿到token值！');
-              noTokenHandle();
-            }else{
-              console.log('拿到了token值，为 '+tokenStr);
-              $('#toLogin').hide();
+      if(!tokenStr){
+        console.log('没有拿到token值！');
+        noTokenHandle();
+      }else{
+        console.log('拿到了token值，为 '+tokenStr);
+        $('#toLogin').hide();
 //点击下一张按钮
-              $('#next,#indistinct').off(touchstart).on(touchstart, function() {
-                $("#showMes").show();
-                var touchstartWhich = $(this).attr('id')=='indistinct';
-                if(!window.navigator.onLine){
-                  $('#offLine').show();
-                }else{
-                  var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
-                  normalSubmit(task,answer,tokenStr,interface,deferred);
-                }
-              });
-            }
-//          }else{
-//            console.log('本地nativeLoadCompleted函数没有被native调用');
-//          }
-//        },50);
+        $('#next,#indistinct').off(touchstart).on(touchstart, function() {
+          $("#showMes").show();
+          var touchstartWhich = $(this).attr('id')=='indistinct';
+          if(!window.navigator.onLine){
+            $('#offLine').show();
+          }else{
+            var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
+            normalSubmit(task,answer,tokenStr,interface,deferred);
+          }
+        });
       }
-      else {
-        console.log('运行presentTask函数时候已经没有任务了,自动重新刷新页面获取可用任务');
-        console.log('只加载本次任务，不会出现这个日志');
-      }
-    });
-    pybossa.run('total');
+    }
+    else {
+      console.log('运行presentTask函数时候已经没有任务了,自动重新刷新页面获取可用任务');
+      console.log('只加载本次任务，不会出现这个日志');
+    }
+  });
+  pybossa.run('total');
 </script>

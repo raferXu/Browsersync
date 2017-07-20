@@ -42,6 +42,7 @@ android = isAndroidFn();
 if(android){
   console.log('这是安卓机');
   $('header h1').addClass('androidHeader');
+  $('.phb').removeClass('l').addClass('r');
 }else{
   console.log('这是苹果机');
 }

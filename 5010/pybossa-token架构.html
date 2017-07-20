@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function _fetchProject(projectname) {
+    return $.ajax('token/project');
+  }
+  function _fetchNewTask(projectId,offset) {
+    return $.ajax('/newtask');
+  }
+  function _resolveNextTaskLoaded(task, deferred) {
+    _taskLoaded(task, deferred);
+  }
+  function _taskLoaded(task, deferred) {
+    taskLoaded(task, deferred);
+  }
+  function _presentTask(task, deferred) {
+    presentTask(task, deferred);
+  }
+  function run(projectname) {
+    var def = $.Deferred();
+    _fetchProject(projectname).done(function (project) {  //data为$.ajax的done成功后返回的参数
+      function getNextTask(offset,previousTask) {
+        _fetchNewTask(projectId,offset).done(function (task) {
+          if(previousTask && previousTaskId == taskId){  //未登录时, 第二次满足此条件,fetchNewTask的都是同一个任务
+            def.resolve();
+          }else{
+            _resolveNextTaskLoaded(task, def);  //第一次都会走这
+          }
+        });
+        return def.promise();
+      }
+      function loop(task) {
+        var nextLoaded = getNextTask(1,task),  //下一个任务taskLoaded的deferred
+          taskSolved = $.Deferred();
+        _presentTask(task, taskSolved);  //本任务presentTask的deferred
+        $.when(nextLoaded, taskSolved).done(loop);
+      }
+      getNextTask(0,undefined).done(loop);
+    })
+  }
+</script>
+</body>
+</html>

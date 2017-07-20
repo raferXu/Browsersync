@@ -58,6 +58,7 @@ android = isAndroidFn();
 if(android){
   console.log('这是安卓机');
   $('header h1').addClass('androidHeader');
+  $('.phb').removeClass('l').addClass('r');
 }else{
   console.log('这是苹果机');
 }
@@ -240,9 +241,9 @@ window.onerror = function (msg,url,l) {
       tokenStr = token;
       gToken = tokenStr;
     }else{
-      // tokenStr = token = location.search.split('?')[1] || "";
+      tokenStr = token = location.search.split('?')[1] || "";
       // console.log('token: '+token);
-      token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzMDg4ODg4ODg2IiwidGltZSI6IjIwMTctMDctMTggMDk6MTg6MzYifQ.yASKbBnkJg-PsovmT_wurknjMsLFe_0KkoxUgH3jmRU';
+      // token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzMDg4ODg4ODg2IiwidGltZSI6IjIwMTctMDctMTggMDk6MTg6MzYifQ.yASKbBnkJg-PsovmT_wurknjMsLFe_0KkoxUgH3jmRU';
     }
     nowProject = projectname;
     _run(projectname, _window);

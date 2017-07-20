@@ -53,6 +53,9 @@ input {
 .bsb {
   box-sizing: border-box;
 }
+input {
+  -webkit-appearance: none;
+}
 /*page*/
 html {
   width: 100%;
@@ -79,6 +82,33 @@ header {
   height: .44rem;
   background: #fff url(headerBg.png) no-repeat;
   background-size: 100% 100%;
+}
+header span {
+  width: .22rem;
+  height: .22rem;
+  margin: .11rem;
+}
+header .phb {
+  background: url(phb.png) no-repeat;
+  background-size: 100% 100%;
+  margin-right: .05rem;
+}
+header .xxzx {
+  background: url(xxzx.png) no-repeat;
+  background-size: 100% 100%;
+  margin-left: .05rem;
+}
+header i {
+  position: absolute;
+  width: .08rem;
+  height: .08rem;
+  margin-left: .14rem;
+  margin-top: -0.04rem;
+  border-radius: .04rem;
+  background-color: #fff;
+}
+.xxzx i {
+  margin-top: 0;
 }
 header h1 {
   line-height: .44rem;
@@ -121,52 +151,33 @@ main .wrap section.billBox .billOperate nav {
   font-size: 0.14rem;
 }
 main .wrap section.billBox .billOperate nav .icon {
-  height: .16rem;
+  height: .2rem;
   margin-right: .05rem;
   vertical-align: middle;
+}
+.pjxs,
+.rwtj {
+  line-height: .22rem;
 }
 main .wrap section.billBox .billOperate nav .taskGuide,
 main .wrap section.billBox .billOperate nav .more {
   color: #ff6000;
 }
-main .wrap section.billBox .billOperate nav .taskGuide {
-  position: relative;
-  top: -0.15rem;
-  right: -0.1rem;
-  padding: .1rem;
-}
 main .wrap section.billBox .billOperate nav .taskGuide img {
-  position: relative;
-  top: 3px;
-  width: .15rem;
+  width: .2rem;
 }
 #guideTips {
   display: none;
   position: relative;
+  margin-right: .05rem;
+  padding-right: .17rem;
+  background: url("triangle.png") no-repeat right 0 top 0.03rem #fff;
+  background-size: .12rem .14rem;
+  line-height: .22rem;
+  font-size: 14px;
   color: #ff6000;
 }
-#guideTips:before {
-  position: absolute;
-  right: -0.1rem;
-  top: .05rem;
-  content: "";
-  display: inline-block;
-  width: .1rem;
-  height: .06rem;
-  background: #ff6000;
-}
-#guideTips:after {
-  position: absolute;
-  right: -0.22rem;
-  top: .02rem;
-  width: 0;
-  height: 0;
-  border: .07rem solid transparent;
-  border-left-color: #ff6000;
-  content: "";
-}
-main .wrap section.billBox .billOperate .next,
-.kq-btns input {
+main .wrap section.billBox .billOperate .next {
   width: 100%;
   height: .44rem;
   border: 1px solid #ff6000;
@@ -177,9 +188,17 @@ main .wrap section.billBox .billOperate .next,
 }
 main .wrap section.billBox .billOperate .textTip {
   -webkit-text-size-adjust: none;
+  padding-left: 3%;
   margin-bottom: .4rem;
   color: #828282;
   font-size: .14rem;
+}
+.gzsm {
+  position: absolute;
+  top: .54rem;
+  right: .14rem;
+  font-size: 14px;
+  color: #ff6000;
 }
 main .wrap .divide {
   width: 100%;
@@ -196,7 +215,7 @@ main .wrap section.countBox nav {
   font-size: 0.14rem;
 }
 main .wrap section.countBox nav .icon {
-  height: .16rem;
+  height: .2rem;
   margin-right: .05rem;
   vertical-align: middle;
 }
@@ -286,6 +305,15 @@ main .wrap section.countBox .countInfo .total .num {
 #btns,
 .kq-btns {
   width: 100%;
+}
+.kq-btns input {
+  height: .35rem;
+  line-height: .35rem;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  background: #ff6000;
+  font-size: 0.14rem;
 }
 #next,
 .kq-btns .kqqr {

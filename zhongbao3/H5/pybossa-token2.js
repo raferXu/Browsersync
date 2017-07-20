@@ -5,11 +5,11 @@ var jumpProjectFlag = false;
     var url = '/';  //默认为／开头的请求url
     var myTaskId = {'id':''};
     var _taskLoaded = function(task, deferred) {  //初始化定义_taskLoaded变量
-    deferred.resolve(task);
-  };
+      deferred.resolve(task);
+    };
     var _presentTask = function(task, deferred) {  //初始化定义_presentTask变量
-    deferred.resolve(task);
-  };
+      deferred.resolve(task);
+    };
     function _fetchProject(projectname) {
       return $.ajax({
             url: url + 'token/project',
