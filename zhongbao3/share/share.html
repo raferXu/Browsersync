@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name=viewport content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width,minimal-ui">
+  <title>平安众包</title>
+  <script>
+    function htmlFontSize(){
+      var html = document.querySelector("html");
+      var width = html.getBoundingClientRect().width;
+      html.style.fontSize = width / 3.75 + "px";
+    }
+    htmlFontSize();
+  </script>
+  <style>
+    /*common*/
+    body, ul, li, h3, p{
+      margin: 0;
+    }
+    ul{
+      padding: 0;
+      list-style: none;
+    }
+    img{
+      border: 0;
+      vertical-align: top;
+    }
+    /*page*/
+    html {
+      width: 100%;
+      height: 100%;
+      font-size: 100px;
+    }
+    body {
+      width: 100%;
+      height: 100%;
+      color: #323232;
+      background-color: #FFF;
+      font-size: .14rem;
+      overflow: hidden;
+    }
+    main{
+      position: absolute;
+      top: 0;
+      /*bottom: .6rem;*/
+      bottom: 0;
+      padding-bottom: .6rem;
+      width: 100%;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+    nav{width: 100%;}
+    #banner{
+      width: 100%;
+    }
+    footer{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: .6rem;
+      line-height: .6rem;
+      padding-left: .15rem;
+      padding-right: .14rem;
+      background: rgba(0,0,0,.7);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      display: -webkit-box;
+      -webkit-box-pack: justify;
+      -webkit-box-align: center;
+    }
+    #showList{
+      display: flex;
+      justify-content: space-between;
+      display: -webkit-box;
+      -webkit-box-pack: justify;
+      margin: .3rem .2rem .6rem;
+    }
+    .showLi{
+      text-align: center;
+    }
+    .showImg{
+      width: .52rem;
+    }
+    .showT{
+      font-size: .18rem;
+      color: #ff6000;
+      font-weight: 300;
+    }
+    .showT, .showP{
+      line-height: 1.8;
+    }
+    #codeBox{
+      text-align: center;
+    }
+    #codeImg{
+      width: 1.5rem;
+    }
+    .codeP{
+      margin: .15rem 0 .35rem;
+    }
+    #name, #openBtn{
+      color: #fff;
+    }
+    #name{
+      padding-left: .42rem;
+      font-size: .18rem;
+      background: url("icon.png") no-repeat center left;
+      background-size: .34rem .34rem;
+    }
+    #openBtn{
+      width: .55rem;
+      height: .28rem;
+      line-height: .28rem;
+      text-align: center;
+      border: 1px solid #fff;
+      border-radius: 5px;
+    }
+
+  </style>
+</head>
+<body>
+<header></header>
+<main>
+  <nav>
+    <img id="banner" src="banner.png" alt="banner">
+  </nav>
+  <ul id="showList">
+    <li class="showLi">
+      <img class="showImg" src="task.png" alt="task">
+      <h3 class="showT">任务简单</h3>
+      <p class="showP">结合人工智能</p>
+      <p class="showP">一秒上手</p>
+    </li>
+    <li class="showLi">
+      <img class="showImg" src="money.png" alt="money">
+      <h3 class="showT">操作简易</h3>
+      <p class="showP">轻轻松松躺着</p>
+      <p class="showP">赚钱不是梦</p>
+    </li>
+    <li class="showLi">
+      <img class="showImg" src="record.png" alt="record">
+      <h3 class="showT">奖励丰厚</h3>
+      <p class="showP">积分价值最高</p>
+      <p class="showP">可达40元/时</p>
+    </li>
+  </ul>
+  <div id="codeBox">
+    <img id="codeImg" src="code.png" alt="code">
+    <p class="codeP">扫一扫或长按指纹二维码下载APP</p>
+  </div>
+</main>
+<footer>
+  <div id="name">平安众包</div>
+  <div id="openBtn">打开</div>
+</footer>
+</body>
+</html>

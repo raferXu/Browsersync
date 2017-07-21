@@ -243,7 +243,7 @@ window.onerror = function (msg,url,l) {
     }else{
       tokenStr = token = location.search.split('?')[1] || "";
       // console.log('token: '+token);
-      // token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzMDg4ODg4ODg2IiwidGltZSI6IjIwMTctMDctMTggMDk6MTg6MzYifQ.yASKbBnkJg-PsovmT_wurknjMsLFe_0KkoxUgH3jmRU';
+      token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzMDg4ODg4ODg2IiwidGltZSI6IjIwMTctMDctMTggMDk6MTg6MzYifQ.yASKbBnkJg-PsovmT_wurknjMsLFe_0KkoxUgH3jmRU';
     }
     nowProject = projectname;
     _run(projectname, _window);
@@ -1545,11 +1545,16 @@ function normalSubmit(task,answer,tokenStr,interface,deferred) {
       console.log(data);
       $('.pinch-zoom-container').css('height', 'auto');
       // deferred.resolve();
-      // fsjz(2, 2, deferred);
+      // fsjz(3, 1, deferred);
+
       if(data.code == 808){
         fsjz(data['body']['k'], data['body']['q'], deferred);
       }else {
         deferred.resolve();
+      }
+    }).fail(function (err) {
+      if(err.code == 403){
+        $('#taskTimeout').show();
       }
     });
   }
@@ -1581,6 +1586,9 @@ function fsjz(k, q, deferred) {
       $('#fsText').html(fsArr[1]);
     }
   }else if(k==3){
+    $('#kqfs').css("background", "#aeb3bd");
+    $('.kq-btns,#fhGuide').hide();
+    $('#fsText').css('marginBottom','0px');
     if(q==3){
       $('#fsText').html(fsArr[4]);
     }else{
