@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+问题：想要过滤一个数组中的元素的值，并且把结果赋值给一个新的数组
+<script>
+//  使用Array对象filter方法
+  function removeChars(elements, index, array) {
+    return (elements !== "**");
+  }
+  var charSet = new Array("**","xx","cc","**","**","vv","**");
+  var newArray = charSet.filter(removeChars);
+  //filter过程就是将已知的charSet数组，一个个都调用removeChars断言，如果返回真就push入赋值的数组newArray
+  alert(newArray);
+
+  //为低版本浏览器扩展
+  if (typeof Array.prototype.filter != "function") {
+    Array.prototype.filter = function (fn, context) {
+      var arr = [];
+      if (typeof fn === "function") {
+        for (var k = 0, length = this.length; k < length; k++) {
+          fn.call(context, this[k], k, this) && arr.push(this[k]);
+        }
+      }
+      return arr;
+    };
+  }
+</script>
+</body>
+</html>

@@ -719,35 +719,298 @@
       font: bold 500%/1 Rockwell, serif;
     }
 
-    /*28*/
-    .hxwz {
-      font: bold 120% Helvetica, sans-serif;
+    /*29*/
+    .sbgb :disabled, [disabled], [aria-disabled="true"] {
+      cursor: not-allowed;
     }
-    .hxwz .circular {
-      width: 30em;
-      height: 30em;
-      margin: 4em auto 0;
+
+    /*30*/
+    .kdj, .kdj2{
+      height: 50%;
     }
-    .hxwz .circular svg {
+    .kdj button.btn1 {
+      padding: .3em .5em;
+      border: 10px solid transparent;
+      border-radius: 50%;
+      background: #58a;
+      background-clip: padding-box;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.3) inset;
+      color: white;
+      font: bold 150%/1 sans-serif;
+      cursor: pointer;
+    }
+    .kdj2 button.btn2 {
+      position: relative;
+      padding: .3em .5em;
+      background: #58a;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,.3);
+      box-shadow:  0 .1em .2em -.05em rgba(0,0,0,.5);
+      color: white;
+      font: bold 150%/1 sans-serif;
+      cursor: pointer;
+    }
+    .kdj2 button.btn2:before {
+      content: '';
+      position: absolute;
+      top: -10px; right: -10px;
+      bottom: -10px; left: -10px;
+    }
+
+    /*31*/  .zdyk input[type="checkbox"] {
+      position: absolute;
+      clip: rect(0,0,0,0);
+    }
+    .zdyk input[type="checkbox"] + label::before {
+      content: '\a0';
+      display: inline-block;
+      vertical-align: .2em;
+      width: .8em;
+      height: .8em;
+      margin-right: .2em;
+      border-radius: .2em;
+      background: silver;
+      text-indent: .15em;
+      line-height: .65;
+    }
+    .zdyk input[type="checkbox"]:checked + label::before {
+      content: '\2713';
+      background: yellowgreen;
+    }
+    .zdyk input[type="checkbox"]:focus + label::before {
+      box-shadow: 0 0 .1em .1em #58a;
+    }
+    .zdyk input[type="checkbox"]:disabled + label::before {
+      background: gray;
+      box-shadow: none;
+      color: #555;
+      cursor: not-allowed;
+    }
+    .zdyk {
+      font: 150%/1.6 sans-serif;
+      height: 50%;
+    }
+
+    .zdyk2 input[type="checkbox"] {
+      position: absolute;
+      clip: rect(0,0,0,0);
+    }
+    .zdyk2 input[type="checkbox"] + label {
+      display: inline-block;
+      padding: .35em .5em .2em;
+      background: #ccc;
+      background-image: linear-gradient(#ddd, #bbb);
+      border: 1px solid rgba(0,0,0,.2);
+      border-radius: .3em;
+      box-shadow: 0 1px white inset;
+      text-align: center;
+      text-shadow: 0 1px 1px white;
+      cursor: pointer;
+    }
+    .zdyk2 input[type="checkbox"]:checked + label,
+    .zdyk2 input[type="checkbox"]:active + label {
+      box-shadow: .04em .1em .2em rgba(0,0,0,.6) inset;
+      border-color: rgba(0,0,0,.3);
+      background: #bbb;
+    }
+    .zdyk2  {	font: 150%/1.6 sans-serif; height: 50%; }
+
+    /*34*/
+    .gdts ul {
+      display: inline-block;
+      overflow: auto;
+      width: 7.2em;
+      height: 7em;
+      border: 1px solid silver;
+      padding: .3em .5em;
+      list-style: none;
+      margin-top: 2em;
+      font: 100 200%/1.6 'Frutiger LT Std', sans-serif;
+      background: linear-gradient(white 15px, hsla(0,0%,100%,0)) 0 0 / 100% 50px,
+      radial-gradient(at top, rgba(0,0,0,.2), transparent 70%) 0 0 / 100% 15px,
+      linear-gradient(to top, white 15px, hsla(0,0%,100%,0)) bottom / 100% 50px,
+      radial-gradient(at bottom, rgba(0,0,0,.2), transparent 70%) bottom / 100% 15px;
+      background-repeat: no-repeat;
+      background-attachment: local, scroll, local, scroll;
+      margin-top: 30px;
+    }
+
+
+    /*42*/
+    input:not(:focus) + .callout:not(:hover) {
+      transform: scale(0);
+      transition: .25s transform;
+    }
+
+    .callout {
+      transition: .5s cubic-bezier(.25,.1,.3,1.5) transform;
+      transform-origin: 1.4em -.4em;
+    }
+
+    /* Styling */
+    .txk {
+      padding: 0;
+      font: 200%/1.6 Baskerville;
+    }
+    .txk input {
       display: block;
-      overflow: visible;
-      transition: 10s linear transform;
+      padding: 0 .4em;
+      font: inherit;
     }
-    .hxwz .circular svg:hover { transform: rotate(-2turn); }
-    .hxwz .circular text { fill: currentColor }
-    .hxwz .circular path { fill: none; }
+    .txk .callout {
+      position: absolute;
+      max-width: 14em;
+      padding: .6em .8em;
+      border-radius: .3em;
+      margin: .3em 0 0 -.2em;
+      background: #fed;
+      border: 1px solid rgba(0,0,0,.3);
+      box-shadow: .05em .2em .6em rgba(0,0,0,.2);
+      font-size: 75%;
+    }
+    .txk .callout:before {
+      content: "";
+      position: absolute;
+      top: -.4em;
+      left: 1em;
+      padding: .35em;
+      background: inherit;
+      border: inherit;
+      border-right: 0;
+      border-bottom: 0;
+      transform: rotate(45deg);
+    }
+
+    /*43*/
+    @keyframes loader {
+      to { background-position: -800px 0; }
+    }
+
+    .jz .loader {
+      width: 100px; height: 100px;
+      text-indent: 999px; overflow: hidden; /* Hide text */
+      background: url(http://dabblet.com/img/loader.png) 0 0;
+      animation: loader 1s infinite steps(8);
+    }
+
+    /*44*/
+    @keyframes blink-1 { 50% { color: transparent } }
+    @keyframes blink-2 { to { color: transparent } }
+    .ssts p {
+      padding: 1em;
+      background: gold;
+    }
+    .ssts .blink-smooth-1 {
+      animation: 1s blink-1 3;
+    }
+    .ssts .blink-smooth-2 {
+      animation: .5s blink-2 6;
+      animation-direction: alternate;
+    }
+    .ssts .blink {
+      animation: 1s blink-1 3 steps(1);
+    }
 
 
+    /*45*/
+    @keyframes typing {
+      from { width: 0 }
+    }
+
+    @keyframes caret {
+      50% { border-right-color: transparent; }
+    }
+
+    .dzxg h1 {
+      font: bold 200% Consolas, Monaco, monospace;
+      /*width: 8.25em;*/
+      width: 11.6ch;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: .05em solid;
+      animation: typing 8s steps(7),
+      caret 1s steps(1) infinite;
+    }
+
+    /*46*/
+    @keyframes panoramic {
+      to { background-position: 100% 0; }
+    }
+
+    .xxyh .panoramic {
+      width: 150px; height: 150px;
+      background: url('http://c3.staticflickr.com/3/2671/3904743709_74bc76d5ac_b.jpg');
+      background-size: auto 100%;
+      animation: panoramic 10s linear infinite alternate;
+      animation-play-state: paused;
+    }
+
+    .xxyh .panoramic:hover, .xxyh .panoramic:focus {
+      animation-play-state: running;
+    }
 
 
+    /*47*/
+    @keyframes spin {
+      from {
+        transform: rotate(0turn)
+        translateY(-150px) translateY(50%)
+        rotate(1turn)
+      }
+      to {
+        transform: rotate(1turn)
+        translateY(-150px) translateY(50%)
+        rotate(0turn);
+      }
+    }
+    .hxdh .avatar {
+      animation: spin 3s infinite linear;
+    }
+    /* Anything below this is just styling */
+    .hxdh .avatar {
+      display: block;
+      width: 50px;
+      margin: calc(50% - 25px) auto 0;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .hxdh .path {
+      width: 300px; height: 300px;
+      padding: 20px;
+      margin: 10px auto;
+      border-radius: 50%;
+      background: #fb3;
+    }
 
-
-
-
-
-
-
-
+    /*47.2*/
+    @keyframes spin2 {
+      to { transform: rotate(1turn); }
+    }
+    .hxdh2 .avatar {
+      animation: spin2 3s infinite linear;
+      transform-origin: 50% 150px;
+    }
+    .hxdh2 .avatar > img {
+      animation: inherit;
+      animation-direction: reverse;
+    }
+    /* Anything below this is just styling */
+    .hxdh2 .avatar {
+      width: 50px;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .hxdh2 .avatar > img {
+      display: block;
+      width: inherit;
+    }
+    .hxdh2 .path {
+      width: 300px; height: 300px;
+      padding: 20px;
+      border-radius: 50%;
+      background: #fb3;
+    }
 
 
 
@@ -1234,71 +1497,130 @@ while (true) {
 </div>
 
 <div>
-  <h6>28 - 环形文字</h6>
-  <div class="hxwz">
-    <div class="circular">
-      circular reasoning works because
+  <h6>29 - 选用合适的鼠标光标</h6>
+  <div class="sbgb">
+    <button>Button</button>
+    <button disabled>Disabled button</button>
+  </div>
+</div>
+
+<div>
+  <h6>30 - 扩大可点击区域</h6>
+  <div class="kdj">
+    <button class="btn1">+</button>
+  </div>
+  <div class="kdj2">
+    <button class="btn2">+</button>
+  </div>
+</div>
+
+<div>
+  <h6>31 - 自定义复选框</h6>
+  <div class="zdyk">
+    <input type="checkbox" id="awesome" autofocus />
+    <label for="awesome">Awesome!</label>
+    <br />
+    <input type="checkbox" id="awesome2" checked />
+    <label for="awesome2">Awesome!</label>
+    <br />
+    <input type="checkbox" id="awesome3" disabled />
+    <label for="awesome3">Awesome!</label>
+    <br />
+    <input type="checkbox" id="awesome4" checked disabled />
+    <label for="awesome4">Awesome!</label>
+  </div>
+  <div class="zdyk2">
+    <input type="checkbox" id="awesome5" autofocus />
+    <label for="awesome">开关式按钮</label>
+    <input type="checkbox" id="awesome6" checked />
+    <label for="awesome2">Awesome!</label>
+  </div>
+</div>
+
+
+<div>
+  <h6>34 - 滚动提示</h6>
+  <div class="gdts">
+    <ul>
+      <li>Ada Catlace</li>
+      <li>Alan Purring</li>
+      <li>Schrödingcat</li>
+      <li>Tim Purrners-Lee</li>
+      <li>Webkitty</li>
+      <li>Json</li>
+      <li>Void</li>
+      <li>Neko</li>
+      <li>NaN</li>
+      <li>Cat5</li>
+      <li>Vector</li>
+    </ul>
+  </div>
+</div>
+
+
+<div>
+  <h6>42 - 弹性对话框</h6>
+  <div class="txk">
+    <label>
+      Your username:
+      <input value="leaverou"></input>
+      <span class="callout">
+	Only letters, numbers, underscores (_) and hyphens (-) allowed!
+	</span>
+    </label>
+  </div>
+</div>
+
+<div>
+  <h6>43 -  加载</h6>
+  <div class="jz">
+    <div class="loader">Loading…</div>
+  </div>
+</div>
+
+
+<div>
+  <h6>44 - 闪烁提示</h6>
+  <div class="ssts">
+    <p class="blink-smooth-1">Peek-a-boo!</p>
+    <p class="blink-smooth-2">Peek-a-boo!</p>
+    <p class="blink">Peek-a-boo!</p>
+  </div>
+</div>
+
+<div>
+  <h6>45 - 打字效果</h6>
+  <div class="dzxg">
+    <h1>陈丹丹和许群海</h1>
+  </div>
+</div>
+
+<div>
+  <h6>46 - 响应用户</h6>
+  <div class="xxyh">
+    <div class="panoramic"></div>
+  </div>
+</div>
+
+<div>
+  <h6>47 - 沿环形路径平移</h6>
+  <div class="hxdh">
+    <div class="path">
+      <img src="http://lea.verou.me/book/adamcatlace.jpg" class="avatar" />
     </div>
   </div>
 </div>
 
 <div>
-  <h6>xxx</h6>
-  <div class="body"></div>
+  <h6>47.2 - </h6>
+  <div class="hxdh2">
+    <div class="path">
+      <div class="avatar">
+        <img src="http://lea.verou.me/book/adamcatlace.jpg" />
+      </div>
+    </div>
+  </div>
 </div>
-
-<div>
-  <h6>xxx</h6>
-  <div class="body"></div>
-</div>
-
-<div>
-  <h6>xxx</h6>
-  <div class="body"></div>
-</div>
-
-<div>
-  <h6>xxx</h6>
-  <div class="body"></div>
-</div>
-
-<div>
-  <h6>xxx</h6>
-  <div class="body"></div>
-</div>
-
-<div>
-  <h6>xxx</h6>
-  <div class="body"></div>
-</div>
-
-<div>
-  <h6>xxx</h6>
-  <div class="body"></div>
-</div>
-
-<div>
-  <h6>xxx</h6>
-  <div class="body"></div>
-</div>
-
-<div>
-  <h6>xxx</h6>
-  <div class="body"></div>
-</div>
-
-<div>
-  <h6>xxx</h6>
-  <div class="body"></div>
-</div>
-
-
-<div>
-  <h6>xxx</h6>
-  <div class="body"></div>
-</div>
-
-
 
 
 
