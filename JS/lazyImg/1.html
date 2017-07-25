@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var imgs = document.getElementsByTagName('img');
+  // 获取视口高度与滚动条的偏移量
+  function lazyload(){
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    var viewportSize = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    for(var i=0; i<imgs.length; i++) {
+      var x =scrollTop+viewportSize-imgs[i].offsetTop;
+      if(x>0){
+        imgs[i].src = imgs[i].getAttribute('loadpic');
+      }
+    }
+  }
+
+  setInterval(lazyload,1000);
+</script>
+<script>
+  function getSubClient(p){
+    var l = 0, t = 0, w, h;
+    w = p.offsetWidth;
+    h = p.offsetHeight;
+    while(p.offsetParent){
+      l += p.offsetLeft;
+      t += p.offsetTop;
+      p = p.offsetParent;
+    }
+    return { left: l, top: t, width: w, height: h };
+  }
+</script>
+<script>
+  $(document).ready(function(){
+    // 获取页面视口高度
+    var viewportHeight = $(window).height();
+    var lazyload = function() {
+      // 获取窗口滚动条距离
+      var scrollTop = $(window).scrollTop();
+      $('img').each(function(){
+        // 判断 视口高度+滚动条距离 与 图片元素距离文档原点的高度
+        var x = scrollTop + viewportHeight - $(this).position().top;
+        // 如果大于0 即该元素能被浏览者看到，则将暂存于自定义属性loadpic的值赋值给真正的src
+        if (x > 0)
+        {
+          $(this).attr('src',$(this).attr('loadpic'));
+        }
+      })
+    }
+    // 创建定时器 “实时”计算每个元素的src是否应该被赋值
+    setInterval(lazyload,100);
+  });
+</script>
+</body>
+</html>
