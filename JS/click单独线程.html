@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  document.onclick = function(){
+    console.log("click")
+  }
+  var result = 0
+  for (var i = 0; i<1000; i++){
+    for (var j = 0; j<1000; j++){
+      for (var k = 0; k<1000; k++){
+        result = result + i+j+k
+      }
+    }
+  }
+//  首先向document注册了一个click事件，然后就执行了一段耗时的for循环，在这段for循环结束前，你可以尝试点击页面。当耗时操作结束后，console控制台就会输出之前点击事件的”click”语句。这视乎证明了点击事件（也包括其它各种事件）是由额外单独的线程触发的，事件触发后就会将回调函数放进了“任务队列”的末尾，等待着JavaScript主线程的执行。
+</script>
+</body>
+</html>

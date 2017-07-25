@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var thread = function () {
+    var nowTime = 0, //线程已经执行了多久
+      maxTime = 15;//线程最多执行多久
+    var threadArr = [];//数组模拟线程队列
+
+    this.addThread = function (fn) {
+      threadArr.push(fn)
+    }
+    this.start=function () {
+      doingThread();
+    }
+    var doingThread = function () {
+      if (threadArr.length > 0) {
+        if (nowTime < maxTime) {
+          let now = new Date().getTime();
+          var method = threadArr[0];
+          method();
+          threadArr.splice(0, 1);
+          let nowNew = (new Date().getTime() - now);
+          nowTime += nowNew;
+          console.log('nowTime: '+nowTime);
+          doingThread();
+        } else {//每执行完线程后睡1ms
+          nowTime=0;
+          setTimeout(doingThread, 1);
+        }
+      }else {//先睡着等待线程队列
+        setTimeout(doingThread,100)
+      }
+    }
+  }
+  var fn = function (num) {
+    console.log(num)
+  }
+
+  var thread = new thread();
+  thread.start()
+  for (let i = 0; i < 1000000; i++) {
+    thread.addThread(function () {
+      fn(i)
+    })
+  }
+</script>
+</body>
+</html>

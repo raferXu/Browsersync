@@ -92,23 +92,35 @@ header .phb {
   background: url(phb.png) no-repeat;
   background-size: 100% 100%;
   margin-right: .05rem;
+  margin-left: .15rem;
 }
 header .xxzx {
   background: url(xxzx.png) no-repeat;
   background-size: 100% 100%;
   margin-left: .05rem;
+  margin-right: .15rem;
 }
-header i {
+header .xxzx2 {
+  margin-right: .29rem;
+}
+header .msgRed {
   position: absolute;
-  width: .08rem;
-  height: .08rem;
+  width: .07rem;
+  height: .07rem;
   margin-left: .14rem;
-  margin-top: -0.04rem;
   border-radius: .04rem;
   background-color: #fff;
-}
-.xxzx i {
   margin-top: 0;
+}
+.xxzx .msgNum {
+  width: .21rem;
+  height: .16rem;
+  line-height: .16rem;
+  text-align: center;
+  color: #ff6000;
+  border-radius: .08rem;
+  margin-top: -0.05rem;
+  font-size: 10px;
 }
 header h1 {
   line-height: .44rem;
@@ -131,7 +143,7 @@ main .wrap section.billBox .billImgBox {
   width: 100%;
   height: 1.1rem;
   padding: 0 1.25rem;
-  background: #fafafa;
+  background: #fff;
   overflow: hidden;
 }
 main .wrap section.billBox .task_rand_score {
@@ -325,6 +337,11 @@ main .wrap section.countBox .countInfo .total .num {
 .kq-btns .kqfh {
   box-sizing: border-box;
   width: 47.5%;
+}
+#indistinct {
+  color: #ff6000;
+  background: white;
+  border: 1px solid #ff6000;
 }
 .bgHide {
   background-color: rgba(0, 0, 0, 0);

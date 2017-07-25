@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var counter = 0;
+  var initTime = new Date().getTime();
+  var timer = setInterval(function(){
+    if(counter===2){
+      clearInterval(timer);
+    }
+    if(counter === 0){
+      for(var i = 0; i < 1990000000; i++){
+        ;
+      }
+    }
+
+    console.log("第"+counter+"次：" + (new Date().getTime() - initTime) + " ms");
+
+    counter++;
+  },1000);
+
+//  第0次：2415 ms
+//  第1次：2436 ms
+//  第2次：3000 ms
+//  回调函数执行时间比你指定的间隔时间相等或者更长，那么其回调函数会连在  一起  执行。
+</script>
+</body>
+</html>

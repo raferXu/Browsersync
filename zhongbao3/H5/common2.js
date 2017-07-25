@@ -141,8 +141,9 @@ window.onerror = function (msg,url,l) {
         console.log("url + 'token/project/' + projectId + '/newtask' success");
         console.log(data);
         if(data.code == 808){
-
+          console.log('data.code: 808');
         } else if(!data['id']){
+          console.log('jumpProjectFlag: true');
           jumpProjectFlag = true;
         }
       },
@@ -243,7 +244,7 @@ window.onerror = function (msg,url,l) {
     }else{
       tokenStr = token = location.search.split('?')[1] || "";
       // console.log('token: '+token);
-      token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzMDg4ODg4ODg2IiwidGltZSI6IjIwMTctMDctMTggMDk6MTg6MzYifQ.yASKbBnkJg-PsovmT_wurknjMsLFe_0KkoxUgH3jmRU';
+      token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzNTAwMDAwMDAwIiwidGltZSI6IjIwMTctMDctMjQgMDY6NDA6NTAifQ.2Ji98RionUmXW6stZJXgV6gAVGStaN6PYwDDi3b8rfI';
     }
     nowProject = projectname;
     _run(projectname, _window);
@@ -1086,12 +1087,17 @@ function autoRelogin() {
   $("#failData").hide();
   // jobTask.launchLoginPage();
 }
+var scrollT = 0;
 $(window).on('scroll', function () {
-  $('#toLogin').css('top',$(window).scrollTop());
-  $('#showMes').css('top',$(window).scrollTop());
-  $('#offLine').css('top',$(window).scrollTop());
-  $('#answerTip').css('top',$(window).scrollTop());
-  $('#failData').css('top',$(window).scrollTop());
+  scrollT = $(this).scrollTop();
+  $('#toLogin').css('top', scrollT+'px');
+  $('#showMes').css('top', scrollT+'px');
+  $('#offLine').css('top', scrollT+'px');
+  $('#answerTip').css('top', scrollT+'px');
+  $('#failData').css('top', scrollT+'px');
+  $('#taskTimeout').css('top', scrollT+'px');
+  $('#kqfs').css('top', scrollT+'px');
+  $('#keyboardWrap').css('top', scrollT+'px');
 });
 //判断图片是否加载完成
 function imgLoaded(img) {
@@ -1439,6 +1445,28 @@ function showPageData(task,tokenStr,interface) {
     var userInfoCode = userInfo[0].code;
     var lotteryInfoCode = lotteryInfo[0].code;
     if(userInfoCode == 200){
+      var feedback_reply_count = userInfo[0].body.feedback_reply_count;
+      var other_message_count = userInfo[0].body.other_message_count;
+
+      if(feedback_reply_count>0){
+        console.log('feedback_reply_count>0');
+        $('.xxzx').addClass('xxzx2');
+        $('.xxzx i').addClass('msgRed msgNum');
+        if(feedback_reply_count<10){
+          $('.xxzx i').html(feedback_reply_count);
+        }else{
+          $('.xxzx i').html('9+');
+        }
+      }else if(other_message_count>0){
+        console.log('other_message_count>0');
+        $('.xxzx').removeClass('xxzx2');
+        $('.xxzx i').removeClass().addClass('msgRed');
+      }else{
+        console.log('feedback_reply_count,other_message_count都为0');
+        $('.xxzx').removeClass('xxzx2');
+        $('.xxzx i').removeClass();
+      }
+
       var total_order_num = userInfo[0].body.total_order_num;
       $('.task_rand_score span').html(userInfo[0].body.task_rand_score);
       $('.total .num').html(total_order_num);
@@ -1495,11 +1523,34 @@ function showPageData(task,tokenStr,interface) {
 
   });
 }
-function bindJumpNative() {
+function bindJumpNative(projectName) {
   //点击任务指引
   $('.taskGuide').off(touchstart).on(touchstart,function () {
     console.log('taskGuideBtnclick');
-    jobTask.taskGuide();
+    // jobTask.taskGuide();
+
+    var guideImgArr = {
+      'sn': ['http://192.168.0.122:3000/Browersync/zhongbao3/h5/snGuide1.png','http://192.168.0.122:3000/Browersync/zhongbao3/h5/snGuide2.png'],
+      'total': [],
+      'date': [],
+      'hospital': ['http://192.168.0.122:3000/Browersync/zhongbao3/h5/hospitalG.png']
+    };
+
+    var nowImgArr = guideImgArr[projectName];
+    var len = nowImgArr.length;
+    var i = 0;
+    if(len > 0){
+      $('#rwzyImg').attr('src', nowImgArr[0]);
+      $('#rwzy').show();
+    }
+    $('#read').off(touchstart).on(touchstart,function () {
+      i++;
+      if(len >= i+1){
+        $('#rwzyImg').attr('src', nowImgArr[i]);
+      }else{
+        $('#rwzy').hide();
+      }
+    });
   });
 //点击查看
   $('.more').off(touchstart).on(touchstart,function () {

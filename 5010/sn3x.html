@@ -160,7 +160,7 @@
 //            var tokenStr = getTokenAndPort().tokenStr;
             var interface = gInterface;
             showPageData(task,tokenStr,interface);
-            bindJumpNative();
+            bindJumpNative(nowProject);
 //拿到token判断有没登录
             if(!tokenStr){
               console.log('没有拿到token值！');

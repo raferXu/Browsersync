@@ -17,42 +17,42 @@
     }
     .keyboard{
         position:absolute;
-        top: 0rem;
-        /*bottom: -2.5rem;*/
+        top: 0;
         left: 0;
         width: 100%;
+        padding-top: .1rem;
         padding-bottom: .1rem;
         background: #c8c8c8;
     }
-    .keyboardT{
-        padding: .1rem .2rem;
-        height: .3rem;
-        background: #fff;
-        margin-bottom: .1rem;
-        text-align: right;
-        border-top: 1px solid #c8c8c8;
-    }
-    #arrowDown{
-        position: relative;
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        top: -20px;
-    }
-    #arrowDown:after, #arrowDown:before {
-        border: 10px solid transparent;
-        border-top: 10px solid #fff;
-        width: 0;
-        height: 0;
-        position: absolute;
-        top: 17px;
-        left: 10px;
-        content: ' '
-    }
-    #arrowDown:before {
-        border-top-color: #aeb3bd;
-        top: 20px;
-    }
+    /*.keyboardT{*/
+        /*padding: .1rem .2rem;*/
+        /*height: .3rem;*/
+        /*background: #fff;*/
+        /*margin-bottom: .1rem;*/
+        /*text-align: right;*/
+        /*border-top: 1px solid #c8c8c8;*/
+    /*}*/
+    /*#arrowDown{*/
+        /*position: relative;*/
+        /*display: inline-block;*/
+        /*width: 40px;*/
+        /*height: 40px;*/
+        /*top: -20px;*/
+    /*}*/
+    /*#arrowDown:after, #arrowDown:before {*/
+        /*border: 10px solid transparent;*/
+        /*border-top: 10px solid #fff;*/
+        /*width: 0;*/
+        /*height: 0;*/
+        /*position: absolute;*/
+        /*top: 17px;*/
+        /*left: 10px;*/
+        /*content: ' '*/
+    /*}*/
+    /*#arrowDown:before {*/
+        /*border-top-color: #aeb3bd;*/
+        /*top: 20px;*/
+    /*}*/
     .keyboardM{
         display: flex;
         justify-content: space-between;
@@ -113,14 +113,14 @@
         position: absolute;
         border: 1px solid #323232;
         border-left: none;
-        padding: 0 10px;
+        padding: 0 10px 1px 9px;
         left: 30px;
         line-height: 1.2;
-        top: 10px;
+        top: 7px;
         font-size: 14px;
     }
     .arrow{
-        top: 13px;
+        top: 10px;
         position: absolute;
         width: 12px;
         height: 12px;
@@ -133,7 +133,7 @@
 </style>
 <div class="row skeleton">
     <header>
-        <span class="xxzx r"><i></i></span>
+        <span class="xxzx r"><i id="msgNum" class=""></i></span>
         <span class="phb l"><i></i></span>
         <h1 class="tc fwn">平安众包</h1>
     </header>
@@ -155,7 +155,7 @@
                         </span>
                         <span class="r" id="guideTips">点击此查看任务指引</span>
                     </nav>
-                    <input style="background-color:#fff" id="answerInput" type="text" class="showInfo tc bsb" readonly="readonly">
+                    <input style="background:#dcdcdc;border:1px solid #dcdcdc" id="answerInput" type="text" class="showInfo tc bsb" readonly="readonly">
                     <p class="textTip" style="padding-left:2px">请保证文本输入框与图片内容一致 <span id="gzsm" class="r" style="color:#ff6000;padding-right:2px">规则说明</span></p>
                     <div id="btns" class="btns">
                         <input id="indistinct" type="button" class="next tc bsb" value="看不清">
@@ -236,12 +236,15 @@
         <p id="fhGuide" style="margin-top:.15rem;"><a style="color:#ff6000;" href="#">任务指引</a></p>
     </div>
 </div>
-
-<div id="keyboardWrap" style="overflow: hidden">
+<div id="rwzy" style="display:none;box-sizing:border-box;width:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.7);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <img id="rwzyImg" src="" alt="rwzyImg" style="width:100%;">
+    <span id="read" style="position: absolute;top: 5.38rem;left: 0;right: 0;margin: auto;width: .8rem;height: .39rem"></span>
+</div>
+<div id="keyboardWrap" style="overflow: hidden;z-index:9999">
     <div id="keyboard" class="keyboard">
-        <div class="keyboardT">
-            <span id="arrowDown"></span>
-        </div>
+        <!--<div class="keyboardT">-->
+            <!--<span id="arrowDown"></span>-->
+        <!--</div>-->
         <div id="keyboardM" class="keyboardM">
             <div class="keyboardL">
                 <div class="rowR">
@@ -313,18 +316,18 @@
 <script type="text/javascript">
   pybossa.presentTask(function(task, deferred) {
     if ( !$.isEmptyObject(task) ) {
+//      $(window).scrollTop()
       var boardH = document.documentElement.offsetHeight;
       $('.keyboard').css('top', parseInt(boardH)+'px');
       var boardW = document.documentElement.offsetWidth;
-      //      alert(parseInt(boardH-boardW*7/12));
-      var boardT = parseInt(boardH-boardW*7/12) + 'px';
+      var boardT = parseInt(boardH-boardW*187/363) + 'px';
       console.log('运行presentTask函数时拿到的任务为: '+task);
       console.log(task);
       imgHandleFn(task);
       setInputVal(task,boardH,boardT);
       var interface = gInterface;
       showPageData(task,tokenStr,interface);
-      bindJumpNative();
+      bindJumpNative(nowProject);
 //拿到token判断有没登录
       if(!tokenStr){
         console.log('没有拿到token值！');

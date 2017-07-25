@@ -13,9 +13,10 @@ function keyboardEvent(str,h,t) {
   $('#answerInput').off(touchstart).on(touchstart, function(e) {
     e.preventDefault();
     $('#keyboardWrap').show();
+    // alert($(window).scrollTop());
     $('.keyboard').animate({'top': t});
   });
-  $('#arrowDown, #sureTotalBtn').off(touchstart).on(touchstart, function(e) {
+  $('#sureTotalBtn').off(touchstart).on(touchstart, function(e) {
     e.preventDefault();
     $('.keyboard').animate({'top': h},function () {
       $('#keyboardWrap').hide();
@@ -50,5 +51,11 @@ function keyboardEvent(str,h,t) {
     e.preventDefault();
     strArr.push($(this).html());
     $('.showInfo').val(strArr.join(''));
+  });
+  $('#keyboardWrap').off(touchstart).on(touchstart, function () {
+    $(this).hide();
+  });
+  $('#keyboard').off(touchstart).on(touchstart, function (event) {
+    event.stopPropagation();
   });
 }

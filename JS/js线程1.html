@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button id='do'> Do long calc!</button>
+<div id='status'></div>
+<div id='result'></div>
+
+
+<script src="../jiaoben3218/js/jquery.1.7.2.min.js"></script>
+<script>
+  $('#do').on('click', function(){
+
+    $('#status').text('calculating....');// 此处会触发redraw事件，但会放到队列里执行，直到long()执行完。
+
+// 没设定定时器，用户将无法看到“calculating...”,
+// 因为calculating....之后就是calclation done，两者直接切换太快
+    long();// 执行长时间任务，造成阻塞
+
+// 设定了定时器，用户就如期看到“calculating...”
+//setTimeout(long,50);// 大约50ms后，将耗时长的long回调函数插入“任务队列”末尾，根据先进先出原则，其将在redraw之后被调度到主线程执行
+
+  });
+
+  function long(){
+    var result = 0
+    for (var i = 0; i<1000; i++){
+      for (var j = 0; j<1000; j++){
+        for (var k = 0; k<1000; k++){
+          result = result + i+j+k
+        }
+      }
+    }
+    $('#status').text('calclation done'); // 在本案例中，该语句必须放到这里，这将使它与回调函数的行为类似
+  }
+
+</script>
+</body>
+</html>

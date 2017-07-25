@@ -24,7 +24,8 @@
                         </span>
                         <span class="r" id="guideTips">点击此查看任务指引</span>
                     </nav>
-                    <input id="answerInput" type="text" class="showInfo tc bsb">
+                    <!--#dcdcdc-->
+                    <input style="background:#dcdcdc;border:1px solid #dcdcdc" id="answerInput" type="text" class="showInfo tc bsb">
                     <p class="textTip" style="padding-left:2px">请保证文本输入框与图片内容一致 <span id="gzsm" class="r" style="color:#ff6000;padding-right:2px">规则说明</span></p>
                     <div id="btns" class="btns">
                         <input id="indistinct" type="button" class="next tc bsb" value="看不清">
@@ -132,7 +133,7 @@
         setInputVal(task);
         var interface = gInterface;
         showPageData(task,tokenStr,interface);
-        bindJumpNative();
+        bindJumpNative(nowProject);
 //拿到token判断有没登录
         if(!tokenStr){
           console.log('没有拿到token值！');
