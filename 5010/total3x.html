@@ -17,12 +17,12 @@
     }
     .keyboard{
         position:absolute;
-        top: 0;
         left: 0;
+        bottom: 0;
         width: 100%;
         padding-top: .1rem;
         padding-bottom: .1rem;
-        background: #c8c8c8;
+        background: #dcdcdc;
     }
     /*.keyboardT{*/
         /*padding: .1rem .2rem;*/
@@ -58,34 +58,38 @@
         justify-content: space-between;
         display: -webkit-box;
         -webkit-box-pack: justify;
-        padding: 0 .2rem;
+        padding: .1rem 1.2rem 0;
     }
-    .keyboardL{
+    /*.keyboardL{*/
+        /*width: 47%;*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*justify-content: space-between;*/
+        /*display: -webkit-box;*/
+        /*-webkit-box-orient: vertical;*/
+        /*-webkit-box-pack: justify;*/
+    /*}*/
+    /*.keyboardR{*/
+        /*width: 47%;*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*justify-content: space-between;*/
+        /*display: -webkit-box;*/
+        /*-webkit-box-orient: vertical;*/
+        /*-webkit-box-pack: justify;*/
+    /*}*/
+    .col{
+        width: 28%;
+    }
+    .row{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        display: -webkit-box;
+        -webkit-box-pack: justify;
+    }
+    .zi{
         width: 47%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-box-pack: justify;
-    }
-    .keyboardR{
-        width: 47%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-box-pack: justify;
-    }
-    .rowR{
-        display: flex;
-        justify-content: space-between;
-        display: -webkit-box;
-        -webkit-box-pack: justify;
-        margin-bottom: .05rem;
-    }
-    .rowR>div{
         box-sizing: border-box;
         padding: .02rem .1rem;
         border-radius: .1rem;
@@ -94,42 +98,51 @@
         -moz-box-shadow: 0 1px 0 #7a7a7a;
         box-shadow: 0 1px 0 #7a7a7a;
     }
-    .item1>div{
-        width: 100%;
-    }
-    .item2>div{
-        width: 47%;
-    }
-    .keyboardB{
-        padding: 0 .2rem;
-    }
-    #keyboardM .delTxt{
-        position: relative;
-        font-weight: 700;
-        border-color: transparent;
-        background: #aeb3bd;
-    }
-    .text{
-        position: absolute;
-        border: 1px solid #323232;
-        border-left: none;
-        padding: 0 10px 1px 9px;
-        left: 30px;
-        line-height: 1.2;
-        top: 7px;
-        font-size: 14px;
-    }
-    .arrow{
-        top: 10px;
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        border: 1px solid #000;
-        border-right: none;
-        border-top: none;
-        transform: rotate(45deg);
-        left: 24px;
-    }
+    /*.rowR>div{*/
+        /*box-sizing: border-box;*/
+        /*padding: .02rem .1rem;*/
+        /*border-radius: .1rem;*/
+        /*background: #fff;*/
+        /*-webkit-box-shadow: 0 1px 0 #7a7a7a;*/
+        /*-moz-box-shadow: 0 1px 0 #7a7a7a;*/
+        /*box-shadow: 0 1px 0 #7a7a7a;*/
+    /*}*/
+    /*.item1>div{*/
+        /*width: 100%;*/
+    /*}*/
+    /*.item2>div{*/
+        /*width: 47%;*/
+    /*}*/
+    /*.keyboardB{*/
+        /*padding: 0 .2rem;*/
+    /*}*/
+    /*#keyboardM .delTxt{*/
+        /*position: relative;*/
+        /*font-weight: 700;*/
+        /*border-color: transparent;*/
+        /*background: #aeb3bd;*/
+    /*}*/
+    /*.text{*/
+        /*position: absolute;*/
+        /*border: 1px solid #323232;*/
+        /*border-left: none;*/
+        /*padding: 0 10px 1px 9px;*/
+        /*left: 30px;*/
+        /*line-height: 1.2;*/
+        /*top: 7px;*/
+        /*font-size: 14px;*/
+    /*}*/
+    /*.arrow{*/
+        /*top: 10px;*/
+        /*position: absolute;*/
+        /*width: 12px;*/
+        /*height: 12px;*/
+        /*border: 1px solid #000;*/
+        /*border-right: none;*/
+        /*border-top: none;*/
+        /*transform: rotate(45deg);*/
+        /*left: 24px;*/
+    /*}*/
 </style>
 <div class="row skeleton">
     <header>
@@ -246,49 +259,55 @@
             <!--<span id="arrowDown"></span>-->
         <!--</div>-->
         <div id="keyboardM" class="keyboardM">
-            <div class="keyboardL">
-                <div class="rowR">
-                    <div class="zi">万</div>
-                    <div class="zi">仟</div>
+            <div class="col">
+                <div class="row">
+                    <div class="zi">壹</div>
+                    <div class="zi">贰</div>
+                </div>
+                <div class="row">
+                    <div class="zi">柒</div>
+                    <div class="zi">捌</div>
+                </div>
+                <div class="row">
+                    <div class="zi">拾</div>
                     <div class="zi">佰</div>
                 </div>
-                <div class="rowR">
-                    <div class="zi">角</div>
-                    <div class="zi">分</div>
-                    <div class="zi">拾</div>
-                </div>
-                <div class="rowR item2">
+                <div class="row">
                     <div class="zi">圆</div>
                     <div class="zi">元</div>
                 </div>
-                <div class="rowR item2">
-                    <div class="zi">整</div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="zi">叁</div>
+                    <div class="zi">肆</div>
+                </div>
+                <div class="row">
+                    <div class="zi">玖</div>
                     <div class="zi">零</div>
                 </div>
-            </div>
-            <div class="keyboardR">
-                <div class="rowR">
-                    <div class="zi">壹</div>
-                    <div class="zi">贰</div>
-                    <div class="zi">叁</div>
+                <div class="row">
+                    <div class="zi">仟</div>
+                    <div class="zi">万</div>
                 </div>
-                <div class="rowR">
-                    <div class="zi">肆</div>
+                <div class="row">
+                    <div class="zi">整</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
                     <div class="zi">伍</div>
                     <div class="zi">陆</div>
                 </div>
-                <div class="rowR">
-                    <div class="zi">柒</div>
-                    <div class="zi">捌</div>
-                    <div class="zi">玖</div>
+                <div class="row">
+                    <div class="zi">角</div>
+                    <div class="zi">分</div>
                 </div>
-                <div class="rowR item2">
-                    <div id="sureTotalBtn">确认</div>
-                    <div id="delTxt" class="delTxt">
-                        <span class="arrow"></span>
-                        <span class="text">X</span>
-                    </div>
+                <div id="delTxt" class="row delTxt">
+                    <span class="arrow"></span>
+                    <span class="text">X</span>
                 </div>
+                <div class="row" id="sureTotalBtn">确认</div>
             </div>
         </div>
         <div class="keyboardB"></div>

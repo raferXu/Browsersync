@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    img{width: 100px;}
+    .img{
+      width: 400px;
+      height: 300px;
+      border: 1px solid red;
+      margin: 20px auto;
+    }
+    .img1{
+      position: relative;
+    }
+    .img1 img{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    .img2{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .img3 .icenter{
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      width: 400px;
+      height: 300px;
+    }
+    .img3 img{
+      vertical-align: center;
+      display: inline-block;
+    }
+    .img4{
+      text-align: center;
+    }
+    .img4 img{
+      vertical-align: middle;
+    }
+    .img4 .iblock{
+      display: inline-block;
+      height: 100%;
+      width: 0;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<div class="img img1">
+  <img src="headerBg.png" alt="header">
+</div>
+<div class="img img2">
+  <img src="headerBg.png" alt="header">
+</div>
+<div class="img img3">
+  <span class="icenter">
+      <img src="headerBg.png" alt="header">
+  </span>
+</div>
+<div class="img img4">
+  <img src="headerBg.png" alt="header">
+  <i class="iblock"></i>
+</div>
+</body>
+</html>

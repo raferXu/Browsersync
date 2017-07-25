@@ -263,15 +263,6 @@ window.onerror = function (msg,url,l) {
 (function () {
   'use strict';
   var definePinchZoom = function ($) {
-
-    /**
-     * Pinch zoom using jQuery
-     * @version 0.0.2
-     * @author Manuel Stofer <mst@rtp.ch>
-     * @param el
-     * @param options
-     * @constructor
-     */
     var PinchZoom = function (el, options) {
         this.el = $(el);
         // this.zoomFactor = 1;
