@@ -16,13 +16,14 @@
         z-index: 9999;
     }
     .keyboard{
+        box-sizing: border-box;
         position:absolute;
         left: 0;
         bottom: 0;
         width: 100%;
         padding-top: .1rem;
         padding-bottom: .1rem;
-        background: #dcdcdc;
+        background: #f0f0f0;
     }
     /*.keyboardT{*/
         /*padding: .1rem .2rem;*/
@@ -54,11 +55,13 @@
         /*top: 20px;*/
     /*}*/
     .keyboardM{
+        box-sizing: border-box;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         display: -webkit-box;
         -webkit-box-pack: justify;
-        padding: .1rem 1.2rem 0;
+        padding: .1rem .2rem 0;
     }
     /*.keyboardL{*/
         /*width: 47%;*/
@@ -79,7 +82,7 @@
         /*-webkit-box-pack: justify;*/
     /*}*/
     .col{
-        width: 28%;
+        /*width: 32%;*/
     }
     .row{
         width: 100%;
@@ -87,16 +90,21 @@
         justify-content: space-between;
         display: -webkit-box;
         -webkit-box-pack: justify;
+        margin-bottom: .1rem;
     }
-    .zi{
+    .zi, .zi3{
         width: 47%;
         box-sizing: border-box;
-        padding: .02rem .1rem;
+        height: .4rem;
+        line-height: .4rem;
         border-radius: .1rem;
         background: #fff;
         -webkit-box-shadow: 0 1px 0 #7a7a7a;
         -moz-box-shadow: 0 1px 0 #7a7a7a;
         box-shadow: 0 1px 0 #7a7a7a;
+    }
+    .zi2{
+        width: 100%;
     }
     /*.rowR>div{*/
         /*box-sizing: border-box;*/
@@ -116,33 +124,72 @@
     /*.keyboardB{*/
         /*padding: 0 .2rem;*/
     /*}*/
-    /*#keyboardM .delTxt{*/
-        /*position: relative;*/
-        /*font-weight: 700;*/
+    #keyboardM .delTxt{
+        position: relative;
+        font-weight: 700;
         /*border-color: transparent;*/
-        /*background: #aeb3bd;*/
-    /*}*/
-    /*.text{*/
-        /*position: absolute;*/
-        /*border: 1px solid #323232;*/
-        /*border-left: none;*/
-        /*padding: 0 10px 1px 9px;*/
-        /*left: 30px;*/
-        /*line-height: 1.2;*/
-        /*top: 7px;*/
-        /*font-size: 14px;*/
-    /*}*/
-    /*.arrow{*/
-        /*top: 10px;*/
-        /*position: absolute;*/
-        /*width: 12px;*/
-        /*height: 12px;*/
-        /*border: 1px solid #000;*/
-        /*border-right: none;*/
-        /*border-top: none;*/
-        /*transform: rotate(45deg);*/
-        /*left: 24px;*/
-    /*}*/
+        margin-bottom: .1rem;
+        /*background-color: transparent;*/
+        /*box-shadow: none;*/
+    }
+
+    .text{
+        box-sizing: border-box;
+        position: absolute;
+        border: 1px solid #323232;
+        border-left: none;
+        padding: 0 .2rem;
+        margin: 0;
+        left: .3rem;
+        height: .24rem;
+        line-height: .24rem;
+        top: .08rem;
+        font-size: 24px;
+    }
+    .arrow{
+        top: .12rem;
+        position: absolute;
+        width: .16rem;
+        height: .16rem;
+        border: 1px solid #000;
+        border-right: none;
+        border-top: none;
+        transform: rotate(45deg);
+        left: .22rem;
+    }
+    /*
+    .del{
+        box-sizing: border-box;
+        position: absolute;
+        border: 1px solid #323232;
+        border-left: none;
+        padding: 0 .25rem;
+        margin: 0;
+        left: .3rem;
+        height: .31rem;
+        line-height: .31rem;
+        top: .04rem;
+        font-size: 24px;
+        background: #fff;
+        -webkit-filter: drop-shadow(.1em .1em .1em rgba(0,0,0,.5));
+        filter: drop-shadow(.1em .1em .1em rgba(0,0,0,.5));
+    }
+    .del::before {
+        content: '';
+        position: absolute;
+        top: .09rem;
+        left: .2rem;
+        width: 0;
+        height: 0;
+        border: 1em solid transparent;
+        border-right-color: #fff;
+        border-left-width: 0;
+    }
+    */
+    #sureTotalBtn{
+        background-color: #ff6000;
+        color: #fff;
+    }
 </style>
 <div class="row skeleton">
     <header>
@@ -259,7 +306,7 @@
             <!--<span id="arrowDown"></span>-->
         <!--</div>-->
         <div id="keyboardM" class="keyboardM">
-            <div class="col">
+            <div class="col" style="width:32%">
                 <div class="row">
                     <div class="zi">壹</div>
                     <div class="zi">贰</div>
@@ -277,7 +324,7 @@
                     <div class="zi">元</div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col" style="width:32%">
                 <div class="row">
                     <div class="zi">叁</div>
                     <div class="zi">肆</div>
@@ -291,10 +338,10 @@
                     <div class="zi">万</div>
                 </div>
                 <div class="row">
-                    <div class="zi">整</div>
+                    <div class="zi zi2">整</div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col" style="width:32%">
                 <div class="row">
                     <div class="zi">伍</div>
                     <div class="zi">陆</div>
@@ -303,11 +350,12 @@
                     <div class="zi">角</div>
                     <div class="zi">分</div>
                 </div>
-                <div id="delTxt" class="row delTxt">
+                <div id="delTxt" class="zi2 zi3 delTxt">
                     <span class="arrow"></span>
                     <span class="text">X</span>
+                    <!--<span class="del">X</span>-->
                 </div>
-                <div class="row" id="sureTotalBtn">确认</div>
+                <div class="zi2 zi3" id="sureTotalBtn">确认</div>
             </div>
         </div>
         <div class="keyboardB"></div>
@@ -336,14 +384,14 @@
   pybossa.presentTask(function(task, deferred) {
     if ( !$.isEmptyObject(task) ) {
 //      $(window).scrollTop()
-      var boardH = document.documentElement.offsetHeight;
-      $('.keyboard').css('top', parseInt(boardH)+'px');
-      var boardW = document.documentElement.offsetWidth;
-      var boardT = parseInt(boardH-boardW*187/363) + 'px';
+//      var boardH = document.documentElement.offsetHeight;
+//      $('.keyboard').css('top', parseInt(boardH)+'px');
+//      var boardW = document.documentElement.offsetWidth;
+//      var boardT = parseInt(boardH-boardW*187/363) + 'px';
       console.log('运行presentTask函数时拿到的任务为: '+task);
       console.log(task);
       imgHandleFn(task);
-      setInputVal(task,boardH,boardT);
+      setInputVal(task);
       var interface = gInterface;
       showPageData(task,tokenStr,interface);
       bindJumpNative(nowProject);

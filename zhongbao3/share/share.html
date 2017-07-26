@@ -94,8 +94,9 @@
     #codeBox{
       text-align: center;
     }
-    #codeImg{
+    #qrcode{
       width: 1.5rem;
+      height: 1.5rem;
     }
     .codeP{
       margin: .15rem 0 .35rem;
@@ -147,7 +148,8 @@
     </li>
   </ul>
   <div id="codeBox">
-    <img id="codeImg" src="code.png" alt="code">
+    <!--<img id="codeImg" src="code.png" alt="code">-->
+    <div id="qrcode"></div>
     <p class="codeP">扫一扫或长按指纹二维码下载APP</p>
   </div>
 </main>
@@ -155,5 +157,14 @@
   <div id="name">平安众包</div>
   <div id="openBtn">打开</div>
 </footer>
+<script src="../../jiaoben3218/js/jquery.1.7.2.min.js"></script>
+<script type="text/javascript" src="qrcode.js"></script>
+<script>
+  var qrcode = new QRCode(document.getElementById("qrcode"), {
+    width : 150,
+    height : 150
+  });
+  qrcode.makeCode('https://www.sougou.com');
+</script>
 </body>
 </html>

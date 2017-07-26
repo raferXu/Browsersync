@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      height: 100px;
+      border: 1px solid;
+    }
+    div[class|=as]{
+      border: 1px solid red;
+    }
+    div[class~=qw]{
+      border: 1px solid pink;
+    }
+    .nav{
+      width: 460px;
+    }
+    .nav span{
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background: black;
+    }
+    .nav>span+span{
+      margin-left: 20px;
+    }
+    .ffB{
+      height: 200px;
+    }
+    .ff{
+      position: absolute;
+      width: 300px;
+      height: 200px;
+      background: #000;
+      float: left;
+      left: 10%;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+[att = value]
+[att |= value]值为value或以value开始并跟上一个'-'字符，如zh-cn
+[att ~= value]value作为单独att
+[att ^= value]以value开始
+[att $= value]以value结束
+[att *= value]包含value
+<div class="as-d"></div>
+<br>
+<div class="asd"></div>
+<br>
+<div class="as-f"></div>
+<br>
+<div class="qw"></div>
+<br>
+<div class="qwer"></div>
+<br>
+<div class="qw er"></div>
+<br>
+设置多个li中间的间隙
+<div class="nav">
+  <span></span><span></span><span></span><span></span>
+</div>
+除第一个按钮、最后一个按钮和带有xxx样式的元素外
+.btn:not(:first-child):not(:last-child):not(.xxx) {
+}
+
+
+$(document).on('click.bs','td',function(){});
+中间多了一个参数，而且选择器变成了document，利用了冒泡机制；
+
+
+事件命名空间
+$('#s').on('click.xu',function(){});
+$('#s').trigger('click.xu');
+只触发自己定义的click事件
+
+
+<div id="abc" data-role="man" data-toggle="toggle" data-xxx="xu"></div>
+
+$('#abc').data('role');  //'man'
+var value = $('#abc').data();
+//value={role:'man',toggle:'toggle',xxx:'xu'}
+
+辅助属性——可访问性
+<div role="navigation" aria-labelledby="modalLabel" aria-hidden="true"></div>
+
+<div class="ffB">
+  <div class="ff">浮动加绝对定位left</div>
+</div>
+
+
+
+样式组装：
+基础样式btn
+  字体、内外边距、显示方式display、边框
+.alert{
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+颜色样式btn-success
+  文本颜色、边框颜色、背景颜色
+.btn-primary{
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+尺寸样式btn-lg
+超小xs、小型sm、普通、大型lg
+<button type="button" class="btn btn-lg">Success</button>
+尺寸调整包括padding、圆角设置、行间距、字体大小等
+.btn-lg{
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+状态样式disabled
+一般处理元素的阴影、鼠标形状、透明度、虚框等
+.btn.disabled{
+  pointer-events: none;
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  opacity: .65;
+}
+特殊样式a:hover
+并列样式btn-group
+间距问题
+.aaa > p {margin-bottom: 0;}
+.aaa > p + p {margin-top: 5px;}
+嵌套样式btn-group=btn.group
+浮动仿写和间距
+动画样式.progress
+
+
+
+
+消除2个按钮或按钮与按钮组之间的1px像素细节
+.btn-group .btn-group + .btn-group,
+.btn-group .btn-group + .btn,
+.btn-group .btn + .btn-group,
+.btn-group .btn + .btn{
+  margin-left: -1px;
+}
+<div class="btn-group">
+  <div class="btn-group">
+    <div class="btn"></div>
+    <div class="btn"></div>
+    <div class="btn"></div>
+    <div class="btn"></div>
+  </div>
+  <div class="btn-group">
+    <div class="btn"></div>
+    <div class="btn"></div>
+    <div class="btn"></div>
+  </div>
+  <div class="btn"></div>
+</div>
+
+
+下拉菜单圆角问题，只有第一个和最后一个子元素才有圆角
+.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .dropdown-toggle:not(:first-child){
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+
+
+Bootstrap的js插件实现步骤：
+1、声明立即调用的函数
+  +function($){"use strict";....}(jQuery);
+2、定义插件类及相关原型方法
+  Alert.prototype.close
+3、在jq定义插件并重设插件构造函数
+  $.fn.alert.Constructor = Alert;
+4、防冲突处理
+  $.fn.alert.noConflict
+5、绑定各种触发事件
+  data-api
+
+
+
+
+
+
+</body>
+</html>

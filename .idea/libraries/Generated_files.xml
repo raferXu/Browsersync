@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/zhongbao3/share/1.min.js" />
+        <item url="file://$PROJECT_DIR$/zhongbao3/share/qrcode.min.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/zhongbao3/share/1.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/share/qrcode.min.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

@@ -1,29 +1,30 @@
 /**
  * Created by raferxu on 17/7/6.
  */
-function setInputVal(task,h,t) {
+function setInputVal(task) {
   //发送图片获取识别字符串，并放入input中
   var str = task.info.alg_answer || '';
   $('.showInfo').val(str);
-  keyboardEvent(str,h,t);
+  keyboardEvent(str);
 }
-function keyboardEvent(str,h,t) {
+function keyboardEvent(str) {
   var strArr = [];
   strArr = str.split('');
   $('#answerInput').off(touchstart).on(touchstart, function(e) {
     e.preventDefault();
     $('#keyboardWrap').show();
     // alert($(window).scrollTop());
-    $('.keyboard').animate({'top': t});
+    $('.keyboard').animate({'bottom': 0});
   });
   $('#sureTotalBtn').off(touchstart).on(touchstart, function(e) {
     e.preventDefault();
-    $('.keyboard').animate({'top': h},function () {
+    $('.keyboard').animate({'bottom': '-4rem'},function () {
       $('#keyboardWrap').hide();
     });
   });
   var delTimer1 = null, delTimer2 = null;
   $('#delTxt').off(touchstart).on(touchstart, function(e) {
+    // alert(strArr.join(''));
     e.preventDefault();
     if(strArr.length>0){
       strArr.pop();
@@ -43,7 +44,7 @@ function keyboardEvent(str,h,t) {
       },500);
     }
   });
-  $('#delTxt').off(touchend).on(touchend, function(e) {
+  $(document).off(touchend).on(touchend, function(e) {
     clearInterval(delTimer1);
     clearInterval(delTimer2);
   });

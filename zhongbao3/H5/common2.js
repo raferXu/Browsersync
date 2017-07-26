@@ -116,6 +116,10 @@ window.onerror = function (msg,url,l) {
       error: function (err) {
         console.log("url + 'token/project' error");
         console.log(err);
+        if(err.status == 401){
+          // jobTask.notifyToRelogin();
+          console.log('token/project接口token超时');
+        }
       },
       data: 'all=1&short_name='+projectname,
       dataType:'json'
@@ -244,7 +248,9 @@ window.onerror = function (msg,url,l) {
     }else{
       tokenStr = token = location.search.split('?')[1] || "";
       // console.log('token: '+token);
-      token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzNTAwMDAwMDAwIiwidGltZSI6IjIwMTctMDctMjQgMDY6NDA6NTAifQ.2Ji98RionUmXW6stZJXgV6gAVGStaN6PYwDDi3b8rfI';
+      if(!token){
+        token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzMDg4ODg4ODg0IiwidGltZSI6IjIwMTctMDctMjYgMDI6MTA6MTAifQ.rVkgo4cEXhaJGbyFvs98EwUJChLsBpA_fWO-d0DG9oo';
+      }
     }
     nowProject = projectname;
     _run(projectname, _window);
