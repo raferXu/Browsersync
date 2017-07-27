@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    input[type=range].custom {
+      -webkit-appearance: none;
+      background-color: Red;
+      width: 200px;
+    }
+    input[type=range].custom::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background-color: Green;
+      opacity: 0.5;
+      width: 10px;
+      height: 40px;
+    }
+  </style>
+</head>
+<body>
+<input class="custom" id="foo" type="range"/>
+<script>
+  var slider = document.getElementById("foo");
+  console.log(slider.firstChild); // 返回 null
+</script>
+</body>
+</html>

@@ -25,35 +25,6 @@
         padding-bottom: .1rem;
         background: #f0f0f0;
     }
-    /*.keyboardT{*/
-        /*padding: .1rem .2rem;*/
-        /*height: .3rem;*/
-        /*background: #fff;*/
-        /*margin-bottom: .1rem;*/
-        /*text-align: right;*/
-        /*border-top: 1px solid #c8c8c8;*/
-    /*}*/
-    /*#arrowDown{*/
-        /*position: relative;*/
-        /*display: inline-block;*/
-        /*width: 40px;*/
-        /*height: 40px;*/
-        /*top: -20px;*/
-    /*}*/
-    /*#arrowDown:after, #arrowDown:before {*/
-        /*border: 10px solid transparent;*/
-        /*border-top: 10px solid #fff;*/
-        /*width: 0;*/
-        /*height: 0;*/
-        /*position: absolute;*/
-        /*top: 17px;*/
-        /*left: 10px;*/
-        /*content: ' '*/
-    /*}*/
-    /*#arrowDown:before {*/
-        /*border-top-color: #aeb3bd;*/
-        /*top: 20px;*/
-    /*}*/
     .keyboardM{
         box-sizing: border-box;
         width: 100%;
@@ -62,27 +33,6 @@
         display: -webkit-box;
         -webkit-box-pack: justify;
         padding: .1rem .2rem 0;
-    }
-    /*.keyboardL{*/
-        /*width: 47%;*/
-        /*display: flex;*/
-        /*flex-direction: column;*/
-        /*justify-content: space-between;*/
-        /*display: -webkit-box;*/
-        /*-webkit-box-orient: vertical;*/
-        /*-webkit-box-pack: justify;*/
-    /*}*/
-    /*.keyboardR{*/
-        /*width: 47%;*/
-        /*display: flex;*/
-        /*flex-direction: column;*/
-        /*justify-content: space-between;*/
-        /*display: -webkit-box;*/
-        /*-webkit-box-orient: vertical;*/
-        /*-webkit-box-pack: justify;*/
-    /*}*/
-    .col{
-        /*width: 32%;*/
     }
     .row{
         width: 100%;
@@ -106,86 +56,12 @@
     .zi2{
         width: 100%;
     }
-    /*.rowR>div{*/
-        /*box-sizing: border-box;*/
-        /*padding: .02rem .1rem;*/
-        /*border-radius: .1rem;*/
-        /*background: #fff;*/
-        /*-webkit-box-shadow: 0 1px 0 #7a7a7a;*/
-        /*-moz-box-shadow: 0 1px 0 #7a7a7a;*/
-        /*box-shadow: 0 1px 0 #7a7a7a;*/
-    /*}*/
-    /*.item1>div{*/
-        /*width: 100%;*/
-    /*}*/
-    /*.item2>div{*/
-        /*width: 47%;*/
-    /*}*/
-    /*.keyboardB{*/
-        /*padding: 0 .2rem;*/
-    /*}*/
     #keyboardM .delTxt{
-        position: relative;
-        font-weight: 700;
-        /*border-color: transparent;*/
-        margin-bottom: .1rem;
-        /*background-color: transparent;*/
+        background: url("http://192.168.0.122:3000/Browersync/zhongbao3/h5/backspace.png");
+        background-size: 100% 100%;
         /*box-shadow: none;*/
+        margin-bottom: .1rem;
     }
-
-    .text{
-        box-sizing: border-box;
-        position: absolute;
-        border: 1px solid #323232;
-        border-left: none;
-        padding: 0 .2rem;
-        margin: 0;
-        left: .3rem;
-        height: .24rem;
-        line-height: .24rem;
-        top: .08rem;
-        font-size: 20px;
-    }
-    .arrow{
-        top: .12rem;
-        position: absolute;
-        width: .16rem;
-        height: .16rem;
-        border: 1px solid #000;
-        border-right: none;
-        border-top: none;
-        transform: rotate(45deg);
-        left: .22rem;
-    }
-    /*
-    .del{
-        box-sizing: border-box;
-        position: absolute;
-        border: 1px solid #323232;
-        border-left: none;
-        padding: 0 .25rem;
-        margin: 0;
-        left: .3rem;
-        height: .31rem;
-        line-height: .31rem;
-        top: .04rem;
-        font-size: 24px;
-        background: #fff;
-        -webkit-filter: drop-shadow(.1em .1em .1em rgba(0,0,0,.5));
-        filter: drop-shadow(.1em .1em .1em rgba(0,0,0,.5));
-    }
-    .del::before {
-        content: '';
-        position: absolute;
-        top: .09rem;
-        left: .2rem;
-        width: 0;
-        height: 0;
-        border: 1em solid transparent;
-        border-right-color: #fff;
-        border-left-width: 0;
-    }
-    */
     #sureTotalBtn{
         background-color: #dcdcdc;
         color: #323232;
@@ -354,11 +230,7 @@
                     <div class="zi">角</div>
                     <div class="zi">分</div>
                 </div>
-                <div id="delTxt" class="zi2 zi3 delTxt">
-                    <span class="arrow"></span>
-                    <span class="text">X</span>
-                    <!--<span class="del">X</span>-->
-                </div>
+                <div id="delTxt" class="zi2 zi3 delTxt"></div>
                 <div class="zi2 zi3" id="sureTotalBtn">确认</div>
             </div>
         </div>

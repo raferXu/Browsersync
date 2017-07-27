@@ -20,3 +20,9 @@ jobTask.notifyToRelogin = function () {
 jobTask.refreshCurrentPage = function () {
   alert('任务做完了');
 };
+jobTask.launchMessageCenterPage = function () {
+  alert('消息中心暂时看不了');
+};
+jobTask.launchRankingPage = function () {
+  alert('排行榜现在看不了');
+};

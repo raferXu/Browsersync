@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>想要渲染影子宿主里的内容: content&template</title>
+</head>
+<body>
+<div class="shadowhost">
+  <em class="shadowhost_content1">唱歌</em>
+  <em class="shadowhost_content2">跳舞</em>
+</div>
+<!-- S 模板标签 template -->
+<template class="template">
+  <h1>
+    你
+    <content select=".shadowhost_content1"></content>
+    我
+    <content select=".shadowhost_content2"></content>
+    !
+  </h1>
+</template>
+
+<!--通过 <content> 标签把来自主文档并添加到 shadow DOM 的内容被称为分布节点。-->
+  <!--<content>的select属性告诉<content>标签有选择性的插入内容。select 属性使用 CSS 选择器来选取想要展示的内容，选择器包括类选择器、元素选择器等。-->
+
+<!--<template>元素的出现旨在让HTML模板变得更加标准与规范。-->
+  <!--<template>在使用前不会被渲染，不会执行加载等操作，也能够实现隐藏标签内容，而且位置任意性，可以在<head>中，也可以在<body>或者<frameset>中。-->
+
+
+    <!-- E 模板标签 template -->
+<script>
+  var shadowHost = document.querySelector('.shadowhost');
+  var shadowRoot = shadowHost.createShadowRoot();
+  var template = document.querySelector('.template');
+  // template.content会返回一个文档片段，可以理解为另外一个document。
+  // 利用document.importNode获取节点，true表示深度克隆。
+  shadowRoot.appendChild(document.importNode(template.content, true));
+
+  console.log(template.innerHTML);   // 获取完整的HTML片段
+  console.log(template.content);  // 返回一个文档片段#document-fragment
+  console.log(template.childNodes);  // 返回[]，说明childNodes无效
+</script>
+</body>
+</html>

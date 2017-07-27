@@ -1,17 +1,6 @@
 /**
  * Created by raferxu on 17/7/6.
  */
-/*
-var isMobile = /Mobile/i.test(navigator.userAgent);
-function nativeLoadCompleted() {
-  jobTaskLoaded = true;
-}
-if(!isMobile) {
-  $.getScript('http://192.168.0.122:3000/Browersync/zhongbao3/h5/nativeFn.js', function () {
-    nativeLoadCompleted();
-  });
-}
-*/
 
 // init.js
 // loading加载框出现
@@ -33,7 +22,6 @@ var getDataFailTimer = setTimeout(function () {
   }
 },5000);
 var android = true;
-// var first = false;  // token/project/hospital/projecttutorial接口返回结果
 var jobTaskLoaded = false;
 var touchstart = 'touchstart';
 var touchmove = 'touchmove';
@@ -247,7 +235,10 @@ window.onerror = function (msg,url,l) {
       tokenStr = token;
       gToken = tokenStr;
     }else{
-      tokenStr = token = location.search.split('?')[1] || "";
+      var search = location.search.split('?')[1];
+      if(search){
+        tokenStr = token = search.split('&')[0] || "";
+      }
       // console.log('token: '+token);
       if(!token){
         token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzMDg4ODg4ODg0IiwidGltZSI6IjIwMTctMDctMjYgMDI6MTA6MTAifQ.rVkgo4cEXhaJGbyFvs98EwUJChLsBpA_fWO-d0DG9oo';
@@ -1488,7 +1479,7 @@ function bindJumpNative(projectName) {
 
     var guideImgArr = {
       'sn': ['http://192.168.0.122:3000/Browersync/zhongbao3/h5/snGuide1.png','http://192.168.0.122:3000/Browersync/zhongbao3/h5/snGuide2.png'],
-      'total': [],
+      'total': ['http://192.168.0.122:3000/Browersync/zhongbao3/h5/totalG.png'],
       'date': [],
       'hospital': ['http://192.168.0.122:3000/Browersync/zhongbao3/h5/hospitalG.png']
     };
@@ -1497,12 +1488,19 @@ function bindJumpNative(projectName) {
     var len = nowImgArr.length;
     var i = 0;
     if(len > 0){
+      $('#rwzyImg').load(function () {
+        $('#rwzy').show();
+      });
       $('#rwzyImg').attr('src', nowImgArr[0]);
-      $('#rwzy').show();
     }
     $('#read').off(touchstart).on(touchstart,function () {
       i++;
       if(len >= i+1){
+        $("#showMes").show();
+        $('#rwzyImg').load(function () {
+          $("#showMes").hide();
+          $('#rwzy').show();
+        });
         $('#rwzyImg').attr('src', nowImgArr[i]);
       }else{
         $('#rwzy').hide();
@@ -1519,12 +1517,22 @@ function bindJumpNative(projectName) {
     console.log('nextBtnClick');
     jobTask.taskGuide();
   });
+  $('#toLogin').removeClass().addClass('bgHide').show();
+//单击消息中心按钮
+  $('.xxzx').off(touchstart).on(touchstart,function () {
+    console.log('xxzxTouchstart');
+    jobTask.launchMessageCenterPage();
+  });
+//单击排行榜按钮
+  $('.phb').off(touchstart).on(touchstart,function () {
+    console.log('phbTouchstart');
+    jobTask.launchRankingPage();
+  });
 }
 
 
 // noToken.js
 function noTokenHandle() {
-  $('#toLogin').removeClass().addClass('bgHide').show();
 //单击未登录的取消按钮
   $('#cacelBtn').off(touchstart).on(touchstart,function () {
     $('#toLogin>div').hide();
