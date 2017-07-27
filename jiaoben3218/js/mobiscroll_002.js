@@ -544,7 +544,6 @@
             scrollToPos();
             
             event('onMarkupReady', [dw]);
-
             // Show
             if (s.display != 'inline') {
                 dw.appendTo('body');

@@ -29,6 +29,7 @@ var getDataFailTimer = setTimeout(function () {
   if(!loadImg || !getStr){
     getDataFail();
     clearTimeout(getDataFailTimer);
+    // $("#showMes").hide();
   }
 },5000);
 var android = true;

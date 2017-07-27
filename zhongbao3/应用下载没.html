@@ -14,23 +14,23 @@
   ifr.src = ifrSrc;
   ifr.style.display = 'none';
   ifr.onload = function() {
-// alert('Is installed.');
     isInstalled = true;
     alert(isInstalled);
-    document.getElementById('openApp0').click();
+    document.body.removeChild(ifr);
+//    document.getElementById('openApp0').click();
   };
   ifr.onerror = function() {
-// alert('May be not installed.');
     isInstalled = false;
     alert(isInstalled);
   };
   document.body.appendChild(ifr);
   setTimeout(function() {
+    isInstalled = false;
+    alert(isInstalled);
     document.body.removeChild(ifr);
-  },1000);
+  },5000);
   //ios判断 if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i))
   if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
-//Animation://com.yz.animation
     var isInstalled;
 //var gz = '{comName:${com.short_name},comID:${com.id},comPhoneNum:${com.phone_num},type:0}';
 //var jsongz =JSON.parse(gz); //下面是IOS调用的地址，自己根据情况去修改
@@ -39,13 +39,11 @@
     ifr.src = ifrSrc;
     ifr.style.display = 'none';
     ifr.onload = function() {
-// alert('Is installed.');
       isInstalled = true;
       alert(isInstalled);
       document.getElementById('openApp1').click();
     };
     ifr.onerror = function() {
-// alert('May be not installed.');
       isInstalled = false;
       alert(isInstalled);
     };

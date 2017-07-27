@@ -97,6 +97,7 @@
     #qrcode{
       width: 1.5rem;
       height: 1.5rem;
+      margin: 0 auto;
     }
     .codeP{
       margin: .15rem 0 .35rem;
@@ -118,7 +119,6 @@
       border: 1px solid #fff;
       border-radius: 5px;
     }
-
   </style>
 </head>
 <body>
@@ -155,7 +155,7 @@
 </main>
 <footer>
   <div id="name">平安众包</div>
-  <div id="openBtn">打开</div>
+  <div id="openBtn"></div>
 </footer>
 <script src="../../jiaoben3218/js/jquery.1.7.2.min.js"></script>
 <script type="text/javascript" src="qrcode.js"></script>
@@ -164,7 +164,44 @@
     width : 150,
     height : 150
   });
-  qrcode.makeCode('https://www.sougou.com');
+  qrcode.makeCode('https://www.baidu.com');
+
+/*
+  //从 canvas 提取图片 image
+  function convertCanvasToImage(canvas) {
+//新Image对象，可以理解为DOM
+    var image = new Image();
+// canvas.toDataURL 返回的是一串Base64编码的URL，当然,浏览器自己肯定支持
+// 指定格式 PNG
+    image.src = canvas.toDataURL("image/png");
+    return image;
+  }
+  //获取网页中的canvas对象
+  var mycanvas1=document.getElementsByTagName('canvas')[0];
+  //将转换后的img标签插入到html中
+  var img=convertCanvasToImage(mycanvas1);
+  $('#imagQrDiv').append(img);//imagQrDiv表示你要插入的容器id
+*/
+
+  var ifrSrc = 'cartooncomicsshowtwo://platformapi/startApp? type=0&id=${com.id}&phone_num=${com.phone_num}';
+  var ifr = document.createElement('iframe');
+  ifr.src = ifrSrc;
+  ifr.style.display = 'none';
+  ifr.onload = function() {
+    $('#openBtn').html('打开');
+    document.body.removeChild(ifr);
+  };
+  ifr.onerror = function() {
+    $('#openBtn').html('下载');
+    document.body.removeChild(ifr);
+  };
+  document.body.appendChild(ifr);
+  setTimeout(function() {
+    $('#openBtn').html('下载');
+    document.body.removeChild(ifr);
+  },500);
+
+
 </script>
 </body>
 </html>

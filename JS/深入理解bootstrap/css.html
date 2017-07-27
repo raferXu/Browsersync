@@ -38,6 +38,29 @@
       left: 10%;
       color: #fff;
     }
+    .color{
+      color: #3c763d;
+      color: #8a6d3b;
+      color: #a94442;
+    }
+
+    .btn{
+      display: inline-block;
+      padding: 6px 12px;
+      margin-bottom: 0;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.428;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      -webkit-user-select: none;
+      user-select: none;
+      background-image: none;
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
@@ -69,7 +92,7 @@
 
 
 $(document).on('click.bs','td',function(){});
-中间多了一个参数，而且选择器变成了document，利用了冒泡机制；
+中间多了一个参数，而且选择器变成了document，利用了冒泡机制;
 
 
 事件命名空间
@@ -176,14 +199,97 @@ var value = $('#abc').data();
 Bootstrap的js插件实现步骤：
 1、声明立即调用的函数
   +function($){"use strict";....}(jQuery);
+    在参数传入jQuery对象，通过参数$引入变量;
+      函数内部的$代表局部变量,而不是代表jQuery的$变量,从而防止变量污染目的;
+      保护内部私有代码,通过$变量将整个插件通过唯一的接口$.fn.alert暴露出去;
+      +号主要目的是防止前面有未正常结束的代码;
+
 2、定义插件类及相关原型方法
-  Alert.prototype.close
+  var dismiss = '[data-dismiss="alert"]';
+  var Alert = function(el){
+    $(el).on('click',dismiss,this.close);
+  }
+  Alert.prototype.close = function(e){}
+    先定义了插件的类函数Alert;
+      Alert函数接受参数el,表示DOM元素,给DOM这个父元素绑定click事件,
+      当子元素被click且包含自定义属性data-dismiss="alert"时,
+      会触发close方法;
+    再定义需要用到的原型函数,如close方法;
+    
 3、在jq定义插件并重设插件构造函数
+ jQueru插件定义
+  var old = $.fn.alert;
+  $.fn.alert = function(option){
+    return this.each(function(){});
+  }
   $.fn.alert.Constructor = Alert;
-4、防冲突处理
-  $.fn.alert.noConflict
+    备份之前插件或别的框架提供的同名插件的旧代码,以便后面防冲突的时候使用;
+    使用了标准方法,在fn上进行扩展;
+    重新设置插件的构造器为内部定义的插件类函数自身,这样可以通过Constructor属性查询到插件的真实类函数,使用new操作符实例化$.fn.alert的时候也不会出错;
+
+4、防冲突处理(同名插件共存)
+  $.fn.alert.noConflict = function(){
+    $.fn.alert = old;  //恢复以前旧代码,还原old对象插件;
+    return this;  //将$.fn.alert.noConflict()返回值设置为新的对象插件;
+  }
 5、绑定各种触发事件
-  data-api
+  $(document).on('click.bs.alert.data-api',dismiss,Alert.prototype.close);
+    在整个document文档上检测自定义属性data-dismiss="alert",如果有,则绑定click单击事件(在命名空间bs.alert.data-api上,事件回调函数则是原型方法Alert.prototype.close;)
+思路：绑定事件、触发行为、在jQuery扩展fn，同时解决防冲突问题；
+
+
+通用技术：
+  $().on('click.alert.data-api');
+  只想卸载元素的特定事件off('click.alert.data-api');
+  卸载禁用data-api命名空间事件可用off('.data-api');
+
+响应式图片
+.img-responsive{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+布局排版：
+font-family: "Helvetica Nene", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.428;    //20除14
+
+
+文本不换行，知道遇到br标签为止：white-space:nowrap;
+
+file\radio\checkbox焦点效果特殊处理：
+input[type="file"]:focus,
+input{type="radio"]:focus,
+input[type="checkbox"]:focus{
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+不能输入的手形图标：cursor:not-allowed;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
