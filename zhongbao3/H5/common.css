@@ -349,3 +349,45 @@ main .wrap section.countBox .countInfo .total .num {
 .bgShow {
   background-color: rgba(0, 0, 0, 0.3);
 }
+body {
+  height: auto;
+  background: #f0f0f0;
+}
+.row {
+  margin-bottom: 0;
+}
+main .wrap section.billBox .task_rand_score {
+  border-bottom: 0;
+  background: #fff;
+  box-shadow: 0 2px 5px -4px black;
+  margin-bottom: .1rem;
+}
+main .wrap section.billBox .billOperate {
+  padding: .15rem;
+  background: #fff;
+  box-shadow: 0 2px 5px -4px black;
+  margin-bottom: .1rem;
+  margin-left: .1rem;
+  margin-right: .1rem;
+}
+main .wrap .divide {
+  height: 0;
+}
+main .wrap section.countBox {
+  box-sizing: border-box;
+  width: 94%;
+  padding: .15rem;
+  margin-bottom: .1rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 5px -4px black;
+  background: #fff;
+}
+.showInfo .codeLockWrap input,
+.showInfo .divideTip {
+  width: 9%;
+  margin-right: 1%;
+}
+.codeLockWrap .gzsm {
+  right: .04rem;
+}
