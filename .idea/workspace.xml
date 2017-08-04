@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/h5/wlt/wlt1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/h5/wlt/wlt2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/h5/wlt/wlt3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/h5/wlt/yqbCode.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/h5/wlt/yqbLogo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/h5/wlt/wlt.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Keyboard-master/demo/calculator.min.min.css" afterPath="$PROJECT_DIR$/Keyboard-master/demo/calculator.min.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.min.min.min.min.js" afterPath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.min.min.min.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll.min.min.css" afterPath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll.min.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_002.min.min.css" afterPath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_002.min.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_002.min.min.css" afterPath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_002.min.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_003.min.min.css" afterPath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_003.min.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/share.html" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/share.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/wlt/wlt.html" afterPath="$PROJECT_DIR$/zhongbao3/h5/wlt/wlt.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,18 +19,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="wlt.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/zhongbao3/h5/wlt/wlt.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="130" column="8" lean-forward="false" selection-start-line="130" selection-start-column="8" selection-end-line="130" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -195,8 +170,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="88" />
-    <option name="y" value="107" />
+    <option name="x" value="-2" />
+    <option name="y" value="110" />
     <option name="width" value="952" />
     <option name="height" value="614" />
   </component>
@@ -453,19 +428,19 @@
       <workItem from="1501485478303" duration="31000" />
       <workItem from="1501495181210" duration="15000" />
       <workItem from="1501636768036" duration="12693000" />
-      <workItem from="1501825618556" duration="8798000" />
+      <workItem from="1501825618556" duration="9141000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1262481000" />
+    <option name="totallyTimeSpent" value="1262824000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="88" y="107" width="952" height="614" extended-state="0" />
-    <editor active="true" />
+    <frame x="-2" y="110" width="952" height="614" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17142858" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17142858" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -730,8 +705,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/wlt/wlt.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="130" column="8" lean-forward="false" selection-start-line="130" selection-start-column="8" selection-end-line="130" selection-end-column="8" />
+        <state relative-caret-position="620">
+          <caret line="130" column="45" lean-forward="false" selection-start-line="130" selection-start-column="45" selection-end-line="130" selection-end-column="45" />
           <folding />
         </state>
       </provider>
