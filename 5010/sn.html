@@ -1,7 +1,5 @@
 <link rel="stylesheet" href="/static/h5/common.css">
 <link rel="stylesheet" href="/static/h5/codeLock3.css">
-<link href="/static/h5/css/mobiscroll_002.css" rel="stylesheet" type="text/css">
-<link href="/static/h5/css/mobiscroll_003.css" rel="stylesheet" type="text/css">
 <div class="row skeleton">
     <header>
         <span class="xxzx r"><i></i></span>
@@ -18,25 +16,19 @@
                 </div>
                 <p class="task_rand_score" id="scoreBox">任务奖励:<span id="score">100</span>(分/单)</p>
                 <div class="billOperate">
-                    <nav class="clearfloat" style="margin-bottom: 0">
+                    <nav class="clearfloat">
                         <img src="/static/h5/billIcon.png" alt="billIcon" class="icon l">
-                        <span class="l pjxs">校对数据</span>
+                        <span class="l">校对数据</span>
                         <span id="taskGuideBox" class="taskGuide r">
                              <img id="taskGuide" src="/static/h5/taskGuide.png" alt="taskGuide">
                         </span>
                         <span class="r" id="guideTips">点击此查看任务指引</span>
                     </nav>
                     <div class="showInfo">
-                        <div style="height: .3rem;margin-bottom: .1rem;display: flex;display: -webkit-flex;display: -webkit-box;font-size: 18px;align-items: flex-end;-webkit-box-align: end;">
-                            <div style="flex: 2;-webkit-box-flex:2;text-align: center;position: relative;right: -.06rem;">年</div>
-                            <div style="flex: 2;-webkit-box-flex:2;text-align: center;position: relative;left: -.0rem;">月</div>
-                            <div style="flex: 1;-webkit-box-flex:1;text-align: center;position: relative;left: -.16rem;;">日</div>
-                        </div>
                         <div class="codeLockWrap" id="codeLockWrap" style="position: relative">
-                            <input value="" class="" readonly="readonly" name="appDa-webkit-box-flex: :2;te" id="appDate" type="text" style="position: absolute;width: 100%;height: .44rem;background: transparent;color: transparent;">
-                            <input class="ansNum" id="n1" value= type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input class="ansNum" id="n2" value="" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input class="ansNum" id="n3" value="" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input class="ansNum" id="n4" value="" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><span class="divideTip">－</span>
-                            <input class="ansNum" id="n5" value= type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input class="ansNum" id="n6" value="" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><span class="divideTip">－</span>
-                            <input class="ansNum" id="n7" value= type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input class="ansNum" class="last" id="n8" value="" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><span id="gzsm" class="gzsm">规则说明</span>
+                            <input class="ansNum" id="n1" value="0" type="number"/><input class="ansNum" id="n2" value="1" type="number"/><input class="ansNum" id="n3" value="2" type="number"/><input class="ansNum" id="n4" value="3" type="number"/><input class="ansNum" id="n5" value="4" type="number"/>
+                            <input class="ansNum" id="n6" value="5" type="number"/><input class="ansNum" id="n7" value="6" type="number"/><input class="ansNum" id="n8" value="7" type="number"/><input class="ansNum" id="n9" value="8" type="number"/><input class="ansNum" id="n10" value="9" type="number"/>
+                            <span id="gzsm" class="gzsm"">规则说明</span>
                         </div>
                     </div>
                     <p class="textTip">请保证文本输入框与图片内容一致</p>
@@ -68,10 +60,6 @@
             </section>
         </div>
     </main>
-</div>
-<div id="dateRange" style="display:none;">
-    <span class="max">2020</span>
-    <span class="min">2000</span>
 </div>
 <div id="showMes" style="display:none;position:absolute;left:0;right:0;top:0;bottom:0;background:transparent;color:white;text-align:center;font-size:36px;z-index:10000;">
     <div style="position:absolute;top:50%;left:50%;width:1.2rem;height:.65rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(0,0,0,.7);border-radius:.1rem">
@@ -128,7 +116,25 @@
     <img id="rwzyImg" src="" alt="rwzyImg" style="width:100%;">
     <span id="read" style="position: absolute;top: 5.38rem;left: 0;right: 0;margin: auto;width: .8rem;height: .39rem"></span>
 </div>
-
+<!--<div id="kqfs" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">-->
+    <!--<div style="position:absolute;top:2.08rem;width:100%;background:rgba(255,255,255,1);border: 1px solid #323232;padding:0 10px;">-->
+        <!--<h3 style="font-size:20px;padding:10px 0;color:#323232;font-weight:500;">提示</h3>-->
+        <!--<p id="fsText" style="width:100%;color:#323232;box-sizing:border-box;min-height:1rem;line-height:1.5;text-align:left;"></p>-->
+        <!--&lt;!&ndash;<p style="width:100%;color:#323232;box-sizing:border-box;min-height:1rem;line-height:1.5;text-align:left;">您已经连续答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理。请认真答题，谢谢！</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p style="width:100%;color:#323232;box-sizing:border-box;min-height:1rem;line-height:1.5;text-align:left;">您在短时间内已经答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理。请认真答题，谢谢！</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p style="width:100%;color:#323232;box-sizing:border-box;min-height:1rem;line-height:1.5;text-align:left;">&ndash;&gt;-->
+        <!--&lt;!&ndash;因您连续答错三道测试题，系统认定您存在刷分行为，将会永久封号。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。&ndash;&gt;-->
+        <!--&lt;!&ndash;您在今日完成的所有任务将被判定为无效，过往任务已得积分可以照常兑换。&ndash;&gt;-->
+        <!--&lt;!&ndash;</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p style="width:100%;color:#323232;box-sizing:border-box;height:1rem;line-height:1.5;text-align:left;">因您在短时间内答错三道测试题，系统认定您存在刷分行为，将会封号24小时。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。&ndash;&gt;-->
+        <!--&lt;!&ndash;您在今日完成的所有任务将被判定为无效，过往任务已得积分不受影响。</p>&ndash;&gt;-->
+        <!--<p><a style="color:#ff6000;" href="#">任务指引</a></p>-->
+        <!--<p class="kq-btns" style="padding:.1rem 0;">-->
+            <!--<input class="kqfh" type="button" value="返回">-->
+            <!--<input class="kqqr" type="button" value="确认">-->
+        <!--</p>-->
+    <!--</div>-->
+<!--</div>-->
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -143,86 +149,53 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
       })();
     }
-    var maxYear = $('#dateRange .max').html();
-    var minYear = $('#dateRange .min').html();
-    maxYear = /^[0-9]{4}$/.test(''+maxYear)?maxYear:2020;
-    minYear = /^[0-9]{4}$/.test(''+minYear)?minYear:2000;
-    maxYear = maxYear<minYear ? [minYear,minYear=maxYear][0] : maxYear;
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script src="/static/h5/common2.js"></script>
-<script src="/static/h5/js/mobiscroll_002x.js" type="text/javascript"></script>
-<script src="/static/h5/js/mobiscroll_004.js" type="text/javascript"></script>
-<script src="/static/h5/js/mobiscroll.js" type="text/javascript"></script>
-<script src="/static/h5/js/mobiscroll_003.js" type="text/javascript"></script>
-<script src="/static/h5/num2.js"></script>
-<script src="/static/h5/dateScroll.js"></script>
-<script>
-    /*
-     //实现滚动条无法滚动
-     var mo=function(e){e.preventDefault();};
-
-     //禁止滑动
-     function stop(){
-     document.body.style.overflow='hidden';
-     document.addEventListener("touchmove",mo,false);//禁止页面滑动
-     }
-
-     //取消滑动限制
-     function move(){
-     document.body.style.overflow='';//出现滚动条
-     document.removeEventListener("touchmove",mo,false);
-     }
-     $('#toLogin')[0].addEventListener('touchstart',function () {
-     stop();
-     },true);
-     */
-</script>
+<script src="/static/h5/inputSwipe.js"></script>
+<script src="/static/h5/num.js"></script>
 <script type="text/javascript">
-  pybossa.presentTask(function(task, deferred) {
-    if ( !$.isEmptyObject(task) ) {
-      console.log('运行presentTask函数时拿到的任务为: '+task);
-      imgHandleFn(task);
-      var now = new Date();
-      var defaultDate = (now.getFullYear()+""+((now.getMonth()+1)<10?"0":"")+(now.getMonth()+1)+""+(now.getDate()<10?"0":"")+now.getDate());
-      var config = {
-        'task': task,
-        'n': 8,
-        'ds': defaultDate,
-        'blockStr': blockStr,
-        'maxY': maxYear,
-        'minY': minYear,
-        'today': defaultDate
-      };
-      setInputVal(config);
-      datePlugin(blockStr,minYear,maxYear);
-      var interface = gInterface;
-      showPageData(task,tokenStr,interface);
-      bindJumpNative(nowProject);
+    pybossa.presentTask(function(task, deferred) {
+      if ( !$.isEmptyObject(task) ) {
+        console.log('运行presentTask函数时拿到的任务为: '+task);
+        imgHandleFn(task);
+        setInputVal(task,10,'0123456789',blockStr);
+//获取token
+//        var jobTaskLoadedTimer = setInterval(function() {
+//          if(jobTaskLoaded){
+//            clearInterval(jobTaskLoadedTimer);
+//            var tokenStr = getTokenAndPort().tokenStr;
+            var interface = gInterface;
+            showPageData(task,tokenStr,interface);
+            bindJumpNative(nowProject);
 //拿到token判断有没登录
-      if(!tokenStr){
-        console.log('没有拿到token值！');
-        noTokenHandle();
-      }else{
-        console.log('拿到了token值，为 '+tokenStr);
-        $('#toLogin').hide();
+            if(!tokenStr){
+              console.log('没有拿到token值！');
+              noTokenHandle();
+            }else{
+              console.log('拿到了token值，为 '+tokenStr);
+              $('#toLogin').hide();
 //点击下一张按钮
-        $('#next,#indistinct').off(touchstart).on(touchstart, function() {
-          $("#showMes").show();
-          var touchstartWhich = $(this).attr('id')=='indistinct';
-          if(!window.navigator.onLine){
-            $('#offLine').show();
-          }else{
-            var answer = touchstartWhich ? {"text": '看不清'} : {"text": getCurStr()};
-            normalSubmit(task,answer,tokenStr,interface,deferred);
-          }
-        });
+              $('#next,#indistinct').off(touchstart).on(touchstart, function() {
+                $("#showMes").show();
+                var touchstartWhich = $(this).attr('id')=='indistinct';
+                if(!window.navigator.onLine){
+                  $('#offLine').show();
+                }else{
+                  var answer = touchstartWhich ? {"text": '看不清'} : {"text": getCurStr()};
+                  normalSubmit(task,answer,tokenStr,interface,deferred);
+                }
+              });
+            }
+//          }else{
+//            console.log('本地nativeLoadCompleted函数没有被native调用');
+//          }
+//        },50);
       }
-    }
-    else {
-      console.log('运行presentTask函数时候已经没有任务了,自动重新刷新页面获取可用任务');
-      console.log('只加载本次任务，不会出现这个日志');
-    }
-  });
-  pybossa.run('date');
+      else {
+        console.log('运行presentTask函数时候已经没有任务了,自动重新刷新页面获取可用任务');
+        console.log('只加载本次任务，不会出现这个日志');
+      }
+    });
+    pybossa.run('sn');
 </script>
