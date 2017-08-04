@@ -2,13 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/CSS波浪加载效果.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/CSS继承.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/JS波浪加载效果.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/堆叠上下文.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/复杂边框.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/左边线.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/背景图起始终止位置.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zhongbao3/share/1.css" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/1.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zhongbao3/share/1.html" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/1.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zhongbao3/share/1.js" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/1.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zhongbao3/share/1.min.css" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/1.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zhongbao3/share/1.min.js" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/1.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zhongbao3/share/banner.png" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/banner.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zhongbao3/share/click.html" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/click.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zhongbao3/share/code.png" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/code.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zhongbao3/share/icon.png" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zhongbao3/share/money.png" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/money.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zhongbao3/share/qrcode.js" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/qrcode.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zhongbao3/share/qrcode.min.js" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/qrcode.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zhongbao3/share/record.png" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/record.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zhongbao3/share/share.html" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/share.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zhongbao3/share/task.png" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/task.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/date3x.html" afterPath="$PROJECT_DIR$/5010/date3x.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/sn3x.html" afterPath="$PROJECT_DIR$/5010/sn3x.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.css" afterPath="$PROJECT_DIR$/zhongbao3/H5/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.less" afterPath="$PROJECT_DIR$/zhongbao3/H5/common.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.min.css" afterPath="$PROJECT_DIR$/zhongbao3/H5/common.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/3把背景图片定位到距离底边 10px 且 距离右边 20px 的位置.html" afterPath="$PROJECT_DIR$/CSS/3把背景图片定位到距离底边 10px 且 距离右边 20px 的位置.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.min.min.js" afterPath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.min.min.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,12 +44,52 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="1.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JS/webkit技术内幕/1.html">
+    <leaf>
+      <file leaf-file-name="CSS继承.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/audio/CSS继承.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="291">
+              <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CSS波浪加载效果.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/audio/CSS波浪加载效果.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="share.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zhongbao3/h5/share/share.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="129" column="20" lean-forward="true" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="date.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/5010/date.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="date3x.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/5010/date3x.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2400">
+              <caret line="160" column="4" lean-forward="true" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -52,9 +111,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>showGuideText</find>
-      <find>16</find>
-      <find>speech</find>
       <find>token</find>
       <find>delTxt</find>
       <find>testTouch</find>
@@ -82,6 +138,9 @@
       <find>bindJumpNative</find>
       <find>main .wrap section.billBox .billOperate</find>
       <find>gzsm</find>
+      <find>margin-top</find>
+      <find>margin-bottom</find>
+      <find>icharts</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -115,6 +174,7 @@
       <dir>$PROJECT_DIR$/二期迭代</dir>
       <dir>$PROJECT_DIR$/zhongbao3/H5</dir>
       <dir>$PROJECT_DIR$/jiaoben3218</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -123,13 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/CSS/揭秘参考案例/40垂直居中1.html" />
-        <option value="$PROJECT_DIR$/CSS/揭秘参考案例/40垂直居中2.html" />
-        <option value="$PROJECT_DIR$/CSS/揭秘参考案例/40垂直居中3.html" />
-        <option value="$PROJECT_DIR$/CSS/揭秘参考案例/41紧贴底部的页脚1.html" />
-        <option value="$PROJECT_DIR$/CSS/揭秘参考案例/41紧贴底部的页脚2.html" />
-        <option value="$PROJECT_DIR$/CSS/揭秘参考案例/42逼真的弹跳动作.html" />
-        <option value="$PROJECT_DIR$/CSS/揭秘参考案例/0.html" />
         <option value="$PROJECT_DIR$/JS/javascript经典实例/5.13创建一个过滤后的数组.html" />
         <option value="$USER_HOME$/Downloads/noTask.html" />
         <option value="$PROJECT_DIR$/zhongbao3/H5/dateScroll.js" />
@@ -170,10 +223,17 @@
         <option value="$PROJECT_DIR$/zhongbao3/H5/common2.js" />
         <option value="$PROJECT_DIR$/zhongbao3/H5/nativeFn.js" />
         <option value="$PROJECT_DIR$/zhongbao3/H5/noTask.html" />
-        <option value="$PROJECT_DIR$/JS/webkit技术内幕/1.html" />
         <option value="$PROJECT_DIR$/5010/date3x.html" />
         <option value="$PROJECT_DIR$/5010/sn3x.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/common.less" />
+        <option value="$PROJECT_DIR$/JS/webkit技术内幕/1.html" />
+        <option value="$PROJECT_DIR$/CSS/3把背景图片定位到距离底边 10px 且 距离右边 20px 的位置.html" />
+        <option value="$PROJECT_DIR$/audio/左边线.html" />
+        <option value="$PROJECT_DIR$/audio/背景图起始终止位置.html" />
+        <option value="$PROJECT_DIR$/audio/复杂边框.html" />
+        <option value="$PROJECT_DIR$/audio/堆叠上下文.html" />
+        <option value="$PROJECT_DIR$/audio/CSS继承.html" />
+        <option value="$PROJECT_DIR$/audio/CSS波浪加载效果.html" />
       </list>
     </option>
   </component>
@@ -187,9 +247,9 @@
     <handled-path value="$PROJECT_DIR$/webpack sample project/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="93" />
-    <option name="y" value="75" />
-    <option name="width" value="1029" />
+    <option name="x" value="229" />
+    <option name="y" value="128" />
+    <option name="width" value="973" />
     <option name="height" value="615" />
   </component>
   <component name="ProjectView">
@@ -207,7 +267,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -219,18 +279,8 @@
               <option name="myItemId" value="Browersync" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JS" />
+              <option name="myItemId" value="zhongbao3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -244,17 +294,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="JS" />
+              <option name="myItemId" value="zhongbao3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webkit技术内幕" />
+              <option name="myItemId" value="h5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="5010" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,19 +348,19 @@
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/zhongbao3/h5" />
+      <recent name="$PROJECT_DIR$/CSS/揭秘参考案例" />
+      <recent name="$PROJECT_DIR$/CSS" />
+      <recent name="$PROJECT_DIR$/5010" />
+      <recent name="$PROJECT_DIR$/zhongbao3/H5" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/5010" />
       <recent name="$PROJECT_DIR$/zhongbao3/H5" />
       <recent name="$PROJECT_DIR$/H5" />
       <recent name="$PROJECT_DIR$/zhongbao3/share" />
       <recent name="$PROJECT_DIR$/JS/img居中" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/CSS/揭秘参考案例" />
-      <recent name="$PROJECT_DIR$/CSS" />
-      <recent name="$PROJECT_DIR$/5010" />
-      <recent name="$PROJECT_DIR$/zhongbao3/H5" />
-      <recent name="$PROJECT_DIR$/众包三期/pybossa/static/h5" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.pybossaCodeLock.html">
@@ -446,33 +520,36 @@
       <workItem from="1501150272169" duration="1843000" />
       <workItem from="1501199278952" duration="5611000" />
       <workItem from="1501237573014" duration="211000" />
+      <workItem from="1501485478303" duration="31000" />
+      <workItem from="1501495181210" duration="15000" />
+      <workItem from="1501636768036" duration="10040000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1240944000" />
+    <option name="totallyTimeSpent" value="1251030000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="93" y="75" width="1029" height="615" extended-state="0" />
+    <frame x="229" y="128" width="973" height="615" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2077001" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14393125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31953642" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26003823" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26003823" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31953642" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -589,84 +666,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/hospitalG.png" />
-    <entry file="file://$PROJECT_DIR$/JS/lazyImg/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="34" column="3" lean-forward="false" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/img居中/headerBg.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/img居中/外层宽高固定.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="58" column="29" lean-forward="false" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/zb2.js" />
-    <entry file="file://$PROJECT_DIR$/zhongbao3/share/1.styl" />
-    <entry file="file://$PROJECT_DIR$/zhongbao3/share/1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/share/1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/share/1.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/share/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/share/qrcode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/share/click.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_005.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_004.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_003.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -760,13 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jiaoben3218/index2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002x.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8130">
@@ -809,11 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/more.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/noTaskBg.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -823,20 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="40" column="41" lean-forward="false" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="1478" column="0" lean-forward="true" selection-start-line="1478" selection-start-column="0" selection-end-line="1478" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/share/share.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1935">
-          <caret line="129" column="20" lean-forward="true" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -876,22 +849,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/5010/date3x.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="22" lean-forward="false" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
           <caret line="418" column="12" lean-forward="false" selection-start-line="418" selection-start-column="12" selection-end-line="418" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -899,14 +860,161 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="30" column="56" lean-forward="false" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/webkit技术内幕/1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state relative-caret-position="441">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/2box-shadow和border比较.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="1587" column="15" lean-forward="false" selection-start-line="1587" selection-start-column="2" selection-end-line="1587" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tb/3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3474">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tb/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jiaoben3218/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-309">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/more.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/3把背景图片定位到距离底边 10px 且 距离右边 20px 的位置.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/左边线.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/复杂边框.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/date3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1815">
+          <caret line="1478" column="0" lean-forward="true" selection-start-line="1478" selection-start-column="0" selection-end-line="1478" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/堆叠上下文.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="75" column="4" lean-forward="true" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/背景图起始终止位置.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="52" column="3" lean-forward="false" selection-start-line="52" selection-start-column="3" selection-end-line="52" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/JS波浪加载效果.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/CSS继承.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/CSS波浪加载效果.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/share/share.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="129" column="20" lean-forward="true" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/date.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/date3x.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2400">
+          <caret line="160" column="4" lean-forward="true" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="4" />
           <folding />
         </state>
       </provider>

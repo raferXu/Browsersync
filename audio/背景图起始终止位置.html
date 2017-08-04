@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      width:150px;
+      height:150px;
+      margin:50px 10px;;
+      border:20px dashed rgba(0, 0, 0, 0.5);
+      float:left;
+      padding:10px;
+    // background-size:cover;
+    }
+    .bgColor{
+      background-color:#ff7300;
+    // background-clip:border-box;
+    }
+    .bgImg{
+      background-color:#ff7300;
+      background-image:url('http://www.qq1234.org/uploads/allimg/150602/8_150602171754_2.jpg');
+      background-repeat:no-repeat;
+    // background-clip:border-box;
+    }
+    .contentBox{
+      background-clip:content-box;
+    }
+    .paddingBox{
+      background-clip:padding-box;
+    }
+  </style>
+</head>
+<body>
+<!-- 填充与background-clip属性有关 -->
+<!-- 背景色的填充规则，默认为 border-box
+			从盒子最左上角到最右下角 -->
+<h1>
+  <div class="bgColor"></div>
+  <div class="bgColor contentBox"></div>
+  <div class="bgColor paddingBox"></div>
+</h1>
+
+
+<!-- 背景图的填充规则，默认为 border-box
+			从盒子的左上角padding到最右下角 -->
+<h1>
+  <div class="bgImg"></div>
+  <div class="bgImg contentBox"></div>
+  <div class="bgImg paddingBox"></div>
+</h1>
+
+<h1>background-color 是从元素的边框左上角起到右下角止，
+  而 background-image 却不一样，他是从 padding 边缘的左上角起而到 border 的右下角边缘止。
+</h1>
+</body>
+</html>

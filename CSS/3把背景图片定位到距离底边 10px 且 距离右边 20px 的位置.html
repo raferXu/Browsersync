@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>把背景图片定位到距离底边 10px 且 距离右边 20px 的位置</title>
+  <style>
+    div{
+      width: 400px;
+      height: 400px;
+      border: 1px solid red;
+      background: url("../zhongbao3/h5/more.png") no-repeat;
+      /*background-position: calc(100% - 20px) calc(100% - 10px);*/
+      background-position: center 40px;
+    }
+  </style>
 </head>
 <body>
 仍然以左上角偏移的思路来考虑,
@@ -16,6 +26,6 @@ background-position: calc(100% - 20px) calc(100% - 10px);
 请不要忘记在 calc() 函数 内部的 - 和 + 运算符的两侧各加 一个空白符,
 否则会产生解析错 误!这个规则如此怪异,是为了 向前兼容:
 未来,在 calc() 内部 可能会允许使用关键字,而这些 关键字可能会包含连字符(即减 号)。
-
+<div></div>
 </body>
 </html>
