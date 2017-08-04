@@ -155,16 +155,17 @@
 </main>
 <footer>
   <div id="name">平安众包</div>
-  <div id="openBtn"></div>
+  <div id="openBtn">打开</div>
 </footer>
-<script src="../../jiaoben3218/js/jquery.1.7.2.min.js"></script>
+<script src="../js/jquery.1.7.2.min.js"></script>
 <script type="text/javascript" src="qrcode.js"></script>
 <script>
   var qrcode = new QRCode(document.getElementById("qrcode"), {
     width : 150,
     height : 150
   });
-  qrcode.makeCode('https://www.baidu.com');
+  var url = location.origin+'/token/qr/lead_to_download_url';
+  qrcode.makeCode(url);
 
 /*
   //从 canvas 提取图片 image
