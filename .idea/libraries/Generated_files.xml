@@ -7,20 +7,24 @@
         <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.mousewheel.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-mobile.min.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/demo/demo.min.js" />
+        <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-all.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.min.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.mousewheel.min.min.min.js" />
         <item url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002.min.js" />
+        <item url="file://$PROJECT_DIR$/jiaoben3218/js/jquery-1.min.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.min.js" />
-        <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-scramble.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/demo/recipes.min.js" />
-        <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-typing.min.js" />
+        <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-scramble.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/demo/jquery.chili-2.2.min.js" />
-        <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-mobile.min.js" />
+        <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-typing.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/thai.min.js" />
-        <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-navigation.min.js" />
+        <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-mobile.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/tamil.min.js" />
+        <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-navigation.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/danish.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-all.min.js" />
-        <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-autocomplete.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/arabic.min.js" />
+        <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-autocomplete.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-typing.min.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-scramble.min.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-navigation.min.min.js" />
@@ -30,8 +34,8 @@
         <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/french.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/hebrew.min.js" />
         <item url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002x.min.min.js" />
-        <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/catalan.min.js" />
         <item url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002.min.min.js" />
+        <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/catalan.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/russian.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/bengali.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/latvian.min.js" />
@@ -53,12 +57,12 @@
         <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/belarusian.min.js" />
         <item url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll.min.js" />
         <item url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_004.min.js" />
-        <item url="file://$PROJECT_DIR$/jiaoben3218/js/jquery.1.7.2.min.min.js" />
         <item url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003.min.js" />
+        <item url="file://$PROJECT_DIR$/jiaoben3218/js/jquery.1.7.2.min.min.js" />
         <item url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_005.min.js" />
         <item url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_004.min.js" />
         <item url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll.min.js" />
-        <item url="file://$PROJECT_DIR$/zhongbao3/share/1.min.min.js" />
+        <item url="file://$PROJECT_DIR$/zhongbao3/h5/share/1.min.min.js" />
         <item url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.min.js" />
         <item url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_003.min.js" />
         <item url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002.min.js" />
@@ -76,8 +80,10 @@
         <item url="file://$PROJECT_DIR$/zhongbao3/h5/setInputVal.min.js" />
         <item url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002x.min.js" />
         <item url="file://$PROJECT_DIR$/zhongbao3/h5/setInputVal2.min.js" />
-        <item url="file://$PROJECT_DIR$/zhongbao3/share/qrcode.min.js" />
-        <item url="file://$PROJECT_DIR$/zhongbao3/share/1.min.js" />
+        <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.mousewheel.min.min.js" />
+        <item url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.min.min.min.js" />
+        <item url="file://$PROJECT_DIR$/zhongbao3/h5/share/qrcode.min.js" />
+        <item url="file://$PROJECT_DIR$/zhongbao3/h5/share/1.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -86,20 +92,24 @@
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.mousewheel.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-mobile.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/demo/demo.min.js" />
+      <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-all.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.min.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.mousewheel.min.min.min.js" />
       <root url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002.min.js" />
+      <root url="file://$PROJECT_DIR$/jiaoben3218/js/jquery-1.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.min.js" />
-      <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-scramble.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/demo/recipes.min.js" />
-      <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-typing.min.js" />
+      <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-scramble.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/demo/jquery.chili-2.2.min.js" />
-      <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-mobile.min.js" />
+      <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-typing.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/thai.min.js" />
-      <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-navigation.min.js" />
+      <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-mobile.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/tamil.min.js" />
+      <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-navigation.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/danish.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-all.min.js" />
-      <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-autocomplete.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/arabic.min.js" />
+      <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-autocomplete.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-typing.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-scramble.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-navigation.min.min.js" />
@@ -109,8 +119,8 @@
       <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/french.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/hebrew.min.js" />
       <root url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002x.min.min.js" />
-      <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/catalan.min.js" />
       <root url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002.min.min.js" />
+      <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/catalan.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/russian.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/bengali.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/latvian.min.js" />
@@ -132,8 +142,8 @@
       <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/belarusian.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_004.min.js" />
-      <root url="file://$PROJECT_DIR$/jiaoben3218/js/jquery.1.7.2.min.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003.min.js" />
+      <root url="file://$PROJECT_DIR$/jiaoben3218/js/jquery.1.7.2.min.min.js" />
       <root url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_005.min.js" />
       <root url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_004.min.js" />
       <root url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll.min.js" />
@@ -155,6 +165,8 @@
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/setInputVal.min.js" />
       <root url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002x.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/setInputVal2.min.js" />
+      <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.mousewheel.min.min.js" />
+      <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.min.min.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/share/qrcode.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/share/1.min.js" />
     </CLASSES>
