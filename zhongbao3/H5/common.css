@@ -350,7 +350,6 @@ main .wrap section.countBox .countInfo .total .num {
   background-color: rgba(0, 0, 0, 0.3);
 }
 body {
-  height: auto;
   background: #f0f0f0;
 }
 .row {

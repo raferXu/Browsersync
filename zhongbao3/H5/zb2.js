@@ -24,7 +24,6 @@ function keyboardEvent(str) {
   });
   var delTimer1 = null, delTimer2 = null;
   $('#delTxt').off(touchstart).on(touchstart, function(e) {
-    // alert(strArr.join(''));
     e.preventDefault();
     if(strArr.length>0){
       strArr.pop();
@@ -32,6 +31,7 @@ function keyboardEvent(str) {
     }
     if(strArr.length>0){
       delTimer1 = setInterval(function () {
+        console.log('delTimer1');
         strArr.pop();
         $('.showInfo').val(strArr.join(''));
         if(strArr.length>0){
@@ -39,14 +39,19 @@ function keyboardEvent(str) {
             clearInterval(delTimer1);
             strArr.pop();
             $('.showInfo').val(strArr.join(''));
+            console.log('delTimer2');
           },200);
         }
       },500);
     }
   });
   $(document).off(touchend).on(touchend, function(e) {
-    clearInterval(delTimer1);
-    clearInterval(delTimer2);
+    console.log(touchend);
+    var delTimer3 = setTimeout(function () {
+      clearInterval(delTimer1);
+      clearInterval(delTimer2);
+      clearInterval(delTimer3);
+    },0);
   });
   $('#keyboardM').off(touchstart).on(touchstart, '.zi', function(e) {
     e.preventDefault();

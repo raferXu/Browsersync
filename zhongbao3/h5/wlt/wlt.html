@@ -6,6 +6,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>万里通积分使用说明</title>
   <script>
+    var jobTaskLoaded = false;
+    function nativeLoadCompleted() {
+      jobTaskLoaded = true;
+    }
     function htmlFontSize(){
       var html = document.querySelector("html");
       var width = html.getBoundingClientRect().width;
@@ -128,7 +132,13 @@
         });
         $('#tips').attr('src',arrImg[i]);
       }else if(k==3){
-        jobTask.checkExchangeInfosComplete();
+//        jobTask.checkExchangeInfosComplete();
+        var timer = setInterval(function () {
+          if(jobTaskLoaded){
+            clearInterval(timer);
+            jobTask.checkExchangeInfosComplete();
+          }
+        },50);
       }
       i++;
       k++;
