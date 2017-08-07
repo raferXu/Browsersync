@@ -27,8 +27,8 @@
         <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/japanese.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/japanese.min.min.js" />
         <item url="file://$PROJECT_DIR$/zhongbao3/h5/share/1.min.min.min.js" />
-        <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/tamil.min.min.js" />
         <item url="file://$PROJECT_DIR$/zhongbao3/h5/zb.min.min.js" />
+        <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/tamil.min.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/catalan.min.js" />
         <item url="file://$PROJECT_DIR$/zhongbao3/h5/pybossa-token3.min.min.js" />
         <item url="file://$PROJECT_DIR$/zhongbao3/h5/nativeFn.min.min.min.js" />
@@ -37,6 +37,7 @@
         <item url="file://$PROJECT_DIR$/zhongbao3/h5/pinchzoom201.min.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/hungarianansi.min.js" />
         <item url="file://$PROJECT_DIR$/zhongbao3/h5/pybossa-token2.min.min.js" />
+        <item url="file://$PROJECT_DIR$/zhongbao3/h5/pybossa-token原来.min.js" />
         <item url="file://$PROJECT_DIR$/Keyboard-master/layouts/polish.min.js" />
         <item url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.min.min.min.js" />
         <item url="file://$PROJECT_DIR$/zhongbao3/h5/setInputVal2.min.min.js" />
@@ -184,6 +185,27 @@
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/jquery.1.7.2.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/setInputVal.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/share/qrcode.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/zb2.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/share/1.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/pybossa-token3.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/nativeFn.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/pinchzoom201.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/pybossa-token2.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/setInputVal2.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/jquery.1.7.2.min.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_005.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/jquery-1.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_004.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/nativeFn.min.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/jquery-1.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/jquery.1.7.2.min.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.min.min.js" />
@@ -209,8 +231,8 @@
       <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/japanese.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/japanese.min.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/share/1.min.min.min.js" />
-      <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/tamil.min.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/zb.min.min.js" />
+      <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/tamil.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/catalan.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/pybossa-token3.min.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/nativeFn.min.min.min.js" />
@@ -219,6 +241,7 @@
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/pinchzoom201.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/hungarianansi.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/pybossa-token2.min.min.js" />
+      <root url="file://$PROJECT_DIR$/zhongbao3/h5/pybossa-token原来.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/layouts/polish.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.min.min.min.js" />
       <root url="file://$PROJECT_DIR$/zhongbao3/h5/setInputVal2.min.min.js" />

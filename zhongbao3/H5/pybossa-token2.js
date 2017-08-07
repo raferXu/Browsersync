@@ -1,5 +1,5 @@
 //原始简化版完成
-var jumpProjectFlag = false;
+var jumpProjectFlag = false;  //判断获取的task是否为空
 (function(pybossa, $, undefined) {
     var token="";
     var url = '/';  //默认为／开头的请求url

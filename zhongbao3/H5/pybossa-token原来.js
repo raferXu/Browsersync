@@ -272,11 +272,11 @@ var jumpProjectFlag = false;
       console.log(task);
       console.log(deferred);
 
-        var udef = $.Deferred();
-        _taskLoaded(task, udef);
-        udef.done(function(task) {
-            deferred.resolve(task);
-        });
+      var udef = $.Deferred();
+      _taskLoaded(task, udef);
+      udef.done(function(task) {
+          deferred.resolve(task);
+      });
     }
 
     function _run (projectname, _window) {
