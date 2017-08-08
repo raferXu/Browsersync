@@ -161,16 +161,25 @@ main .wrap section.billBox .billOperate {
 }
 main .wrap section.billBox .billOperate nav {
   box-sizing: border-box;
-  margin-bottom: .2rem;
+  margin-bottom: .25rem;
   font-size: 0.14rem;
+  padding: 0 .1rem;
+  height: .43rem;
+  line-height: .43rem;
+  box-shadow: 0 1px 1px 0 #eee;
+  //-webkit-box-shadow: 0 3px 15px 0 rgba(0,0,0,.1);
+  //position: relative;
+  //z-index: -1;
+  -webkit-box-shadow: 0 1px 1px 0 #eee;
 }
 main .wrap section.billBox .billOperate nav .icon {
   height: .2rem;
   margin-right: .05rem;
   vertical-align: middle;
+  padding-top: .11rem;
 }
 .pjxs, .rwtj{
-  line-height: .22rem;
+  line-height: .43rem;
 }
 main .wrap section.billBox .billOperate nav .taskGuide,
 main .wrap section.billBox .billOperate nav .more {
@@ -186,15 +195,16 @@ main .wrap section.billBox .billOperate nav .taskGuide img {
   //position: relative;
   //top: 3px;
   width: .2rem;
+  vertical-align: middle;
 }
 #guideTips{
   display: none;
   position: relative;
   margin-right: .05rem;
   padding-right: .17rem;
-  background: url("triangle.png") no-repeat right 0 top .03rem #fff;
+  background: url("triangle.png") no-repeat right 0 top .14rem #fff;
   background-size: .12rem .14rem;
-  line-height: .22rem;
+  line-height: .43rem;
   font-size: 14px;
   color: #ff6000;
 }
@@ -254,17 +264,26 @@ main .wrap section.countBox {
 main .wrap section.countBox nav {
   box-sizing: border-box;
   font-size: 0.14rem;
+  padding: 0;
+  padding-left:  .1rem;
+  height: .43rem;
+  line-height: .43rem;
+  box-shadow: 0 1px 1px 0 #eee;
+  -webkit-box-shadow: 0 1px 1px 0 #eee;
+  margin-bottom: .2rem;
 }
 main .wrap section.countBox nav .icon {
   height: .2rem;
   margin-right: .05rem;
+  margin-top: .11rem;
   vertical-align: middle;
 }
 main .wrap section.countBox nav .more {
-  position: relative;
-  top: -0.1rem;
-  right: -0.1rem;
-  padding: .1rem;
+  position: static;
+  top: 0;
+  right: 0;
+  padding: 0;
+  padding-right: .1rem;
   color: #ff6000;
   font-size: 0.14rem;
 }
@@ -385,18 +404,22 @@ body{
   margin-bottom: 0;
 }
 main .wrap section.billBox .task_rand_score{
+  position: relative;
+  z-index: -1;
   border-bottom: 0;
   background: #fff;
-  box-shadow: 0 2px 5px -4px black;
+  box-shadow: 0 3px 15px 0 rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 3px 15px 0 rgba(0,0,0,.1);
   margin-bottom: .1rem;
 }
 main .wrap section.billBox .billOperate{
-  padding: .15rem;
+  padding: 0;
+  padding-bottom: .15rem;
   background: #fff;
-  box-shadow: 0 2px 5px -4px black;
-  margin-bottom: .1rem;
-  margin-left: .1rem;
-  margin-right: .1rem;
+  box-shadow: 0 3px 15px 0 rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 3px 15px 0 rgba(0,0,0,.1);
+  margin: .1rem;
+  border-radius: .05rem;
 }
 main .wrap .divide{
   height: 0;
@@ -404,12 +427,15 @@ main .wrap .divide{
 main .wrap section.countBox{
   box-sizing: border-box;
   width: 94%;
-  padding: .15rem;
+  padding: 0;
+  padding-bottom: .1rem;
   margin-bottom: .1rem;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 2px 5px -4px black;
+  box-shadow: 0 3px 15px 0 rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 3px 15px 0 rgba(0,0,0,.1);
   background: #fff;
+  border-radius: .05rem;
 }
 .showInfo .codeLockWrap input, .showInfo .divideTip{
   width: 9%;
@@ -417,4 +443,8 @@ main .wrap section.countBox{
 }
 .codeLockWrap .gzsm{
   right: .04rem;
+}
+
+#output{
+  padding: 0 .1rem;
 }

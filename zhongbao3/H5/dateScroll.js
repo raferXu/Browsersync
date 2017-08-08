@@ -18,4 +18,17 @@ function datePlugin(blockStr,minYear,maxYear) {
     endYear: maxYear //结束年份
   };
   $("#appDate").mobiscroll($.extend(opt['date'], opt['default']));
+
+  if(android){
+    $("#appDate").on(touchstart,function () {
+      if(android){
+        console.log('datePickerShow(true)');
+        jobTask.datePickerShow(true);
+      }
+    });
+    $(document).on(touchstart,'#dwb',function () {
+      console.log('datePickerShow(false1)');
+      jobTask.datePickerShow(false);
+    });
+  }
 }

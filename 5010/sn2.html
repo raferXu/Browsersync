@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/static/h5/common.css">
 <link rel="stylesheet" href="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common.css">
-<link rel="stylesheet" href="/static/h5/zb.css">
+<link rel="stylesheet" href="/static/h5/codeLock3.css">
 <div class="row skeleton">
     <header>
         <span class="xxzx r"><i></i></span>
@@ -25,11 +25,19 @@
                         </span>
                         <span class="r" id="guideTips">点击此查看任务指引</span>
                     </nav>
-                    <input style="background:#dcdcdc;border:1px solid #dcdcdc" id="answerInput" type="text" class="showInfo tc bsb">
-                    <p class="textTip" style="padding-left:2px">请保证文本输入框与图片内容一致 <span id="gzsm" class="r" style="color:#ff6000;padding-right:2px">规则说明</span></p>
-                    <div id="btns" class="btns">
-                        <input id="indistinct" type="button" class="next tc bsb" value="看不清">
-                        <input id="next" type="button" class="next tc bsb" value="下一张">
+                    <div id="output">
+                        <div class="showInfo">
+                            <div class="codeLockWrap" id="codeLockWrap" style="position: relative">
+                                <input class="ansNum" id="n1" value="0" type="number"/><input class="ansNum" id="n2" value="1" type="number"/><input class="ansNum" id="n3" value="2" type="number"/><input class="ansNum" id="n4" value="3" type="number"/><input class="ansNum" id="n5" value="4" type="number"/>
+                                <input class="ansNum" id="n6" value="5" type="number"/><input class="ansNum" id="n7" value="6" type="number"/><input class="ansNum" id="n8" value="7" type="number"/><input class="ansNum" id="n9" value="8" type="number"/><input class="ansNum" id="n10" value="9" type="number"/>
+                                <span id="gzsm" class="gzsm">规则说明</span>
+                            </div>
+                        </div>
+                        <p class="textTip">请保证文本输入框与图片内容一致</p>
+                        <div id="btns" class="btns">
+                            <input id="indistinct" type="button" class="next tc bsb" value="看不清">
+                            <input id="next" type="button" class="next tc bsb" value="下一张">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -103,9 +111,6 @@
         <p id="fhGuide" style="margin-top:.15rem;"><a style="color:#ff6000;" href="#">任务指引</a></p>
     </div>
 </div>
-<div id="guideBox" style="display:none;box-sizing:border-box;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.7);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
-    <img src="" alt="">
-</div>
 <div id="rwzy" style="display:none;box-sizing:border-box;width:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.7);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
     <img id="rwzyImg" src="" alt="rwzyImg" style="width:100%;">
     <span id="read" style="position: absolute;top: 5.38rem;left: 0;right: 0;margin: auto;width: .8rem;height: .39rem"></span>
@@ -127,41 +132,42 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script src="/static/h5/common2.js"></script>
-<script src="/static/h5/zb.js"></script>
+<script src="/static/h5/inputSwipe.js"></script>
+<script src="/static/h5/num.js"></script>
 <script type="text/javascript">
     pybossa.presentTask(function(task, deferred) {
       if ( !$.isEmptyObject(task) ) {
         console.log('运行presentTask函数时拿到的任务为: '+task);
-        console.log(task);
         imgHandleFn(task);
-        setInputVal(task);
-        var interface = gInterface;
-        showPageData(task,tokenStr,interface);
-        bindJumpNative(nowProject);
+        setInputVal(task,10,'0123456789',blockStr);
+//获取token
+            var interface = gInterface;
+            showPageData(task,tokenStr,interface);
+            bindJumpNative(nowProject);
 //拿到token判断有没登录
-        if(!tokenStr){
-          console.log('没有拿到token值！');
-          noTokenHandle();
-        }else{
-          console.log('拿到了token值，为 '+tokenStr);
-          $('#toLogin').hide();
-//点击下一张按钮
-          $('#next,#indistinct').off(touchstart).on(touchstart, function() {
-            $("#showMes").show();
-            var touchstartWhich = $(this).attr('id')=='indistinct';
-            if(!window.navigator.onLine){
-              $('#offLine').show();
+            if(!tokenStr){
+              console.log('没有拿到token值！');
+              noTokenHandle();
             }else{
-              var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
-              normalSubmit(task,answer,tokenStr,interface,deferred);
+              console.log('拿到了token值，为 '+tokenStr);
+              $('#toLogin').hide();
+//点击下一张按钮
+              $('#next,#indistinct').off(touchstart).on(touchstart, function() {
+                $("#showMes").show();
+                var touchstartWhich = $(this).attr('id')=='indistinct';
+                if(!window.navigator.onLine){
+                  $('#offLine').show();
+                }else{
+                  var answer = touchstartWhich ? {"text": '看不清'} : {"text": getCurStr()};
+                  normalSubmit(task,answer,tokenStr,interface,deferred);
+                }
+              });
             }
-          });
-        }
       }
       else {
         console.log('运行presentTask函数时候已经没有任务了,自动重新刷新页面获取可用任务');
         console.log('只加载本次任务，不会出现这个日志');
       }
     });
-    pybossa.run('hospital');
+    pybossa.run('sn');
 </script>

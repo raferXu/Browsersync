@@ -486,6 +486,7 @@
                     // If handler was not called on touchend, call it on click;
                     handler.call(this, e);
                 }
+
             });
             
         };
@@ -550,7 +551,7 @@
 
             /***************************************/
 
-          html += (s.display != 'inline' ? '<div class="dwbc' + (s.button3 ? ' dwbc-p' : '') + '"><span style="width:100%" class="dwbw dwb-s"><span class="dwb">' + s.setText + '</span></span>' + (s.button3 ? '<span class="dwbw dwb-n"><span class="dwb">' + s.button3Text + '</span></spans>' : '') + '</div></div>' : '<div class="dwcc"></div>') + '</div></div></div>';
+          html += (s.display != 'inline' ? '<div class="dwbc' + (s.button3 ? ' dwbc-p' : '') + '"><span style="width:100%" class="dwbw dwb-s"><span class="dwb" id="dwb">' + s.setText + '</span></span>' + (s.button3 ? '<span class="dwbw dwb-n"><span class="dwb">' + s.button3Text + '</span></spans>' : '') + '</div></div>' : '<div class="dwcc"></div>') + '</div></div></div>';
 
             /***************************************/
 
@@ -611,6 +612,10 @@
               });
               that.tap($('.dw-persp', dw), function () {
                 that.cancel();
+                if(android){
+                  console.log('datePickerShow(false)');
+                  jobTask.datePickerShow(false);
+                }
               });
 
                 /***************************************/
