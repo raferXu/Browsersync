@@ -2,40 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/h5/webwxgetmsgimg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/5010/date2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/5010/hospital2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/5010/sn2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/5010/total2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/qrcode.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/utf.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/jquery-1.min.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/jquery-1.min.min.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/jquery.1.7.2.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/jquery.1.7.2.min.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002.min.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002x.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002x.min.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_003.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_004.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_005.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/num2.min.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/billIcon.png" afterPath="$PROJECT_DIR$/zhongbao3/H5/billIcon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/count.png" afterPath="$PROJECT_DIR$/zhongbao3/H5/count.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/date.html" afterPath="$PROJECT_DIR$/5010/date.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/hospital.html" afterPath="$PROJECT_DIR$/5010/hospital.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.css" afterPath="$PROJECT_DIR$/zhongbao3/H5/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.less" afterPath="$PROJECT_DIR$/zhongbao3/H5/common.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.min.css" afterPath="$PROJECT_DIR$/zhongbao3/H5/common.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/dateScroll.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/dateScroll.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.js" afterPath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.min.js" afterPath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/wlt/wlt.html" afterPath="$PROJECT_DIR$/zhongbao3/h5/wlt/wlt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5.zip" afterPath="$PROJECT_DIR$/zhongbao3/H5.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/date2.html" afterPath="$PROJECT_DIR$/5010/date2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/hospital2.html" afterPath="$PROJECT_DIR$/5010/hospital2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/sn2.html" afterPath="$PROJECT_DIR$/5010/sn2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/total2.html" afterPath="$PROJECT_DIR$/5010/total2.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -56,28 +27,8 @@
       <file leaf-file-name="hospital2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="1.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/1.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.less" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="423" column="19" lean-forward="true" selection-start-line="423" selection-start-column="19" selection-end-line="423" selection-end-column="19" />
+            <state relative-caret-position="270">
+              <caret line="18" column="102" lean-forward="false" selection-start-line="18" selection-start-column="102" selection-end-line="18" selection-end-column="102" />
               <folding />
             </state>
           </provider>
@@ -87,27 +38,17 @@
         <entry file="file://$PROJECT_DIR$/5010/sn2.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="date2.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="date2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/5010/date2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="43" lean-forward="false" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="share.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zhongbao3/h5/share/share.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2370">
-              <caret line="158" column="9" lean-forward="false" selection-start-line="158" selection-start-column="9" selection-end-line="158" selection-end-column="9" />
+            <state relative-caret-position="270">
+              <caret line="20" column="102" lean-forward="false" selection-start-line="20" selection-start-column="102" selection-end-line="20" selection-end-column="102" />
               <folding />
             </state>
           </provider>
@@ -116,8 +57,8 @@
       <file leaf-file-name="total2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5010/total2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="84" column="26" lean-forward="false" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -139,9 +80,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>gzsm</find>
-      <find>margin-top</find>
-      <find>margin-bottom</find>
       <find>icharts</find>
       <find>http://192.168.0.122:3000</find>
       <find>location</find>
@@ -165,10 +103,13 @@
       <find>guideTips</find>
       <find>position</find>
       <find>main .wrap section.countBox nav</find>
-      <find>main .wrap section.billBox .task_rand_score</find>
       <find>box-shadow</find>
       <find>main .wrap section.billBox .billOperate</find>
       <find>main .wrap section.countBox</find>
+      <find>scoreBox</find>
+      <find>task_rand_score</find>
+      <find>main .wrap section.billBox .task_rand_score</find>
+      <find>billWrap</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -256,14 +197,14 @@
         <option value="$PROJECT_DIR$/5010/date.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/dateScroll.js" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.js" />
-        <option value="$PROJECT_DIR$/5010/hospital2.html" />
-        <option value="$PROJECT_DIR$/5010/date2.html" />
-        <option value="$PROJECT_DIR$/5010/total2.html" />
-        <option value="$PROJECT_DIR$/5010/sn2.html" />
         <option value="$PROJECT_DIR$/code/utf.js" />
         <option value="$PROJECT_DIR$/code/qrcode.js" />
         <option value="$PROJECT_DIR$/code/1.html" />
+        <option value="$PROJECT_DIR$/5010/sn2.html" />
+        <option value="$PROJECT_DIR$/5010/total2.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/common.less" />
+        <option value="$PROJECT_DIR$/5010/hospital2.html" />
+        <option value="$PROJECT_DIR$/5010/date2.html" />
       </list>
     </option>
   </component>
@@ -274,8 +215,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="50" />
-    <option name="y" value="153" />
+    <option name="x" value="112" />
+    <option name="y" value="156" />
     <option name="width" value="1142" />
     <option name="height" value="665" />
   </component>
@@ -537,19 +478,19 @@
       <workItem from="1501485478303" duration="31000" />
       <workItem from="1501495181210" duration="15000" />
       <workItem from="1501636768036" duration="12693000" />
-      <workItem from="1501825618556" duration="32495000" />
+      <workItem from="1501825618556" duration="33755000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1286178000" />
+    <option name="totallyTimeSpent" value="1287438000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="153" width="1142" height="665" extended-state="0" />
-    <editor active="false" />
+    <frame x="112" y="156" width="1142" height="665" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24272728" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24272728" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31937173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -925,42 +866,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/5010/total2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/5010/sn2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/5010/date2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="43" lean-forward="false" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/share/share.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2370">
           <caret line="158" column="9" lean-forward="false" selection-start-line="158" selection-start-column="9" selection-end-line="158" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1018,8 +927,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="423" column="19" lean-forward="true" selection-start-line="423" selection-start-column="19" selection-end-line="423" selection-end-column="19" />
+        <state relative-caret-position="224">
+          <caret line="409" column="19" lean-forward="true" selection-start-line="409" selection-start-column="19" selection-end-line="409" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="102" lean-forward="false" selection-start-line="18" selection-start-column="102" selection-end-line="18" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/sn2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/total2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="84" column="26" lean-forward="false" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/date2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="102" lean-forward="false" selection-start-line="20" selection-start-column="102" selection-end-line="20" selection-end-column="102" />
           <folding />
         </state>
       </provider>

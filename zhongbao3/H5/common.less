@@ -405,12 +405,12 @@ body{
 }
 main .wrap section.billBox .task_rand_score{
   position: relative;
-  z-index: -1;
+  z-index: -9999;
   border-bottom: 0;
   background: #fff;
-  box-shadow: 0 3px 15px 0 rgba(0,0,0,.1);
-  -webkit-box-shadow: 0 3px 15px 0 rgba(0,0,0,.1);
   margin-bottom: .1rem;
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
 main .wrap section.billBox .billOperate{
   padding: 0;
@@ -447,4 +447,8 @@ main .wrap section.countBox{
 
 #output{
   padding: 0 .1rem;
+}
+#billWrap{
+  box-shadow: 0 3px 15px 0 rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 3px 15px 0 rgba(0,0,0,.1);
 }
