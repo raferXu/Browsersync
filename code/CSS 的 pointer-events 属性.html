@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .disabled { pointer-events: none; }
+  </style>
+</head>
+<body>
+<button class="" id="btn1">123</button>
+好处是 pointer-events 能高效地阻止触发 JavaScript 事件;
+在元素上的 click 以及通过 addEventListener 添加的回调函数都不会被触发.
+onclick和onmousedown同时存在时只会触发onmousedown；
+<script>
+  var btn = document.getElementById('btn1');
+  btn.onclick = function () {
+    alert(1);
+  };
+  btn.onmousedown = function () {
+    alert(2);
+  }
+</script>
+</body>
+</html>

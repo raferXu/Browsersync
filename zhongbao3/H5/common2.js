@@ -1480,7 +1480,7 @@ function bindJumpNative(projectName) {
     var guideImgArr = {
       'sn': ['http://192.168.0.122:3000/Browersync/zhongbao3/h5/snGuide1.png','http://192.168.0.122:3000/Browersync/zhongbao3/h5/snGuide2.png'],
       'total': ['http://192.168.0.122:3000/Browersync/zhongbao3/h5/totalG.png'],
-      'date': [],
+      'date': ['http://192.168.0.122:3000/Browersync/zhongbao3/h5/dateG.png'],
       'hospital': ['http://192.168.0.122:3000/Browersync/zhongbao3/h5/hospitalG.png']
     };
 

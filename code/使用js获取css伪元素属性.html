@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // 获取 .element:before 的 color 值
+  var color = window.getComputedStyle(
+    document.querySelector('.element'), ':before'
+  ).getPropertyValue('color');
+
+
+  // 获取 .element:before 的 content 值
+  var content = window.getComputedStyle(
+    document.querySelector('.element'), ':before'
+  ).getPropertyValue('content');
+</script>
+</body>
+</html>
