@@ -1507,27 +1507,32 @@ function bindJumpNative(projectName) {
       }
     });
   });
-//点击查看
-  $('.more').off(touchstart).on(touchstart,function () {
-    console.log('nextBtnClick');
-    jobTask.checkTaskStatistics();
-  });
-//规则说明
-  $('#gzsm').off(touchstart).on(touchstart,function () {
-    console.log('nextBtnClick');
-    jobTask.taskGuide();
-  });
   $('#toLogin').removeClass().addClass('bgHide').show();
+  var nativeTimer = setInterval(function () {
+    if(jobTaskLoaded){
+      clearInterval(nativeTimer);
+//点击查看
+      $('.more').off(touchstart).on(touchstart,function () {
+        console.log('nextBtnClick');
+        jobTask.checkTaskStatistics();
+      });
+//规则说明
+      $('#gzsm').off(touchstart).on(touchstart,function () {
+        console.log('nextBtnClick');
+        jobTask.taskGuide();
+      });
 //单击消息中心按钮
-  $('.xxzx').off(touchstart).on(touchstart,function () {
-    console.log('xxzxTouchstart');
-    jobTask.launchMessageCenterPage();
-  });
+      $('.xxzx').off(touchstart).on(touchstart,function () {
+        console.log('xxzxTouchstart');
+        jobTask.launchMessageCenterPage();
+      });
 //单击排行榜按钮
-  $('.phb').off(touchstart).on(touchstart,function () {
-    console.log('phbTouchstart');
-    jobTask.launchRankingPage();
-  });
+      $('.phb').off(touchstart).on(touchstart,function () {
+        console.log('phbTouchstart');
+        jobTask.launchRankingPage();
+      });
+    }
+  },50);
 }
 
 
@@ -1543,10 +1548,15 @@ function noTokenHandle() {
     },true);
   });
 //单击登录跳转登录页面
-  $('#loginBtn').off(touchstart).on(touchstart,function () {
-    console.log('loginBtnTouchstart');
-    jobTask.launchLoginPage();
-  });
+  var toLoginTimer = setInterval(function () {
+    if(jobTaskLoaded){
+      clearInterval(toLoginTimer);
+      $('#loginBtn').off(touchstart).on(touchstart,function () {
+        console.log('loginBtnTouchstart');
+        jobTask.launchLoginPage();
+      });
+    }
+  },50);
   $('html')[0].addEventListener(touchstart,function () {
     console.log('htmlPageTouchstart');
     $('#toLogin').removeClass().addClass('bgShow');

@@ -26,7 +26,7 @@ function datePlugin(blockStr,minYear,maxYear) {
         jobTask.datePickerShow(true);
       }
     });
-    $(document).on(touchstart,'#dwb',function () {
+    $(document).on(touchstart,'#dwb,#dwb2',function () {
       console.log('datePickerShow(false1)');
       jobTask.datePickerShow(false);
     });

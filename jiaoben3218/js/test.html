@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+html +=
+(s.display != 'inline'
+? '<div class="dwbc' + (s.button3 ? ' dwbc-p' : '') + '"><span class="dwbw dwb-s"><span class="dwb">' + s.setText + '</span></span>' +
+  (s.button3
+  ? '<span class="dwbw dwb-n"><span class="dwb">' + s.button3Text + '</span></span>'
+  : '')
+  + '<span class="dwbw dwb-c"><span class="dwb">' + s.cancelText + '</span></span></div></div>'
+: '<div class="dwcc"></div>')
++ '</div></div></div>';
+
+html +=
+('<div class="dwbc' + (s.button3 ? ' dwbc-p' : '') + '"><span class="dwbw dwb-s"><span class="dwb">' + s.setText + '</span></span>' +
+  ''
+  + '<span class="dwbw dwb-c"><span class="dwb">' + s.cancelText + '</span></span></div></div>'
+)
++ '</div></div></div>';
+
+console.log(s.display != 'inline');
+console.log(!!s.button3);
+console.log(s.button3Text);
+console.log(s.cancelText);
+
+true
+mobiscroll_003x.js:553 false
+mobiscroll_003x.js:554 undefined
+mobiscroll_003x.js:555 取消
+
+html += '</div></div></div></div>';
+
+
+html += '<div class="dwbc' + (s.button3 ? ' dwbc-p' : '') + '"><span class="dwbw dwb-s"><span class="dwb">' + s.setText + '</span></span>' + '<span class="dwbw dwb-c"><span class="dwb">' + s.cancelText + '</span></span></div>';
+
+</body>
+</html>
