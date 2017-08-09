@@ -2,37 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_004.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_003x.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jiaoben3218/js/test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_004.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/字体压扁.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll.min.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_002.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_002.min.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_003.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_003.min.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/jquery-1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/jquery-1.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002x.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_003.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_004.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_005.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/num.min.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5.zip" afterPath="$PROJECT_DIR$/zhongbao3/h5.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/date2.html" afterPath="$PROJECT_DIR$/5010/date2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_003.css" afterPath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_003.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_003.min.css" afterPath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_003.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jiaoben3218/index2.html" afterPath="$PROJECT_DIR$/jiaoben3218/index2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002x.js" afterPath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002x.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common2.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/common2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/dateScroll.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/dateScroll.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/wlt/wlt.html" afterPath="$PROJECT_DIR$/zhongbao3/h5/wlt/wlt.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,7 +21,18 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="wlt.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zhongbao3/h5/wlt/wlt.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -165,7 +148,6 @@
         <option value="$PROJECT_DIR$/5010/sn.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/zb2.js" />
         <option value="$PROJECT_DIR$/5010/total.html" />
-        <option value="$PROJECT_DIR$/zhongbao3/h5/wlt/wlt.html" />
         <option value="$PROJECT_DIR$/5010/hospital.html" />
         <option value="$PROJECT_DIR$/5010/date.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.js" />
@@ -190,6 +172,7 @@
         <option value="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.js" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_004.css" />
         <option value="$PROJECT_DIR$/zhongbao3/字体压扁.html" />
+        <option value="$PROJECT_DIR$/zhongbao3/h5/wlt/wlt.html" />
       </list>
     </option>
   </component>
@@ -200,8 +183,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="278" />
-    <option name="y" value="105" />
+    <option name="x" value="246" />
+    <option name="y" value="92" />
     <option name="width" value="961" />
     <option name="height" value="711" />
   </component>
@@ -234,6 +217,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="zhongbao3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhongbao3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="h5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhongbao3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="h5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wlt" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -463,19 +486,19 @@
       <workItem from="1501485478303" duration="31000" />
       <workItem from="1501495181210" duration="15000" />
       <workItem from="1501636768036" duration="12693000" />
-      <workItem from="1501825618556" duration="49594000" />
+      <workItem from="1501825618556" duration="49838000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1303277000" />
+    <option name="totallyTimeSpent" value="1303521000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="278" y="105" width="961" height="711" extended-state="0" />
-    <editor active="false" />
+    <frame x="246" y="92" width="961" height="711" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25027204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25027204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31937173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -607,16 +630,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/codeLock3.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -1038,6 +1051,14 @@
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/wlt/wlt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
