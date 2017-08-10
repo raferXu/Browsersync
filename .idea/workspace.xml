@@ -2,375 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/5010/date.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/5010/date3x.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/5010/dateInit.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/5010/date加载下一个任务最终版.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/5010/hospital.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/5010/hospital3x.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/5010/hospitalInit.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/5010/presenter_token-2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/5010/pybossa-token架构.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/5010/sn.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/5010/sn3x.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/5010/snInit.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/5010/total.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/5010/total3x.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/5010/totalInit.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/12切角及阴影.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/1按钮颜色自定义.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/2缝边效果.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/CSS编码技巧/border-corner-shape.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/others/circle.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/others/grid/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/others/grid/fit-content.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/others/grid/grid-auto-columns.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/others/grid/grid-template-columns.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/others/grid/grid-template-rows.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/others/grid/grid.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/others/grid/repeat.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/others/grid/template.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/others/kate.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/others/mask.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/others/mask.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/0.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/18毛玻璃效果.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/28环形文字.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/32click遮罩.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/32遮罩层.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/33弹窗后背景模糊.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/35cssresize.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/36自适应宽度.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/38根据兄弟元素数量设置样式.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/39满幅的背景,定宽的内容.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/40垂直居中1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/40垂直居中2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/40垂直居中3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/41紧贴底部的页脚1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/41紧贴底部的页脚2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/42逼真的弹跳动作.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/5渐变所有例子.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/6复杂的背景图案.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/7伪随机背景和8连续的图像边框.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/box-shadow例子.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CSS/揭秘参考案例/回退机制.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/H5/shadowDOM.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/H5/shadowDOM2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/H5/shadowDOM3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/H5/shadowDOM4.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/H5/shadowDOM5.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/H5/shadowDOM6.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/click单独线程.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/img居中/headerBg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/img居中/外层宽高固定.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/javascript经典实例/5.13创建一个过滤后的数组.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/jq的data-token.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/js线程1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/js线程2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/lazyImg/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/setInterval.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/this.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/this2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/this3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/touch1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/touch2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/webkit技术内幕/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/单击与双击事件独立触发.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/双击事件触发时也会触发单击事件.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/双指缩放.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/深入理解bootstrap/css.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/arrow.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/basic.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/calculator.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/css/keyboard.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/css/keyboard.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/css/keyboard.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/calc-1overx.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/calc-ex.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/calc-xy.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/calc-yroot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/calculator.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/calculator.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/calculator.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/calculator.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/demo.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/demo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/demo.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/demo.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/demo.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/demo.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/jquery.chili-2.2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/jquery.chili-2.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/jquery.chili-2.2.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/keyboard.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/recipes.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/recipes.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/demo/recipes.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/jquery-mobile-1.4.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-all.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-all.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-all.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-all.min.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-autocomplete.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-autocomplete.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-autocomplete.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-autocomplete.min.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-mobile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-mobile.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-mobile.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-mobile.min.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-navigation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-navigation.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-navigation.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-navigation.min.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-scramble.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-scramble.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-scramble.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-scramble.min.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-typing.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-typing.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-typing.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-typing.min.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.min.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.min.min.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.mousewheel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.mousewheel.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.mousewheel.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/js/jquery.mousewheel.min.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/albanian.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/albanian.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/albanian.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/arabic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/arabic.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/arabic.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/belarusian.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/belarusian.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/belarusian.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/bengali.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/bengali.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/bengali.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/bulgarian.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/bulgarian.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/bulgarian.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/catalan.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/catalan.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/catalan.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/danish.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/danish.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/danish.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/french.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/french.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/french.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/german.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/german.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/german.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/hebrew.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/hebrew.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/hebrew.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/hungarian.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/hungarian.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/hungarian.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/hungarianansi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/hungarianansi.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/hungarianansi.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/japanese.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/japanese.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/japanese.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/latvian.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/latvian.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/latvian.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/polish.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/polish.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/polish.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/portuguese.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/portuguese.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/portuguese.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/russian.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/russian.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/russian.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/spanish.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/spanish.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/spanish.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/swedish.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/swedish.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/swedish.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/tamil.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/tamil.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/tamil.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/thai.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/thai.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/thai.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/turkish.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/turkish.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/turkish.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/vietnamese.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/vietnamese.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/layouts/vietnamese.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/mobile.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/navigate.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keyboard-master/scramble.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/audio/CSS波浪加载效果.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/audio/CSS继承.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/audio/JS波浪加载效果.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/audio/堆叠上下文.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/audio/复杂边框.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/audio/左边线.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/audio/背景图起始终止位置.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_002.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_002.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_002.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_003.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_003.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_003.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/index2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/init.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/jQuery 事件委托.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/jquery-1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/jquery-1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/jquery-1.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/jquery.1.7.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/jquery.1.7.2.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002x.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002x.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_002x.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_003.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_003.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_004.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_004.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_005.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_005.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/shengqi.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/冒泡捕获.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/归档.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/说明.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiaoben3218/说明.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/sha.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/backspace.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/codeLock3.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/codeLock3.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/common2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/dateScroll.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/hospitalG.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/imgHandle.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/nativeFn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/nativeFn.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/noTask.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/noTaskBg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/num.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/num.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/num2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/num2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/phb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/pinchzoom201.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/pinchzoom201.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/pybossa-token2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/pybossa-token3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/pybossa-token3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/setInputVal.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/setInputVal2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/snGuide1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/snGuide2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/submit2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/submit3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/taskLoad2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/totalG.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/triangle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/xxzx.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/zb.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/zb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/zb.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/zb.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/zb.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/zb.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/zb2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/H5/zb2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/date3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_002.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_002.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_002.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_003.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_003.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_003.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/jquery-1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/jquery-1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/jquery.1.7.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/jquery.1.7.2.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_004.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_004.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_005.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_005.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/nativeFn.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/1.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/1.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/1.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/1.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/banner.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/click.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/code.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/money.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/qrcode.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/qrcode.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/record.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/share.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/task.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/init.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/应用下载判断.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/应用下载没.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/获取移动设备型号.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/regjsparser" afterPath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/regjsparser" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/semver" afterPath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/semver" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/svgo" afterPath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/svgo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/uglifyjs" afterPath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/uglifyjs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/webpack" afterPath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/webpack" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/webpack-dev-server" afterPath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/webpack-dev-server" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zhongbao3/h5/protocolNoHeader.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/2box-shadow和border比较.html" afterPath="$PROJECT_DIR$/CSS/2box-shadow和border比较.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/3把背景图片定位到距离底边 10px 且 距离右边 20px 的位置.html" afterPath="$PROJECT_DIR$/CSS/3把背景图片定位到距离底边 10px 且 距离右边 20px 的位置.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/json5" afterPath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/json5" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/loose-envify" afterPath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/loose-envify" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/miller-rabin" afterPath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/miller-rabin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/mime" afterPath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/mime" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/mkdirp" afterPath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/mkdirp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/sha.js" afterPath="$PROJECT_DIR$/webpack sample project/node_modules/.bin/sha.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -388,11 +21,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pybossa-token2.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pybossa-token2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zhongbao3/h5/pybossa-token2.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="465">
               <caret line="301" column="0" lean-forward="false" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="protocolNoHeader.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zhongbao3/h5/protocolNoHeader.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -420,22 +63,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="3" column="64" lean-forward="false" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
-              <folding>
-                <marker date="1501825523000" expanded="true" signature="129:1728" ph="{...}" />
-                <marker date="1501825523000" expanded="true" signature="185:1722" ph="{...}" />
-                <marker date="1501825523000" expanded="true" signature="212:1635" ph="{...}" />
-                <marker date="1501825523000" expanded="true" signature="254:1595" ph="{...}" />
-                <marker date="1501825523000" expanded="true" signature="301:1583" ph="{&quot;type&quot;: 'GET'...}" />
-                <marker date="1501825523000" expanded="true" signature="535:612" ph="{...}" />
-                <marker date="1501825523000" expanded="true" signature="651:1313" ph="{...}" />
-                <marker date="1501825523000" expanded="true" signature="752:834" ph="{...}" />
-                <marker date="1501825523000" expanded="true" signature="871:1202" ph="{...}" />
-                <marker date="1501825523000" expanded="true" signature="1016:1096" ph="{...}" />
-                <marker date="1501825523000" expanded="true" signature="1100:1186" ph="{...}" />
-                <marker date="1501825523000" expanded="true" signature="1239:1299" ph="{...}" />
-                <marker date="1501825523000" expanded="true" signature="1356:1571" ph="{...}" />
-                <marker date="1501825523000" expanded="true" signature="1453:1557" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -525,7 +153,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/众包三期/html.html" />
         <option value="$PROJECT_DIR$/众包三期/pybossa/html.html" />
         <option value="$PROJECT_DIR$/众包三期/pybossa/static/h5/pybossa-token.js" />
         <option value="$PROJECT_DIR$/bookExample/编写可维护的JS/8.html" />
@@ -576,6 +203,7 @@
         <option value="$PROJECT_DIR$/audio/shengwen/1.html" />
         <option value="$PROJECT_DIR$/zhongbao3/H5/pybossa-token2.js" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/pybossa-token2.js" />
+        <option value="$PROJECT_DIR$/zhongbao3/h5/protocolNoHeader.html" />
       </list>
     </option>
   </component>
@@ -610,10 +238,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Browersync" />
@@ -655,16 +291,6 @@
               <option name="myItemId" value="Browersync" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="audio" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -672,6 +298,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -691,18 +319,18 @@
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/zhongbao3/H5" />
-      <recent name="$PROJECT_DIR$/zhongbao3" />
-      <recent name="$PROJECT_DIR$/calc" />
-      <recent name="$PROJECT_DIR$/Grid" />
-      <recent name="$PROJECT_DIR$/audio/voice-change-o-matic-gh-pages/环境嘈杂测试demo/email" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/zhongbao3/H5" />
       <recent name="$PROJECT_DIR$/众包三期/pybossa/static/h5" />
       <recent name="$PROJECT_DIR$/众包三期/pybossa/static" />
       <recent name="$PROJECT_DIR$/audio/voice-change-o-matic-gh-pages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/zhongbao3/h5" />
+      <recent name="$PROJECT_DIR$/zhongbao3/H5" />
+      <recent name="$PROJECT_DIR$/zhongbao3" />
+      <recent name="$PROJECT_DIR$/calc" />
+      <recent name="$PROJECT_DIR$/Grid" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.pybossaCodeLock.html">
@@ -842,33 +470,35 @@
       <workItem from="1501121828416" duration="2000" />
       <workItem from="1501150038869" duration="40000" />
       <workItem from="1501825495849" duration="73000" />
+      <workItem from="1502350076030" duration="197000" />
+      <workItem from="1502350657302" duration="71000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1017840000" />
+    <option name="totallyTimeSpent" value="1018108000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="68" y="128" width="1118" height="615" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22769517" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23513012" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32051283" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32051283" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -990,13 +620,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/audio/voice-change-o-matic-gh-pages/环境嘈杂测试demo/email/音频数据分析.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="56" column="14" lean-forward="false" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/H5/doubleTap.html" />
     <entry file="file://$PROJECT_DIR$/H5/tap.html" />
     <entry file="file://$PROJECT_DIR$/H5/longPress.html" />
@@ -1169,22 +792,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="64" lean-forward="false" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
-          <folding>
-            <marker date="1501825523000" expanded="true" signature="129:1728" ph="{...}" />
-            <marker date="1501825523000" expanded="true" signature="185:1722" ph="{...}" />
-            <marker date="1501825523000" expanded="true" signature="212:1635" ph="{...}" />
-            <marker date="1501825523000" expanded="true" signature="254:1595" ph="{...}" />
-            <marker date="1501825523000" expanded="true" signature="301:1583" ph="{&quot;type&quot;: 'GET'...}" />
-            <marker date="1501825523000" expanded="true" signature="535:612" ph="{...}" />
-            <marker date="1501825523000" expanded="true" signature="651:1313" ph="{...}" />
-            <marker date="1501825523000" expanded="true" signature="752:834" ph="{...}" />
-            <marker date="1501825523000" expanded="true" signature="871:1202" ph="{...}" />
-            <marker date="1501825523000" expanded="true" signature="1016:1096" ph="{...}" />
-            <marker date="1501825523000" expanded="true" signature="1100:1186" ph="{...}" />
-            <marker date="1501825523000" expanded="true" signature="1239:1299" ph="{...}" />
-            <marker date="1501825523000" expanded="true" signature="1356:1571" ph="{...}" />
-            <marker date="1501825523000" expanded="true" signature="1453:1557" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1198,5 +806,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/audio/shengwen/1.html" />
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/protocolNoHeader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
