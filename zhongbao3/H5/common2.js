@@ -1391,6 +1391,7 @@ function showPageData(task,tokenStr,interface) {
     if(userInfoCode == 200){
       var feedback_reply_count = userInfo[0].body.feedback_reply_count;
       var other_message_count = userInfo[0].body.other_message_count;
+      var if_got_yesterday = userInfo[0].body.if_got_yesterday;
 
       if(feedback_reply_count>0){
         console.log('feedback_reply_count>0');
@@ -1409,6 +1410,12 @@ function showPageData(task,tokenStr,interface) {
         console.log('feedback_reply_count,other_message_count都为0');
         $('.xxzx').removeClass('xxzx2');
         $('.xxzx i').removeClass();
+      }
+
+      if(!if_got_yesterday){
+        $('.phb i').removeClass().addClass('msgRed');
+      }else{
+        $('.phb i').removeClass();
       }
 
       var total_order_num = userInfo[0].body.total_order_num;

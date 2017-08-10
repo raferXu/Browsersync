@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cross-Browser QRCode generator for Javascript</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="qrcode.js"></script>
+</head>
+<body>
+<input id="text" type="text" value="http://jindo.dev.naver.com/collie" style="width:80%" /><br />
+<div id="qrcode" style="width:350px; height:350px; margin-top:25px;"></div>
+
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	width : 150,
+	height : 150
+});
+var tt;
+function isAndroidFn() {
+  var u = navigator.userAgent,
+    app = navigator.appVersion;
+  var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+  var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+  alert(u);
+  return isAndroid;
+}
+android = isAndroidFn();
+//判断是安卓机还是苹果机
+if(android){
+  console.log('android');
+  tt = 'https://www.sougou.com';
+}else{
+  console.log('iOS');
+  tt = 'https://www.baidu.com';
+}
+qrcode.makeCode(tt);
+</script>
+</body>
