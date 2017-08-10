@@ -1037,9 +1037,6 @@ window.onerror = function (msg,url,l) {
 
           firstMove = false;
         }
-        // }else{
-        //     console.log('out');
-        // }
       });
 
       el.addEventListener('touchend', function (event) {
@@ -1478,10 +1475,10 @@ function bindJumpNative(projectName) {
     // jobTask.taskGuide();
 
     var guideImgArr = {
-      'sn': ['http://192.168.0.122:3000/Browersync/zhongbao3/h5/snGuide1.png','http://192.168.0.122:3000/Browersync/zhongbao3/h5/snGuide2.png'],
-      'total': ['http://192.168.0.122:3000/Browersync/zhongbao3/h5/totalG.png'],
-      'date': ['http://192.168.0.122:3000/Browersync/zhongbao3/h5/dateG.png'],
-      'hospital': ['http://192.168.0.122:3000/Browersync/zhongbao3/h5/hospitalG.png']
+      'sn': ['/static/h5/snGuide1.png','/static/h5/snGuide2.png'],
+      'total': ['/static/h5/totalG.png'],
+      'date': ['/static/h5/dateG.png'],
+      'hospital': ['/static/h5/hospitalG.png']
     };
 
     var nowImgArr = guideImgArr[projectName];
