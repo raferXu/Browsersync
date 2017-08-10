@@ -1154,43 +1154,43 @@ pybossa.taskLoaded(function(task, deferred) {
     function getImgFn() {
       var getImgNeedPortTimer = setInterval(function () {
         /*
-        if(jobTaskLoaded){
-          clearInterval(getImgNeedPortTimer);
-          var interface = getTokenAndPort().interface;
-          var getImgAjax = $.ajax({
-            type: 'GET',
-            async: false,
-            cache: false,
-            url: ''+interface+imgUrl,
-            dataType: 'json',
-            timeout: 10000,
-            success: function (data) {
-              var getImgAjaxCode = data.code;
-              if(getImgAjaxCode == 200){
-                var imgUrlbase64 = 'data:image/jpeg;base64,'+data['body']['base64'];
-                img.load(function() {
-                  deferred.resolve(task);
-                });
-                img.attr('src', imgUrlbase64).css('height', 'auto');
-                task.info.image = img[0];
-              }else{
-                console.log('getImgAjax调用失败，状态码为: '+getImgAjaxCode);
-                deferred.resolve(task);
-              }
-            },
-            error: function (xml, error) {
-              console.log('/token/img接口Error');
-              if(error == "timeout"){
-                console.log('/token/img接口timeout');
-                getImgAjax.abort();
-                getImgFn();
-              }else{
-                deferred.resolve(task);
-              }
-            }
-          });
-        }
-        */
+         if(jobTaskLoaded){
+         clearInterval(getImgNeedPortTimer);
+         var interface = getTokenAndPort().interface;
+         var getImgAjax = $.ajax({
+         type: 'GET',
+         async: false,
+         cache: false,
+         url: ''+interface+imgUrl,
+         dataType: 'json',
+         timeout: 10000,
+         success: function (data) {
+         var getImgAjaxCode = data.code;
+         if(getImgAjaxCode == 200){
+         var imgUrlbase64 = 'data:image/jpeg;base64,'+data['body']['base64'];
+         img.load(function() {
+         deferred.resolve(task);
+         });
+         img.attr('src', imgUrlbase64).css('height', 'auto');
+         task.info.image = img[0];
+         }else{
+         console.log('getImgAjax调用失败，状态码为: '+getImgAjaxCode);
+         deferred.resolve(task);
+         }
+         },
+         error: function (xml, error) {
+         console.log('/token/img接口Error');
+         if(error == "timeout"){
+         console.log('/token/img接口timeout');
+         getImgAjax.abort();
+         getImgFn();
+         }else{
+         deferred.resolve(task);
+         }
+         }
+         });
+         }
+         */
         var getImgAjax = $.ajax({
           type: 'GET',
           async: false,
@@ -1395,46 +1395,46 @@ $('.imgWrap').off('touchend').on('touchend',function (e) {
 // inputSwipe.js
 //给数字输入框父元素添加滑动事件
 /*
-var startX,startY;
-$('#codeLockWrap').off(touchstart).on(touchstart,function (e) {
-  startX = e.originalEvent.touches[0].pageX;
-  startY = e.originalEvent.touches[0].pageY;
-});
-$('#codeLockWrap').off('touchend').on('touchend',function (e) {
-  var endX = e.originalEvent.changedTouches[0].pageX;
-  var endY = e.originalEvent.changedTouches[0].pageY;
-  var direction = GetSlideDirection(startX, startY, endX, endY);
-  var liLen = $('#codeLockWrap input').length;
-  switch (direction){
-    case 3:
-      console.log('left');
-      var arr = [];
-      $('#codeLockWrap input').each(function (i,v) {
-        arr.push($(this).val());
-      });
-      arr.push(arr.shift());
-      $('#codeLockWrap input').each(function (i,v) {
-        // console.log(arr[i]);
-        $(this).val(arr[i]);
-      });
-      break;
-    case 4:
-      console.log('right');
-      var liLen = $('#codeLockWrap input').length;
-      // $('#codeLockWrap input').eq(liLen-1).prependTo($('#codeLockWrap'));
-      var arr = [];
-      $('#codeLockWrap input').each(function (i,v) {
-        arr.push($(this).val());
-      });
-      arr.unshift(arr.pop());
-      $('#codeLockWrap input').each(function (i,v) {
-        // console.log(arr[i]);
-        $(this).val(arr[i]);
-      });
-      break;
-  }
-});
-*/
+ var startX,startY;
+ $('#codeLockWrap').off(touchstart).on(touchstart,function (e) {
+ startX = e.originalEvent.touches[0].pageX;
+ startY = e.originalEvent.touches[0].pageY;
+ });
+ $('#codeLockWrap').off('touchend').on('touchend',function (e) {
+ var endX = e.originalEvent.changedTouches[0].pageX;
+ var endY = e.originalEvent.changedTouches[0].pageY;
+ var direction = GetSlideDirection(startX, startY, endX, endY);
+ var liLen = $('#codeLockWrap input').length;
+ switch (direction){
+ case 3:
+ console.log('left');
+ var arr = [];
+ $('#codeLockWrap input').each(function (i,v) {
+ arr.push($(this).val());
+ });
+ arr.push(arr.shift());
+ $('#codeLockWrap input').each(function (i,v) {
+ // console.log(arr[i]);
+ $(this).val(arr[i]);
+ });
+ break;
+ case 4:
+ console.log('right');
+ var liLen = $('#codeLockWrap input').length;
+ // $('#codeLockWrap input').eq(liLen-1).prependTo($('#codeLockWrap'));
+ var arr = [];
+ $('#codeLockWrap input').each(function (i,v) {
+ arr.push($(this).val());
+ });
+ arr.unshift(arr.pop());
+ $('#codeLockWrap input').each(function (i,v) {
+ // console.log(arr[i]);
+ $(this).val(arr[i]);
+ });
+ break;
+ }
+ });
+ */
 
 
 // nativeLoad.js

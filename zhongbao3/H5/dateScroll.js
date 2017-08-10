@@ -1,6 +1,6 @@
 /**
  * Created by raferxu on 17/7/7.
-**/
+ **/
 //日期插件
 function datePlugin(blockStr,minYear,maxYear) {
   $('#appDate').val(blockStr.str);

@@ -1,7 +1,6 @@
 /**
  * Created by raferxu on 17/7/6.
  */
-
 // init.js
 // loading加载框出现
 $("#showMes").show();
@@ -1149,38 +1148,38 @@ pybossa.taskLoaded(function(task, deferred) {
     var img = $('<img id="billImg" class="billImg"/>');
     var imgUrl = task.info.url;
     function getImgFn() {
-        var getImgAjax = $.ajax({
-          type: 'GET',
-          async: false,
-          cache: false,
-          url: ''+gInterface+imgUrl,
-          dataType: 'json',
-          timeout: 10000,
-          success: function (data) {
-            var getImgAjaxCode = data.code;
-            if(getImgAjaxCode == 200){
-              var imgUrlbase64 = 'data:image/jpeg;base64,'+data['body']['base64'];
-              img.load(function() {
-                deferred.resolve(task);
-              });
-              img.attr('src', imgUrlbase64).css('height', 'auto');
-              task.info.image = img[0];
-            }else{
-              console.log('getImgAjax调用失败，状态码为: '+getImgAjaxCode);
+      var getImgAjax = $.ajax({
+        type: 'GET',
+        async: false,
+        cache: false,
+        url: ''+gInterface+imgUrl,
+        dataType: 'json',
+        timeout: 10000,
+        success: function (data) {
+          var getImgAjaxCode = data.code;
+          if(getImgAjaxCode == 200){
+            var imgUrlbase64 = 'data:image/jpeg;base64,'+data['body']['base64'];
+            img.load(function() {
               deferred.resolve(task);
-            }
-          },
-          error: function (xml, error) {
-            console.log('/token/img接口Error');
-            if(error == "timeout"){
-              console.log('/token/img接口timeout');
-              getImgAjax.abort();
-              getImgFn();
-            }else{
-            }
+            });
+            img.attr('src', imgUrlbase64).css('height', 'auto');
+            task.info.image = img[0];
+          }else{
+            console.log('getImgAjax调用失败，状态码为: '+getImgAjaxCode);
             deferred.resolve(task);
           }
-        });
+        },
+        error: function (xml, error) {
+          console.log('/token/img接口Error');
+          if(error == "timeout"){
+            console.log('/token/img接口timeout');
+            getImgAjax.abort();
+            getImgFn();
+          }else{
+          }
+          deferred.resolve(task);
+        }
+      });
     }
     if(/^\/token\/img/.test(imgUrl)){
       getImgFn();
