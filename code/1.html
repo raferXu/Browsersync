@@ -8,16 +8,21 @@
   <script type="text/javascript" src="qrcode.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-     $("#qrcodeCanvas").qrcode({
-      render : "canvas",    //设置渲染方式，有table和canvas，使用canvas方式渲染性能相对来说比较好
-      //text : "这是修改了官文的js文件，此时生成的二维码支持中文和LOGO",    //扫描二维码后显示的内容,可以直接填一个网址，扫描二维码后自动跳向该链接
-      text : "https://www.baidu.com",
-      width : "200",               //二维码的宽度
-      height : "200",              //二维码的高度
-      background : "#ffffff",       //二维码的后景色
-      foreground : "#000000",        //二维码的前景色
-      src: '../zhongbao3/h5/webwxgetmsgimg.png'             //二维码中间的图片
-     });
+      function makeCode(config) {
+        $("#qrcodeCanvas").qrcode({
+          render : config.render,    //设置渲染方式，有table和canvas，使用canvas方式渲染性能相对来说比较好
+          //text : "这是修改了官文的js文件，此时生成的二维码支持中文和LOGO",    //扫描二维码后显示的内容,可以直接填一个网址，扫描二维码后自动跳向该链接
+          text : config.text,
+          width : config.width,               //二维码的宽度
+          height : config.height,              //二维码的高度
+          background : config.background,       //二维码的后景色
+          foreground : config.foreground        //二维码的前景色
+//      src: '../zhongbao3/h5/webwxgetmsgimg.png'             //二维码中间的图片
+        });
+      }
+      makeCode({render : "canvas",text : "userId=xinran&appId=10007&scene=dmz_cll&type=register&onlyId=xinran25698741",width : "200",height : "200",background : "#ffffff",foreground : "#000000"});
+      setTimeout(function () {
+      },5000);
   });
   </script>
 </head>
