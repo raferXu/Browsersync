@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JS/原生JavaScript技巧/清除脚本内容.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/total2.html" afterPath="$PROJECT_DIR$/5010/total2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/zb2.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/zb2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/zb2.min.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/zb2.min.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,45 +20,25 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="total2.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/5010/total2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="251" column="3" lean-forward="true" selection-start-line="251" selection-start-column="3" selection-end-line="251" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="common2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="1068" column="8" lean-forward="false" selection-start-line="1068" selection-start-column="4" selection-end-line="1068" selection-end-column="8" />
+            <state relative-caret-position="-1924">
+              <caret line="1472" column="37" lean-forward="true" selection-start-line="1472" selection-start-column="37" selection-end-line="1472" selection-end-column="37" />
               <folding>
                 <element signature="e#45295#45498#0" expanded="false" />
                 <element signature="e#46351#47036#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="442" column="1" lean-forward="true" selection-start-line="442" selection-start-column="1" selection-end-line="442" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="total2.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/5010/total2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="256" column="38" lean-forward="false" selection-start-line="256" selection-start-column="34" selection-end-line="256" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zb2.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zhongbao3/h5/zb2.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-79">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -109,10 +85,10 @@
       <find>jobTask</find>
       <find>hospi</find>
       <find>taskGuide</find>
-      <find>userInfo</find>
       <find>common</find>
       <find>if_got_yesterday</find>
       <find>3000</find>
+      <find>userInfo</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -206,8 +182,8 @@
         <option value="$PROJECT_DIR$/JS/原生JavaScript技巧/清除脚本内容.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/zb2.js" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/common.less" />
-        <option value="$PROJECT_DIR$/5010/total2.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/common2.js" />
+        <option value="$PROJECT_DIR$/5010/total2.html" />
       </list>
     </option>
   </component>
@@ -221,8 +197,8 @@
     <handled-path value="$PROJECT_DIR$/webpack sample project/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="232" />
-    <option name="y" value="198" />
+    <option name="x" value="33" />
+    <option name="y" value="141" />
     <option name="width" value="1036" />
     <option name="height" value="648" />
   </component>
@@ -537,15 +513,15 @@
       <workItem from="1501825618556" duration="52097000" />
       <workItem from="1502327882074" duration="6744000" />
       <workItem from="1502350994744" duration="3670000" />
-      <workItem from="1502415269187" duration="9112000" />
+      <workItem from="1502415269187" duration="10140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1325306000" />
+    <option name="totallyTimeSpent" value="1326334000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="232" y="198" width="1036" height="648" extended-state="0" />
+    <frame x="33" y="141" width="1036" height="648" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -998,14 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="442" column="1" lean-forward="true" selection-start-line="442" selection-start-column="1" selection-end-line="442" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/5010/date2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
@@ -1024,17 +992,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="1068" column="8" lean-forward="false" selection-start-line="1068" selection-start-column="4" selection-end-line="1068" selection-end-column="8" />
-          <folding>
-            <element signature="e#45295#45498#0" expanded="false" />
-            <element signature="e#46351#47036#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/zb2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-79">
@@ -1043,10 +1000,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="442" column="1" lean-forward="true" selection-start-line="442" selection-start-column="1" selection-end-line="442" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1924">
+          <caret line="1472" column="37" lean-forward="true" selection-start-line="1472" selection-start-column="37" selection-end-line="1472" selection-end-column="37" />
+          <folding>
+            <element signature="e#45295#45498#0" expanded="false" />
+            <element signature="e#46351#47036#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/5010/total2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="256" column="38" lean-forward="false" selection-start-line="256" selection-start-column="34" selection-end-line="256" selection-end-column="38" />
+        <state relative-caret-position="212">
+          <caret line="251" column="3" lean-forward="true" selection-start-line="251" selection-start-column="3" selection-end-line="251" selection-end-column="3" />
           <folding />
         </state>
       </provider>
