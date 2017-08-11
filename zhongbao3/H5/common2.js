@@ -1555,6 +1555,8 @@ function noTokenHandle() {
     if(jobTaskLoaded){
       clearInterval(toLoginTimer);
       $('#loginBtn').off(touchstart).on(touchstart,function () {
+        $('#toLogin>div').hide();
+        $('#toLogin').removeClass().addClass('bgHide');
         console.log('loginBtnTouchstart');
         jobTask.launchLoginPage();
       });
