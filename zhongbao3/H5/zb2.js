@@ -13,12 +13,20 @@ function keyboardEvent(str) {
   $('#answerInput').off(touchstart).on(touchstart, function(e) {
     e.preventDefault();
     $('#keyboardWrap').show();
-    // alert($(window).scrollTop());
-    $('.keyboard').animate({'bottom': 0});
+    $('.keyboard').animate({'bottom': 0},function () {
+      $(document).on(touchend, function(e) {
+        var delTimer3 = setTimeout(function () {
+          clearInterval(delTimer1);
+          clearInterval(delTimer2);
+          clearInterval(delTimer3);
+        },0);
+      });
+    });
   });
   $('#sureTotalBtn').off(touchstart).on(touchstart, function(e) {
     e.preventDefault();
     $('.keyboard').animate({'bottom': '-4rem'},function () {
+      $(document).off(touchend);
       $('#keyboardWrap').hide();
     });
   });
@@ -28,8 +36,6 @@ function keyboardEvent(str) {
     if(strArr.length>0){
       strArr.pop();
       $('.showInfo').val(strArr.join(''));
-    }
-    if(strArr.length>0){
       delTimer1 = setInterval(function () {
         console.log('delTimer1');
         strArr.pop();
@@ -44,14 +50,6 @@ function keyboardEvent(str) {
         }
       },500);
     }
-  });
-  $(document).off(touchend).on(touchend, function(e) {
-    console.log(touchend);
-    var delTimer3 = setTimeout(function () {
-      clearInterval(delTimer1);
-      clearInterval(delTimer2);
-      clearInterval(delTimer3);
-    },0);
   });
   $('#keyboardM').off(touchstart).on(touchstart, '.zi', function(e) {
     e.preventDefault();

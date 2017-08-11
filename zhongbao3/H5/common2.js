@@ -1393,6 +1393,14 @@ function showPageData(task,tokenStr,interface) {
       var other_message_count = userInfo[0].body.other_message_count;
       var if_got_yesterday = userInfo[0].body.if_got_yesterday;
 
+console.log('if_got_yesterday: '+if_got_yesterday);
+      if(if_got_yesterday === 'False'){
+        console.log('phb addClass');
+        $('.phb i').removeClass().addClass('msgRed');
+      }else{
+        $('.phb i').removeClass();
+      }
+
       if(feedback_reply_count>0){
         console.log('feedback_reply_count>0');
         $('.xxzx').addClass('xxzx2');
@@ -1410,12 +1418,6 @@ function showPageData(task,tokenStr,interface) {
         console.log('feedback_reply_count,other_message_count都为0');
         $('.xxzx').removeClass('xxzx2');
         $('.xxzx i').removeClass();
-      }
-
-      if(!if_got_yesterday){
-        $('.phb i').removeClass().addClass('msgRed');
-      }else{
-        $('.phb i').removeClass();
       }
 
       var total_order_num = userInfo[0].body.total_order_num;
@@ -1476,7 +1478,7 @@ function showPageData(task,tokenStr,interface) {
 }
 function bindJumpNative(projectName) {
 //点击任务指引
-  $('.taskGuide').off(touchstart).on(touchstart,function () {
+  $('.taskGuide').on(touchstart,function () {
     console.log('taskGuideBtnclick');
     // jobTask.taskGuide();
 
@@ -1491,9 +1493,15 @@ function bindJumpNative(projectName) {
     var len = nowImgArr.length;
     var i = 0;
     if(len > 0){
-      $('#rwzyImg').load(function () {
+      if($('#rwzyImg')[0].complete){
+        console.log('图片complete');
         $('#rwzy').show();
-      });
+      }else{
+        console.log('图片没有complete');
+        $('#rwzyImg').load(function () {
+          $('#rwzy').show();
+        });
+      }
       $('#rwzyImg').attr('src', nowImgArr[0]);
     }
     $('#read').off(touchstart).on(touchstart,function () {
