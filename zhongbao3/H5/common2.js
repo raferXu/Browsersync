@@ -9,6 +9,7 @@ var blockStr = {'str':''};
 var loadImg = false;
 var loadNumImg = false;
 var getStr = false;
+var lotteryLoad = false;
 var tokenStr;
 var gToken;
 var gInterface = location.origin;
@@ -52,7 +53,7 @@ if(android){
 }
 $(document).ajaxStart(function(){}).ajaxStop(function(){
   getStr = true;
-  if(loadImg && getStr){
+  if(loadImg && getStr && lotteryLoad){
     $("#showMes").hide();
   }
 });
@@ -240,7 +241,7 @@ window.onerror = function (msg,url,l) {
       }
       // console.log('token: '+token);
       if(!token){
-        token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzMDg4ODg4ODg0IiwidGltZSI6IjIwMTctMDctMjYgMDI6MTA6MTAifQ.rVkgo4cEXhaJGbyFvs98EwUJChLsBpA_fWO-d0DG9oo';
+        token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjE1MjA4Mjg3MDA1IiwidGltZSI6IjIwMTctMDgtMTIgMTE6MDE6NDIifQ.Nb7gRjegnDc7rZ7ibdU4QBODdwdfaudZv3r5-3GdOaI';
       }
     }
     nowProject = projectname;
@@ -1132,7 +1133,7 @@ pybossa.taskLoaded(function(task, deferred) {
       if(data.code == '200'){
         if(data.body.new_type){
           var guideTimer = setInterval(function () {
-            if(loadImg && getStr){
+            if(loadImg && getStr && lotteryLoad){
               clearInterval(guideTimer);
               showGuideText();
             }
@@ -1181,7 +1182,8 @@ pybossa.taskLoaded(function(task, deferred) {
         }
       });
     }
-    if(/^\/token\/img/.test(imgUrl)){
+    if(!/.*\.jpeg$/.test(imgUrl)){
+ // if(/^\/token\/img/.test(imgUrl)){
       getImgFn();
     }else{
       img.load(function() {
@@ -1313,7 +1315,7 @@ function imgHandleFn(task) {
         new RTP.PinchZoom($(this), opt);
       });
       loadImg = true;
-      if(loadImg && getStr){
+      if(loadImg && getStr && lotteryLoad){
         console.log('图片和ajax请求均完成');
         $("#showMes").hide();
       }
@@ -1373,6 +1375,7 @@ function showPageData(task,tokenStr,interface) {
       data : userData,
       dataType : 'json',
       timeout: 5000,
+      // async: false,
       beforeSend: function (xhr) {
         xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
         xhr.setRequestHeader('Accept','application/json,text/plain');
@@ -1383,6 +1386,7 @@ function showPageData(task,tokenStr,interface) {
       type : 'GET',
       url : ''+interface+'/token/lottery/getchanceconfig',
       timeout: 5000,
+      // async: false,
       dataType : 'json'
     })
   ).then(function (userInfo, lotteryInfo){
@@ -1393,7 +1397,7 @@ function showPageData(task,tokenStr,interface) {
       var other_message_count = userInfo[0].body.other_message_count;
       var if_got_yesterday = userInfo[0].body.if_got_yesterday;
 
-console.log('if_got_yesterday: '+if_got_yesterday);
+// console.log('if_got_yesterday: '+if_got_yesterday);
       if(if_got_yesterday === 'False'){
         console.log('phb addClass');
         $('.phb i').removeClass().addClass('msgRed');
@@ -1474,6 +1478,12 @@ console.log('if_got_yesterday: '+if_got_yesterday);
 //                jobTask.notifyToRelogin();
     }
 
+    lotteryLoad = true;
+    // alert('lotteryLoad请求均完成');
+    if(loadImg && getStr && lotteryLoad){
+      console.log('lotteryLoad请求均完成');
+      $("#showMes").hide();
+    }
   });
 }
 function bindJumpNative(projectName) {
