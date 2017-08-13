@@ -135,6 +135,16 @@ window.onerror = function (msg,url,l) {
         console.log(data);
         if(data.code == 808){
           console.log('data.code: 808');
+          if(sessionStorage.getItem('k')==3){
+            if(sessionStorage.getItem('q')==3){
+              $('#fsText').html("系统认定您存在刷分行为，现已封号。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分不受影响。");
+            }else{
+              $('#fsText').html("系统认定您存在刷分行为，现已封号。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分不受影响。");
+            }
+          }
+          $('#fsText').css('marginBottom','0px');
+          $('#kqfs').css("background", "#aeb3bd");
+          $('.kq-btns,#fhGuide').hide();
           $('#kqfs').show();
         } else if(!data['id']){
           console.log('jumpProjectFlag: true');
@@ -1627,10 +1637,10 @@ function normalSubmit(task,answer,tokenStr,interface,deferred) {
 function fsjz(k, q, deferred) {
   var fsArr = [
     "亲 请认真答题哦！否则系统会认定您存在刷分行为而封号哦！",
-    "您已经连续答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理。请认真答题，谢谢！",
-    "因您连续答错三道测试题，系统认定您存在刷分行为，将会永久封号。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分可以照常兑换。",
     "您在短时间内已经答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理。请认真答题，谢谢！",
-    "因您在短时间内答错三道测试题，系统认定您存在刷分行为，将会封号24小时。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分不受影响。"
+    "因您在短时间内答错三道测试题，系统认定您存在刷分行为，将会封号24小时。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分不受影响。",
+    "您已经连续答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理。请认真答题，谢谢！",
+    "因您连续答错三道测试题，系统认定您存在刷分行为，将会永久封号。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分可以照常兑换。"
   ];
   if(k==1){
     $('#fsText').html(fsArr[0]);
@@ -1641,12 +1651,15 @@ function fsjz(k, q, deferred) {
       $('#fsText').html(fsArr[1]);
     }
   }else if(k==3){
+    sessionStorage.setItem('k',3);
     $('#kqfs').css("background", "#aeb3bd");
     $('.kq-btns,#fhGuide').hide();
     $('#fsText').css('marginBottom','0px');
     if(q==3){
+      sessionStorage.setItem('q',3);
       $('#fsText').html(fsArr[4]);
     }else{
+      sessionStorage.setItem('q',2);
       $('#fsText').html(fsArr[2]);
     }
   }
