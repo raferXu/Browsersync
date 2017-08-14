@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /* 为不同语言指定引号的表现 */
+    :lang(en) > q {quotes:'"' '"';}
+    :lang(no) > q {quotes:"«" "»";}
+    :lang(ch) > q {quotes:"“" "”";}
+
+    /* 在q标签的前后插入引号 */
+    q:before {content:open-quote;}
+    q:after  {content:close-quote;}
+  </style>
+</head>
+<body>
+<p lang="en"><q>It’s only work if somebody makes you do it.</q></p>
+<p lang="no"><q>Hvis du forteller meg nok en vits, så skal jeg slå deg til jorden.</q></p>
+<p lang="ch"><q>欢迎来到上海，欢迎参观世博会！</q></p>
+</body>
+</html>

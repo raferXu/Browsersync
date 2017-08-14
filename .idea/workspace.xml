@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JS/sessionStorage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CSS/为多语言内容插入正确的引号.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CSS/使用CSS计数器动态获得选中元素个数实例页面.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CSS/使用CSS计数器实现数值计算小游戏实例页面.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common2.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/common2.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,7 +22,54 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="date2.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/5010/date2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1065">
+              <caret line="151" column="46" lean-forward="true" selection-start-line="151" selection-start-column="46" selection-end-line="151" selection-end-column="46" />
+              <folding>
+                <element signature="n#div#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#nav#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#8;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#8;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#8;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#9;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#9;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#9;n#!!top" expanded="true" />
+                <marker date="1502697365000" expanded="false" signature="10403:10421" ph="..." />
+                <marker date="1502697365000" expanded="false" signature="10433:10447" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2205">
+              <caret line="147" column="28" lean-forward="true" selection-start-line="147" selection-start-column="28" selection-end-line="147" selection-end-column="28" />
+              <folding>
+                <element signature="e#34586#37034#0" expanded="false" />
+                <element signature="e#35620#35644#0" expanded="false" />
+                <element signature="e#41573#41996#0" expanded="false" />
+                <element signature="e#42010#42164#0" expanded="false" />
+                <element signature="e#46293#46496#0" expanded="false" />
+                <element signature="e#47349#48034#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,16 +85,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>phb</find>
-      <find>login</find>
-      <find>hospital</find>
-      <find>jobTask</find>
-      <find>hospi</find>
-      <find>taskGuide</find>
-      <find>common</find>
-      <find>if_got_yesterday</find>
       <find>show</find>
-      <find>showMes</find>
       <find>loadImg &amp;&amp; getStr</find>
       <find>userInfo</find>
       <find>showPageData</find>
@@ -67,6 +106,15 @@
       <find>sess</find>
       <find>808</find>
       <find>3000</find>
+      <find>newtask</find>
+      <find>getongoing</find>
+      <find>refreshCurrentPage</find>
+      <find>noTask</find>
+      <find>taskLoad</find>
+      <find>presentTask</find>
+      <find>scroll</find>
+      <find>showMes</find>
+      <find>flag</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -111,9 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/5010/total.html" />
-        <option value="$PROJECT_DIR$/5010/hospital.html" />
-        <option value="$PROJECT_DIR$/5010/date.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_002x.js" />
         <option value="$PROJECT_DIR$/code/utf.js" />
         <option value="$PROJECT_DIR$/code/qrcode.js" />
@@ -156,12 +201,15 @@
         <option value="$PROJECT_DIR$/zhongbao3/h5/zb2.js" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/common.less" />
         <option value="$PROJECT_DIR$/CSS/19折角效果.html" />
-        <option value="$PROJECT_DIR$/5010/date2.html" />
         <option value="$PROJECT_DIR$/5010/total2.html" />
         <option value="$PROJECT_DIR$/5010/sn2.html" />
         <option value="$PROJECT_DIR$/5010/hospital2.html" />
         <option value="$PROJECT_DIR$/JS/sessionStorage.html" />
+        <option value="$PROJECT_DIR$/CSS/使用CSS计数器动态获得选中元素个数实例页面.html" />
+        <option value="$PROJECT_DIR$/CSS/使用CSS计数器实现数值计算小游戏实例页面.html" />
+        <option value="$PROJECT_DIR$/CSS/为多语言内容插入正确的引号.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/common2.js" />
+        <option value="$PROJECT_DIR$/5010/date2.html" />
       </list>
     </option>
   </component>
@@ -175,10 +223,10 @@
     <handled-path value="$PROJECT_DIR$/webpack sample project/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="24" />
-    <option name="y" value="55" />
-    <option name="width" value="1215" />
-    <option name="height" value="647" />
+    <option name="x" value="-23" />
+    <option name="y" value="40" />
+    <option name="width" value="994" />
+    <option name="height" value="574" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -195,7 +243,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -218,12 +265,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="JS" />
+              <option name="myItemId" value="CSS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -429,33 +477,34 @@
       <workItem from="1502350994744" duration="3670000" />
       <workItem from="1502415269187" duration="13447000" />
       <workItem from="1502500759290" duration="13638000" />
+      <workItem from="1502612280886" duration="6266000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1343279000" />
+    <option name="totallyTimeSpent" value="1349545000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="24" y="55" width="1215" height="647" extended-state="0" />
-    <editor active="false" />
+    <frame x="-23" y="40" width="994" height="574" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11594203" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19222689" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25225225" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25225225" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31937173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -567,40 +616,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_003x.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="557" column="45" lean-forward="true" selection-start-line="557" selection-start-column="45" selection-end-line="557" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jiaoben3218/index2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="13" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1632" selection-end-column="0" />
-          <folding>
-            <element signature="e#41573#41996#0" expanded="false" />
-            <element signature="e#42010#42164#0" expanded="false" />
-            <element signature="e#46293#46496#0" expanded="false" />
-            <element signature="e#47349#48034#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/dateScroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="33" column="1" lean-forward="false" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
@@ -747,7 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="49" lean-forward="true" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -833,7 +847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -841,7 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -849,7 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -857,7 +868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -865,7 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="104" column="1" lean-forward="true" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -873,7 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -881,7 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="726" column="10" lean-forward="true" selection-start-line="726" selection-start-column="10" selection-end-line="726" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -889,12 +896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="256" column="41" lean-forward="true" selection-start-line="256" selection-start-column="41" selection-end-line="256" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#9;n#!!top" expanded="true" />
-            <marker date="1502548022000" expanded="false" signature="9773:9791" ph="..." />
-            <marker date="1502548022000" expanded="false" signature="9803:9817" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -902,15 +903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="141" column="48" lean-forward="true" selection-start-line="141" selection-start-column="48" selection-end-line="141" selection-end-column="48" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <marker date="1502548030000" expanded="false" signature="8753:8771" ph="..." />
-            <marker date="1502548030000" expanded="false" signature="8783:8797" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -918,14 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="138" column="40" lean-forward="true" selection-start-line="138" selection-start-column="40" selection-end-line="138" selection-end-column="40" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1502548037000" expanded="false" signature="8083:8101" ph="..." />
-            <marker date="1502548037000" expanded="false" signature="8113:8127" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -941,15 +925,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/totalG.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/使用CSS计数器动态获得选中元素个数实例页面.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/使用CSS计数器实现数值计算小游戏实例页面.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/为多语言内容插入正确的引号.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="144" column="49" lean-forward="false" selection-start-line="144" selection-start-column="49" selection-end-line="144" selection-end-column="49" />
+        <state relative-caret-position="2205">
+          <caret line="147" column="28" lean-forward="true" selection-start-line="147" selection-start-column="28" selection-end-line="147" selection-end-column="28" />
           <folding>
+            <element signature="e#34586#37034#0" expanded="false" />
             <element signature="e#35620#35644#0" expanded="false" />
             <element signature="e#41573#41996#0" expanded="false" />
             <element signature="e#42010#42164#0" expanded="false" />
@@ -961,16 +974,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/5010/date2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="159" column="61" lean-forward="false" selection-start-line="159" selection-start-column="61" selection-end-line="159" selection-end-column="61" />
+        <state relative-caret-position="1065">
+          <caret line="151" column="46" lean-forward="true" selection-start-line="151" selection-start-column="46" selection-end-line="151" selection-end-column="46" />
           <folding>
+            <element signature="n#div#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#nav#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#8;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#8;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#div#0;n#div#8;n#!!top" expanded="true" />
-            <marker date="1502548010000" expanded="false" signature="10403:10421" ph="..." />
-            <marker date="1502548010000" expanded="false" signature="10433:10447" ph="..." />
+            <element signature="n#style#0;n#div#9;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#9;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#9;n#!!top" expanded="true" />
+            <marker date="1502697365000" expanded="false" signature="10403:10421" ph="..." />
+            <marker date="1502697365000" expanded="false" signature="10433:10447" ph="..." />
           </folding>
         </state>
       </provider>
