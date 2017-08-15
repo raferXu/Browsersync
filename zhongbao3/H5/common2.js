@@ -17,6 +17,12 @@ function loadDisqus() {
 }
 
 $.ajaxSetup({
+  // success: function (data) {
+  //   if(data.code == 604){
+  //     console.log('Code604');
+  //     jobTask.notifyToRelogin();
+  //   }
+  // },
   error: function(jqXHR, textStatus, errorThrown){
     switch (jqXHR.status){
       case(500):
@@ -179,6 +185,7 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
         console.log("url + 'token/project/' + projectId + '/newtask' success");
         console.log(data);
         if(data.code == 808){
+          $("#showMes").hide();
           console.log('data.code: 808');
           var overtime = data['body']['latest_end_time'];
           if(overtime.substring(0,4)=='2100'){
@@ -1469,7 +1476,7 @@ function showPageData(task,tokenStr,interface) {
                   }
                 }else if(getuserremainingchanceCode == 604){
                   console.log('getuserremainingchanceCode604');
-//                            jobTask.notifyToRelogin();
+                  // jobTask.notifyToRelogin();
                 }
               },
               error: function () {
@@ -1487,7 +1494,7 @@ function showPageData(task,tokenStr,interface) {
       }
     }else if(userInfoCode == 604){
       console.log('userInfoCode604');
-      jobTask.notifyToRelogin();
+      // jobTask.notifyToRelogin();
     }
   });
 }
@@ -1622,8 +1629,11 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
           $('#taskTimeout').hide();
           flag = 0;
         });
-      }else {
-        getDataFail();
+      }else if(data.code == 604){
+        console.log('saveTaskCode604');
+        // jobTask.notifyToRelogin();
+      } else {
+        // getDataFail();
         deferred.resolve();
       }
     }).fail(function (err) {
