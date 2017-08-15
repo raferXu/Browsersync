@@ -2,7 +2,7 @@
  * Created by raferxu on 17/6/30.
  */
 // submit1 和 submit2 没区别
-function normalSubmit(task,answer,tokenStr,interface,deferred) {
+function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
   if (answer["text"]) {
     pybossa.saveTask(task, answer).done(function() {
       if(jumpProjectFlag){
@@ -46,6 +46,8 @@ function normalSubmit(task,answer,tokenStr,interface,deferred) {
       }
       $('.pinch-zoom-container').css('height','auto');
       deferred.resolve();
+    }).fail(function (err) {
+      getDataFail();
     });
   }
   else {

@@ -16,6 +16,27 @@ function loadDisqus() {
   })();
 }
 
+$.ajaxSetup({
+  error: function(jqXHR, textStatus, errorThrown){
+    switch (jqXHR.status){
+      case(500):
+        console.log("服务器系统内部错误");
+        break;
+      case(401):
+        console.log("未登录");
+        break;
+      case(403):
+        console.log("无权限执行此操作");
+        break;
+      case(408):
+        console.log("请求超时");
+        break;
+      default:
+        console.log("未知错误");
+    }
+    getDataFail();
+  }
+});
 
 // init.js
 var flag = 0;
@@ -36,7 +57,7 @@ var getDataFailTimer = setTimeout(function () {
   if(!loadImg || !getStr){
     getDataFail();
     clearTimeout(getDataFailTimer);
-    // $("#showMes").hide();
+    $("#showMes").hide();
   }
 },5000);
 var android = true;
@@ -1101,29 +1122,12 @@ function getDataFail() {
   flag = 0;
   $("#failData").show();
   flag = 1;
-  setTimeout(function () {
-    autoRelogin();
-  },3000);
 }
-function autoRelogin() {
-  $("#failData").hide();
+$('#dataFail').off(touchstart).on(touchstart, function () {
+  $('#failData').hide();
   flag = 0;
-  // jobTask.launchLoginPage();
-}
-/*
-var scrollT = 0;
-$(window).on('scroll', function () {
-  scrollT = $(this).scrollTop();
-  $('#toLogin').css('top', scrollT+'px');
-  $('#showMes').css('top', scrollT+'px');
-  $('#offLine').css('top', scrollT+'px');
-  $('#answerTip').css('top', scrollT+'px');
-  $('#failData').css('top', scrollT+'px');
-  $('#taskTimeout').css('top', scrollT+'px');
-  $('#kqfs').css('top', scrollT+'px');
-  $('#keyboardWrap').css('top', scrollT+'px');
 });
-*/
+
 //判断图片是否加载完成
 function imgLoaded(img) {
   return img.complete && img.naturalHeight !== 0;
@@ -1188,41 +1192,6 @@ pybossa.taskLoaded(function(task, deferred) {
 
     var img = $('<img id="billImg" class="billImg"/>');
     var imgUrl = task.info.url;
-    // function getImgFn() {
-    //   var getImgAjax = $.ajax({
-    //     type: 'GET',
-    //     async: false,
-    //     cache: false,
-    //     url: ''+gInterface+imgUrl,
-    //     dataType: 'json',
-    //     timeout: 10000,
-    //     success: function (data) {
-    //       var getImgAjaxCode = data.code;
-    //       if(getImgAjaxCode == 200){
-    //         var imgUrlbase64 = 'data:image/jpeg;base64,'+data['body']['base64'];
-    //         img.load(function() {
-    //           deferred.resolve(task);
-    //         });
-    //         img.attr('src', imgUrlbase64).css('height', 'auto');
-    //         task.info.image = img[0];
-    //       }else{
-    //         console.log('getImgAjax调用失败，状态码为: '+getImgAjaxCode);
-    //         deferred.resolve(task);
-    //       }
-    //     },
-    //     error: function (xml, error) {
-    //       console.log('/token/img接口Error');
-    //       if(error == "timeout"){
-    //         console.log('/token/img接口timeout');
-    //         getImgAjax.abort();
-    //         getImgFn();
-    //       }else{
-    //       }
-    //       deferred.resolve(task);
-    //     }
-    //   });
-    // }
-    // if(!/.*\.jpeg$/.test(imgUrl)){
     if(!/^\/token\/img/.test(imgUrl)){
       // getImgFn();
     }else{
@@ -1505,8 +1474,8 @@ function showPageData(task,tokenStr,interface) {
               error: function () {
                 console.log('remaining_chanceError');
                 if(error == "timeout"){
-                  getuserremainingchanceAjax.abort();
-                  getuserremainingchanceFun();
+                  // getuserremainingchanceAjax.abort();
+                  // getuserremainingchanceFun();
                 }
               }
             });
@@ -1517,15 +1486,8 @@ function showPageData(task,tokenStr,interface) {
       }
     }else if(userInfoCode == 604){
       console.log('userInfoCode604');
-//                jobTask.notifyToRelogin();
+      jobTask.notifyToRelogin();
     }
-
-    // lotteryLoad = true;
-    // alert('lotteryLoad请求均完成');
-    // if(loadImg && getStr && lotteryLoad){
-    //   console.log('lotteryLoad请求均完成');
-    //   $("#showMes").hide();
-    // }
   });
 }
 function bindJumpNative(projectName) {
@@ -1640,7 +1602,7 @@ function noTokenHandle() {
 
 
 //submit.js
-function normalSubmit(task,answer,tokenStr,interface,deferred) {
+function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
   if (answer["text"]) {
     pybossa.saveTask(task, answer).done(function (data) {
       console.log('saveTask: ' + data);
@@ -1660,6 +1622,7 @@ function normalSubmit(task,answer,tokenStr,interface,deferred) {
           flag = 0;
         });
       }else {
+        getDataFail();
         deferred.resolve();
       }
     }).fail(function (err) {
@@ -1670,6 +1633,8 @@ function normalSubmit(task,answer,tokenStr,interface,deferred) {
           $('#taskTimeout').hide();
           flag = 0;
         });
+      }else{
+        getDataFail();
       }
       console.log('saveTask fail');
     });

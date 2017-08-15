@@ -1,11 +1,13 @@
 /**
  * Created by raferxu on 17/6/30.
  */
-function normalSubmit(task,answer,tokenStr,interface,deferred) {
+function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
   if (answer["text"]) {
     pybossa.saveTask(task, answer).done(function() {
       $('.pinch-zoom-container').css('height','auto');
       deferred.resolve();
+    }).fail(function (err) {
+      getDataFail();
     });
   }
   else {
