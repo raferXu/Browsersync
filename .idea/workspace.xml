@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CSS/CSS各种加载loading.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JS/添加遮罩时禁止滚屏.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/date2.html" afterPath="$PROJECT_DIR$/5010/date2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/hospital2.html" afterPath="$PROJECT_DIR$/5010/hospital2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/sn2.html" afterPath="$PROJECT_DIR$/5010/sn2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/total2.html" afterPath="$PROJECT_DIR$/5010/total2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common2.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/common2.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/share.html" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/share.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/total.css" afterPath="$PROJECT_DIR$/zhongbao3/h5/total.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/total.less" afterPath="$PROJECT_DIR$/zhongbao3/h5/total.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/total.min.css" afterPath="$PROJECT_DIR$/zhongbao3/h5/total.min.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -91,16 +80,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="share.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zhongbao3/h5/share/share.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2475">
-              <caret line="165" column="5" lean-forward="true" selection-start-line="165" selection-start-column="5" selection-end-line="165" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="total2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5010/total2.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -157,8 +136,8 @@
       <find>guideBox</find>
       <find>rwzy</find>
       <find>rwzyImg</find>
-      <find>kq-btns</find>
       <find>3000</find>
+      <find>kq-btns</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -252,8 +231,8 @@
         <option value="$PROJECT_DIR$/5010/date2.html" />
         <option value="$PROJECT_DIR$/5010/hospital2.html" />
         <option value="$PROJECT_DIR$/5010/sn2.html" />
-        <option value="$PROJECT_DIR$/zhongbao3/h5/share/share.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/common2.js" />
+        <option value="$PROJECT_DIR$/zhongbao3/h5/share/share.html" />
       </list>
     </option>
   </component>
@@ -634,15 +613,15 @@
       <workItem from="1502415269187" duration="13447000" />
       <workItem from="1502500759290" duration="13638000" />
       <workItem from="1502612280886" duration="12672000" />
-      <workItem from="1502759672016" duration="8517000" />
+      <workItem from="1502759672016" duration="8604000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1364468000" />
+    <option name="totallyTimeSpent" value="1364555000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="108" y="46" width="994" height="755" extended-state="0" />
+    <frame x="108" y="46" width="994" height="755" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1162,8 +1141,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/share/share.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2475">
-          <caret line="165" column="5" lean-forward="true" selection-start-line="165" selection-start-column="5" selection-end-line="165" selection-end-column="5" />
+        <state relative-caret-position="345">
+          <caret line="168" column="23" lean-forward="true" selection-start-line="168" selection-start-column="23" selection-end-line="168" selection-end-column="23" />
           <folding />
         </state>
       </provider>
