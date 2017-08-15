@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/date2.html" afterPath="$PROJECT_DIR$/5010/date2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/hospital2.html" afterPath="$PROJECT_DIR$/5010/hospital2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/sn2.html" afterPath="$PROJECT_DIR$/5010/sn2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/total2.html" afterPath="$PROJECT_DIR$/5010/total2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common2.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/common2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/submit.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/submit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/submit2.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/submit2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/submit3.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/submit3.js" />
-    </list>
+    <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -31,8 +21,8 @@
       <file leaf-file-name="date2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5010/date2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="910">
-              <caret line="191" column="7" lean-forward="true" selection-start-line="191" selection-start-column="7" selection-end-line="191" selection-end-column="7" />
+            <state relative-caret-position="55">
+              <caret line="134" column="0" lean-forward="true" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
               <folding>
                 <element signature="n#main#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
@@ -68,8 +58,8 @@
       <file leaf-file-name="hospital2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="138" column="26" lean-forward="true" selection-start-line="138" selection-start-column="26" selection-end-line="138" selection-end-column="26" />
+            <state relative-caret-position="130">
+              <caret line="117" column="20" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#p#1;n#div#0;n#div#5;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#p#1;n#div#0;n#div#5;n#!!top" expanded="true" />
@@ -84,8 +74,8 @@
       <file leaf-file-name="sn2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5010/sn2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="745">
-              <caret line="162" column="82" lean-forward="false" selection-start-line="162" selection-start-column="82" selection-end-line="162" selection-end-column="82" />
+            <state relative-caret-position="145">
+              <caret line="122" column="6" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#div#0;n#div#5;n#!!top" expanded="true" />
@@ -98,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="total2.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="total2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/5010/total2.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="160">
-              <caret line="275" column="23" lean-forward="true" selection-start-line="275" selection-start-column="23" selection-end-line="275" selection-end-column="23" />
+              <caret line="275" column="23" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#p#1;n#div#0;n#div#5;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#p#1;n#div#0;n#div#5;n#!!top" expanded="true" />
@@ -114,7 +104,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common2.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="common2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="174">
@@ -614,12 +604,12 @@
       <workItem from="1502415269187" duration="13447000" />
       <workItem from="1502500759290" duration="13638000" />
       <workItem from="1502612280886" duration="12672000" />
-      <workItem from="1502759672016" duration="16114000" />
+      <workItem from="1502759672016" duration="16238000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1372065000" />
+    <option name="totallyTimeSpent" value="1372189000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="158" y="31" width="994" height="755" extended-state="0" />
@@ -1093,10 +1083,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="1617" column="33" lean-forward="true" selection-start-line="1617" selection-start-column="33" selection-end-line="1617" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#35212#36515#0" expanded="false" />
+            <element signature="e#41857#45348#0" expanded="false" />
+            <element signature="e#45646#45849#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/5010/date2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="910">
-          <caret line="191" column="7" lean-forward="true" selection-start-line="191" selection-start-column="7" selection-end-line="191" selection-end-column="7" />
+        <state relative-caret-position="55">
+          <caret line="134" column="0" lean-forward="true" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
           <folding>
             <element signature="n#main#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
@@ -1130,8 +1133,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="138" column="26" lean-forward="true" selection-start-line="138" selection-start-column="26" selection-end-line="138" selection-end-column="26" />
+        <state relative-caret-position="130">
+          <caret line="117" column="20" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#p#1;n#div#0;n#div#5;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#p#1;n#div#0;n#div#5;n#!!top" expanded="true" />
@@ -1144,8 +1147,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/5010/sn2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="162" column="82" lean-forward="false" selection-start-line="162" selection-start-column="82" selection-end-line="162" selection-end-column="82" />
+        <state relative-caret-position="145">
+          <caret line="122" column="6" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#div#0;n#div#5;n#!!top" expanded="true" />
@@ -1160,26 +1163,13 @@
     <entry file="file://$PROJECT_DIR$/5010/total2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
-          <caret line="275" column="23" lean-forward="true" selection-start-line="275" selection-start-column="23" selection-end-line="275" selection-end-column="23" />
+          <caret line="275" column="23" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#p#1;n#div#0;n#div#5;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#p#1;n#div#0;n#div#5;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#div#0;n#div#6;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#p#1;n#div#0;n#div#6;n#!!top" expanded="true" />
             <element signature="n#div#9;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="1617" column="33" lean-forward="true" selection-start-line="1617" selection-start-column="33" selection-end-line="1617" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#35212#36515#0" expanded="false" />
-            <element signature="e#41857#45348#0" expanded="false" />
-            <element signature="e#45646#45849#0" expanded="false" />
           </folding>
         </state>
       </provider>
