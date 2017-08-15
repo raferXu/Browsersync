@@ -21,8 +21,8 @@
       <file leaf-file-name="date2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/5010/date2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1065">
-              <caret line="134" column="0" lean-forward="true" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+            <state relative-caret-position="-1610">
+              <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
               <folding>
                 <element signature="n#main#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
@@ -58,8 +58,8 @@
       <file leaf-file-name="common2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23535">
-              <caret line="1697" column="25" lean-forward="false" selection-start-line="1697" selection-start-column="25" selection-end-line="1697" selection-end-column="25" />
+            <state relative-caret-position="240">
+              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#35232#36535#0" expanded="false" />
@@ -604,12 +604,12 @@
       <workItem from="1502415269187" duration="13447000" />
       <workItem from="1502500759290" duration="13638000" />
       <workItem from="1502612280886" duration="12672000" />
-      <workItem from="1502759672016" duration="16797000" />
+      <workItem from="1502759672016" duration="16924000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1372748000" />
+    <option name="totallyTimeSpent" value="1372875000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="158" y="31" width="994" height="755" extended-state="0" />
@@ -1128,8 +1128,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23535">
-          <caret line="1697" column="25" lean-forward="false" selection-start-line="1697" selection-start-column="25" selection-end-line="1697" selection-end-column="25" />
+        <state relative-caret-position="240">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#35232#36535#0" expanded="false" />
@@ -1141,8 +1141,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/5010/date2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="134" column="0" lean-forward="true" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+        <state relative-caret-position="-1610">
+          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
           <folding>
             <element signature="n#main#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
