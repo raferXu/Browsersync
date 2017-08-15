@@ -94,7 +94,6 @@ window.onerror = function (msg,url,l) {
   txt+="页面错误的行数Line: " + l + "\n\n";
   console.log(txt);
 };
-
 document.addEventListener('touchmove', function (event) { 　　 //监听滚动事件
   if(flag==1){　　//判断是遮罩显示时执行，禁止滚屏
     event.preventDefault();　　　//最关键的一句，禁止浏览器默认行为
@@ -1606,11 +1605,13 @@ function bindJumpNative(projectName) {
 function noTokenHandle() {
 //单击未登录的取消按钮
   $('#cacelBtn').off(touchstart).on(touchstart,function () {
+    flag = 0;
     $('#toLogin>div').hide();
     $('#toLogin').removeClass().addClass('bgHide');
     $('html')[0].addEventListener(touchstart,function () {
       $('#toLogin').removeClass().addClass('bgShow');
       $('#toLogin>div').show();
+      flag = 1;
     },true);
   });
 //单击登录跳转登录页面
@@ -1618,6 +1619,7 @@ function noTokenHandle() {
     if(jobTaskLoaded){
       clearInterval(toLoginTimer);
       $('#loginBtn').off(touchstart).on(touchstart,function () {
+        flag = 0;
         $('#toLogin>div').hide();
         $('#toLogin').removeClass().addClass('bgHide');
         console.log('loginBtnTouchstart');
@@ -1629,6 +1631,7 @@ function noTokenHandle() {
     console.log('htmlPageTouchstart');
     $('#toLogin').removeClass().addClass('bgShow');
     $('#toLogin>div').show();
+    flag = 1;
   },true);
   $('.task_rand_score span').html(0);
   $('.total .num').html(0);
