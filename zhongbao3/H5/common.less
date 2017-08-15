@@ -59,6 +59,9 @@ input{
 .dsn{
   display: none;
 }
+.mb0{
+  margin-bottom: 0;
+}
 /*page*/
 html {
   width: 100%;
@@ -103,15 +106,6 @@ header .xxzx{
   margin-left: .05rem;
   margin-right: .15rem;
 }
-//header>span{
-//  position: relative;
-//}
-//header>span:before{
-//  position: absolute;
-//  content: '';
-//  top: 0;
-//  bottom: 0;
-//}
 header .xxzx2{
   margin-right: .29rem;
 }
@@ -123,7 +117,6 @@ header .msgRed {
   border-radius: .04rem;
   background-color: #fff;
   margin-top: 0;
-  //margin-right: .29rem;
 }
 header .phb .msgRed{
   margin-top: -4px;
@@ -137,7 +130,6 @@ header .phb .msgRed{
   border-radius: .08rem;
   margin-top: -.05rem;
   font-size: 10px;
-  //margin-right: .29rem;
 }
 header h1 {
   line-height: .44rem;
@@ -182,9 +174,6 @@ main .wrap section.billBox .billOperate nav {
   height: .43rem;
   line-height: .43rem;
   box-shadow: 0 1px 1px 0 #eee;
-  //-webkit-box-shadow: 0 3px 15px 0 rgba(0,0,0,.1);
-  //position: relative;
-  //z-index: -1;
   -webkit-box-shadow: 0 1px 1px 0 #eee;
 }
 main .wrap section.billBox .billOperate nav .icon {
@@ -200,15 +189,8 @@ main .wrap section.billBox .billOperate nav .taskGuide,
 main .wrap section.billBox .billOperate nav .more {
   color: #ff6000;
 }
-//main .wrap section.billBox .billOperate nav .taskGuide {
-//  position: relative;
-//  top: -0.15rem;
-//  right: -0.1rem;
-//  padding: .1rem;
-//}
+
 main .wrap section.billBox .billOperate nav .taskGuide img {
-  //position: relative;
-  //top: 3px;
   width: .2rem;
   vertical-align: middle;
 }
@@ -223,26 +205,7 @@ main .wrap section.billBox .billOperate nav .taskGuide img {
   font-size: 14px;
   color: #ff6000;
 }
-//#guideTips:before{
-//  position: absolute;
-//  right: -.1rem;
-//  top: .05rem;
-//  content: "";
-//  display: inline-block;
-//  width: .1rem;
-//  height: .06rem;
-//  background: #ff6000;
-//}
-//#guideTips:after{
-//  position: absolute;
-//  right: -.22rem;
-//  top: .02rem;
-//  width: 0;
-//  height: 0;
-//  border: .07rem solid transparent;
-//  border-left-color: #ff6000;
-//  content: "";
-//}
+
 main .wrap section.billBox .billOperate .next {
   width: 100%;
   height: .44rem;
@@ -297,8 +260,7 @@ main .wrap section.countBox nav .more {
   position: static;
   top: 0;
   right: 0;
-  padding: 0;
-  padding-right: .1rem;
+  padding: 0 .1rem;
   color: #ff6000;
   font-size: 0.14rem;
 }
@@ -377,10 +339,10 @@ main .wrap section.countBox .countInfo .total .num {
   margin-left: .15rem;
   text-align: left;
 }
-#btns, .kq-btns {
+#btns, .kq-btns, .to-btns {
   width: 100%;
 }
-.kq-btns input{
+.kq-btns input, .to-btns input{
   height: .35rem;
   line-height: .35rem;
   text-align: center;
@@ -412,7 +374,6 @@ main .wrap section.countBox .countInfo .total .num {
 
 
 body{
-  //height: auto;
   background: #f0f0f0;
 }
 .row{

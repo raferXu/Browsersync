@@ -1,10 +1,7 @@
 <link rel="stylesheet" href="/static/h5/common.css">
-<link rel="stylesheet" href="/static/h5/codeLock3.css">
-<style>
-    header .phb .msgRed{
-        margin-top: -4px;
-    }
-</style>
+<!--<link rel="stylesheet" href="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common.css">-->
+<link rel="stylesheet" href="/static/h5/sn.css">
+<!--<link rel="stylesheet" href="http://192.168.0.122:3000/Browersync/zhongbao3/h5/sn.css">-->
 <div class="row skeleton">
     <header>
         <span class="xxzx r"><i></i></span>
@@ -15,9 +12,9 @@
         <div class="wrap">
             <section class="billBox">
                 <div id="billWrap">
-                    <div class="imgWrap" style="width:100%;height:1.1rem;overflow:hidden">
+                    <div class="imgWrap">
                         <div id="billImgBox" class="billImgBox pinch-zoom">
-                            <img id="billImg" style="display:none" class="billImg dsn" alt="billImg">
+                            <img id="billImg" class="billImg dsn" alt="billImg">
                         </div>
                     </div>
                     <p class="task_rand_score" id="scoreBox">任务奖励:<span id="score">100</span>(分/单)</p>
@@ -104,6 +101,9 @@
 <div id="taskTimeout" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
     <div style="position:absolute;top:50%;left:50%;width:80%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
         <p style="font-size:14px;width:100%;line-height:1.5;min-height:.5rem;padding:.2rem .1rem;text-align:left;color:#828282;border-bottom:1px solid #c8c8c8;box-sizing:border-box">当前任务已失效，请下拉刷新。</p>
+        <p id="timeoutBtn" class="to-btns" style="padding:0;">
+            <input style="background: #fff;color: #000;width: 90%;" class="toqr" type="button" value="确认">
+        </p>
     </div>
 </div>
 <div id="kqfs" style="display:none;box-sizing:border-box;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.7);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
@@ -111,31 +111,15 @@
         <h3 style="font-size:18px;padding-bottom:.3rem;color:#323232;">警 告</h3>
         <p id="fsText" style="font-size:14px;width:100%;color:#828282;box-sizing:border-box;line-height:1.5;text-align:left;margin-bottom:30px"></p>
         <p class="kq-btns" style="padding:0;">
-            <!--<input class="kqfh" type="button" value="返回">-->
             <input class="kqqr" type="button" value="确认">
         </p>
-        <!--<p id="fhGuide" style="margin-top:.15rem;"><a style="color:#ff6000;" href="#">任务指引</a></p>-->
     </div>
 </div>
 <div id="rwzy" style="display:none;box-sizing:border-box;width:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.7);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
     <img id="rwzyImg" src="" alt="rwzyImg" style="width:100%;">
     <span id="read" style="position: absolute;top: 5.38rem;left: 0;right: 0;margin: auto;width: .8rem;height: .39rem"></span>
 </div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    function loadDisqus() {
-      $("#disqus_thread").toggle();
-      $(".btn-disqus").toggle();
-      var disqus_shortname = 'pybossa';
-      var disqus_developer = 1;
-      (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    }
-</script>
+
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script src="/static/h5/common2.js"></script>
 <!--<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common2.js"></script>-->
@@ -158,12 +142,19 @@
             }else{
               console.log('拿到了token值，为 '+tokenStr);
               $('#toLogin').hide();
+              flag = 0;
 //点击下一张按钮
               $('#next,#indistinct').off(touchstart).on(touchstart, function() {
                 $("#showMes").show();
+                flag = 1;
                 var touchstartWhich = $(this).attr('id')=='indistinct';
                 if(!window.navigator.onLine){
                   $('#offLine').show();
+                  flag = 1;
+                  $('#sureBtn').off(touchstart).on(touchstart, function() {
+                    $('#offLine').hide();
+                    flag = 0;
+                  });
                 }else{
                   var answer = touchstartWhich ? {"text": '看不清'} : {"text": getCurStr()};
                   normalSubmit(task,answer,tokenStr,interface,deferred);

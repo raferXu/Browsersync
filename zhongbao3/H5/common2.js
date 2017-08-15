@@ -1,15 +1,33 @@
 /**
  * Created by raferxu on 17/7/6.
  */
+
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+/* * * DON'T EDIT BELOW THIS LINE * * */
+function loadDisqus() {
+  $("#disqus_thread").toggle();
+  $(".btn-disqus").toggle();
+  var disqus_shortname = 'pybossa';
+  var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+}
+
+
 // init.js
+var flag = 0;
 // loading加载框出现
 $("#showMes").show();
+flag = 1;
 var nowProject;
 var blockStr = {'str':''};
 var loadImg = false;
 var loadNumImg = false;
 var getStr = false;
-var lotteryLoad = false;
+// var lotteryLoad = false;
 var tokenStr;
 var gToken;
 var gInterface = location.origin;
@@ -53,8 +71,10 @@ if(android){
 }
 $(document).ajaxStart(function(){}).ajaxStop(function(){
   getStr = true;
-  if(loadImg && getStr && lotteryLoad){
+  if(loadImg && getStr){
+    // if(loadImg && getStr && lotteryLoad){
     $("#showMes").hide();
+    flag = 0;
   }
 });
 function htmlFontSize(){
@@ -75,6 +95,11 @@ window.onerror = function (msg,url,l) {
   console.log(txt);
 };
 
+document.addEventListener('touchmove', function (event) { 　　 //监听滚动事件
+  if(flag==1){　　//判断是遮罩显示时执行，禁止滚屏
+    event.preventDefault();　　　//最关键的一句，禁止浏览器默认行为
+  }
+});
 
 // pybossa-token.js
 (function(pybossa, $, undefined) {
@@ -135,16 +160,15 @@ window.onerror = function (msg,url,l) {
         console.log(data);
         if(data.code == 808){
           console.log('data.code: 808');
-          if(sessionStorage.getItem('k')==3){
-            if(sessionStorage.getItem('q')==3){
-              $('#fsText').html("系统认定您存在刷分行为，现已封号。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分不受影响。");
-            }else{
-              $('#fsText').html("系统认定您存在刷分行为，现已封号。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分不受影响。");
-            }
+          var overtime = data['body']['latest_end_time'];
+          if(overtime.substring(0,4)=='2100'){
+            $('#fsText').html("您的账号因存在严重的刷分行为已被永久封停。");
+          }else{
+            $('#fsText').html("您的账号因存在刷分行为已被封停，解封时间"+overtime+"。");
           }
           $('#fsText').css('marginBottom','0px');
           $('#kqfs').css("background", "#aeb3bd");
-          $('.kq-btns,#fhGuide').hide();
+          $('.kq-btns').hide();
           $('#kqfs').show();
         } else if(!data['id']){
           console.log('jumpProjectFlag: true');
@@ -1075,15 +1099,19 @@ window.onerror = function (msg,url,l) {
 // ready.js
 function getDataFail() {
   $("#showMes").hide();
+  flag = 0;
   $("#failData").show();
+  flag = 1;
   setTimeout(function () {
     autoRelogin();
   },3000);
 }
 function autoRelogin() {
   $("#failData").hide();
+  flag = 0;
   // jobTask.launchLoginPage();
 }
+/*
 var scrollT = 0;
 $(window).on('scroll', function () {
   scrollT = $(this).scrollTop();
@@ -1096,6 +1124,7 @@ $(window).on('scroll', function () {
   $('#kqfs').css('top', scrollT+'px');
   $('#keyboardWrap').css('top', scrollT+'px');
 });
+*/
 //判断图片是否加载完成
 function imgLoaded(img) {
   return img.complete && img.naturalHeight !== 0;
@@ -1144,7 +1173,8 @@ pybossa.taskLoaded(function(task, deferred) {
       if(data.code == '200'){
         if(data.body.new_type){
           var guideTimer = setInterval(function () {
-            if(loadImg && getStr && lotteryLoad){
+            if(loadImg && getStr){
+              // if(loadImg && getStr && lotteryLoad){
               clearInterval(guideTimer);
               showGuideText();
             }
@@ -1326,9 +1356,11 @@ function imgHandleFn(task) {
         new RTP.PinchZoom($(this), opt);
       });
       loadImg = true;
-      if(loadImg && getStr && lotteryLoad){
+      if(loadImg && getStr){
+        // if(loadImg && getStr && lotteryLoad){
         console.log('图片和ajax请求均完成');
         $("#showMes").hide();
+        flag = 0;
       }
     }
   },200);
@@ -1489,12 +1521,12 @@ function showPageData(task,tokenStr,interface) {
 //                jobTask.notifyToRelogin();
     }
 
-    lotteryLoad = true;
+    // lotteryLoad = true;
     // alert('lotteryLoad请求均完成');
-    if(loadImg && getStr && lotteryLoad){
-      console.log('lotteryLoad请求均完成');
-      $("#showMes").hide();
-    }
+    // if(loadImg && getStr && lotteryLoad){
+    //   console.log('lotteryLoad请求均完成');
+    //   $("#showMes").hide();
+    // }
   });
 }
 function bindJumpNative(projectName) {
@@ -1529,8 +1561,10 @@ function bindJumpNative(projectName) {
       i++;
       if(len >= i+1){
         $("#showMes").show();
+        flag = 1;
         $('#rwzyImg').load(function () {
           $("#showMes").hide();
+          flag = 0;
           $('#rwzy').show();
         });
         $('#rwzyImg').attr('src', nowImgArr[i]);
@@ -1614,21 +1648,38 @@ function normalSubmit(task,answer,tokenStr,interface,deferred) {
 
       if(data.code == 808){
         fsjz(data['body']['k'], data['body']['q'], deferred);
+      }else if(data.code == 812){
+        // location = location;
+        $('#taskTimeout').show();
+        flag = 1;
+        $('#timeoutBtn').off(touchstart).on(touchstart, function () {
+          $('#taskTimeout').hide();
+          flag = 0;
+        });
       }else {
         deferred.resolve();
       }
     }).fail(function (err) {
       if(err.code == 403){
         $('#taskTimeout').show();
+        flag = 1;
+        $('#timeoutBtn').off(touchstart).on(touchstart, function () {
+          $('#taskTimeout').hide();
+          flag = 0;
+        });
       }
+      console.log('saveTask fail');
     });
   }
   else {
     $("#showMes").hide();
+    flag = 0;
     $('#answerTipBtn').off(touchstart).on(touchstart, function () {
       $('#answerTip').hide();
+      flag = 0;
     });
     $('#answerTip').show();
+    flag = 1;
   }
 }
 
@@ -1642,30 +1693,38 @@ function fsjz(k, q, deferred) {
     "您已经连续答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理。请认真答题，谢谢！",
     "因您连续答错三道测试题，系统认定您存在刷分行为，将会永久封号。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分可以照常兑换。"
   ];
+  var fsTitle = [
+    "提示",
+    "警告",
+    "公告"
+  ];
   if(k==1){
+    $('#kqfs h3').html(fsTitle[0]);
     $('#fsText').html(fsArr[0]);
   }else if(k==2){
     if(q==2){
+      $('#kqfs h3').html(fsTitle[0]);
       $('#fsText').html(fsArr[3]);
     }else{
+      $('#kqfs h3').html(fsTitle[0]);
       $('#fsText').html(fsArr[1]);
     }
   }else if(k==3){
-    sessionStorage.setItem('k',3);
+    $('#kqfs h3').html(fsTitle[1]);
     $('#kqfs').css("background", "#aeb3bd");
     $('.kq-btns,#fhGuide').hide();
     $('#fsText').css('marginBottom','0px');
     if(q==3){
-      sessionStorage.setItem('q',3);
       $('#fsText').html(fsArr[4]);
     }else{
-      sessionStorage.setItem('q',2);
       $('#fsText').html(fsArr[2]);
     }
   }
   $('#kqfs').show();
-  $('#kqfs .kqfh, #kqfs .kqqr').on(touchstart,function () {
+  flag = 1;
+  $('#kqfs .kqqr').on(touchstart,function () {
     $('#kqfs').hide();
+    flag = 0;
     if(k==1 || k==2){
       deferred.resolve();
     }
