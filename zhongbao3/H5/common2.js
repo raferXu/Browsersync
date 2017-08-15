@@ -189,6 +189,7 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
           $('#fsText').css('marginBottom','0px');
           $('#kqfs').css("background", "#aeb3bd");
           $('.kq-btns').hide();
+          flag = 1;
           $('#kqfs').show();
         } else if(!data['id']){
           console.log('jumpProjectFlag: true');
