@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="" />
+    <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.js" afterPath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.min.js" afterPath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.min.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -18,89 +22,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="date2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/5010/date2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-              <folding>
-                <element signature="n#main#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#6;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#6;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#7;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#7;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#8;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#8;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#8;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#8;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#9;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#9;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#9;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common2.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22800">
-              <caret line="1633" column="13" lean-forward="true" selection-start-line="1633" selection-start-column="13" selection-end-line="1633" selection-end-column="13" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#34095#34536#0" expanded="false" />
-                <element signature="e#35287#37775#0" expanded="false" />
-                <element signature="e#36361#36385#0" expanded="false" />
-                <element signature="e#42366#42789#0" expanded="false" />
-                <element signature="e#42803#42957#0" expanded="false" />
-                <element signature="e#47101#47304#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sn2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/5010/sn2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="139" column="23" lean-forward="false" selection-start-line="139" selection-start-column="23" selection-end-line="139" selection-end-column="23" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#6;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#p#1;n#div#0;n#div#6;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#7;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hospital2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="130" column="19" lean-forward="false" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="19" />
-              <folding>
-                <element signature="n#style#0;n#div#8;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="total2.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="total2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/5010/total2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="252" column="17" lean-forward="false" selection-start-line="252" selection-start-column="17" selection-end-line="252" selection-end-column="17" />
+            <state relative-caret-position="147">
+              <caret line="255" column="12" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
               <folding>
                 <element signature="n#div#9;n#!!top" expanded="false" />
               </folding>
@@ -151,9 +77,9 @@
       <find>ajax</find>
       <find>token</find>
       <find>toLogin</find>
-      <find>noTokenHandle</find>
       <find>kq-btns</find>
       <find>maxYear</find>
+      <find>noTokenHandle</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -204,7 +130,6 @@
         <option value="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_003x.js" />
         <option value="$PROJECT_DIR$/jiaoben3218/index2.html" />
         <option value="$PROJECT_DIR$/jiaoben3218/css/mobiscroll_004.css" />
-        <option value="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.js" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_004.css" />
         <option value="$PROJECT_DIR$/zhongbao3/字体压扁.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/wlt/wlt.html" />
@@ -249,6 +174,7 @@
         <option value="$PROJECT_DIR$/5010/hospital2.html" />
         <option value="$PROJECT_DIR$/5010/total2.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/common2.js" />
+        <option value="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.js" />
       </list>
     </option>
   </component>
@@ -392,6 +318,28 @@
               <option name="myItemId" value="Browersync" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhongbao3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="h5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -450,6 +398,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="5010" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -661,12 +623,12 @@
       <workItem from="1502415269187" duration="13447000" />
       <workItem from="1502500759290" duration="13638000" />
       <workItem from="1502612280886" duration="12672000" />
-      <workItem from="1502759672016" duration="11918000" />
+      <workItem from="1502759672016" duration="12275000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1367869000" />
+    <option name="totallyTimeSpent" value="1368226000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="158" y="31" width="994" height="755" extended-state="0" />
@@ -800,13 +762,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/dateScroll.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -837,14 +792,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/1/1.min.js" />
     <entry file="file://$PROJECT_DIR$/zhongbao3/1/1.js" />
-    <entry file="file://$PROJECT_DIR$/5010/date3x.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="49" lean-forward="true" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/qrcodejs-master/base/base64.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1109,39 +1056,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/5010/sn2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="139" column="23" lean-forward="false" selection-start-line="139" selection-start-column="23" selection-end-line="139" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#p#1;n#div#0;n#div#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#7;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="130" column="19" lean-forward="false" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="19" />
-          <folding>
-            <element signature="n#style#0;n#div#8;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/5010/total2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="252" column="17" lean-forward="false" selection-start-line="252" selection-start-column="17" selection-end-line="252" selection-end-column="17" />
-          <folding>
-            <element signature="n#div#9;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/num2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1158,10 +1072,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22800">
+          <caret line="1633" column="13" lean-forward="true" selection-start-line="1633" selection-start-column="13" selection-end-line="1633" selection-end-column="13" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#34095#34536#0" expanded="false" />
+            <element signature="e#35287#37775#0" expanded="false" />
+            <element signature="e#36361#36385#0" expanded="false" />
+            <element signature="e#42366#42789#0" expanded="false" />
+            <element signature="e#42803#42957#0" expanded="false" />
+            <element signature="e#47101#47304#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/date3x.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="149" column="71" lean-forward="true" selection-start-line="145" selection-start-column="4" selection-end-line="149" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="67" lean-forward="false" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1502783112000" expanded="true" signature="1727:1772" ph="..." />
+            <marker date="1502783112000" expanded="true" signature="18429:18441" ph="..." />
+            <marker date="1502783112000" expanded="true" signature="19273:19318" ph="..." />
+            <marker date="1502783112000" expanded="true" signature="19371:19416" ph="..." />
+            <marker date="1502783112000" expanded="true" signature="19424:19431" ph="–" />
+            <marker date="1502783112000" expanded="true" signature="19515:19574" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/sn2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="139" column="23" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#6;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#1;n#div#0;n#div#6;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#7;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/5010/date2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+        <state relative-caret-position="117">
+          <caret line="128" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
           <folding>
             <element signature="n#main#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
@@ -1189,18 +1156,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
+    <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22800">
-          <caret line="1633" column="13" lean-forward="true" selection-start-line="1633" selection-start-column="13" selection-end-line="1633" selection-end-column="13" />
+        <state relative-caret-position="160">
+          <caret line="124" column="26" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#34095#34536#0" expanded="false" />
-            <element signature="e#35287#37775#0" expanded="false" />
-            <element signature="e#36361#36385#0" expanded="false" />
-            <element signature="e#42366#42789#0" expanded="false" />
-            <element signature="e#42803#42957#0" expanded="false" />
-            <element signature="e#47101#47304#0" expanded="false" />
+            <element signature="n#style#0;n#div#8;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/total2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="255" column="12" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#9;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>

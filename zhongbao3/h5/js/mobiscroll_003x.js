@@ -7,6 +7,11 @@
  * Licensed under the MIT license.
  *
  */
+var maxYear = $('#dateRange .max').html();
+var minYear = $('#dateRange .min').html();
+maxYear = /^[0-9]{4}$/.test(''+maxYear)?maxYear:2020;
+minYear = /^[0-9]{4}$/.test(''+minYear)?minYear:2000;
+maxYear = maxYear<minYear ? [minYear,minYear=maxYear][0] : maxYear;
 (function ($) {
 
     function Scroller(elem, settings) {
