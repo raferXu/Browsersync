@@ -1631,7 +1631,7 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
         });
       }else if(data.code == 604){
         console.log('saveTaskCode604');
-        // jobTask.notifyToRelogin();
+        jobTask.notifyToRelogin();
       } else {
         // getDataFail();
         deferred.resolve();
