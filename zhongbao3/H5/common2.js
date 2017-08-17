@@ -101,6 +101,7 @@ $(document).ajaxStart(function(){}).ajaxStop(function(){
   if(loadImg && getStr){
     // if(loadImg && getStr && lotteryLoad){
     $("#showMes").hide();
+    $('#next,#indistinct').prop('disabled',false);
     flag = 0;
   }
 });
@@ -1338,6 +1339,7 @@ function imgHandleFn(task) {
         // if(loadImg && getStr && lotteryLoad){
         console.log('图片和ajax请求均完成');
         $("#showMes").hide();
+        $('#next,#indistinct').prop('disabled',false);
         flag = 0;
       }
     }
