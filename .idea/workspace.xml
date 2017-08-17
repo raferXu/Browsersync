@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common2.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/common2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/noTask.html" afterPath="$PROJECT_DIR$/zhongbao3/H5/noTask.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.js" afterPath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.min.js" afterPath="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.min.js" />
-    </list>
+    <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -28,9 +21,21 @@
       <file leaf-file-name="common2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="1630" column="36" lean-forward="false" selection-start-line="1630" selection-start-column="36" selection-end-line="1630" selection-end-column="36" />
+            <state relative-caret-position="129">
+              <caret line="1619" column="55" lean-forward="true" selection-start-line="1619" selection-start-column="55" selection-end-line="1619" selection-end-column="55" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="total2.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/5010/total2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="156" column="16" lean-forward="true" selection-start-line="156" selection-start-column="16" selection-end-line="156" selection-end-column="16" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -38,8 +43,8 @@
       <file leaf-file-name="mobiscroll_003x.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="758" column="19" lean-forward="false" selection-start-line="758" selection-start-column="13" selection-end-line="758" selection-end-column="19" />
+            <state relative-caret-position="132">
+              <caret line="627" column="27" lean-forward="false" selection-start-line="627" selection-start-column="21" selection-end-line="627" selection-end-column="27" />
               <folding>
                 <marker date="1502959620000" expanded="true" signature="1727:1772" ph="..." />
                 <marker date="1502959620000" expanded="true" signature="18429:18441" ph="..." />
@@ -52,7 +57,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="date2.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="date2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5010/date2.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
@@ -225,8 +230,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="208" />
-    <option name="y" value="108" />
+    <option name="x" value="103" />
+    <option name="y" value="97" />
     <option name="width" value="1031" />
     <option name="height" value="691" />
   </component>
@@ -517,15 +522,15 @@
       <workItem from="1502882999385" duration="467000" />
       <workItem from="1502890995284" duration="5696000" />
       <workItem from="1502936166639" duration="2000" />
-      <workItem from="1502941076896" duration="5006000" />
+      <workItem from="1502941076896" duration="5442000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1411241000" />
+    <option name="totallyTimeSpent" value="1411677000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="208" y="108" width="1031" height="691" extended-state="0" />
+    <frame x="103" y="97" width="1031" height="691" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -720,7 +725,6 @@
     <entry file="file://$PROJECT_DIR$/5010/hospital2.html" />
     <entry file="file://$PROJECT_DIR$/H5/使用canvas在前端压缩图片实例页面.html" />
     <entry file="file://$PROJECT_DIR$/H5/使用canvas在前端压缩图片实例页面2.html" />
-    <entry file="file://$PROJECT_DIR$/5010/total2.html" />
     <entry file="file://$PROJECT_DIR$/qrcodejs-master/声纹二维码/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -820,10 +824,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/5010/date2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="134" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="758" column="19" lean-forward="false" selection-start-line="758" selection-start-column="13" selection-end-line="758" selection-end-column="19" />
+        <state relative-caret-position="132">
+          <caret line="627" column="27" lean-forward="false" selection-start-line="627" selection-start-column="21" selection-end-line="627" selection-end-column="27" />
           <folding>
             <marker date="1502959620000" expanded="true" signature="1727:1772" ph="..." />
             <marker date="1502959620000" expanded="true" signature="18429:18441" ph="..." />
@@ -837,17 +849,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="1630" column="36" lean-forward="false" selection-start-line="1630" selection-start-column="36" selection-end-line="1630" selection-end-column="36" />
+        <state relative-caret-position="129">
+          <caret line="1619" column="55" lean-forward="true" selection-start-line="1619" selection-start-column="55" selection-end-line="1619" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/5010/date2.html">
+    <entry file="file://$PROJECT_DIR$/5010/total2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="134" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="240">
+          <caret line="156" column="16" lean-forward="true" selection-start-line="156" selection-start-column="16" selection-end-line="156" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
