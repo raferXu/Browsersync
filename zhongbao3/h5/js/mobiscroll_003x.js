@@ -626,6 +626,7 @@ maxYear = maxYear<minYear ? [minYear,minYear=maxYear][0] : maxYear;
               });
               that.tap($('.dw-persp', dw), function () {
                 that.cancel();
+                console.log('cancel');
                 if(android){
                   console.log('datePickerShow(false)');
                   jobTask.datePickerShow(false);

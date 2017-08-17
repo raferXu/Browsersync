@@ -1628,7 +1628,7 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
         $('#taskTimeout').show();
         flag = 1;
         $('#timeoutBtn').off(touchstart).on(touchstart, function () {
-          $('#taskTimeout').hide();
+          $('#taskTimeout').hide(500);
           flag = 0;
         });
       }else if(data.code == 604){
