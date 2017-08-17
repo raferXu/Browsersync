@@ -190,13 +190,15 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
           var overtime = data['body']['latest_end_time'];
           if(overtime.substring(0,4)=='2100'){
             $('#fsText').html("您的账号因存在严重的刷分行为已被永久封停。");
+            flag = 1;
           }else{
             $('#fsText').html("您的账号因存在刷分行为已被封停，解封时间"+overtime+"。");
+            flag = 0;
           }
+          $('#kqfs h3').html("公告");
           $('#fsText').css('marginBottom','0px');
           $('#kqfs').css("background", "#aeb3bd");
           $('.kq-btns').hide();
-          flag = 1;
           $('#kqfs').show();
         } else if(!data['id']){
           console.log('jumpProjectFlag: true');
@@ -1668,9 +1670,9 @@ function fsjz(k, q, deferred) {
   var fsArr = [
     "亲 请认真答题哦！否则系统会认定您存在刷分行为而封号哦！",
     "您在短时间内已经答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理。请认真答题，谢谢！",
-    "因您在短时间内答错三道测试题，系统认定您存在刷分行为，将会封号24小时。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分不受影响。",
+    "因您在短时间内答错三道测试题，系统认定您存在刷分行为，将会封号24小时。如有疑问，可发送邮件至lijialin908@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分不受影响。",
     "您已经连续答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理。请认真答题，谢谢！",
-    "因您连续答错三道测试题，系统认定您存在刷分行为，将会永久封号。如有疑问，可发送邮件至xxx@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分可以照常兑换。"
+    "因您连续答错三道测试题，系统认定您存在刷分行为，将会永久封号。如有疑问，可发送邮件至lijialin908@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分可以照常兑换。"
   ];
   var fsTitle = [
     "提示",
