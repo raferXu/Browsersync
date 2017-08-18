@@ -105,7 +105,7 @@
           clearInterval(jobTaskLoadedTimer2);
           var tokenStr = jobTask.receiveNativeToken();
           if(tokenStr){
-            var tokenJson = {'token': tokenStr};
+            var tokenJson = {'token': JSON.parse(tokenStr)['token']};
             tokenJson = JSON.stringify(tokenJson);
 
             function ajaxFunction(){
