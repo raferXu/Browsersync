@@ -2,12 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JS/jq的prop.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/.gitignore" afterPath="$PROJECT_DIR$/shengwen/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/LICENSE" afterPath="$PROJECT_DIR$/shengwen/LICENSE" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/README.md" afterPath="$PROJECT_DIR$/shengwen/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/base/base64.html" afterPath="$PROJECT_DIR$/shengwen/base/base64.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/base/base64.js" afterPath="$PROJECT_DIR$/shengwen/base/base64.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/base/base64.min.js" afterPath="$PROJECT_DIR$/shengwen/base/base64.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/bower.json" afterPath="$PROJECT_DIR$/shengwen/bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/index-svg.html" afterPath="$PROJECT_DIR$/shengwen/index-svg.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/index.html" afterPath="$PROJECT_DIR$/shengwen/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/index.svg" afterPath="$PROJECT_DIR$/shengwen/index.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/index2.html" afterPath="$PROJECT_DIR$/shengwen/index2.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/jquery.min.js" afterPath="$PROJECT_DIR$/shengwen/jquery.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/jquery.min.min.js" afterPath="$PROJECT_DIR$/shengwen/jquery.min.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/promise.html" afterPath="$PROJECT_DIR$/shengwen/promise.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/promiseTest.html" afterPath="$PROJECT_DIR$/shengwen/promiseTest.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/promise只需要获得先返回的结果即可.html" afterPath="$PROJECT_DIR$/shengwen/promise只需要获得先返回的结果即可.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/promise封装ajax.html" afterPath="$PROJECT_DIR$/shengwen/promise封装ajax.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/promise并行执行异步任务.html" afterPath="$PROJECT_DIR$/shengwen/promise并行执行异步任务.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/qrcode.js" afterPath="$PROJECT_DIR$/shengwen/qrcode.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/qrcode.min.js" afterPath="$PROJECT_DIR$/shengwen/qrcode.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/声纹二维码/base64.js" afterPath="$PROJECT_DIR$/shengwen/声纹二维码/base64.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/声纹二维码/base64.min.js" afterPath="$PROJECT_DIR$/shengwen/声纹二维码/base64.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/声纹二维码/index.html" afterPath="$PROJECT_DIR$/shengwen/声纹二维码/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/声纹二维码/jquery.min.js" afterPath="$PROJECT_DIR$/shengwen/声纹二维码/jquery.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/声纹二维码/loader.png" afterPath="$PROJECT_DIR$/shengwen/声纹二维码/loader.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/声纹二维码/qrcode.js" afterPath="$PROJECT_DIR$/shengwen/声纹二维码/qrcode.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/qrcodejs-master/声纹二维码/qrcode.min.js" afterPath="$PROJECT_DIR$/shengwen/声纹二维码/qrcode.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/date2.html" afterPath="$PROJECT_DIR$/5010/date2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/hospital2.html" afterPath="$PROJECT_DIR$/5010/hospital2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/sn2.html" afterPath="$PROJECT_DIR$/5010/sn2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/total2.html" afterPath="$PROJECT_DIR$/5010/total2.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,25 +47,13 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="common2.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="1190" column="54" lean-forward="true" selection-start-line="1190" selection-start-column="54" selection-end-line="1190" selection-end-column="54" />
+            <state relative-caret-position="481">
+              <caret line="1715" column="0" lean-forward="true" selection-start-line="1715" selection-start-column="0" selection-end-line="1715" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="total2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/5010/total2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="266" column="55" lean-forward="true" selection-start-line="266" selection-start-column="10" selection-end-line="266" selection-end-column="55" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -50,38 +61,8 @@
       <file leaf-file-name="date2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5010/date2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="176" column="55" lean-forward="false" selection-start-line="176" selection-start-column="55" selection-end-line="176" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hospital2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="139" column="14" lean-forward="true" selection-start-line="139" selection-start-column="14" selection-end-line="139" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sn2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/5010/sn2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="150" column="61" lean-forward="false" selection-start-line="150" selection-start-column="61" selection-end-line="150" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="noTask.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zhongbao3/noTask.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="46" column="18" lean-forward="true" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+            <state relative-caret-position="-770">
+              <caret line="121" column="13" lean-forward="false" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -103,9 +84,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>registerFinishDef</find>
-      <find>getOnlyIdData</find>
-      <find>@</find>
       <find>@ping</find>
       <find>812</find>
       <find>returnCode</find>
@@ -127,12 +105,15 @@
       <find>noTask</find>
       <find>jobTask</find>
       <find>android</find>
-      <find>808</find>
       <find>datePickerShow</find>
       <find>cancel</find>
       <find>normalSubmit</find>
       <find>showMes</find>
       <find>loadImg &amp;&amp; getStr</find>
+      <find>808</find>
+      <find>hide</find>
+      <find>hide()</find>
+      <find>kqfs</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -160,6 +141,7 @@
       <replace>/static/h5</replace>
       <replace>registerFinishDef</replace>
       <replace>console.log</replace>
+      <replace>hide(500)</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/pybossa整理</dir>
@@ -226,10 +208,10 @@
         <option value="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.js" />
         <option value="$PROJECT_DIR$/5010/total2.html" />
         <option value="$PROJECT_DIR$/JS/jq的prop.html" />
-        <option value="$PROJECT_DIR$/zhongbao3/h5/common2.js" />
         <option value="$PROJECT_DIR$/5010/date2.html" />
         <option value="$PROJECT_DIR$/5010/hospital2.html" />
         <option value="$PROJECT_DIR$/5010/sn2.html" />
+        <option value="$PROJECT_DIR$/zhongbao3/h5/common2.js" />
       </list>
     </option>
   </component>
@@ -239,9 +221,12 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/webpack sample project/node_modules" />
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="49" />
-    <option name="y" value="96" />
+    <option name="x" value="208" />
+    <option name="y" value="109" />
     <option name="width" value="1031" />
     <option name="height" value="691" />
   </component>
@@ -260,8 +245,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -316,26 +299,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="JS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browersync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="5010" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -546,23 +517,25 @@
       <workItem from="1502882999385" duration="467000" />
       <workItem from="1502890995284" duration="5696000" />
       <workItem from="1502936166639" duration="2000" />
-      <workItem from="1502941076896" duration="7158000" />
+      <workItem from="1502941076896" duration="8045000" />
+      <workItem from="1502978112445" duration="487000" />
+      <workItem from="1503017902542" duration="1283000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1413393000" />
+    <option name="totallyTimeSpent" value="1416050000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="96" width="1031" height="691" extended-state="0" />
+    <frame x="208" y="109" width="1031" height="691" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20121334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20728008" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24707846" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24707846" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -716,7 +689,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qrcodejs-master/index2.html" />
+    <entry file="file://$PROJECT_DIR$/shengwen/index2.html" />
     <entry file="file://$PROJECT_DIR$/code/1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -745,7 +718,7 @@
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/submit3.js" />
     <entry file="file://$PROJECT_DIR$/H5/使用canvas在前端压缩图片实例页面.html" />
     <entry file="file://$PROJECT_DIR$/H5/使用canvas在前端压缩图片实例页面2.html" />
-    <entry file="file://$PROJECT_DIR$/qrcodejs-master/声纹二维码/jquery.min.js">
+    <entry file="file://$PROJECT_DIR$/shengwen/声纹二维码/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -754,45 +727,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CSS/揭秘参考案例/0.html" />
     <entry file="file://$PROJECT_DIR$/5010/pybossa-token架构.html" />
-    <entry file="file://$PROJECT_DIR$/qrcodejs-master/声纹二维码/qrcode.js">
+    <entry file="file://$PROJECT_DIR$/shengwen/声纹二维码/qrcode.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qrcodejs-master/声纹二维码/base64.js">
+    <entry file="file://$PROJECT_DIR$/shengwen/声纹二维码/base64.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qrcodejs-master/index.html" />
-    <entry file="file://$PROJECT_DIR$/qrcodejs-master/promiseTest.html" />
-    <entry file="file://$PROJECT_DIR$/qrcodejs-master/promise.html" />
-    <entry file="file://$PROJECT_DIR$/qrcodejs-master/promise封装ajax.html" />
-    <entry file="file://$PROJECT_DIR$/qrcodejs-master/promise并行执行异步任务.html" />
-    <entry file="file://$PROJECT_DIR$/qrcodejs-master/promise只需要获得先返回的结果即可.html" />
+    <entry file="file://$PROJECT_DIR$/shengwen/index.html" />
+    <entry file="file://$PROJECT_DIR$/shengwen/promiseTest.html" />
+    <entry file="file://$PROJECT_DIR$/shengwen/promise.html" />
+    <entry file="file://$PROJECT_DIR$/shengwen/promise封装ajax.html" />
+    <entry file="file://$PROJECT_DIR$/shengwen/promise并行执行异步任务.html" />
+    <entry file="file://$PROJECT_DIR$/shengwen/promise只需要获得先返回的结果即可.html" />
     <entry file="file://$PROJECT_DIR$/../声纹二维码/录音demo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="41" column="39" lean-forward="true" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qrcodejs-master/声纹二维码/index.html">
+    <entry file="file://$PROJECT_DIR$/shengwen/声纹二维码/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
           <caret line="254" column="43" lean-forward="false" selection-start-line="254" selection-start-column="43" selection-end-line="254" selection-end-column="43" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#6009#6414#0" expanded="false" />
-            <element signature="e#9192#9607#0" expanded="false" />
-            <element signature="e#11304#11662#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -800,7 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,15 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="145" column="72" lean-forward="true" selection-start-line="145" selection-start-column="72" selection-end-line="145" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/noTask.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="46" column="18" lean-forward="true" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,7 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-642">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -832,7 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,7 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,14 +800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="627" column="27" lean-forward="false" selection-start-line="627" selection-start-column="21" selection-end-line="627" selection-end-column="27" />
-          <folding>
-            <marker date="1502959620000" expanded="true" signature="1727:1772" ph="..." />
-            <marker date="1502959620000" expanded="true" signature="18429:18441" ph="..." />
-            <marker date="1502959620000" expanded="true" signature="19273:19318" ph="..." />
-            <marker date="1502959620000" expanded="true" signature="19371:19416" ph="..." />
-            <marker date="1502959620000" expanded="true" signature="19424:19431" ph="–" />
-            <marker date="1502959620000" expanded="true" signature="19515:19574" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -863,7 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -871,25 +814,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/5010/total2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="266" column="55" lean-forward="true" selection-start-line="266" selection-start-column="10" selection-end-line="266" selection-end-column="55" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-          </folding>
+          <caret line="266" column="55" lean-forward="false" selection-start-line="266" selection-start-column="10" selection-end-line="266" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/5010/date2.html">
+    <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="176" column="55" lean-forward="false" selection-start-line="176" selection-start-column="55" selection-end-line="176" selection-end-column="55" />
-          <folding />
+        <state relative-caret-position="144">
+          <caret line="139" column="14" lean-forward="true" selection-start-line="139" selection-start-column="14" selection-end-line="139" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -901,18 +839,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
+    <entry file="file://$PROJECT_DIR$/zhongbao3/noTask.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="139" column="14" lean-forward="true" selection-start-line="139" selection-start-column="14" selection-end-line="139" selection-end-column="14" />
+        <state relative-caret-position="294">
+          <caret line="46" column="18" lean-forward="true" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/date2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-770">
+          <caret line="121" column="13" lean-forward="false" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="1190" column="54" lean-forward="true" selection-start-line="1190" selection-start-column="54" selection-end-line="1190" selection-end-column="54" />
+        <state relative-caret-position="481">
+          <caret line="1715" column="0" lean-forward="true" selection-start-line="1715" selection-start-column="0" selection-end-line="1715" selection-end-column="0" />
           <folding />
         </state>
       </provider>

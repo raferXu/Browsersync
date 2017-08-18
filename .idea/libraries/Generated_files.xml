@@ -375,8 +375,8 @@
       <root url="file://$PROJECT_DIR$/jiaoben3218/js/mobiscroll_003x.min.js" />
       <root url="file://$PROJECT_DIR$/jiaoben3218/js/jquery-1.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-autocomplete.min.min.min.min.js" />
-      <root url="file://$PROJECT_DIR$/qrcodejs-master/qrcode.min.js" />
-      <root url="file://$PROJECT_DIR$/qrcodejs-master/base/base64.min.js" />
+      <root url="file://$PROJECT_DIR$/shengwen/qrcode.min.js" />
+      <root url="file://$PROJECT_DIR$/shengwen/base/base64.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-mobile.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-autocomplete.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-scramble.min.js" />
@@ -389,7 +389,7 @@
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-all.min.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-navigation.min.min.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-mobile.min.min.min.js" />
-      <root url="file://$PROJECT_DIR$/qrcodejs-master/jquery.min.min.js" />
+      <root url="file://$PROJECT_DIR$/shengwen/jquery.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-all.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.min.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-navigation.min.js" />
@@ -410,9 +410,9 @@
       <root url="file://$PROJECT_DIR$/webpack sample project/node_modules/.bin/sha.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-navigation.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.mousewheel.min.min.js" />
-      <root url="file://$PROJECT_DIR$/qrcodejs-master/声纹二维码/qrcode.min.js" />
+      <root url="file://$PROJECT_DIR$/shengwen/声纹二维码/qrcode.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-typing.min.min.min.min.js" />
-      <root url="file://$PROJECT_DIR$/qrcodejs-master/声纹二维码/base64.min.js" />
+      <root url="file://$PROJECT_DIR$/shengwen/声纹二维码/base64.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.keyboard.extension-typing.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/js/jquery.mousewheel.min.min.min.min.js" />
       <root url="file://$PROJECT_DIR$/Keyboard-master/demo/jquery.chili-2.2.min.min.min.js" />
