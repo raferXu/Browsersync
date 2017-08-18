@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/date2.html" afterPath="$PROJECT_DIR$/5010/date2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/hospital2.html" afterPath="$PROJECT_DIR$/5010/hospital2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/sn2.html" afterPath="$PROJECT_DIR$/5010/sn2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/total2.html" afterPath="$PROJECT_DIR$/5010/total2.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,12 +20,25 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="date2.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="date2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5010/date2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="143" column="48" lean-forward="true" selection-start-line="143" selection-start-column="48" selection-end-line="143" selection-end-column="48" />
+            <state relative-caret-position="76">
+              <caret line="134" column="0" lean-forward="true" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="1321" column="5" lean-forward="true" selection-start-line="1321" selection-start-column="5" selection-end-line="1321" selection-end-column="5" />
+              <folding>
+                <element signature="e#47206#47864#0" expanded="false" />
+                <element signature="n#!!block;n#swiprOrClick#0;n#!!block;n#noTokenHandle#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -43,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="total2.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="total2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/5010/total2.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="121">
-              <caret line="245" column="31" lean-forward="true" selection-start-line="245" selection-start-column="31" selection-end-line="245" selection-end-column="31" />
+              <caret line="245" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
               </folding>
@@ -81,9 +91,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>log</find>
-      <find>userIdLabel</find>
-      <find>qrcode</find>
       <find>getOnlyIdFinishDef</find>
       <find>reject</find>
       <find>flag</find>
@@ -99,7 +106,6 @@
       <find>showMes</find>
       <find>loadImg &amp;&amp; getStr</find>
       <find>808</find>
-      <find>hide</find>
       <find>hide()</find>
       <find>login</find>
       <find>toLogin</find>
@@ -111,6 +117,10 @@
       <find>500</find>
       <find>350</find>
       <find>failData</find>
+      <find>hide</find>
+      <find>fadeOut</find>
+      <find>show</find>
+      <find>display</find>
     </findStrings>
     <replaceStrings>
       <replace>absolute</replace>
@@ -141,6 +151,8 @@
       <replace>350</replace>
       <replace>500</replace>
       <replace>hide(500)</replace>
+      <replace>fadeOut</replace>
+      <replace>fadeIn</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/pybossa整理</dir>
@@ -205,12 +217,12 @@
         <option value="$PROJECT_DIR$/../声纹二维码/录音demo.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.js" />
         <option value="$PROJECT_DIR$/JS/jq的prop.html" />
-        <option value="$PROJECT_DIR$/zhongbao3/h5/common2.js" />
         <option value="$PROJECT_DIR$/5010/date2.html" />
         <option value="$PROJECT_DIR$/5010/sn2.html" />
-        <option value="$PROJECT_DIR$/5010/total2.html" />
         <option value="$PROJECT_DIR$/5010/hospital2.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/noTask.html" />
+        <option value="$PROJECT_DIR$/zhongbao3/h5/common2.js" />
+        <option value="$PROJECT_DIR$/5010/total2.html" />
       </list>
     </option>
   </component>
@@ -504,12 +516,12 @@
       <workItem from="1502936166639" duration="2000" />
       <workItem from="1502941076896" duration="8045000" />
       <workItem from="1502978112445" duration="487000" />
-      <workItem from="1503017902542" duration="9302000" />
+      <workItem from="1503017902542" duration="11071000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1424069000" />
+    <option name="totallyTimeSpent" value="1425838000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="172" y="111" width="1031" height="691" extended-state="0" />
@@ -803,32 +815,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="1165" column="5" lean-forward="true" selection-start-line="1165" selection-start-column="5" selection-end-line="1165" selection-end-column="5" />
-          <folding>
-            <element signature="e#47227#47885#0" expanded="false" />
-            <element signature="n#!!block;n#swiprOrClick#0;n#!!block;n#noTokenHandle#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/5010/sn2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
           <caret line="111" column="216" lean-forward="true" selection-start-line="111" selection-start-column="216" selection-end-line="111" selection-end-column="216" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/5010/total2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="245" column="31" lean-forward="true" selection-start-line="245" selection-start-column="31" selection-end-line="245" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -850,9 +841,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/5010/date2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="143" column="48" lean-forward="true" selection-start-line="143" selection-start-column="48" selection-end-line="143" selection-end-column="48" />
+        <state relative-caret-position="76">
+          <caret line="134" column="0" lean-forward="true" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="1321" column="5" lean-forward="true" selection-start-line="1321" selection-start-column="5" selection-end-line="1321" selection-end-column="5" />
+          <folding>
+            <element signature="e#47206#47864#0" expanded="false" />
+            <element signature="n#!!block;n#swiprOrClick#0;n#!!block;n#noTokenHandle#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/total2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="245" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
