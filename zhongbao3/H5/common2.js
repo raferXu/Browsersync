@@ -63,7 +63,7 @@ var getDataFailTimer = setTimeout(function () {
   if(!loadImg || !getStr){
     getDataFail();
     clearTimeout(getDataFailTimer);
-    $("#showMes").hide(500);
+    $("#showMes").css("display","none");
   }
 },5000);
 var android = true;
@@ -100,7 +100,7 @@ $(document).ajaxStart(function(){}).ajaxStop(function(){
   getStr = true;
   if(loadImg && getStr){
     // if(loadImg && getStr && lotteryLoad){
-    $("#showMes").hide(500);
+    $("#showMes").css("display","none");
     $('#next,#indistinct').prop('disabled',false);
     flag = 0;
   }
@@ -186,7 +186,7 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
         console.log("url + 'token/project/' + projectId + '/newtask' success");
         console.log(data);
         if(data.code == 808){
-          $("#showMes").hide(500);
+          $("#showMes").css("display","none");
           console.log('data.code: 808');
           var overtime = data['body']['latest_end_time'];
           if(overtime.substring(0,4)=='2100'){
@@ -1129,7 +1129,7 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
 
 // ready.js
 function getDataFail() {
-  $("#showMes").hide(500);
+  $("#showMes").css("display","none");
   flag = 0;
   $("#failData").show();
   flag = 1;
@@ -1338,7 +1338,7 @@ function imgHandleFn(task) {
       if(loadImg && getStr){
         // if(loadImg && getStr && lotteryLoad){
         console.log('图片和ajax请求均完成');
-        $("#showMes").hide(500);
+        $("#showMes").css("display","none");
         $('#next,#indistinct').prop('disabled',false);
         flag = 0;
       }
@@ -1536,7 +1536,7 @@ function bindJumpNative(projectName) {
         $("#showMes").show();
         flag = 1;
         $('#rwzyImg').load(function () {
-          $("#showMes").hide(500);
+          $("#showMes").css("display","none");
           flag = 0;
           $('#rwzy').show();
         });
@@ -1577,16 +1577,52 @@ function bindJumpNative(projectName) {
 
 // noToken.js
 function noTokenHandle() {
+  function swiprOrClick() {
+    var swipe = false;
+    var $html = $('html');
+    $html.on(touchstart+' '+touchmove+' '+touchend, function(event) {
+      switch(event.type) {
+        case 'touchstart':
+          swipe = false;
+          break;
+        case 'touchmove':
+          swipe = true;
+          break;
+        case 'touchend':
+          if( swipe ) {
+            console.log('滑动');
+            // $('#toLogin').removeClass().addClass('bgHide');
+            falg = 0;
+          } else {
+            console.log('点击');
+            // alert($('#failData').css('display'));
+            // if($('#failData').css('display')!='none'){
+            //   $('#toLogin').removeClass().addClass('bgHide');
+            // }
+            if($('#toLogin>div').css('display')=='none'){
+              $('#toLogin').removeClass().addClass('bgShow');
+              $('#toLogin>div').show();
+            }
+            falg = 1;
+          }
+          break;
+      }
+    });
+  }
 //单击未登录的取消按钮
   $('#cacelBtn').off(touchstart).on(touchstart,function () {
     flag = 0;
     $('#toLogin>div').hide(500);
     $('#toLogin').removeClass().addClass('bgHide');
-    $('html')[0].addEventListener(touchstart,function () {
-      $('#toLogin').removeClass().addClass('bgShow');
-      $('#toLogin>div').show();
-      flag = 1;
-    },true);
+
+    // $('html')[0].addEventListener(touchstart,function () {
+    //   $('#toLogin').removeClass().addClass('bgShow');
+    //   $('#toLogin>div').show();
+    //   flag = 1;
+    // },true);
+
+    swiprOrClick();
+
   });
 //单击登录跳转登录页面
   var toLoginTimer = setInterval(function () {
@@ -1601,12 +1637,15 @@ function noTokenHandle() {
       });
     }
   },50);
-  $('html')[0].addEventListener(touchstart,function () {
-    console.log('htmlPageTouchstart');
-    $('#toLogin').removeClass().addClass('bgShow');
-    $('#toLogin>div').show();
-    flag = 1;
-  },true);
+
+  // $('html')[0].addEventListener(touchstart,function () {
+  //   console.log('htmlPageTouchstart');
+  //   $('#toLogin').removeClass().addClass('bgShow');
+  //   $('#toLogin>div').show();
+  //   flag = 1;
+  // },true);
+
+  swiprOrClick();
   $('.task_rand_score span').html(0);
   $('.total .num').html(0);
   $('.today_order .num').html(0);
@@ -1655,7 +1694,7 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
     });
   }
   else {
-    $("#showMes").hide(500);
+    $("#showMes").css("display","none");
     flag = 0;
     $('#answerTipBtn').off(touchstart).on(touchstart, function () {
       $('#answerTip').hide(500);
