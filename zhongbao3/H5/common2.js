@@ -17,12 +17,6 @@ function loadDisqus() {
 }
 
 $.ajaxSetup({
-  // success: function (data) {
-  //   if(data.code == 604){
-  //     console.log('Code604');
-  //     jobTask.notifyToRelogin();
-  //   }
-  // },
   error: function(jqXHR, textStatus, errorThrown){
     switch (jqXHR.status){
       case(500):
@@ -1591,19 +1585,14 @@ function noTokenHandle() {
         case 'touchend':
           if( swipe ) {
             console.log('滑动');
-            // $('#toLogin').removeClass().addClass('bgHide');
-            falg = 0;
+            flag = 0;
           } else {
             console.log('点击');
-            // alert($('#failData').css('display'));
-            // if($('#failData').css('display')!='none'){
-            //   $('#toLogin').removeClass().addClass('bgHide');
-            // }
             if($('#toLogin>div').css('display')=='none'){
               $('#toLogin').removeClass().addClass('bgShow');
               $('#toLogin>div').fadeIn();
             }
-            falg = 1;
+            flag = 1;
           }
           break;
       }
@@ -1614,12 +1603,6 @@ function noTokenHandle() {
     flag = 0;
     $('#toLogin>div').fadeOut(500);
     $('#toLogin').removeClass().addClass('bgHide');
-
-    // $('html')[0].addEventListener(touchstart,function () {
-    //   $('#toLogin').removeClass().addClass('bgShow');
-    //   $('#toLogin>div').fadeIn();
-    //   flag = 1;
-    // },true);
 
     swiprOrClick();
 
@@ -1637,13 +1620,6 @@ function noTokenHandle() {
       });
     }
   },50);
-
-  // $('html')[0].addEventListener(touchstart,function () {
-  //   console.log('htmlPageTouchstart');
-  //   $('#toLogin').removeClass().addClass('bgShow');
-  //   $('#toLogin>div').fadeIn();
-  //   flag = 1;
-  // },true);
 
   swiprOrClick();
   $('.task_rand_score span').html(0);
@@ -1720,6 +1696,7 @@ function fsjz(k, q, deferred) {
     "警告",
     "公告"
   ];
+  flag = 1;
   if(k==1){
     $('#kqfs h3').html(fsTitle[0]);
     $('#fsText').html(fsArr[0]);
@@ -1734,7 +1711,7 @@ function fsjz(k, q, deferred) {
   }else if(k==3){
     $('#kqfs h3').html(fsTitle[1]);
     $('#kqfs').css("background", "#aeb3bd");
-    $('.kq-btns,#fhGuide').fadeOut(500);
+    $('.kq-btns,#fhGuide').fadeOut();
     $('#fsText').css('marginBottom','0px');
     if(q==3){
       $('#fsText').html(fsArr[4]);
@@ -1743,7 +1720,6 @@ function fsjz(k, q, deferred) {
     }
   }
   $('#kqfs').fadeIn();
-  flag = 1;
   $('#kqfs .kqqr').on(touchstart,function () {
     $('#kqfs').fadeOut(500);
     flag = 0;
