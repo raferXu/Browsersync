@@ -192,8 +192,8 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
           }
           $('#kqfs h3').html("公告");
           $('#fsText').css('marginBottom','0px');
-          $('#kqfs').css("background", "#aeb3bd");
-          $('.kq-btns').fadeOut(500);
+          $('#kqfs').css({"background":"#aeb3bd","position":"fixed"});
+          $('.kq-btns').fadeOut();
           $('#kqfs').fadeIn();
         } else if(!data['id']){
           console.log('jumpProjectFlag: true');
@@ -1125,11 +1125,13 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
 function getDataFail() {
   $("#showMes").fadeOut(500);
   flag = 0;
-  $("#failData").fadeIn();
+  $("#failData").css('position','fixed').fadeIn();
   flag = 1;
 }
 $('#dataFail').off(touchstart).on(touchstart, function () {
-  $('#failData').fadeOut(500);
+  $('#failData').fadeOut(500,function () {
+    $(this).css('position','absolute');
+  });
   flag = 0;
 });
 
@@ -1540,7 +1542,7 @@ function bindJumpNative(projectName) {
       }
     });
   });
-  $('#toLogin').removeClass().addClass('bgHide').fadeIn();
+  $('#toLogin').removeClass().addClass('bgHide').css('position','absolute').fadeIn();
   var nativeTimer = setInterval(function () {
     if(jobTaskLoaded){
       clearInterval(nativeTimer);
@@ -1589,7 +1591,7 @@ function noTokenHandle() {
           } else {
             console.log('点击');
             if($('#toLogin>div').css('display')=='none'){
-              $('#toLogin').removeClass().addClass('bgShow');
+              $('#toLogin').removeClass().addClass('bgShow').css('position','fixed');
               $('#toLogin>div').fadeIn();
             }
             flag = 1;
@@ -1601,8 +1603,9 @@ function noTokenHandle() {
 //单击未登录的取消按钮
   $('#cacelBtn').off(touchstart).on(touchstart,function () {
     flag = 0;
-    $('#toLogin>div').fadeOut(500);
-    $('#toLogin').removeClass().addClass('bgHide');
+    $('#toLogin>div').fadeOut(500,function () {
+      $('#toLogin').removeClass().addClass('bgHide').css('position','absolute');
+    });
 
     swiprOrClick();
 
@@ -1613,8 +1616,9 @@ function noTokenHandle() {
       clearInterval(toLoginTimer);
       $('#loginBtn').off(touchstart).on(touchstart,function () {
         flag = 0;
-        $('#toLogin>div').fadeOut(500);
-        $('#toLogin').removeClass().addClass('bgHide');
+        $('#toLogin>div').fadeOut(500,function () {
+          $('#toLogin').removeClass().addClass('bgHide').css('position','absolute');
+        });
         console.log('loginBtnTouchstart');
         jobTask.launchLoginPage();
       });
@@ -1642,10 +1646,12 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
         fsjz(data['body']['k'], data['body']['q'], deferred);
       }else if(data.code == 812){
         // location = location;
-        $('#taskTimeout').fadeIn();
+        $('#taskTimeout').css('position','fixed').fadeIn();
         flag = 1;
         $('#timeoutBtn').off(touchstart).on(touchstart, function () {
-          $('#taskTimeout').fadeOut(500);
+          $('#taskTimeout').fadeOut(500,function () {
+            $(this).css('position','absolute');
+          });
           flag = 0;
         });
       }else if(data.code == 604){
@@ -1657,10 +1663,12 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
       }
     }).fail(function (err) {
       if(err.code == 403){
-        $('#taskTimeout').fadeIn();
+        $('#taskTimeout').css('position','fixed').fadeIn();
         flag = 1;
         $('#timeoutBtn').off(touchstart).on(touchstart, function () {
-          $('#taskTimeout').fadeOut(500);
+          $('#taskTimeout').fadeOut(500,function () {
+            $(this).css('position','absolute');
+          });
           flag = 0;
         });
       }else{
@@ -1673,10 +1681,12 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
     $("#showMes").fadeOut(500);
     flag = 0;
     $('#answerTipBtn').off(touchstart).on(touchstart, function () {
-      $('#answerTip').fadeOut(500);
+      $('#answerTip').fadeOut(500,function () {
+        $(this).css('position','absolute');
+      });
       flag = 0;
     });
-    $('#answerTip').fadeIn();
+    $('#answerTip').css('position','fixed').fadeIn();
     flag = 1;
   }
 }
@@ -1719,9 +1729,11 @@ function fsjz(k, q, deferred) {
       $('#fsText').html(fsArr[2]);
     }
   }
-  $('#kqfs').fadeIn();
+  $('#kqfs').css('position','fixed').fadeIn();
   $('#kqfs .kqqr').on(touchstart,function () {
-    $('#kqfs').fadeOut(500);
+    $('#kqfs').fadeOut(500,function () {
+      $(this).css('position','absolute');
+    });
     flag = 0;
     if(k==1 || k==2){
       deferred.resolve();
