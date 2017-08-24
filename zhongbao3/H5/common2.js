@@ -1706,7 +1706,7 @@ function fsjz(k, q, deferred) {
     "警告",
     "公告"
   ];
-  flag = 1;
+  flag = 0;
   if(k==1){
     $('#kqfs h3').html(fsTitle[0]);
     $('#fsText').html(fsArr[0]);
@@ -1725,6 +1725,7 @@ function fsjz(k, q, deferred) {
     $('#fsText').css('marginBottom','0px');
     if(q==3){
       $('#fsText').html(fsArr[4]);
+      flag = 1;
     }else{
       $('#fsText').html(fsArr[2]);
     }
@@ -1734,7 +1735,6 @@ function fsjz(k, q, deferred) {
     $('#kqfs').fadeOut(500,function () {
       $(this).css('position','absolute');
     });
-    flag = 0;
     if(k==1 || k==2){
       deferred.resolve();
     }
