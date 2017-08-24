@@ -114,7 +114,7 @@
     #openBtn{
       width: .55rem;
       height: .28rem;
-      line-height: .28rem;
+      line-height: .3rem;
       text-align: center;
       border: 1px solid #fff;
       border-radius: 5px;
@@ -148,11 +148,12 @@
     </li>
   </ul>
   <div id="codeBox">
-    <!--<img id="codeImg" src="code.png" alt="code">-->
     <div id="qrcode"></div>
     <p class="codeP">扫一扫或长按指纹二维码下载APP</p>
   </div>
 </main>
+<!--<iframe onload="javascript:alert(12)" style="display: block" src="intent://pacrowd" frameborder="1" width="500" height="500"></iframe>-->
+<!--<iframe onload="javascript:alert(12)" style="display: block" src="pacrowd://com.pingan.crowdsourcing" frameborder="1" width="500" height="500"></iframe>-->
 <footer>
   <div id="name">平安众包</div>
   <div id="openBtn">打开</div>
@@ -163,48 +164,60 @@
   var qrcode = new QRCode(document.getElementById("qrcode"), {
     width : 150,
     height : 150
-//    width : 700,
-//    height : 700
   });
   var url = location.origin+'/token/qr/lead_to_download_url';
 //  var url = 'https://pazb.pingan.com.cn/token/qr/lead_to_download_url';
   qrcode.makeCode(url);
 
-/*
-  //从 canvas 提取图片 image
-  function convertCanvasToImage(canvas) {
-//新Image对象，可以理解为DOM
-    var image = new Image();
-// canvas.toDataURL 返回的是一串Base64编码的URL，当然,浏览器自己肯定支持
-// 指定格式 PNG
-    image.src = canvas.toDataURL("image/png");
-    return image;
+  var ifrSrc,isAndroid=navigator.userAgent.match(/android/i);
+  if(isAndroid){
+    ifrSrc = 'pacrowd://com.pingan.crowdsourcing';
+  }else{
+    ifrSrc = 'pacrowdsourcing://com.pingan.pacrowdsourcing';
   }
-  //获取网页中的canvas对象
-  var mycanvas1=document.getElementsByTagName('canvas')[0];
-  //将转换后的img标签插入到html中
-  var img=convertCanvasToImage(mycanvas1);
-  $('#imagQrDiv').append(img);//imagQrDiv表示你要插入的容器id
-*/
+//  var ifr = document.createElement('iframe');
+//  ifr.src = ifrSrc;
+//  ifr.onload = function() {
+//    alert(1);
+//    ifr.src = ifrSrc;
+//    $('#openBtn').html('打开');
+//    document.body.removeChild(ifr);
+//  };
+//  ifr.onerror = function() {
+//    alert(2);
+//    $('#openBtn').html('下载');
+//    document.body.removeChild(ifr);
+//  };
 
-  var ifrSrc = 'cartooncomicsshowtwo://platformapi/startApp? type=0&id=${com.id}&phone_num=${com.phone_num}';
-  var ifr = document.createElement('iframe');
-  ifr.src = ifrSrc;
-  ifr.style.display = 'none';
-  ifr.onload = function() {
-    $('#openBtn').html('打开');
-    document.body.removeChild(ifr);
-  };
-  ifr.onerror = function() {
-    $('#openBtn').html('下载');
-    document.body.removeChild(ifr);
-  };
-  document.body.appendChild(ifr);
-  setTimeout(function() {
-    $('#openBtn').html('下载');
-    document.body.removeChild(ifr);
-  },500);
+//  ifr.src = 'https://www.baidu.com';
+//  ifr.style.display = 'none';
+//  document.body.appendChild(ifr);
+//  setTimeout(function() {
+//    alert(3);
+//    $('#openBtn').html('下载');
+//    document.body.removeChild(ifr);
+//  },5000);
 
+//  function isInstalled(){
+//    window.location.href=ifrSrc;//打开某手机上的某个app应用
+//    setTimeout(function(){
+//      window.location.href=the_href;//如果超时就跳转到app下载页
+//    },500);
+//  }
+
+  $('#openBtn').click(function () {
+//    if(!$.contains($(this),'下载')){
+//      location.href = location.origin+'/token/qr/lead_to_download_url';
+//    }else{
+//      alert(ifrSrc);
+//      location.href = ifrSrc;
+//      location.href = 'intent:com.pingan.crowdsourcing';
+//    }
+//    window.location.href=ifrSrc;//打开某手机上的某个app应用
+//    setTimeout(function(){
+      window.location.href=url;//如果超时就跳转到app下载页
+//    },500);
+  });
 
 </script>
 </body>
