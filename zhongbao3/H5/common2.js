@@ -1504,12 +1504,22 @@ function bindJumpNative(projectName) {
     console.log('taskGuideBtnclick');
     // jobTask.taskGuide();
 
-    var guideImgArr = {
-      'sn': ['/static/h5/snGuide1.png','/static/h5/snGuide2.png'],
-      'total': ['/static/h5/totalG.png'],
-      'date': ['/static/h5/dateG.png'],
-      'hospital': ['/static/h5/hospitalG.png']
-    };
+    var guideImgArr;
+    if(android){
+      guideImgArr = {
+        'sn': ['/static/h5/snGuide1a.png','/static/h5/snGuide2a.png'],
+        'total': ['/static/h5/totalGa.png'],
+        'date': ['/static/h5/dateGa.png'],
+        'hospital': ['/static/h5/hospitalGa.png']
+      };
+    }else{
+      guideImgArr = {
+        'sn': ['/static/h5/snGuide1.png','/static/h5/snGuide2.png'],
+        'total': ['/static/h5/totalG.png'],
+        'date': ['/static/h5/dateG.png'],
+        'hospital': ['/static/h5/hospitalG.png']
+      };
+    }
 
     var nowImgArr = guideImgArr[projectName];
     var len = nowImgArr.length;

@@ -1,0 +1,42 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>try</title>
+    <meta charset="utf-8">  
+    <style type="text/css">  
+
+    </style>  
+</head>  
+<body>  
+    <div class="back">  
+        <button id="openapp">oppenapp</button>
+    </div>
+    <script>
+      var url = {
+        open: 'pacrowd://com.pingan.crowdsourcing',
+        down: 'https://pazb.pingan.com.cn/token/qr/lead_to_download_url'
+      };
+      var iframe = document.createElement('iframe');
+      var body = document.body;
+      iframe.style.cssText='display:none;width=0;height=0';
+      var timer = null;
+
+      // 立即打开的按钮
+      var openapp = document.getElementById('openapp');
+      openapp.addEventListener('click', function() {
+        if(/MicroMessenger/gi.test(navigator.userAgent)) {
+          // 引导用户在浏览器中打开
+          alert(1);
+        } else{
+          alert(2);
+          body.appendChild(iframe);
+          iframe.src = url.open;
+//          location.href = url.open;
+          timer = setTimeout(function() {
+            window.location.href = url.down;
+          }, 500);
+        }
+      }, false)
+    </script>
+</body>  
+</html>  
