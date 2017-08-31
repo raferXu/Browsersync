@@ -2,126 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/download.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/carousel/gaugin.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/carousel/giotto.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/carousel/leonardo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/carousel/warhol.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/minimap/ermine.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/parallax/galaxies1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/parallax/galaxies2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/parallax/stars.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/0.5大小边框.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/000.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/1.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/1.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/4.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/download.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iOS/1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iOS/iOS.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iOS/list.plist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/.nodemonignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/CONTRIBUTING.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/RELEASENOTES.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/build.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/build/iscroll-infinite.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/build/iscroll-lite.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/build/iscroll-probe.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/build/iscroll-zoom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/build/iscroll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/2d-scroll/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/barebone/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/bounce-easing/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/carousel/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/click/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/demoUtils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/event-passthrough/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/forms/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/horizontal/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/infinite/dataset.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/infinite/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/key-bindings/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/minimap/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/no-transition/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/parallax/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/probe/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/scroll-to-element/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/scrollbars/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/simple/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/snap/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/styled-scrollbars/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/tap/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/demos/zoom/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/close.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/default/_animate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/default/handleEvent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/indicator/_initIndicators.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/indicator/_transitionTime.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/indicator/_transitionTimingFunction.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/indicator/_translate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/indicator/build.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/indicator/indicator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/infinite/build.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/infinite/infinite.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/infinite/refresh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/keys/build.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/keys/keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/open.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/probe/_animate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/probe/_move.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/probe/build.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/probe/indicator._move.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/probe/probe.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/snap/_end.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/snap/build.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/snap/refresh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/snap/snap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/wheel/build.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/wheel/wheel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/zoom/build.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/zoom/handleEvent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/zoom/refresh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iscroll-master/src/zoom/zoom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/pushState.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/xxx.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/众包demo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/原始demo.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tb/3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/codeLock3.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_002.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_003.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/css/mobiscroll_004.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/date.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/hospital.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/js/jquery.1.7.2.min.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/sn.min.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zhongbao3/h5/total.min.min.css" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tb/1.html" afterPath="$PROJECT_DIR$/tb/登录框.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tb/2.html" afterPath="$PROJECT_DIR$/tb/列表横向布局.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/hospitalG.png" afterPath="$PROJECT_DIR$/zhongbao3/H5/hospitalG.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/snGuide1.png" afterPath="$PROJECT_DIR$/zhongbao3/H5/snGuide1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/snGuide2.png" afterPath="$PROJECT_DIR$/zhongbao3/H5/snGuide2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/totalG.png" afterPath="$PROJECT_DIR$/zhongbao3/H5/totalG.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5.zip" afterPath="$PROJECT_DIR$/zhongbao3/h5.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/dateG.png" afterPath="$PROJECT_DIR$/zhongbao3/h5/dateG.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/date2.html" afterPath="$PROJECT_DIR$/5010/date2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/hospital2.html" afterPath="$PROJECT_DIR$/5010/hospital2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/sn2.html" afterPath="$PROJECT_DIR$/5010/sn2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/total2.html" afterPath="$PROJECT_DIR$/5010/total2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share3.html" afterPath="$PROJECT_DIR$/share3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share4.html" afterPath="$PROJECT_DIR$/share4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common2.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/common2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/share/share.html" afterPath="$PROJECT_DIR$/zhongbao3/h5/share/share.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -149,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common2.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="common2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1680">
-              <caret line="41" column="20" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="20" />
+            <state relative-caret-position="87">
+              <caret line="1339" column="57" lean-forward="true" selection-start-line="1339" selection-start-column="57" selection-end-line="1339" selection-end-column="57" />
               <folding>
                 <element signature="n#!!block;n#loadDisqus#0" expanded="false" />
                 <element signature="e#622#1028#0" expanded="false" />
@@ -191,7 +72,7 @@
       <file leaf-file-name="date2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5010/date2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
+            <state relative-caret-position="2475">
               <caret line="165" column="52" lean-forward="false" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
@@ -206,7 +87,7 @@
       <file leaf-file-name="hospital2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
+            <state relative-caret-position="2025">
               <caret line="135" column="54" lean-forward="false" selection-start-line="135" selection-start-column="54" selection-end-line="135" selection-end-column="54" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
@@ -221,54 +102,26 @@
       <file leaf-file-name="sn2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5010/sn2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="1900" column="54" lean-forward="true" selection-start-line="1900" selection-start-column="8" selection-end-line="1900" selection-end-column="54" />
+            <state relative-caret-position="915">
+              <caret line="129" column="91" lean-forward="false" selection-start-line="129" selection-start-column="91" selection-end-line="129" selection-end-column="91" />
               <folding>
                 <element signature="n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
-                <element signature="e#9844#9888#0" expanded="false" />
-                <element signature="e#10036#10482#0" expanded="false" />
-                <element signature="e#10498#10944#0" expanded="false" />
-                <element signature="e#11374#11507#0" expanded="false" />
-                <element signature="e#11674#11810#0" expanded="false" />
-                <element signature="e#11898#12153#0" expanded="false" />
-                <element signature="e#12210#12333#0" expanded="false" />
-                <element signature="e#12426#12636#0" expanded="false" />
-                <element signature="e#12664#12815#0" expanded="false" />
-                <element signature="e#12879#12904#0" expanded="false" />
-                <element signature="e#12953#13141#0" expanded="false" />
-                <element signature="e#13201#13311#0" expanded="false" />
-                <element signature="e#13372#19988#0" expanded="false" />
-                <element signature="e#15139#15786#0" expanded="false" />
-                <element signature="e#20074#46402#0" expanded="false" />
-                <element signature="e#46457#46575#0" expanded="false" />
-                <element signature="e#46636#46750#0" expanded="false" />
-                <element signature="e#46795#46852#0" expanded="false" />
-                <element signature="e#46882#46980#0" expanded="false" />
-                <element signature="e#47045#47163#0" expanded="false" />
-                <element signature="e#47193#47475#0" expanded="false" />
-                <element signature="e#47542#49219#0" expanded="false" />
-                <element signature="e#49282#49334#0" expanded="false" />
-                <element signature="e#49434#49985#0" expanded="false" />
-                <element signature="e#58544#60974#0" expanded="false" />
-                <element signature="e#58601#60103#0" expanded="false" />
-                <element signature="e#60240#60965#0" expanded="false" />
-                <element signature="e#61020#62686#0" expanded="false" />
-                <element signature="e#64657#66063#0" expanded="false" />
-                <element signature="e#66660#66772#0" expanded="false" />
+                <element signature="n#script#3;n#!!top" expanded="false" />
+                <element signature="e#10410#10522#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="total2.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="total2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/5010/total2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="254" column="52" lean-forward="false" selection-start-line="254" selection-start-column="52" selection-end-line="254" selection-end-column="52" />
+            <state relative-caret-position="162">
+              <caret line="250" column="24" lean-forward="true" selection-start-line="250" selection-start-column="24" selection-end-line="250" selection-end-column="24" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
@@ -375,7 +228,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/CSS/为多语言内容插入正确的引号.html" />
         <option value="$PROJECT_DIR$/CSS/CSS各种加载loading.html" />
         <option value="$PROJECT_DIR$/JS/添加遮罩时禁止滚屏.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/total.less" />
@@ -407,7 +259,6 @@
         <option value="$PROJECT_DIR$/share3.html" />
         <option value="$PROJECT_DIR$/tb/1.css" />
         <option value="$PROJECT_DIR$/tb/index.html" />
-        <option value="$PROJECT_DIR$/5010/sn2.html" />
         <option value="$PROJECT_DIR$/tb/000.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/common2.js" />
         <option value="$PROJECT_DIR$/tb/3.html" />
@@ -426,6 +277,8 @@
         <option value="$PROJECT_DIR$/5010/hospital2.html" />
         <option value="$PROJECT_DIR$/5010/total2.html" />
         <option value="$PROJECT_DIR$/5010/date2.html" />
+        <option value="$PROJECT_DIR$/5010/sn2.html" />
+        <option value="$PROJECT_DIR$/zhongbao3/h5/common.js" />
       </list>
     </option>
   </component>
@@ -439,8 +292,8 @@
     <handled-path value="$PROJECT_DIR$/webpack sample project/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="18" />
-    <option name="y" value="158" />
+    <option name="x" value="44" />
+    <option name="y" value="42" />
     <option name="width" value="1087" />
     <option name="height" value="738" />
   </component>
@@ -743,15 +596,15 @@
       <workItem from="1503801799681" duration="14000" />
       <workItem from="1503883480732" duration="6950000" />
       <workItem from="1503914609132" duration="14000" />
-      <workItem from="1503970380706" duration="37686000" />
+      <workItem from="1503970380706" duration="39347000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1514572000" />
+    <option name="totallyTimeSpent" value="1516233000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="18" y="158" width="1087" height="738" extended-state="0" />
+    <frame x="44" y="42" width="1087" height="738" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -759,7 +612,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22910216" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22910216" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -882,7 +735,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/shengwen/index.html" />
     <entry file="file://$PROJECT_DIR$/shengwen/promise封装ajax.html" />
     <entry file="file://$PROJECT_DIR$/shengwen/promise并行执行异步任务.html" />
     <entry file="file://$PROJECT_DIR$/shengwen/promise只需要获得先返回的结果即可.html" />
@@ -1209,92 +1061,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/5010/sn2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="1900" column="54" lean-forward="true" selection-start-line="1900" selection-start-column="8" selection-end-line="1900" selection-end-column="54" />
-          <folding>
-            <element signature="n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
-            <element signature="e#9844#9888#0" expanded="false" />
-            <element signature="e#10036#10482#0" expanded="false" />
-            <element signature="e#10498#10944#0" expanded="false" />
-            <element signature="e#11374#11507#0" expanded="false" />
-            <element signature="e#11674#11810#0" expanded="false" />
-            <element signature="e#11898#12153#0" expanded="false" />
-            <element signature="e#12210#12333#0" expanded="false" />
-            <element signature="e#12426#12636#0" expanded="false" />
-            <element signature="e#12664#12815#0" expanded="false" />
-            <element signature="e#12879#12904#0" expanded="false" />
-            <element signature="e#12953#13141#0" expanded="false" />
-            <element signature="e#13201#13311#0" expanded="false" />
-            <element signature="e#13372#19988#0" expanded="false" />
-            <element signature="e#15139#15786#0" expanded="false" />
-            <element signature="e#20074#46402#0" expanded="false" />
-            <element signature="e#46457#46575#0" expanded="false" />
-            <element signature="e#46636#46750#0" expanded="false" />
-            <element signature="e#46795#46852#0" expanded="false" />
-            <element signature="e#46882#46980#0" expanded="false" />
-            <element signature="e#47045#47163#0" expanded="false" />
-            <element signature="e#47193#47475#0" expanded="false" />
-            <element signature="e#47542#49219#0" expanded="false" />
-            <element signature="e#49282#49334#0" expanded="false" />
-            <element signature="e#49434#49985#0" expanded="false" />
-            <element signature="e#58544#60974#0" expanded="false" />
-            <element signature="e#58601#60103#0" expanded="false" />
-            <element signature="e#60240#60965#0" expanded="false" />
-            <element signature="e#61020#62686#0" expanded="false" />
-            <element signature="e#64657#66063#0" expanded="false" />
-            <element signature="e#66660#66772#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/5010/total2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="254" column="52" lean-forward="false" selection-start-line="254" selection-start-column="52" selection-end-line="254" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="135" column="54" lean-forward="false" selection-start-line="135" selection-start-column="54" selection-end-line="135" selection-end-column="54" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/5010/date2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="165" column="52" lean-forward="false" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#7;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1680">
-          <caret line="41" column="20" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="20" />
+        <state relative-caret-position="87">
+          <caret line="1339" column="57" lean-forward="true" selection-start-line="1339" selection-start-column="57" selection-end-line="1339" selection-end-column="57" />
           <folding>
             <element signature="n#!!block;n#loadDisqus#0" expanded="false" />
             <element signature="e#622#1028#0" expanded="false" />
@@ -1324,6 +1094,97 @@
             <element signature="e#47518#48203#0" expanded="false" />
             <element signature="n#!!block;n#noTokenHandle#0" expanded="false" />
             <element signature="n#!!block;n#fsjz#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="1757" column="0" lean-forward="true" selection-start-line="1757" selection-start-column="0" selection-end-line="1757" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#loadDisqus#0" expanded="false" />
+            <element signature="e#622#1028#0" expanded="false" />
+            <element signature="e#1424#1545#0" expanded="false" />
+            <element signature="e#1700#1826#0" expanded="false" />
+            <element signature="n#!!block;n#isAndroidFn#0" expanded="false" />
+            <element signature="e#2202#2317#0" expanded="false" />
+            <element signature="e#2404#2598#0" expanded="false" />
+            <element signature="n#!!block;n#htmlFontSize#0" expanded="false" />
+            <element signature="e#2827#2848#0" expanded="false" />
+            <element signature="e#2895#3069#0" expanded="false" />
+            <element signature="e#3127#3229#0" expanded="false" />
+            <element signature="e#3286#9524#0" expanded="false" />
+            <element signature="e#4943#5558#0" expanded="false" />
+            <element signature="e#9606#34490#0" expanded="false" />
+            <element signature="n#!!block;n#getDataFail#0" expanded="false" />
+            <element signature="e#34708#34812#0" expanded="false" />
+            <element signature="n#!!block;n#imgLoaded#0" expanded="false" />
+            <element signature="n#!!block;n#getTokenAndPort#0" expanded="false" />
+            <element signature="e#35087#35193#0" expanded="false" />
+            <element signature="n#!!block;n#showGuideText#0" expanded="false" />
+            <element signature="e#35546#37123#0" expanded="false" />
+            <element signature="n#!!block;n#GetSlideAngle#0" expanded="false" />
+            <element signature="n#!!block;n#GetSlideDirection#0" expanded="false" />
+            <element signature="n#!!block;n#bindJumpNative#0" expanded="false" />
+            <element signature="e#45981#47385#0" expanded="false" />
+            <element signature="e#47518#48203#0" expanded="false" />
+            <element signature="n#!!block;n#noTokenHandle#0" expanded="false" />
+            <element signature="n#!!block;n#fsjz#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/date2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2475">
+          <caret line="165" column="52" lean-forward="false" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#7;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2025">
+          <caret line="135" column="54" lean-forward="false" selection-start-line="135" selection-start-column="54" selection-end-line="135" selection-end-column="54" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/sn2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="129" column="91" lean-forward="false" selection-start-line="129" selection-start-column="91" selection-end-line="129" selection-end-column="91" />
+          <folding>
+            <element signature="n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
+            <element signature="n#script#3;n#!!top" expanded="false" />
+            <element signature="e#10410#10522#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/total2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="250" column="24" lean-forward="true" selection-start-line="250" selection-start-column="24" selection-end-line="250" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
