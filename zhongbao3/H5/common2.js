@@ -39,6 +39,8 @@ $.ajaxSetup({
 });
 
 // init.js
+$('#next,#indistinct').prop('disabled',true);
+
 var flag = 0;
 // loading加载框出现
 $("#showMes").fadeIn();
@@ -95,7 +97,7 @@ $(document).ajaxStart(function(){}).ajaxStop(function(){
   if(loadImg && getStr){
     // if(loadImg && getStr && lotteryLoad){
     $("#showMes").fadeOut(500);
-    $('#next,#indistinct').prop('disabled',false);
+    // $('#next,#indistinct').prop('disabled',false);
     flag = 0;
   }
 });
@@ -180,7 +182,7 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
         console.log("url + 'token/project/' + projectId + '/newtask' success");
         console.log(data);
         if(data.code == 808){
-          $("#showMes").fadeOut(500);
+          $("#showMes").fadeOut(400);
           console.log('data.code: 808');
           var overtime = data['body']['latest_end_time'];
           if(overtime.substring(0,4)=='2100'){
@@ -1123,13 +1125,13 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
 
 // ready.js
 function getDataFail() {
-  $("#showMes").fadeOut(500);
+  $("#showMes").fadeOut(400);
   flag = 0;
   $("#failData").css('position','fixed').fadeIn();
   flag = 1;
 }
 $('#dataFail').off(touchstart).on(touchstart, function () {
-  $('#failData').fadeOut(500,function () {
+  $('#failData').fadeOut(400,function () {
     $(this).css('position','absolute');
   });
   flag = 0;
@@ -1153,12 +1155,12 @@ $('.showInfo').bind('keydown', function (e) {
 });
 function showGuideText() {
   $('#guideTips').fadeIn().on('click',function () {
-    $(this).fadeOut(500);
+    $(this).fadeOut(400);
   });
   var guideTextTimer = setTimeout(function () {
     clearTimeout(guideTextTimer);
     if(!$('#guideTips').is(':hidden')){
-      $('#guideTips').fadeOut(500);
+      $('#guideTips').fadeOut(400);
     }
   },2000);
 }
@@ -1334,8 +1336,8 @@ function imgHandleFn(task) {
       if(loadImg && getStr){
         // if(loadImg && getStr && lotteryLoad){
         console.log('图片和ajax请求均完成');
-        $("#showMes").fadeOut(500);
-        $('#next,#indistinct').prop('disabled',false);
+        $("#showMes").fadeOut(400);
+        // $('#next,#indistinct').prop('disabled',false);
         flag = 0;
       }
     }
@@ -1542,13 +1544,13 @@ function bindJumpNative(projectName) {
         $("#showMes").fadeIn();
         flag = 1;
         $('#rwzyImg').load(function () {
-          $("#showMes").fadeOut(500);
+          $("#showMes").fadeOut(400);
           flag = 0;
           $('#rwzy').fadeIn();
         });
         $('#rwzyImg').attr('src', nowImgArr[i]);
       }else{
-        $('#rwzy').fadeOut(500);
+        $('#rwzy').fadeOut(400);
       }
     });
   });
@@ -1613,7 +1615,7 @@ function noTokenHandle() {
 //单击未登录的取消按钮
   $('#cacelBtn').off(touchstart).on(touchstart,function () {
     flag = 0;
-    $('#toLogin>div').fadeOut(500,function () {
+    $('#toLogin>div').fadeOut(400,function () {
       $('#toLogin').removeClass().addClass('bgHide').css('position','absolute');
     });
 
@@ -1626,7 +1628,7 @@ function noTokenHandle() {
       clearInterval(toLoginTimer);
       $('#loginBtn').off(touchstart).on(touchstart,function () {
         flag = 0;
-        $('#toLogin>div').fadeOut(500,function () {
+        $('#toLogin>div').fadeOut(400,function () {
           $('#toLogin').removeClass().addClass('bgHide').css('position','absolute');
         });
         console.log('loginBtnTouchstart');
@@ -1646,6 +1648,8 @@ function noTokenHandle() {
 function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
   if (answer["text"]) {
     pybossa.saveTask(task, answer).done(function (data) {
+      // console.log('nnn: '+nnn);
+      // nnn=0;
       console.log('saveTask: ' + data);
       console.log(data);
       $('.pinch-zoom-container').css('height', 'auto');
@@ -1659,7 +1663,7 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
         $('#taskTimeout').css('position','fixed').fadeIn();
         flag = 1;
         $('#timeoutBtn').off(touchstart).on(touchstart, function () {
-          $('#taskTimeout').fadeOut(500,function () {
+          $('#taskTimeout').fadeOut(400,function () {
             $(this).css('position','absolute');
           });
           flag = 0;
@@ -1676,7 +1680,7 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
         $('#taskTimeout').css('position','fixed').fadeIn();
         flag = 1;
         $('#timeoutBtn').off(touchstart).on(touchstart, function () {
-          $('#taskTimeout').fadeOut(500,function () {
+          $('#taskTimeout').fadeOut(400,function () {
             $(this).css('position','absolute');
           });
           flag = 0;
@@ -1688,10 +1692,10 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
     });
   }
   else {
-    $("#showMes").fadeOut(500);
+    $("#showMes").fadeOut(400);
     flag = 0;
     $('#answerTipBtn').off(touchstart).on(touchstart, function () {
-      $('#answerTip').fadeOut(500,function () {
+      $('#answerTip').fadeOut(400,function () {
         $(this).css('position','absolute');
       });
       flag = 0;
@@ -1742,7 +1746,7 @@ function fsjz(k, q, deferred) {
   }
   $('#kqfs').css('position','fixed').fadeIn();
   $('#kqfs .kqqr').on(touchstart,function () {
-    $('#kqfs').fadeOut(500,function () {
+    $('#kqfs').fadeOut(400,function () {
       $(this).css('position','absolute');
     });
     if(k==1 || k==2){

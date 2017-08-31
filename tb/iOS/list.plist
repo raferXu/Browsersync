@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>items</key>
+    <array>
+      <dict>
+        <key>assets</key>
+        <array>
+          <dict>
+            <key>kind</key>
+            <string>software-package</string>
+            <key>url</key>
+            <string>https://pazb.pingan.com.cn/token/file/ffbb957b978d99d5555c2ca7368db93c</string>
+          </dict>
+        </array>
+        <key>metadata</key>
+        <dict>
+          <key>bundle-identifier</key>
+          <string>com.pingan.mobilepamo</string>
+          <key>bundle-version</key>
+          <string>2.0.7</string>
+          <key>kind</key>
+          <string>software</string>
+          <key>title</key>
+          <string>mobileOffice_iphone</string>
+        </dict>
+      </dict>
+    </array>
+  </dict>
+</plist>

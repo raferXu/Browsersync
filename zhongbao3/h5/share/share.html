@@ -112,12 +112,10 @@
       background-size: .34rem .34rem;
     }
     #openBtn{
-      display: inline-block;
       width: .55rem;
       height: .28rem;
       line-height: .3rem;
       text-align: center;
-      text-decoration: none;
       border: 1px solid #fff;
       border-radius: 5px;
     }
@@ -154,11 +152,9 @@
     <p class="codeP">扫一扫或长按指纹二维码下载APP</p>
   </div>
 </main>
-<!--<iframe onload="javascript:alert(12)" style="display: block" src="intent://pacrowd" frameborder="1" width="500" height="500"></iframe>-->
-<!--<iframe onload="javascript:alert(12)" style="display: block" src="pacrowd://com.pingan.crowdsourcing" frameborder="1" width="500" height="500"></iframe>-->
 <footer>
   <div id="name">平安众包</div>
-  <a id="openBtn">打开</a>
+  <div id="openBtn">下载</div>
 </footer>
 <script src="../js/jquery.1.7.2.min.js"></script>
 <script type="text/javascript" src="qrcode.js"></script>
@@ -167,129 +163,18 @@
     width : 150,
     height : 150
   });
-//  var url = location.origin+'/token/qr/lead_to_download_url';
-  var url = 'https://pazb.pingan.com.cn/token/qr/lead_to_download_url';
+  var url = location.origin+'/token/qr/lead_to_download_url';
   qrcode.makeCode(url);
 
   var ifrSrc,isAndroid=navigator.userAgent.match(/android/i);
   if(isAndroid){
     ifrSrc = 'pacrowd://com.pingan.crowdsourcing';
-
-//    $('#openBtn').click(function() {
-////      $('#openBtn').attr('href',ifrSrc).click(function() {
-////      setTimeout(function() {
-////        location.href = url;
-////      }, 3000);
-//
-//      function openApp(openUrl, appUrl, callback) {
-//        // 检查 app 是否打开
-//        function checkOpen(cb){
-//          var _clickTime = +(new Date());
-//          function check(elsTime) {
-//            if ( elsTime > 3000 || document.hidden || document.webkitHidden) {
-//              cb(1);
-//            } else {
-//              cb(0);
-//            }
-//          }
-//          // 启动间隔 20ms 运行的定时器，并检测累计消耗时间是否超过 3000ms，超过则结束
-//          var _count = 0, intHandle;
-//          intHandle = setInterval(function(){
-//            _count++;
-//            var elsTime = +(new Date()) - _clickTime;
-//            if (_count>=100 || elsTime > 3000 ) {
-//              clearInterval(intHandle);
-//              check(elsTime);
-//            }
-//          }, 20);
-//        }
-//
-//        // 在 iframe 中打开 app
-//        var ifr = document.createElement('iframe');
-//        ifr.src = openUrl;
-//        ifr.style.display = 'none';
-//        if (callback) {
-//          checkOpen(function(opened){
-//            callback && callback(opened);
-//          });
-//        }
-//
-//        document.body.appendChild(ifr);
-//        setTimeout(function() {
-//          document.body.removeChild(ifr);
-//        }, 2000);
-//      }
-//
-//      openApp(ifrSrc,url,function (a) {
-////        alert(a);
-//        if(a===0){
-//          location.href = ifrSrc;
-//        }else{
-//          alert('a != 0');
-//        }
-//      });
-//
-//    });
-
-    $('#openBtn').click(function() {
-
-//      setTimeout(function () {
-      $.ajax({
-        async:false,
-        url: ifrSrc
-      }).done(function (data) {
-        alert('done');
-//      location.href = ifrSrc;  //如果超时就跳转到app下载页
-      }).fail(function (err) {
-        alert(err);
-        console.log(err);
-//      location.href = url;
-      });
-//      },0);
-
-//      location.href = ifrSrc;
-//      setTimeout(function() {
-//        location.href = url;
-//      }, 300);
-//
-//      setTimeout(function() {
-//        location.reload();
-//      }, 1000);
-
-    });
-
   }else{
-    ifrSrc = 'pacrowdsourcing://pacrowdsourcing.pingan.com';
-
-    $('#openBtn').click(function() {
-
-//      setTimeout(function () {
-        $.ajax({
-          async:false,
-          url: ifrSrc
-        }).done(function (data) {
-          alert('done');
-//      location.href = ifrSrc;  //如果超时就跳转到app下载页
-        }).fail(function (err) {
-          alert(err);
-          console.log(err);
-//      location.href = url;
-        });
-//      },0);
-
-//      location.href = ifrSrc;
-//      setTimeout(function() {
-//        location.href = url;
-//      }, 300);
-//
-//      setTimeout(function() {
-//        location.reload();
-//      }, 1000);
-
-    });
-
+    ifrSrc = 'pacrowdsourcing://com.pingan.pacrowdsourcing';
   }
-//  location.href = ifrSrc;
+  $('#openBtn').click(function () {
+    window.location.href=url;//如果超时就跳转到app下载页
+  });
 
 </script>
 </body>

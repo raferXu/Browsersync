@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>平安众包APP下载</title>
+  <meta name="viewport" content="width=640,target-densitydpi=320,user-scalable=no,maximum-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta charset="utf-8">
+  <style type="text/css">
+    body {
+      min-width: 640px;
+      min-height:1136px;
+      margin: 0 auto;
+      padding:0px;
+      background:#F0F0F0;
+    }
+    .show_content{
+      width:100%;
+      min-height:1095px;
+    }
+    .bottom_text{
+      float:left;
+      width:100%;
+      height:100px;
+      line-height:100px;
+      font-size:32px;
+      color:#999999;
+      text-align:center;
+    }
+  </style>
+  <script type="text/javascript" src="js/jquery.1.7.2.min.js"></script>
+</head>
+<body style="background:#F0F4F7">
+<section class="show_content">
+  <p class="bottom_text" id="bottomText">现开始下载平安众包，<br/>请留意并在下载完毕后点击安装</p>
+</section>
+</body>
+<script type="text/javascript">
+  var page = {
+    init:function(){
+      this.sendData();
+      this.autoDownload();
+    },
+    autoDownload:function(){
+      var ua = navigator.userAgent.toUpperCase();
+      // 当前环境是否为Android平台
+      var isAndroid = ua.indexOf('ANDROID') != -1;
+      // 当前环境是否为IOS平台
+      var isIos = ua.indexOf('IPHONE OS') != -1;
+
+      var isIosPAD = ua.indexOf('MAC OS') != -1;
+
+      var isWeixin =ua.indexOf('MICROMESSENGER') != -1;
+
+      //这里修改测试包地址
+      var iosUrl ="itms-services:///?action=download-manifest&url="+location.origin+"/static/h5/list.plist";
+      var androidUrl ="https://download.pingan.com.cn/app/android/PAMO/prd/MobileOffice4.4.1.apk";
+      //这里修改测试包地址
+
+
+      if(isIos==true || isIosPAD==true){
+        if(isWeixin==true){
+          var el = document.getElementById('bottomText');
+          el.innerHTML='请点击右上角并选择“在浏览器中打开”<br/>或者 使用专业扫描软件进行扫描安装。';
+        }
+        else{
+          window.location.href=iosUrl;
+        }
+      }else if(isAndroid==true){
+        if(isWeixin==true){
+          var el = document.getElementById('bottomText');
+          el.innerHTML='请点击右上角并选择“在浏览器中打开”<br/>或者 使用专业扫描软件进行扫描安装。';
+        }else{
+          window.location.href=androidUrl;
+        }
+      }else{
+        if(isWeixin==true){
+          var el = document.getElementById('bottomText');
+          el.innerHTML='请点击右上角并选择“在浏览器中打开”<br/>或者 使用专业扫描软件进行扫描安装。';
+        }else{
+          window.location.href=androidUrl;
+        }
+      }
+    },
+    sendData:function(){
+      var self = this;
+      var location = window.location.href;
+      var source = self.getQueryString("t") || "";
+      if(location.indexOf("stg") != -1){
+        var url = "https://test-peimc-monitor.pa18.com:7443/hm-aggregate/rest/buriedpoint/twoDimension/uploadQRCode";
+        var stype = 0;
+        if(location.indexOf("test") != -1){
+          var stype = 1;
+        }
+      }
+      else{
+        var url = "https://peimc-monitor.pa18.com:7443/hm-aggregate/rest/buriedpoint/twoDimension/uploadQRCode";
+        var stype = 0;
+        if(location.indexOf("test") != -1){
+          var stype = 1;
+        }
+      }
+      $.ajax({
+        url:url,
+        data:{
+          "source":source,
+          "stype":stype
+        },
+        dataType:"json",
+        type:"post",
+        success:function(res){
+          console.log(res)
+        },
+        error:function(res){
+          console.log(res)
+        }
+      })
+    },
+    getQueryString:function (name) {
+      var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+      var r = window.location.search.substr(1).match(reg);
+      if (r != null) {
+        return unescape(r[2]);
+      }
+      return null;
+    }
+  };
+  page.init();
+</script>
+</html>

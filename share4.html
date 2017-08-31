@@ -1,65 +1,182 @@
-<!DOCTYPE html>  
-<html>  
-<head>  
-    <title>IOS 通过浏览器打开App(看美)</title>  
-    <meta charset="utf-8">  
-    <style type="text/css">  
-        .back{  
-            position:absolute; top:50px;left:360px;float:left;  
-  
-        }  
-    </style>  
-</head>  
-<body>  
-    <div class="back">
-        <a href="https://pazb.pingan.com.cn/token/qr/lead_to_download_url">下载或打开APP</a>
-    </div>
-    <script src="zhongbao3/h5/js/jquery.1.7.2.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=pacrowdsourcing://com.pingan.pacrowdsourcing">
+    <meta name=viewport content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width,minimal-ui">
+    <title>平安众包</title>
     <script>
-      openApp('pacrowd://com.pingan.crowdsourcing','https://pazb.pingan.com.cn/token/qr/lead_to_download_url','',function (a) {
-        if(!a){
-          location.href = 'https://pazb.pingan.com.cn/token/qr/lead_to_download_url';
-//          location.href = 'https://www.baidu.com';
-        }
-      });
-      function openApp(openUrl, appUrl, action, callback) {
-        //检查app是否打开
-        function checkOpen(cb){
-          var _clickTime = +(new Date());
-          function check(elsTime) {
-            if ( elsTime > 3000 || document.hidden || document.webkitHidden) {
-              cb(1);
-            } else {
-              cb(0);
-            }
-          }
-          //启动间隔20ms运行的定时器，并检测累计消耗时间是否超过3000ms，超过则结束
-          var _count = 0, intHandle;
-          intHandle = setInterval(function(){
-            _count++;
-            var elsTime = +(new Date()) - _clickTime;
-            if (_count>=100 || elsTime > 3000 ) {
-              clearInterval(intHandle);
-              check(elsTime);
-            }
-          }, 20);
-        }
-
-        //在iframe 中打开APP
-        var ifr = document.createElement('iframe');
-        ifr.src = openUrl;
-        ifr.style.display = 'none';
-        if (callback) {
-          checkOpen(function(opened){
-            callback && callback(opened);
-          });
-        }
-
-        document.body.appendChild(ifr);
-        setTimeout(function() {
-          document.body.removeChild(ifr);
-        }, 2000);
+      function htmlFontSize(){
+        var html = document.querySelector("html");
+        var width = html.getBoundingClientRect().width;
+        html.style.fontSize = width / 3.75 + "px";
       }
+      htmlFontSize();
     </script>
-</body>  
-</html>  
+    <style>
+        /*common*/
+        body, ul, li, h3, p{
+            margin: 0;
+        }
+        ul{
+            padding: 0;
+            list-style: none;
+        }
+        img{
+            border: 0;
+            vertical-align: top;
+        }
+        /*page*/
+        html {
+            width: 100%;
+            height: 100%;
+            font-size: 100px;
+        }
+        body {
+            width: 100%;
+            height: 100%;
+            color: #323232;
+            background-color: #FFF;
+            font-size: .14rem;
+            overflow: hidden;
+        }
+        main{
+            position: absolute;
+            top: 0;
+            /*bottom: .6rem;*/
+            bottom: 0;
+            padding-bottom: .6rem;
+            width: 100%;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+        nav{width: 100%;}
+        #banner{
+            width: 100%;
+        }
+        footer{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: .6rem;
+            line-height: .6rem;
+            padding-left: .15rem;
+            padding-right: .14rem;
+            background: rgba(0,0,0,.7);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            display: -webkit-box;
+            -webkit-box-pack: justify;
+            -webkit-box-align: center;
+        }
+        #showList{
+            display: flex;
+            justify-content: space-between;
+            display: -webkit-box;
+            -webkit-box-pack: justify;
+            margin: .3rem .2rem .6rem;
+        }
+        .showLi{
+            text-align: center;
+        }
+        .showImg{
+            width: .52rem;
+        }
+        .showT{
+            font-size: .18rem;
+            color: #ff6000;
+            font-weight: 300;
+        }
+        .showT, .showP{
+            line-height: 1.8;
+        }
+        #codeBox{
+            text-align: center;
+        }
+        #qrcode{
+            width: 1.5rem;
+            height: 1.5rem;
+            margin: 0 auto;
+        }
+        .codeP{
+            margin: .15rem 0 .35rem;
+        }
+        #name, #openBtn{
+            color: #fff;
+        }
+        #name{
+            padding-left: .42rem;
+            font-size: .18rem;
+            background: url("icon.png") no-repeat center left;
+            background-size: .34rem .34rem;
+        }
+        #openBtn{
+            width: .55rem;
+            height: .28rem;
+            line-height: .3rem;
+            text-align: center;
+            border: 1px solid #fff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<header></header>
+<main>
+    <nav>
+        <img id="banner" src="banner.png" alt="banner">
+    </nav>
+    <ul id="showList">
+        <li class="showLi">
+            <img class="showImg" src="task.png" alt="task">
+            <h3 class="showT">任务简单</h3>
+            <p class="showP">结合人工智能</p>
+            <p class="showP">一秒上手</p>
+        </li>
+        <li class="showLi">
+            <img class="showImg" src="money.png" alt="money">
+            <h3 class="showT">操作简易</h3>
+            <p class="showP">轻轻松松躺着</p>
+            <p class="showP">赚钱不是梦</p>
+        </li>
+        <li class="showLi">
+            <img class="showImg" src="record.png" alt="record">
+            <h3 class="showT">奖励丰厚</h3>
+            <p class="showP">积分价值最高</p>
+            <p class="showP">可达40元/时</p>
+        </li>
+    </ul>
+    <div id="codeBox">
+        <div id="qrcode"></div>
+        <p class="codeP">扫一扫或长按指纹二维码下载APP</p>
+    </div>
+</main>
+<footer>
+    <div id="name">平安众包</div>
+    <div id="openBtn">下载</div>
+</footer>
+<script src="zhongbao3/h5/js/jquery.1.7.2.min.js"></script>
+<script type="text/javascript" src="zhongbao3/h5/share/qrcode.js"></script>
+<script>
+  var qrcode = new QRCode(document.getElementById("qrcode"), {
+    width : 150,
+    height : 150
+  });
+  var url = location.origin+'/token/qr/lead_to_download_url';
+  qrcode.makeCode(url);
+
+  var ifrSrc,isAndroid=navigator.userAgent.match(/android/i);
+  if(isAndroid){
+    ifrSrc = 'pacrowd://com.pingan.crowdsourcing';
+  }else{
+    ifrSrc = 'pacrowdsourcing://com.pingan.pacrowdsourcing';
+  }
+  $('#openBtn').click(function () {
+    window.location.href=url;//如果超时就跳转到app下载页
+  });
+
+</script>
+</body>
+</html>
