@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/echarts/echarts-resize.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/echarts/echarts.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/echarts/jquery.1.7.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iOS/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/sn2.html" afterPath="$PROJECT_DIR$/5010/sn2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tb/iOS/1.html" afterPath="$PROJECT_DIR$/tb/iOS/1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.css" afterPath="$PROJECT_DIR$/zhongbao3/H5/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.less" afterPath="$PROJECT_DIR$/zhongbao3/H5/common.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.min.css" afterPath="$PROJECT_DIR$/zhongbao3/H5/common.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common2.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/common2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/inputSwipe.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/inputSwipe.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/num.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/num.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/inputSwipe.min.js" afterPath="$PROJECT_DIR$/zhongbao3/h5/inputSwipe.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/total2.html" afterPath="$PROJECT_DIR$/5010/total2.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -191,10 +177,10 @@
         <option value="$PROJECT_DIR$/echarts/1.html" />
         <option value="$PROJECT_DIR$/echarts/echarts-resize.html" />
         <option value="$PROJECT_DIR$/5010/sn2.html" />
-        <option value="$PROJECT_DIR$/zhongbao3/h5/zb2.js" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/common.less" />
-        <option value="$PROJECT_DIR$/5010/total2.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/dateScroll.js" />
+        <option value="$PROJECT_DIR$/5010/total2.html" />
+        <option value="$PROJECT_DIR$/zhongbao3/h5/zb2.js" />
       </list>
     </option>
   </component>
@@ -208,8 +194,8 @@
     <handled-path value="$PROJECT_DIR$/webpack sample project/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="142" />
-    <option name="y" value="101" />
+    <option name="x" value="156" />
+    <option name="y" value="165" />
     <option name="width" value="1087" />
     <option name="height" value="688" />
   </component>
@@ -529,15 +515,15 @@
       <workItem from="1503970380706" duration="54937000" />
       <workItem from="1504366040938" duration="9000" />
       <workItem from="1504366219407" duration="6000" />
-      <workItem from="1504488027446" duration="5396000" />
+      <workItem from="1504488027446" duration="5749000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1537234000" />
+    <option name="totallyTimeSpent" value="1537587000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="142" y="101" width="1087" height="688" extended-state="0" />
+    <frame x="156" y="165" width="1087" height="688" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1057,26 +1043,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/5010/date2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="167" column="16" lean-forward="false" selection-start-line="167" selection-start-column="6" selection-end-line="167" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/zb2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        <state relative-caret-position="195">
+          <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/5010/total2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="69" lean-forward="true" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/5010/date2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="167" column="16" lean-forward="false" selection-start-line="167" selection-start-column="6" selection-end-line="167" selection-end-column="16" />
+        <state relative-caret-position="139">
+          <caret line="225" column="43" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -12,7 +12,8 @@ function keyboardEvent(str) {
   strArr = str.split('');
   $('#answerInput').off(touchstart).on(touchstart, function(e) {
     e.preventDefault();
-    $('#keyboardWrap').show();
+    $('#keyboardWrap').css('top',$(document).scrollTop()+'px').show();
+    // alert($(document).scrollTop());
     $('.keyboard').animate({'bottom': 0},function () {
       $(document).on(touchend, function(e) {
         var delTimer3 = setTimeout(function () {
