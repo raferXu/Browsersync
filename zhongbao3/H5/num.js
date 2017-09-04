@@ -36,6 +36,9 @@ function setInputVal(task,n,ds,blockStr) {
     };
     aInput[i].onkeyup = function () {
       this.blur();
+      // if(this.value.length>1){
+      //   this.value = this.value.slice(0,1);
+      // }
     };
   }
 }

@@ -24,6 +24,7 @@ $('#codeLockWrap').off('touchend').on('touchend',function (e) {
       $('#codeLockWrap input').each(function (i,v) {
         // console.log(arr[i]);
         $(this).val(arr[i]);
+        $(this).blur();
       });
       break;
     case 4:
@@ -38,6 +39,7 @@ $('#codeLockWrap').off('touchend').on('touchend',function (e) {
       $('#codeLockWrap input').each(function (i,v) {
         // console.log(arr[i]);
         $(this).val(arr[i]);
+        $(this).blur();
       });
       break;
   }

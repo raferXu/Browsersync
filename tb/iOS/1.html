@@ -25,13 +25,15 @@
       font-size:32px;
       color:#999999;
       text-align:center;
+      box-sizing: border-box;
+      padding: 0 10px;
     }
   </style>
-  <script type="text/javascript" src="js/jquery.1.7.2.min.js"></script>
+  <script type="text/javascript" src="https://mo.pa18.com/pamowebnl/lottery/js/jquery.min.js"></script>
 </head>
 <body style="background:#F0F4F7">
 <section class="show_content">
-  <p class="bottom_text" id="bottomText">现开始下载平安众包，<br/>请留意并在下载完毕后点击安装</p>
+  <p class="bottom_text" id="bottomText">现开始下载平安众包，<br/>请留意并在下载完毕后点击安装<br/>安装完成后，请点击<b>［设置］</b>－><b>［通用］</b>－> <b>［描述文件与设备管理］</b> －> <b><br/>［Ping An Insurance(Group)］</b> －> <br/>点击"信任Ping An Insurance(Group)" －> <br/><b style="color:red">信任</b>，即可使用平安众包</p>
 </section>
 </body>
 <script type="text/javascript">
@@ -52,7 +54,7 @@
       var isWeixin =ua.indexOf('MICROMESSENGER') != -1;
 
       //这里修改测试包地址
-      var iosUrl ="itms-services:///?action=download-manifest&url="+location.origin+"/static/h5/list.plist";
+      var iosUrl ="itms-services:///?action=download-manifest&url="+location.origin+"/static/h5/ios_v01.plist";
       var androidUrl ="https://download.pingan.com.cn/app/android/PAMO/prd/MobileOffice4.4.1.apk";
       //这里修改测试包地址
 
@@ -93,7 +95,7 @@
         }
       }
       else{
-        var url = "https://peimc-monitor.pa18.com:7443/hm-aggregate/rest/buriedpoint/twoDimension/uploadQRCode";
+        var url = "https://peimc-monitor.pa18.com:7443/hm-aggregate/rest/buriedpoint/twoDimension/uploadQRCode"
         var stype = 0;
         if(location.indexOf("test") != -1){
           var stype = 1;

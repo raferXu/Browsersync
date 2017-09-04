@@ -20,6 +20,7 @@ function datePlugin(blockStr,minYear,maxYear) {
   $("#appDate").mobiscroll($.extend(opt['date'], opt['default']));
 
   if(android){
+    jobTask.datePickerShow(false);  //页面加载先让能滑动
     $("#appDate").on(touchstart,function () {
       if(android){
         console.log('datePickerShow(true)');

@@ -1204,8 +1204,7 @@ pybossa.taskLoaded(function(task, deferred) {
     if(!/^\/token\/img/.test(imgUrl)){
       // getImgFn();
     }else{
-      img.load(function() {
-      });
+      img.load(function() {});
       img.attr('src', imgUrl).css('height', 'auto');
       task.info.image = img[0];
       deferred.resolve(task);

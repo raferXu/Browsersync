@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/echarts/echarts-resize.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/echarts/echarts.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/echarts/jquery.1.7.2.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tb/iOS/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/sn2.html" afterPath="$PROJECT_DIR$/5010/sn2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tb/iOS/1.html" afterPath="$PROJECT_DIR$/tb/iOS/1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.css" afterPath="$PROJECT_DIR$/zhongbao3/H5/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.less" afterPath="$PROJECT_DIR$/zhongbao3/H5/common.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common.min.css" afterPath="$PROJECT_DIR$/zhongbao3/H5/common.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/common2.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/common2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/inputSwipe.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/inputSwipe.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/H5/num.js" afterPath="$PROJECT_DIR$/zhongbao3/H5/num.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhongbao3/h5/inputSwipe.min.js" afterPath="$PROJECT_DIR$/zhongbao3/h5/inputSwipe.min.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,112 +34,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="iOS.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tb/iOS/iOS.html">
+      <file leaf-file-name="echarts-resize.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/echarts/echarts-resize.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common2.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="1339" column="57" lean-forward="true" selection-start-line="1339" selection-start-column="57" selection-end-line="1339" selection-end-column="57" />
+            <state relative-caret-position="435">
+              <caret line="47" column="47" lean-forward="false" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="47" />
               <folding>
-                <element signature="n#!!block;n#loadDisqus#0" expanded="false" />
-                <element signature="e#622#1028#0" expanded="false" />
-                <element signature="e#1424#1545#0" expanded="false" />
-                <element signature="e#1700#1826#0" expanded="false" />
-                <element signature="n#!!block;n#isAndroidFn#0" expanded="false" />
-                <element signature="e#2202#2317#0" expanded="false" />
-                <element signature="e#2404#2598#0" expanded="false" />
-                <element signature="n#!!block;n#htmlFontSize#0" expanded="false" />
-                <element signature="e#2827#2848#0" expanded="false" />
-                <element signature="e#2895#3069#0" expanded="false" />
-                <element signature="e#3127#3229#0" expanded="false" />
-                <element signature="e#3286#9524#0" expanded="false" />
-                <element signature="e#9606#34490#0" expanded="false" />
-                <element signature="n#!!block;n#getDataFail#0" expanded="false" />
-                <element signature="e#34708#34812#0" expanded="false" />
-                <element signature="n#!!block;n#imgLoaded#0" expanded="false" />
-                <element signature="n#!!block;n#getTokenAndPort#0" expanded="false" />
-                <element signature="e#35087#35193#0" expanded="false" />
-                <element signature="n#!!block;n#showGuideText#0" expanded="false" />
-                <element signature="e#35546#37123#0" expanded="false" />
-                <element signature="n#!!block;n#GetSlideAngle#0" expanded="false" />
-                <element signature="n#!!block;n#GetSlideDirection#0" expanded="false" />
-                <element signature="n#!!block;n#showPageData#0" expanded="false" />
-                <element signature="n#!!block;n#bindJumpNative#0" expanded="false" />
-                <element signature="e#45981#47385#0" expanded="false" />
-                <element signature="e#47518#48203#0" expanded="false" />
-                <element signature="n#!!block;n#noTokenHandle#0" expanded="false" />
-                <element signature="n#!!block;n#fsjz#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="date2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/5010/date2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2475">
-              <caret line="165" column="52" lean-forward="false" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#7;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hospital2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2025">
-              <caret line="135" column="54" lean-forward="false" selection-start-line="135" selection-start-column="54" selection-end-line="135" selection-end-column="54" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sn2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/5010/sn2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="915">
-              <caret line="129" column="91" lean-forward="false" selection-start-line="129" selection-start-column="91" selection-end-line="129" selection-end-column="91" />
-              <folding>
-                <element signature="n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
-                <element signature="n#script#3;n#!!top" expanded="false" />
-                <element signature="e#10410#10522#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="total2.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/5010/total2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="250" column="24" lean-forward="true" selection-start-line="250" selection-start-column="24" selection-end-line="250" selection-end-column="24" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -147,23 +63,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>flag</find>
-      <find>falg</find>
-      <find>fixed</find>
-      <find>fadeOut</find>
-      <find>failData</find>
-      <find>answerTip</find>
-      <find>offLine</find>
-      <find>kqfs</find>
-      <find>keyboardWrap</find>
-      <find>dataFail</find>
       <find>toLogin</find>
       <find>808</find>
       <find>document.add</find>
       <find>appUrl</find>
       <find>action</find>
       <find>callback</find>
-      <find>console.log</find>
       <find>normalSubmit</find>
       <find>saveTask</find>
       <find>_saveTaskRun</find>
@@ -177,9 +82,19 @@
       <find>$</find>
       <find>快</find>
       <find>indistinct</find>
+      <find>kqfs</find>
+      <find>taskLoaded</find>
+      <find>console.log</find>
+      <find>getQueryString</find>
+      <find>token</find>
+      <find>keyboardWrap</find>
+      <find>_echarts_instance_</find>
+      <find>datePickerShow</find>
+      <find>jobTask</find>
+      <find>datePlugin</find>
+      <find>keyboardEvent</find>
     </findStrings>
     <replaceStrings>
-      <replace>5000</replace>
       <replace>showInfo</replace>
       <replace>codeLockWrap</replace>
       <replace>blockStr.str</replace>
@@ -209,6 +124,7 @@
       <replace>flag</replace>
       <replace>https://pazb.pingan.com.cn/token/file/81419ca6fbd5bd77eb6bd942546d8929</replace>
       <replace>400</replace>
+      <replace>//console.log</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/pybossa整理</dir>
@@ -228,15 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/CSS/CSS各种加载loading.html" />
-        <option value="$PROJECT_DIR$/JS/添加遮罩时禁止滚屏.html" />
-        <option value="$PROJECT_DIR$/zhongbao3/h5/total.less" />
-        <option value="$PROJECT_DIR$/zhongbao3/h5/common.less" />
-        <option value="$PROJECT_DIR$/code/700带图片的众包二维码.html" />
-        <option value="$PROJECT_DIR$/zhongbao3/h5/submit.js" />
-        <option value="$PROJECT_DIR$/zhongbao3/h5/submit2.js" />
-        <option value="$PROJECT_DIR$/zhongbao3/h5/submit3.js" />
-        <option value="$PROJECT_DIR$/H5/使用canvas在前端压缩图片实例页面.html" />
         <option value="$PROJECT_DIR$/H5/使用canvas在前端压缩图片实例页面2.html" />
         <option value="$PROJECT_DIR$/qrcodejs-master/promise.html" />
         <option value="$PROJECT_DIR$/qrcodejs-master/promiseTest.html" />
@@ -260,7 +167,6 @@
         <option value="$PROJECT_DIR$/tb/1.css" />
         <option value="$PROJECT_DIR$/tb/index.html" />
         <option value="$PROJECT_DIR$/tb/000.html" />
-        <option value="$PROJECT_DIR$/zhongbao3/h5/common2.js" />
         <option value="$PROJECT_DIR$/tb/3.html" />
         <option value="$PROJECT_DIR$/tb/pushState.html" />
         <option value="$PROJECT_DIR$/tb/xxx.html" />
@@ -273,12 +179,22 @@
         <option value="$PROJECT_DIR$/tb/iOS/list.html" />
         <option value="$PROJECT_DIR$/tb/iOS/list.plist" />
         <option value="$PROJECT_DIR$/tb/iOS/iOS.html" />
-        <option value="$PROJECT_DIR$/tb/iOS/1.html" />
         <option value="$PROJECT_DIR$/5010/hospital2.html" />
-        <option value="$PROJECT_DIR$/5010/total2.html" />
         <option value="$PROJECT_DIR$/5010/date2.html" />
-        <option value="$PROJECT_DIR$/5010/sn2.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/common.js" />
+        <option value="$PROJECT_DIR$/tb/iOS/test.html" />
+        <option value="$PROJECT_DIR$/tb/iOS/1.html" />
+        <option value="$PROJECT_DIR$/zhongbao3/h5/inputSwipe.js" />
+        <option value="$PROJECT_DIR$/xss.html" />
+        <option value="$PROJECT_DIR$/zhongbao3/h5/num.js" />
+        <option value="$PROJECT_DIR$/zhongbao3/h5/common2.js" />
+        <option value="$PROJECT_DIR$/echarts/1.html" />
+        <option value="$PROJECT_DIR$/echarts/echarts-resize.html" />
+        <option value="$PROJECT_DIR$/5010/sn2.html" />
+        <option value="$PROJECT_DIR$/zhongbao3/h5/zb2.js" />
+        <option value="$PROJECT_DIR$/zhongbao3/h5/common.less" />
+        <option value="$PROJECT_DIR$/5010/total2.html" />
+        <option value="$PROJECT_DIR$/zhongbao3/h5/dateScroll.js" />
       </list>
     </option>
   </component>
@@ -292,10 +208,10 @@
     <handled-path value="$PROJECT_DIR$/webpack sample project/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="44" />
-    <option name="y" value="42" />
+    <option name="x" value="142" />
+    <option name="y" value="101" />
     <option name="width" value="1087" />
-    <option name="height" value="738" />
+    <option name="height" value="688" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -312,6 +228,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -367,13 +284,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="echarts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Browersync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="5010" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -401,11 +331,11 @@
       <recent name="$PROJECT_DIR$/CSS" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/echarts" />
+      <recent name="$PROJECT_DIR$/tb/iOS" />
       <recent name="$PROJECT_DIR$/tb" />
       <recent name="$PROJECT_DIR$/zhongbao3/h5" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/qrcodejs-master/声纹二维码" />
-      <recent name="$PROJECT_DIR$/H5" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.pybossa-token原来.js">
@@ -596,23 +526,26 @@
       <workItem from="1503801799681" duration="14000" />
       <workItem from="1503883480732" duration="6950000" />
       <workItem from="1503914609132" duration="14000" />
-      <workItem from="1503970380706" duration="39347000" />
+      <workItem from="1503970380706" duration="54937000" />
+      <workItem from="1504366040938" duration="9000" />
+      <workItem from="1504366219407" duration="6000" />
+      <workItem from="1504488027446" duration="5396000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1516233000" />
+    <option name="totallyTimeSpent" value="1537234000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="44" y="42" width="1087" height="738" extended-state="0" />
+    <frame x="142" y="101" width="1087" height="688" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21818182" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22966507" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22910216" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24832214" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -735,59 +668,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/shengwen/promise封装ajax.html" />
-    <entry file="file://$PROJECT_DIR$/shengwen/promise并行执行异步任务.html" />
-    <entry file="file://$PROJECT_DIR$/shengwen/promise只需要获得先返回的结果即可.html" />
-    <entry file="file://$PROJECT_DIR$/../声纹二维码/录音demo.html" />
-    <entry file="file://$PROJECT_DIR$/shengwen/声纹二维码/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="254" column="43" lean-forward="false" selection-start-line="254" selection-start-column="43" selection-end-line="254" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/submit2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/dateScroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/js/mobiscroll_003x.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="627" column="27" lean-forward="false" selection-start-line="627" selection-start-column="21" selection-end-line="627" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/jq的data-token.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/jq的prop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/noTask.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="112" column="49" lean-forward="true" selection-start-line="112" selection-start-column="49" selection-end-line="112" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/noTask.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -845,15 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="151" lean-forward="false" selection-start-line="7" selection-start-column="151" selection-end-line="7" selection-end-column="151" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/share/share.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="155" column="27" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="180" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -861,7 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2886">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -869,15 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2916">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/zb2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" column="19" lean-forward="true" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -885,7 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="159" column="56" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -893,7 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -901,7 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-79">
           <caret line="38" column="61" lean-forward="true" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -909,7 +767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="158" column="15" lean-forward="false" selection-start-line="158" selection-start-column="15" selection-end-line="158" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,7 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,7 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-90">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -933,7 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-604">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -941,9 +795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
           <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
-          <folding>
-            <marker date="1504063788000" expanded="true" signature="2242:2289" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -951,7 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -959,9 +809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3">
           <caret line="21" column="88" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="88" />
-          <folding>
-            <marker date="1504073095000" expanded="true" signature="1393:1440" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -969,9 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1155">
           <caret line="77" column="128" lean-forward="false" selection-start-line="77" selection-start-column="128" selection-end-line="77" selection-end-column="128" />
-          <folding>
-            <marker date="1504080273000" expanded="true" signature="2313:2376" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -979,7 +823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -987,7 +830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -995,7 +837,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1003,7 +844,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1011,7 +851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1019,11 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="46" column="219" lean-forward="true" selection-start-line="46" selection-start-column="219" selection-end-line="46" selection-end-column="219" />
-          <folding>
-            <marker date="1504085140000" expanded="true" signature="1472:1539" ph="..." />
-            <marker date="1504085140000" expanded="true" signature="1472:1599" ph="..." />
-            <marker date="1504085140000" expanded="true" signature="1472:1624" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1031,70 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tb/iOS/list.plist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tb/iOS/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tb/iOS/iOS.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="1339" column="57" lean-forward="true" selection-start-line="1339" selection-start-column="57" selection-end-line="1339" selection-end-column="57" />
-          <folding>
-            <element signature="n#!!block;n#loadDisqus#0" expanded="false" />
-            <element signature="e#622#1028#0" expanded="false" />
-            <element signature="e#1424#1545#0" expanded="false" />
-            <element signature="e#1700#1826#0" expanded="false" />
-            <element signature="n#!!block;n#isAndroidFn#0" expanded="false" />
-            <element signature="e#2202#2317#0" expanded="false" />
-            <element signature="e#2404#2598#0" expanded="false" />
-            <element signature="n#!!block;n#htmlFontSize#0" expanded="false" />
-            <element signature="e#2827#2848#0" expanded="false" />
-            <element signature="e#2895#3069#0" expanded="false" />
-            <element signature="e#3127#3229#0" expanded="false" />
-            <element signature="e#3286#9524#0" expanded="false" />
-            <element signature="e#9606#34490#0" expanded="false" />
-            <element signature="n#!!block;n#getDataFail#0" expanded="false" />
-            <element signature="e#34708#34812#0" expanded="false" />
-            <element signature="n#!!block;n#imgLoaded#0" expanded="false" />
-            <element signature="n#!!block;n#getTokenAndPort#0" expanded="false" />
-            <element signature="e#35087#35193#0" expanded="false" />
-            <element signature="n#!!block;n#showGuideText#0" expanded="false" />
-            <element signature="e#35546#37123#0" expanded="false" />
-            <element signature="n#!!block;n#GetSlideAngle#0" expanded="false" />
-            <element signature="n#!!block;n#GetSlideDirection#0" expanded="false" />
-            <element signature="n#!!block;n#showPageData#0" expanded="false" />
-            <element signature="n#!!block;n#bindJumpNative#0" expanded="false" />
-            <element signature="e#45981#47385#0" expanded="false" />
-            <element signature="e#47518#48203#0" expanded="false" />
-            <element signature="n#!!block;n#noTokenHandle#0" expanded="false" />
-            <element signature="n#!!block;n#fsjz#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1135,56 +905,189 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/5010/date2.html">
+    <entry file="file://$PROJECT_DIR$/tb/iOS/iOS.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2475">
-          <caret line="165" column="52" lean-forward="false" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#7;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/share/share.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="165" column="59" lean-forward="true" selection-start-line="165" selection-start-column="29" selection-end-line="165" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tb/iOS/list.plist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tb/iOS/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xss.html" />
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/num.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="40" column="10" lean-forward="true" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/protocolNoHeader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="68" column="6" lean-forward="true" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tb/iOS/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts/echarts.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts/jquery.1.7.2.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/5010/hospital2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2025">
-          <caret line="135" column="54" lean-forward="false" selection-start-line="135" selection-start-column="54" selection-end-line="135" selection-end-column="54" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1436">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/inputSwipe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/5010/sn2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="129" column="91" lean-forward="false" selection-start-line="129" selection-start-column="91" selection-end-line="129" selection-end-column="91" />
+        <state relative-caret-position="223">
+          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
-            <element signature="n#script#3;n#!!top" expanded="false" />
-            <element signature="e#10410#10522#0" expanded="false" />
+            <element signature="e#10505#10617#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="1198" column="7" lean-forward="false" selection-start-line="1198" selection-start-column="7" selection-end-line="1198" selection-end-column="7" />
+          <folding>
+            <element signature="n#!!block;n#loadDisqus#0" expanded="false" />
+            <element signature="e#622#1028#0" expanded="false" />
+            <element signature="e#1424#1545#0" expanded="false" />
+            <element signature="e#1700#1826#0" expanded="false" />
+            <element signature="n#!!block;n#isAndroidFn#0" expanded="false" />
+            <element signature="e#2202#2317#0" expanded="false" />
+            <element signature="e#2404#2598#0" expanded="false" />
+            <element signature="n#!!block;n#htmlFontSize#0" expanded="false" />
+            <element signature="e#2827#2848#0" expanded="false" />
+            <element signature="e#2895#3069#0" expanded="false" />
+            <element signature="e#3127#3229#0" expanded="false" />
+            <element signature="e#3286#9524#0" expanded="false" />
+            <element signature="n#!!block;n#getDataFail#0" expanded="false" />
+            <element signature="e#34708#34812#0" expanded="false" />
+            <element signature="n#!!block;n#imgLoaded#0" expanded="false" />
+            <element signature="n#!!block;n#getTokenAndPort#0" expanded="false" />
+            <element signature="e#35087#35193#0" expanded="false" />
+            <element signature="n#!!block;n#showGuideText#0" expanded="false" />
+            <element signature="n#!!block;n#GetSlideAngle#0" expanded="false" />
+            <element signature="n#!!block;n#GetSlideDirection#0" expanded="false" />
+            <element signature="n#!!block;n#showPageData#0" expanded="false" />
+            <element signature="n#!!block;n#bindJumpNative#0" expanded="false" />
+            <element signature="e#45974#47378#0" expanded="false" />
+            <element signature="e#47511#48196#0" expanded="false" />
+            <element signature="n#!!block;n#noTokenHandle#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="65" column="29" lean-forward="true" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/num2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/dateScroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="26" column="37" lean-forward="true" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/zb2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/5010/total2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="250" column="24" lean-forward="true" selection-start-line="250" selection-start-column="24" selection-end-line="250" selection-end-column="24" />
+        <state relative-caret-position="15">
+          <caret line="1" column="69" lean-forward="true" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/date2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="167" column="16" lean-forward="false" selection-start-line="167" selection-start-column="6" selection-end-line="167" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts/echarts-resize.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="47" column="47" lean-forward="false" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="47" />
           <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#6;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
