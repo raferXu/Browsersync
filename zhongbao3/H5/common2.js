@@ -186,17 +186,14 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
           console.log('data.code: 808');
           var overtime = data['body']['latest_end_time'];
           if(overtime.substring(0,4)=='2100'){
-            $('#fsText').html("您的账号因存在严重的刷分行为已被永久封停。");
+            $('#fhcl .text').html("您的账号因存在严重的刷分行为已被永久封停。");
             flag = 1;
           }else{
-            $('#fsText').html("您的账号因存在刷分行为已被封停，解封时间"+overtime+"。");
+            $('#fhcl .text').html("您的账号因存在刷分行为已被封停，解封时间"+overtime+"。");
             flag = 0;
           }
-          $('#kqfs h3').html("公告");
-          $('#fsText').css('marginBottom','0px');
-          $('#kqfs').css({"background":"#aeb3bd","position":"fixed"});
-          $('.kq-btns').fadeOut();
-          $('#kqfs').fadeIn();
+          $('#fhcl').fadeIn();
+
         } else if(!data['id']){
           console.log('jumpProjectFlag: true');
           jumpProjectFlag = true;
@@ -303,7 +300,7 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
       }
       // console.log('token: '+token);
       if(!token){
-        token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjE1MjA4Mjg3MDA1IiwidGltZSI6IjIwMTctMDgtMTIgMTE6MDE6NDIifQ.Nb7gRjegnDc7rZ7ibdU4QBODdwdfaudZv3r5-3GdOaI';
+        token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjE1MjA4Mjg3MDAzIiwidGltZSI6IjIwMTctMDktMDcgMTQ6MDI6MzMifQ.-UVvVtZJN4LWlf-C684JwjM3dtR2VH6kf2Lcz9QzErA';
       }
     }
     nowProject = projectname;
@@ -1508,17 +1505,17 @@ function bindJumpNative(projectName) {
     var guideImgArr;
     if(android){
       guideImgArr = {
-        'sn': ['/static/h5/snGuide1a.png','/static/h5/snGuide2a.png'],
-        'total': ['/static/h5/totalGa.png'],
-        'date': ['/static/h5/dateGa.png'],
-        'hospital': ['/static/h5/hospitalGa.png']
+        'sn': ['/static/h5/snG_android.png'],
+        'total': ['/static/h5/totalG_android.png'],
+        'date': ['/static/h5/dateG_android.png'],
+        'hospital': ['/static/h5/hospitalG_android.png']
       };
     }else{
       guideImgArr = {
-        'sn': ['/static/h5/snGuide1.png','/static/h5/snGuide2.png'],
-        'total': ['/static/h5/totalG.png'],
-        'date': ['/static/h5/dateG.png'],
-        'hospital': ['/static/h5/hospitalG.png']
+        'sn': ['/static/h5/snG_iOS.png'],
+        'total': ['/static/h5/totalG_iOS.png'],
+        'date': ['/static/h5/dateG_iOS.png'],
+        'hospital': ['/static/h5/hospitalG_iOS.png']
       };
     }
 
@@ -1653,7 +1650,7 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
       console.log(data);
       $('.pinch-zoom-container').css('height', 'auto');
       // deferred.resolve();
-      // fsjz(3, 1, deferred);
+      // fsjz(3, 3, deferred);
 
       if(data.code == 808){
         fsjz(data['body']['k'], data['body']['q'], deferred);
@@ -1704,14 +1701,13 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
   }
 }
 
-
 //防刷
 function fsjz(k, q, deferred) {
   var fsArr = [
-    "亲 请认真答题哦！否则系统会认定您存在刷分行为而封号哦！",
-    "您在短时间内已经答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理。请认真答题，谢谢！",
+    "亲，请认真比对图片内容与输入框内容是否一致哦！否则系统将会判定存在刷分行为而封号，<b>并清空当日所做的所有任务哦</b>！",
+    "您在短时间内答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理，<b>您在今日完成的所有任务将被判定为无效</b>。请认真答题，谢谢",
     "因您在短时间内答错三道测试题，系统认定您存在刷分行为，将会封号24小时。如有疑问，可发送邮件至lijialin908@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分不受影响。",
-    "您已经连续答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理。请认真答题，谢谢！",
+    "您已经连续答错两道测试题，如果您再次答错，系统将会判定您存在刷分行为，并进行封号处理，<b>您在今日完成的所有任务将被判定为无效</b>。请认真答题，谢谢！",
     "因您连续答错三道测试题，系统认定您存在刷分行为，将会永久封号。如有疑问，可发送邮件至lijialin908@pingan.com.cn并附上您注册所用手机号。您在今日完成的所有任务将被判定为无效，过往任务已得积分可以照常兑换。"
   ];
   var fsTitle = [
