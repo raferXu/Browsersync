@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>不存在变量提升</title>
+</head>
+<body>
+<script>
+  // var 的情况
+  console.log(foo); // 输出undefined
+  var foo = 2;
+
+  // let 的情况
+  // let不存在变量提升
+  console.log(bar); // Uncaught ReferenceError: bar is not defined
+  let bar = 2;
+</script>
+</body>
+</html>
