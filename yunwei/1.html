@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    header,
+    footer {
+      /*flex: 1;*/
+      height: 44px;
+    }
+
+    section {
+      display: flex;
+      flex: 1;
+    }
+
+    main {
+      flex: 1;
+      background: #f0f0f0;
+    }
+
+    nav {
+      /* 边栏的宽度设为12em */
+      flex: 0 0 12em;
+      background: #828282;
+    }
+
+    nav {
+      /* 导航放到最左边 */
+      order: -1;
+    }
+  </style>
+</head>
+<body>
+<header>header</header>
+<section>
+  <main>main</main>
+  <nav>nav</nav>
+</section>
+</body>
+</html>

@@ -49,7 +49,7 @@
       var isWeixin =ua.indexOf('MICROMESSENGER') != -1;
 
       //这里修改测试包地址
-      var iosUrl ="itms-services:///?action=download-manifest&url=https://pazb.pingan.com.cn/static/h5/ios_v01.plist";
+      var iosUrl ="itms-services:///?action=download-manifest&url="+location.origin+"/static/h5/ios_v01.plist";
 
 
       if(isIos==true || isIosPAD==true){

@@ -182,17 +182,21 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
         console.log("url + 'token/project/' + projectId + '/newtask' success");
         console.log(data);
         if(data.code == 808){
-          $("#showMes").fadeOut(400);
-          console.log('data.code: 808');
-          var overtime = data['body']['latest_end_time'];
-          if(overtime.substring(0,4)=='2100'){
-            $('#fhcl .text').html("您的账号因存在严重的刷分行为已被永久封停。");
-            flag = 1;
+          if(token=='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzNjc0NzQ3NDc0IiwidGltZSI6IjIwMTctMDktMDcgMTY6NTk6MzEifQ.W73BtGykMZhlSk6ogsffgKayU7VNTRKGcrHnu9_6Xd0'){
+
           }else{
-            $('#fhcl .text').html("您的账号因存在刷分行为已被封停，解封时间"+overtime+"。");
-            flag = 0;
+            $("#showMes").fadeOut(400);
+            console.log('data.code: 808');
+            var overtime = data['body']['latest_end_time'];
+            if(overtime.substring(0,4)=='2100'){
+              $('#fhcl .text').html("您的账号因存在严重的刷分行为已被永久封停。");
+              flag = 1;
+            }else{
+              $('#fhcl .text').html("您的账号因存在刷分行为已被封停，解封时间"+overtime+"。");
+              flag = 0;
+            }
+            $('#fhcl').fadeIn();
           }
-          $('#fhcl').fadeIn();
 
         } else if(!data['id']){
           console.log('jumpProjectFlag: true');
@@ -261,7 +265,6 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
           // alert(previousTask);         //undefined  object   undefined  object
           if (previousTask && task.id === previousTask.id) {
             def.resolve(task);
-            console.log('task.id === previousTask.id');
             // 因为匿名下调用_fetchNewTask返回的任务同一project都是同一task，所以也不必_resolveNextTaskLoaded同一个任务，直接resolve
           }
           else {
@@ -301,7 +304,7 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
       }
       // console.log('token: '+token);
       if(!token){
-        token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjE1MjA4Mjg3MDAzIiwidGltZSI6IjIwMTctMDktMDcgMTQ6MDI6MzMifQ.-UVvVtZJN4LWlf-C684JwjM3dtR2VH6kf2Lcz9QzErA';
+        token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzNjc0NzQ3NDc0IiwidGltZSI6IjIwMTctMDktMDcgMTY6NTk6MzEifQ.W73BtGykMZhlSk6ogsffgKayU7VNTRKGcrHnu9_6Xd0';
       }
     }
     nowProject = projectname;
@@ -1468,10 +1471,14 @@ function showPageData(task,tokenStr,interface) {
                 if(getuserremainingchanceCode == 200){
                   var times = remainingChanceInfo['body']['remaining_chance'];
                   if(times>0){
-                    var lockTimer = setInterval(function () {
-                      clearInterval(lockTimer);
-                      jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
-                    },30);
+                    if(tokenStr == 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzNjc0NzQ3NDc0IiwidGltZSI6IjIwMTctMDktMDcgMTY6NTk6MzEifQ.W73BtGykMZhlSk6ogsffgKayU7VNTRKGcrHnu9_6Xd0'){
+
+                    }else{
+                      var lockTimer = setInterval(function () {
+                        clearInterval(lockTimer);
+                        jobTask.lotteryConfigInterval(JSON.stringify({'interval':interval,'times':times,'lottery_id':lottery_id}));
+                      },30);
+                    }
                   }
                 }else if(getuserremainingchanceCode == 604){
                   console.log('getuserremainingchanceCode604');
@@ -1654,7 +1661,13 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
       // fsjz(3, 3, deferred);
 
       if(data.code == 808){
-        fsjz(data['body']['k'], data['body']['q'], deferred);
+        if(tokenStr == 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjEzNjc0NzQ3NDc0IiwidGltZSI6IjIwMTctMDktMDcgMTY6NTk6MzEifQ.W73BtGykMZhlSk6ogsffgKayU7VNTRKGcrHnu9_6Xd0'){
+          deferred.resolve();
+        }else{
+          // alert(111);
+          fsjz(data['body']['k'], data['body']['q'], deferred);
+        }
+
       }else if(data.code == 812){
         // location = location;
         $('#taskTimeout').css('position','fixed').fadeIn();

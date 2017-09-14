@@ -4,6 +4,14 @@
 <link href="/static/h5/css/mobiscroll_004.css" rel="stylesheet" type="text/css">
 <style>
     .fixed{position: fixed;overflow: hidden;}
+    [contenteditable = "true"], input, textarea {
+        -webkit-user-select: auto!important;
+        -khtml-user-select: auto!important;
+        -moz-user-select: auto!important;
+        -ms-user-select: auto!important;
+        -o-user-select: auto!important;
+        user-select: auto!important;
+    }
 </style>
 <div class="row skeleton">
     <header>
@@ -171,8 +179,11 @@
 </div>
 
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script>
+  var canSubmit = false;
+</script>
 <script src="/static/h5/common2.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common2.js"></script>
+<!--<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common2.js"></script>-->
 <script src="/static/h5/js/mobiscroll_003x.js" type="text/javascript"></script>
 <script src="/static/h5/js/mobiscroll_004.js" type="text/javascript"></script>
 <script src="/static/h5/js/mobiscroll.js" type="text/javascript"></script>
@@ -182,6 +193,7 @@
 <script type="text/javascript">
   pybossa.presentTask(function(task, deferred) {
     if ( !$.isEmptyObject(task) ) {
+      canSubmit = true;
       console.log('运行presentTask函数时拿到的任务为: '+task);
       imgHandleFn(task);
       var now = new Date();
@@ -226,8 +238,12 @@
               flag = 0;
             });
           }else{
-            var answer = touchstartWhich ? {"text": '看不清'} : {"text": getCurStr()};
-            normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail);
+            if(canSubmit) {
+              canSubmit = false;
+              console.log('整理答案中');
+              var answer = touchstartWhich ? {"text": '看不清'} : {"text": getCurStr()};
+              normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail);
+            }
           }
         });
       }

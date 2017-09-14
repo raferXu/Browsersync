@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>暂时性死区</title>
+</head>
+<body>
+“暂时性死区”也意味着typeof不再是一个百分之百安全的操作。
+代码中，变量x使用let命令声明，所以在声明之前，都属于x的“死区”，只要用到该变量就会报错。因此，typeof运行时就会抛出一个ReferenceError。
+
+作为比较，如果一个变量根本没有被声明，使用typeof反而不会报错。
+typeof undeclared_variable // "undefined"
+ndeclared_variable是一个不存在的变量名，结果返回“undefined”。所以，在没有let之前，typeof运算符是百分之百安全的，永远不会报错。
+
+暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。
+
+
+
+<script>
+  typeof x; // ReferenceError
+  let x;
+
+  function bar(x = y, y = 2) {
+    return [x, y];
+  }
+  bar(); // 报错
+//  上面代码中，调用bar函数之所以报错（某些实现可能不报错），是因为参数x默认值等于另一个参数y，而此时y还没有声明，属于”死区“。
+
+  // 不报错
+  var x = x;
+
+  // 报错
+  let x = x;
+  // ReferenceError: x is not defined
+//  使用let声明变量时，只要变量在还没有声明完成前使用，就会报错。上面这行就属于这个情况，在变量x的声明语句还没有执行完成前，就去取x的值，导致报错”x 未定义“。
+</script>
+</body>
+</html>

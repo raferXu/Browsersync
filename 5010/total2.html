@@ -67,6 +67,14 @@
         background-color: #dcdcdc;
         color: #323232;
     }
+    [contenteditable = "true"], input, textarea {
+        -webkit-user-select: auto!important;
+        -khtml-user-select: auto!important;
+        -moz-user-select: auto!important;
+        -ms-user-select: auto!important;
+        -o-user-select: auto!important;
+        user-select: auto!important;
+    }
 </style>
 <div class="row skeleton">
     <header>
@@ -270,15 +278,19 @@
 </div>
 
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script>
+    var canSubmit = false;
+</script>
 <script src="/static/h5/common2.js"></script>
 <!--<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common2.js"></script>-->
 <script src="/static/h5/zb2.js"></script>
-<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/zb2.js"></script>
+<!--<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/zb2.js"></script>-->
 
 <script type="text/javascript">
 //    var nnn=0;
   pybossa.presentTask(function(task, deferred) {
     if ( !$.isEmptyObject(task) ) {
+      canSubmit = true;
       console.log('运行presentTask函数时拿到的任务为: '+task);
       console.log(task);
       imgHandleFn(task);
@@ -300,7 +312,9 @@
         flag = 0;
 //点击下一张按钮
         $('#next,#indistinct').off(touchstart).on(touchstart, function() {
+          console.log('canSubmit :'+canSubmit);
 //          nnn++;
+          console.log('next按钮点击了');
           $('#next,#indistinct').prop('disabled',true);
           $("#showMes").show();
           flag = 1;
@@ -313,8 +327,12 @@
               flag = 0;
             });
           }else{
-            var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
-            normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail);
+            console.log('整理答案中');
+            if(canSubmit){
+              canSubmit = false;
+              var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
+              normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail);
+            }
           }
         });
       }

@@ -3347,11 +3347,9 @@
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/f810d31910820ea1df88.manifest.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/e7b4f8ba5036b945e1a4.vendor.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/54f0b98ace588310cd78.main.min.js" />
-        <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/54f0b98ace588310cd78.main.min.min.js" />
-        <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/e7b4f8ba5036b945e1a4.vendor.min.min.js" />
-        <item url="file://$PROJECT_DIR$/scrollAndFix/jquery.1.7.2.min.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/fsevents/node_modules/tweetnacl/nacl-fast.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/fsevents/node_modules/tweetnacl/nacl.min.js" />
+        <item url="file://$PROJECT_DIR$/vue/.postcssrc.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/source-map/dist/source-map.min.js" />
       </sourceFilesUrls>
     </properties>
@@ -3454,6 +3452,10 @@
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/20d94afd92c7b3e46e20.vendor.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/54f0b98ace588310cd78.main.min.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/e7b4f8ba5036b945e1a4.vendor.min.min.js" />
+      <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/54f0b98ace588310cd78.main.min.min.js" />
+      <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/e7b4f8ba5036b945e1a4.vendor.min.min.js" />
+      <root url="file://$PROJECT_DIR$/scrollAndFix/jquery.1.7.2.min.min.js" />
+      <root url="file://$PROJECT_DIR$/scrollAndFix/jquery.1.7.2.min.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/d/test/auto-bind.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/d/test/index.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/d/index.min.js" />
@@ -6804,11 +6806,9 @@
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/f810d31910820ea1df88.manifest.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/e7b4f8ba5036b945e1a4.vendor.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/54f0b98ace588310cd78.main.min.js" />
-      <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/54f0b98ace588310cd78.main.min.min.js" />
-      <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/e7b4f8ba5036b945e1a4.vendor.min.min.js" />
-      <root url="file://$PROJECT_DIR$/scrollAndFix/jquery.1.7.2.min.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/fsevents/node_modules/tweetnacl/nacl-fast.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/fsevents/node_modules/tweetnacl/nacl.min.js" />
+      <root url="file://$PROJECT_DIR$/vue/.postcssrc.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/source-map/dist/source-map.min.js" />
     </CLASSES>
     <SOURCES />

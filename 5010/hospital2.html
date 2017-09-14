@@ -2,6 +2,14 @@
 <link rel="stylesheet" href="/static/h5/hospital.css">
 <style>
     .fixed{position: fixed;overflow: hidden;}
+    [contenteditable = "true"], input, textarea {
+        -webkit-user-select: auto!important;
+        -khtml-user-select: auto!important;
+        -moz-user-select: auto!important;
+        -ms-user-select: auto!important;
+        -o-user-select: auto!important;
+        user-select: auto!important;
+    }
 </style>
 <div class="row skeleton">
     <header>
@@ -18,6 +26,7 @@
                             <img id="billImg" class="billImg dsn" alt="billImg">
                         </div>
                     </div>
+                    <!--<input type="text">-->
                     <p class="task_rand_score" id="scoreBox">任务奖励:<span id="score">100</span>(分/单)</p>
                 </div>
                 <div class="billOperate">
@@ -154,12 +163,16 @@
 </div>
 
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script>
+  var canSubmit = false;
+</script>
 <script src="/static/h5/common2.js"></script>
 <!--<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common2.js"></script>-->
 <script src="/static/h5/zb.js"></script>
 <script type="text/javascript">
     pybossa.presentTask(function(task, deferred) {
       if ( !$.isEmptyObject(task) ) {
+        canSubmit = true;
         console.log('运行presentTask函数时拿到的任务为: '+task);
         console.log(task);
         imgHandleFn(task);
@@ -193,8 +206,12 @@
                 flag = 0;
               });
             }else{
-              var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
-              normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail);
+              if(canSubmit) {
+                canSubmit = false;
+                console.log('整理答案中');
+                var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
+                normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail);
+              }
             }
           });
         }

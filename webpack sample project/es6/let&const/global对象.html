@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+现在有一个提案，在语言标准的层面，引入global作为顶层对象。
+也就是说，在所有环境下，global都是存在的，都可以从它拿到顶层对象。
+
+
+// CommonJS 的写法
+var global = require('system.global')();
+
+// ES6 模块的写法
+import getGlobal from 'system.global';
+const global = getGlobal();
+上面代码将顶层对象放入变量global。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

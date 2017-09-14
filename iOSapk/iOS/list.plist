@@ -17,13 +17,13 @@
         <key>metadata</key>
         <dict>
           <key>bundle-identifier</key>
-          <string>com.pingan.mobilepamo</string>
+          <string>com.pingan.pacrowdsourcing</string>
           <key>bundle-version</key>
-          <string>2.0.7</string>
+          <string>1.0.0</string>
           <key>kind</key>
           <string>software</string>
           <key>title</key>
-          <string>mobileOffice_iphone</string>
+          <string>PACrowdSourcing_iphone</string>
         </dict>
       </dict>
     </array>

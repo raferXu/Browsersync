@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #page-wrap { width: 80%; margin: 60px auto; }
+    #page-wrap > div { margin: 0 0 50px 0; min-width: 500px; width: 100%; }
+
+    .group:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0;
+    }
+    .group { display: inline-block; }
+
+    .five-columns {
+      background-image: -webkit-gradient(
+          linear,
+          left top,
+          right top,
+          color-stop(0, #eee),
+          color-stop(20%, #eee),
+          color-stop(20%, #ccc),
+          color-stop(40%, #ccc),
+          color-stop(40%, #eee),
+          color-stop(60%, #eee),
+          color-stop(60%, #ccc),
+          color-stop(80%, #ccc),
+          color-stop(80%, #eee),
+          color-stop(100%, #eee)
+      );
+      background-image: -webkit-linear-gradient(
+          left,
+          #eee,
+          #eee 20%,
+          #ccc 20%,
+          #ccc 40%,
+          #eee 40%,
+          #eee 60%,
+          #ccc 60%,
+          #ccc 80%,
+          #eee 80%,
+          #eee 100%
+      );
+      background-image: -moz-linear-gradient(
+          left,
+          #eee,
+          #eee 20%,
+          #ccc 20%,
+          #ccc 40%,
+          #eee 40%,
+          #eee 60%,
+          #ccc 60%,
+          #ccc 80%,
+          #eee 80%,
+          #eee 100%
+      );
+      background-image: -ms-linear-gradient(
+          left,
+          #eee,
+          #eee 20%,
+          #ccc 20%,
+          #ccc 40%,
+          #eee 40%,
+          #eee 60%,
+          #ccc 60%,
+          #ccc 80%,
+          #eee 80%,
+          #eee 100%
+      );
+      background-image: -o-linear-gradient(
+          left,
+          #eee,
+          #eee 20%,
+          #ccc 20%,
+          #ccc 40%,
+          #eee 40%,
+          #eee 60%,
+          #ccc 60%,
+          #ccc 80%,
+          #eee 80%,
+          #eee 100%
+      );
+    }
+    .five-columns .col {
+      width: 16%; float: left; padding: 2%;
+    }
+  </style>
+</head>
+<body>
+<div id="page-wrap">
+  <div class="five-columns group">
+    <div class="col"><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p></div>
+    <div class="col"><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p></div>
+    <div class="col"><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p></div>
+    <div class="col"><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p></div>
+    <div class="col"><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p></div>
+  </div>
+</div>
+</body>
+</html>
