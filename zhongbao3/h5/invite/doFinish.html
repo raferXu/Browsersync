@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <title>平安众包</title>
+  <script>
+    function htmlFontSize(){
+      var html = document.querySelector("html");
+      var width = html.getBoundingClientRect().width;
+      html.style.fontSize = width / 3.75 + "px";
+    }
+    htmlFontSize();
+    window.addEventListener("resize",function(){
+      htmlFontSize();
+    },false);
+  </script>
+  <style>
+    html, body{width:100%;height:100%;overflow:hidden;}
+    body,p{margin: 0;}
+    img{vertical-align: top;}
+
+    .fzB{font-size: 18px;}
+    .fzS{font-size: 14px;}
+    .fzN{font-size: 16px;}
+    .blackL{color: #c8c8c8;}
+    .blackN{color: #969696;}
+    .blackW{color: #323232;}
+    .tc{text-align: center;}
+
+    .wrap{box-sizing:border-box;width:100%;height:100%;overflow:auto;font-size: 14px;color: #323232;}
+    .bg{width:3.75rem;height:6.03rem;background: url("img/bg2.png") no-repeat;background-size: 100%;}
+    header,footer{
+      padding-top: .3rem;
+      color: #fff;
+      line-height: 1.6;
+    }
+    section{padding-top: .9rem;}
+    .join{
+      padding: .5rem 0 .2rem;
+    }
+    .score{
+      color: #ff6000;
+      font-size: 30px;
+      line-height: 1;
+    }
+    .tel{
+      width: 2.77rem;
+      height: .45rem;
+      line-height: .45rem;
+      text-align: center;
+      outline: none;
+      margin: .66rem 0 .2rem;
+      border: 1px solid #c8c8c8;
+      border-radius: 5px;
+    }
+    .btn{width: 3.05rem;}
+    .get{margin-bottom: .82rem;}
+    .try{margin-bottom: .1rem;position: relative;left: -1px;}
+
+
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bg tc">
+    <header>
+      恭喜你顺利完成五道任务！即可加入平安众包，就可获 <br>得500积分奖励，并有更多任务奖励等你来哦!
+    </header>
+    <section>
+      <!--<p class="join fzB blackW">即刻加入平安众包，就可获得</p>-->
+      <p class="score">500积分</p>
+      <div class="btnG">
+        <input id="tel" type="text" class="tel fzS" placeholder="请输入手机号即可一键领取"> <br>
+        <img id="getBtn" src="img/getBtn.png" alt="getBtn" class="get btn"> <br>
+        <!--<img id="tryBtn" src="img/tryBtn.png" alt="tryBtn" class="try btn">-->
+      </div>
+    </section>
+    <footer>
+      <p class="fzB blackW">看图点一点 即可赚钱</p>
+      <p class="fzN blackN">平安众包 撑爆你的钱包</p>
+    </footer>
+  </div>
+</div>
+
+<script src="../js/jquery.1.7.2.min.js"></script>
+<script>
+
+
+</script>
+</body>
+</html>

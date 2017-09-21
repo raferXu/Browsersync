@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <title>Title</title>
+  <script>
+    function htmlFontSize(){
+      var html = document.querySelector("html");
+      var width = html.getBoundingClientRect().width;
+      console.log(width);
+      html.style.fontSize = width / 3.75 + "px";
+    }
+    htmlFontSize();
+    window.addEventListener("resize",function(){
+      htmlFontSize();
+    },false);
+  </script>
+  <style>
+    html, body{width:100%;height:100%;overflow:hidden;}
+    body,p{margin: 0;}
+    img{vertical-align: top;}
+    .clearfix{overflow:hidden;_zoom:1;}
+    .l{float: left;}
+    .r{float: right;}
+    * {
+      -webkit-touch-callout:none;
+      -webkit-user-select:none;
+      -khtml-user-select:none;
+      -moz-user-select:none;
+      -ms-user-select:none;
+      user-select:none;
+    }
+    [contenteditable = "true"], input, textarea {
+      -webkit-user-select: auto!important;
+      -khtml-user-select: auto!important;
+      -moz-user-select: auto!important;
+      -ms-user-select: auto!important;
+      -o-user-select: auto!important;
+      user-select: auto!important;
+    }
+
+    .fzB{font-size: 18px;}
+    .fzS{font-size: 14px;}
+    .fzN{font-size: 16px;}
+    .blackL{color: #c8c8c8;}
+    .blackN{color: #969696;}
+    .blackW{color: #323232;}
+    .tc{text-align: center;}
+
+    .wrap{box-sizing:border-box;width:100%;height:100%;overflow:auto;font-size: 14px;color: #323232;background: #323232;}
+
+    main{box-sizing: border-box;width: 3.75rem;height: 3.64rem;background: url("img/task4bg.png") no-repeat;background-size: 100% 100%;padding-top: 2.03rem;}
+    .inputG{text-align: center;font-size: 0;}
+    .num{box-sizing: border-box;height: .4rem;width: .26rem;padding: 0;font-size: 36px;text-align: center;background: #dcdcdc;border: none;border-radius: 3px;outline: none;}
+    .num+.num{margin-left: .05rem;}
+    .divide{position: relative;left: -1px;background: transparent;}
+
+    .btnG{margin: .45rem auto 0;font-size: 0;text-align: center;}
+    .subBtn{box-sizing: border-box;height: .44rem;line-height: .44rem;width: 1.5rem;padding: 0;font-size: 18px;color: #ff6000;text-align: center;background: #fff;border: 1px solid #ff6000;border-radius: .22rem;outline: none;}
+    .subBtn+.subBtn{margin-left: .15rem;}
+    .next{background: #ff6000;color: #fff;}
+
+    .process{box-sizing: border-box;padding: .25rem .78rem .3rem;color: #fff;font-size: 18px;}
+    .tip{box-sizing: border-box;padding: 0 .15rem;line-height: 1.8;font-size: 14px;color: #fff;}
+    .process-img{width: 1.75rem;}
+    .process-data{font-size: 18px;color: #fff;line-height: .25rem;}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <main>
+      <div class="inputG">
+        <input class="num" type="number" value="2">
+        <input class="num" type="number" value="0">
+        <input class="num" type="number" value="1">
+        <input class="num" type="number" value="4">
+        <input disabled class="num divide" type="text" value="－">
+        <input class="num" type="number" value="1">
+        <input class="num" type="number" value="2">
+        <input disabled class="num divide" type="text" value="－">
+        <input class="num" type="number" value="1">
+        <input class="num" type="number" value="2">
+      </div>
+      <div class="btnG">
+        <input id="blur" type="button" class="subBtn" value="看不清">
+        <input id="next" type="button" class="subBtn next" value="下一张">
+      </div>
+    </main>
+    <footer>
+      <div class="process clearfix">
+        <img class="process-img l" src="img/task4process.png" alt="task4process">
+        <span class="process-data r">4/5</span>
+      </div>
+      <p class="tip">
+        除了数字校验之外，我们还有日期校验任务。
+        同样比对图片内容与输入框内容是否相同，并提交与图片内容相同的结果。</p>
+    </footer>
+    <div id="answerTip" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+      <div style="position:absolute;top:42%;left:50%;width:85%;min-height:1rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+        <p style="font-size:14px;width:100%;line-height:1.8;box-sizing:border-box;padding:.3rem .15rem;color:#828282;">请认真比对图片内容与输入框内容，要使输入框内容与图片内容一致，才是正确答案哟！</p>
+        <div class="clearfloat" style="font-size:14px;width:100%;height:.44rem;line-height:.44rem;padding-bottom: .3rem;">
+          <p id="answerTipBtn" style="width:50%;color:#fff;background: #ff6000;border-radius: 5px;margin: 0 auto;font-size: 16px;">我知道了！</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/jquery.1.7.2.min.js"></script>
+  <script>
+    var n,answer;
+    $('.num').focus(function () {
+      n = $(this).val();
+      $(this).val('');
+    }).keyup(function () {
+      $(this).blur();
+    }).blur(function () {
+      if(!$(this).val()){$(this).val(n);}
+    });
+    $('#next').click(function () {
+      answer = '';
+      $('.num').each(function () {
+        answer += $(this).val();
+      });
+//      console.log(answer);
+      if(answer != '1404021205'){
+        $('#answerTip').fadeIn();
+      }else{
+        location.href = 'doTask2sn.html';
+      }
+    });
+    $('#answerTipBtn').click(function () {
+      $('#answerTip').fadeOut();
+    });
+    $('#blur').click(function () {
+      $('#answerTip').fadeIn();
+    });
+  </script>
+</body>
+</html>

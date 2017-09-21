@@ -259,6 +259,9 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
         xhr.done(function(task) {
           // alert('task.id: '+task.id);  //920   920      950   972
           // alert(previousTask);         //undefined  object   undefined  object
+
+
+
           if (previousTask && task.id === previousTask.id) {
             def.resolve(task);
             console.log('task.id === previousTask.id');

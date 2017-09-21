@@ -2066,6 +2066,8 @@
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/object/is-copy-deep.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/object/valid-object.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/object/is-array-like.min.js" />
+        <item url="file://$PROJECT_DIR$/autocomplete20160309/dist/jquery.min.js" />
+        <item url="file://$PROJECT_DIR$/autocomplete20160309/dist/autocomplete.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/object/primitive-set.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/object/safe-traverse.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/object/set-prototype-of/shim.min.js" />
@@ -3349,7 +3351,6 @@
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/54f0b98ace588310cd78.main.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/fsevents/node_modules/tweetnacl/nacl-fast.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/fsevents/node_modules/tweetnacl/nacl.min.js" />
-        <item url="file://$PROJECT_DIR$/vue/.postcssrc.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/source-map/dist/source-map.min.js" />
       </sourceFilesUrls>
     </properties>
@@ -3456,6 +3457,11 @@
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/e7b4f8ba5036b945e1a4.vendor.min.min.js" />
       <root url="file://$PROJECT_DIR$/scrollAndFix/jquery.1.7.2.min.min.js" />
       <root url="file://$PROJECT_DIR$/scrollAndFix/jquery.1.7.2.min.min.js" />
+      <root url="file://$PROJECT_DIR$/vue/.postcssrc.min.js" />
+      <root url="file://$PROJECT_DIR$/echarts/js/jquery.min.js" />
+      <root url="file://$PROJECT_DIR$/echarts/js/dat.gui.min.min.js" />
+      <root url="file://$PROJECT_DIR$/echarts/js/loadIframeScripts.min.js" />
+      <root url="file://$PROJECT_DIR$/echarts/js/run.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/d/test/auto-bind.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/d/test/index.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/d/index.min.js" />
@@ -5525,6 +5531,8 @@
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/object/is-copy-deep.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/object/valid-object.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/object/is-array-like.min.js" />
+      <root url="file://$PROJECT_DIR$/auto/dist/jquery.min.js" />
+      <root url="file://$PROJECT_DIR$/auto/dist/autocomplete.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/object/primitive-set.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/object/safe-traverse.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/object/set-prototype-of/shim.min.js" />
@@ -6808,7 +6816,6 @@
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/dist/54f0b98ace588310cd78.main.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/fsevents/node_modules/tweetnacl/nacl-fast.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/fsevents/node_modules/tweetnacl/nacl.min.js" />
-      <root url="file://$PROJECT_DIR$/vue/.postcssrc.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/source-map/dist/source-map.min.js" />
     </CLASSES>
     <SOURCES />

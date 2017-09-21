@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ECharts</title>
+  <!-- 引入 echarts.js -->
+  <script src="jquery.1.7.2.min.js"></script>
+  <script src="echarts.min.js"></script>
+</head>
+<body>
+
+<div id="main1" style="min-width:400px;width:45%;height:400px;float:left"></div>
+
+<script type="text/javascript">
+  var myChart = echarts.init(document.getElementById('main1'));
+
+  option = {
+    angleAxis: {
+    },
+    radiusAxis: {
+      type: 'category',
+      data: ['周一', '周二', '周三', '周四'],
+      z: 10
+    },
+    polar: {
+    },
+    series: [{
+      type: 'bar',
+      data: [1, 2, 3, 4],
+      coordinateSystem: 'polar',
+      name: 'A',
+      stack: 'a'
+    }, {
+      type: 'bar',
+      data: [2, 4, 6, 8],
+      coordinateSystem: 'polar',
+      name: 'B',
+      stack: 'a'
+    }, {
+      type: 'bar',
+      data: [1, 2, 3, 4],
+      coordinateSystem: 'polar',
+      name: 'C',
+      stack: 'a'
+    }],
+    legend: {
+      show: true,
+      data: ['A', 'B', 'C']
+    }
+  };
+
+  myChart.setOption(option);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function getProjectName(url) {
+    var pre = '/project/',next = '/newtask-token';
+    var start_i = url.indexOf(pre)+pre.length,end_i = url.indexOf(next);
+    var projectName = url.slice(start_i,end_i);
+    return projectName;
+  }
+  console.log(getProjectName('http://192.168.0.88:5010/project/sn/newtask-token'));
+  console.log(getProjectName('http://192.168.0.88:5010/project/total/newtask-token'));
+  console.log(getProjectName('https://test-pazb.pingan.com.cn:20443/project/hospital/newtask-token'));
+  console.log(getProjectName('https://pazb.pingan.com.cn/project/date/newtask-token'));
+
+</script>
+</body>
+</html>
