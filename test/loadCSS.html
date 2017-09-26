@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Title</title>
+  <style>
+    body{background: red;}
+  </style>
+</head>
+<body>
+<style>
+  body{background: black;}
+</style>
+<link rel="stylesheet" href="3.css" id="fixLink">
+<div id="wrap">
+  <input type="text" value="123456" style="width:100%;height: 44px;font-size: 24px;">
+</div>
+<script src="jquery.min.js" id="presentJS"></script>
+<script>
+  var dynamicLoading = {
+    css: function(path){
+      if(!path || path.length === 0){
+        throw new Error('argument "path" is required !');
+      }
+      var head = document.getElementById('presentJS');
+      var link = document.createElement('link');
+      link.href = path;
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      head.before(link);
+    },
+    js: function(path){
+      if(!path || path.length === 0){
+        throw new Error('argument "path" is required !');
+      }
+      var head = document.getElementById('presentJS');
+      var script = document.createElement('script');
+      script.src = path;
+      script.type = 'text/javascript';
+      head.before(script);
+    }
+  };
+
+  for(var i=1;i<10000;i++){
+
+  }
+  var num = Math.random();
+  console.log(num);
+  if(num<0.25){
+    $('#wrap').html('<button style="width:300px;height: 44px;">button1</button>');
+    dynamicLoading.css('1.css');
+    dynamicLoading.js('1.js');
+
+  }else if(num<0.5){
+    $('#wrap').html('<button style="width:300px;height: 44px;">button2</button>');
+    dynamicLoading.css('2.css');
+    dynamicLoading.js('2.js');
+  }else if(num<0.75){
+    $('#wrap').html('<button style="width:300px;height: 44px;">button3</button>');
+    dynamicLoading.css('3.css');
+    dynamicLoading.js('3.js');
+  }else{
+    $('#wrap').html('<button style="width:300px;height: 44px;">button4</button>');
+    dynamicLoading.css('4.css');
+    dynamicLoading.js('4.js');
+  }
+
+</script>
+</body>
+</html>
