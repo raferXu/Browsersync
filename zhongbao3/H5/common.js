@@ -1650,6 +1650,7 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
     pybossa.saveTask(task, answer).done(function (data) {
       // console.log('nnn: '+nnn);
       // nnn=0;
+      $("#showMes").fadeOut(400);
       console.log('saveTask: ' + data);
       console.log(data);
       $('.pinch-zoom-container').css('height', 'auto');
@@ -1676,6 +1677,7 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
         deferred.resolve();
       }
     }).fail(function (err) {
+      $("#showMes").fadeOut(400);
       if(err.code == 403){
         $('#taskTimeout').css('position','fixed').fadeIn();
         flag = 1;

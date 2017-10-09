@@ -84,7 +84,7 @@
     <div style="position:absolute;top:50%;left:50%;width:66.7%;min-height:1rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
         <p style="font-size:14px;width:100%;line-height:1.42;box-sizing:border-box;padding:.3rem .15rem;color:#828282;border-bottom:1px solid #c8c8c8;">网络不给力,请检查网络设置</p>
         <div class="clearfloat" style="font-size:14px;width:100%;height:.38rem;line-height:.38rem">
-            <p id="sureBtn" class="l" style="width:100%;color:#ff6000">登录</p>
+            <p id="sureBtn" class="l" style="width:100%;color:#ff6000">确认</p>
         </div>
     </div>
 </div>
@@ -167,7 +167,7 @@
   var canSubmit = false;
 </script>
 <script src="/static/h5/common2.js"></script>
-<!--<script src="http://192.168.0.147:3000/Browersync/zhongbao3/common2.js"></script>-->
+<!--<script src="http://192.168.0.151:3000/Browersync/zhongbao3/h5/common2.js"></script>-->
 <script src="/static/h5/zb.js"></script>
 <script type="text/javascript">
     pybossa.presentTask(function(task, deferred) {
@@ -195,10 +195,9 @@
 //点击下一张按钮
           $('#next,#indistinct').off(touchstart).on(touchstart, function() {
             $('#next,#indistinct').prop('disabled',true);
-            $("#showMes").show();
-            flag = 1;
             var touchstartWhich = $(this).attr('id')=='indistinct';
             if(!window.navigator.onLine){
+              $("#showMes").hide();
               $('#offLine').show();
               flag = 1;
               $('#sureBtn').off(touchstart).on(touchstart, function() {
@@ -207,6 +206,8 @@
               });
             }else{
               if(canSubmit) {
+                $("#showMes").show();
+                flag = 1;
                 canSubmit = false;
                 console.log('整理答案中');
                 var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};

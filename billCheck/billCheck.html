@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body, div, p, ul, li, font, span, td, th {
+      margin: 0;
+      font-size: 20px;
+      line-height: 140%;
+    }
+
+    table {
+      border-top-width: 1px;
+      border-right-width: 1px;
+      border-bottom-width: 0px;
+      border-left-width: 1px;
+      border-top-style: solid;
+      border-right-style: solid;
+      border-bottom-style: none;
+      border-left-style: solid;
+      border-top-color: #CCCCCC;
+      border-right-color: #CCCCCC;
+      border-bottom-color: #CCCCCC;
+      border-left-color: #CCCCCC;
+      width: 100%;
+    }
+
+    th{
+      padding: 0;
+    }
+
+    td {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: #CCCCCC;
+      height: 100%;
+    }
+
+    input {
+      /*width:100%;*/
+      /*height: 100%;*/
+      font-size: 18px;
+      background: #f0f0f0;
+      border: 1px solid #dcdcdc;
+      border-radius: 3px;
+      padding: 0;
+      outline: none;
+    }
+    input[type=radio]{
+      width: 20px;
+      height: 20px;
+    }
+    .add{
+      font-size: 10px;
+      color: #3385ff;
+      cursor: pointer;
+    }
+    #imgBtnBox input{padding:3px 5px;}
+    .w4{width: 45px;}
+    .w2{width: 25px;}
+    .w7{width: 75px;}
+    .w10{width: 105px;}
+    .w15{width: 155px;}
+    .w12{width: 125px;}
+  </style>
+</head>
+<body>
+<!--<div class="wrap" style="width:400px;">-->
+<!--<img src="wlt1.png" alt="" style="width:100%;">-->
+<!--</div>-->
+<div id="table-wrap" style="height:250px;overflow:scroll">
+  <table border="1" cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+      <th width="" colspan="4">
+        <input style="" type="text" value="上海市第六人民医院">
+      </th>
+      <th colspan="4"></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td colspan="4">住院时间:
+        <!--<input class="w4" type="text" value="2016">年-->
+        <!--<input type="text" class="w2" value="01">月-->
+        <!--<input type="text" class="w2" value="23">日 到-->
+        <!--<input class="w4" type="text" value="2016">年-->
+        <!--<input type="text" class="w2" value="01">月-->
+        <!--<input type="text" class="w2" value="28">日-->
+        <input type="text">到
+        <input type="text">
+      </td>
+      <td colspan="2">住院天数: <input type="text" value="5.5" class="w4"></td>
+      <td colspan="2">No.<input type="text" value="1400926320" class="w12"></td>
+      <td class=""></td>
+    </tr>
+    <tr>
+      <td colspan="2" width="23%">姓名 <input class="w10" type="text" value="李建设"></td>
+      <td colspan="2" width="23%">性别
+        <label><input name="sex" type="radio" value="1" checked />男 </label>
+        <label><input name="sex" type="radio" value="2" />女 </label>
+        <label><input name="sex" type="radio" value="3" />无 </label>
+      </td>
+      <td colspan="3" width="23%">医保类型 <input type="text" value="住院普通实时"></td>
+      <td colspan="1" width="23%"></td>
+      <td class=""></td>
+    </tr>
+    <tr>
+      <td colspan="2">收费项目&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金额 (元)</td>
+      <td colspan="2">收费项目&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金额 (元)</td>
+      <td colspan="2">收费项目&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金额 (元)</td>
+      <td colspan="2">收费项目&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金额 (元)</td>
+      <td class=""></td>
+    </tr>
+    </tbody>
+    <tbody class="medicine">
+    <tr>
+      <td colspan="2">
+        <input class="" type="text" value="床位费（自费）">
+        <input class="" type="text" value="334.42">
+      </td>
+      <td colspan="2">
+        <input class="" type="text" value="床位费（自费）">
+        <input class="" type="text" value="334.42">
+      </td>
+      <td colspan="2">
+        <input class="" type="text" value="床位费（自费）">
+        <input class="" type="text" value="334.42">
+      </td>
+      <td colspan="2">
+        <input class="" type="text" value="床位费（自费）">
+        <input class="" type="text" value="334.42">
+      </td>
+      <td class="add">添加一行</td>
+    </tr>
+    </tbody>
+    <tbody>
+    <tr>
+      <td colspan="3">合计 ¥：<input type="text" value="232323.23"></td>
+      <td colspan="2" width="23%">个人账户支付: <input class="w10" type="text" value="1234.12"></td>
+      <td colspan="3" width="23%">医保统筹支付: <input type="text" value="3454566.78"></td>
+      <td class=""></td>
+    </tr>
+    </tbody>
+  </table>
+  <table border="1" cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+      <th width="" colspan="4">
+        <input style="" type="text" value="上海市第六人民医院">
+      </th>
+      <th colspan="4"></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td colspan="4">住院时间:
+        <!--<input class="w4" type="text" value="2016">年-->
+        <!--<input type="text" class="w2" value="01">月-->
+        <!--<input type="text" class="w2" value="23">日 到-->
+        <!--<input class="w4" type="text" value="2016">年-->
+        <!--<input type="text" class="w2" value="01">月-->
+        <!--<input type="text" class="w2" value="28">日-->
+        <input type="text">到
+        <input type="text">
+      </td>
+      <td colspan="2">住院天数: <input type="text" value="5.5" class="w4"></td>
+      <td colspan="2">No.<input type="text" value="1400926320" class="w12"></td>
+      <td class=""></td>
+    </tr>
+    <tr>
+      <td colspan="2" width="23%">姓名 <input class="w10" type="text" value="李建设"></td>
+      <td colspan="2" width="23%">性别
+        <label><input name="sex" type="radio" value="1" checked />男 </label>
+        <label><input name="sex" type="radio" value="2" />女 </label>
+        <label><input name="sex" type="radio" value="3" />无 </label>
+      </td>
+      <td colspan="3" width="23%">医保类型 <input type="text" value="住院普通实时"></td>
+      <td colspan="1" width="23%"></td>
+      <td class=""></td>
+    </tr>
+    <tr>
+      <td colspan="2">收费项目&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金额 (元)</td>
+      <td colspan="2">收费项目&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金额 (元)</td>
+      <td colspan="2">收费项目&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金额 (元)</td>
+      <td colspan="2">收费项目&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金额 (元)</td>
+      <td class=""></td>
+    </tr>
+    </tbody>
+    <tbody class="medicine">
+    <tr>
+      <td colspan="2">
+        <input class="" type="text" value="床位费（自费）">
+        <input class="" type="text" value="334.42">
+      </td>
+      <td colspan="2">
+        <input class="" type="text" value="床位费（自费）">
+        <input class="" type="text" value="334.42">
+      </td>
+      <td colspan="2">
+        <input class="" type="text" value="床位费（自费）">
+        <input class="" type="text" value="334.42">
+      </td>
+      <td colspan="2">
+        <input class="" type="text" value="床位费（自费）">
+        <input class="" type="text" value="334.42">
+      </td>
+      <td class="add">添加一行</td>
+    </tr>
+    </tbody>
+    <tbody>
+    <tr>
+      <td colspan="3">合计 ¥：<input type="text" value="232323.23"></td>
+      <td colspan="2" width="23%">个人账户支付: <input class="w10" type="text" value="1234.12"></td>
+      <td colspan="3" width="23%">医保统筹支付: <input type="text" value="3454566.78"></td>
+      <td class=""></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div id="imgWrap" style="position:relative;">
+  <div id="con" style="margin:0 auto;width:100%;height:610px;border:1px solid #58AFD6;position:relative"></div>
+  <div id="imgBtnBox" style="position:absolute;top:0;left:0;width:100%;margin:0 auto;display:block;margin-top:10px;line-height:30px">
+    <!--<input type="button" value="垂直拉伸" onclick="stretchH()" />-->
+    <!--<input type="button" value="水平拉伸" onclick="stretchV()" />-->
+    <input type="button" value="原始尺寸" onclick="originalOptimally()" />
+    <!--<input type="button" value="最佳显示" onclick="stretchOptimally()" />-->
+    <!--<input type="button" value="图片居中" onclick="centerImage()" />-->
+    <input type="button" value="放大" onclick="zoomIn()" />
+    <input type="button" value="缩小" onclick="zoomOut()" />
+    <input type="button" value="顺时针旋转90" onclick="rotateClockwise()" />
+    <input type="button" value="逆时针旋转90" onclick="rotateAntiClockwise()" />
+    <!--<span style="display:inline">-->
+                <!--旋转<input type="text" style="width:60px" id="rotateTo" value="15" />度<input type="button" value="旋转" onclick="rotateTo()" />-->
+            <!--</span>-->
+    <!--<input type="button" value="上一张" onclick="upImage()" />-->
+    <input style="float:right;margin-right:10px;background:#ff6000;color:#fff;" type="button" value="下一张" onclick="toNextTask()" />
+  </div>
+</div>
+
+
+<script src="jquery.1.7.2.min.js"></script>
+<script src="dist/fImageView.min.js"></script>
+<script type="text/javascript">
+  var imgArr = ['images/1.jpg'],panel;
+  function panelInit(imgArr) {
+    panel = new Fei.fImagePanel({
+      images: imgArr
+    }).render(document.getElementById('con'));
+  }
+  panelInit(imgArr);
+
+  function toNextTask() {
+    document.getElementById('con').innerHTML = '';
+    imgArr = ['images/3.jpg'];
+    panelInit(imgArr);
+  }
+
+  function stretchH() {
+    panel.stretchH().centerImage().doChange();
+  }
+  function stretchV() {
+    panel.stretchV().centerImage().doChange();
+  }
+  function originalOptimally() {
+    panel.originalOptimally().centerImage().doChange();
+  }
+  function stretchOptimally() {
+    panel.stretchOptimally().centerImage().doChange();
+  }
+  function centerImage() {
+    panel.centerImage().doChange();
+  }
+  function zoomIn() {
+    panel.scale(1.1).doChange();
+  }
+  function zoomOut() {
+    panel.scale(0.9).doChange();
+  }
+  function rotateClockwise() {
+    panel.rotate(90).doChange();
+  }
+  function rotateAntiClockwise() {
+    panel.rotate(-90).doChange();
+  }
+  function rotateTo() {
+    var val = parseInt(document.getElementById('rotateTo').value, 10);
+    panel.rotate(val).doChange();
+  }
+  function upImage() {
+    panel.upImage();
+  }
+  function nextImage() {
+    panel.nextImage();
+  }
+
+</script>
+<script>
+
+</script>
+</body>
+</html>

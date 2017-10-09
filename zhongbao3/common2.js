@@ -1842,6 +1842,7 @@ function noTokenHandle() {
 
 //submit.js
 function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
+  console.log(answer["text"]);
   if (answer["text"]) {
     pybossa.saveTask(task, answer).done(function (data) {
       // console.log('nnn: '+nnn);
@@ -1881,6 +1882,8 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
           });
           flag = 0;
         });
+      }else if(err.code == 504){
+
       }else{
         getDataFail();
       }

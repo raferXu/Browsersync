@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Title</title>
+  <style>
+    #t{font-size: 28px}
+  </style>
+</head>
+<body>
+<span id="t">元圆佰分角壹贰叁肆整</span>
+<script>
+  function getTextWidth(el) {
+    var e = document.getElementById(el);
+    return e.offsetWidth;
+  }
+  console.log(getTextWidth('t'));
+</script>
+</body>
+</html>

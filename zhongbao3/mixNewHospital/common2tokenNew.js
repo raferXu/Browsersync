@@ -334,6 +334,7 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
               });
 
               break;
+              /*
             case 'hospital':
               inputHtml = '<input style="background:#dcdcdc;border:1px solid #dcdcdc;height:.44rem !important;" id="answerInput" type="text" class="showInfo tc bsb">'+
                           '<p class="textTip" style="padding-left:2px">请保证文本输入框与图片内容一致 <span id="gzsm" class="r" style="color:#ff6000;padding-right:2px">规则说明</span></p>'+
@@ -350,6 +351,26 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
               });
               
               break;
+              */
+
+            case 'hospital':
+              inputHtml = '<div id="search-form"></div>'+
+                          '<p class="textTip" style="padding-left:2px">请保证文本输入框与图片内容一致 <span id="gzsm" class="r" style="color:#ff6000;padding-right:2px">规则说明</span></p>'+
+                          '<div id="btns" class="btns">'+
+                            '<input id="indistinct" type="button" class="next tc bsb" value="看不清">'+
+                            '<input id="next" type="button" class="next tc bsb" value="下一张">'+
+                          '</div>';
+
+              $('#output').html(inputHtml);
+              dynamicLoading.css('http://192.168.0.151:3000/Browersync/zhongbao3/hospital.css');
+              dynamicLoading.css('http://192.168.0.151:3000/Browersync/auto/dist/autocomplete.css');
+              dynamicLoading.js('http://192.168.0.151:3000/Browersync/zhongbao3/mixNewHospital/zb&autocomplete.js',function () {
+                // jsloadDone = true;
+                console.log('jsloadDone: '+jsloadDone);
+              });
+
+              break;
+
             case 'total':
               inputHtml = '<input style="background:#dcdcdc;border:1px solid #dcdcdc;height:.44rem !important;" id="answerInput" type="text" class="showInfo tc bsb" readonly="readonly">'+
                 '<p class="textTip" style="padding-left:2px">请保证文本输入框与图片内容一致 <span id="gzsm" class="r" style="color:#ff6000;padding-right:2px">规则说明</span></p>'+
@@ -497,8 +518,8 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
       token = $("#token").data("token");
       
       //混合版 方便自己测试
-      // tokenStr = token;
-      token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjE1MjA4Mjg4MDA1IiwidGltZSI6IjIwMTctMDktMjUgMTc6NTA6NTEifQ.FTmwHL58-FpelQz4pil5ipvbm4D2kvAy9p8R6KZSCAI';
+      tokenStr = token;
+      // token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjE1MjA4Mjg4MDA1IiwidGltZSI6IjIwMTctMDktMjUgMTc6NTA6NTEifQ.FTmwHL58-FpelQz4pil5ipvbm4D2kvAy9p8R6KZSCAI';
       gToken = tokenStr;
     }else{
       var search = location.search.split('?')[1];
@@ -1073,6 +1094,10 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
           'transform-origin': '0% 0%',
           'position': 'absolute'
         });
+
+        // console.log('this.container');
+        // console.log(this.container);
+        // console.log('this.container');
       },
 
       end: function () {
@@ -1141,6 +1166,9 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
             if (this.is3d) {
               this.clone = this.el.clone();
               this.clone.css('pointer-events', 'none');
+              // console.log('this.clone');
+              // console.log(this.clone);
+              // console.log('this.clone');
               this.clone.appendTo(this.container);
               setTimeout(removeClone, 200);
             }
@@ -1533,6 +1561,9 @@ function imgHandleFn(task) {
       var fontSize = parseInt($('html').css('fontSize'));
       var opt = {zoomFactor:3,offset:{x:3.75*fontSize,y:1.1*fontSize},maxZoom:6,tapZoomFactor:3};
       $('div.pinch-zoom').each(function () {
+        console.log('$(this)');
+        console.log($(this));
+        console.log('$(this)');
         new RTP.PinchZoom($(this), opt);
       });
       loadImg = true;
@@ -1706,7 +1737,7 @@ function showPageData(task,tokenStr,interface) {
 
 function bindJumpNative(projectName) {
 //点击任务指引
-  $('.taskGuide').on(touchstart,function () {
+  $('.taskGuide').off(touchstart).on(touchstart,function () {
     console.log('taskGuideBtnclick');
     // jobTask.taskGuide();
 
@@ -1852,6 +1883,7 @@ function noTokenHandle() {
 function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
   if (answer["text"]) {
     pybossa.saveTask(task, answer).done(function (data) {
+      $("#showMes").fadeOut(400);
       // console.log('nnn: '+nnn);
       // nnn=0;
       console.log('saveTask: ' + data);
@@ -1880,6 +1912,7 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
         deferred.resolve();
       }
     }).fail(function (err) {
+      $("#showMes").fadeOut(400);
       if(err.code == 403){
         $('#taskTimeout').css('position','fixed').fadeIn();
         flag = 1;
@@ -1892,6 +1925,8 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
           });
           flag = 0;
         });
+      }else if(err.code == 504){
+
       }else{
         getDataFail();
       }
@@ -1954,7 +1989,7 @@ function fsjz(k, q, deferred) {
     }
   }
   $('#kqfs').css('position','fixed').fadeIn();
-  $('#kqfs .kqqr').on(touchstart,function () {
+  $('#kqfs .kqqr').off(touchstart).on(touchstart,function () {
     $('#kqfs').fadeOut(400,function () {
       $(this).css('position','absolute');
     });

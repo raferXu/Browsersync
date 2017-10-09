@@ -1852,6 +1852,7 @@ function noTokenHandle() {
 function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
   if (answer["text"]) {
     pybossa.saveTask(task, answer).done(function (data) {
+      $("#showMes").fadeOut(400);
       // console.log('nnn: '+nnn);
       // nnn=0;
       console.log('saveTask: ' + data);
@@ -1880,6 +1881,7 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
         deferred.resolve();
       }
     }).fail(function (err) {
+      $("#showMes").fadeOut(400);
       if(err.code == 403){
         $('#taskTimeout').css('position','fixed').fadeIn();
         flag = 1;
@@ -1892,6 +1894,8 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
           });
           flag = 0;
         });
+      }else if(err.code == 504){
+
       }else{
         getDataFail();
       }

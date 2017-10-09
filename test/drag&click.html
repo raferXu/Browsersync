@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <title>Title</title>
+  <style>
+    input{
+      width: 200px;
+      height: 50px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+<input id="btn1" type="button" value="提 交">
+<script src="jquery.min.js"></script>
+<script>
+
+  var tap = function(element,fun){
+    var x,y,X,Y,moved ;
+
+    element.addEventListener('touchstart',function(event){
+      moved = false ; // moved用于判断是否滑动
+      x = event.targetTouches[0].screenX ;
+      y = event.targetTouches[0].screenY ;
+    });
+    element.addEventListener('touchmove',function(event){
+      if(moved) return;
+      X = event.targetTouches[0].screenX ;
+      Y = event.targetTouches[0].screenY ;
+      if(X-x != 0 || Y-y !=0) moved = true
+    });
+    element.addEventListener('touchend',function(event){
+      if(!moved) // 如果没有滑动就执行
+      {
+        fun();
+      }
+    });
+  };
+
+  tap($('#btn1')[0],function () {
+    console.log(1);
+  });
+
+</script>
+</body>
+</html>

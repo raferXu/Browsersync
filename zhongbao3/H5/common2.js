@@ -1155,6 +1155,7 @@ $('.showInfo').bind('keydown', function (e) {
   }
 });
 function showGuideText() {
+  $("#showMes").fadeOut(400);
   $('#guideTips').fadeIn().on('click',function () {
     $(this).fadeOut(400);
   });
@@ -1645,9 +1646,34 @@ function noTokenHandle() {
 
 
 //submit.js
+var tap = function(element,fun){
+  var x,y,X,Y,moved ;
+
+  element.ontouchstart=function(event){
+    moved = false ; // moved用于判断是否滑动
+    x = event.targetTouches[0].screenX ;
+    y = event.targetTouches[0].screenY ;
+  };
+  element.ontouchmove=function(event){
+    if(moved) return;
+    X = event.targetTouches[0].screenX ;
+    Y = event.targetTouches[0].screenY ;
+    if(X-x != 0 || Y-y !=0) moved = true
+  };
+  element.ontouchend=function(event){
+    if(!moved) // 如果没有滑动就执行
+    {
+      fun(element);
+    }
+  };
+};
+
 function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
+  console.log(answer["text"]);
+
   if (answer["text"]) {
     pybossa.saveTask(task, answer).done(function (data) {
+      $("#showMes").fadeOut(400);
       // console.log('nnn: '+nnn);
       // nnn=0;
       console.log('saveTask: ' + data);
@@ -1679,6 +1705,7 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
         deferred.resolve();
       }
     }).fail(function (err) {
+      $("#showMes").fadeOut(400);
       if(err.code == 403){
         $('#taskTimeout').css('position','fixed').fadeIn();
         flag = 1;
@@ -1688,6 +1715,8 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
           });
           flag = 0;
         });
+      }else if(err.code == 504){
+
       }else{
         getDataFail();
       }

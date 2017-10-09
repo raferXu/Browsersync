@@ -1,0 +1,370 @@
+<link rel="stylesheet" href="/static/h5/common.css">
+<!--<link rel="stylesheet" href="http://192.168.0.151:3000/Browersync/zhongbao3/h5/common.css">-->
+<link rel="stylesheet" href="/static/h5/total.css">
+<style>
+    #keyboardWrap{
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        color: #323232;
+        text-align: center;
+        font-size: .24rem;
+        z-index: 9999;
+    }
+    .keyboard{
+        box-sizing: border-box;
+        position:absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding-top: .1rem;
+        padding-bottom: .1rem;
+        background: #f0f0f0;
+    }
+    .keyboardM{
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        display: -webkit-box;
+        -webkit-box-pack: justify;
+        padding: .1rem .2rem 0;
+    }
+    .row{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        display: -webkit-box;
+        -webkit-box-pack: justify;
+        margin-bottom: .1rem;
+    }
+    .zi, .zi3{
+        width: 47%;
+        box-sizing: border-box;
+        height: .4rem;
+        line-height: .4rem;
+        border-radius: .1rem;
+        background: #fff;
+        -webkit-box-shadow: 0 1px 0 #7a7a7a;
+        -moz-box-shadow: 0 1px 0 #7a7a7a;
+        box-shadow: 0 1px 0 #7a7a7a;
+    }
+    .zi2{
+        width: 100%;
+    }
+    #keyboardM .delTxt{
+        background: url("/static/h5/backspace.png");
+        background-size: 100% 100%;
+        /*box-shadow: none;*/
+        margin-bottom: .1rem;
+    }
+    #sureTotalBtn{
+        background-color: #dcdcdc;
+        color: #323232;
+    }
+    [contenteditable = "true"], input, textarea {
+        -webkit-user-select: auto!important;
+        -khtml-user-select: auto!important;
+        -moz-user-select: auto!important;
+        -ms-user-select: auto!important;
+        -o-user-select: auto!important;
+        user-select: auto!important;
+    }
+
+    .input-bar {
+        overflow: hidden;
+        padding-right: 5px;
+        position: relative;
+    }
+
+    .input-input {
+        -webkit-appearance: none;
+        border-radius: 0;
+        font-size: 100%;
+        width: 100%;
+        height: 42px;
+        border: 0;
+        background: transparent;
+        box-sizing: border-box;
+        outline: 0;
+        font-family: Arial;
+    }
+
+    .input-fake {
+        position: absolute;
+        z-index: 10;
+        height: 42px;
+        left: -2px;/*for cursor in middle*/
+        top: 0;
+        line-height: 42px;
+        color: transparent;
+        font-family: Arial;
+    }
+
+    .input-cursor {
+        position: absolute;
+        top: -1px;/*for cursor offset*/
+        color: rgba(0, 0, 0, 1);
+        animation: twinkle 2s infinite;
+        -webkit-animation: twinkle 2s infinite;
+    }
+</style>
+<div class="row skeleton">
+    <header>
+        <span class="xxzx r"><i id="msgNum" class=""></i></span>
+        <span class="phb l"><i></i></span>
+        <h1 class="tc fwn">平安众包</h1>
+    </header>
+    <main>
+        <div class="wrap">
+            <section class="billBox">
+                <div id="billWrap">
+                    <div class="imgWrap">
+                        <div id="billImgBox" class="billImgBox pinch-zoom">
+                            <img id="billImg" class="billImg dsn" alt="billImg">
+                        </div>
+                    </div>
+                    <p class="task_rand_score" id="scoreBox">任务奖励:<span id="score">100</span>(分/单)</p>
+                </div>
+                <div class="billOperate">
+                    <nav class="clearfloat">
+                        <img src="/static/h5/billIcon.png" alt="billIcon" class="icon l">
+                        <span class="l">校对数据</span>
+                        <span id="taskGuideBox" class="taskGuide r">
+                             <img id="taskGuide" src="/static/h5/taskGuide.png" alt="taskGuide">
+                        </span>
+                        <span class="r" id="guideTips">点击此查看任务指引</span>
+                    </nav>
+                    <div id="output">
+                        <div class="input-bar" style="position: relative;font-size:18px;">
+                            <input style="background:#dcdcdc;border:1px solid #dcdcdc;text-align:left" id="answerInput" type="text" class="showInfo tc bsb input-input" readonly="readonly">
+                            <div style="position: absolute;top:0;font-size: 18px;line-height: .44rem;display: none;" class="input-fake">
+                                <span class="input-cursor">|</span>
+                            </div>
+                        </div>
+                        <p class="textTip" style="padding-left:2px">请保证文本输入框与图片内容一致 <span id="gzsm" class="r" style="color:#ff6000;padding-right:2px">规则说明</span></p>
+                        <div id="btns" class="btns">
+                            <input id="indistinct" type="button" class="next tc bsb" value="看不清">
+                            <input id="next" type="button" class="next tc bsb" value="下一张">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="divide"></div>
+            <section class="countBox">
+                <nav class="clearfloat">
+                    <img src="/static/h5/count.png" alt="count" class="icon l">
+                    <span class="l rwtj">任务统计</span>
+                    <span id="moreBox" class="more r">
+                       <img id="more" src="/static/h5/more.png" alt="more">
+                    </span>
+                </nav>
+                <div class="clearfloat countInfo">
+                    <div id="today_orderBox" class="l tc total today_order">
+                        <p>今日提交(单):</p>
+                        <p id="today_order" class="num">0</p>
+                    </div>
+                    <div id="totalBox" class="l tc total">
+                        <p>累计提交(单):</p>
+                        <p id="total" class="num">0</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+<div id="showMes" style="display:none;position:absolute;left:0;right:0;top:0;bottom:0;background:transparent;color:white;text-align:center;font-size:36px;z-index:10000;">
+    <div style="position:absolute;top:50%;left:50%;width:1.2rem;height:.65rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(0,0,0,.7);border-radius:.1rem">
+        <img src="/static/h5/loading.png" alt="loading" style="display:block;width:.36rem;height:.36rem;margin:.15rem auto;animation:change 2s linear infinite;-webkit-animation:change 2s linear infinite;">
+    </div>
+</div>
+<div id="offLine" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <div style="position:absolute;top:50%;left:50%;width:66.7%;min-height:1rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+        <p style="font-size:14px;width:100%;line-height:1.42;box-sizing:border-box;padding:.3rem .15rem;color:#828282;border-bottom:1px solid #c8c8c8;">网络不给力,请检查网络设置</p>
+        <div class="clearfloat" style="font-size:14px;width:100%;height:.38rem;line-height:.38rem">
+            <p id="sureBtn" class="l" style="width:100%;color:#ff6000">确认</p>
+        </div>
+    </div>
+</div>
+
+<div id="toLogin" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;color:#ff6000;text-align:center;font-size:24px;z-index:9998;">
+    <div style="display:none;position:absolute;top:50%;left:50%;width:66.7%;min-height:1rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+        <p style="font-size:14px;width:100%;line-height:1.42;box-sizing:border-box;padding:.3rem .15rem;color:#828282;border-bottom:1px solid #c8c8c8;">未登录</p>
+        <div class="clearfloat" style="font-size:14px;width:100%;height:.38rem;line-height:.38rem">
+            <p id="cacelBtn" class="l" style="width:50%;color:#828282;border-right:1px solid #c8c8c8;box-sizing:border-box">取消</p>
+            <p id="loginBtn" class="l" style="width:50%;color:#ff6000">登录</p>
+        </div>
+    </div>
+</div>
+
+<div id="answerTip" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <div style="position:absolute;top:50%;left:50%;width:66.7%;min-height:1rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+        <p style="font-size:14px;width:100%;line-height:1.42;box-sizing:border-box;padding:.3rem .15rem;color:#828282;border-bottom:1px solid #c8c8c8;">请输入与图像一致的信息内容</p>
+        <div class="clearfloat" style="font-size:14px;width:100%;height:.38rem;line-height:.38rem">
+            <p id="answerTipBtn" class="l" style="width:100%;color:#ff6000">确定</p>
+        </div>
+    </div>
+</div>
+<div id="failData" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <div style="position:absolute;top:50%;left:50%;width:66.7%;min-height:1rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+        <p style="font-size:14px;width:100%;line-height:1.42;box-sizing:border-box;padding:.3rem .15rem;color:#828282;border-bottom:1px solid #c8c8c8;">数据获取失败，请下拉刷新</p>
+        <div class="clearfloat" style="font-size:14px;width:100%;height:.38rem;line-height:.38rem">
+            <p id="dataFail" class="l" style="width:100%;color:#ff6000">确认</p>
+        </div>
+    </div>
+</div>
+<div id="taskTimeout" style="display:none;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.3);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <div style="position:absolute;top:50%;left:50%;width:66.7%;min-height:1rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius:.1rem">
+        <p style="font-size:14px;width:100%;line-height:1.42;box-sizing:border-box;padding:.3rem .15rem;color:#828282;border-bottom:1px solid #c8c8c8;">当前任务已失效，请下拉刷新</p>
+        <div class="clearfloat" style="font-size:14px;width:100%;height:.38rem;line-height:.38rem">
+            <p id="timeoutBtn" class="l" style="width:100%;color:#ff6000">确认</p>
+        </div>
+    </div>
+</div>
+<div id="kqfs" style="display:none;box-sizing:border-box;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.7);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <div style="position:absolute;top:50%;left:50%;width:2.75rem;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,1);border-radius: 10px;padding:.3rem .15rem .15rem;">
+        <h3 style="font-size:18px;padding-bottom:.3rem;color:#323232;">警 告</h3>
+        <p id="fsText" style="font-size:14px;width:100%;color:#828282;box-sizing:border-box;line-height:1.5;text-align:left;margin-bottom:30px"></p>
+        <p class="kq-btns" style="padding:0;">
+            <input class="kqqr" type="button" value="确认">
+        </p>
+    </div>
+</div>
+<div id="fhcl" style="display:none;box-sizing:border-box;width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.7);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <div class="pic" style="padding-top:1.25rem;text-align:center">
+        <img style="width:3.12rem;vertical-align:top;" src="/static/h5/fhPic.png" alt="fhPic">
+    </div>
+    <div class="text" style="box-sizing:border-box;position:relative;top:-1px;margin:0 auto;width:2.75rem;padding:.3rem .15rem;line-height:1.4;background:#fff;text-align:left;font-size: 14px;color: #828282;border-radius: 0 0 .1rem .1rem;"></div>
+</div>
+<div id="rwzy" style="display:none;box-sizing:border-box;width:100%;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.7);color:#ff6000;text-align:center;font-size:.24rem;z-index:9999;">
+    <img id="rwzyImg" src="" alt="rwzyImg" style="width:100%;">
+    <span id="read" style="position: absolute;top: 5.38rem;left: 0;right: 0;margin: auto;width: .8rem;height: .39rem"></span>
+</div>
+<div id="keyboardWrap" style="overflow: hidden;z-index:9999">
+    <div id="keyboard" class="keyboard">
+        <div id="keyboardM" class="keyboardM">
+            <div class="col" style="width:32%">
+                <div class="row">
+                    <div class="zi">壹</div>
+                    <div class="zi">贰</div>
+                </div>
+                <div class="row">
+                    <div class="zi">柒</div>
+                    <div class="zi">捌</div>
+                </div>
+                <div class="row">
+                    <div class="zi">拾</div>
+                    <div class="zi">佰</div>
+                </div>
+                <div class="row">
+                    <div class="zi">圆</div>
+                    <div class="zi">元</div>
+                </div>
+            </div>
+            <div class="col" style="width:32%">
+                <div class="row">
+                    <div class="zi">叁</div>
+                    <div class="zi">肆</div>
+                </div>
+                <div class="row">
+                    <div class="zi">玖</div>
+                    <div class="zi">零</div>
+                </div>
+                <div class="row">
+                    <div class="zi">仟</div>
+                    <div class="zi">万</div>
+                </div>
+                <div class="row">
+                    <div class="zi zi2">整</div>
+                </div>
+            </div>
+            <div class="col" style="width:32%">
+                <div class="row">
+                    <div class="zi">伍</div>
+                    <div class="zi">陆</div>
+                </div>
+                <div class="row">
+                    <div class="zi">角</div>
+                    <div class="zi">分</div>
+                </div>
+                <div id="delTxt" class="zi2 zi3 delTxt"></div>
+                <div class="zi2 zi3" id="sureTotalBtn">确认</div>
+            </div>
+        </div>
+        <div class="keyboardB"></div>
+    </div>
+</div>
+
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script>
+  var canSubmit = false;
+</script>
+<script src="/static/h5/common2.js"></script>
+<!--<script src="http://192.168.0.151:3000/Browersync/zhongbao3/h5/common2.js"></script>-->
+<!--<script src="/static/h5/zb2.js"></script>-->
+<script src="http://192.168.0.151:3000/Browersync/zhongbao3/zb2focus.js"></script>
+
+<script type="text/javascript">
+  //    var nnn=0;
+  pybossa.presentTask(function(task, deferred) {
+    if ( !$.isEmptyObject(task) ) {
+      canSubmit = true;
+      console.log('运行presentTask函数时拿到的任务为: '+task);
+      console.log(task);
+      imgHandleFn(task);
+      setInputVal(task);
+
+      $('#next,#indistinct').prop('disabled',false);
+
+      var interface = gInterface;
+      showPageData(task,tokenStr,interface);
+      bindJumpNative(nowProject);
+//拿到token判断有没登录
+      if(!tokenStr){
+        flag = 1;
+        console.log('没有拿到token值！');
+        noTokenHandle();
+      }else{
+        console.log('拿到了token值，为 '+tokenStr);
+        $('#toLogin').hide();
+        flag = 0;
+//点击下一张按钮
+        $('#next,#indistinct').off(touchstart).on(touchstart, function() {
+          console.log('canSubmit :'+canSubmit);
+//          nnn++;
+          console.log('next按钮点击了');
+          $('#next,#indistinct').prop('disabled',true);
+          var touchstartWhich = $(this).attr('id')=='indistinct';
+          if(!window.navigator.onLine){
+            $("#showMes").hide();
+            $('#offLine').show();
+            flag = 1;
+            $('#sureBtn').off(touchstart).on(touchstart, function() {
+              $('#offLine').hide();
+              flag = 0;
+            });
+          }else{
+            console.log('整理答案中');
+            if(canSubmit){
+              $("#showMes").show();
+              flag = 1;
+              canSubmit = false;
+              var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
+              normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail);
+            }
+          }
+        });
+      }
+    }
+    else {
+      console.log('运行presentTask函数时候已经没有任务了,自动重新刷新页面获取可用任务');
+      console.log('只加载本次任务，不会出现这个日志');
+    }
+  });
+  pybossa.run('total');
+</script>

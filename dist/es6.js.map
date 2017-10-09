@@ -1,0 +1,1 @@
+{"version":3,"sources":["../es6.js"],"names":["a","t","f","x","y"],"mappings":";;AAAA,IAAIA,IAAE,CAAN;AACA,IAAMC,IAAI,CAAV;AACA,IAAIC,IAAI,SAAJA,CAAI,CAACC,CAAD,EAAGC,CAAH;AAAA,SAAOD,IAAEC,CAAT;AAAA,CAAR","file":"es6.js","sourcesContent":["let a=4;\nconst t = 0;\nlet f = (x,y)=>x+y;"]}

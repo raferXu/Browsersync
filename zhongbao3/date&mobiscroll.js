@@ -1187,8 +1187,6 @@ maxYear = maxYear<minYear ? [minYear,minYear=maxYear][0] : maxYear;
 
 
 
-
-
 // *************************mobiscroll_004.js***************************
 (function ($) {
   $.mobiscroll.i18n.zh = $.extend($.mobiscroll.i18n.zh, {
@@ -1957,7 +1955,7 @@ function datePlugin(blockStr,minYear,maxYear) {
     endYear: maxYear //结束年份
   };
   $("#appDate").mobiscroll($.extend(opt['date'], opt['default']));
-
+/*
   if(android){
 
     var datePickerShowTimer = setInterval(function () {
@@ -1977,6 +1975,7 @@ function datePlugin(blockStr,minYear,maxYear) {
       }
     },50);
   }
+*/
 }
 
 

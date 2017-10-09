@@ -84,10 +84,10 @@ pybossa.presentTask(function (task, deferred) {
           $('#next,#indistinct').off(touchstart).on(touchstart, function () {
             console.log('next按钮点击了');
             $('#next,#indistinct').prop('disabled', true);
-            $("#showMes").show();
-            flag = 1;
+
             var touchstartWhich = $(this).attr('id') == 'indistinct';
             if (!window.navigator.onLine) {
+              $("#showMes").hide();
               $('#offLine').show();
               flag = 1;
               $('#sureBtn').off(touchstart).on(touchstart, function () {
@@ -96,6 +96,9 @@ pybossa.presentTask(function (task, deferred) {
               });
             } else {
               if (canSubmit) {
+                $("#showMes").show();
+                flag = 1;
+
                 canSubmit = false;
 
                 var answer = touchstartWhich ? {"text": '看不清'} : {"text": way.textAnswer()};

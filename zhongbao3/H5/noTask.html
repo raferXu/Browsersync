@@ -100,59 +100,116 @@
         </div>
     </main>
     <script>
-      var jobTaskLoadedTimer2 = setInterval(function () {
-        if(jobTaskLoaded) {
-          clearInterval(jobTaskLoadedTimer2);
-          var tokenStr = jobTask.receiveNativeToken();
-          if(tokenStr){
-            var tokenJson = {'token': JSON.parse(tokenStr)['token']};
-            tokenJson = JSON.stringify(tokenJson);
 
-            function ajaxFunction(){
-              var xmlHttp;
-              try{ // Firefox, Opera 8.0+, Safari
-                xmlHttp=new XMLHttpRequest();
-              }
-              catch (e){
-                try{// Internet Explorer
-                  xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+
+          var tokenStr;
+          var search = location.search.split('?')[1];
+          if(search){
+            // tokenStr = token = search.split('&')[0] || "";
+            tokenStr = token = search.split('=')[1] || "";
+            console.log('token: '+token);
+            if(tokenStr){
+              var tokenJson = {'token': JSON.parse(tokenStr)['token']};
+              tokenJson = JSON.stringify(tokenJson);
+
+              function ajaxFunction(){
+                var xmlHttp;
+                try{ // Firefox, Opera 8.0+, Safari
+                  xmlHttp=new XMLHttpRequest();
                 }
                 catch (e){
-                  try{
-                    xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  try{// Internet Explorer
+                    xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
                   }
-                  catch (e){}
+                  catch (e){
+                    try{
+                      xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    catch (e){}
+                  }
                 }
+
+                return xmlHttp;
               }
 
-              return xmlHttp;
+              var xhr = ajaxFunction();
+
+              xhr.onreadystatechange = function(){
+                if(xhr.readyState==4){
+                  if(xhr.status==200){
+                    var data = JSON.parse(xhr.responseText);
+                    console.log(data);
+                    var current_day_tasks = data['body']['current_day_tasks'] || '-';
+                    var plan_score = data['body']['plan_score'] || '-';
+                    document.getElementById('current_day_tasks').innerHTML = current_day_tasks;
+                    document.getElementById('plan_score').innerHTML = plan_score;
+                  }
+                }
+              };
+
+              xhr.open("POST",location.origin+"/token/task/notTask",true);
+
+              xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+              xhr.setRequestHeader('Accept','application/json,text/plain');
+
+              xhr.send(tokenJson);
+
             }
+          }else{
+            var jobTaskLoadedTimer2 = setInterval(function () {
+              if(jobTaskLoaded) {
+                clearInterval(jobTaskLoadedTimer2);
+                var tokenStr = jobTask.receiveNativeToken();
+                if(tokenStr){
+                  var tokenJson = {'token': JSON.parse(tokenStr)['token']};
+                  tokenJson = JSON.stringify(tokenJson);
 
-            var xhr = ajaxFunction();
+                  function ajaxFunction(){
+                    var xmlHttp;
+                    try{ // Firefox, Opera 8.0+, Safari
+                      xmlHttp=new XMLHttpRequest();
+                    }
+                    catch (e){
+                      try{// Internet Explorer
+                        xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+                      }
+                      catch (e){
+                        try{
+                          xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                        catch (e){}
+                      }
+                    }
 
-            xhr.onreadystatechange = function(){
-              if(xhr.readyState==4){
-                if(xhr.status==200){
-                  var data = JSON.parse(xhr.responseText);
-                  console.log(data);
-                  var current_day_tasks = data['body']['current_day_tasks'] || '-';
-                  var plan_score = data['body']['plan_score'] || '-';
-                  document.getElementById('current_day_tasks').innerHTML = current_day_tasks;
-                  document.getElementById('plan_score').innerHTML = plan_score;
+                    return xmlHttp;
+                  }
+
+                  var xhr = ajaxFunction();
+
+                  xhr.onreadystatechange = function(){
+                    if(xhr.readyState==4){
+                      if(xhr.status==200){
+                        var data = JSON.parse(xhr.responseText);
+                        console.log(data);
+                        var current_day_tasks = data['body']['current_day_tasks'] || '-';
+                        var plan_score = data['body']['plan_score'] || '-';
+                        document.getElementById('current_day_tasks').innerHTML = current_day_tasks;
+                        document.getElementById('plan_score').innerHTML = plan_score;
+                      }
+                    }
+                  };
+
+                  xhr.open("POST",location.origin+"/token/task/notTask",true);
+
+                  xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+                  xhr.setRequestHeader('Accept','application/json,text/plain');
+
+                  xhr.send(tokenJson);
+
                 }
               }
-            };
-
-            xhr.open("POST",location.origin+"/token/task/notTask",true);
-
-            xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
-            xhr.setRequestHeader('Accept','application/json,text/plain');
-
-            xhr.send(tokenJson);
-
+            },50);
           }
-        }
-      },50);
 
 
     </script>

@@ -156,9 +156,8 @@
 <script type="text/javascript">
   pybossa.presentTask(function(task, deferred) {
     if ( !$.isEmptyObject(task) ) {
-      $('#search-form').html('');
-      canSubmit = true;
 
+      $('#search-form').html('');
       var json = {
         "body": {
           "tasks": [
@@ -3307,17 +3306,14 @@
       for(var i=0;i<len;i++){
         proposals.push(json.body.tasks[i].answer_list[2]);
       }
-
-      console.log('proposals.length: '+proposals.length);
-//      var proposals = ['百度1', '百度2', '百度3', '百度4', '百度5', '百度6', '百度7','呵呵呵呵呵呵呵','百度','新浪','a1','a2','a3','a4','b1','b2','b3','b4'];
       proposals=Array.from(new Set(proposals));
-      console.log(proposals.length);
-
       $('#search-form').autocomplete({
         hints: proposals,
         width: 300,
         height: 44
       });
+
+      canSubmit = true;
 
       console.log('运行presentTask函数时拿到的任务为: '+task);
       console.log(task);
@@ -3341,8 +3337,7 @@
 //点击下一张按钮
         $('#next,#indistinct').off(touchstart).on(touchstart, function() {
           $('#next,#indistinct').prop('disabled',true);
-          $("#showMes").show();
-          flag = 1;
+
           var touchstartWhich = $(this).attr('id')=='indistinct';
           if(!window.navigator.onLine){
             $('#offLine').show();
@@ -3353,6 +3348,8 @@
             });
           }else{
             if(canSubmit) {
+              $("#showMes").show();
+              flag = 1;
               canSubmit = false;
               console.log('整理答案中'+$('.showInfo').val());
               var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
