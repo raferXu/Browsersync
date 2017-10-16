@@ -1,7 +1,7 @@
 /**
  * Created by raferxu on 17/7/6.
  */
-
+var canSubmit = false;
 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 /* * * DON'T EDIT BELOW THIS LINE * * */
 function loadDisqus() {

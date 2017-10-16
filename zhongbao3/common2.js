@@ -34,7 +34,7 @@ $.ajaxSetup({
       default:
         console.log("未知错误");
     }
-    getDataFail();
+    // getDataFail();
   }
 });
 
@@ -1885,7 +1885,7 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
       }else if(err.code == 504){
 
       }else{
-        getDataFail();
+        // getDataFail();
       }
       console.log('saveTask fail');
     });

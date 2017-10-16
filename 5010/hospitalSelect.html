@@ -149,8 +149,8 @@
 <script>
   var canSubmit = false;
 </script>
-<script src="/static/h5/common2.js"></script>
-<!--<script src="http://192.168.0.122:3000/Browersync/zhongbao3/h5/common2.js"></script>-->
+<!--<script src="/static/h5/common2.js"></script>-->
+<script src="http://192.168.0.151:3000/Browersync/zhongbao3/h5/common2.js"></script>
 <script src="/static/h5/zb.js"></script>
 <script type="text/javascript" src="http://192.168.0.151:3000/Browersync/auto/dist/autocomplete.js"></script>
 <script type="text/javascript">
@@ -3306,7 +3306,22 @@
       for(var i=0;i<len;i++){
         proposals.push(json.body.tasks[i].answer_list[2]);
       }
-      proposals=Array.from(new Set(proposals));
+//      proposals=Array.from(new Set(proposals));
+
+      Array.prototype.unique3 = function(){
+        var res = [];
+        var json = {};
+        for(var i = 0; i < this.length; i++){
+          if(!json[this[i]]){
+            res.push(this[i]);
+            json[this[i]] = 1;
+          }
+        }
+        return res;
+      };
+      proposals = proposals.unique3();
+
+
       $('#search-form').autocomplete({
         hints: proposals,
         width: 300,
@@ -3335,28 +3350,75 @@
         $('#toLogin').hide();
         flag = 0;
 //点击下一张按钮
-        $('#next,#indistinct').off(touchstart).on(touchstart, function() {
-          $('#next,#indistinct').prop('disabled',true);
+//        $('#next,#indistinct').off(touchstart).on(touchstart, function() {
+//          $('#next,#indistinct').prop('disabled',true);
+//
+//          var touchstartWhich = $(this).attr('id')=='indistinct';
+//          if(!window.navigator.onLine){
+//            $('#offLine').show();
+//            flag = 1;
+//            $('#sureBtn').off(touchstart).on(touchstart, function() {
+//              $('#offLine').hide();
+//              flag = 0;
+//            });
+//          }else{
+//            if(canSubmit) {
+//              $("#showMes").show();
+//              flag = 1;
+//              canSubmit = false;
+//              console.log('整理答案中'+$('.showInfo').val());
+//              var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
+//              normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail);
+//            }
+//          }
+//        });
+        if(isMobile){
+          tap($('#next')[0],function(e) {
+            console.log('this is tap no drag');
+            $('#next,#indistinct').prop('disabled',true);
+            var touchstartWhich = $(e).attr('id')=='indistinct';
 
-          var touchstartWhich = $(this).attr('id')=='indistinct';
-          if(!window.navigator.onLine){
-            $('#offLine').show();
-            flag = 1;
-            $('#sureBtn').off(touchstart).on(touchstart, function() {
-              $('#offLine').hide();
-              flag = 0;
-            });
-          }else{
             if(canSubmit) {
               $("#showMes").show();
               flag = 1;
               canSubmit = false;
-              console.log('整理答案中'+$('.showInfo').val());
+              console.log('整理答案中');
               var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
               normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail);
             }
-          }
-        });
+
+          });
+          tap($('#indistinct')[0],function(e) {
+            console.log('this is tap no drag');
+            $('#next,#indistinct').prop('disabled',true);
+            var touchstartWhich = $(e).attr('id')=='indistinct';
+
+            if(canSubmit) {
+              $("#showMes").show();
+              flag = 1;
+              canSubmit = false;
+              console.log('整理答案中');
+              var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
+              normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail);
+            }
+
+          });
+        }else{
+          $('#next,#indistinct').off(touchstart).on(touchstart, function() {
+            $('#next,#indistinct').prop('disabled',true);
+            var touchstartWhich = $(this).attr('id')=='indistinct';
+
+            if(canSubmit) {
+              $("#showMes").show();
+              flag = 1;
+              canSubmit = false;
+              console.log('整理答案中');
+              var answer = touchstartWhich ? {"text": '看不清'} : {"text": $('.showInfo').val()};
+              normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail);
+            }
+
+          });
+        }
       }
     }
     else {

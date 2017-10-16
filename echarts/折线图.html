@@ -6,6 +6,9 @@
   <!-- 引入 echarts.js -->
   <script src="jquery.1.7.2.min.js"></script>
   <script src="echarts.min.js"></script>
+  <style>
+    body{background: red}
+  </style>
 </head>
 <body>
 
@@ -35,6 +38,7 @@
     },
     toolbox: {
       feature: {
+        magicType: {show: true, type: ['line', 'bar','pie']},
         saveAsImage: {}
       }
     },

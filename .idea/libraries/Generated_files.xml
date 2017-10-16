@@ -1810,6 +1810,7 @@
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/ends-with/implement.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/ends-with/is-implemented.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/indent.min.js" />
+        <item url="file://$PROJECT_DIR$/dist/zhongbao3/zb2.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/normalize/shim.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/normalize/_data.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/normalize/index.min.js" />
@@ -1835,6 +1836,7 @@
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/hyphen-to-camel.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/plain-replace-all.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/case-insensitive-compare.min.js" />
+        <item url="file://$PROJECT_DIR$/dist/structor/jquery.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/raw/shim.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/raw/index.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/raw/implement.min.js" />
@@ -1864,6 +1866,7 @@
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/reg-exp/#/search/is-implemented.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/reg-exp/#/sticky/is-implemented.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/reg-exp/#/replace/shim.min.js" />
+        <item url="file://$PROJECT_DIR$/dist/zhongbao3/zb2focus2.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/reg-exp/#/replace/implement.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/reg-exp/#/replace/index.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/reg-exp/#/unicode/implement.min.js" />
@@ -5614,6 +5617,7 @@
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/ends-with/implement.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/ends-with/is-implemented.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/indent.min.js" />
+      <root url="file://$PROJECT_DIR$/dist/zhongbao3/zb2.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/normalize/shim.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/normalize/_data.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/normalize/index.min.js" />
@@ -5639,6 +5643,7 @@
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/hyphen-to-camel.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/plain-replace-all.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/case-insensitive-compare.min.js" />
+      <root url="file://$PROJECT_DIR$/dist/structor/jquery.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/raw/shim.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/raw/index.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/raw/implement.min.js" />
@@ -5668,6 +5673,7 @@
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/reg-exp/#/search/is-implemented.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/reg-exp/#/sticky/is-implemented.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/reg-exp/#/replace/shim.min.js" />
+      <root url="file://$PROJECT_DIR$/dist/zhongbao3/zb2focus2.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/reg-exp/#/replace/implement.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/reg-exp/#/replace/index.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/reg-exp/#/unicode/implement.min.js" />

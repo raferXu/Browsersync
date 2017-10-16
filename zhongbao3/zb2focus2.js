@@ -1,10 +1,18 @@
 /**
  * Created by raferxu on 17/7/6.
  */
+var outputW = $('#output').width();
+var oneTextW;
 function setInputVal(task) {
   //发送图片获取识别字符串，并放入input中
   var str = task.info.alg_answer || '';
   $('.showInfo').val(str);
+  $('#textLength').html(str);
+  var strL = $('#textLength').width();
+  oneTextW = strL/str.length || 18;
+  if(!strL){strL=oneTextW;}
+  var pt = (outputW-strL)/2 + 'px';
+  $('.input-wrap')[0].style.paddingLeft = pt;
   keyboardEvent(str);
 }
 var htmlCurosr = '<span class="input-cursor">|</span>';
@@ -15,6 +23,7 @@ var H5board = (function () {
       this.maxLength = options.maxLength || 18;
       this._cursorIndex = 0;
       this._$input = $('.input-input');
+      // this._$input2 = $('#input-input');
       this._$fakeInput = $('.input-fake');
       this._$cursor = $('.input-cursor');
 
@@ -35,12 +44,17 @@ var H5board = (function () {
       this.blur();
       return this;
     },
+    setInputPT: function (v) {
+      $('#textLength').html(v);
+      var pt = (outputW-$('#textLength').width())/2 + 'px';
+      $('.input-wrap')[0].style.paddingLeft = pt;
+    },
     _showCursor: function(e) {
       var left = this._$input.offset().left;
       var x = e.originalEvent.touches[0].x || e.originalEvent.touches[0].clientX || e.originalEvent.touches[0].pageX;
       console.log(e);
       var val = this._$input.val();
-      var cursorIndex = (x - left > 0) ? parseInt((x - left) / 18) : 0;
+      var cursorIndex = (x - left > 0) ? parseInt((x - left) / oneTextW) : 0;
       cursorIndex = cursorIndex >= val.length ? val.length : cursorIndex;
       console.log('_showCursor cursorIndex: '+cursorIndex);
       this._cursorIndex = cursorIndex;
@@ -77,6 +91,7 @@ var H5board = (function () {
         this._cursorIndex++;
         this._onChange && this._onChange(num);
       }
+      this.setInputPT(num);
     },
     del: function() {
       if (this._cursorIndex > 0) {
@@ -92,6 +107,7 @@ var H5board = (function () {
         this._cursorIndex--;
         this._onChange && this._onChange(num);
       }
+      this.setInputPT(num);
     },
   }
 })();
@@ -127,30 +143,11 @@ function keyboardEvent(str) {
   var delTimer1 = null, delTimer2 = null;
   $('#delTxt').off(touchstart).on(touchstart, function(e) {
     e.preventDefault();
-    // if(strArr.length>0){
-    //   strArr.pop();
-    //   $('.showInfo').val(strArr.join(''));
-    //   delTimer1 = setInterval(function () {
-    //     console.log('delTimer1');
-    //     strArr.pop();
-    //     $('.showInfo').val(strArr.join(''));
-    //     if(strArr.length>0){
-    //       delTimer2 = setInterval(function () {
-    //         clearInterval(delTimer1);
-    //         strArr.pop();
-    //         $('.showInfo').val(strArr.join(''));
-    //         console.log('delTimer2');
-    //       },200);
-    //     }
-    //   },500);
-    // }
     h5board.del();
   });
   $('#keyboardM').off(touchstart).on(touchstart, '.zi', function(e) {
     e.preventDefault();
     h5board.put($(this).html());
-    // strArr.push($(this).html());
-    // $('.showInfo').val(strArr.join(''));
   });
   $('#keyboardWrap').off(touchstart).on(touchstart, function (e) {
     console.log(e.target);

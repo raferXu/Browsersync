@@ -58,10 +58,12 @@ var getCurStr=function(){};
 var getDataFailTimer = setTimeout(function () {
   if(!loadImg || !getStr){
     getDataFail();
+    // alert(loadImg);
+    // alert(getStr);
     clearTimeout(getDataFailTimer);
     $("#showMes").fadeOut(500);
   }
-},5000);
+},10000);
 var android = true;
 var jobTaskLoaded = false;
 var touchstart = 'touchstart';
@@ -144,6 +146,7 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
           return;
         } else {
           request.setRequestHeader("Authorization", token);
+          // alert(token);
         }
       },
       success: function (data) {
@@ -295,6 +298,9 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
   pybossa.run = function (projectname, _window) {
     if(isMobile){
       token = $("#token").data("token");
+      // if(!token){
+      //   token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjE1MjA4Mjg4MDA1IiwidGltZSI6IjIwMTctMTAtMTMgMTY6NTg6MTYifQ.Mq7MMsSIK6BTwaxtG0bR5IiP5BCrtvuEPJBvQll1D1M';
+      // }
       tokenStr = token;
       gToken = tokenStr;
     }else{
@@ -304,7 +310,7 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
       }
       // console.log('token: '+token);
       if(!token){
-        token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjE1MjA4Mjg3MDAzIiwidGltZSI6IjIwMTctMDktMDcgMTQ6MDI6MzMifQ.-UVvVtZJN4LWlf-C684JwjM3dtR2VH6kf2Lcz9QzErA';
+        token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjE1MjA4Mjg4MDA1IiwidGltZSI6IjIwMTctMTAtMTMgMTY6NTg6MTYifQ.Mq7MMsSIK6BTwaxtG0bR5IiP5BCrtvuEPJBvQll1D1M';
       }
     }
     nowProject = projectname;
@@ -855,6 +861,8 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
         this.container = $('<div class="pinch-zoom-container"></div>');
         this.el.before(this.container);
         this.container.append(this.el);
+        console.log('this.container');
+        console.log(this.container);
 
         this.container.css({
           'overflow': 'hidden',
@@ -1166,7 +1174,10 @@ function showGuideText() {
     }
   },2000);
 }
-
+function showToolImg(img) {
+  $('#toolImg').attr('src',img);
+  console.log($('#toolImg').attr('src'));
+}
 
 // taskLoad2.js
 pybossa.taskLoaded(function(task, deferred) {
@@ -1191,10 +1202,12 @@ pybossa.taskLoaded(function(task, deferred) {
               // if(loadImg && getStr && lotteryLoad){
               clearInterval(guideTimer);
               showGuideText();
+              showToolImg('/static/h5/img/tool1.png');
             }
           },50);
         }else{
           console.log('不是第一次做任务，不需要提示任务指引');
+          showToolImg('/static/h5/img/tool.png');
         }
       }else{
         console.log('调用projecttutorial接口失败，返回状态码为：'+data.code);

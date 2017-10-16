@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="t"></div>
+<script src="jquery.js"></script>
+<script>
+
+  (function ($) {
+
+    $.fn.autocomplete = function (params) {
+
+      params = $.extend({  //default params
+        name: 'rafer',
+        age: 18,
+        hints: [],
+        placeholder: '',
+        showButton: false,
+        buttonText: 'Search',
+        onSubmit: function(text){},
+        onBlur: function(){}
+      },params);
+
+      this.each(function () {
+
+        console.log(params);
+
+        var searchContainer = $('<div></div>').addClass();
+
+        var input = $('<input type="text" />').attr().addClass();
+
+        var proposals = $('<div></div>').addClass();
+
+        var proposalList = $('<ul></ul>').addClass();
+
+        proposals.append(proposalList);
+        
+        input.keydown(function (e) {});
+        
+        input.bind('change paste keyup',function (e) {});
+
+        input.blur(function (e) {});
+
+        searchContainer.append(input);
+
+        searchContainer.append(proposals);
+
+        if(showButton){}
+
+        $(this).append(searchContainer);
+
+      });
+
+      return this;
+
+    };
+
+  })(jQuery);
+
+  $(function () {
+
+    $('#t').autocomplete({'sex':'male'});
+
+  })
+
+</script>
+</body>
+</html>
