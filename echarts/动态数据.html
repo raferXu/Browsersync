@@ -9,7 +9,10 @@
 </head>
 <body>
 
-<div id="main1" style="min-width:400px;width:45%;height:400px;float:left"></div>
+<div id="main1" style="min-width:400px;width:45%;height:400px"></div>
+<hr>
+<button id="static">click get static</button>
+<button id="dynamic">click get dynamic</button>
 
 <script type="text/javascript">
   var myChart = echarts.init(document.getElementById('main1'));
@@ -35,7 +38,7 @@
   for (var i = 0; i < 1000; i++) {
     data.push(randomData());
   }
-console.log(data);
+//console.log(data);
   option = {
     title: {
       text: '动态数据 + 时间坐标轴'
@@ -83,6 +86,21 @@ console.log(data);
 
     myChart.setOption(option);
   }, 1000);
+
+  function getStaticImg(myChart) {
+    var img = new Image();
+    img.src = myChart.getDataURL({
+      pixelRatio: 2,
+      backgroundColor: '#fff'
+    });
+    img.style.width = '40%';
+    console.log(img);
+    $('body').append(img);
+  }
+
+  $('#dynamic').click(function () {
+    getStaticImg(myChart);
+  });
 
 </script>
 </body>

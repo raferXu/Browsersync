@@ -11,11 +11,16 @@ function setInputVal(task) {
   $('.showInfo').val(str);
   $('#textLength').html(str);
   var strL = $('#textLength').width();
+  console.log('#output元素宽度：' + outputW);
+  console.log('答案文字宽度：' + strL);
+  console.log('单个文字宽度：' + strL / str.length);
   oneTextW = strL / str.length || 18;
   if (!strL) {
+    console.log('获取不到答案文字总长度');
     strL = oneTextW;
   }
   var pt = (outputW - strL) / 2 + 'px';
+  console.log('paddingLeft: ' + pt);
   $('.input-wrap')[0].style.paddingLeft = pt;
   keyboardEvent(str);
 }

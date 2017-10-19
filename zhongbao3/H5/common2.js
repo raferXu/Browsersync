@@ -299,7 +299,7 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
     if(isMobile){
       token = $("#token").data("token");
       // if(!token){
-      //   token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjE1MjA4Mjg4MDA1IiwidGltZSI6IjIwMTctMTAtMTMgMTY6NTg6MTYifQ.Mq7MMsSIK6BTwaxtG0bR5IiP5BCrtvuEPJBvQll1D1M';
+      //   token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjE1MjA4Mjg4MDA0IiwidGltZSI6IjIwMTctMTAtMTcgMDk6MjU6MzQifQ.wXkDsyU8JNEJEazcEA-2-K57xyACHV6fP6f7DLmXwo4';
       // }
       tokenStr = token;
       gToken = tokenStr;
@@ -1729,7 +1729,7 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
           flag = 0;
         });
       }else if(err.code == 504){
-
+        console.log('saveTask err code 504');
       }else{
         getDataFail();
       }

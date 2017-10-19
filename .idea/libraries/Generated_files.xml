@@ -1807,6 +1807,7 @@
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/contains/is-implemented.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/ends-with/shim.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/ends-with/index.min.js" />
+        <item url="file://$PROJECT_DIR$/dist/zhongbao3/h5/zb2.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/ends-with/implement.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/ends-with/is-implemented.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/indent.min.js" />
@@ -3373,6 +3374,7 @@
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/fsevents/node_modules/tweetnacl/nacl.min.js" />
         <item url="file://$PROJECT_DIR$/testB/1.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/source-map/dist/source-map.min.js" />
+        <item url="file://$PROJECT_DIR$/dist/zhongbao3/h5/dateScroll.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -5614,6 +5616,7 @@
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/contains/is-implemented.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/ends-with/shim.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/ends-with/index.min.js" />
+      <root url="file://$PROJECT_DIR$/dist/zhongbao3/h5/zb2.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/ends-with/implement.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/ends-with/is-implemented.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/es5-ext/test/string/#/indent.min.js" />
@@ -7180,6 +7183,7 @@
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/fsevents/node_modules/tweetnacl/nacl.min.js" />
       <root url="file://$PROJECT_DIR$/testB/1.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/source-map/dist/source-map.min.js" />
+      <root url="file://$PROJECT_DIR$/dist/zhongbao3/h5/dateScroll.js" />
     </CLASSES>
     <SOURCES />
   </library>

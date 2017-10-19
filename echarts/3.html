@@ -9,7 +9,8 @@
 </head>
 <body>
 
-<div id="main1" style="min-width:400px;width:45%;height:400px;float:left"></div>
+<div id="main1" style="min-width:400px;width:45%;height:400px;"></div>
+<hr>
 
 <script type="text/javascript">
   var myChart = echarts.init(document.getElementById('main1'));
@@ -50,7 +51,12 @@
   };
 
   myChart.setOption(option);
-
+  var img = new Image();
+  img.src = myChart.getDataURL({
+    pixelRatio: 2,
+    backgroundColor: '#fff'
+  });
+  $('body').append(img);
 </script>
 </body>
 </html>

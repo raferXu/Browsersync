@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Created by raferxu on 17/7/6.
  */
@@ -10,58 +12,59 @@ function setInputVal(task) {
 function keyboardEvent(str) {
   var strArr = [];
   strArr = str.split('');
-  $('#answerInput').off(touchstart).on(touchstart, function(e) {
+  $('#answerInput').off(touchstart).on(touchstart, function (e) {
     e.preventDefault();
-    $('#keyboardWrap').css('top',$(document).scrollTop()+'px').show();
+    $('#keyboardWrap').css('top', $(document).scrollTop() + 'px').show();
     // alert($(document).scrollTop());
-    $('.keyboard').animate({'bottom': 0},function () {
-      $(document).on(touchend, function(e) {
+    $('.keyboard').animate({ 'bottom': 0 }, function () {
+      $(document).on(touchend, function (e) {
         var delTimer3 = setTimeout(function () {
           clearInterval(delTimer1);
           clearInterval(delTimer2);
           clearInterval(delTimer3);
-        },0);
+        }, 0);
       });
     });
   });
-  $('#sureTotalBtn').off(touchstart).on(touchstart, function(e) {
+  $('#sureTotalBtn').off(touchstart).on(touchstart, function (e) {
     e.preventDefault();
-    $('.keyboard').animate({'bottom': '-4rem'},function () {
+    $('.keyboard').animate({ 'bottom': '-4rem' }, function () {
       $(document).off(touchend);
       $('#keyboardWrap').hide();
     });
   });
-  var delTimer1 = null, delTimer2 = null;
-  $('#delTxt').off(touchstart).on(touchstart, function(e) {
+  var delTimer1 = null,
+      delTimer2 = null;
+  $('#delTxt').off(touchstart).on(touchstart, function (e) {
     e.preventDefault();
-    if(strArr.length>0){
+    if (strArr.length > 0) {
       strArr.pop();
       $('.showInfo').val(strArr.join(''));
       delTimer1 = setInterval(function () {
         console.log('delTimer1');
         strArr.pop();
         $('.showInfo').val(strArr.join(''));
-        if(strArr.length>0){
+        if (strArr.length > 0) {
           delTimer2 = setInterval(function () {
             clearInterval(delTimer1);
             strArr.pop();
             $('.showInfo').val(strArr.join(''));
             console.log('delTimer2');
-          },200);
+          }, 200);
         }
-      },500);
+      }, 500);
     }
   });
 
-  $(document).on(touchend, function(e) {
+  $(document).on(touchend, function (e) {
     var delTimer3 = setTimeout(function () {
       clearInterval(delTimer1);
       clearInterval(delTimer2);
       clearInterval(delTimer3);
-    },0);
+    }, 0);
   });
 
-  $('#keyboardM').off(touchstart).on(touchstart, '.zi', function(e) {
+  $('#keyboardM').off(touchstart).on(touchstart, '.zi', function (e) {
     e.preventDefault();
     strArr.push($(this).html());
     $('.showInfo').val(strArr.join(''));
@@ -73,3 +76,4 @@ function keyboardEvent(str) {
     event.stopPropagation();
   });
 }
+//# sourceMappingURL=zb2.js.map

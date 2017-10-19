@@ -9,7 +9,10 @@
 </head>
 <body>
 
-<div id="main1" style="min-width:900px;height:600px;float:left"></div>
+<div id="main1" style="min-width:900px;height:600px;"></div>
+<hr>
+<button id="dynamic">get static img</button>
+<button id="dynamic2">get img</button>
 
 <script type="text/javascript">
   var myChart = echarts.init(document.getElementById('main1'));
@@ -292,7 +295,7 @@
       }]
     },
     options: optionsData,
-  }
+  };
 
 
   //全数据计算
@@ -411,7 +414,13 @@
 
 
 
-
+  myChart.showLoading({
+    text: 'loading',
+    color: '#0f0',
+    textColor: '#00f',
+    maskColor: 'rgba(255, 255, 255, 0.8)',
+    zlevel: 0
+  });
 
 
 
@@ -606,6 +615,33 @@
         return arr;
       };
   }
+
+
+  function getStaticImg(myChart) {
+    var img = new Image();
+    img.src = myChart.getDataURL();
+    img.style.width = '40%';
+    $(img).attr('id','haha');
+    $('body').append(img);
+    console.log($('#haha').attr('src'));
+  }
+  function getImg(myChart) {
+    var img = new Image();
+    img.src = myChart.getConnectedDataURL({
+      pixelRatio: 2,
+      backgroundColor: '#fff'
+    });
+    img.style.width = '40%';
+    console.log(img);
+    $('body').append(img);
+  }
+  $('#dynamic').click(function () {
+    getStaticImg(myChart);
+    myChart.hideLoading();
+  });
+  $('#dynamic2').click(function () {
+    getImg(myChart);
+  });
 
 </script>
 </body>

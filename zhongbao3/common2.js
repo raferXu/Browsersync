@@ -34,16 +34,13 @@ $.ajaxSetup({
       default:
         console.log("未知错误");
     }
-    // getDataFail();
+    getDataFail();
   }
 });
 
 // init.js
 $('#next,#indistinct').prop('disabled',true);
 
-var taskType;
-var jsloadDone = false;
-var canSubmit = false;
 var flag = 0;
 // loading加载框出现
 $("#showMes").fadeIn();
@@ -61,6 +58,8 @@ var getCurStr=function(){};
 var getDataFailTimer = setTimeout(function () {
   if(!loadImg || !getStr){
     getDataFail();
+    // alert(loadImg);
+    // alert(getStr);
     clearTimeout(getDataFailTimer);
     $("#showMes").fadeOut(500);
   }
@@ -147,6 +146,7 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
           return;
         } else {
           request.setRequestHeader("Authorization", token);
+          // alert(token);
         }
       },
       success: function (data) {
@@ -183,8 +183,7 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
       },
       success: function (data) {
         console.log("url + 'token/project/' + projectId + '/newtask' success");
-        console.log(data.info.type);
-
+        console.log(data);
         if(data.code == 808){
           $("#showMes").fadeOut(400);
           console.log('data.code: 808');
@@ -266,197 +265,6 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
 
 
 
-          console.log('xhr.done: '+task.info.type);
-          taskType = task.info.type;
-          var dynamicLoading = {
-            css: function(path){
-              if(!path || path.length === 0){
-                throw new Error('argument "path" is required !');
-              }
-              var head = document.getElementById('presentJS');
-              var link = document.createElement('link');
-              link.href = path;
-              link.rel = 'stylesheet';
-              link.type = 'text/css';
-              $(head).before($(link));
-            },
-            js: function(path,callback){
-              if(!path || path.length === 0){
-                throw new Error('argument "path" is required !');
-              }
-              var head = document.getElementById('presentJS');
-              var script = document.createElement('script');
-              script.type = 'text/javascript';
-              if(script.readyState){
-                script.onreadystatechange = function () {
-                  if(script.readyState == 'loaded' || script.readyState == 'complete'){
-                    script.onreadystatechange = null;
-                    callback();
-                  }
-                }
-              }else{
-                script.onload = function () {
-                  console.log('script.onload');
-                  callback();
-                };
-              }
-              script.src = path;
-              $(head).before($(script));
-            }
-          },inputHtml;
-          switch (taskType){
-            case 'sn':
-              inputHtml = '<div class="showInfo">'+
-                            '<div class="codeLockWrap" id="codeLockWrap" style="position: relative">'+
-                              '<input class="ansNum" id="n1" value="0" type="number"/><input class="ansNum" id="n2" value="1" type="number"/><input class="ansNum" id="n3" value="2" type="number"/><input class="ansNum" id="n4" value="3" type="number"/><input class="ansNum" id="n5" value="4" type="number"/>'+
-                              '<input class="ansNum" id="n6" value="5" type="number"/><input class="ansNum" id="n7" value="6" type="number"/><input class="ansNum" id="n8" value="7" type="number"/><input class="ansNum" id="n9" value="8" type="number"/><input class="ansNum" id="n10" value="9" type="number"/>'+
-                              '<span id="gzsm" class="gzsm">规则说明</span>'+
-                            '</div>'+
-                          '</div>'+
-                          '<p class="textTip">请保证文本输入框与图片内容一致</p>'+
-                          '<div id="btns" class="btns">'+
-                            '<input id="indistinct" type="button" class="next tc bsb" value="看不清">'+
-                            '<input id="next" type="button" class="next tc bsb" value="下一张">'+
-                          '</div>';
-
-              $('#output').html(inputHtml);
-              dynamicLoading.css('/static/h5/sn.css');
-              dynamicLoading.js('http://192.168.0.151:3000/Browersync/zhongbao3/inputSwipe&num.js',function () {
-                // jsloadDone = true;
-                console.log('jsloadDone: '+jsloadDone);
-              });
-
-              break;
-            case 'hospital':
-              inputHtml = '<input style="background:#dcdcdc;border:1px solid #dcdcdc" id="answerInput" type="text" class="showInfo tc bsb">'+
-                          '<p class="textTip" style="padding-left:2px">请保证文本输入框与图片内容一致 <span id="gzsm" class="r" style="color:#ff6000;padding-right:2px">规则说明</span></p>'+
-                          '<div id="btns" class="btns">'+
-                            '<input id="indistinct" type="button" class="next tc bsb" value="看不清">'+
-                            '<input id="next" type="button" class="next tc bsb" value="下一张">'+
-                          '</div>';
-
-              $('#output').html(inputHtml);
-              dynamicLoading.css('http://192.168.0.151:3000/Browersync/zhongbao3/hospital.css');
-              dynamicLoading.js('http://192.168.0.151:3000/Browersync/zhongbao3/zb.js',function () {
-                // jsloadDone = true;
-                console.log('jsloadDone: '+jsloadDone);
-              });
-              
-              break;
-            case 'total':
-              inputHtml = '<input style="background:#dcdcdc;border:1px solid #dcdcdc" id="answerInput" type="text" class="showInfo tc bsb" readonly="readonly">'+
-                '<p class="textTip" style="padding-left:2px">请保证文本输入框与图片内容一致 <span id="gzsm" class="r" style="color:#ff6000;padding-right:2px">规则说明</span></p>'+
-              '<div id="btns" class="btns">'+
-              '<input id="indistinct" type="button" class="next tc bsb" value="看不清">'+
-              '<input id="next" type="button" class="next tc bsb" value="下一张">'+
-              '</div>';
-
-              $('#output').html(inputHtml);
-
-              var board = '<div id="keyboardWrap" style="overflow: hidden;z-index:9999">'+
-              '<div id="keyboard" class="keyboard">'+
-              '<div id="keyboardM" class="keyboardM">'+
-              '<div class="col" style="width:32%">'+
-              '<div class="row">'+
-              '<div class="zi">壹</div>'+
-              '<div class="zi">贰</div>'+
-              '</div>'+
-              '<div class="row">'+
-              '<div class="zi">柒</div>'+
-              '<div class="zi">捌</div>'+
-              '</div>'+
-              '<div class="row">'+
-              '<div class="zi">拾</div>'+
-              '<div class="zi">佰</div>'+
-              '</div>'+
-              '<div class="row">'+
-              '<div class="zi">圆</div>'+
-              '<div class="zi">元</div>'+
-              '</div>'+
-              '</div>'+
-              '<div class="col" style="width:32%">'+
-              '<div class="row">'+
-              '<div class="zi">叁</div>'+
-              '<div class="zi">肆</div>'+
-              '</div>'+
-              '<div class="row">'+
-              '<div class="zi">玖</div>'+
-              '<div class="zi">零</div>'+
-              '</div>'+
-              '<div class="row">'+
-              '<div class="zi">仟</div>'+
-              '<div class="zi">万</div>'+
-              '</div>'+
-              '<div class="row">'+
-              '<div class="zi zi2">整</div>'+
-              '</div>'+
-              '</div>'+
-              '<div class="col" style="width:32%">'+
-              '<div class="row">'+
-              '<div class="zi">伍</div>'+
-              '<div class="zi">陆</div>'+
-              '</div>'+
-              '<div class="row">'+
-              '<div class="zi">角</div>'+
-              '<div class="zi">分</div>'+
-              '</div>'+
-              '<div id="delTxt" class="zi2 zi3 delTxt"></div>'+
-              '<div class="zi2 zi3" id="sureTotalBtn">确认</div>'+
-              '</div>'+
-              '</div>'+
-              '<div class="keyboardB"></div>'+
-              '</div>'+
-              '</div>';
-
-              $('#rwzy').after(board);
-
-              dynamicLoading.css('http://192.168.0.151:3000/Browersync/zhongbao3/total.css');
-              dynamicLoading.js('http://192.168.0.151:3000/Browersync/zhongbao3/zb2.js',function () {
-                // jsloadDone = true;
-                console.log('jsloadDone: '+jsloadDone);
-              });
-
-              break;
-            case 'date':
-              inputHtml = '<div class="showInfo">'+
-                '<div style="height: .3rem;margin-bottom: .1rem;display: flex;display: -webkit-flex;display: -webkit-box;font-size: 18px;align-items: flex-end;-webkit-box-align: end;">'+
-              '<div style="flex: 2;-webkit-box-flex:2;text-align: center;position: relative;right: -.06rem;">年</div>'+
-              '<div style="flex: 2;-webkit-box-flex:2;text-align: center;position: relative;left: .03rem;">月</div>'+
-              '<div style="flex: 1;-webkit-box-flex:1;text-align: center;position: relative;left: -.04rem;;">日</div>'+
-              '</div>'+
-              '<div class="codeLockWrap" id="codeLockWrap" style="position: relative">'+
-              '<input value="" class="" readonly="readonly" name="appDa-webkit-box-flex: :2;te" id="appDate" type="text" style="position: absolute;width: 100%;height: .44rem;background: transparent;color: transparent;">'+
-              '<input class="ansNum" id="n1" value= type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input class="ansNum" id="n2" value="" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input class="ansNum" id="n3" value="" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input class="ansNum" id="n4" value="" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><span class="divideTip">－</span>'+
-            '<input class="ansNum" id="n5" value= type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input class="ansNum" id="n6" value="" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><span class="divideTip">－</span>'+
-            '<input class="ansNum" id="n7" value= type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><input class="ansNum" class="last" id="n8" value="" type="number" maxlength="1" oninput="if(value.length>1)value=value.slice(0,1)"/><span id="gzsm" class="gzsm">规则说明</span>'+
-              '</div>'+
-              '</div>'+
-              '<p class="textTip">请保证文本输入框与图片内容一致</p>'+
-              '<div id="btns" class="btns">'+
-              '<input id="indistinct" type="button" class="next tc bsb" value="看不清">'+
-              '<input id="next" type="button" class="next tc bsb" value="下一张">'+
-              '</div>';
-
-              $('#output').html(inputHtml);
-
-              var dateYear = '<div id="dateRange" class="dsn">'+
-                '<span class="max">2020</span>'+
-              '<span class="min">2000</span>'+
-              '</div>';
-
-              $('#showMes').after(dateYear);
-              
-              dynamicLoading.css('http://192.168.0.151:3000/Browersync/zhongbao3/date&mobiscroll.css');
-              dynamicLoading.js('http://192.168.0.151:3000/Browersync/zhongbao3/date&mobiscroll.js',function () {
-                // jsloadDone = true;
-                console.log('jsloadDone: '+jsloadDone);
-              });
-
-              break;
-          }
-
-
-
           if (previousTask && task.id === previousTask.id) {
             def.resolve(task);
             console.log('task.id === previousTask.id');
@@ -490,6 +298,9 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
   pybossa.run = function (projectname, _window) {
     if(isMobile){
       token = $("#token").data("token");
+      // if(!token){
+      //   token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjE1MjA4Mjg4MDA0IiwidGltZSI6IjIwMTctMTAtMTcgMDk6MjU6MzQifQ.wXkDsyU8JNEJEazcEA-2-K57xyACHV6fP6f7DLmXwo4';
+      // }
       tokenStr = token;
       gToken = tokenStr;
     }else{
@@ -499,7 +310,7 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
       }
       // console.log('token: '+token);
       if(!token){
-        token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjE1MjA4Mjg4MDAxIiwidGltZSI6IjIwMTctMDktMjUgMTA6NTI6MTkifQ.ExWk-BEUSPWtPLnN3tXDa2dgX-9EK5uXGjmzcmGI-sw';
+        token = tokenStr = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjE1MjA4Mjg4MDA1IiwidGltZSI6IjIwMTctMTAtMTMgMTY6NTg6MTYifQ.Mq7MMsSIK6BTwaxtG0bR5IiP5BCrtvuEPJBvQll1D1M';
       }
     }
     nowProject = projectname;
@@ -1050,6 +861,11 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
         this.container = $('<div class="pinch-zoom-container"></div>');
         this.el.before(this.container);
         this.container.append(this.el);
+        console.log('this.container');
+        console.log(this.container[0].innerHTML);
+        // imgCon = this.container;
+        // imgCon = this.container[0].innerHTML;
+        // console.log($('.imgWrap').html());
 
         this.container.css({
           'overflow': 'hidden',
@@ -1350,6 +1166,7 @@ $('.showInfo').bind('keydown', function (e) {
   }
 });
 function showGuideText() {
+  $("#showMes").fadeOut(400);
   $('#guideTips').fadeIn().on('click',function () {
     $(this).fadeOut(400);
   });
@@ -1360,7 +1177,10 @@ function showGuideText() {
     }
   },2000);
 }
-
+function showToolImg(img) {
+  $('#toolImg').attr('src',img);
+  console.log($('#toolImg').attr('src'));
+}
 
 // taskLoad2.js
 pybossa.taskLoaded(function(task, deferred) {
@@ -1385,10 +1205,12 @@ pybossa.taskLoaded(function(task, deferred) {
               // if(loadImg && getStr && lotteryLoad){
               clearInterval(guideTimer);
               showGuideText();
+              showToolImg('/static/h5/img/tool1.png');
             }
           },50);
         }else{
           console.log('不是第一次做任务，不需要提示任务指引');
+          showToolImg('/static/h5/img/tool.png');
         }
       }else{
         console.log('调用projecttutorial接口失败，返回状态码为：'+data.code);
@@ -1695,7 +1517,6 @@ function showPageData(task,tokenStr,interface) {
     }
   });
 }
-
 function bindJumpNative(projectName) {
 //点击任务指引
   $('.taskGuide').on(touchstart,function () {
@@ -1841,10 +1662,34 @@ function noTokenHandle() {
 
 
 //submit.js
+var tap = function(element,fun){
+  var x,y,X,Y,moved ;
+
+  element.ontouchstart=function(event){
+    moved = false ; // moved用于判断是否滑动
+    x = event.targetTouches[0].screenX ;
+    y = event.targetTouches[0].screenY ;
+  };
+  element.ontouchmove=function(event){
+    if(moved) return;
+    X = event.targetTouches[0].screenX ;
+    Y = event.targetTouches[0].screenY ;
+    if(X-x != 0 || Y-y !=0) moved = true
+  };
+  element.ontouchend=function(event){
+    if(!moved) // 如果没有滑动就执行
+    {
+      fun(element);
+    }
+  };
+};
+
 function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
   console.log(answer["text"]);
+
   if (answer["text"]) {
     pybossa.saveTask(task, answer).done(function (data) {
+      $("#showMes").fadeOut(400);
       // console.log('nnn: '+nnn);
       // nnn=0;
       console.log('saveTask: ' + data);
@@ -1862,6 +1707,9 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
         $('#timeoutBtn').off(touchstart).on(touchstart, function () {
           $('#taskTimeout').fadeOut(400,function () {
             $(this).css('position','absolute');
+            $('#next,#indistinct').prop('disabled',false);
+            $("#showMes").fadeOut();
+            canSubmit = true;
           });
           flag = 0;
         });
@@ -1870,9 +1718,11 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
         jobTask.notifyToRelogin();
       } else {
         // getDataFail();
+        $('.imgWrap').html('<div id="billImgBox" class="billImgBox pinch-zoom"><img id="billImg" class="billImg dsn" alt="billImg"></div>');
         deferred.resolve();
       }
     }).fail(function (err) {
+      $("#showMes").fadeOut(400);
       if(err.code == 403){
         $('#taskTimeout').css('position','fixed').fadeIn();
         flag = 1;
@@ -1885,7 +1735,7 @@ function normalSubmit(task,answer,tokenStr,interface,deferred,getDataFail) {
       }else if(err.code == 504){
 
       }else{
-        // getDataFail();
+        getDataFail();
       }
       console.log('saveTask fail');
     });

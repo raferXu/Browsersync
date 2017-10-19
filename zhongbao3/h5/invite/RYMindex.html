@@ -35,6 +35,15 @@
       color: #fff;
       line-height: 1.6;
     }
+    section{
+      width: 3.75rem;
+      height: 10.65rem;
+      background: url("./img/bodyBg.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .btnG{
+      padding-top: 7.64rem;
+    }
     .join{
       padding: .5rem 0 .2rem;
     }
@@ -72,27 +81,23 @@
       font-size: 14px;
     }
 
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+      color: #c8c8c8;
+      font-size: 16px;
+    }
+
   </style>
 </head>
 <body>
 <div class="wrap">
   <div class="bg tc">
-    <header>
-      你的好友<span id="inviter"></span>正在平安众包躺着赚钱 <br>TA邀请你也一起来哟!
-    </header>
     <section>
-      <p class="join fzB blackW">即刻加入平安众包，新用户可获得</p>
-      <p class="score">500积分</p>
       <div class="btnG">
-        <input id="tel" type="text" class="tel fzS" placeholder="请输入手机号即可一键领取"> <br>
+        <input id="tel" type="text" class="tel fzN" placeholder="请输入手机号即可一键领取"> <br>
         <img id="getBtn" src="img/getBtn.png" alt="getBtn" class="get btn"> <br>
         <img id="tryBtn" src="img/tryBtn.png" alt="tryBtn" class="try btn">
       </div>
     </section>
-    <footer>
-      <p class="fzB blackW">看图点一点 即可赚钱</p>
-      <p class="fzN blackN">平安众包 撑爆你的钱包</p>
-    </footer>
   </div>
 </div>
 
