@@ -20,15 +20,15 @@
     body,p{margin: 0;}
     img{vertical-align: top;}
 
-    .fzB{font-size: 18px;}
-    .fzS{font-size: 14px;}
-    .fzN{font-size: 16px;}
+    .fzB{font-size: .18rem;}
+    .fzS{font-size: .14rem;}
+    .fzN{font-size: .16rem;}
     .blackL{color: #c8c8c8;}
     .blackN{color: #969696;}
     .blackW{color: #323232;}
     .tc{text-align: center;}
 
-    .wrap{box-sizing:border-box;width:100%;height:100%;overflow:auto;font-size: 14px;color: #323232;}
+    .wrap{box-sizing:border-box;width:100%;height:100%;overflow:auto;font-size: .14rem;color: #323232;}
     .bg{width:3.75rem;height:6.03rem;background: url("img/bg.png") no-repeat;background-size: 100%;}
     header,footer{
       padding-top: .3rem;
@@ -40,13 +40,14 @@
     }
     .score{
       color: #ff6000;
-      font-size: 30px;
+      font-size: .30rem;
       line-height: 1;
     }
     .tel{
       width: 2.77rem;
-      height: .45rem;
-      line-height: .45rem;
+      height: .25rem;
+      padding: .1rem 0;
+      line-height: .25rem;
       text-align: center;
       outline: none;
       margin: .66rem 0 .2rem;
@@ -54,10 +55,14 @@
       border-radius: 5px;
     }
     .btn{width: 3.05rem;}
-    .get{margin-bottom: .05rem;}
-    .try{margin-bottom: .1rem;position: relative;left: -1px;}
+    .get{
+      margin-bottom: .05rem;
+      position: relative;
+      left: -.05rem;
+    }
+    .try{margin-bottom: .1rem;position: relative;left: -.02rem;}
 
-    .maskBg{position: absolute;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.7);font-size: 14px;}
+    .maskBg{position: absolute;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.7);font-size: .14rem;}
     .box{box-sizing:border-box;position:absolute;width:2.4rem;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);height:auto;z-index:100;background-color:#f5f5f5;border:1px #ddd solid;padding:.3rem .15rem .15rem;border-radius: .15rem;color:#828282;}
 
     .user-btn{
@@ -69,7 +74,19 @@
       color: #ff6000;
       outline: none;
       border-radius: .05rem;
-      font-size: 14px;
+      font-size: .14rem;
+    }
+
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+      color: #c8c8c8;
+      font-size: .16rem;
+    }
+
+    input, button { cursor: pointer; -webkit-appearance: none; }
+    input {
+      color: red !important;
+      text-shadow: 0px 0px 0px #495057;
+      -webkit-text-fill-color: transparent;
     }
 
   </style>
@@ -84,8 +101,11 @@
       <p class="join fzB blackW">即刻加入平安众包，新用户可获得</p>
       <p class="score">500积分</p>
       <div class="btnG">
-        <input id="tel" type="text" class="tel fzS" placeholder="请输入手机号即可一键领取"> <br>
-        <img id="getBtn" src="img/getBtn.png" alt="getBtn" class="get btn"> <br>
+        <input id="tel" type="text" class="tel fzS" placeholder="请输入手机号"> <br>
+        <div id="getBtn" style="position:relative;width:3rem;margin:0 auto;">
+          <img src="img/getBtn0.jpg" alt="getBtn" class="get btn">
+          <span style="position:absolute;top:.16rem;left:0;right:0;font-size:.18rem;color:#fff;">一键下载</span>
+        </div>
         <img id="tryBtn" src="img/tryBtn.png" alt="tryBtn" class="try btn">
       </div>
     </section>
@@ -96,27 +116,58 @@
   </div>
 </div>
 
-<div id="regular-user" class="maskBg" style="display:none">
-  <div class="box">
-    <p>您已经是老用户了，请把机会留给新用户呗～</p>
-    <input class="user-btn" id="regular-user-btn" type="button" value="确 认">
-  </div>
-</div>
-<div id="new-user" class="maskBg" style="display:none">
-  <div class="box">
-    <p>您已经成功领取500积分，登录APP即可使用～</p>
-    <input class="user-btn" id="new-user-btn" type="button" value="一键下载并使用">
-  </div>
-</div>
+<!--<div id="regular-user" class="maskBg" style="display:none">-->
+  <!--<div class="box">-->
+    <!--<p>您已经是老用户了，请把机会留给新用户呗～</p>-->
+    <!--<input class="user-btn" id="regular-user-btn" type="button" value="确 认">-->
+  <!--</div>-->
+<!--</div>-->
+<!--<div id="new-user" class="maskBg" style="display:none">-->
+  <!--<div class="box">-->
+    <!--<p>您已经成功领取500积分，登录APP即可使用～</p>-->
+    <!--<input class="user-btn" id="new-user-btn" type="button" value="一键下载并使用">-->
+  <!--</div>-->
+<!--</div>-->
 <div id="telErr" class="maskBg" style="display:none">
   <div class="box">
     <p class="tc">请输入正确的手机号。</p>
     <input class="user-btn" id="tel-btn" type="button" value="确定">
   </div>
 </div>
+<div id="weixin" class="maskBg" style="display:none">
+  <div class="box">
+    <p class="tc">请用浏览器打开。</p>
+    <input class="user-btn" id="wx-btn" type="button" value="确定">
+  </div>
+</div>
 
 <script src="../js/jquery.1.7.2.min.js"></script>
 <script>
+
+  function isAndroidFn() {
+    var u = navigator.userAgent,
+      app = navigator.appVersion;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    return isAndroid;
+  }
+
+  function is_weixin(){
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  var android = isAndroidFn();
+  var isweixin = is_weixin();
+  if(isweixin){
+    $('#weixin').fadeIn();
+  }
+  $('#wx-btn').click(function () {
+    $('#weixin').fadeOut();
+  });
 
 
 
@@ -142,7 +193,7 @@
   $('#getBtn').click(function () {
 
     var sMobile = $('#tel').val();
-    var isTel = (/^1[3|4|5|8][0-9]\d{4,8}$/.test(sMobile));
+    var isTel = (/^1[3|4|5|7|8][0-9]\d{8}$/.test(sMobile));
 
 
     if(isTel){
@@ -156,29 +207,11 @@
         url: location.origin + "/token/invitation/trial",
         type: "POST",
         data: data
-      }).then(function (data) {
-//        {"body": {"result": 1}, "message": "operate successfully", "code": 200}
-//        601: 老用户不存在
-//        602: 新用户使用的号码已被注册
-//        200: 成功
-        var code = data.code;
-        switch (code){
-          case 200:
-            $('#new-user').fadeIn(400);
-            break;
-          case 601:
-            console.log('返回的data.code为: '+601);
-            break;
-          case 602:
-            $('#regular-user').fadeIn(400);
-            break;
-          default:
-            console.log('返回的data.code: '+code);
-        }
-      },function (err) {
-        console.log('/token/invitation/trial error');
-        console.log(err);
       });
+
+      var url = location.origin+'/token/qr/lead_to_download_url';
+      window.location.href=url;
+
     }else{
       $('#telErr').fadeIn();
     }
@@ -193,15 +226,15 @@
   $('#tel-btn').click(function () {
     $('#telErr').fadeOut();
   });
-
-  $('#regular-user-btn').click(function () {
-    $('#regular-user').fadeOut(400);
-  });
-
-  $('#new-user-btn').click(function () {
-    var url = location.origin+'/token/qr/lead_to_download_url';
-    window.location.href=url;
-  });
+//
+//  $('#regular-user-btn').click(function () {
+//    $('#regular-user').fadeOut(400);
+//  });
+//
+//  $('#new-user-btn').click(function () {
+//    var url = location.origin+'/token/qr/lead_to_download_url';
+//    window.location.href=url;
+//  });
 
 </script>
 </body>

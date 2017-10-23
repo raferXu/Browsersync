@@ -5,6 +5,16 @@
     main .wrap section.billBox .task_rand_score{
         z-index: 1;
     }
+    @-webkit-keyframes blink-2 { to { top: -.26rem } }
+    @keyframes blink-2 { to { top: -.26rem } }
+    .blink-smooth-2 {
+        -webkit-animation: 2s blink-2;
+        -webkit-animation-fill-mode: forwards;
+        animation: 2s blink-2;
+        /*animation-direction: alternate;*/
+        animation-fill-mode: forwards;
+    }
+
 </style>
 <div class="row skeleton">
     <header>
@@ -23,7 +33,9 @@
                     </div>
                     <p class="task_rand_score" id="scoreBox">
                         任务奖励:<span id="score">10</span>(分/单)
-                        <img id="toolImg" style="position: absolute;right:0;top:0;height: .25rem;-webkit-border-radius:.125rem 0 0 .125rem;border-radius:.125rem 0 0 .125rem;-webkit-box-shadow: 0 2px 6px 1px rgba(0,0,0,.06);box-shadow: 0 2px 6px 1px rgba(0,0,0,.06);" src="/static/h5/img/tool.png" alt="">
+                        <img id="toolImg" style="position:absolute;z-index:10;right:0;top:0;height: .25rem;-webkit-border-radius:.125rem 0 0 .125rem;border-radius:.125rem 0 0 .125rem;-webkit-box-shadow: 0 2px 6px 1px rgba(0,0,0,.06);box-shadow: 0 2px 6px 1px rgba(0,0,0,.06);" src="/static/h5/img/tool1.png">
+                        <img class="" id="cardImg" style="display:none;position:absolute;z-index:11;right:.45rem;top:-.13rem;height:.16rem;" src="http://192.168.0.151:3000/Browersync/zhongbao3/h5/img/haveTool.jpg">
+                        <!--<span id="cardTransparent" style="display:none;position:absolute;z-index:12;right:.45rem;top:-.13rem;height:.16rem;width:.25rem;background:#fff;color:#fff;background:-webkit-gradient(linear, 0 0, 0 bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 1)));font-size:0;"></span>-->
                     </p>
                 </div>
                 <div class="billOperate">
@@ -215,7 +227,7 @@
     var canSubmit = false;
 </script>
 <!--<script src="/static/h5/common2.js"></script>-->
-<script src="http://192.168.0.151:3000/Browersync/zhongbao3/common2.js"></script>
+<script src="http://192.168.0.151:3000/Browersync/zhongbao3/h5/common2.js"></script>
 <script src="/static/h5/zb2.js"></script>
 <!--<script src="http://192.168.0.151:3000/Browersync/zhongbao3/h5/zb2.js"></script>-->
 
@@ -255,20 +267,6 @@
         console.log('拿到了token值，为 '+tokenStr);
         $('#toLogin').hide();
         flag = 0;
-
-        $(document).off('click').on('click',function () {
-          if(!window.navigator.onLine){
-            console.log('navigator.offLine');
-            $("#showMes").hide();
-            $('#offLine').show();
-            flag = 1;
-            $('#sureBtn').off(touchstart).on(touchstart, function() {
-              console.log('sureBtn touch');
-              $('#offLine').hide();
-              flag = 0;
-            });
-          }
-        });
 
 
 //点击下一张按钮

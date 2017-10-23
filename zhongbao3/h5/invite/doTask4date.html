@@ -41,34 +41,37 @@
       user-select: auto!important;
     }
 
-    .fzB{font-size: 18px;}
-    .fzS{font-size: 14px;}
-    .fzN{font-size: 16px;}
+    .fzB{font-size: .18rem;}
+    .fzS{font-size: .14rem;}
+    .fzN{font-size: .16rem;}
     .blackL{color: #c8c8c8;}
     .blackN{color: #969696;}
     .blackW{color: #323232;}
     .tc{text-align: center;}
 
-    .wrap{box-sizing:border-box;width:100%;height:100%;overflow:auto;font-size: 14px;color: #323232;background: #323232;}
+    .wrap{box-sizing:border-box;width:100%;height:100%;overflow:auto;font-size: .14rem;color: #323232;background: #323232;}
 
     main{box-sizing: border-box;width: 3.75rem;height: 3.64rem;background: url("img/task4bg.png") no-repeat;background-size: 100% 100%;padding-top: 2.03rem;}
     .inputG{text-align: center;font-size: 0;}
-    .num{box-sizing: border-box;height: .4rem;width: .26rem;padding: 0;font-size: 36px;text-align: center;background: #dcdcdc;border: none;border-radius: 3px;outline: none;}
+    .num{box-sizing: border-box;height: .4rem;width: .26rem;padding: 0;font-size: .36rem;text-align: center;background: #dcdcdc;border: none;border-radius: 3px;outline: none;}
     .num+.num{margin-left: .05rem;}
-    .divide{position: relative;left: -1px;background: transparent;}
+    .ansNum{line-height:.4rem;}
+    .divide{position: relative;left: -1px;background: transparent;color: #000;}
 
     .btnG{margin: .45rem auto 0;font-size: 0;text-align: center;}
-    .subBtn{box-sizing: border-box;height: .44rem;line-height: .44rem;width: 1.5rem;padding: 0;font-size: 18px;color: #ff6000;text-align: center;background: #fff;border: 1px solid #ff6000;border-radius: .22rem;outline: none;}
+    .subBtn{box-sizing: border-box;height: .44rem;line-height: .44rem;width: 1.5rem;padding: 0;font-size: .18rem;color: #ff6000;text-align: center;background: #fff;border: 1px solid #ff6000;border-radius: .22rem;outline: none;}
     .subBtn+.subBtn{margin-left: .15rem;}
     .next{background: #ff6000;color: #fff;}
 
-    .process{box-sizing: border-box;padding: .25rem .78rem .3rem;color: #fff;font-size: 18px;}
-    .tip{box-sizing: border-box;padding: 0 .15rem;line-height: 1.8;font-size: 14px;color: #fff;}
+    .process{box-sizing: border-box;padding: .25rem .78rem .3rem;color: #fff;font-size: .18rem;}
+    .tip{box-sizing: border-box;padding: 0 .15rem;line-height: 1.8;font-size: .14rem;color: #fff;}
     .process-img{width: 1.75rem;}
-    .process-data{font-size: 18px;color: #fff;line-height: .25rem;}
+    .process-data{font-size: .18rem;color: #fff;line-height: .25rem;}
+
+    input[type=button], input[type=submit], input[type=file], button { cursor: pointer; -webkit-appearance: none; }
 
   </style>
-  <link rel="stylesheet" href="http://192.168.23.156:3000/Browersync/zhongbao3/date&mobiscroll.css">
+  <link rel="stylesheet" href="./mobiscroll.css">
 </head>
 <body>
   <div class="wrap">
@@ -116,12 +119,15 @@
   </div>
 
   <script src="../js/jquery.1.7.2.min.js"></script>
-  <script src="http://192.168.23.156:3000/Browersync/zhongbao3/mixNewHospital/date&mobiscroll.js"></script>
+  <script src="./mobiscroll.js"></script>
+  <!--<script src="http://192.168.0.151:3000/Browersync/zhongbao3/h5/invite/mobiscroll.js"></script>-->
   <script>
 
     var touchstart = 'touchstart';
     var touchmove = 'touchmove';
     var touchend = 'touchend';
+    var flag = 0;
+    var checkTimer = null;
     var blockStr = {'str':''};
     var n,answer;
     var now = new Date();
@@ -156,6 +162,7 @@
       if(answer != '20141223'){
         $('#answerTip').fadeIn();
       }else{
+        checkTimer = null;
         location.href = 'doTask5hospital.html';
       }
     });
@@ -165,6 +172,24 @@
     $('#blur').click(function () {
       $('#answerTip').fadeIn();
     });
+
+    var flag = 0;
+    checkTimer = setInterval(function () {
+      if(!$('.android-ics').length){
+        flag = 0;
+        console.log('out');
+      }else{
+        flag = 1;
+        console.log('in');
+      }
+    },50);
+
+    document.addEventListener('touchmove', function (event) { 　　 //监听滚动事件
+      if(flag==1){　　//判断是遮罩显示时执行，禁止滚屏
+        event.preventDefault();　　　//最关键的一句，禁止浏览器默认行为
+      }
+    });
+
 
   </script>
 </body>

@@ -1,7 +1,7 @@
 /**
  * Created by raferxu on 17/7/6.
  */
-
+var if_have_avialiable_card = false;
 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 /* * * DON'T EDIT BELOW THIS LINE * * */
 function loadDisqus() {
@@ -98,7 +98,19 @@ $(document).ajaxStart(function(){}).ajaxStop(function(){
   getStr = true;
   if(loadImg && getStr){
     // if(loadImg && getStr && lotteryLoad){
-    $("#showMes").fadeOut(500);
+    $("#showMes").fadeOut(500,function(){
+      // if_have_avialiable_card = true;
+      if(if_have_avialiable_card){
+        // $('#cardTransparent').fadeIn("fast");
+        $('#cardImg').fadeIn("fast",function(){
+          $('#cardImg').addClass('blink-smooth-2');
+          setTimeout(function () {
+            // $('#cardTransparent').fadeOut("fast");
+            $('#cardImg').fadeOut("slow");
+          },2200);
+        });
+      }
+    });
     // $('#next,#indistinct').prop('disabled',false);
     flag = 0;
   }
@@ -1174,10 +1186,10 @@ function showGuideText() {
     }
   },2000);
 }
-function showToolImg(img) {
-  $('#toolImg').attr('src',img);
-  console.log($('#toolImg').attr('src'));
-}
+// function showToolImg(img) {
+//   $('#toolImg').attr('src',img);
+//   console.log($('#toolImg').attr('src'));
+// }
 
 // taskLoad2.js
 pybossa.taskLoaded(function(task, deferred) {
@@ -1202,12 +1214,12 @@ pybossa.taskLoaded(function(task, deferred) {
               // if(loadImg && getStr && lotteryLoad){
               clearInterval(guideTimer);
               showGuideText();
-              showToolImg('/static/h5/img/tool1.png');
+              // showToolImg('/static/h5/img/tool1.png');
             }
           },50);
         }else{
           console.log('不是第一次做任务，不需要提示任务指引');
-          showToolImg('/static/h5/img/tool.png');
+          // showToolImg('/static/h5/img/tool.png');
         }
       }else{
         console.log('调用projecttutorial接口失败，返回状态码为：'+data.code);
@@ -1350,7 +1362,19 @@ function imgHandleFn(task) {
       if(loadImg && getStr){
         // if(loadImg && getStr && lotteryLoad){
         console.log('图片和ajax请求均完成');
-        $("#showMes").fadeOut(400);
+        $("#showMes").fadeOut(400,function(){
+          // if_have_avialiable_card = true;
+          if(if_have_avialiable_card){
+            // $('#cardTransparent').fadeIn("fast");
+            $('#cardImg').fadeIn("fast",function(){
+              $('#cardImg').addClass('blink-smooth-2');
+              setTimeout(function () {
+                // $('#cardTransparent').fadeOut("fast");
+                $('#cardImg').fadeOut("slow");
+              },2200);
+            });
+          }
+        });
         // $('#next,#indistinct').prop('disabled',false);
         flag = 0;
       }
@@ -1431,6 +1455,8 @@ function showPageData(task,tokenStr,interface) {
       var feedback_reply_count = userInfo[0].body.feedback_reply_count;
       var other_message_count = userInfo[0].body.other_message_count;
       var if_got_yesterday = userInfo[0].body.if_got_yesterday;
+      if_have_avialiable_card = userInfo[0].body.if_have_avialiable_card;
+      if_have_avialiable_card = true;
 
 // console.log('if_got_yesterday: '+if_got_yesterday);
       if(if_got_yesterday === 'False'){

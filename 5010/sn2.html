@@ -17,6 +17,15 @@
     main .wrap section.billBox .task_rand_score{
         z-index: 1;
     }
+    @-webkit-keyframes blink-2 { to { top: -.26rem } }
+    @keyframes blink-2 { to { top: -.26rem } }
+    .blink-smooth-2 {
+        -webkit-animation: 2s blink-2;
+        -webkit-animation-fill-mode: forwards;
+        animation: 2s blink-2;
+        /*animation-direction: alternate;*/
+        animation-fill-mode: forwards;
+    }
 </style>
 <div class="row skeleton">
     <header>
@@ -35,7 +44,8 @@
                     </div>
                     <p class="task_rand_score" id="scoreBox">
                         任务奖励:<span id="score">10</span>(分/单)
-                        <img id="toolImg" style="position: absolute;right:0;top:0;height: .25rem;-webkit-border-radius:.125rem 0 0 .125rem;border-radius:.125rem 0 0 .125rem;-webkit-box-shadow: 0 2px 6px 1px rgba(0,0,0,.06);box-shadow: 0 2px 6px 1px rgba(0,0,0,.06);" src="/static/h5/img/tool.png" alt="">
+                        <img id="toolImg" style="position:absolute;z-index:10;right:0;top:0;height: .25rem;-webkit-border-radius:.125rem 0 0 .125rem;border-radius:.125rem 0 0 .125rem;-webkit-box-shadow: 0 2px 6px 1px rgba(0,0,0,.06);box-shadow: 0 2px 6px 1px rgba(0,0,0,.06);" src="/static/h5/img/tool1.png">
+                        <img class="" id="cardImg" style="display:none;position:absolute;z-index:11;right:.45rem;top:-.13rem;height:.16rem;" src="http://192.168.0.151:3000/Browersync/zhongbao3/h5/img/haveTool.jpg">
                     </p>
                 </div>
                 <div class="billOperate">
@@ -214,20 +224,6 @@
               console.log('没有拿到token值！');
               noTokenHandle();
             }else{
-
-              $(document).off('click').on('click',function () {
-                if(!window.navigator.onLine){
-                  console.log('navigator.offLine');
-                  $("#showMes").hide();
-                  $('#offLine').show();
-                  flag = 1;
-                  $('#sureBtn').off(touchstart).on(touchstart, function() {
-                    console.log('sureBtn touch');
-                    $('#offLine').hide();
-                    flag = 0;
-                  });
-                }
-              });
 
               console.log('拿到了token值，为 '+tokenStr);
               $('#toLogin').hide();
