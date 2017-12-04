@@ -1387,7 +1387,7 @@ function imgHandleFn(task) {
     }
   },3000);
 }
-// 左右滑动阻止默认
+// 左右滑动阻止默认，只有sn才用到
 var imgStartX,imgStartY;
 $('.imgWrap').off(touchstart).on(touchstart,function (e) {
   if(isMobile){

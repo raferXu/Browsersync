@@ -572,6 +572,7 @@
 
             // Show
             if (s.display != 'inline') {
+                console.log('showshow')
                 dw.appendTo('body');
                 // Remove animation class
                 setTimeout(function () {
@@ -730,6 +731,7 @@
 
             // Hide wheels and overlay
             if (dw) {
+                console.log('hidehide')
                 if (s.display != 'inline' && anim && !prevAnim) {
                     dw.addClass('dw-trans').find('.dw').addClass('dw-' + anim + ' dw-out');
                     setTimeout(function () {
@@ -1062,6 +1064,7 @@
             show: function () {
                 var inst = getInst(this[0]);
                 if (inst) {
+                    console.log('show')
                     return inst.show();
                 }
             },
@@ -1069,6 +1072,7 @@
                 return this.each(function () {
                     var inst = getInst(this);
                     if (inst) {
+                      console.log('hide')
                         inst.hide();
                     }
                 });

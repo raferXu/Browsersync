@@ -3375,6 +3375,11 @@
         <item url="file://$PROJECT_DIR$/testB/1.min.js" />
         <item url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/source-map/dist/source-map.min.js" />
         <item url="file://$PROJECT_DIR$/dist/zhongbao3/h5/dateScroll.js" />
+        <item url="file://$PROJECT_DIR$/dist/jiaoben3218/js/mobiscroll_003x.js" />
+        <item url="file://$PROJECT_DIR$/dist/H5/music/js/index.js" />
+        <item url="file://$PROJECT_DIR$/dist/H5/music/js/jquery.js" />
+        <item url="file://$PROJECT_DIR$/dist/H5/music/js/data.js" />
+        <item url="file://$PROJECT_DIR$/dist/H5/music/js/music.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -7184,6 +7189,11 @@
       <root url="file://$PROJECT_DIR$/testB/1.min.js" />
       <root url="file://$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules/source-map/dist/source-map.min.js" />
       <root url="file://$PROJECT_DIR$/dist/zhongbao3/h5/dateScroll.js" />
+      <root url="file://$PROJECT_DIR$/dist/jiaoben3218/js/mobiscroll_003x.js" />
+      <root url="file://$PROJECT_DIR$/dist/H5/music/js/index.js" />
+      <root url="file://$PROJECT_DIR$/dist/H5/music/js/jquery.js" />
+      <root url="file://$PROJECT_DIR$/dist/H5/music/js/data.js" />
+      <root url="file://$PROJECT_DIR$/dist/H5/music/js/music.js" />
     </CLASSES>
     <SOURCES />
   </library>
