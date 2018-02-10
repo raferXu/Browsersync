@@ -1,12 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>jQuery文本框自动联想补全特效</title>
 
 <link rel="stylesheet" href="dist/autocomplete.css">
-<!--<link rel="stylesheet" href="style.css">-->
-
+	<style>
+		html{font-size: 100px}
+		body{font-size: 14px}
+	</style>
 <script type="text/javascript" src="dist/jquery.js"></script>
 <script type="text/javascript" src="dist/autocomplete.js"></script>
 <script type="text/javascript">
@@ -14,9 +16,7 @@ var proposals = ['百度1', '百度2', '百度3', '百度4', '百度5', '百度6
 
 $(document).ready(function(){
 	$('#search-form').autocomplete({
-		hints: proposals,
-		width: 300,
-		height: 44
+		hints: proposals
 	});
 });
 </script>
@@ -24,16 +24,6 @@ $(document).ready(function(){
 </head>
 
 <body>
-
-<!--<div id="demo">-->
-	<!--<div class="wrapper">-->
-		<!--<h3>试试输入"百度"</h3>-->
 		<div id="search-form"></div>
-		<!--<div id="message"></div>-->
-	<!--</div>-->
-<!--</div>-->
-
-<!--<input id="search-form" type="text">-->
-
 </body>
 </html>

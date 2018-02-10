@@ -2,50 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42cc7343-b7b6-460d-8c42-0298ea7f55b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/1.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/circle.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/circle0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/face.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/loor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/love1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/menu.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/pause.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/play.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/pre.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/singer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/singer/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/src.rar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/src0.rar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/updown.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/images/volume1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/css/music.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/css/music.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/js/data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/js/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/js/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/js/music.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/H5/music/music.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/H5/music/js/data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/H5/music/js/data.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/H5/music/js/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/H5/music/js/index.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/H5/music/js/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/H5/music/js/jquery.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/H5/music/js/music.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/H5/music/js/music.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/jiaoben3218/js/mobiscroll_003x.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/jiaoben3218/js/mobiscroll_003x.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/placeHolder.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ES6/1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ES6/2.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_003x.js" afterPath="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_003x.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/5010/hospitalSelect.html" afterPath="$PROJECT_DIR$/5010/hospitalSelect.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/auto/index.html" afterPath="$PROJECT_DIR$/auto/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -64,14 +26,14 @@
     <favorites_list name="Browersync" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="common2.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/zhongbao3/h5/common2.js">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="pinchzoom.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/h5/pinchzoom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="1419" column="3" lean-forward="true" selection-start-line="1389" selection-start-column="0" selection-end-line="1419" selection-end-column="3" />
+            <state relative-caret-position="201">
+              <caret line="661" column="39" lean-forward="false" selection-start-line="661" selection-start-column="34" selection-end-line="661" selection-end-column="39" />
               <folding>
-                <element signature="e#42190#42652#0" expanded="false" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,15 +50,14 @@
         <option value="TypeScript File" />
         <option value="package_json" />
         <option value="tsconfig.json" />
+        <option value="CSS File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>font-size</find>
       <find>userInfo</find>
       <find>loadImg &amp;&amp; getStr</find>
       <find>cardTransparent</find>
@@ -126,6 +87,7 @@
       <find>task</find>
       <find>taskId</find>
       <find>用</find>
+      <find>trans</find>
     </findStrings>
     <replaceStrings>
       <replace>navigator.mediaDevices</replace>
@@ -178,10 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/es6.js" />
-        <option value="$PROJECT_DIR$/ES6/com.js" />
-        <option value="$PROJECT_DIR$/element/element.css" />
-        <option value="$PROJECT_DIR$/zhongbao3/h5/h5keyboard/input.js" />
         <option value="$PROJECT_DIR$/echarts/1.html" />
         <option value="$PROJECT_DIR$/zhongbao3/zb2自定义光标.js" />
         <option value="$PROJECT_DIR$/echarts/折线图.html" />
@@ -200,7 +158,6 @@
         <option value="$PROJECT_DIR$/echarts/3.html" />
         <option value="$PROJECT_DIR$/echarts/动态数据.html" />
         <option value="$PROJECT_DIR$/echarts/2.html" />
-        <option value="$PROJECT_DIR$/5010/hospitalSelect.html" />
         <option value="$PROJECT_DIR$/test/blink.html" />
         <option value="$PROJECT_DIR$/test/blink2.html" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/animate.css" />
@@ -229,6 +186,11 @@
         <option value="$PROJECT_DIR$/jiaoben3218/js/mobiscroll_003x.js" />
         <option value="$PROJECT_DIR$/H5/music/js/music.js" />
         <option value="$PROJECT_DIR$/zhongbao3/h5/common2.js" />
+        <option value="$PROJECT_DIR$/ES6/a.js" />
+        <option value="$PROJECT_DIR$/ES6/import.html" />
+        <option value="$PROJECT_DIR$/ES6/b.js" />
+        <option value="$PROJECT_DIR$/5010/hospitalSelect.html" />
+        <option value="$PROJECT_DIR$/auto/index.html" />
       </list>
     </option>
   </component>
@@ -245,12 +207,13 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/static/oldH5/Vue/大漠/vue-calculate/calculate/node_modules" />
     <handled-path value="$PROJECT_DIR$/testB/node_modules" />
     <handled-path value="$PROJECT_DIR$/webpack sample project/webpack-demo/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="261" />
-    <option name="y" value="148" />
+    <option name="x" value="514" />
+    <option name="y" value="30" />
     <option name="width" value="1211" />
     <option name="height" value="777" />
   </component>
@@ -295,8 +258,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -304,21 +265,12 @@
               <item name="Browersync" type="b2602c69:ProjectViewProjectNode" />
               <item name="Browersync" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Browersync" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Browersync" type="462c0819:PsiDirectoryNode" />
-              <item name="zhongbao3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Browersync" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Browersync" type="462c0819:PsiDirectoryNode" />
-              <item name="zhongbao3" type="462c0819:PsiDirectoryNode" />
-              <item name="h5" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -606,11 +558,17 @@
       <workItem from="1510825896943" duration="61000" />
       <workItem from="1512027069462" duration="216000" />
       <workItem from="1512034254297" duration="135000" />
+      <workItem from="1516843490662" duration="506000" />
+      <workItem from="1516858668989" duration="1670000" />
+      <workItem from="1516933480263" duration="317000" />
+      <workItem from="1517834098172" duration="56000" />
+      <workItem from="1518076778058" duration="130000" />
+      <workItem from="1518214322935" duration="32000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1936818000" />
+    <option name="totallyTimeSpent" value="1939529000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -622,11 +580,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="261" y="148" width="1211" height="777" extended-state="0" />
-    <editor active="true" />
+    <frame x="514" y="30" width="1211" height="777" extended-state="0" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15739949" sideWeight="0.48958334" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1548332" sideWeight="0.48958334" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821497" sideWeight="0.49526066" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23883161" sideWeight="0.51421803" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821497" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -775,70 +732,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/snG_iOS.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/img/banner.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/animate.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23670">
-          <caret line="1578" column="1" lean-forward="false" selection-start-line="1578" selection-start-column="1" selection-end-line="1578" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/44闪烁效果提示用户界面发生变化.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/invite/date&amp;mobiscroll.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/invite/date&amp;mobiscroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/img/tool1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/invite/doTask1sn.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="54" column="64" lean-forward="false" selection-start-line="54" selection-start-column="64" selection-end-line="54" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/invite/doTask3sn.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhongbao3/h5/invite/doTask5hospital.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="56" column="56" lean-forward="false" selection-start-line="56" selection-start-column="56" selection-end-line="56" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhongbao3/h5/invite/doTask2sn.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -910,13 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
           <caret line="157" column="65" lean-forward="true" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/H5/indexedDB.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1135,8 +1021,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="1419" column="3" lean-forward="true" selection-start-line="1389" selection-start-column="0" selection-end-line="1419" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/es6.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ES6/1.html" />
+    <entry file="file://$PROJECT_DIR$/dist/ES6/b.js" />
+    <entry file="file://$PROJECT_DIR$/ES6/b.js" />
+    <entry file="file://$PROJECT_DIR$/ES6/a.js" />
+    <entry file="file://$PROJECT_DIR$/ES6/import.html" />
+    <entry file="file://$PROJECT_DIR$/H5/indexedDB.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto/dist/autocomplete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5010/hospitalSelect.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="3319" column="38" lean-forward="false" selection-start-line="3319" selection-start-column="38" selection-end-line="3319" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/h5/pinchzoom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="661" column="39" lean-forward="false" selection-start-line="661" selection-start-column="34" selection-end-line="661" selection-end-column="39" />
           <folding>
-            <element signature="e#42190#42652#0" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>

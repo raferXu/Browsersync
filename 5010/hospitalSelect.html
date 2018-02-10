@@ -3306,8 +3306,6 @@
       for(var i=0;i<len;i++){
         proposals.push(json.body.tasks[i].answer_list[2]);
       }
-//      proposals=Array.from(new Set(proposals));
-
       Array.prototype.unique3 = function(){
         var res = [];
         var json = {};
@@ -3320,8 +3318,6 @@
         return res;
       };
       proposals = proposals.unique3();
-
-
       $('#search-form').autocomplete({
         hints: proposals,
         width: 300,
