@@ -213,7 +213,7 @@ export default {
     top: 0;
     display: flex;
     flex-direction: column;
-    width: 140px;
+    /* width: 140px; */
     padding: 20px;
     line-height: 1.8;
     background: rgba(51,51,51,0.9);

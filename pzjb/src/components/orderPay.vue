@@ -45,7 +45,6 @@
                   <el-input v-model="form.money"></el-input>
                 </el-form-item>
                 <el-form-item label="汇款日期">
-                  <!-- <el-input v-model="form.date"></el-input> -->
                   <el-date-picker
                     v-model="form.date"
                     type="date"
@@ -93,15 +92,6 @@
           <h4>总计: {{this.account.sum}}元 <span>(月调用费 x 预计调用量 x 预计使用时长 x 120%)</span></h4>
           <p><i>*</i> 此价格为预扣费的金额，最终花费以实际用量为准。</p>
         </div>
-        <!-- <div class="billBox mb40">
-          <h4 class="mb40">账单</h4>
-          <h5>自定义费用</h5>
-          <p>自定义开发费: <span>3000 元/次</span></p>
-        </div>
-        <div class="sumBox">
-          <h4>总计: 3000元</h4>
-          <p><i>*</i> 此价格为单次模板开发费用，终止项目将不退费。</p>
-        </div> -->
       </div>
     </div>
   </div>
@@ -139,15 +129,16 @@ export default {
     }
   },
   created () {
-    // localStorage.removeItem('projectList')
     this.account = Object.assign({},this.account,this.$route.params)
   },
   methods: {
     onSubmit() {
       var projectList = localStorage.getItem('projectList');
-      console.log(this.account.list);
+      console.log('projectList');
+      console.log(projectList);
+      console.log(projectList instanceof Array);
       var newItem = this.account.list;
-      if(projectList){
+      if(projectList instanceof Array){
         projectList = JSON.parse(projectList);
         var newProjectList = JSON.stringify(projectList.push(newItem))
         localStorage.setItem('projectList',newProjectList);

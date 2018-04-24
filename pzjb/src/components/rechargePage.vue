@@ -4,12 +4,12 @@
     <div class="payCon">
       <div class="balanceBox mb80">
         <h4 class="mb40">账户余额</h4>
-        <p class="balanceVal">¥{{balance}}</p>
+        <p class="balanceVal">¥ {{balance}}</p>
       </div>
       <div class="rechargeBox">
         <div class="rechargeStepOneBox mb80">
           <h4 class="mb40">充值方法</h4>
-          <h5 class="mb40">1.汇款</h5>
+          <h5 class="mb40 fs24">1.汇款</h5>
           <p class="mb40">请汇款至遗下账户信息，平安接包将会于3个工作日内确认汇款信息，并将充值金额同步至您的接包账户，在转账成功后，本订单将会自动进行预扣费，同时服务生效。</p>
           <div>
             <p>
@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="rechargeStepTwoBox">
-          <h5 class="mb40">2.填写您的汇款信息</h5>
+          <h5 class="mb40 fs24">2.填写您的汇款信息</h5>
           <div>
             <el-form ref="form" :model="form" label-width="100px">
               <el-form-item label="汇款银行">
@@ -69,11 +69,14 @@
                       <input ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
                     </div>
                   </div>
+                  <div class="proofInfoBox">
+                    提示: 请上传大小不超过3MB的JPG/PNG/PDF格式的单据
+                  </div>
                 </div>
               </el-form-item>
               <el-form-item>
                 <el-button type="primary" @click="onSubmit">确认充值</el-button>
-                <el-button>返回</el-button>
+                <el-button @click="returnPage">返回</el-button>
               </el-form-item>
             </el-form>
           </div>
@@ -91,7 +94,7 @@ export default {
     return {
       proofFileName: '',
       proofImg: '',
-      title: '订单支付',
+      title: '账户余额',
       balance: '00.00',
       form: {
         bank: '',
@@ -113,6 +116,9 @@ export default {
     }
   },
   methods: {
+    returnPage(){
+      this.$router.go(-1);
+    },
     onSubmit() {
       console.log('submit!');
       this.$router.push('/manageIndex');
@@ -148,6 +154,9 @@ export default {
 .mb40{
   margin-bottom: 40px;
 }
+.fs24{
+  font-size: 24px;
+}
 
 .title{
   height: 90px;
@@ -156,6 +165,12 @@ export default {
   font-size: 32px;
   color: #323232;
   border-bottom: 1px solid #f0f0f0;
+}
+.orderPayBox{
+  line-height: 1;
+}
+.rechargeBox{
+  line-height: 1.6;
 }
 .payCon{
   width: 1200px;
@@ -168,9 +183,6 @@ export default {
   color: #323232;
   font-weight: bold;
 }
-.proofBox{
-  /* margin-bottom: 40px; */
-}
 .proofImgBox{
   width: 100%;
   min-height: 400px;
@@ -182,6 +194,9 @@ export default {
 }
 .proofInputBox{
   display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #aadaff;
 }
 .fileNameBox{
   box-sizing: border-box;
@@ -189,7 +204,7 @@ export default {
   height: 54px;
   line-height: 54px;
   padding-left: 10px;
-  border: 1px solid #aadaff;
+  /* border: 1px solid #aadaff; */
   border-right: none;
 }
 .fileInputBox{
@@ -197,8 +212,11 @@ export default {
   width: 130px;
   height: 54px;
   overflow: hidden;
+  background: #0090ff;
 }
 .urlBtn{
+  position: relative;
+  top: -2px;
   width: 130px;
   height: 54px;
   line-height: 54px;
@@ -214,5 +232,10 @@ export default {
   width: 130px;
   height: 54px;
   opacity: 0;
+}
+.proofInfoBox{
+  padding-top: 20px;
+  font-size: 14px;
+  color: #828282;
 }
 </style>

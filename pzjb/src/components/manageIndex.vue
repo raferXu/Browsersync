@@ -1,91 +1,126 @@
 <template>
   <div class="manageIssueBox">
-     <el-row :gutter="50" class="box one-box">
-        <el-col :span="8">
-          <h4 class="title">订单</h4>
-          <el-container>
-            <el-aside width="30%" style="border-right:1px solid #797979;">
-              <p>订单总数</p>
-              <p style="font-size:22px;padding-top:30px;text-align:center;">200</p>
+     <h4 class="sectionTitle">概览</h4>
+     <div class="elWrap">
+       <el-row :gutter="50" class="box one-box">
+        <el-col :span="10">
+          <el-container class="moneyBox">
+            <el-aside class="moneySide">
+              <img class="moneyIcon" :src="moneySrc" alt="moneySrc">
+            </el-aside>
+            <el-main class="moneyMain">
+              <p>可用余额: <span class="money bgSize">¥{{money}}</span></p>
+              <p class="money2Box">账户余额: <span class="money2">¥{{money2}}</span></p>
+              <p class="rechargeBox"><el-button class="rechargeBtn" @click="rechargePage">充值</el-button></p>
+            </el-main>
+          </el-container>
+          <el-container class="orderBox">
+            <el-aside class="orderSide">
+              <img class="orderIcon" :src="orderSrc" alt="orderSrc">
             </el-aside>
             <el-main>
-              <p>审核中&nbsp;&nbsp;<span>50</span></p>
-              <p>待补充&nbsp;&nbsp;<span>20</span></p>
-              <p>待付款&nbsp;&nbsp;<span>20</span></p>
-              <p>生效中&nbsp;&nbsp;<span>80</span></p>
-              <p>已失效&nbsp;&nbsp;<span>50</span></p>
+              <p>订单总数:<span class="valueBox orderNum">50</span></p>
+              <div class="orderWrap">
+                <p>审核中:<span class="valueBox">20</span></p>
+                <p>待补充:<span class="valueBox">20</span></p>
+                <p>待付款:<span class="valueBox">20</span></p>
+                <p>生效中:<span class="valueBox">80</span></p>
+                <p>已失效:<span class="valueBox">50</span></p>
+              </div>
             </el-main>
           </el-container>
         </el-col>
-        <el-col :span="16">
-          <h4 class="title">ocr接口用量</h4>
-          <div style="border:1px solid #797979;">
-            <el-row style="border-bottom:1px solid #797979;padding-left:5px;">
-              <el-col :span="12">今日用量 200</el-col>
-              <el-col :span="12">累计用量 200</el-col>
-            </el-row>
+        <el-col :span="14" class="ocrBox">
+          <h4 class="title">
+            <div class="leftTxt">OCR接口用量</div>
+            <div class="rightBox">
+              <p>今日用量: <span>200</span></p>
+              <p>累计用量: <span>200</span></p>
+            </div>
+          </h4>
+          <div>
             <el-row>
-              <el-col :span="24"><line-chart :chartData="lineData" :height="lineChartHeight"></line-chart></el-col>
+              <el-col :span="24">
+                <line-chart :chartData="lineData" :height="lineChartHeight"></line-chart>
+              </el-col>
             </el-row>
-            <p>*接口用量数据于整点更新</p>
+            <p class="tc">接口用量数据于整点更新</p>
           </div>
         </el-col>
-     </el-row>
-     <el-row :gutter="50" class="box">
-        <el-col :span="8">
-          <h4 class="title">费用</h4>
-          <el-container style="border:1px solid #797979;">
-            <el-aside width="0%">
-            </el-aside>
-            <el-main style="padding:10px 0 0 15px;">
-              <p>账户余额</p>
-              <p style="font-size:26px;margin-top:40px;margin-left:5%;">￥3000</p>
-              <p style="text-align:right;margin:40px 20px 43px 0;"><el-button @click="rechargePage">充值</el-button></p>
-            </el-main>
-          </el-container>
-        </el-col>
-        <el-col :span="16">
-          <h4 class="title">众包用户量</h4>
-          <div style="border:1px solid #797979;">
-            <div style="border-bottom:1px solid #797979;">
-              <el-row class="sub-title">
-                <el-col :span="12" >今日调用 2000</el-col>
-                <el-col :span="12">今日回收 200</el-col>
+      </el-row>
+      <el-row :gutter="50" class="barChartBox">
+          <el-col :span="24">
+            <h4 class="title">
+              <div class="leftTxt">众包用户量</div>
+              <div class="rightBox">
+                <p>今日调用: <span>200</span></p>
+                <p>今日回收: <span>200</span></p>
+                <p>累计调用: <span>12345678</span></p>
+                <p>累计回收: <span>12345678</span></p>
+              </div>
+            </h4>
+            <div>      
+              <el-row>
+                <el-col :span="24">
+                  <bar-chart :chartData="barData" :height="barChartHeight"></bar-chart>
+                </el-col>
               </el-row>
-              <el-row class="sub-title">
-                <el-col :span="12">累计调用 2000</el-col>
-                <el-col :span="12">累计回收 200</el-col>
-              </el-row>
-            </div>        
-            <el-row>
-              <el-col :span="24"><bar-chart :chartData="barData" :height="barChartHeight"></bar-chart></el-col>
-            </el-row>
-            <p>*接口用量数据于整点更新</p>
-          </div>
-        </el-col>
-     </el-row>
-     <el-row class="box">
-        <el-row>
-          <el-col :span="12"><h4 class="title">项目</h4></el-col>
-          <el-col :span="12" style="text-align:right;"><el-button size="small" @click="newProject">新建</el-button></el-col>
-        </el-row>
-        <el-table :data="projectTableData" style="width: 100%;border:1px solid #797979" class="project-table">
-            <el-table-column prop="date" label="日期" v-for="(tab,i) in projectTableTitle"  :key="i" :prop="tab.value" :label="tab.label">
+              <p class="tc">各项目回收率(数据于整点更新)</p>
+            </div>
+          </el-col>
+      </el-row>
+      <el-row class="box projectTableWrap">
+          <el-row>
+            <el-col :span="12">
+              <h4 class="title">项目</h4>
+            </el-col>
+            <el-col :span="12" class="newBtnWrap">
+              <el-button size="small" @click="newProject">新建</el-button>
+            </el-col>
+          </el-row>
+          <el-table
+            :data="projectTableData"
+            stripe
+            style="width: 100%;text-align: center;">
+            <el-table-column align="center"
+              prop="projectName"
+              label="模板名称">
+            </el-table-column>
+            <el-table-column align="center"
+              prop="id"
+              label="项目ID">
+            </el-table-column>
+            <el-table-column align="center"
+              prop="created"
+              label="创建时间">
+            </el-table-column>
+            <el-table-column align="center"
+              prop="status"
+              label="状态">
+            </el-table-column>
+            <el-table-column align="center"
+              prop="time"
+              label="今日调用次数">
             </el-table-column>
           </el-table>
-     </el-row>
-     <el-dialog title="新建项目" :visible.sync="newProjectVisible" class="" >
-       <el-row>
-         <el-col :span="8"><p>需求类型</p></el-col>
-         <el-col :span="16">
-           <el-radio v-model="demandRadio" label="1">众包</el-radio>
-           <el-radio v-model="demandRadio" label="2">自定义OCR模板</el-radio>
-           <el-row style="padding-top:40px;">
-             <el-button>确定</el-button>
-           </el-row>     
-         </el-col>
-       </el-row>
-    </el-dialog>
+          <!-- <el-table :data="projectTableData" style="width: 100%;text-align: center;" class="project-table">
+            <el-table-column prop="date" label="日期" v-for="(tab,i) in projectTableTitle"  :key="i" :prop="tab.value" :label="tab.label">
+            </el-table-column>
+          </el-table> -->
+      </el-row>
+      <el-dialog title="新建项目" :visible.sync="newProjectVisible" class="" >
+        <el-row>
+          <el-col :span="8"><p>需求类型</p></el-col>
+          <el-col :span="16">
+            <el-radio v-model="demandRadio" label="1">众包</el-radio>
+            <el-radio v-model="demandRadio" label="2">自定义OCR模板</el-radio>
+            <el-row style="padding-top:40px;">
+              <el-button>确定</el-button>
+            </el-row>     
+          </el-col>
+        </el-row>
+      </el-dialog>
+     </div>
   </div>
 </template>
 
@@ -98,37 +133,85 @@ export default {
   name: '',
   data () {
     return {
+      money: 1000,
+      money2: 2000,
+      moneySrc: require('../assets/images/manage/余额.png'),
+      orderSrc: require('../assets/images/manage/订单.png'),
+      obj: {
+        
+      },
       newProjectVisible: false,
       demandRadio: '1',
-      lineData: {seriesData: [{name:'用量',data: [200, 230, 189, 276, 124, 264, 268], type: 'line' }], 
+      lineData: {
+        seriesData: [
+          {
+            name:'用量',
+            data: [200, 230, 189, 276, 124, 264, 268], 
+            type: 'line',
+            itemStyle: {
+              normal: {
+                color: '#0090ff'
+              }
+            } 
+          }
+        ], 
         legendData:['用量'],
         xData:['4月10日', '4月11日', '4月12日', '4月13日', '4月14日', '4月15日', '4月16日'],
-        title: '近七日用量'},
-      lineChartHeight: '170px',
-      barData: {seriesData: [{ name:'直接访问',type:'bar',barWidth: '30%',data:[90, 70, 80, 97, 99], itemStyle: {
-        normal: {
-          label: {
-            show: true,
-            position: 'inside',
-            formatter:'{c}%'
+        title: ''
+      },
+      lineChartHeight: '220px',
+      barData: {
+        seriesData: [
+          { 
+            name:'直接访问',
+            type:'bar',
+            barWidth: '30%',
+            data:[90, 70, 80, 97], 
+            itemStyle: {
+              normal: {
+                color: '#0090ff',
+                label: {
+                  show: true,
+                  position: 'inside',
+                  formatter:'{c}%'
+                }
+              }
+            }
           }
-        }
-      },}],
+        ],
         legendData:['回收率'],
-        xData:['3小时', '当天', '24小时', 'T+1', '1周'],
-        title: '各时效回收率'},
-      barChartHeight: '170px',
-      projectTableTitle: [{label: "模板名称", value: "projectName"},
-          {label: "项目ID", value: "id"},
-          {label: "创建时间", value: "created"},
-          {label: "状态", value: "status"},
-          {label: "今日调用次数", value: "time"}],
+        xData:['众包1', '众包2', '众包3', 'T+众包4'],
+        title: ''
+      },
+      barChartHeight: '220px',
+      projectTableTitle: [
+        {
+          label: "模板名称", 
+          value: "projectName"
+        },
+        {
+          label: "项目ID", 
+          value: "id"
+        },
+        {
+          label: "创建时间", 
+          value: "created"
+        },
+        {
+          label: "状态", 
+          value: "status"
+        },
+        {
+          label: "今日调用次数", 
+          value: "time"
+        }
+      ],
       projectTableData: [
-          // {projectName: "身份证", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"10000"},
-          {projectName: "银行卡", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"1000"}
-          // {projectName: "身份证", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"---"},
-          // {projectName: "驾驶证", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"200"},
-          // {projectName: "我的众包模板1", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"---"}
+          {projectName: "身份证", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"10000"},
+          {projectName: "银行卡", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"1000"},
+          {projectName: "身份证", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"---"},
+          {projectName: "驾驶证", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"200"},
+          {projectName: "我的众包模板1", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"---"}
       ]
     }
   },
@@ -161,34 +244,114 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.tc{
+  text-align: center;
+}
  .manageIssueBox{
-    margin:15px 20px 0 20px;
-    font-size:14px;
+    font-size:24px;
+    color: #323232;
+    background: #f0f0f0;
  }
- .title{
-   line-height:26px;
+ .sectionTitle{
+   padding: 25px;
+   padding-left: 40px;
+   font-size: 20px;
+   background: #ffffff;
  }
- .sub-title{
-   padding-left:3%;
+ .elWrap{
+   padding: 40px;
  }
- .box{
-   padding:0 0 30px 0;
- }
- .one-box>.el-col>.el-container{
-   border:1px solid #797979;
-   font-size: 14px;
- }
- .one-box>.el-col>.el-container>.el-aside,.el-main{
-   padding:10px 0 0 15px;
- }
- .one-box>.el-col>.el-container p{
-   margin-bottom:20px;
- }
- .one-box>.el-col>.el-container>.el-main span{
-   font-size:16px;
-   font-weight:bolder;
- }
- .el-table thead.is-group th {
-    background: #f5f7fa;
+.orderBox, .moneyBox{
+  height: 270px;
+  background: #ffffff;
+}
+.moneyBox{
+  margin-bottom: 40px;
+}
+.moneySide, .orderSide{
+  width: 20% !important;
+  height: 100%;
+  padding-top: 105px;
+}
+.moneySide{
+  text-align: center;
+  background: #ffba00;
+}
+.orderSide{
+  text-align: center;
+  background: #68c800;
+}
+.moneyMain{
+  padding: 40px;
+}
+.money, .money2{
+  padding-left: 10px;
+}
+.moneyIcon, .orderIcon{
+  width: 60px;
+}
+.bgSize{
+  font-size: 36px;
+}
+.money2Box{
+  padding: 20px 0;
+}
+.rechargeBtn{
+  padding: 10px 20px;
+  color: #0090ff;
+  border-color: #0090ff;
+}
+.orderWrap p{
+  float: left;
+  width: 200px;
+  padding-top: 15px;
+}
+.valueBox{
+  padding-left: 10px;
+}
+.orderNum{
+  font-size: 36px;
+  color: #323232;
+}
+.ocrBox{
+  height: 580px;
+  background: #ffffff;
+}
+.one-box{
+  margin-right: 0!important;
+}
+.title{
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.leftTxt{
+  position: relative;
+  top: 15px;
+}
+.rightBox{
+  display: flex;
+}
+.rightBox p:not(:last-child){
+  margin-right: 80px;
+}
+.rightBox span{
+  padding-left: 10px;
+  font-size: 36px;
+}
+.barChartBox{
+  padding-bottom: 40px;
+  margin: 40px 0 0!important;
+  background: #ffffff;
+}
+.projectTableWrap{
+  margin-top: 40px;
+  background: #ffffff;
+}
+.newBtnWrap{
+  padding: .4rem;
+  text-align: right;
+  border-bottom: 1px solid #f0f0f0;
 }
 </style>

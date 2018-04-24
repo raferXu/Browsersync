@@ -1,17 +1,12 @@
 <template>
   <div class="manageIssueBox">
-    <h4>开通ORC服务</h4>
+    <h3 class="title">{{title}}</h3>
     <el-row>
     <el-col :span="15" class="manageIssueBoxleft" >
       <el-row>
         <el-col class="title1">1.选择模版类型</el-col>
-        <!-- <i class="el-icon-arrow-up"></i> -->
       </el-row>
       <el-row class="module_type">
-        <!-- <el-row>
-          <el-checkbox >OCR文字识别</el-checkbox><br>
-          <el-checkbox >众包</el-checkbox>
-        </el-row> -->
         <el-row class="radio_module">
           <el-radio class="radio_list" v-model="radio" label="1">身份证</el-radio>
           <el-radio class="radio_list" v-model="radio" label="2">驾驶证</el-radio>
@@ -25,34 +20,21 @@
       <el-row></el-row>
       <el-row>
         <el-col class="title1">2.API调用信息</el-col>
-        <!-- <i class="el-icon-arrow-up"></i> -->
       </el-row>
       <el-row class="api_mas">
-        <!-- <el-col>项目信息</el-col>
-        <hr> -->
-        <el-form :inline="true" :model="ruleForm" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-          <!-- <el-form-item label="* 项目名称" prop="name">
-            <el-input v-model="ruleForm.name"></el-input>
-          </el-form-item>
-          
-          <el-form-item label="* 项目说明" prop="desc">
-            <el-input type="textarea" v-model="ruleForm.desc"></el-input>
-          </el-form-item>
-          
-          <el-col>文字识别API</el-col>
-          <hr> -->
-          <el-form-item label-width="115" label="＊ 月调用次数">
-            <el-select @change="selectChange" v-model="ruleForm.region"  placeholder="请选择">
+        <el-form label-width="140px" label-position="left" :inline="true" :model="ruleForm" ref="ruleForm" class="demo-ruleForm">
+          <el-form-item label="＊ 月调用次数">
+            <el-select style="width:200px;" @change="selectChange" v-model="ruleForm.region" placeholder="请选择">
               <el-option label="1-10000" value="10000"></el-option>
               <el-option label="10001-50000" value="50000"></el-option>
               <el-option label="50001-100000" value="100000"></el-option>
               <el-option label=">100000" value="150000"></el-option>
             </el-select>
           </el-form-item><br>
-          <el-form-item  label-width="115" label="＊ 预计调用时长" prop="name">
-            <el-input @change="selectChange" v-model="ruleForm.time"><template slot="append">月</template></el-input>
+          <el-form-item label="＊ 预计调用时长" prop="name">
+            <el-input style="width:200px;" @change="selectChange" v-model="ruleForm.time"><template slot="append">月</template></el-input>
           </el-form-item><br>
-          <el-form-item label-width="115" label="＊ 叠加位置信息">
+          <el-form-item label="＊ 叠加位置信息">
             <el-radio-group v-model="ruleForm.resource">
               <el-radio label="需要"></el-radio>
               <el-radio label="不需要"></el-radio>
@@ -79,8 +61,12 @@
 <script>
 export default {
   name: '',
+  created () {
+    console.log(this.$route.matched)
+  },
   data () {
     return {
+      title: '开通ORC服务',
       radio:"",
       ruleForm: {
         // name: '',
@@ -143,56 +129,44 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .manageIssueBox{
-      padding: 40px;
-    }
+    
     .manageIssueBoxleft{
       float: left;
-      /* padding: 20px; */
+      padding: 0 40px;
+      border-right: 1px solid #f0f0f0;
     }
     .manageIssueBoxright{
       float: right;
       padding-left: 80px;
     }
-    h4{
-      font-size: 36px;
-      /* padding:20px 0 0 20px; */
-      width: 100%;
-      height: 50px;
-      line-height: 36px;
-      border-bottom: 12px solid #f5f5f5;
-    }
-    .radio_module{
-      background:#f5f5f5;
-
+    .title{
+      height: 90px;
+      line-height: 90px;
+      padding-left: 40px;
+      font-size: 32px;
+      color: #323232;
+      border-bottom: 1px solid #f0f0f0;
     }
     .title1{
       font-size: 24px;
       height: 80px;
       line-height: 80px;
-      border-left: 1px solid #666;
-      border-right: 1px solid #666;
       padding-left: 5px;
     }
     .module_type{
       width: 100%;
-      height: 240px;
-      border: 1px solid #666;
+      margin-bottom: 80px;
     }
     .radio_module{
-      width: 80%;
-      height: 70%;
-      margin: 20px auto;
       box-sizing: border-box;
-      /* padding-left: 10%; */
+      width: 80%;
       padding-left: 20px;
       padding-top: 20px;
     }
     .radio_list{
-      margin-right: 100px;
+      margin-right: 30px;
     }
     .api_mas{
-      border:1px solid #666;
       border-top:none;
     }
     .title2{
