@@ -1,6 +1,6 @@
 <template>
   <div class="manageIndexBox">
-    <h3 class="title">{{title}}</h3>
+    <h3 class="modelTitle pageTitle">{{title}}</h3>
     <div class="contentBox">
       <h4>基本信息</h4>
       <div class="row">

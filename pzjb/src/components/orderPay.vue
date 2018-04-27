@@ -1,83 +1,21 @@
 <template>
   <div class="orderPayBox">
-    <div class="title">{{title}}</div>
+    <div class="modelTitle pageTitle">{{title}}</div>
     <div class="payWrap">
       <div class="payCon">
-        <div class="balanceBox mb80">
-          <h4 class="mb40">账户余额</h4>
-          <p class="balanceVal">¥{{balance}}</p>
+        <h4>请选择您的支付方式: </h4>
+        <div class="accountBox">
+          <p class="moneyWrap">
+            <el-radio v-model="radio" label="1">使用账户余额</el-radio>
+            <span class="moneyBox">¥ {{money}}</span>
+          </p>
+          <p class="noEnoughBox" v-if="enough"></p>
+          <p class="noEnoughBox noEnoughTips" v-else>你的余额不足，请充值！</p>
         </div>
-        <div class="rechargeBox">
-          <div class="rechargeStepOneBox mb80">
-            <h4 class="mb40">充值方法</h4>
-            <h5 class="mb40">1.汇款</h5>
-            <p class="mb40">请汇款至遗下账户信息，平安接包将会于3个工作日内确认汇款信息，并将充值金额同步至您的接包账户，在转账成功后，本订单将会自动进行预扣费，同时服务生效。</p>
-            <div>
-              <p>
-                <span class="color82">银行户名: </span>
-                <span>平安科技</span>
-              </p>
-              <p>
-                <span class="color82">银行账号: </span>
-                <span>xxxxxxxxxxxxxxxx</span>
-              </p>
-              <p>
-                <span class="color82">开户银行: </span>
-                <span>平安银行</span>
-              </p>
-              <p>
-                <span class="color82">转账附言: </span>
-                <span>请填写您的用户名</span>
-              </p>
-            </div>
-          </div>
-          <div class="rechargeStepTwoBox">
-            <h5 class="mb40">2.填写您的汇款信息</h5>
-            <div>
-              <el-form ref="form" :model="form" label-width="100px">
-                <el-form-item label="汇款银行">
-                  <el-input v-model="form.bank"></el-input>
-                </el-form-item>
-                <el-form-item label="汇款帐号">
-                  <el-input v-model="form.account"></el-input>
-                </el-form-item>
-                <el-form-item label="汇款金额">
-                  <el-input v-model="form.money"></el-input>
-                </el-form-item>
-                <el-form-item label="汇款日期">
-                  <el-date-picker
-                    v-model="form.date"
-                    type="date"
-                    placeholder="选择日期" style="width: 100%;">
-                  </el-date-picker>
-                </el-form-item>
-                <el-form-item label="汇款人">
-                  <el-input v-model="form.remitter"></el-input>
-                </el-form-item>
-                <el-form-item label="汇款人手机">
-                  <el-input v-model="form.tel"></el-input>
-                </el-form-item>
-                <el-form-item label="汇款凭证">
-                  <div class="proofBox">
-                    <div class="proofImgBox">
-                      <img v-if="proofImg" :src="proofImg" alt="proofImg" class="proofImg">
-                    </div>
-                    <div class="proofInputBox">
-                      <div class="fileNameBox">{{proofFileName}}</div>
-                      <div class="fileInputBox">
-                        <input class="urlBtn" type="button" value="本地上传">
-                        <input ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
-                      </div>
-                    </div>
-                  </div>
-                </el-form-item>
-                <el-form-item>
-                  <el-button type="primary" @click="onSubmit">确认</el-button>
-                  <el-button>稍后支付</el-button>
-                </el-form-item>
-              </el-form>
-            </div>
-          </div>
+        <div class="btnGBox">
+          <!-- <el-button type="primary" plain @click="toPay">稍后支付</el-button> -->
+          <el-button type="primary" v-if="enough" @click="payNow">确认</el-button>
+          <el-button type="primary" v-else @click="toRecharge">充值</el-button>
         </div>
       </div>
       <div class="payView">
@@ -100,10 +38,19 @@
 <script>
 export default {
   name: '',
+  computed: {
+    enough(){
+      var have = this.money || 0;
+      var want = this.account.sum || 0;
+      return have>want;
+    }
+  },
   data() {
     return {
+      radio: '1',
+      money: 1000,
       account: {
-
+        
       },
       proofFileName: '',
       proofImg: '',
@@ -130,13 +77,21 @@ export default {
   },
   created () {
     this.account = Object.assign({},this.account,this.$route.params)
+    console.log('this.account');
+    console.log(this.account);
   },
   methods: {
+    toRecharge(){
+      this.$router.push('/rechargePage');
+    },
+    toPay(){
+
+    },
+    payNow(){
+
+    },
     onSubmit() {
       var projectList = localStorage.getItem('projectList');
-      console.log('projectList');
-      console.log(projectList);
-      console.log(projectList instanceof Array);
       var newItem = this.account.list;
       if(projectList instanceof Array){
         projectList = JSON.parse(projectList);
@@ -144,12 +99,8 @@ export default {
         localStorage.setItem('projectList',newProjectList);
       }else{
         var newItemArr = JSON.stringify([].push(newItem));
-        console.log('newItemArr');
-        console.log(newItemArr);
         localStorage.setItem('projectList',newItemArr);
       }
-      console.log('roderPay setItem projectList');
-      console.log(JSON.parse(localStorage.getItem('projectList')) instanceof Array);
       var to = {name:'manageIdCardFinish',params:this.account};
       this.$router.push(to);
     },
@@ -202,10 +153,16 @@ export default {
 .payCon{
   box-sizing: border-box;
   width: 1200px;
-  padding: 80px 80px 160px;
+  padding: 80px 80px 40px;
   font-size: 24px;
   color: #323232;
   border-right: 1px solid #f0f0f0;
+}
+.accountBox{
+  padding: 40px 0 80px;
+}
+.accountRadio{
+  font-size: 14px;
 }
 .balanceVal{
   font-size: 48px;
@@ -279,5 +236,26 @@ export default {
 }
 .payView i{
   color: #ff3b30;
+}
+.noEnoughBox{
+  width: 247px;
+  height: 54px;
+  margin: 80px 0 360px;
+}
+.noEnoughTips{
+  line-height: 54px;
+  text-align: center;
+  font-size: 20px;
+  color: #0090ff;
+  background: #e3f3ff;
+}
+.moneyWrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.moneyBox{
+  font-size: 48px;
+  color: #333333;
 }
 </style>

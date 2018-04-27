@@ -42,7 +42,7 @@
             <router-link tag="li" to="/loginPage">登录</router-link>
             <router-link tag="li" to="/registerPage">注册</router-link>
             <!-- <li><a href="manage.html?to=manageAccount">管理后台</a></li> -->
-            <li><a href="manage.html">管理后台</a></li>
+            <li><a href="manage.html">控制台</a></li>
           </ul>
         </div>
       </div>

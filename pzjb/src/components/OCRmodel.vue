@@ -1,60 +1,66 @@
 <template>
   <div class="manageIssueBox">
-    <h3 class="title">{{title}}</h3>
+    <h3 class="modelTitle pageTitle">{{title}}</h3>
     <el-row>
-    <el-col :span="15" class="manageIssueBoxleft" >
-      <el-row>
-        <el-col class="title1">1.选择模版类型</el-col>
-      </el-row>
-      <el-row class="module_type">
-        <el-row class="radio_module">
-          <el-radio class="radio_list" v-model="radio" label="1">身份证</el-radio>
-          <el-radio class="radio_list" v-model="radio" label="2">驾驶证</el-radio>
-          <el-radio class="radio_list" v-model="radio" label="3">医疗票据（上海）</el-radio>
-          <br><br>
-          <el-radio class="radio_list" v-model="radio" label="4">银行卡</el-radio>
-          <el-radio class="radio_list" v-model="radio" label="5">行驶证</el-radio>
-          <el-radio class="radio_list" v-model="radio" label="6">自定义模版1</el-radio>
+      <el-col :span="15" class="manageIssueBoxleft modelBox" >
+        <el-row>
+          <el-col class="title1 modelTitle">1.选择模版类型</el-col>
         </el-row>
-      </el-row>
-      <el-row></el-row>
-      <el-row>
-        <el-col class="title1">2.API调用信息</el-col>
-      </el-row>
-      <el-row class="api_mas">
-        <el-form label-width="140px" label-position="left" :inline="true" :model="ruleForm" ref="ruleForm" class="demo-ruleForm">
-          <el-form-item label="＊ 月调用次数">
-            <el-select style="width:200px;" @change="selectChange" v-model="ruleForm.region" placeholder="请选择">
-              <el-option label="1-10000" value="10000"></el-option>
-              <el-option label="10001-50000" value="50000"></el-option>
-              <el-option label="50001-100000" value="100000"></el-option>
-              <el-option label=">100000" value="150000"></el-option>
-            </el-select>
-          </el-form-item><br>
-          <el-form-item label="＊ 预计调用时长" prop="name">
-            <el-input style="width:200px;" @change="selectChange" v-model="ruleForm.time"><template slot="append">月</template></el-input>
-          </el-form-item><br>
-          <el-form-item label="＊ 叠加位置信息">
-            <el-radio-group v-model="ruleForm.resource">
-              <el-radio label="需要"></el-radio>
-              <el-radio label="不需要"></el-radio>
-            </el-radio-group>
-          </el-form-item>
-        </el-form>
-      </el-row>
-    </el-col>
-    <el-col :span="9" class="manageIssueBoxright" >
-      <el-col class="title2" >预扣费</el-col>
-      <el-col class="title3" >月调用费用:</el-col>
-      <el-col class="cost_mas" :span="6">API 费用:</el-col><el-col class="cost_mas" :span="6">{{price}}</el-col><el-col class="cost_mas" :span="12">元／次</el-col>
-      <el-col class="cost_mas" :span="6">预计调用量:</el-col><el-col class="cost_mas" :span="6">{{times}}</el-col><el-col class="cost_mas" :span="12">次</el-col>
-      <el-col class="cost_mas" :span="6">预计使用时长:</el-col><el-col class="cost_mas" :span="6">{{ruleForm.time}}</el-col><el-col class="cost_mas" :span="12">月</el-col>
-      <el-col class="total_cost" :span="3" >总计：</el-col><el-col :span="5" class="total_cost">{{total_cost}}</el-col><el-col :span="1" class="total_cost">元</el-col><el-col :span="15" class="total_cost_mas">（月调用费*预计调用量*预计使用时长*120%）</el-col>
-      <el-col></el-col>
-      <el-col :span="1" class="cost_red">*</el-col><el-col :span="22" class="total_cost_mas" >此价格为预扣费的金额，最终花费以实际用量为准。</el-col>
-    </el-col>
+        <el-row class="module_type">
+          <el-row class="radio_module">
+            <el-radio class="radio_list" v-model="radio" label="1">身份证</el-radio>
+            <el-radio class="radio_list" v-model="radio" label="2">驾驶证</el-radio>
+            <el-radio class="radio_list" v-model="radio" label="3">医疗票据（上海）</el-radio>
+            <br><br>
+            <el-radio class="radio_list" v-model="radio" label="4">银行卡</el-radio>
+            <el-radio class="radio_list" v-model="radio" label="5">行驶证</el-radio>
+            <el-radio class="radio_list" v-model="radio" label="6">自定义模版1</el-radio>
+          </el-row>
+        </el-row>
+        <el-row></el-row>
+        <el-row>
+          <el-col class="title1 modelTitle">2.API调用信息</el-col>
+        </el-row>
+        <el-row class="api_mas">
+          <el-form label-width="140px" label-position="left" :inline="true" :model="ruleForm" ref="ruleForm" class="demo-ruleForm">
+            <span class="starRed starPos">＊ </span>
+            <el-form-item class="modelInputLabel" label="月调用次数">
+              <el-select style="width:200px;" @change="selectChange" v-model="ruleForm.region" placeholder="请选择">
+                <el-option label="1-10000" value="10000"></el-option>
+                <el-option label="10001-50000" value="50000"></el-option>
+                <el-option label="50001-100000" value="100000"></el-option>
+                <el-option label=">100000" value="150000"></el-option>
+              </el-select>
+              <el-input style="width:200px;" v-if="customFlag" @change="selectChange('custom')" v-model="input" placeholder="请输入内容"></el-input>
+            </el-form-item><br>
+            <span class="starRed starPos">＊ </span>
+            <el-form-item class="modelInputLabel" label="预计调用时长" prop="name">
+              <el-input style="width:200px;" @change="selectChange" v-model="ruleForm.time"><template slot="append">月</template></el-input>
+            </el-form-item><br>
+            <span class="starRed starPos">＊ </span>
+            <el-form-item class="modelInputLabel" label="叠加位置信息">
+              <el-radio-group v-model="ruleForm.resource">
+                <el-radio label="需要"></el-radio>
+                <el-radio label="不需要"></el-radio>
+              </el-radio-group>
+            </el-form-item>
+          </el-form>
+        </el-row>
+      </el-col>
+      <el-col :span="9" class="manageIssueBoxright" >
+        <el-col class="title2 modelTitle">预扣费</el-col>
+        <el-col class="title3 modelParam">月调用费用:</el-col>
+        <el-col class="modelTips"><span class="modelTipsLabel pr5">API 费用: </span>{{price}}元／次</el-col>
+        <el-col class="modelTips"><span class="modelTipsLabel pr5">预计月调用量: </span>{{times}}次</el-col>
+        <el-col class="modelTips"><span class="modelTipsLabel pr5">预计使用时长: </span>{{ruleForm.time}}月</el-col>
+        <el-col class="modelTips"><span class="modelTipsLabel pr5">保障金: </span>120%</el-col>
+        <el-col class="modelTitle pt80"><span class="modelTipsLabel pr5">总计: </span>{{total_cost}}元</el-col>
+        <el-col class="modelTips mt0"><span class="starRed">* </span>此价格为预扣费的金额，最终花费以实际用量为准。</el-col>
+      </el-col>
     </el-row>
-    <el-button class="submit_order" @click="submitOrder" >确认订单</el-button>
+    <div class="btnGBox">
+      <div class="modelPrimaryBtn" @click="submitOrder">确认订单</div>
+    </div>
   </div>
 </template>
 
@@ -66,13 +72,15 @@ export default {
   },
   data () {
     return {
+      customFlag: false,
+      input: '',
       title: '开通ORC服务',
       radio:"",
       ruleForm: {
         // name: '',
         // desc: '简单描述您使用业务的应用场景，如支持一款理财APP的用户身份验证。',
         time:'0',
-        resource:'',
+        resource:'需要',
         region:''
       },
       price:'0',
@@ -81,19 +89,27 @@ export default {
     }
   },
   methods:{
-    selectChange(){
+    selectChange(x){
       // console.log(this.ruleForm.region)
       this.times = this.ruleForm.region;
-      if(this.ruleForm.region == 10000){
+      if(this.times == 10000){
         this.price = 0.2; 
-      }else if(this.ruleForm.region == 50000){
-        this.price = 0.17;
-      }else if(this.ruleForm.region == 100000){
-        this.price = 0.14;
-      }else if(this.ruleForm.region == 150000){
-        this.price = 0.08;
+        this.total_cost = this.times * this.price * this.ruleForm.time*1.2;
+      }else if(this.times == 50000){
+        this.price = "0.17－0.2";
+        this.total_cost = ((this.times-10000) * 0.17 + 0.2*10000) * this.ruleForm.time*1.2;
+      }else if(this.times == 100000){
+        this.price = "0.14－0.2";
+        this.total_cost = ((this.times-50000) * 0.14 + 0.17*(50000-10000)+0.2*10000) * this.ruleForm.time*1.2;
+      }else if(this.times == 150000){
+        this.customFlag = true;
+        this.price = "0.08－0.2";
+        if(x=='custom'){
+          this.total_cost = ((this.input-100000) * 0.08 + 0.14*(100000-50000)+0.17*(50000-10000)+0.2*10000) * this.ruleForm.time*1.2;
+          console.log('this.total_cost')
+          console.log(this.total_cost)
+        }
       }
-      this.total_cost = this.times * this.price * this.ruleForm.time*1.2;
       this.total_cost = parseInt(this.total_cost);
     },
     submitOrder(){
@@ -114,7 +130,7 @@ export default {
         sum: this.total_cost,
         list: {
           projectName: radio_module[this.radio], 
-          id: "xxxxxxxx", 
+          id: "12345612", 
           created:"2018/04/16", 
           status:"审核中",
           time:"0"
@@ -132,27 +148,24 @@ export default {
     
     .manageIssueBoxleft{
       float: left;
-      padding: 0 40px;
+      line-height: 1;
       border-right: 1px solid #f0f0f0;
     }
     .manageIssueBoxright{
       float: right;
       padding-left: 80px;
+      padding-top: 80px;
     }
     .title{
-      height: 90px;
-      line-height: 90px;
-      padding-left: 40px;
-      font-size: 32px;
-      color: #323232;
+      padding: 40px;
       border-bottom: 1px solid #f0f0f0;
     }
-    .title1{
+    /* .title1{
       font-size: 24px;
       height: 80px;
       line-height: 80px;
       padding-left: 5px;
-    }
+    } */
     .module_type{
       width: 100%;
       margin-bottom: 80px;
@@ -160,13 +173,8 @@ export default {
     .radio_module{
       box-sizing: border-box;
       width: 80%;
-      padding-left: 20px;
-      padding-top: 20px;
     }
-    .radio_list{
-      margin-right: 30px;
-    }
-    .api_mas{
+    /* .api_mas{
       border-top:none;
     }
     .title2{
@@ -203,5 +211,12 @@ export default {
     .submit_order{
       float: right;
       margin:50px;
+    } */
+    .btnGBox{
+      padding: 160px 80px;
+    }
+    .starPos{
+      position: relative;
+      top: 20px;
     }
 </style>

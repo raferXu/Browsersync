@@ -1,6 +1,6 @@
 <template>
   <div class="orderPayBox">
-    <div class="title">{{title}}</div>
+    <div class="modelTitle pageTitle">{{title}}</div>
     <div class="payCon">
       <div class="balanceBox mb80">
         <h4 class="mb40">账户余额</h4>
@@ -94,7 +94,7 @@ export default {
     return {
       proofFileName: '',
       proofImg: '',
-      title: '账户余额',
+      title: '账户充值',
       balance: '00.00',
       form: {
         bank: '',
@@ -159,11 +159,7 @@ export default {
 }
 
 .title{
-  height: 90px;
-  line-height: 90px;
-  padding-left: 40px;
-  font-size: 32px;
-  color: #323232;
+  padding: 40px;
   border-bottom: 1px solid #f0f0f0;
 }
 .orderPayBox{

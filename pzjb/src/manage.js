@@ -8,10 +8,16 @@ import 'element-ui/lib/theme-chalk/index.css';
 import Manage from './Manage.vue'
 import router from './router/manage.js'
 import axios from 'axios'
+import global_ from './Global.vue'
+
+Vue.prototype.GLOBAL = global_;
+axios.defaults.baseURL = global_.BASE_URL;
 
 import echarts from 'echarts'
 
 import iView from 'iview';
+
+
 Vue.use(iView);
 
 Vue.prototype.$echarts = echarts

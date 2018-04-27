@@ -1,52 +1,52 @@
 <template>
   <div class="manageIndexBox">
-    <h3 class="title">{{title}}</h3>
-    <div class="contentBox">
+    <h3 class="modelTitle pageTitle">{{title}}</h3>
+    <div class="contentBox modelBox">
       <div class="table baseInfoWrap">
-        <h4>基本信息</h4>
-        <div class="baseInfoBox">
+        <h4 class="modelTitle">基本信息</h4>
+        <div class="baseInfoBox modelParam">
           <div class="row">
             <div class="col">
-              <i>模板名称: </i>
+              <i class="modelLabel">模板名称: </i>
               <input v-if="edit" type="text" v-model="obj.base.name">
               <span v-else>{{obj.base.name}}</span>
             </div>
             <div class="col">
-              <i>项目ID: </i>
+              <i class="modelLabel">项目ID: </i>
               <input v-if="edit" type="text" v-model="obj.base.id">
               <span v-else>{{obj.base.id}}</span>
             </div>
             <div class="col">
-              <i>状态: </i>
+              <i class="modelLabel">状态: </i>
               <input v-if="edit" type="text" v-model="obj.base.state">
               <span v-else>{{obj.base.state}}</span>
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <i>创建时间: </i>
+              <i class="modelLabel">创建时间: </i>
               <input v-if="edit" type="text" v-model="obj.base.date">
               <span v-else>{{obj.base.date}}</span>
             </div>
             <div class="col">
-              <i>API key: </i>
+              <i class="modelLabel">API key: </i>
               <input v-if="edit" type="text" v-model="obj.base.apiKey">
               <span v-else>{{obj.base.apiKey}}</span>
             </div>
             <div class="col">
-              <i>Secret key: </i>
+              <i class="modelLabel">Secret key: </i>
               <input v-if="edit" type="text" v-model="obj.base.secretKey">
               <span v-else>{{obj.base.secretKey}}</span>
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <i>预计调用量: </i>
+              <i class="modelLabel">预计调用量: </i>
               <input v-if="edit" type="text" v-model="obj.base.num">
               <span v-else>{{obj.base.num}}</span>
             </div>
             <div class="col">
-              <i>预计使用时间: </i>
+              <i class="modelLabel">预计使用时间: </i>
               <input v-if="edit" type="text" v-model="obj.base.month">
               <span v-else>{{obj.base.month}}</span>
             </div>
@@ -55,21 +55,21 @@
         </div>
       </div>
       <div class="table projectWrap">
-        <h4>项目进度</h4>
-        <div class="projectBox">
+        <h4 class="modelTitle">项目进度</h4>
+        <div class="projectBox modelParam">
           <div class="row">
             <div class="col">
-              <i>调用次数: </i>
+              <i class="modelLabel">调用次数: </i>
               <input v-if="edit" type="text" v-model="obj.process.count">
               <span v-else>{{obj.process.count}}</span>
             </div>
             <div class="col">
-              <i>调用失败次数: </i>
+              <i class="modelLabel">调用失败次数: </i>
               <input v-if="edit" type="text" v-model="obj.process.fail">
               <span v-else>{{obj.process.fail}}</span>
             </div>
             <div class="col">
-              <i>已产生费用: </i>
+              <i class="modelLabel">已产生费用: </i>
               <input v-if="edit" type="text" v-model="obj.process.money">
               <span v-else>{{obj.process.money}}元</span>
             </div>
@@ -77,23 +77,25 @@
         </div>
       </div>
       <div class="table APIWrap">
-        <h4>
-          <el-row>
-           <el-col :span="7" ><span style="font-size:14px;line-height:40px;">API监控</span></el-col>
-           <el-col :span="17">
+        <h4 class="">
+          <el-row class="modelTitle APITitle">
+           <el-col :span="6">
+             <h4 class="">API监控</h4>
+           </el-col>
+           <el-col :span="18" class="tr">
              <el-radio v-model="radio" label="0">小时</el-radio>
              <el-radio v-model="radio" label="1">日</el-radio>
              <el-radio v-model="radio" label="2">月</el-radio>
              <el-radio v-model="radio" label="3">自定义</el-radio>
-              <el-date-picker
-                v-model="value6"
-                type="daterange"
-                range-separator="至"
-                start-placeholder="开始日期"
-                end-placeholder="结束日期"
-                style="margin-left:20px;"
-                >
-              </el-date-picker>
+             <el-date-picker
+              v-model="value6"
+              type="daterange"
+              range-separator="至"
+              start-placeholder="开始日期"
+              end-placeholder="结束日期"
+              style="margin-left:30px;"
+              >
+             </el-date-picker>
            </el-col>
          </el-row>
         </h4>
@@ -111,9 +113,9 @@ export default {
   name: '',
   data () {
     return {
-      radio: '1',
+      radio: '0',
       value6: '',
-      title: '产品服务>银行卡',
+      title: '银行卡',
       edit: false,
       region: {
         '10000': "1-10000",
@@ -169,12 +171,22 @@ export default {
         series: [{
             name:'调用失败',
             data: [200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200],
-            type: 'line'
+            type: 'line',
+            itemStyle: {
+              normal: {
+                color: '#ffba00'
+              }
+            }
         },
         {
             name:'调用成功',
             data: [300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300],
-            type: 'line'
+            type: 'line',
+            itemStyle: {
+              normal: {
+                color: '#68c800'
+              }
+            }
         }]
       }, false)
     },
@@ -197,28 +209,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .title{
-  height: 90px;
-  line-height: 90px;
-  padding-left: 40px;
-  font-size: 32px;
-  color: #323232;
+  padding: 40px;
   border: 1px solid #f0f0f0;
-}
-.contentBox{
-  padding: 80px;
 }
 .table{
   overflow: hidden;
-  padding: 0 20px;
   font-size: 18px;
-  border: 20px solid #f0f0f0;
-}
-.table h4{
-  padding: 0 999px;
-  margin: 0 -999px;
-  line-height: 3;
-  font-size: 24px;
-  border-bottom: 1px solid #f0f0f0;
 }
 .row{
   display: flex;
@@ -228,7 +224,11 @@ export default {
   flex: 1;
   line-height: 2;
 }
-.projectBox{
-  padding: 20px 0;
+.APITitle{
+  display: flex;
+  align-items: center;
+}
+.APIBox{
+  padding-bottom: 40px;
 }
 </style>

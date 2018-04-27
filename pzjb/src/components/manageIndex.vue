@@ -24,6 +24,7 @@
                 <p>审核中:<span class="valueBox">20</span></p>
                 <p>待补充:<span class="valueBox">20</span></p>
                 <p>待付款:<span class="valueBox">20</span></p>
+                <p>到账中:<span class="valueBox">20</span></p>
                 <p>生效中:<span class="valueBox">80</span></p>
                 <p>已失效:<span class="valueBox">50</span></p>
               </div>
@@ -51,7 +52,7 @@
       <el-row :gutter="50" class="barChartBox">
           <el-col :span="24">
             <h4 class="title">
-              <div class="leftTxt">众包用户量</div>
+              <div class="leftTxt">众包用量</div>
               <div class="rightBox">
                 <p>今日调用: <span>200</span></p>
                 <p>今日回收: <span>200</span></p>
@@ -72,18 +73,18 @@
       <el-row class="box projectTableWrap">
           <el-row>
             <el-col :span="12">
-              <h4 class="title">项目</h4>
+              <h4 class="title">订单</h4>
             </el-col>
             <el-col :span="12" class="newBtnWrap">
               <el-button size="small" @click="newProject">新建</el-button>
             </el-col>
           </el-row>
-          <el-table
+          <el-table  @cell-click="runto" 
             :data="projectTableData"
             stripe
             style="width: 100%;text-align: center;">
             <el-table-column align="center"
-              prop="projectName"
+              prop="name"
               label="模板名称">
             </el-table-column>
             <el-table-column align="center"
@@ -91,22 +92,22 @@
               label="项目ID">
             </el-table-column>
             <el-table-column align="center"
-              prop="created"
+              prop="date"
               label="创建时间">
             </el-table-column>
             <el-table-column align="center"
-              prop="status"
+              prop="type"
+              label="服务类别">
+            </el-table-column>
+            <el-table-column align="center"
+              prop="state"
               label="状态">
             </el-table-column>
             <el-table-column align="center"
-              prop="time"
+              prop="today"
               label="今日调用次数">
             </el-table-column>
           </el-table>
-          <!-- <el-table :data="projectTableData" style="width: 100%;text-align: center;" class="project-table">
-            <el-table-column prop="date" label="日期" v-for="(tab,i) in projectTableTitle"  :key="i" :prop="tab.value" :label="tab.label">
-            </el-table-column>
-          </el-table> -->
       </el-row>
       <el-dialog title="新建项目" :visible.sync="newProjectVisible" class="" >
         <el-row>
@@ -163,7 +164,7 @@ export default {
       barData: {
         seriesData: [
           { 
-            name:'直接访问',
+            name:'回收率',
             type:'bar',
             barWidth: '30%',
             data:[90, 70, 80, 97], 
@@ -180,14 +181,14 @@ export default {
           }
         ],
         legendData:['回收率'],
-        xData:['众包1', '众包2', '众包3', 'T+众包4'],
+        xData:['众包1', '众包2', '众包3', '众包4'],
         title: ''
       },
       barChartHeight: '220px',
       projectTableTitle: [
         {
           label: "模板名称", 
-          value: "projectName"
+          value: "name"
         },
         {
           label: "项目ID", 
@@ -195,23 +196,24 @@ export default {
         },
         {
           label: "创建时间", 
-          value: "created"
+          value: "date"
         },
         {
           label: "状态", 
-          value: "status"
+          value: "state"
         },
         {
           label: "今日调用次数", 
-          value: "time"
+          value: "today"
         }
       ],
       projectTableData: [
-          {projectName: "身份证", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"10000"},
-          {projectName: "银行卡", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"1000"},
-          {projectName: "身份证", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"---"},
-          {projectName: "驾驶证", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"200"},
-          {projectName: "我的众包模板1", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"---"}
+          {name: "行驶证", id: "13256763", date:"2018/03/06", type: "调用", state:"生效中",today:"200"},
+          {name: "我的自定义模板", id: "23457321", date:"2018/03/06", type: "调用", state:"生效中",today:"200"},
+          {name: "众包1", id: "12345612", date:"2018/03/02", type: "调用", state:"生效中",today:"500"},
+          {name: "众包2", id: "12345613", date:"2018/03/01", type: "调用", state:"生效中",today:"500"},
+          {name: "众包3", id: "12345614", date:"2018/03/02", type: "调用", state:"生效中",today:"500"},
+          {name: "众包4", id: "12345615", date:"2018/03/01", type: "调用", state:"生效中",today:"500"}
       ]
     }
   },
@@ -221,6 +223,20 @@ export default {
     },
     rechargePage(){
       this.$router.push('/rechargePage')
+    },
+    runto(row, column, cell, event){
+      var text = event.target.innerText;
+      if(text=='行驶证'){
+        console.log('行驶证');
+        this.$router.push('/manageDrivingCardFinish');
+      }else if(text=='我的自定义模板'){
+        console.log('我的自定义模板');
+        this.$router.push('/manageCustomDevFinish');
+      }else if(/众包/.test(text)){
+        console.log('我的众包模板'+text.split('众包')[1]);
+        var index = parseInt(text.split('众包')[1])+1;
+        this.$router.push({path: '/manageZBmodelFinish', query: {obj: this.projectTableData[index]}});
+      }
     }
   },
   created () {

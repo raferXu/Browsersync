@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import manageIndex from '@/components/manageIndex'
+import manageIndex2 from '@/components/manageIndex2'
 import manageMail from '@/components/manageMail'
 import manageAccount from '@/components/manageAccount'
 import manageIssue from '@/components/manageIssue'
@@ -16,6 +17,9 @@ import manageIdCardFinish from '@/components/manageIdCardFinish'
 import manageZBmodelIndex from '@/components/manageZBmodelIndex'
 import rechargePage from '@/components/rechargePage'
 import manageBankCardFinish from '@/components/manageBankCardFinish'
+import manageVehicleCardFinish from '@/components/manageVehicleCardFinish'
+import manageDrivingCardFinish from '@/components/manageDrivingCardFinish'
+import manageCustomDevFinish from '@/components/manageCustomDevFinish'
 import manageZBmodelFinish from '@/components/manageZBmodelFinish'
 import ZBmodel from '@/components/ZBmodel'
 import ZBmodelApprovaling from '@/components/ZBmodelApprovaling'
@@ -36,6 +40,11 @@ export default new Router({
             path: '/manageIndex',
             name: 'manageIndex',
             component: manageIndex
+        },
+        {
+            path: '/manageIndex2',
+            name: 'manageIndex2',
+            component: manageIndex2
         },
         {
             path: '/manageMail',
@@ -101,6 +110,21 @@ export default new Router({
             path: '/manageBankCardFinish',
             name: 'manageBankCardFinish',
             component: manageBankCardFinish
+        },
+        {
+            path: '/manageVehicleCardFinish',
+            name: 'manageVehicleCardFinish',
+            component: manageVehicleCardFinish
+        },
+        {
+            path: '/manageDrivingCardFinish',
+            name: 'manageDrivingCardFinish',
+            component: manageDrivingCardFinish
+        },
+        {
+            path: '/manageCustomDevFinish',
+            name: 'manageCustomDevFinish',
+            component: manageCustomDevFinish
         },
         {
             path: '/manageZBmodelIndex',

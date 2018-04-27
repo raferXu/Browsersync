@@ -1,6 +1,6 @@
 <template>
   <div class="manageIndexBox">
-    <div class="title">{{title}}</div>
+    <div class="modelTitle pageTitle">{{title}}</div>
     <step :step="which"></step>
     <component :is="now"></component>
     <div class="customizedDevBtnG">

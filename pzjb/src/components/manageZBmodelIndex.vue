@@ -1,6 +1,6 @@
 <template>
   <div class="manageIndexBox">
-    <h3 class="title">{{title}}</h3>
+    <h3 class="modelTitle pageTitle">{{title}}</h3>
     <div class="contentBox">
       <div class="toOpenBox">
         <div class="toOpenInfoBox">
@@ -15,8 +15,8 @@
       <div class="ZBmodelTable">
         <div class="row" v-for="(value,index) in zbModelObj" :key="index">
           <div class="col" v-for="(v,i) in value" :key="i">
-            <i v-if="i=='name'&&value['statement']=='生效中'" @click="toFinishPage">{{v}}</i>
-            <b v-else-if="i=='name'&&value['statement']!='状态'" @click="toCheckPage">{{v}}</b>
+            <i v-if="i=='name'&&value['state']=='生效中'" @click="toFinishPage(index)">{{v}}</i>
+            <b v-else-if="i=='name'&&value['state']!='状态'" @click="toCheckPage">{{v}}</b>
             <span v-else>{{v}}</span>
           </div>
         </div>
@@ -41,22 +41,36 @@ export default {
           name: '模板名称',
           id: '项目ID',
           date: '创建时间',
-          statement: '状态',
+          state: '状态',
           today: '今日调用量'
         },
         {
-          name: '我的众包模板1',
-          id: 'xxxxxxxxxxxx',
+          name: '众包1',
+          id: '12345612',
           date: '2018/03/02',
-          statement: '生效中',
-          today: '200'
+          state: '生效中',
+          today: '500'
         },
         {
-          name: '我的众包模板2',
-          id: 'xxxxxxxxxx',
+          name: '众包2',
+          id: '12345613',
           date: '2018/03/01',
-          statement: '审核中',
-          today: '-'
+          state: '生效中',
+          today: '500'
+        },
+        {
+          name: '众包3',
+          id: '12345614',
+          date: '2018/03/02',
+          state: '生效中',
+          today: '500'
+        },
+        {
+          name: '众包4',
+          id: '12345615',
+          date: '2018/03/01',
+          state: '生效中',
+          today: '500'
         }
       ]
     }
@@ -69,8 +83,9 @@ export default {
     toOpen(){
       this.$router.push('/ZBmodel')
     },
-    toFinishPage(){
-      this.$router.push('/manageZBmodelFinish')
+    toFinishPage(i){
+      var _this = this;
+      this.$router.push({path:'/manageZBmodelFinish',query:{obj: _this.zbModelObj[i]}})
     },
     toCheckPage(){
       this.$router.push('/ZBmodelApprovaling')
@@ -82,11 +97,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .title{
-  height: 90px;
-  line-height: 90px;
-  padding-left: 40px;
-  font-size: 32px;
-  color: #323232;
+  padding: 40px;
   border: 1px solid #f0f0f0;
 }
 .contentBox{

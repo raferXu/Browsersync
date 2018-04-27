@@ -1,6 +1,6 @@
 <template>
   <div class="manageIndexBox">
-    <h3 class="title">{{title}}</h3>
+    <h3 class="modelTitle pageTitle">{{title}}</h3>
     <div class="contentBox">
       <div class="toOpenBox">
         <div class="toOpenInfoBox">
@@ -30,7 +30,7 @@ export default {
   name: '',
   data () {
     return {
-      title: '产品服务>自定义开发',
+      title: '自定义开发',
       obj: {
         who: '自定义OCR识别模板',
         which: '自定义 (支持识别印刷体)',
@@ -45,18 +45,11 @@ export default {
           today: '今日调用量'
         },
         {
-          name: '我的自定义模板1',
-          id: 'xxxxxxxxxxxx',
-          date: '2018/03/01',
-          statement: '待补充',
-          today: '200'
-        },
-        {
-          name: '我的自定义模板0',
-          id: 'xxxxxxxxxx',
-          date: '2018/02/10',
+          name: '我的自定义模板',
+          id: '23457321',
+          date: '2018/03/06',
           statement: '生效中',
-          today: '-'
+          today: '200'
         }
       ]
     }
@@ -82,11 +75,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .title{
-  height: 90px;
-  line-height: 90px;
-  padding-left: 40px;
-  font-size: 32px;
-  color: #323232;
+  padding: 40px;
   border: 1px solid #f0f0f0;
 }
 .contentBox{

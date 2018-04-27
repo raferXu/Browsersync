@@ -1,6 +1,6 @@
 <template>
   <div class="manageIndexBox">
-    <h3 class="title">{{title}}</h3>
+    <h3 class="modelTitle pageTitle">{{title}}</h3>
     <div class="contentBox">
       <div class="table baseInfoWrap">
         <h4>基本信息</h4>
@@ -113,7 +113,7 @@ export default {
     return {
       radio: '1',
       value6: '',
-      title: '产品服务>身份证',
+      title: '身份证',
       edit: false,
       region: {
         '10000': "1-10000",
@@ -197,11 +197,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .title{
-  height: 90px;
-  line-height: 90px;
-  padding-left: 40px;
-  font-size: 32px;
-  color: #323232;
+  padding: 40px;
   border: 1px solid #f0f0f0;
 }
 .contentBox{

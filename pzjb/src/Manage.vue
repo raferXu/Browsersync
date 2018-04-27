@@ -32,7 +32,7 @@
                 <router-link to="/manageIndex">
                     <img :src="userIcon" alt="user" title="用户中心">
                 </router-link>
-                <router-link to="/OCRmodel">
+                <router-link to="/ZBmodelApprovaling">
                     <img :src="mailIcon" alt="mail" title="消息中心">
                 </router-link>
                 <router-link to="/manageIssue">
@@ -93,11 +93,11 @@ export default {
                 },
                 {
                     txt: '行驶证',
-                    to: '/'
+                    to: '/manageDrivingCardFinish'
                 },
                 {
                     txt: '驾驶证',
-                    to: '/'
+                    to: '/manageVehicleCardFinish'
                 },
                 {
                     txt: '医疗票据(上海)',
@@ -164,7 +164,7 @@ export default {
     /* overflow-y: scroll; */
 }
 .hideSidebar .sidebar-container{
-    transform: translate(100px);
+    transform: translate(99px);
 }
 .sidebar-item{
     position: relative;
