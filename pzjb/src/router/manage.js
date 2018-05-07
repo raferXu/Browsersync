@@ -25,6 +25,10 @@ import ZBmodel from '@/components/ZBmodel'
 import ZBmodelApprovaling from '@/components/ZBmodelApprovaling'
 import manageCustomModelIndex from '@/components/manageCustomModelIndex'
 import manageCustomDevIndex from '@/components/manageCustomDevIndex'
+import manageCustomDevApprovaling from '@/components/manageCustomDevApprovaling'
+import customCanvas from '@/components/customCanvas'
+import customSubmit from '@/components/customSubmit'
+import zhongbaoSubmit from '@/components/zhongbaoSubmit'
 
 Vue.use(Router)
 
@@ -40,6 +44,21 @@ export default new Router({
             path: '/manageIndex',
             name: 'manageIndex',
             component: manageIndex
+        },
+        {
+            path: '/zhongbaoSubmit',
+            name: 'zhongbaoSubmit',
+            component: zhongbaoSubmit
+        },
+        {
+            path: '/customSubmit',
+            name: 'customSubmit',
+            component: customSubmit
+        },
+        {
+            path: '/customCanvas',
+            name: 'customCanvas',
+            component: customCanvas
         },
         {
             path: '/manageIndex2',
@@ -125,6 +144,11 @@ export default new Router({
             path: '/manageCustomDevFinish',
             name: 'manageCustomDevFinish',
             component: manageCustomDevFinish
+        },
+        {
+            path: '/manageCustomDevApprovaling',
+            name: 'manageCustomDevApprovaling',
+            component: manageCustomDevApprovaling
         },
         {
             path: '/manageZBmodelIndex',

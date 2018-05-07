@@ -79,7 +79,7 @@ export default {
       proofFileName: '',
       statementArr: ['需求审批中','需求审批通过，请上传样本','审核样本中','样本审核通过，请缴纳训练费用','模板开发中 (7个工作日)','开发完毕，请试用'],
       tipsBoxShow: false,
-      title: '项目概览>我的自定义开发',
+      title: '我的自定义开发',
       info: {
         name: '我的自定义开发',
         page: '2',

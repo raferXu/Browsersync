@@ -10,11 +10,13 @@
                 <el-tooltip class="item" effect="dark" content="概览" placement="right" style="opacity: 0;">
                     <el-button></el-button>
                 </el-tooltip>
-                <i class="sidebarIcon summaryIcon"></i>
+                <!-- <i class="sidebarIcon summaryIcon"></i> -->
+                <i class="sidebarIcon" :style="summaryBg"></i>
             </li>
             <li class="sidebar-item" @mouseover="serviceIconOverFn" @mouseout="serviceIconOutFn">
                 <!-- <img :src="serviceIcon" alt="service"> -->
-                <i class="sidebarIcon serviceIcon"></i>
+                <!-- <i class="sidebarIcon serviceIcon" :style="serviceBg"></i> -->
+                <i class="sidebarIcon" :style="serviceBg"></i>
                 <ul class="serviceList" v-show="!hideSideBarServiceList">
                     <li class="serviceItem">
                         <span class="serviceListTitle">{{serviceData.title}}</span>
@@ -71,6 +73,7 @@ export default {
         serviceIcon: require('./assets/images/manage/产品服务.png'),
         accountIcon: require('./assets/images/manage/账户管理.png'),
         serviceBg: {
+            // position: absolute,
             backgroundImage: 'url("'+require('./assets/images/manage/产品服务.png')+'")',
             backgroundSize: '100% 100%',
             backgroundRepeat: 'no-repeat'
@@ -180,18 +183,19 @@ export default {
     background: rgba(81,81,81);
 }
 .sidebarIcon{
+    position: absolute;
     width: 16px;
     height: 16px;
 }
-.summaryIcon{
+/* .summaryIcon{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    /* background: url('./assets/images/manage/概览.png') 100% 100% no-repeat; */
     background: url('static/images/概览.png') no-repeat;
     background-size:  100% 100%;
 }
+
 .sidebar-item:nth-of-type(2):hover .summaryIcon{
     background: url('static/images/概览(蓝).png') no-repeat;
     background-size:  100% 100%;
@@ -199,14 +203,14 @@ export default {
 .serviceIcon{
     background: url('static/images/产品服务.png') no-repeat;
     background-size:  100% 100%;
-}
+} */
 .sidebar-item:nth-of-type(3){
     position: relative;
 }
-.sidebar-item:nth-of-type(3):hover .serviceIcon{
+/* .sidebar-item:nth-of-type(3):hover .serviceIcon{
     background: url('static/images/产品服务(蓝).png') no-repeat;
     background-size:  100% 100%;
-}
+} */
 .serviceList{
     position: absolute;
     left: 59px;

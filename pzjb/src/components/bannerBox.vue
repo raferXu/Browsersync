@@ -20,7 +20,7 @@ export default {
 <style scoped>
 .bannerBox{
   height: 520px;
-  margin-bottom: 160px;
+  /* margin-bottom: 160px; */
   overflow: hidden;
   background: #f0f0f0;
 }

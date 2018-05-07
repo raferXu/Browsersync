@@ -1,20 +1,9 @@
 <template>
-  <div class="functionBox">
-    <h3 class="funcTitle">{{func.title}}</h3>
+  <div class="functionBox tl">
+    <h3 class="funcTitle tc">{{func.title}}</h3>
     <p class="funcTips">{{func.tips}}</p>
     <div class="example">
-      <div class="from">
-        <img class="exampleImg" :src="func.example.from.img" :alt="func.example.from.txt">
-        <p class="exampleTxt">{{func.example.from.txt}}</p>
-      </div>
-      <div class="process">
-        <img class="processImg" :src="func.example.process.img" alt="processing">
-        <p></p>
-      </div>
-      <div class="to">
-        <img class="exampleImg" :src="func.example.to.img" :alt="func.example.to.txt">
-        <p class="exampleTxt">{{func.example.to.txt}}</p>
-      </div>
+      <img class="exampleImg" :src="func.exampleImg" alt="exampleImg">
     </div>
   </div>
 </template>
@@ -26,20 +15,8 @@ export default {
     return {
       func: {
         title: '功能介绍',
-        tips: '上传图片识别过程，参考示例如下',
-        example: {
-          from: {
-            img: require('../assets/images/待识别图片.png'),
-            txt: '待识别图片'
-          },
-          process: {
-            img: require('../assets/images/idCard/箭头.png')
-          },
-          to: {
-            img: require('../assets/images/识别结果.png'),
-            txt: '识别结果'
-          }
-        }
+        tips: '支持实时识别二代居民身份证的关键字段，识别准确率可达99%以上，便于提升多种场景下用户信息录入速度及产品身份认证效率，为用户提供最方便快捷的身份证信息录入体验。',
+        exampleImg: require('../assets/images/身份证识别功能介绍.png')
       }
     }
   }
@@ -50,38 +27,24 @@ export default {
 <style scoped>
 .functionBox{
   padding: 0 415px;
-  text-align: center;
 }
 .funcTitle{
   font-size: 36px;
   color: #333333;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 .funcTips{
   font-size: 24px;
   color: #666666;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 .example{
   display: flex;
-  justify-content: space-between;
+  text-align: center;
   margin-bottom: 160px;
 }
 .exampleImg{
-  width: 340px;
-  height: 210px;
-  margin-bottom: 20px;
-  background: #f0f0f0;
-}
-.exampleTxt{
-  font-size: 24px;
-  color: #323232;
-}
-.process{
-  padding-top: 60px;
-}
-.processImg{
-  width: 202px;
-  height: 80px;
+  width: 1170px;
+  height: 355px;
 }
 </style>

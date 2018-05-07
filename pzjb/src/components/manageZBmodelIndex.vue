@@ -13,13 +13,35 @@
         </div>
       </div>
       <div class="ZBmodelTable">
-        <div class="row" v-for="(value,index) in zbModelObj" :key="index">
-          <div class="col" v-for="(v,i) in value" :key="i">
-            <i v-if="i=='name'&&value['state']=='生效中'" @click="toFinishPage(index)">{{v}}</i>
-            <b v-else-if="i=='name'&&value['state']!='状态'" @click="toCheckPage">{{v}}</b>
-            <span v-else>{{v}}</span>
-          </div>
-        </div>
+        <el-table  @cell-click="runto" 
+            :data="zbModelObj"
+            stripe
+            style="width: 100%;text-align: center;">
+            <el-table-column align="center"
+              prop="name"
+              label="模板名称">
+            </el-table-column>
+            <el-table-column align="center"
+              prop="project_id"
+              label="项目ID">
+            </el-table-column>
+            <el-table-column align="center"
+              prop="created"
+              label="创建时间">
+            </el-table-column>
+            <el-table-column align="center"
+              prop="type"
+              label="服务类别">
+            </el-table-column>
+            <el-table-column align="center"
+              prop="status"
+              label="状态">
+            </el-table-column>
+            <el-table-column align="center"
+              prop="called_num"
+              label="今日调用次数">
+            </el-table-column>
+          </el-table>
       </div>
     </div>
   </div>
@@ -30,52 +52,34 @@ export default {
   name: '',
   data () {
     return {
-      title: '产品服务>众包模板',
+      title: '众包模板',
       obj: {
         who: '众包文字识别',
         which: '自定义 (支持印刷体及手写体)',
         how: '预存款，每月按实际使用量扣款'
       },
-      zbModelObj: [
-        {
-          name: '模板名称',
-          id: '项目ID',
-          date: '创建时间',
-          state: '状态',
-          today: '今日调用量'
-        },
-        {
-          name: '众包1',
-          id: '12345612',
-          date: '2018/03/02',
-          state: '生效中',
-          today: '500'
-        },
-        {
-          name: '众包2',
-          id: '12345613',
-          date: '2018/03/01',
-          state: '生效中',
-          today: '500'
-        },
-        {
-          name: '众包3',
-          id: '12345614',
-          date: '2018/03/02',
-          state: '生效中',
-          today: '500'
-        },
-        {
-          name: '众包4',
-          id: '12345615',
-          date: '2018/03/01',
-          state: '生效中',
-          today: '500'
-        }
-      ]
+      zbModelObj: []
     }
   },
   computed: {
+  },
+  created () {
+    this.axios.post("/token/public/list_zb",{},{
+      // /token/public/list_zb
+        // headers: {
+        //   token: "rafer"
+        // }
+    }).then(res=>{
+      console.log(res);
+      res = res.data;
+      if(res.code=='200'){
+        var data = res.body.projects;
+        this.zbModelObj = this.zbModelObj.concat(data)
+      }
+      
+    }).catch(function(error){
+      console.log("/token/project/start error init."+error);
+    })
   },
   components: {
   },
@@ -89,6 +93,11 @@ export default {
     },
     toCheckPage(){
       this.$router.push('/ZBmodelApprovaling')
+    },
+    runto(row, column, cell, event){
+      var templateId = row.template_id;
+      this.$router.push({path: '/manageCustomDevApprovaling',query: {templateId: templateId}});
+
     }
   }
 }

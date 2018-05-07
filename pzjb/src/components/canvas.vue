@@ -1,6 +1,6 @@
 <template>
     <div id="canvas_con" style="">
-        <canvas id="penal" width="705" height="385" style='background:#ccc' @mousemove='mousemove' @mouseup='mouseup' @mousedown='mousedown' @mouseleave='mouseleave'></canvas>
+        <canvas id="penal" width="705" height="385" style='background:#ccc;display:none;' @mousemove='mousemove' @mouseup='mouseup' @mousedown='mousedown' @mouseleave='mouseleave'></canvas>
     </div>  
 </template>
 
@@ -43,6 +43,10 @@ export default {
         //this.createCloseBtn();
   },
   methods:{
+      showCanvas(){
+        var penal = document.getElementById("penal");
+        penal.style.cssText="display:block";
+      },
       mousedown(e){
         this.isDraw = true;
         this.img.src = this.penal.toDataURL('image/png');
@@ -107,19 +111,35 @@ export default {
       }, 
       addPaintMes(){
         var attr = this.index;
-        this.savePaint.push({
+        // this.savePaint.push({
+        //   x1:this.paintMes.x1,
+        //   y1:this.paintMes.y1,
+        //   x2:this.paintMes.x2,
+        //   y2:this.paintMes.y2
+        // })
+        // if(!this.allPaintMes[attr]){
+        //   this.allPaintMes[attr] = [];
+        //   this.allPaintMes[attr].push(this.savePaint);
+        // }else{
+        //   this.allPaintMes[attr].push(this.savePaint);
+        // } 
+        if(!this.allPaintMes[attr]){
+          this.allPaintMes[attr] = [];
+          this.allPaintMes[attr].push({
           x1:this.paintMes.x1,
           y1:this.paintMes.y1,
           x2:this.paintMes.x2,
           y2:this.paintMes.y2
-        })
-        if(!this.allPaintMes[attr]){
-          this.allPaintMes[attr] = [];
-          this.allPaintMes[attr].push(this.savePaint);
+        });
         }else{
-          this.allPaintMes[attr].push(this.savePaint);
+          this.allPaintMes[attr].push({
+          x1:this.paintMes.x1,
+          y1:this.paintMes.y1,
+          x2:this.paintMes.x2,
+          y2:this.paintMes.y2
+        });
         } 
-        this.savePaint = [];
+        // this.savePaint = [];
         console.log(this.allPaintMes);
       },
       clearCount(){

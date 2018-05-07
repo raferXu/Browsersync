@@ -33,37 +33,37 @@
         <div class="rechargeStepTwoBox">
           <h5 class="mb40 fs24">2.填写您的汇款信息</h5>
           <div>
-            <el-form ref="form" :model="form" label-width="100px">
+            <el-form ref="form" :model="recharge" label-width="100px">
               <el-form-item label="汇款银行">
-                <el-input v-model="form.bank"></el-input>
+                <el-input v-model="recharge.remittance_bank"></el-input>
               </el-form-item>
               <el-form-item label="汇款帐号">
-                <el-input v-model="form.account"></el-input>
+                <el-input v-model="recharge.remittance_account"></el-input>
               </el-form-item>
               <el-form-item label="汇款金额">
-                <el-input v-model="form.money"></el-input>
+                <el-input v-model="recharge.remittance_amount"></el-input>
               </el-form-item>
               <el-form-item label="汇款日期">
                 <!-- <el-input v-model="form.date"></el-input> -->
                 <el-date-picker
-                  v-model="form.date"
+                  v-model="recharge.remittance_date"
                   type="date"
                   placeholder="选择日期" style="width: 100%;">
                 </el-date-picker>
               </el-form-item>
               <el-form-item label="汇款人">
-                <el-input v-model="form.remitter"></el-input>
+                <el-input v-model="recharge.remitter"></el-input>
               </el-form-item>
               <el-form-item label="汇款人手机">
-                <el-input v-model="form.tel"></el-input>
+                <el-input v-model="recharge.remitter_phone_number"></el-input>
               </el-form-item>
               <el-form-item label="汇款凭证">
                 <div class="proofBox">
                   <div class="proofImgBox">
-                    <img v-if="proofImg" :src="proofImg" alt="proofImg" class="proofImg">
+                    <img v-if="recharge.remittance_pic" :src="recharge.remittance_pic" alt="proofImg" class="proofImg">
                   </div>
                   <div class="proofInputBox">
-                    <div class="fileNameBox">{{proofFileName}}</div>
+                    <div class="fileNameBox">{{recharge.remittance_pic}}</div>
                     <div class="fileInputBox">
                       <input class="urlBtn" type="button" value="本地上传">
                       <input ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
@@ -76,7 +76,7 @@
               </el-form-item>
               <el-form-item>
                 <el-button type="primary" @click="onSubmit">确认充值</el-button>
-                <el-button @click="returnPage">返回</el-button>
+                <!-- <el-button @click="returnPage">返回</el-button> -->
               </el-form-item>
             </el-form>
           </div>
@@ -98,7 +98,7 @@ export default {
       balance: '00.00',
       form: {
         bank: '',
-        account: '',
+        account: 0,
         money: '',
         date: '',
         remitter: '',
@@ -112,6 +112,16 @@ export default {
         type: [],
         resource: '',
         desc: ''
+      },
+      recharge: {
+        payment_method: 1,
+        remittance_bank: '',
+        remittance_account: 0,
+        remittance_amount: 0,
+        remittance_date: '',
+        remitter: '',
+        remitter_phone_number: '',
+        remittance_pic: ''
       }
     }
   },
@@ -121,7 +131,21 @@ export default {
     },
     onSubmit() {
       console.log('submit!');
-      this.$router.push('/manageIndex');
+      this.recharge.remittance_amount = parseFloat(this.recharge.remittance_amount);
+      this.axios.post("/token/payment/recharge",this.recharge,{
+        // headers: {
+        //   token: "rafer"
+        // }
+      }).then(res=>{
+        console.log(res)
+        res = res.data;
+        var code = res.code;
+        if(code=='200'){
+          this.$router.push('/manageIndex');
+        }
+      }).catch(function(error){
+        console.log("/token/payment/recharge error init."+error);
+      })
     },
     fileUpload(e){
       this.imgIndex = -1;
@@ -133,9 +157,8 @@ export default {
       var imgFile;
       reader.onload=function(e) {
           imgFile = e.target.result;
-          _this.proofImg = window.URL.createObjectURL(obj);
+          _this.recharge.remittance_pic = window.URL.createObjectURL(obj);
       };
-
       //正式读取文件
       reader.readAsArrayBuffer(this.$refs.fileInput.files[0]);
     }

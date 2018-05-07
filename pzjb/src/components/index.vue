@@ -2,8 +2,8 @@
   <div class="jbbody">
     <bannerBox :bannerSrc="bannerSrc"></bannerBox>
     <sectionBox :obj="techFeaturesObj"></sectionBox>
+    <productContent :obj="caseObj"></productContent>
     <applicationBox :obj="applicationScenObj"></applicationBox>
-    <caseBox :obj="caseObj"></caseBox>
   </div>
 </template>
 
@@ -13,13 +13,13 @@ import sectionBox from './sectionBox'
 import functionBox from './functionBox'
 import tryBox from './tryBox'
 import applicationBox from './applicationBox'
-import caseBox from './caseBox'
+import productContent from './productContent'
 import priceBox from './priceBox'
 export default {
   name: '',
   data () {
     return {
-      bannerSrc: require('../assets/images/index/首页banner.png'),
+      bannerSrc: require('../assets/images/首页banner.png'),
       techFeaturesObj: {
         title: {
           img: require('../assets/images/index/技术特色.png')
@@ -68,18 +68,18 @@ export default {
       },
       caseObj: {
         title: {
-          img: require('../assets/images/index/客户案例.png')
+          img: require('../assets/images/产品内容.png')
         },
         pasx: {
-          img: require('../assets/images/index/客户案例.png'),
-          name: '平安寿险',
-          txt: '加上寿险业务介绍'
+          img: require('../assets/images/产品内容.png'),
+          name: '产品内容',
+          txt: '产品内容'
         }
       }
     }
   },
   components: {
-    bannerBox,sectionBox,functionBox,tryBox,applicationBox,caseBox,priceBox
+    bannerBox,sectionBox,functionBox,tryBox,applicationBox,productContent,priceBox
   }
 }
 </script>

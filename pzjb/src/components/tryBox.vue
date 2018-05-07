@@ -17,12 +17,15 @@
             <span class="infoTitle" :class="{'bdb':nowTable=='response'}" @click="nowTable='response'">Response Json</span>
           </div>
           <div class="resultBox" v-show="nowTable=='result'">
+            <div class="loadingBox" v-show="loading">加载中...</div>
             <div class="nameBox" v-for="(v,k) in example.result" :key="k">
               <span class="key">{{k}}</span>
               <span class="val">{{v}}</span>
             </div>
           </div>
-          <div class="responseBox" v-show="nowTable=='response'">responseBox</div>
+          <div class="responseBox" v-show="nowTable=='response'">
+            <pre>{{responseTxt}}</pre>
+          </div>
         </div>
       </div>
       <div class="operateBox">
@@ -32,7 +35,7 @@
         </div>
         <span class="orTxt">或</span>
         <div class="localUploadBox">
-          <input class="urlBtn" type="button" value="本地上传">
+          <input ref="upload" class="urlBtn" type="button" value="本地上传">
           <input ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
         </div>
       </div>
@@ -46,6 +49,8 @@ export default {
   name: '',
   data () {
     return {
+      responseTxt: '',
+      loading: false,
       imgUrl: '',
       nowTable: 'result',
       imgIndex: 0,
@@ -81,16 +86,29 @@ export default {
         {
           result: {
             name: '小贴贴',
-            id: '333333333333333333'
+            id: '652901196611026716'
           }
         },{
           result: {
             name: '妹子',
-            id: '123123123123121212'
+            id: '522530199208180048'
           }
         }
       ]
     }
+  },
+  mounted () {
+    var _this = this;
+    this.axios.interceptors.request.use(function(config){
+      console.log("request init.");
+      _this.loading = true;
+      return config;
+    });
+    this.axios.interceptors.response.use(function(response){
+      console.log("response init.");
+      _this.loading = false;
+      return response;
+    })
   },
   methods: {
     showBigImg(i){
@@ -104,7 +122,6 @@ export default {
     fileUpload(e){
       this.imgIndex = -1;
       var _this = this;
-      console.log(this.$refs.fileInput.files[0])
       var obj = this.$refs.fileInput.files[0];
       var reader = new FileReader();
       var imgFile;
@@ -112,10 +129,26 @@ export default {
           imgFile = e.target.result;
           _this.tryObj.bigImg = window.URL.createObjectURL(obj);;
           var blob = new Blob([imgFile]);
-          _this.axios.post('https://test-pazb.pingan.com.cn:20443/alg/ocr_chanxian_test/id_test_only', blob)
-          .then(function (response) {
+          
+
+         let input = _this.$refs.fileInput  
+         let data = new FormData();
+         data.append('file', input.files[0]);
+         data.append('deviceId', 'device001');
+         data.append('clientType', '1');
+         data.append('appKey', '1234567890');
+          _this.axios({
+            url: 'https://test-pazb.pingan.com.cn:20443/alg/ocr_chanxian_test/id_test_only',
+            method: 'post',
+            data: data,
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }
+          }).then(function (response) {
+            
             if(response.status==200){
               var data = response.data;
+              _this.responseTxt = data
               if(data.code==200){
                 var info = data.info;
                 console.log(info)
@@ -205,10 +238,25 @@ export default {
   border-bottom: 4px solid #0090ff;
 }
 .resultBox, .responseBox{
+  position: relative;
   width: 565px;
   height: 324px;
   overflow: auto;
   background: #cae8ff;
+}
+.responseBox{
+  text-align: left;
+}
+.loadingBox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  line-height: 324px;
+  color: white;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
 }
 .nameBox{
   height: 54px;

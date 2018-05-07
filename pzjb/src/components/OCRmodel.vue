@@ -8,13 +8,13 @@
         </el-row>
         <el-row class="module_type">
           <el-row class="radio_module">
-            <el-radio class="radio_list" v-model="radio" label="1">身份证</el-radio>
-            <el-radio class="radio_list" v-model="radio" label="2">驾驶证</el-radio>
-            <el-radio class="radio_list" v-model="radio" label="3">医疗票据（上海）</el-radio>
+            <el-radio class="radio_list" v-model="radio" label="0">身份证</el-radio>
+            <el-radio class="radio_list" v-model="radio" label="1">驾驶证</el-radio>
+            <el-radio class="radio_list" v-model="radio" label="2">医疗票据（上海）</el-radio>
             <br><br>
-            <el-radio class="radio_list" v-model="radio" label="4">银行卡</el-radio>
-            <el-radio class="radio_list" v-model="radio" label="5">行驶证</el-radio>
-            <el-radio class="radio_list" v-model="radio" label="6">自定义模版1</el-radio>
+            <el-radio class="radio_list" v-model="radio" label="3">银行卡</el-radio>
+            <el-radio class="radio_list" v-model="radio" label="4">行驶证</el-radio>
+            <el-radio class="radio_list" v-model="radio" label="5">自定义模版1</el-radio>
           </el-row>
         </el-row>
         <el-row></el-row>
@@ -31,7 +31,7 @@
                 <el-option label="50001-100000" value="100000"></el-option>
                 <el-option label=">100000" value="150000"></el-option>
               </el-select>
-              <el-input style="width:200px;" v-if="customFlag" @change="selectChange('custom')" v-model="input" placeholder="请输入内容"></el-input>
+              <el-input style="width:200px;" v-if="customFlag" @change="selectChange" v-model="custonInput" placeholder="请输入内容"></el-input>
             </el-form-item><br>
             <span class="starRed starPos">＊ </span>
             <el-form-item class="modelInputLabel" label="预计调用时长" prop="name">
@@ -40,8 +40,8 @@
             <span class="starRed starPos">＊ </span>
             <el-form-item class="modelInputLabel" label="叠加位置信息">
               <el-radio-group v-model="ruleForm.resource">
-                <el-radio label="需要"></el-radio>
-                <el-radio label="不需要"></el-radio>
+                <el-radio value="true" label="需要"></el-radio>
+                <el-radio value="false" label="不需要"></el-radio>
               </el-radio-group>
             </el-form-item>
           </el-form>
@@ -73,9 +73,9 @@ export default {
   data () {
     return {
       customFlag: false,
-      input: '',
+      custonInput: '',
       title: '开通ORC服务',
-      radio:"",
+      radio: "0",
       ruleForm: {
         // name: '',
         // desc: '简单描述您使用业务的应用场景，如支持一款理财APP的用户身份验证。',
@@ -89,38 +89,39 @@ export default {
     }
   },
   methods:{
-    selectChange(x){
-      // console.log(this.ruleForm.region)
+    selectChange(){
       this.times = this.ruleForm.region;
       if(this.times == 10000){
+        this.customFlag = false;
         this.price = 0.2; 
         this.total_cost = this.times * this.price * this.ruleForm.time*1.2;
       }else if(this.times == 50000){
+        this.customFlag = false;
         this.price = "0.17－0.2";
-        this.total_cost = ((this.times-10000) * 0.17 + 0.2*10000) * this.ruleForm.time*1.2;
+        // this.total_cost = ((this.times-10000) * 0.17 + 0.2*10000) * this.ruleForm.time*1.2;
+        this.total_cost =  this.times * 0.2 * this.ruleForm.time*1.2;
       }else if(this.times == 100000){
+        this.customFlag = false;
         this.price = "0.14－0.2";
-        this.total_cost = ((this.times-50000) * 0.14 + 0.17*(50000-10000)+0.2*10000) * this.ruleForm.time*1.2;
+        this.total_cost = this.times * 0.2 * this.ruleForm.time*1.2;
       }else if(this.times == 150000){
         this.customFlag = true;
         this.price = "0.08－0.2";
-        if(x=='custom'){
-          this.total_cost = ((this.input-100000) * 0.08 + 0.14*(100000-50000)+0.17*(50000-10000)+0.2*10000) * this.ruleForm.time*1.2;
-          console.log('this.total_cost')
-          console.log(this.total_cost)
-        }
+        this.total_cost = this.custonInput*0.2 * this.ruleForm.time*1.2;
+
       }
       this.total_cost = parseInt(this.total_cost);
     },
     submitOrder(){
       // console.log(this.radio);
+      // template_id  expected_frequency expected_duration location_included
       var radio_module = {
-        '1':'身份证',
-        '2':'驾驶证',
-        '3':'医疗票据（上海）',
-        '4':'银行卡',
-        '5':'行驶证',
-        '6':'自定义模版1'
+        '0':'身份证',
+        '1':'驾驶证',
+        '2':'医疗票据（上海）',
+        '3':'银行卡',
+        '4':'行驶证',
+        '5':'自定义模版1'
       }
       var obj = {
         add: this.ruleForm.resource,
@@ -134,6 +135,12 @@ export default {
           created:"2018/04/16", 
           status:"审核中",
           time:"0"
+        },
+        json: {
+          template_id: parseInt(this.radio)+1,
+          expected_frequency: this.ruleForm.region,
+          expected_duration: this.ruleForm.time,
+          location_included: this.ruleForm.resource=="需要"?true:false
         }
       };
       // {projectName: "银行卡", id: "xxxxxxxx", created:"2018/03/06", status:"生效中",time:"1000"}

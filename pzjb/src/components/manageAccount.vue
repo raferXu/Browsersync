@@ -5,7 +5,7 @@
       <el-col :span="8" class="balance-box">
         <el-row class="balanceRow">
           <el-col :span="18"><p class="modelTitle">可用余额</p></el-col>
-          <el-col :span="6"><el-button class="balanceBtn modelTitle" type="text" @click="rechargeList">充值纪录</el-button></el-col>
+          <el-col :span="6"><el-button class="balanceBtn modelTitle" type="text" @click="rechargeList">充值记录</el-button></el-col>
         </el-row>
         <el-row class="balanceRow">
             <p class="modelBiggerText">¥ {{money}}</p>

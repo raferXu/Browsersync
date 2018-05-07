@@ -5,13 +5,20 @@
       <div class="row" v-for="(value,index) in APIprice" :key="index">
         <div class="col" v-for="(v,i) in value" :key="i">{{v}}</div>
       </div>
+      <div class="lastRow">
+        <span class="redStar">*</span>
+        按梯度收费，产品的每个购买阶梯使用一个价格，每个阶梯内的用量与该阶梯的价格相乘，累加后得出总价。
+如：用户本月调用了40000次，则产生费用为 10000*0.2+（40000-10000）*0.17 = 7100 元
+每月费用在次月第一天的00：00结算。
+      </div>
     </div>
-    <consultAndTryBtnG></consultAndTryBtnG>
+    <div class="btnG">
+      <span class="mainColorBtn">立即开通</span>
+    </div>
   </div>
 </template>
 
 <script>
-import consultAndTryBtnG from './consultAndTryBtnG'
 export default {
   name: '',
   data () {
@@ -44,7 +51,7 @@ export default {
     }
   },
   components: {
-    consultAndTryBtnG
+    
   }
 }
 </script>
@@ -52,8 +59,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .priceBox{
-  padding: 80px 375px;
-  background: #ebf6ff;
+  padding: 160px 415px;
 }
 .sectionTitle{
   margin-bottom: 80px;
@@ -63,25 +69,40 @@ export default {
   flex-direction: column;
   /* height: 330px; */
   margin-bottom: 40px;
-  background: #ffffff;
-  border: 1px solid #0090ff;
   font-size: 24px;
   overflow: hidden;
 }
-.priceTable .row{
+.row{
   display: flex;
-  line-height: 3.5;
+  line-height: 54px;
+  font-size: 24px;
+  line-height: 54px;
+  color: #333333;
 }
-.priceTable .row:nth-child(1){
-  line-height: 5;
+.row:nth-child(even){
+  background: #f0f0f0;
 }
-.priceTable .row:not(:last-child){
-  border-bottom: 1px solid #f0f0f0;
+.row:nth-child(odd){
+  background: #dcdcdc;
 }
-.priceTable .col{
+.row:first-child{
+  font-size: 20px;
+  color: #ffffff;
+  background: #333333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.col{
   flex: 1;
 }
-.priceTable .col:nth-child(2n+1){
-  border-right: 1px solid #f0f0f0;
+.btnG{
+  text-align: center;
+}
+.lastRow{
+  background: #f0f0f0;
+  padding: 15px 120px;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: left;
 }
 </style>

@@ -19,14 +19,14 @@
               <img class="orderIcon" :src="orderSrc" alt="orderSrc">
             </el-aside>
             <el-main>
-              <p>订单总数:<span class="valueBox orderNum">{{totalOrder}}</span></p>
+              <p>订单总数:<span class="valueBox orderNum">50</span></p>
               <div class="orderWrap">
-                <p>审核中:<span class="valueBox">{{order['审核中']}}</span></p>
-                <p>待补充:<span class="valueBox">{{order['待补充']}}</span></p>
-                <p>待付款:<span class="valueBox">{{order['待付款']}}</span></p>
-                <p>到账中:<span class="valueBox">{{order['到账中']}}</span></p>
-                <p>生效中:<span class="valueBox">{{order['生效中']}}</span></p>
-                <p>已失效:<span class="valueBox">{{order['已失效']}}</span></p>
+                <p>审核中:<span class="valueBox">20</span></p>
+                <p>待补充:<span class="valueBox">20</span></p>
+                <p>待付款:<span class="valueBox">20</span></p>
+                <p>到账中:<span class="valueBox">20</span></p>
+                <p>生效中:<span class="valueBox">80</span></p>
+                <p>已失效:<span class="valueBox">50</span></p>
               </div>
             </el-main>
           </el-container>
@@ -35,8 +35,8 @@
           <h4 class="title">
             <div class="leftTxt">OCR接口用量</div>
             <div class="rightBox">
-              <p>今日用量: <span>0</span></p>
-              <p>累计用量: <span>0</span></p>
+              <p>今日用量: <span>200</span></p>
+              <p>累计用量: <span>200</span></p>
             </div>
           </h4>
           <div>
@@ -54,13 +54,13 @@
             <h4 class="title">
               <div class="leftTxt">众包用量</div>
               <div class="rightBox">
-                <p>今日调用: <span>0</span></p>
-                <p>今日回收: <span>0</span></p>
-                <p>累计调用: <span>0</span></p>
-                <p>累计回收: <span>0</span></p>
+                <p>今日调用: <span>200</span></p>
+                <p>今日回收: <span>200</span></p>
+                <p>累计调用: <span>12345678</span></p>
+                <p>累计回收: <span>12345678</span></p>
               </div>
             </h4>
-            <div v-if="barChartFlag">      
+            <div>      
               <el-row>
                 <el-col :span="24">
                   <bar-chart :chartData="barData" :height="barChartHeight"></bar-chart>
@@ -92,7 +92,7 @@
               label="项目ID">
             </el-table-column>
             <el-table-column align="center"
-              prop="created"
+              prop="date"
               label="创建时间">
             </el-table-column>
             <el-table-column align="center"
@@ -100,11 +100,11 @@
               label="服务类别">
             </el-table-column>
             <el-table-column align="center"
-              prop="status"
+              prop="state"
               label="状态">
             </el-table-column>
             <el-table-column align="center"
-              prop="called_num"
+              prop="today"
               label="今日调用次数">
             </el-table-column>
           </el-table>
@@ -134,27 +134,20 @@ export default {
   name: '',
   data () {
     return {
-      barChartFlag: false,
-      money: 0,
-      money2: 0,
+      money: 250000,
+      money2: 250000,
       moneySrc: require('../assets/images/manage/余额.png'),
       orderSrc: require('../assets/images/manage/订单.png'),
-      order: {
-        "生效中": 0,
-        "到账中": 0,
-        "待付款": 0,
-        "待补充": 0,
-        "已失效": 0,
-        "审核中": 0
+      obj: {
+        
       },
-      totalOrder: 0,
       newProjectVisible: false,
       demandRadio: '1',
       lineData: {
         seriesData: [
           {
             name:'用量',
-            data: [0, 0, 0, 0, 0, 0, 0], 
+            data: [200, 230, 189, 276, 124, 264, 268], 
             type: 'line',
             itemStyle: {
               normal: {
@@ -164,7 +157,7 @@ export default {
           }
         ], 
         legendData:['用量'],
-        xData:['4月26日', '4月27日', '4月28日', '4月29日', '4月30日', '5月1日', '5月2日'],
+        xData:['4月10日', '4月11日', '4月12日', '4月13日', '4月14日', '4月15日', '4月16日'],
         title: ''
       },
       lineChartHeight: '220px',
@@ -215,35 +208,16 @@ export default {
         }
       ],
       projectTableData: [
-          // {name: "行驶证", id: "13256763", date:"2018/03/06", type: "调用", state:"生效中",today:"200"},
-          // {name: "我的自定义模板", id: "23457321", date:"2018/03/06", type: "调用", state:"生效中",today:"200"},
-          // {name: "众包1", id: "12345612", date:"2018/03/02", type: "调用", state:"生效中",today:"500"},
-          // {name: "众包2", id: "12345613", date:"2018/03/01", type: "调用", state:"生效中",today:"500"},
-          // {name: "众包3", id: "12345614", date:"2018/03/02", type: "调用", state:"生效中",today:"500"},
-          // {name: "众包4", id: "12345615", created:"2018/03/01", type: "调用", status:"生效中",called_num:"500"}
+          {name: "行驶证", id: "13256763", date:"2018/03/06", type: "调用", state:"生效中",today:"200"},
+          {name: "我的自定义模板", id: "23457321", date:"2018/03/06", type: "调用", state:"生效中",today:"200"},
+          {name: "众包1", id: "12345612", date:"2018/03/05", type: "调用", state:"生效中",today:"500"},
+          {name: "众包2", id: "12345613", date:"2018/03/04", type: "调用", state:"生效中",today:"500"},
+          {name: "众包3", id: "12345614", date:"2018/03/02", type: "调用", state:"生效中",today:"500"},
+          {name: "众包4", id: "12345615", date:"2018/03/01", type: "调用", state:"生效中",today:"500"}
       ]
     }
   },
   methods: {
-    get: function (url,params,headers) {
-      axios.get(url,{
-        params: params,
-        headers: headers
-      }).then(res=>{
-        this.msg = res.data;
-      }).catch(function(error){
-        console.log("error init."+error);
-      })
-    },
-    post: function (url,params,headers) {
-      axios.post(url,params,{
-        headers: headers
-      }).then(res=>{
-        this.msg = res.data;
-      }).catch(function(error){
-        console.log("error init."+error);
-      })
-    },
     newProject() {
       this.newProjectVisible = true
     },
@@ -252,10 +226,10 @@ export default {
     },
     runto(row, column, cell, event){
       var text = event.target.innerText;
-      if(text=='身份证'){
-        console.log('身份证');
+      if(text=='行驶证'){
+        console.log('行驶证');
         this.$router.push('/manageDrivingCardFinish');
-      }else if(/自定义/.test(text)){
+      }else if(text=='我的自定义模板'){
         console.log('我的自定义模板');
         this.$router.push('/manageCustomDevFinish');
       }else if(/众包/.test(text)){
@@ -267,7 +241,6 @@ export default {
   },
   created () {
     // localStorage.removeItem('projectList');
-    /*
     var projectList = JSON.parse(localStorage.getItem('projectList'));
     if(projectList){
       console.log('index projectList');
@@ -276,52 +249,7 @@ export default {
       this.projectTableData.concat(projectList);
       console.log(this.projectTableData)
     }
-    */
-    console.log(this.GLOBAL.BASE_URL);
-    setTimeout(() => {
-      var res = {
-          "body": {
-              "order": {
-                  "生效中": 2,
-                  "到账中": 0,
-                  "待付款": 0,
-                  "待补充": 0,
-                  "已失效": 0,
-                  "审核中": 1
-              },
-              "projects": [
-                  {
-                      "status": "生效中",
-                      "name": "身份证",
-                      "created": "2018-04-26 19:07:49.901204",
-                      "type": "调用",
-                      "called_num": 0,
-                      "id": 16
-                  },
-                  {
-                      "status": "审核中",
-                      "name": "用户1的自定义模版1",
-                      "created": "2018-04-26 19:09:02.639236",
-                      "type": "开发",
-                      "called_num": 0,
-                      "id": null
-                  },
-                  {
-                      "status": "生效中",
-                      "name": "用户1的自定义模版2",
-                      "created": "2018-04-26 19:09:44.773617",
-                      "type": "调用",
-                      "called_num": 0,
-                      "id": 17
-                  }
-              ]
-          },
-          "message": "operate successfully",
-          "code": 200
-      };
-      this.projectTableData = this.projectTableData.concat(res['body']['projects']);
-      this.order = res['body']['order'];
-    }, 1000);
+    
   },
   mounted () {
     

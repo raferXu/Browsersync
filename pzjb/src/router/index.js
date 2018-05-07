@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from '@/components/index'
-import idCard from '@/components/idCard'
+import index from '@/views/index'
+import idCard from '@/views/idCard'
 import bankCard from '@/components/bankCard'
 import drivingCard from '@/components/drivingCard'
 import vehicleCard from '@/components/vehicleCard'
 import hospitalBill from '@/components/hospitalBill'
-import customizedOCR from '@/components/customizedOCR'
-import crowdsourcing from '@/components/crowdsourcing'
+import customizedOCR from '@/views/customizedOCR'
+import crowdsourcing from '@/views/crowdsourcing'
+import techExperience from '@/views/techExperience'
 import zbPro from '@/components/zbPro'
 import ocrPro from '@/components/ocrPro'
 
@@ -27,6 +28,15 @@ export default new Router({
             path: '/ocrPro',
             name: 'ocrPro',
             component: ocrPro
+        },
+        {
+            path: '/techExperience',
+            name: 'techExperience',
+            component: techExperience,
+            children: [{
+                name: 'test',
+                path: '/test'
+            }]
         },
         {
             path: '/zbPro',

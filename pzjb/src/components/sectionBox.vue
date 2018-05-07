@@ -56,14 +56,14 @@ export default {
   margin-bottom: 20px;
 }
 .listTitle{
-  font-size: 20px;
+  font-size: 36px;
   color: #333333;
   /* font-weight: normal; */
   margin-bottom: 40px;
 }
 .listTxt{
   text-align: left;
-  font-size: 14px;
+  font-size: 18px;
   color: #828282;
 }
 </style>

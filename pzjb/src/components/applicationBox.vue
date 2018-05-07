@@ -21,7 +21,7 @@ export default {
       applicationBg: {
         backgroundSize: '100% 100%',
         backgroundRepeat: 'no-repeat',
-        backgroundImage: 'url(' + require('../assets/images/index/map拷贝.png') + ')' ,
+        backgroundImage: 'url(' + require('../assets/images/应用场景背景.png') + ')' ,
       }
     }
   }
@@ -33,9 +33,9 @@ export default {
 .applicationBox{
   box-sizing: border-box;
   width: 100%;
-  height: 707px;
-  padding: 80px 390px 80px;
-  margin-bottom: 160px;
+  height: 857px;
+  padding: 160px 390px;
+  /* margin-bottom: 160px; */
 }
 .title{
   margin-bottom: 80px;

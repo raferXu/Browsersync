@@ -13,13 +13,42 @@
         </div>
       </div>
       <div class="ZBmodelTable">
-        <div class="row" v-for="(value,index) in zbModelObj" :key="index">
+        <!-- <div class="row" v-for="(value,index) in zbModelObj" :key="index">
           <div class="col" v-for="(v,i) in value" :key="i">
             <i v-if="i=='name'&&value['statement']=='生效中'" @click="toFinishPage">{{v}}</i>
             <b v-else-if="i=='name'&&value['statement']!='状态'" @click="toCheckPage">{{v}}</b>
             <span v-else>{{v}}</span>
           </div>
-        </div>
+        </div> -->
+        <el-table  @cell-click="runto" 
+            :data="zbModelObj"
+            stripe
+            style="width: 100%;text-align: center;">
+            <el-table-column align="center"
+              prop="name"
+              label="模板名称">
+            </el-table-column>
+            <el-table-column align="center"
+              prop="project_id"
+              label="项目ID">
+            </el-table-column>
+            <el-table-column align="center"
+              prop="created"
+              label="创建时间">
+            </el-table-column>
+            <el-table-column align="center"
+              prop="type"
+              label="服务类别">
+            </el-table-column>
+            <el-table-column align="center"
+              prop="status"
+              label="状态">
+            </el-table-column>
+            <el-table-column align="center"
+              prop="called_num"
+              label="今日调用次数">
+            </el-table-column>
+          </el-table>
       </div>
     </div>
   </div>
@@ -37,26 +66,30 @@ export default {
         how: '预存款，每月按实际使用量扣款'
       },
       zbModelObj: [
-        {
-          name: '模板名称',
-          id: '项目ID',
-          date: '创建时间',
-          statement: '状态',
-          today: '今日调用量'
-        },
-        {
-          name: '我的自定义模板',
-          id: '23457321',
-          date: '2018/03/06',
-          statement: '生效中',
-          today: '200'
-        }
       ]
     }
   },
   computed: {
   },
   components: {
+  },
+  created () {
+    this.axios.post("/token/public/list_ocr",{},{
+      // /token/public/list_zb
+        // headers: {
+        //   token: "rafer"
+        // }
+    }).then(res=>{
+      res = res.data;
+      if(res.code=='200'){
+        var data = res.body.projects;
+        this.zbModelObj = this.zbModelObj.concat(data)
+        console.log(this.zbModelObj)
+      }
+      
+    }).catch(function(error){
+      console.log("/token/project/start error init."+error);
+    })
   },
   methods: {
     toOpen(){
@@ -67,6 +100,11 @@ export default {
     },
     toCheckPage(){
       this.$router.push('/CustomDevApprovaling')
+    },
+    runto(row, column, cell, event){
+      var templateId = row.template_id;
+      this.$router.push({path: '/manageCustomDevApprovaling',query: {templateId: templateId}});
+
     }
   }
 }

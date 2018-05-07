@@ -39,16 +39,12 @@
 export default {
   name: '',
   computed: {
-    enough(){
-      var have = this.money || 0;
-      var want = this.account.sum || 0;
-      return have>want;
-    }
   },
   data() {
     return {
+      enough: true,
       radio: '1',
-      money: 1000,
+      money: 0,
       account: {
         
       },
@@ -76,9 +72,28 @@ export default {
     }
   },
   created () {
+    
+    console.log(localStorage.getItem('available_amount'))
+    this.money = localStorage.getItem('available_amount');
     this.account = Object.assign({},this.account,this.$route.params)
     console.log('this.account');
     console.log(this.account);
+
+    this.axios.post("/token/project/check_balance",this.account.json,{
+        // headers: {
+        //   token: "rafer"
+        // }
+      }).then(res=>{
+        console.log(res)
+        res = res.data;
+        if(res.code=='301'){
+          this.enough = false;
+        }
+        
+      }).catch(function(error){
+        console.log("/token/project/check_balance error init."+error);
+      })
+    
   },
   methods: {
     toRecharge(){
@@ -88,7 +103,38 @@ export default {
 
     },
     payNow(){
-
+      console.log('点击确认付款');
+      console.log(this.account.json);
+      //发送请求
+      /*
+      setTimeout(() => {
+        this.$router.push({name:'manageIdCardFinish',params:this.account});
+      }, 1000);
+      */
+     this.axios.post("/token/project/start",this.account.json,{
+        // headers: {
+        //   token: "rafer"
+        // }
+      }).then(res=>{
+        console.log(res)
+        res = res.data;
+        var code = res.code;
+        if(code=='200'){
+          var type = res.body.type;
+          var template = {templateId: res.body.template_id};
+          console.log('type');
+          console.log(type);
+          if(type==1){
+            this.$router.push({path: '/manageIdCardFinish',query: template})
+          }else{
+            
+          }
+        }
+        
+      }).catch(function(error){
+        console.log("/token/project/start error init."+error);
+      })
+      
     },
     onSubmit() {
       var projectList = localStorage.getItem('projectList');

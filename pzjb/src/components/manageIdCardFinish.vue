@@ -1,99 +1,113 @@
 <template>
   <div class="manageIndexBox">
     <h3 class="modelTitle pageTitle">{{title}}</h3>
-    <div class="contentBox">
+    <div class="contentBox modelBox">
       <div class="table baseInfoWrap">
-        <h4>基本信息</h4>
-        <div class="baseInfoBox">
+        <h4 class="modelTitle">基本信息</h4>
+        <div class="baseInfoBox modelParam">
           <div class="row">
             <div class="col">
-              <i>模板名称: </i>
-              <input v-if="edit" type="text" v-model="obj.base.name">
-              <span v-else>{{obj.base.name}}</span>
+              <i class="modelLabel">创建时间: </i>
+              <input v-if="edit" type="text" v-model="obj.base.date">
+              <span v-else>{{obj.base.date}}</span>
             </div>
             <div class="col">
-              <i>项目ID: </i>
+              <i class="modelLabel">项目ID: </i>
               <input v-if="edit" type="text" v-model="obj.base.id">
               <span v-else>{{obj.base.id}}</span>
             </div>
             <div class="col">
-              <i>状态: </i>
+              <i class="modelLabel">状态: </i>
               <input v-if="edit" type="text" v-model="obj.base.state">
               <span v-else>{{obj.base.state}}</span>
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <i>创建时间: </i>
-              <input v-if="edit" type="text" v-model="obj.base.date">
-              <span v-else>{{obj.base.date}}</span>
+              <i class="modelLabel">预计月调用量: </i>
+              <span>{{obj.base.count}}</span>次/月
             </div>
             <div class="col">
-              <i>API key: </i>
-              <input v-if="edit" type="text" v-model="obj.base.apiKey">
-              <span v-else>{{obj.base.apiKey}}</span>
+              <i class="modelLabel">调用单价: </i>
+              <input v-if="edit" type="text" v-model="obj.base.price">
+              <span v-else>{{obj.base.price}}</span> 元/次
             </div>
             <div class="col">
-              <i>Secret key: </i>
-              <input v-if="edit" type="text" v-model="obj.base.secretKey">
-              <span v-else>{{obj.base.secretKey}}</span>
+              <i class="modelLabel">累计支付: </i>
+              <input v-if="edit" type="text" v-model="obj.base.pay">
+              <span v-else>{{obj.base.pay}}</span> 元
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <i>预计调用量: </i>
-              <input v-if="edit" type="text" v-model="obj.base.num">
-              <span v-else>{{obj.base.num}}</span>
+              <i class="modelLabel">API key: </i>
+              <input v-if="edit" type="text" v-model="obj.base.apiKey">
+              <span v-else>{{obj.base.apiKey}}</span>
             </div>
             <div class="col">
-              <i>预计使用时间: </i>
-              <input v-if="edit" type="text" v-model="obj.base.month">
-              <span v-else>{{obj.base.month}}</span>
+              <i class="modelLabel">Secret key: </i>
+              <input v-if="edit" type="text" v-model="obj.base.secretKey">
+              <span v-else>{{obj.base.secretKey}}</span>
             </div>
             <div class="col"></div>
           </div>
         </div>
       </div>
       <div class="table projectWrap">
-        <h4>项目进度</h4>
-        <div class="projectBox">
+        <h4 class="modelTitle">服务进度</h4>
+        <div class="projectBox modelParam">
           <div class="row">
             <div class="col">
-              <i>调用次数: </i>
+              <i class="modelLabel">本日有效调用次数: </i>
+              <input v-if="edit" type="text" v-model="obj.process.todayCount">
+              <span v-else>{{obj.process.todayCount}}</span>
+            </div>
+            <div class="col">
+              <i class="modelLabel">累计有效调用次数: </i>
+              <input v-if="edit" type="text" v-model="obj.process.allCount">
+              <span v-else>{{obj.process.allCount}}</span>
+            </div>
+            <div class="col">
+              <i class="modelLabel">累计调用失败次数: </i>
+              <input v-if="edit" type="text" v-model="obj.process.allFail">
+              <span v-else>{{obj.process.allFail}}</span>
+            </div>  
+          </div>
+          <div class="row">
+            <div class="col">
+              <i class="modelLabel">本月有效调用次数: </i>
               <input v-if="edit" type="text" v-model="obj.process.count">
               <span v-else>{{obj.process.count}}</span>
             </div>
             <div class="col">
-              <i>调用失败次数: </i>
-              <input v-if="edit" type="text" v-model="obj.process.fail">
-              <span v-else>{{obj.process.fail}}</span>
+              <i class="modelLabel">预计总剩余次数: </i>
+              <input v-if="edit" type="text" v-model="obj.process.remainder">
+              <span v-else>{{obj.process.remainder}}</span>
             </div>
-            <div class="col">
-              <i>已产生费用: </i>
-              <input v-if="edit" type="text" v-model="obj.process.money">
-              <span v-else>{{obj.process.money}}元</span>
-            </div>
+            <div class="col"></div>
           </div>
         </div>
       </div>
       <div class="table APIWrap">
-        <h4>
-          <el-row>
-           <el-col :span="7" ><span style="font-size:14px;line-height:40px;">API监控</span></el-col>
-           <el-col :span="17">
+        <h4 class="">
+          <el-row class="modelTitle APITitle">
+           <el-col :span="6">
+             <h4 class="">API监控</h4>
+           </el-col>
+           <el-col :span="18" class="tr">
              <el-radio v-model="radio" label="0">小时</el-radio>
              <el-radio v-model="radio" label="1">日</el-radio>
              <el-radio v-model="radio" label="2">月</el-radio>
              <el-radio v-model="radio" label="3">自定义</el-radio>
-              <el-date-picker
-                v-model="value6"
-                type="daterange"
-                range-separator="至"
-                start-placeholder="开始日期"
-                end-placeholder="结束日期"
-                style="margin-left:20px;"
-                >
-              </el-date-picker>
+             <el-date-picker
+              v-model="value6"
+              type="daterange"
+              range-separator="至"
+              start-placeholder="2018-5-2"
+              end-placeholder="2018-5-2"
+              style="margin-left:30px;"
+              >
+             </el-date-picker>
            </el-col>
          </el-row>
         </h4>
@@ -111,7 +125,7 @@ export default {
   name: '',
   data () {
     return {
-      radio: '1',
+      radio: '0',
       value6: '',
       title: '身份证',
       edit: false,
@@ -124,21 +138,26 @@ export default {
       obj: {
         base: {
           name: '身份证',
-          id: '123456123456qwer',
-          state: '待确认',
-          date: '2018年3月16日',
+          id: '1234567890QWER',
+          state: '生效中',
+          date: '2018年1月12日',
           apiKey: 'xxxxxxxxxxxxxxxxxx',
           secretKey: 'xxxxxxxxxxxxxxxxxxxx',
-          num: '1-10000',
-          month: '3'
+          count: '10000-50000',
+          month: '3',
+          price: '0.17-0.2',
+          pay: 0
         },
         process: {
-          fail: '0',
           money: '0',
-          count: '0'
+          count: '0',
+          allCount: '0',
+          allFail: '0', 
+          allMoney: '0',
+          todayCount: '0',
+          remainder: '0'
         },
         api: {
-
         }
       }
     }
@@ -169,12 +188,23 @@ export default {
         series: [{
             name:'调用失败',
             data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            type: 'line'
+            type: 'line',
+            itemStyle: {
+              normal: {
+                color: '#ffba00'
+              }
+            }
         },
         {
             name:'调用成功',
+            // data: [0, 0, 0, 0, 50, 50, 50, 50, 0, 0, 0, 0, 0, 0, 0, 0],
             data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            type: 'line'
+            type: 'line',
+            itemStyle: {
+              normal: {
+                color: '#68c800'
+              }
+            }
         }]
       }, false)
     },
@@ -187,9 +217,48 @@ export default {
     this.initChart()
   },
   created () {
+    var _this = this;
     console.log(this.$route)
     var obj = {num: this.region[this.$route.params.num]}
     this.obj.base = Object.assign({},this.obj.base,this.$route.params,obj)
+    console.log('templateId')
+    console.log(this.$route.query.templateId)
+    var templateId = this.$route.query.templateId;
+    if(templateId){
+      this.axios.post("/token/project/detail",{"template_id": templateId},{
+        // headers: {
+        //   token: "rafer"
+        // }
+      }).then(res=>{
+        res = res.data;
+        if(res.code=='200'){
+          var data = res.body;
+          console.log(_this)
+          _this.obj.base.name = data.project_id
+          _this.obj.base.id = data.project_id
+          _this.obj.base.state = data.status
+          _this.obj.base.date = data.created_time.split(' ')[0]
+          // _this.obj.base.apiKey = data.api_key
+          // _this.obj.base.secretKey = data.secret_key
+          _this.obj.base.count = _this.region[data.expected_frequency]
+          // _this.obj.base.month = data.expected_frequency
+          // _this.obj.base.price = data.expected_frequency
+          _this.obj.base.pay = data.accumulative_payment
+          // _this.obj.process.money = data.expected_frequency
+          // _this.obj.process.allFail = data.failed_calls
+          // _this.obj.process.count = data.success_calls
+          // _this.obj.process.allCount = data.remaining_calls
+          // _this.obj.process.allMoney = data.success_calls_month
+          // _this.obj.process.todayCount = data.success_calls_today
+          _this.obj.process.remainder = data.expected_frequency
+          
+
+        }
+        
+      }).catch(function(error){
+        console.log("/token/project/start error init."+error);
+      })
+    }
   }
 }
 </script>
@@ -200,21 +269,9 @@ export default {
   padding: 40px;
   border: 1px solid #f0f0f0;
 }
-.contentBox{
-  padding: 80px;
-}
 .table{
   overflow: hidden;
-  padding: 0 20px;
   font-size: 18px;
-  border: 20px solid #f0f0f0;
-}
-.table h4{
-  padding: 0 999px;
-  margin: 0 -999px;
-  line-height: 3;
-  font-size: 24px;
-  border-bottom: 1px solid #f0f0f0;
 }
 .row{
   display: flex;
@@ -224,7 +281,16 @@ export default {
   flex: 1;
   line-height: 2;
 }
-.projectBox{
-  padding: 20px 0;
+.APITitle{
+  display: flex;
+  align-items: center;
+}
+.APIBox{
+  padding-bottom: 40px;
+}
+</style>
+<style>
+.el-date-editor .el-range-separator{
+  padding: 0;
 }
 </style>

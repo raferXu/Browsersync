@@ -10,29 +10,10 @@
               <!-- <router-link tag="li" to="/productService">产品服务</router-link> -->
               <li class="proService" @mouseenter="showPro" @mouseleave="hidePro">
                 产品服务
-                <div class="techBox proBox" v-show="nowNav=='pro'">
-                  <ul>
-                    <router-link @click.native="dump" v-for="(val,index) in navbarObj.main.pro.normal" :key="index" tag="li" :to="val.path">{{val.name}}</router-link>
-                  </ul>
-                </div>
               </li>
               <!-- <router-link tag="li" to="/techExperience">技术体验</router-link> -->
-              <li class="techExperience" @mouseenter="showTech" @mouseleave="hideTech">
+              <li class="techExperience" @click="jumpTo('/techExperience')" @mouseenter="showTech" @mouseleave="hideTech">
                 技术体验
-                <div class="techBox" v-show="nowNav=='tech'">
-                  <ul>
-                    <li class="cate">
-                      <span>OCR业务</span>
-                    </li>
-                    <router-link @click.native="dump" v-for="(val,index) in navbarObj.main.tech.ocr" :key="index" tag="li" :to="val.path">{{val.name}}</router-link>
-                  </ul>
-                  <ul>
-                    <li class="cate">
-                      <span>众包业务</span>
-                    </li>
-                    <router-link @click.native="dump" v-for="(val,index) in navbarObj.main.tech.zb" :key="index" tag="li" :to="val.path">{{val.name}}</router-link>
-                  </ul>
-                </div>
               </li>
               <router-link tag="li" to="/devCenter">开发者中心</router-link>
               <router-link tag="li" to="/cooperConsult">合作咨询</router-link>
@@ -138,6 +119,9 @@ export default {
     },
     toIndex(){
       this.$router.push('/');
+    },
+    jumpTo(link){
+      this.$router.push(link);
     }
   },
   components: {
@@ -163,10 +147,17 @@ export default {
   z-index: 1;
 }
 .jbheader{
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
   display: flex;
+  width: 100%;
   height: 60px;
   line-height: 60px;
   padding: 0 375px;
+  background: rgba(0,0,0,0.5);
   /* overflow: hidden; */
 }
 .navbar{
@@ -183,11 +174,11 @@ export default {
 .navbar-nav>li, .navbar-nav>li a{
   padding: 0 20px;
   font-size: 14px;
-  color: #333333;
+  color: #ffffff;
 }
 .navbar-nav>li:hover, .navbar-nav>li:hover a{
-  color: #ffffff;
-  background: #0090ff;
+  color: #0090ff;
+  cursor: pointer;
 }
 .proService, .techExperience{
   position: relative;
