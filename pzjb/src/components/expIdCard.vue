@@ -10,15 +10,19 @@
         </span>
       </div>
       <div class="infoBox" :style="infoBoxStyle">
+        <div class="loadingBox" v-show="loading">加载中...</div>
         <div class="infoTitleBox">
           <span class="infoTitle" :class="{'bdb':nowTable=='result'}" @click="nowTable='result'">识别结果</span>
           <span class="infoTitle" :class="{'bdb':nowTable=='response'}" @click="nowTable='response'">Response Json</span>
         </div>
         <div class="resultBox" v-show="nowTable=='result'">
-          <div class="loadingBox" v-show="loading">加载中...</div>
-          <div class="nameBox" v-for="(v,k) in example.result" :key="k">
-            <span class="key">{{k}}</span>
-            <span class="val">{{v}}</span>
+          <div class="nameBox">
+            <span class="key">姓名: </span>
+            <span class="val">{{example.result.name}}</span>
+          </div>
+          <div class="nameBox">
+            <span class="key">身份证: </span>
+            <span class="val">{{example.result.id}}</span>
           </div>
         </div>
         <div class="responseBox" v-show="nowTable=='response'">
@@ -224,6 +228,7 @@ export default {
 }
 
 .infoBox{
+  position: relative;
   width: 722px;
   height: 392px;
   margin-left: 40px;
@@ -262,6 +267,7 @@ export default {
   margin-right: 20px;
 }
 .loadingBox{
+  z-index: 1;
   position: absolute;
   top: 0;
   left: 0;

@@ -8,6 +8,7 @@ import vehicleCard from '@/components/vehicleCard'
 import hospitalBill from '@/components/hospitalBill'
 import customizedOCR from '@/views/customizedOCR'
 import crowdsourcing from '@/views/crowdsourcing'
+import crowdsourcing2 from '@/components/crowdsourcing'
 import techExperience from '@/views/techExperience'
 import zbPro from '@/components/zbPro'
 import ocrPro from '@/components/ocrPro'
@@ -77,6 +78,11 @@ export default new Router({
             path: '/crowdsourcing',
             name: 'crowdsourcing',
             component: crowdsourcing
+        },
+        {
+            path: '/crowdsourcing2',
+            name: 'crowdsourcing2',
+            component: crowdsourcing2
         },
         {
             path: '/manageIndex',

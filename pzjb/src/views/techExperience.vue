@@ -22,6 +22,11 @@ import ocrExp from '@/components/ocrExp'
 import crowdsourcingExp from '@/components/crowdsourcingExp'
 export default {
   name: '',
+  created () {
+    var to = this.$route.query.to || localStorage.getItem('experienceId');
+    console.log('to: '+to);
+    this.changeSelect(to);
+  },
   data () {
     return {
       componentId: 'ocrExp',
@@ -39,11 +44,13 @@ export default {
         this.selectTxt2 = '众包服务';
         this.componentId = 'ocrExp';
         this.selectFlag = false;
+        localStorage.setItem('experienceId','OCR文字识别');
       }else if(i=='众包服务'){
         this.selectTxt = '众包服务';
         this.selectTxt2 = 'OCR文字识别';
         this.componentId = 'crowdsourcingExp';
         this.selectFlag = false;
+        localStorage.setItem('experienceId','众包服务');
       }
     }
   },
@@ -89,7 +96,7 @@ export default {
 .selectBtnImg{
   position: absolute;
   top: 0;
-  right: -56px;
+  right: -57px;
   width: 58px;
   height: 58px;
 }

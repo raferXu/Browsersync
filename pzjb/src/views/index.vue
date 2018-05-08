@@ -12,11 +12,8 @@
 <script>
 import bannerBox from '@/components/bannerBox'
 import sectionBox from '@/components/sectionBox'
-import functionBox from '@/components/functionBox'
-import tryBox from '@/components/tryBox'
 import applicationBox from '@/components/applicationBox'
 import productContent from '@/components/productContent'
-import priceBox from '@/components/priceBox'
 export default {
   name: '',
   data () {
@@ -81,7 +78,7 @@ export default {
     }
   },
   components: {
-    bannerBox,sectionBox,functionBox,tryBox,applicationBox,productContent,priceBox
+    bannerBox,sectionBox,applicationBox,productContent
   }
 }
 </script>

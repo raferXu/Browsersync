@@ -5,8 +5,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
-
 Vue.prototype.axios = axios
+
+import global_ from './Global.vue'
+Vue.prototype.GLOBAL = global_;
+axios.defaults.baseURL = global_.BASE_URL;
 
 Vue.config.productionTip = false
 

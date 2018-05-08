@@ -5,16 +5,11 @@
         <div class="navbar">
           <div class="navbar-nav navbar-left">
             <img @click="toIndex" class="logo" :src="navbarObj.left.icon" alt="icon">
-            <!-- <span>{{navbarObj.left.txt}}</span> -->
-            <ul class="navbar-nav">
-              <!-- <router-link tag="li" to="/productService">产品服务</router-link> -->
-              <li class="proService" @mouseenter="showPro" @mouseleave="hidePro">
-                产品服务
-              </li>
-              <!-- <router-link tag="li" to="/techExperience">技术体验</router-link> -->
-              <li class="techExperience" @click="jumpTo('/techExperience')" @mouseenter="showTech" @mouseleave="hideTech">
-                技术体验
-              </li>
+            <ul class="navbar-nav navbar-main">
+              <router-link tag="li" to="/">产品服务</router-link>
+              <!-- <li class="proService" @mouseenter="showPro" @mouseleave="hidePro">产品服务</li> -->
+              <router-link tag="li" to="/techExperience">技术体验</router-link>
+              <!-- <li class="techExperience" @click="jumpTo('/techExperience')" @mouseenter="showTech" @mouseleave="hideTech">技术体验</li> -->
               <router-link tag="li" to="/devCenter">开发者中心</router-link>
               <router-link tag="li" to="/cooperConsult">合作咨询</router-link>
             </ul>
@@ -221,5 +216,9 @@ export default {
 .techBox .cate span{
   padding-bottom: 6px;
   border-bottom: 1px solid #333333;
+}
+
+.navbar-main .router-link-exact-active{
+  color: #0090ff;
 }
 </style>

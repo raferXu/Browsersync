@@ -10,7 +10,7 @@
             <p class="mainTxt pb80">
                 支持快速开通多种文字识别服务，包括身份证、行驶证、驾驶证、银行卡及上海医疗发票等标准化文件类型
             </p>
-            <span class="mainBtn">在线体验</span>
+            <span class="mainBtn" @click="jumpTo('/techExperience','ocrExp')">在线体验</span>
         </div>
         <ul class="right standardRight">
             <li @click="jumpTo(value.link)" v-for="(value,index) in standardData" :key="index">
@@ -34,7 +34,7 @@
             <p class="mainTxt pb80">
                 针对手写体识别等复杂内容，提供人工录入、人工审核的平安众包APP任务分发平台，满足疑难识别需求，保障识别精度
             </p>
-            <span class="mainBtn">在线体验</span>
+            <span class="mainBtn" @click="jumpTo('/techExperience','crowdsourcingExp')">在线体验</span>
         </div>
         <div class="imgBox ml160" @click="jumpTo('/crowdsourcing')"></div>
     </div>
@@ -77,9 +77,13 @@ export default {
     }
   },
   methods: {
-      jumpTo(link){
+      jumpTo(link,params){
           if(link){
-              this.$router.push(link);
+              if(params){
+                  this.$router.push({path:link,query:{to: params}});
+              }else{
+                  this.$router.push(link);
+              }
           }
       }
   }

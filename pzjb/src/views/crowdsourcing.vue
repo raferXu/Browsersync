@@ -3,7 +3,7 @@
     <bannerBox :bannerSrc="bannerSrc"></bannerBox>
     <div class="bannerTxtBox">
       <h3 class="mainH3 bannerH3">众包服务</h3>
-      <span class="mainBtn bannerBtn">在线体验</span>
+      <span class="mainBtn bannerBtn" @click="jumpTo('/techExperience','crowdsourcingExp')">在线体验</span>
       <span class="mainBtn bannerBtn">申请开通</span>
     </div>
     <div class="box">
@@ -94,6 +94,17 @@ export default {
   },
   components: {
     bannerBox,media,listItem
+  },
+  methods: {
+      jumpTo(link,params){
+          if(link){
+              if(params){
+                  this.$router.push({path:link,query:{to: params}});
+              }else{
+                  this.$router.push(link);
+              }
+          }
+      }
   }
 }
 </script>

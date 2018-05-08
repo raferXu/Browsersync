@@ -1,26 +1,16 @@
 <template>
-  <div id="manage" :class="{'hideSidebar':hideSidebar}">
-      <div class="sidebarWrapper" @click="toggleSidebar">
+  <div id="manage">
+      <div class="sidebarWrapper">
         <ul class="sidebar-container">
-            <li class="sidebar-item" style="color:#ffffff;text-align:center;font-size:12px;">
-                <a href="index.html">返回<br>主页</a>
+            <li class="sidebar-item sidebar-logo" style="color:#ffffff;text-align:center;font-size:12px;">
+                <a href="index.html">返回主页</a>
             </li>
             <li class="sidebar-item" @click="toManageIndex">
-                <!-- <img :src="summaryIcon" alt="summary"> -->
-                <el-tooltip class="item" effect="dark" content="概览" placement="right" style="opacity: 0;">
-                    <el-button></el-button>
-                </el-tooltip>
-                <!-- <i class="sidebarIcon summaryIcon"></i> -->
-                <i class="sidebarIcon" :style="summaryBg"></i>
+                <i class="sidebarIcon" :style="summaryBg"></i><span class="sidebarTxt">概览</span>
             </li>
             <li class="sidebar-item" @mouseover="serviceIconOverFn" @mouseout="serviceIconOutFn">
-                <!-- <img :src="serviceIcon" alt="service"> -->
-                <!-- <i class="sidebarIcon serviceIcon" :style="serviceBg"></i> -->
-                <i class="sidebarIcon" :style="serviceBg"></i>
+                <i class="sidebarIcon" :style="serviceBg"></i><span class="sidebarTxt">产品服务</span>
                 <ul class="serviceList" v-show="!hideSideBarServiceList">
-                    <li class="serviceItem">
-                        <span class="serviceListTitle">{{serviceData.title}}</span>
-                    </li>
                     <li class="serviceItem" v-for="(v,i) in serviceData.listData" :key="i">
                         <router-link :to="v.to">{{v.txt}}</router-link>
                     </li>
@@ -65,15 +55,13 @@ export default {
   data () {
     return {
         hideSideBarServiceList: true,
-        hideSidebar: true,
-        userIcon: require('./assets/images/manage/显示用户名.png'),
-        mailIcon: require('./assets/images/manage/消息.png'),
-        issueIcon: require('./assets/images/manage/遇到问题.png'),
+        userIcon: require('./assets/images/显示用户名.png'),
+        mailIcon: require('./assets/images/消息12.png'),
+        issueIcon: require('./assets/images/遇到问题.png'),
         summaryIcon: require('./assets/images/manage/概览.png'),
         serviceIcon: require('./assets/images/manage/产品服务.png'),
-        accountIcon: require('./assets/images/manage/账户管理.png'),
+        accountIcon: require('./assets/images/费用.png'),
         serviceBg: {
-            // position: absolute,
             backgroundImage: 'url("'+require('./assets/images/manage/产品服务.png')+'")',
             backgroundSize: '100% 100%',
             backgroundRepeat: 'no-repeat'
@@ -120,7 +108,6 @@ export default {
   },
   methods: {
       toggleSidebar(){
-        //   this.hideSidebar = !this.hideSidebar;
       },
       serviceIconOverFn(){
           this.hideSideBarServiceList = false;
@@ -149,86 +136,65 @@ export default {
     top: 0;
     bottom: 0;
     z-index: 1;
-    width: 160px;
+    width: 200px;
     background: #333333;
-    /* overflow: hidden; */
-    transition: all .28s ease-out;
-}
-.hideSidebar .sidebarWrapper{
-    transform: translate(-100px);
 }
 .sidebar-container{
-    transition: all .28s ease-out;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    /* overflow-y: scroll; */
-}
-.hideSidebar .sidebar-container{
-    transform: translate(99px);
 }
 .sidebar-item{
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 60px;
-    height: 60px;
-    /* overflow: hidden; */
+    height: 90px;
+    line-height: 90px;
     background: rgba(51,51,51,1);
+    font-size: 18px;
+    color: #969696;
+}
+.sidebar-logo{
+    justify-content: center;
 }
 .sidebar-item:hover{
     background: rgba(81,81,81);
 }
+.sidebar-item:hover .sidebarTxt{
+    color: #ffffff;
+}
 .sidebarIcon{
-    position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
+    margin: 0 30px;
 }
-/* .summaryIcon{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    background: url('static/images/概览.png') no-repeat;
-    background-size:  100% 100%;
+.sidebarTxt{
+    color:#969696;
+    text-align:left;
 }
-
-.sidebar-item:nth-of-type(2):hover .summaryIcon{
-    background: url('static/images/概览(蓝).png') no-repeat;
-    background-size:  100% 100%;
-}
-.serviceIcon{
-    background: url('static/images/产品服务.png') no-repeat;
-    background-size:  100% 100%;
-} */
 .sidebar-item:nth-of-type(3){
     position: relative;
 }
-/* .sidebar-item:nth-of-type(3):hover .serviceIcon{
-    background: url('static/images/产品服务(蓝).png') no-repeat;
-    background-size:  100% 100%;
-} */
 .serviceList{
     position: absolute;
-    left: 59px;
+    left: 200px;
     top: 0;
     display: flex;
     flex-direction: column;
-    /* width: 140px; */
-    padding: 20px;
-    line-height: 1.8;
+    padding: 35px 60px 40px;
+    line-height: 70px;
     background: rgba(51,51,51,0.9);
 }
 .serviceItem{
-    font-size: 12px;
+    font-size: 18px;
     color: #ffffff;
     white-space: nowrap;
 }
-.serviceItem:not(:first-child):hover a{
+.serviceItem:hover a{
     color: #0090ff;
+    font-size: 24px;
 }
 .serviceListTitle{
     font-size: 14px;
@@ -241,25 +207,19 @@ export default {
 }
 .main-container{
     min-height: 100%;
-    transition: all .28s ease-out;
-    margin-left: 160px;
+    margin-left: 200px;
 }
-.hideSidebar .main-container{
-    box-sizing: border-box;
-    margin-left: 60px;
-}
-.main-container .navbar{
+.navbar{
     display: flex;
     justify-content: normal;
     flex-direction: row-reverse;
     align-items: center;
-    height: 60px;
-    padding-right: 50px;
+    height: 90px;
     font-size: 0;
-    border-bottom: 10px solid #f0f0f0;
+    background: #3c3c3c;
 }
 .navbar img{
     width: 34px;
-    margin-right: 30px;
+    margin-right: 60px;
 }
 </style>

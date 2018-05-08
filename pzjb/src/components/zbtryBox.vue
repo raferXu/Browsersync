@@ -217,9 +217,9 @@ export default {
         }
         this.params=formdata
         this.axios({
-            // url:"http://30.4.88.47:8080/token/upload_files",
+            url:"/token/upload_files",
             // url:'https://test-pazb.pingan.com.cn:20443/token/upload_files',
-            url:"https://test-pazb.pingan.com.cn:20443/bss/token/upload_files",
+            // url:"https://test-pazb.pingan.com.cn:20443/bss/token/upload_files",
             data:this.params,
             method:'post'
         }).then(function(res){
