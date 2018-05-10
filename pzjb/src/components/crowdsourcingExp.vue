@@ -38,11 +38,22 @@ export default {
   methods: {
     tabTo(v,i){
       this.componentId = v;
+      localStorage.setItem('crowdsourcingExp',v);
       this.tabIndex = i;
     }
   },
   components: {
     expCrowdCheck,expCrowdInput
+  },
+  created () {
+    var exp = localStorage.getItem('crowdsourcingExp');
+    if(exp=='expCrowdCheck'){
+      this.componentId = exp;
+      this.tabIndex = 0;
+    }else if(exp=='expCrowdInput'){
+      this.componentId = exp;
+      this.tabIndex = 1;
+    }
   }
 }
 </script>

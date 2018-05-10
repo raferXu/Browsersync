@@ -2,28 +2,29 @@
   <div class="expWrap">
     <div class="expBox">
       <div class="smallImgBox">
-        <img @click="showBigImg(i)" class="smallImg" :class="{'imgActive':imgIndex==i}" v-for="(v,i) in tryObj.showImgArr" :src="v" :key="i" :alt="i">
-        <img v-if="showimg==true" @click="showCanvasImg" :src='uploadimg' class="smallImg" >
+        <!-- <img @click="showBigImg(i)" class="smallImg" :class="{'imgActive':imgIndex==i}" v-for="(v,i) in tryObj.showImgArr" :src="v" :key="i" :alt="i"> -->
+        <img v-for="(v,i) in uploadimg" :key="i" v-if="showimg==true" @click="showCanvasImg(i)" :src=v class="smallImg" >
       </div>
       <div id="imgBox" class="bigImgBox" ref="bigImgBox">
-        <span v-if="tryObj.bigImg" class="bigImgSpan" ref="bigImgSpan">
-          <img class="bigImg" ref="bigImg" :src="tryObj.bigImg" alt="bigImg">
+        <span class="bigImgSpan" ref="bigImgSpan">
+          <img v-show="tryObj.bigImg" class="bigImg" ref="bigImg" :src="tryObj.bigImg" alt="bigImg">
         </span>
-        <div class="uploadimgIconWrap" v-else>
+        <!-- <div class="uploadimgIconWrap" v-else>
           <span class="uploadimgIconBox">
             <img class="uploadimgIcon" :src="uploadimgIcon" alt="uploadimgIcon"><br>
             <i>请上传图片进行体验</i>
             <input ref="fileInput1" class="fileUploadBtn1" type="file" @change="fileUpload(1)">
           </span>
-        </div>
+        </div> -->
       </div>
       <div v-if="showCanvas==true" id="canvasBox" style="display:none;" class="bigImgBox">
         <Pic ref='pic' :canvasHeight='canvasHeight' :imgFlag='imgFlag' :originImg='originImg' :index="index" :canvasWidth="canvasWidth" ></Pic>
       </div>
+      
       <div class="infoBox" :style="infoBoxStyle">
         <div class="loadingBox" v-show="step==1">
           <p class="loadTips">众包录入中，请稍后查看结果。<br/>等待期间，欢迎<a target="_blank" style="color:#0090ff;text-decoration:underline" href="https://pazb.pingan.com.cn/static/h5/invite/doTask1sn.html">点此</a>体验平安众包APP。</p>
-          <span class="mainBtn refreshBtn">刷新</span>
+          <span class="mainBtn refreshBtn" @click="refreshFn">刷新</span>
         </div>
         <div class="initWrap" v-show="step==0">
           <div class="infoTitleBox">
@@ -66,10 +67,11 @@ export default {
   name: '',
   data () {
     return {
+      imgNum:0,
       count: 5,
       step: -1,
       uploadimgIcon: require('../assets/images/上传图片.png'),
-      uploadimg:'',
+      uploadimg:[],
       showimg:false,
       showCanvas:false,
       params:{},
@@ -118,18 +120,33 @@ export default {
     }
   },
   methods: {
-    submitToCheck(){},
+    refreshFn(){
+      console.log('刷新按钮被点击了,发起查询结果的请求');
+      var hasResult = true;
+      if(hasResult){
+        this.step = 2;
+      }
+
+    },
+    submitToCheck(){
+      console.log(this.imgNum)
+      
+      // var bigImgBox = document.getElementById("imgBox");
+      // var canvasBox = document.getElementById("canvasBox");
+      // bigImgBox.style.cssText = "display:none;";
+      // // canvasBox.style.cssText = "display:none;";
+      this.uploadimg[this.imgNum] = self.penal.toDataURL('image/png');
+      this.viewResult()
+      this.step=1;
+    },
     showBigImg(i){
+      
       this.show = false;
       this.imgIndex = i;
       this.example = this.exampleRes[i];
       this.tryObj.bigImg = this.tryObj.showImgArr[i];
       // console.log(this.tryObj.showImgArr[i])
-      var bigImgBox = document.getElementById("imgBox");
-      var canvasBox = document.getElementById("canvasBox");
-      bigImgBox.style.cssText = "display:block;";
-      // canvasBox.style.cssText = "display:none;";
-      this.uploadimg = self.penal.toDataURL('image/png');
+      
     },
     upload(){
       if(this.imgUrl == ''){
@@ -149,21 +166,23 @@ export default {
       canvasBox.style.cssText = "display:block;";
       bigImgBox.style.cssText = "display:none;";
     },
-    fileUpload(i){
-      let self=this  
-      this.step = 0;
-      this.files = [];
-      this.originImg = [];
+    fileUpload(){
+      var bigImgBox = document.getElementById("imgBox");
+      bigImgBox.style.cssText = "display:block;";
+      let self=this;
+      this.step = 0;  
+      // this.files = [];
+      // this.originImg = [];
       this.imgFlag = 1;
       var imgBox = [];
-      this.$refs.pic.allPaintMes = {};
+      // this.$refs.pic.allPaintMes = {};
       this.$refs.pic.count = 1;
         //   console.log(this.$refs.upload.files[0])
-        if(i==1){
-          var files=this.$refs.fileInput1.files
-        }else{
+        // if(i==1){
+        //   var files=this.$refs.fileInput1.files
+        // }else{
           var files=this.$refs.fileInput.files
-        }
+        // }
         
         for(let i=0,len=files.length;i<len;i++){
             if (window.FileReader) {    
@@ -176,7 +195,8 @@ export default {
                     // console.log(e.target.result)
                     var image = new Image();
                     image.src = e.target.result;
-                    self.uploadimg = e.target.result;
+                    self.uploadimg.push(e.target.result) ;
+                    // console.log(self.uploadimg)
                     self.showimg = true;
                     image.onload = function() {
                     　　//alert("图片的宽度为"+this.width+",长度为"+this.height);
@@ -189,7 +209,7 @@ export default {
                         height:self.canvasHeight
                       })
                     };
-                    self.imageMessage.size = imgBox;
+                    self.imageMessage.given_size = imgBox;
                     self.files.push({
                         src:e.target.result,
                         name:files[i].name    
@@ -200,10 +220,17 @@ export default {
                     })
                     // console.log(self.files[0].src)
                     self.deleteX();
-                    self.$refs.pic.drawImage(self.files[0].src,0,0,self.canvasWidth,self.canvasHeight);
+                    self.$refs.pic.drawImage(self.files[self.files.length-1].src,0,0,self.canvasWidth,self.canvasHeight);
+                    console.log("self.files.length-1="+(self.files.length-1));
+                    self.imgNum = self.files.length-1;
+                    // self.showCanvasImg(self.files.length-1);
+                    self.uploadimg[self.imgNum] = self.files[self.files.length-1].src;
+                
                 };    
                 reader.readAsDataURL(files[i]);    
             } 
+            
+            
             // {size={"width":1,"height":2},location=[{"x1":1,"x"}]}
         }
         let formdata = new FormData();
@@ -214,13 +241,13 @@ export default {
         this.axios({
             // url:"http://30.4.88.47:8080/token/upload_files",
             // url:'https://test-pazb.pingan.com.cn:20443/token/upload_files',
-            url:"https://test-pazb.pingan.com.cn:20443/bss/token/upload_files",
+            url:"/token/upload_files",
             data:this.params,
             method:'post'
         }).then(function(res){
             let data = res.data.body
              console.log(data.url_list);
-             self.imageMessage.picture_url = data.url_list;
+             self.imageMessage.pic_urls = data.url_list;
         })
         var bigImgBox = document.getElementById("imgBox");
         var canvasBox = document.getElementById("canvasBox");
@@ -228,13 +255,29 @@ export default {
         bigImgBox.style.cssText = "display:none;";
         // self.$refs.pic.drawImage(this.files[0].src);
     },
-    showCanvasImg(){
-      console.log('showCanvasImg');
+    showCanvasImg(n){
+      // console.log("+++++"+this.imgNum+"++++++")
+      console.log(n+"-------");
+      // console.log(12345+"+++++"+i);
+      this.imgNum = n;
+      // console.log(this.imgNum);
+      // this.uploadimg[this.imgNum] = self.penal.toDataURL('image/png');
+      var x = document.getElementsByClassName("close_x");
+      for(var i = 0;i<x.length;i++){
+          x[i].style.display = "none";
+      }
+      var x2 = document.getElementsByClassName("close_x_"+i);
+      for(var j = 0;j<x2.length;j++){
+          x2[j].style.display = "block";
+      }
+      // console.log('showCanvasImg');
       var bigImgBox = document.getElementById("imgBox");
       var canvasBox = document.getElementById("canvasBox");
         canvasBox.style.cssText = "display:block;"
         bigImgBox.style.cssText = "display:none;";
-      this.$refs.pic.drawImage(this.uploadimg,0,0,this.canvasWidth,this.canvasHeight);
+      console.log(this.uploadimg);
+      
+      this.$refs.pic.drawImage(this.uploadimg[n],0,0,this.canvasWidth,this.canvasHeight);
     },
     deleteX(){
       var x = document.getElementsByClassName("close_x");
@@ -249,19 +292,20 @@ export default {
     viewResult(){
       let _this = this;
       this.imageMessage.location = this.$refs.pic.allPaintMes;
-      this.uploadimg = self.penal.toDataURL('image/png');
+      // this.uploadimg = self.penal.toDataURL('image/png');
       console.log(this.imageMessage);
       this.axios({
             // url:'https://test-pazb.pingan.com.cn:20443/token/public/zb_experience',
-            url:"https://test-pazb.pingan.com.cn:20443/bss/token/public/zb_experience",
+            // url:"https://test-pazb.pingan.com.cn:20443/bss/token/public/zb_experience",
             // url:"http://30.4.88.47:8080/token/public/zb_experience",
             // url:"http://192.168.0.203:5000/token/payment/balance",
+            url:"/token/add_experience_task",
             data:this.imageMessage,
             method:'post'
         }).then(function(res){
             let data = res.data.body
              console.log(res);
-             alert(res.data);
+             console.log(res.data);
             //  _this.$router.push({path:"/zbExpResult"});
         })
       // this.$router.push({path:"/zbExpResult"});
@@ -388,10 +432,18 @@ export default {
 }
 
 .bigImgBox{
+  position: relative;
   width: 610px;
   height: 390px;
   overflow: hidden;
   background: #000000;
+}
+.canvasBox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 610px;
+  height: 390px;
 }
 .bigImgSpan{
   position: relative;
@@ -448,7 +500,8 @@ export default {
   position: relative;
   height: 236px;
   padding: 30px 40px;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   text-align: left;
   line-height: 2;
   font-size: 24px;

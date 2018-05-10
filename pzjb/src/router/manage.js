@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import manageIndex from '@/components/manageIndex'
+import manageIndex from '@/views/manage/manage'
 import manageIndex2 from '@/components/manageIndex2'
 import manageMail from '@/components/manageMail'
 import manageAccount from '@/components/manageAccount'

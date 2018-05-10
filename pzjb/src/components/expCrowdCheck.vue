@@ -10,11 +10,12 @@
         </span>
       </div>
       <div class="infoBox" :style="infoBoxStyle">
-        <div class="loadingBox" v-show="step==1">
+        <div class="loadingBox" v-show="others.step==1">
           <p class="loadTips">众包校验中，请稍后查看结果。<br/>等待期间，欢迎<a target="_blank" style="color:#0090ff;text-decoration:underline" href="https://pazb.pingan.com.cn/static/h5/invite/doTask1sn.html">点此</a>体验平安众包APP。</p>
-          <span class="mainBtn refreshBtn">刷新</span>
+          <span class="mainBtn refreshBtn" @click="getAppAnswer">刷新</span>
         </div>
-        <div class="initWrap" v-show="step==0">
+        <div class="loadingBox loadingBox2" v-show="!others.coordinateFlag||!others.uploadFlag">加载中...</div>
+        <div class="initWrap" v-show="others.step==0">
           <div class="infoTitleBox">
             <span class="infoTitle">识别结果 (请勾选需要进行众包校验的字段信息)</span>
           </div>
@@ -32,34 +33,34 @@
           </div>
           <div class="submitBox">
             <span class="countBox">剩余体验次数 {{count}} 次</span>
-            <span class="mainBtn" @click="submitToCheck">确认提交</span>
+            <span class="mainBtn" :class="{'disabled':!others.coordinateFlag||!others.uploadFlag}" @click="submitToCheck">确认提交</span>
           </div>
         </div>
-        <div class="loadingBox resultWrap" v-show="step==2">
+        <div class="loadingBox resultWrap" v-show="others.step==2">
           <div class="regBox ocrRegBox">
             <h4>OCR识别结果</h4>
             <p>
-              <span class="star">*</span>
+              <span class="star"><i v-show="ocrResult['ID_XingMing']">*</i></span>
               <span class="label">姓名: </span>
-              <span class="val">rx</span>
+              <span class="val">{{ocrResult['ID_XingMing']?ocrResult['ID_XingMing']["alg_answer"]:example.ID_XingMing.text}}</span>
             </p>
             <p>
-              <span class="star">*</span>
-              <span class="label">姓名: </span>
-              <span class="val">rx</span>
+              <span class="star"><i v-show="ocrResult['ID_HaoMa']">*</i></span>
+              <span class="label">身份证: </span>
+              <span class="val">{{ocrResult['ID_HaoMa']?ocrResult['ID_HaoMa']["alg_answer"]:example.ID_HaoMa.text}}</span>
             </p>
           </div>
           <div class="regBox crowdsRegBox">
             <h4>众包识别结果</h4>
             <p>
-              <span class="star">*</span>
+              <span class="star"><i v-show="ocrResult['ID_XingMing']">*</i></span>
               <span class="label">姓名: </span>
-              <span class="val">rx</span>
+              <span class="val">{{ocrResult['ID_XingMing']?ocrResult['ID_XingMing']['zb_result']:'xxxxxx'}}</span>
             </p>
             <p>
-              <span class="star">*</span>
-              <span class="label">姓名: </span>
-              <span class="val">rx</span>
+              <span class="star"><i v-show="ocrResult['ID_HaoMa']">*</i></span>
+              <span class="label">身份证: </span>
+              <span class="val">{{ocrResult['ID_HaoMa']?ocrResult['ID_HaoMa']['zb_result']:'xxxxxx'}}</span>
             </p>
           </div>
         </div>
@@ -67,11 +68,11 @@
     </div>
     <div class="tipsBox tl">提示: 支持上传大小不超过3M的PNG、JPG、JPEG、BMP身份证图片进行体验。</div>
     <div class="expBtnG pb160">
-        <span class="mainBtn btnG">
-          本地上传
-          <input ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
-        </span>
-      </div>
+      <span class="mainBtn btnG">
+        本地上传
+        <input ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
+      </span>
+    </div>
   </div>
 </template>
 
@@ -92,7 +93,6 @@ export default {
         backgroundImage: 'url(' + require('../assets/images/识别结果框1.png') + ')' 
       },
       responseTxt: '',
-      step: 0,
       imgUrl: '',
       nowTable: 'result',
       imgIndex: 0,
@@ -102,12 +102,20 @@ export default {
         ],
         bigImg: require('../assets/images/2401523603122_hd.png')
       },
-      others: [
+      othersList: [
         {
           pic_url: "/token/img/d49725319d50647df38c6cf093c05acc",
-          step: 0
+          step: 0,
+          coordinateFlag: true,
+          uploadFlag: true
         }
-      ],
+      ], 
+      others: {
+        pic_url: "/token/img/d49725319d50647df38c6cf093c05acc",
+        step: 0,
+        coordinateFlag: true,
+        uploadFlag: true
+      },
       example: {
         "ID_HaoMa": {
           "score": "0.529698036078", 
@@ -165,29 +173,88 @@ export default {
             "ymin": "9"
           }
         }
-      ]
+      ],
+      ocrResultArr: [],
+      ocrResult: {}
     }
   },
   methods: {
+    getAppAnswer(){
+      var _this = this;
+      _this.axios({
+        url: '/token/experience_results/ocr',
+        method: 'post'
+      }).then(function (response) {
+        console.log(response)
+        var data = response.data;
+        if(data.code==200){
+          _this.ocrResultArr = data.body.res;
+          _this.ocrResult = data.body.res[_this.imgIndex];
+          if(_this.ocrResultArr.length>0){
+            _this.checkAppResult();
+          }else{
+            console.log('返回的ocrResultArr为空数组,新用户初始化状态');
+          }
+        }else{
+          console.log('experience_results/ocr data.code: '+data.code);
+        }
+
+      })
+      .catch(function (error) {
+        console.log('error');
+        console.log(error);
+      });
+    },
+    checkAppResult(){
+      var _this = this;
+      if(_this.ocrResult["ID_HaoMa"]){
+        if(_this.ocrResult["ID_XingMing"]){
+          console.log('姓名和身份证都校验');
+          if(_this.ocrResult["ID_HaoMa"]["zb_result"]&&_this.ocrResult["ID_XingMing"]["zb_result"]){
+            console.log('姓名和身份证app结果都有了');
+            _this.others.step = 2;
+            _this.othersList[_this.imgIndex].step = 2;
+          }else{
+            console.log('姓名和身份证还没全部返回结果');
+            _this.others.step = 1;
+            _this.othersList[_this.imgIndex].step = 1;
+          }
+        }else{
+          console.log('只校验身份证字段');
+          if(_this.ocrResult["ID_HaoMa"]["zb_result"]){
+            console.log('身份证app结果有了');
+            _this.others.step = 2;
+            _this.othersList[_this.imgIndex].step = 2;
+          }else{
+            console.log('身份证app结果还没返回');
+            _this.others.step = 1;
+            _this.othersList[_this.imgIndex].step = 1;
+          }
+        }
+      }else if(_this.ocrResult["ID_XingMing"]){
+        console.log('只校验姓名字段');
+        if(_this.ocrResult["ID_XingMing"]["zb_result"]){
+          console.log('姓名app结果有了');
+          _this.others.step = 2;
+          _this.othersList[_this.imgIndex].step = 2;
+        }else{
+          console.log('姓名app结果还没返回');
+          _this.others.step = 1;
+          _this.othersList[_this.imgIndex].step = 1;
+        }
+      }
+    },
     showBigImg(i){
       this.imgIndex = i;
+      this.others = this.othersList[i];
+      this.ocrResult = this.ocrResultArr[i];
+      this.checkAppResult();
       this.example = this.exampleRes[i];
       this.tryObj.bigImg = this.tryObj.showImgArr[i];
-      this.step = this.others[this.imgIndex].step;
+      this.others.step = this.othersList[this.imgIndex].step;
     },
-    fileUpload(e){
-      var initLen = this.tryObj.showImgArr.length;
-      this.imgIndex = initLen;
+    ocrFn(obj,fileName){
       var _this = this;
-      var obj = _this.$refs.fileInput.files[0];
-      var fileName = obj.name;
-
-      this.upload_files(obj);
-      this.handleImg(obj);
-
-      
-      
-
       let data = new FormData();
       data.append('file', obj);
       data.append('text', JSON.stringify({"0":""+fileName}));
@@ -201,17 +268,39 @@ export default {
       }).then(function (response) {
         if(response.status==200){
           var data = response.data;
-          console.log(data);
+          _this.others.coordinateFlag = true;
+          _this.othersList[_this.imgIndex].coordinateFlag = true;
           _this.exampleRes.push(data[fileName][0]['info']);
           _this.example = data[fileName][0]['info'];
         }else{
-          console.log('response.status: '+response.status)
+          console.log('response.status: '+response.status);
+          _this.others.coordinateFlag = false;
+          _this.othersList[_this.imgIndex].coordinateFlag = false;
         }
       })
       .catch(function (error) {
         console.log('error');
         console.log(error);
       });
+    },
+    fileUpload(e){
+      this.checkedNames = [];
+      var initLen = this.tryObj.showImgArr.length;
+      this.imgIndex = initLen;
+      var obj = this.$refs.fileInput.files[0];
+      var fileName = obj.name;
+      var othersObj = {
+        pic_url: '',
+        step: 0,
+        coordinateFlag: false,
+        uploadFlag: false
+      };
+      this.othersList.push(othersObj);
+      this.others = Object.assign({},this.others,othersObj);
+
+      this.upload_files(obj);
+      this.handleImg(obj);
+      this.ocrFn(obj,fileName);
     },
     handleImg(obj){
       var _this = this;
@@ -251,34 +340,28 @@ export default {
           if(res.status==200){
             var resData = res.data;
             if(resData.code==200){
-              var obj = {
-                pic_url: resData.body.url_list[0],
-                step: 0
-              }
-              _this.others.push(obj);
+              _this.others.uploadFlag = true;
+              _this.othersList[_this.imgIndex].uploadFlag = true;
             }else{
               console.log('data.code: '+resData.code);
-              _this.others.push({
-                pic_url: '',
-                step: 0
-              });
+              _this.others.uploadFlag = false;
+              _this.othersList[_this.imgIndex].uploadFlag = false;
             }
           }else{
             console.log('res.status: '+res.status);
-            _this.others.push({
-              pic_url: '',
-              step: 0
-            });
+            _this.others.uploadFlag = false;
+            _this.othersList[_this.imgIndex].uploadFlag = false;
           }
       }); 
     },
     submitToCheck(){
+      if(!this.others.coordinateFlag||!this.others.uploadFlag){
+        console.log('坐标没拿到或者文件上传失败');
+        return;
+      }
       var _this = this;
       var len = this.checkedNames.length;
       if(len){
-        this.step = 1;
-        console.log(this.checkedNames);
-        console.log('this.imgIndex: '+this.imgIndex);
         for(var i=0;i<this.checkedNames.length;i++){
           var obj = {};
           obj.type = this.checkedNames[i];
@@ -287,17 +370,10 @@ export default {
           obj['square'] = [info['xmin'],info['ymin'],info['xmax'],info['ymax']];
           this.task.task_infos.push(obj);
         }
-        // setTimeout(() => {
-        //   this.loading = false;
-        //   this.loadSuc = true;
-        // }, 2000);
         
-        this.task.pic_url = this.others[this.imgIndex].pic_url;
-        this.others[this.imgIndex].step = 1;
-        console.log('this.others');
-        console.log(this.others);
-        console.log('this.task');
-        console.log(this.task);
+        this.task.pic_url = this.othersList[this.imgIndex].pic_url;
+        this.others.step = 1;
+        this.othersList[this.imgIndex].step = 1;
 
         this.axios({
           url: '/token/add_orc_zb_task',
@@ -332,6 +408,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.disabled{
+  cursor: not-allowed; 
+}
 .expBox{
   display: flex;
   padding: 108px 200px 0;
@@ -371,7 +450,8 @@ export default {
   display: flex;
   flex-direction: column;
   height: 390px;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
   margin-right: 10px;
   font-size:0;
 }
@@ -437,9 +517,12 @@ export default {
   font-size: 24px;
   z-index: 1;
 }
+.loadingBox2{
+  line-height: 392px;
+}
 .tipsBox{
   transform-origin: left top;
-  transform: scale(0.7);
+  transform: scale(0.9);
   margin: .2rem 3.5rem 0;
   font-size: 0.14rem;
   color: #ffffff;
@@ -493,5 +576,10 @@ export default {
 }
 .val{
   padding-left: 10px;
+}
+.mainBtn.disabled:hover {
+    color: #ffffff;
+    cursor: not-allowed;
+    border: 1px solid #ffffff;
 }
 </style>

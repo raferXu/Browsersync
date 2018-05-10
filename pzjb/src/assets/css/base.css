@@ -74,8 +74,11 @@ a:hover {
 }
 
 .sectionTitle {
-    color: #333333;
-    font-size: 0.36rem;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    padding-left: 0.4rem;
+    color: #323232;
+    font-size: 0.2rem;
 }
 
 
@@ -361,4 +364,8 @@ a:hover {
 
 .bg3 {
     background: #333333;
+}
+
+.bgf {
+    background: #ffffff;
 }
