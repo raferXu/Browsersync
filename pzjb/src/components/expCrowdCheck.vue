@@ -2,7 +2,9 @@
   <div class="expWrap">
     <div class="expBox">
       <div class="smallImgBox">
-        <img @click="showBigImg(i)" class="smallImg" :class="{'imgActive':imgIndex==i}" v-for="(v,i) in tryObj.showImgArr" :src="v" :key="i" :alt="i">
+        <div class="smallImgList">
+          <img @click="showBigImg(i)" class="smallImg" :class="{'imgActive':imgIndex==i}" v-for="(v,i) in tryObj.showImgArr" :src="v" :key="i" :alt="i">
+        </div>
       </div>
       <div class="bigImgBox" ref="bigImgBox">
         <span class="bigImgSpan" ref="bigImgSpan">
@@ -11,7 +13,8 @@
       </div>
       <div class="infoBox" :style="infoBoxStyle">
         <div class="loadingBox" v-show="others.step==1">
-          <p class="loadTips">众包校验中，请稍后查看结果。<br/>等待期间，欢迎<a target="_blank" style="color:#0090ff;text-decoration:underline" href="https://pazb.pingan.com.cn/static/h5/invite/doTask1sn.html">点此</a>体验平安众包APP。</p>
+          <!-- <p class="loadTips">众包校验中，请稍后查看结果。<br/>等待期间，欢迎<a target="_blank" style="color:#0090ff;text-decoration:underline" href="https://pazb.pingan.com.cn/static/h5/invite/doTask1sn.html">点此</a>体验平安众包APP。</p> -->
+          <p class="loadTips">众包校验中，请稍后查看结果。</p>
           <span class="mainBtn refreshBtn" @click="getAppAnswer">刷新</span>
         </div>
         <div class="loadingBox loadingBox2" v-show="!others.coordinateFlag||!others.uploadFlag">加载中...</div>
@@ -32,7 +35,8 @@
             </div>
           </div>
           <div class="submitBox">
-            <span class="countBox">剩余体验次数 {{count}} 次</span>
+            <!-- <span class="countBox">剩余体验次数 {{count}} 次</span> -->
+            <span class="countBox"></span>
             <span class="mainBtn" :class="{'disabled':!others.coordinateFlag||!others.uploadFlag}" @click="submitToCheck">确认提交</span>
           </div>
         </div>
@@ -179,7 +183,7 @@ export default {
     }
   },
   methods: {
-    getAppAnswer(){
+    getAppAnswer(flag){
       var _this = this;
       _this.axios({
         url: '/token/experience_results/ocr',
@@ -191,6 +195,71 @@ export default {
           _this.ocrResultArr = data.body.res;
           _this.ocrResult = data.body.res[_this.imgIndex];
           if(_this.ocrResultArr.length>0){
+            if(flag==1){
+              console.log('页面刷新了，获取列表');
+              var NowImgArr = [];
+              var NowOthersList = [];
+              var NowExampleRes = [];
+              for(var i=0;i<_this.ocrResultArr.length;i++){
+                var nowImgUrl = 'http://192.168.0.143:1987'+_this.ocrResultArr[i]["pic_with_mark"];
+                NowImgArr.push(nowImgUrl);
+                NowOthersList.push({
+                  pic_url: nowImgUrl,
+                  step: 1,
+                  coordinateFlag: true,
+                  uploadFlag: true
+                });
+                NowExampleRes.push({
+                  "ID_HaoMa": {
+                    "score": "0.529698036078", 
+                    "text": "310228199601115411", 
+                    "xmax": "391.0", 
+                    "xmin": "140.0", 
+                    "ymax": "259.546020508", 
+                    "ymin": "235.665283203"
+                  }, 
+                  "ID_XingMing": {
+                    "score": "0.470644197621", 
+                    "text": "章鱼", 
+                    "xmax": "130.0", 
+                    "xmin": "72.0", 
+                    "ymax": "60.0203361511", 
+                    "ymin": "34.2139263153"
+                  }
+                });
+              }
+              _this.tryObj.showImgArr = NowImgArr;
+              _this.tryObj.bigImg = NowImgArr[_this.imgIndex];
+              _this.othersList = NowOthersList;
+              _this.others = NowOthersList[_this.imgIndex];
+
+              _this.exampleRes = NowExampleRes;
+            }
+            // tryObj.showImgArr
+            // tryObj.bigImg
+            /* 
+            "res":[
+              {"ID_HaoMa":{"alg_answer":"310228199601115411","task_id":4},
+              "pic_with_mark":"/token/img/6a20140e42c8bdf9dc71fb42cefd0759",
+              "ID_XingMing":{"alg_answer":"章鱼","task_id":3}
+              },
+              {"pic_with_mark":"/token/img/6a20140e42c8bdf9dc71fb42cefd0759",
+              "ID_HaoMa":{"zb_result":23333332,"alg_answer":"310228199601115411","task_id":6},
+              "ID_XingMing":{"zb_result":" 章鱼","alg_answer":"章鱼","task_id":7}
+              },
+              {"ID_HaoMa":{"alg_answer":"310228199601115411","task_id":18},
+              "pic_with_mark":"/token/img/6a20140e42c8bdf9dc71fb42cefd0759",
+              "ID_XingMing":{"alg_answer":"章鱼","task_id":17}
+              },
+              {"pic_with_mark":"/token/img/d7b2ef94bca38976373e3423d1dfc01e",
+              "ID_XingMing":{"alg_answer":"徐余硕","task_id":19}
+              },
+              {"pic_with_mark":"/token/img/d7b2ef94bca38976373e3423d1dfc01e",
+              "ID_XingMing":{"alg_answer":"徐余硕","task_id":20}
+              }
+            ]
+            */
+
             _this.checkAppResult();
           }else{
             console.log('返回的ocrResultArr为空数组,新用户初始化状态');
@@ -249,9 +318,9 @@ export default {
       this.others = this.othersList[i];
       this.ocrResult = this.ocrResultArr[i];
       this.checkAppResult();
-      this.example = this.exampleRes[i];
       this.tryObj.bigImg = this.tryObj.showImgArr[i];
       this.others.step = this.othersList[this.imgIndex].step;
+      this.example = this.exampleRes[i];
     },
     ocrFn(obj,fileName){
       var _this = this;
@@ -342,6 +411,8 @@ export default {
             if(resData.code==200){
               _this.others.uploadFlag = true;
               _this.othersList[_this.imgIndex].uploadFlag = true;
+              _this.others["pic_url"] = resData.body["url_list"][0];
+              _this.othersList[_this.imgIndex]["pic_url"] = resData.body["url_list"][0];
             }else{
               console.log('data.code: '+resData.code);
               _this.others.uploadFlag = false;
@@ -380,8 +451,7 @@ export default {
           method: 'post',
           data: _this.task
         }).then(function (res) {
-          console.log('add_orc_zb_task res');
-          console.log(res);
+          console.log('add_orc_zb_task res返回的状态码是： '+res.data.code);
         }).catch(function (error) {
           console.log('error');
           console.log(error);
@@ -392,7 +462,7 @@ export default {
       }
     }
   },
-  mounted () {
+  created () {
     var _this = this;
     this.axios.interceptors.request.use(function(config){
       console.log("request init.");
@@ -401,7 +471,9 @@ export default {
     this.axios.interceptors.response.use(function(response){
       console.log("response init.");
       return response;
-    })
+    });
+    this.getAppAnswer(1);  //初始化页面标志1
+    
   },
 }
 </script>
@@ -450,10 +522,13 @@ export default {
   display: flex;
   flex-direction: column;
   height: 390px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  /* overflow-x: auto; */
+  overflow-y: scroll;
   margin-right: 10px;
   font-size:0;
+}
+.smallImgList{
+  width: 140px;
 }
 .smallImg{
   box-sizing: border-box;
