@@ -13,7 +13,6 @@
       </div>
       <div class="infoBox" :style="infoBoxStyle">
         <div class="loadingBox" v-show="others.step==1">
-          <!-- <p class="loadTips">众包校验中，请稍后查看结果。<br/>等待期间，欢迎<a target="_blank" style="color:#0090ff;text-decoration:underline" href="https://pazb.pingan.com.cn/static/h5/invite/doTask1sn.html">点此</a>体验平安众包APP。</p> -->
           <p class="loadTips">众包校验中，请稍后查看结果。</p>
           <span class="mainBtn refreshBtn" @click="getAppAnswer">刷新</span>
         </div>
@@ -35,7 +34,6 @@
             </div>
           </div>
           <div class="submitBox">
-            <!-- <span class="countBox">剩余体验次数 {{count}} 次</span> -->
             <span class="countBox"></span>
             <span class="mainBtn" :class="{'disabled':!others.coordinateFlag||!others.uploadFlag}" @click="submitToCheck">确认提交</span>
           </div>
@@ -56,12 +54,12 @@
           </div>
           <div class="regBox crowdsRegBox">
             <h4>众包识别结果</h4>
-            <p>
+            <p v-show="ocrResult['ID_XingMing']">
               <span class="star"><i v-show="ocrResult['ID_XingMing']">*</i></span>
               <span class="label">姓名: </span>
               <span class="val">{{ocrResult['ID_XingMing']?ocrResult['ID_XingMing']['zb_result']:'xxxxxx'}}</span>
             </p>
-            <p>
+            <p v-show="ocrResult['ID_HaoMa']">
               <span class="star"><i v-show="ocrResult['ID_HaoMa']">*</i></span>
               <span class="label">身份证: </span>
               <span class="val">{{ocrResult['ID_HaoMa']?ocrResult['ID_HaoMa']['zb_result']:'xxxxxx'}}</span>
@@ -102,79 +100,79 @@ export default {
       imgIndex: 0,
       tryObj: {
         showImgArr: [
-          require('../assets/images/2401523603122_hd.png')
+          require('../assets/images/2431523603616_hd.png')
         ],
-        bigImg: require('../assets/images/2401523603122_hd.png')
+        bigImg: require('../assets/images/2431523603616_hd.png')
       },
       othersList: [
         {
-          pic_url: "/token/img/d49725319d50647df38c6cf093c05acc",
+          pic_url: "/token/img/8c7a0dbb908c5f92af0058dc7ada7a32",
           step: 0,
           coordinateFlag: true,
           uploadFlag: true
         }
       ], 
       others: {
-        pic_url: "/token/img/d49725319d50647df38c6cf093c05acc",
+        pic_url: "/token/img/8c7a0dbb908c5f92af0058dc7ada7a32",
         step: 0,
         coordinateFlag: true,
         uploadFlag: true
       },
       example: {
         "ID_HaoMa": {
-          "score": "0.529698036078", 
-          "text": "310228199601115411", 
-          "xmax": "391.0", 
-          "xmin": "140.0", 
-          "ymax": "259.546020508", 
-          "ymin": "235.665283203"
+          "score": "0.998398265461", 
+          "text": "522530199208180048", 
+          "xmax": "397.0", 
+          "xmin": "135.0", 
+          "ymax": "261.707061768", 
+          "ymin": "238.158233643"
         }, 
         "ID_XingMing": {
-          "score": "0.470644197621", 
-          "text": "章鱼", 
-          "xmax": "130.0", 
-          "xmin": "72.0", 
-          "ymax": "60.0203361511", 
-          "ymin": "34.2139263153"
+          "score": "0.143730192727", 
+          "text": "姚子", 
+          "xmax": "125.0", 
+          "xmin": "65.0", 
+          "ymax": "61.0", 
+          "ymin": "33.6666679382"
         }, 
         "frame": {
           "rot_angle": 0, 
-          "score": "0.978264", 
+          "score": "0.988174", 
           "text": "身份证", 
           "type": "ID_Kuang_1", 
-          "xmax": "435", 
+          "xmax": "453", 
           "xmin": "0", 
-          "ymax": "268", 
-          "ymin": "9"
+          "ymax": "282", 
+          "ymin": "0"
         }
       },
       exampleRes: [
         {
           "ID_HaoMa": {
-            "score": "0.529698036078", 
-            "text": "310228199601115411", 
-            "xmax": "391.0", 
-            "xmin": "140.0", 
-            "ymax": "259.546020508", 
-            "ymin": "235.665283203"
+            "score": "0.998398265461", 
+            "text": "522530199208180048", 
+            "xmax": "397.0", 
+            "xmin": "135.0", 
+            "ymax": "261.707061768", 
+            "ymin": "238.158233643"
           }, 
           "ID_XingMing": {
-            "score": "0.470644197621", 
-            "text": "章鱼", 
-            "xmax": "130.0", 
-            "xmin": "72.0", 
-            "ymax": "60.0203361511", 
-            "ymin": "34.2139263153"
+            "score": "0.143730192727", 
+            "text": "姚子", 
+            "xmax": "125.0", 
+            "xmin": "65.0", 
+            "ymax": "61.0", 
+            "ymin": "33.6666679382"
           }, 
           "frame": {
             "rot_angle": 0, 
-            "score": "0.978264", 
+            "score": "0.988174", 
             "text": "身份证", 
             "type": "ID_Kuang_1", 
-            "xmax": "435", 
+            "xmax": "453", 
             "xmin": "0", 
-            "ymax": "268", 
-            "ymin": "9"
+            "ymax": "282", 
+            "ymin": "0"
           }
         }
       ],
@@ -193,15 +191,15 @@ export default {
         var data = response.data;
         if(data.code==200){
           _this.ocrResultArr = data.body.res;
-          _this.ocrResult = data.body.res[_this.imgIndex];
           if(_this.ocrResultArr.length>0){
+            _this.ocrResult = data.body.res[_this.imgIndex];
             if(flag==1){
               console.log('页面刷新了，获取列表');
               var NowImgArr = [];
               var NowOthersList = [];
               var NowExampleRes = [];
               for(var i=0;i<_this.ocrResultArr.length;i++){
-                var nowImgUrl = 'http://192.168.0.143:1987'+_this.ocrResultArr[i]["pic_with_mark"];
+                var nowImgUrl = 'http://192.168.0.203:5001'+_this.ocrResultArr[i]["pic_with_mark"];
                 NowImgArr.push(nowImgUrl);
                 NowOthersList.push({
                   pic_url: nowImgUrl,
@@ -211,20 +209,20 @@ export default {
                 });
                 NowExampleRes.push({
                   "ID_HaoMa": {
-                    "score": "0.529698036078", 
-                    "text": "310228199601115411", 
-                    "xmax": "391.0", 
-                    "xmin": "140.0", 
-                    "ymax": "259.546020508", 
-                    "ymin": "235.665283203"
+                    "score": "", 
+                    "text": "", 
+                    "xmax": "", 
+                    "xmin": "", 
+                    "ymax": "", 
+                    "ymin": ""
                   }, 
                   "ID_XingMing": {
-                    "score": "0.470644197621", 
-                    "text": "章鱼", 
-                    "xmax": "130.0", 
-                    "xmin": "72.0", 
-                    "ymax": "60.0203361511", 
-                    "ymin": "34.2139263153"
+                    "score": "", 
+                    "text": "", 
+                    "xmax": "", 
+                    "xmin": "", 
+                    "ymax": "", 
+                    "ymin": ""
                   }
                 });
               }
@@ -232,34 +230,10 @@ export default {
               _this.tryObj.bigImg = NowImgArr[_this.imgIndex];
               _this.othersList = NowOthersList;
               _this.others = NowOthersList[_this.imgIndex];
-
               _this.exampleRes = NowExampleRes;
+            }else{
+              console.log('图片上传');
             }
-            // tryObj.showImgArr
-            // tryObj.bigImg
-            /* 
-            "res":[
-              {"ID_HaoMa":{"alg_answer":"310228199601115411","task_id":4},
-              "pic_with_mark":"/token/img/6a20140e42c8bdf9dc71fb42cefd0759",
-              "ID_XingMing":{"alg_answer":"章鱼","task_id":3}
-              },
-              {"pic_with_mark":"/token/img/6a20140e42c8bdf9dc71fb42cefd0759",
-              "ID_HaoMa":{"zb_result":23333332,"alg_answer":"310228199601115411","task_id":6},
-              "ID_XingMing":{"zb_result":" 章鱼","alg_answer":"章鱼","task_id":7}
-              },
-              {"ID_HaoMa":{"alg_answer":"310228199601115411","task_id":18},
-              "pic_with_mark":"/token/img/6a20140e42c8bdf9dc71fb42cefd0759",
-              "ID_XingMing":{"alg_answer":"章鱼","task_id":17}
-              },
-              {"pic_with_mark":"/token/img/d7b2ef94bca38976373e3423d1dfc01e",
-              "ID_XingMing":{"alg_answer":"徐余硕","task_id":19}
-              },
-              {"pic_with_mark":"/token/img/d7b2ef94bca38976373e3423d1dfc01e",
-              "ID_XingMing":{"alg_answer":"徐余硕","task_id":20}
-              }
-            ]
-            */
-
             _this.checkAppResult();
           }else{
             console.log('返回的ocrResultArr为空数组,新用户初始化状态');
@@ -276,6 +250,8 @@ export default {
     },
     checkAppResult(){
       var _this = this;
+      // Cannot read property 'ID_HaoMa' of undefined
+      console.log(_this.ocrResult);
       if(_this.ocrResult["ID_HaoMa"]){
         if(_this.ocrResult["ID_XingMing"]){
           console.log('姓名和身份证都校验');
@@ -317,7 +293,9 @@ export default {
       this.imgIndex = i;
       this.others = this.othersList[i];
       this.ocrResult = this.ocrResultArr[i];
-      this.checkAppResult();
+      // if(this.ocrResult){
+        this.checkAppResult();
+      // }
       this.tryObj.bigImg = this.tryObj.showImgArr[i];
       this.others.step = this.othersList[this.imgIndex].step;
       this.example = this.exampleRes[i];
@@ -336,6 +314,7 @@ export default {
         }
       }).then(function (response) {
         if(response.status==200){
+          console.log(response);
           var data = response.data;
           _this.others.coordinateFlag = true;
           _this.othersList[_this.imgIndex].coordinateFlag = true;
@@ -366,6 +345,8 @@ export default {
       };
       this.othersList.push(othersObj);
       this.others = Object.assign({},this.others,othersObj);
+      this.ocrResultArr.push({});
+      this.ocrResult = {};
 
       this.upload_files(obj);
       this.handleImg(obj);
@@ -452,6 +433,7 @@ export default {
           data: _this.task
         }).then(function (res) {
           console.log('add_orc_zb_task res返回的状态码是： '+res.data.code);
+          console.log(res);
         }).catch(function (error) {
           console.log('error');
           console.log(error);
@@ -639,8 +621,8 @@ export default {
 .regBox:not(:last-child){
   padding-bottom: 50px;
 }
-.regBox>p:nth-of-type(1){
-  padding: 30px 0;
+.regBox>p{
+  padding-top: 30px;
 }
 .star{
   display: inline-block;
