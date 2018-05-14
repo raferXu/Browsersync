@@ -3,8 +3,9 @@
     <bannerBox :bannerSrc="bannerSrc"></bannerBox>
     <div class="bannerTxtBox">
       <h3 class="mainH3 bannerH3">众包服务</h3>
-      <span class="mainBtn bannerBtn" @click="jumpTo('/techExperience','crowdsourcingExp')">在线体验</span>
-      <span class="mainBtn bannerBtn">申请开通</span>
+      <span class="mainBtn bannerBtn" @click="jumpTo('/techExperience','众包服务')">在线体验</span>
+      <!-- <span class="mainBtn bannerBtn">申请开通</span> -->
+      <a class="mainBtn bannerBtn" href="manage.html?to=ZBmodel">立即开通</a>
     </div>
     <div class="box">
         <h3 class="mainH3B tc pb80">功能介绍</h3>
@@ -31,7 +32,8 @@
         <media :mediaData="ocrAppliData[1]"></media>
     </div>
     <div class="pt160 pb160 tc">
-        <span class="mainColorBigBtn">申请众包服务</span>
+        <!-- <span class="mainColorBigBtn">申请众包服务</span> -->
+        <a class="mainColorBigBtn" href="manage.html?to=ZBmodel">申请众包服务</a>
     </div>
   </div>
 </template>
@@ -42,6 +44,10 @@ import media from '@/components/media'
 import listItem from '@/components/listItem'
 export default {
   name: '',
+  created () {
+    console.log('scrollTo');
+    window.scrollTo(0,0)
+  },
   data () {
     return {
         listData: [
@@ -65,31 +71,31 @@ export default {
             {
                 title: '1. 手写体识别',
                 txt: '针对手写数字、手写文字体等多种复杂图片进行纯人工文字检测及录入，迅速完成文档电子化。',
-                url: '',
+                url: require('../../assets/images/手写体识别.png'),
                 imgRight: true
             },
             {
                 title: '2. 机器识别的低效字段',
                 txt: '解决整图文字识别中个别信息识别效果差影响业务适用性的情况，通过人工快速纠正OCR错误识别信息，迅速提升整体准确性，达到各场景下的可用性标准。',
-                url: '',
+                url: require('../../assets/images/机器识别的低效字段.png'),
                 imgRight: false
             },
             {
                 title: '众包审核——校验OCR识别结果',
                 txt: '基于OCR识别结果，将机器识别准确率较低的疑难文字，通过平安众包人工审核服务进行有效纠错，助力OCR识别精度提升至99.9%。',
-                url: '',
+                url: require('../../assets/images/众包审核——校验OCR识别结果.png'),
                 imgRight: false
             },
             {
                 title: '众包录入——纯人工输入',
                 txt: '通过24*7全天候运营的平安众包平台，连接海量用户进行文字录入，并提供交叉验证机制对回收结果进行系统自动核对，高质高效完成数据交付。',
-                url: '',
+                url: require('../../assets/images/众包录入——纯人工输入.png'),
                 imgRight: true
             }
         ],
       page: 'customizedOCR',
       bannerSrc: require('../../assets/images/定制化识别服务banner.png'),
-      stepSrc: require('../../assets/images/定制化识别服务banner.png')
+      stepSrc: require('../../assets/images/众包服务使用流程.png')
     }
   },
   components: {
@@ -128,7 +134,11 @@ export default {
 .item{
     width: 336px;
 }
+.stepBox{
+    padding: 1.6rem 0;
+    text-align: center;
+}
 .stepImg{
-    width: 100%;
+    width: 1520px;
 }
 </style>

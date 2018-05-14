@@ -54,10 +54,10 @@ export default {
 .showDataBox{
   display: flex;
   justify-content: space-between;
-  padding: 40px 620px 80px;
+  padding: 40px 620px 40px;
 }
 .echartTip{
-  padding: 40px 0;
+  padding: 0 0 40px;
   font-size: 18px;
   color: #323232;
 }

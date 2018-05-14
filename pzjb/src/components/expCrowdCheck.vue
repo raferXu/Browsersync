@@ -12,12 +12,12 @@
         </span>
       </div>
       <div class="infoBox" :style="infoBoxStyle">
-        <div class="loadingBox" v-show="others.step==1">
+        <div class="loadingBox" v-if="others.step==1">
           <p class="loadTips">众包校验中，请稍后查看结果。</p>
           <span class="mainBtn refreshBtn" @click="getAppAnswer">刷新</span>
         </div>
         <div class="loadingBox loadingBox2" v-show="!others.coordinateFlag||!others.uploadFlag">加载中...</div>
-        <div class="initWrap" v-show="others.step==0">
+        <div class="initWrap" v-if="others.step==0">
           <div class="infoTitleBox">
             <span class="infoTitle">识别结果 (请勾选需要进行众包校验的字段信息)</span>
           </div>
@@ -25,12 +25,12 @@
             <div class="nameBox">
               <input type="checkbox" id="ID_XingMing" value="ID_XingMing" v-model="checkedNames" style="-webkit-appearance:checkbox">
               <span class="key">姓名: </span>
-              <span class="val" v-show="example.ID_XingMing">{{example.ID_XingMing.text}}</span>
+              <span class="val" v-if="example.ID_XingMing">{{example.ID_XingMing.text}}</span>
             </div>
             <div class="idBox">
               <input type="checkbox" id="ID_HaoMa" value="ID_HaoMa" v-model="checkedNames" style="-webkit-appearance:checkbox">
               <span class="key">身份证: </span>
-              <span class="val" v-show="example.ID_HaoMa">{{example.ID_HaoMa.text}}</span>
+              <span class="val" v-if="example.ID_HaoMa">{{example.ID_HaoMa.text}}</span>
             </div>
           </div>
           <div class="submitBox">
@@ -38,29 +38,29 @@
             <span class="mainBtn" :class="{'disabled':!others.coordinateFlag||!others.uploadFlag}" @click="submitToCheck">确认提交</span>
           </div>
         </div>
-        <div class="loadingBox resultWrap" v-show="others.step==2">
+        <div class="loadingBox resultWrap" v-if="others.step==2">
           <div class="regBox ocrRegBox">
             <h4>OCR识别结果</h4>
             <p>
-              <span class="star"><i v-show="ocrResult['ID_XingMing']">*</i></span>
+              <span class="star"><i v-if="ocrResult['ID_XingMing']">*</i></span>
               <span class="label">姓名: </span>
               <span class="val">{{ocrResult['ID_XingMing']?ocrResult['ID_XingMing']["alg_answer"]:example.ID_XingMing.text}}</span>
             </p>
             <p>
-              <span class="star"><i v-show="ocrResult['ID_HaoMa']">*</i></span>
+              <span class="star"><i v-if="ocrResult['ID_HaoMa']">*</i></span>
               <span class="label">身份证: </span>
               <span class="val">{{ocrResult['ID_HaoMa']?ocrResult['ID_HaoMa']["alg_answer"]:example.ID_HaoMa.text}}</span>
             </p>
           </div>
           <div class="regBox crowdsRegBox">
             <h4>众包识别结果</h4>
-            <p v-show="ocrResult['ID_XingMing']">
-              <span class="star"><i v-show="ocrResult['ID_XingMing']">*</i></span>
+            <p v-if="ocrResult['ID_XingMing']">
+              <span class="star"><i v-if="ocrResult['ID_XingMing']">*</i></span>
               <span class="label">姓名: </span>
               <span class="val">{{ocrResult['ID_XingMing']?ocrResult['ID_XingMing']['zb_result']:'xxxxxx'}}</span>
             </p>
-            <p v-show="ocrResult['ID_HaoMa']">
-              <span class="star"><i v-show="ocrResult['ID_HaoMa']">*</i></span>
+            <p v-if="ocrResult['ID_HaoMa']">
+              <span class="star"><i v-if="ocrResult['ID_HaoMa']">*</i></span>
               <span class="label">身份证: </span>
               <span class="val">{{ocrResult['ID_HaoMa']?ocrResult['ID_HaoMa']['zb_result']:'xxxxxx'}}</span>
             </p>
@@ -79,6 +79,8 @@
 </template>
 
 <script>
+import baseUrl from '../Global'
+console.log('baseUrl: '+baseUrl.BASE_URL);
 export default {
   name: '',
   data () {
@@ -100,48 +102,48 @@ export default {
       imgIndex: 0,
       tryObj: {
         showImgArr: [
-          require('../assets/images/2431523603616_hd.png')
+          require('../assets/images/2371523602521hd.png')
         ],
-        bigImg: require('../assets/images/2431523603616_hd.png')
+        bigImg: require('../assets/images/2371523602521hd.png')
       },
       othersList: [
         {
-          pic_url: "/token/img/8c7a0dbb908c5f92af0058dc7ada7a32",
+          pic_url: "/token/img/e46cc1b97c046ff6d200772296335b41",
           step: 0,
           coordinateFlag: true,
           uploadFlag: true
         }
       ], 
       others: {
-        pic_url: "/token/img/8c7a0dbb908c5f92af0058dc7ada7a32",
+        pic_url: "/token/img/e46cc1b97c046ff6d200772296335b41",
         step: 0,
         coordinateFlag: true,
         uploadFlag: true
       },
       example: {
         "ID_HaoMa": {
-          "score": "0.998398265461", 
-          "text": "522530199208180048", 
+          "score": "0.750742434131", 
+          "text": "370782198709170246", 
           "xmax": "397.0", 
-          "xmin": "135.0", 
-          "ymax": "261.707061768", 
-          "ymin": "238.158233643"
+          "xmin": "138.0", 
+          "ymax": "261.121246338", 
+          "ymin": "238.674926758"
         }, 
         "ID_XingMing": {
-          "score": "0.143730192727", 
-          "text": "姚子", 
-          "xmax": "125.0", 
-          "xmin": "65.0", 
-          "ymax": "61.0", 
-          "ymin": "33.6666679382"
+          "score": "0.472615646502", 
+          "text": "小静", 
+          "xmax": "129.0", 
+          "xmin": "73.0", 
+          "ymax": "60.3761863708", 
+          "ymin": "32.8974304199"
         }, 
         "frame": {
           "rot_angle": 0, 
-          "score": "0.988174", 
+          "score": "0.996747", 
           "text": "身份证", 
           "type": "ID_Kuang_1", 
-          "xmax": "453", 
-          "xmin": "0", 
+          "xmax": "421", 
+          "xmin": "4", 
           "ymax": "282", 
           "ymin": "0"
         }
@@ -149,28 +151,28 @@ export default {
       exampleRes: [
         {
           "ID_HaoMa": {
-            "score": "0.998398265461", 
-            "text": "522530199208180048", 
+            "score": "0.750742434131", 
+            "text": "370782198709170246", 
             "xmax": "397.0", 
-            "xmin": "135.0", 
-            "ymax": "261.707061768", 
-            "ymin": "238.158233643"
+            "xmin": "138.0", 
+            "ymax": "261.121246338", 
+            "ymin": "238.674926758"
           }, 
           "ID_XingMing": {
-            "score": "0.143730192727", 
-            "text": "姚子", 
-            "xmax": "125.0", 
-            "xmin": "65.0", 
-            "ymax": "61.0", 
-            "ymin": "33.6666679382"
+            "score": "0.472615646502", 
+            "text": "小静", 
+            "xmax": "129.0", 
+            "xmin": "73.0", 
+            "ymax": "60.3761863708", 
+            "ymin": "32.8974304199"
           }, 
           "frame": {
             "rot_angle": 0, 
-            "score": "0.988174", 
+            "score": "0.996747", 
             "text": "身份证", 
             "type": "ID_Kuang_1", 
-            "xmax": "453", 
-            "xmin": "0", 
+            "xmax": "421", 
+            "xmin": "4", 
             "ymax": "282", 
             "ymin": "0"
           }
@@ -192,6 +194,7 @@ export default {
         if(data.code==200){
           _this.ocrResultArr = data.body.res;
           if(_this.ocrResultArr.length>0){
+            console.log('ocrResultArr有数据');
             _this.ocrResult = data.body.res[_this.imgIndex];
             if(flag==1){
               console.log('页面刷新了，获取列表');
@@ -199,7 +202,7 @@ export default {
               var NowOthersList = [];
               var NowExampleRes = [];
               for(var i=0;i<_this.ocrResultArr.length;i++){
-                var nowImgUrl = 'http://192.168.0.203:5001'+_this.ocrResultArr[i]["pic_with_mark"];
+                var nowImgUrl = baseUrl.BASE_URL+_this.ocrResultArr[i]["pic_with_mark"];
                 NowImgArr.push(nowImgUrl);
                 NowOthersList.push({
                   pic_url: nowImgUrl,
@@ -252,40 +255,42 @@ export default {
       var _this = this;
       // Cannot read property 'ID_HaoMa' of undefined
       console.log(_this.ocrResult);
-      if(_this.ocrResult["ID_HaoMa"]){
-        if(_this.ocrResult["ID_XingMing"]){
-          console.log('姓名和身份证都校验');
-          if(_this.ocrResult["ID_HaoMa"]["zb_result"]&&_this.ocrResult["ID_XingMing"]["zb_result"]){
-            console.log('姓名和身份证app结果都有了');
+      if(_this.ocrResult){
+        if(_this.ocrResult["ID_HaoMa"]){
+          if(_this.ocrResult["ID_XingMing"]){
+            console.log('姓名和身份证都校验');
+            if(_this.ocrResult["ID_HaoMa"]["zb_result"]&&_this.ocrResult["ID_XingMing"]["zb_result"]){
+              console.log('姓名和身份证app结果都有了');
+              _this.others.step = 2;
+              _this.othersList[_this.imgIndex].step = 2;
+            }else{
+              console.log('姓名和身份证还没全部返回结果');
+              _this.others.step = 1;
+              _this.othersList[_this.imgIndex].step = 1;
+            }
+          }else{
+            console.log('只校验身份证字段');
+            if(_this.ocrResult["ID_HaoMa"]["zb_result"]){
+              console.log('身份证app结果有了');
+              _this.others.step = 2;
+              _this.othersList[_this.imgIndex].step = 2;
+            }else{
+              console.log('身份证app结果还没返回');
+              _this.others.step = 1;
+              _this.othersList[_this.imgIndex].step = 1;
+            }
+          }
+        }else if(_this.ocrResult["ID_XingMing"]){
+          console.log('只校验姓名字段');
+          if(_this.ocrResult["ID_XingMing"]["zb_result"]){
+            console.log('姓名app结果有了');
             _this.others.step = 2;
             _this.othersList[_this.imgIndex].step = 2;
           }else{
-            console.log('姓名和身份证还没全部返回结果');
+            console.log('姓名app结果还没返回');
             _this.others.step = 1;
             _this.othersList[_this.imgIndex].step = 1;
           }
-        }else{
-          console.log('只校验身份证字段');
-          if(_this.ocrResult["ID_HaoMa"]["zb_result"]){
-            console.log('身份证app结果有了');
-            _this.others.step = 2;
-            _this.othersList[_this.imgIndex].step = 2;
-          }else{
-            console.log('身份证app结果还没返回');
-            _this.others.step = 1;
-            _this.othersList[_this.imgIndex].step = 1;
-          }
-        }
-      }else if(_this.ocrResult["ID_XingMing"]){
-        console.log('只校验姓名字段');
-        if(_this.ocrResult["ID_XingMing"]["zb_result"]){
-          console.log('姓名app结果有了');
-          _this.others.step = 2;
-          _this.othersList[_this.imgIndex].step = 2;
-        }else{
-          console.log('姓名app结果还没返回');
-          _this.others.step = 1;
-          _this.othersList[_this.imgIndex].step = 1;
         }
       }
     },
@@ -302,6 +307,8 @@ export default {
     },
     ocrFn(obj,fileName){
       var _this = this;
+      console.log(_this.imgIndex);  //10
+      var nowOcrImgIndex = _this.imgIndex;
       let data = new FormData();
       data.append('file', obj);
       data.append('text', JSON.stringify({"0":""+fileName}));
@@ -317,13 +324,14 @@ export default {
           console.log(response);
           var data = response.data;
           _this.others.coordinateFlag = true;
-          _this.othersList[_this.imgIndex].coordinateFlag = true;
+          console.log(_this.imgIndex);  //9
+          _this.othersList[nowOcrImgIndex].coordinateFlag = true;
           _this.exampleRes.push(data[fileName][0]['info']);
           _this.example = data[fileName][0]['info'];
         }else{
           console.log('response.status: '+response.status);
           _this.others.coordinateFlag = false;
-          _this.othersList[_this.imgIndex].coordinateFlag = false;
+          _this.othersList[nowOcrImgIndex].coordinateFlag = false;
         }
       })
       .catch(function (error) {
@@ -379,6 +387,8 @@ export default {
     },
     upload_files(obj){
       var _this = this;
+      console.log(_this.imgIndex)
+      var nowImgIndex = _this.imgIndex;
       let formdata = new FormData();
       formdata.append('files',obj);
       _this.axios({
@@ -391,18 +401,19 @@ export default {
             var resData = res.data;
             if(resData.code==200){
               _this.others.uploadFlag = true;
-              _this.othersList[_this.imgIndex].uploadFlag = true;
+              console.log(_this.imgIndex)
+              _this.othersList[nowImgIndex].uploadFlag = true;
               _this.others["pic_url"] = resData.body["url_list"][0];
-              _this.othersList[_this.imgIndex]["pic_url"] = resData.body["url_list"][0];
+              _this.othersList[nowImgIndex]["pic_url"] = resData.body["url_list"][0];
             }else{
               console.log('data.code: '+resData.code);
               _this.others.uploadFlag = false;
-              _this.othersList[_this.imgIndex].uploadFlag = false;
+              _this.othersList[nowImgIndex].uploadFlag = false;
             }
           }else{
             console.log('res.status: '+res.status);
             _this.others.uploadFlag = false;
-            _this.othersList[_this.imgIndex].uploadFlag = false;
+            _this.othersList[nowImgIndex].uploadFlag = false;
           }
       }); 
     },
@@ -522,7 +533,7 @@ export default {
   margin-bottom: 10px;
 }
 .imgActive{
-  border-color: transparent;
+  border-color: #0090ff;
 }
 
 .infoBox{

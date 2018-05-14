@@ -3,7 +3,7 @@
     <div class="row tableTitle">
       <div class="col" v-for="(v,i) in tableTitle" :key="i">{{v}}</div>
     </div>
-    <div class="row" v-for="(v1,i1) in tableData" :key="i1">
+    <div class="row bodyRow" v-for="(v1,i1) in tableData" :key="i1" @click="jumpTo(tableData[i1])">
       <div class="col" v-for="(v2,i2) in tableTitle" :key="i2">{{v1[i2]}}</div>
     </div>
   </div>
@@ -15,6 +15,21 @@ export default {
   props: ['tableData','tableTitle'],
   data () {
     return {
+    }
+  },
+  methods: {
+    jumpTo(obj){
+      console.log(obj);
+      if(obj.name=='身份证'){
+        this.$router.push({path: '/manageIdCardFinish',query: {templateId: obj["template_id"]}});
+      }else{
+        console.log(obj.name);
+        if(obj.type=='开发'){
+          this.$router.push({path: '/manageCustomDevApprovaling',query: {templateId: obj["template_id"]}});
+        }else{
+          this.$router.push({path: '/manageCustomDevFinish',query: {templateId: obj["template_id"]}});
+        }
+      }
     }
   }
 }
@@ -38,5 +53,8 @@ export default {
   line-height: 100px;
   font-size: 18px;
   color: #323232;
+}
+.bodyRow:hover{
+  cursor: pointer;
 }
 </style>

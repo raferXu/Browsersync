@@ -1,6 +1,6 @@
 <template>
   <div class="jbbody">
-    <bannerBox :bannerSrc="bannerSrc"></bannerBox>
+    <bannerBox :bannerSrc="bannerSrc" :bannerStyle="bannerStyle"></bannerBox>
     <div class="pt160">
       <sectionBox :obj="techFeaturesObj"></sectionBox>
     </div>
@@ -18,6 +18,7 @@ export default {
   name: '',
   data () {
     return {
+      bannerStyle: 1,
       bannerSrc: require('../../assets/images/首页banner.png'),
       techFeaturesObj: {
         title: {
@@ -76,6 +77,10 @@ export default {
         }
       }
     }
+  },
+  created () {
+    console.log('scrollTo');
+    window.scrollTo(0,0)
   },
   components: {
     bannerBox,sectionBox,applicationBox,productContent

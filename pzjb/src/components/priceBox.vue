@@ -13,7 +13,8 @@
       </div>
     </div>
     <div class="btnG">
-      <span class="mainColorBtn">立即开通</span>
+      <!-- <span class="mainColorBtn">立即开通</span> -->
+      <a class="mainColorBtn" href="manage.html?to=OCRmodel">立即开通</a>
     </div>
   </div>
 </template>

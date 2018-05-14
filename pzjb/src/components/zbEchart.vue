@@ -6,7 +6,7 @@
         <p class="value">2863</p>
       </div>
       <div class="box tc">
-        <p class="label">累计回收</p>
+        <p class="label">今日回收</p>
         <p class="value">20634</p>
       </div>
       <div class="box tc">

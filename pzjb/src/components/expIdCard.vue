@@ -26,7 +26,37 @@
           </div>
         </div>
         <div class="responseBox" v-show="nowTable=='response'">
-          <pre>{{responseTxt}}</pre>
+          <pre v-show="imgIndex==0">
+  {
+    "code": "200",
+    "info": {
+      "id": "370782198709170246",
+      "name": "小静"
+    },
+    "message": "success"
+  }
+          </pre>
+          <pre v-show="imgIndex==1">
+  {
+    "code": "200",
+    "info": {
+      "id": "310228199601115411",
+      "name": "章鱼"
+    },
+    "message": "success"
+  }
+          </pre>
+          <pre v-show="imgIndex==2">
+  {
+    "code": "200",
+    "info": {
+      "id": "652901196611026716",
+      "name": "小贴贴"
+    },
+    "message": "success"
+  }
+          </pre>
+          <pre v-show="imgIndex>2">{{responseTxt}}</pre>
         </div>
       </div>
     </div>
@@ -224,7 +254,7 @@ export default {
   margin-bottom: 10px;
 }
 .imgActive{
-  border-color: transparent;
+  border-color: #0090ff;
 }
 
 .infoBox{

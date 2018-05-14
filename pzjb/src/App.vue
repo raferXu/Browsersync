@@ -4,20 +4,30 @@
       <div class="jbheader">
         <div class="navbar">
           <div class="navbar-nav navbar-left">
-            <img @click="toIndex" class="logo" :src="navbarObj.left.icon" alt="icon">
+            <span class="logoWrap" @click="toIndex">
+              <img class="logo" :src="navbarObj.left.icon" alt="icon"><i class="logoTxt">平安接包</i>
+            </span>
             <ul class="navbar-nav navbar-main">
-              <router-link tag="li" to="/">产品服务</router-link>
-              <!-- <li class="proService" @mouseenter="showPro" @mouseleave="hidePro">产品服务</li> -->
+              <li class="productListTag">
+              <!-- <router-link tag="li" to="/" class="productListTag"> -->
+                <span class="productListTitle">产品服务</span>
+                <ul class="productList">
+                  <router-link tag="li" to="/idCard">身份证识别</router-link>
+                  <router-link tag="li" to="/customizedOCR">定制化识别服务</router-link>
+                  <router-link tag="li" to="/crowdsourcing">众包服务</router-link>
+                </ul>
+              <!-- </router-link> -->
+              </li>
               <router-link tag="li" to="/techExperience">技术体验</router-link>
-              <!-- <li class="techExperience" @click="jumpTo('/techExperience')" @mouseenter="showTech" @mouseleave="hideTech">技术体验</li> -->
-              <router-link tag="li" to="/devCenter">开发者中心</router-link>
-              <router-link tag="li" to="/cooperConsult">合作咨询</router-link>
+              <li>开发者中心</li>
+              <li>合作咨询</li>
+              <!-- <router-link tag="li" to="/devCenter">开发者中心</router-link> -->
+              <!-- <router-link tag="li" to="/cooperConsult">合作咨询</router-link> -->
             </ul>
           </div>
           <ul class="navbar-nav navbar-right">
-            <router-link tag="li" to="/loginPage">登录</router-link>
-            <router-link tag="li" to="/registerPage">注册</router-link>
-            <!-- <li><a href="manage.html?to=manageAccount">管理后台</a></li> -->
+            <!-- <router-link tag="li" to="/loginPage">登录</router-link> -->
+            <!-- <router-link tag="li" to="/registerPage">注册</router-link> -->
             <li><a href="manage.html">控制台</a></li>
           </ul>
         </div>
@@ -38,7 +48,7 @@ export default {
       nowNav: '',
       navbarObj: {
         left: {
-          icon: require('./assets/images/logo.png'),
+          icon: require('./assets/images/平安接包logo.png'),
           txt: '平安接包'
         },
         right: {
@@ -163,8 +173,17 @@ export default {
 .navbar-nav{
   display: flex;
 }
-.logo{
+.logoWrap{
   cursor: pointer;
+}
+.logo{
+  width: 22px;
+  cursor: pointer;
+}
+.logoTxt{
+  font-size: 24px;
+  color: #ffffff;
+  padding-left: 20px;
 }
 .navbar-nav>li, .navbar-nav>li a{
   padding: 0 20px;
@@ -174,6 +193,39 @@ export default {
 .navbar-nav>li:hover, .navbar-nav>li:hover a{
   color: #0090ff;
   cursor: pointer;
+}
+.productListTag{
+  position: relative;
+}
+.productListTag::before{
+  display: none;
+  position: absolute;
+  bottom: 0;
+  content: '';
+  width: 70px;
+  height: 4px;
+  /* background: #0090ff; */
+  background: transparent;
+}
+.productListTag:hover::before{
+  display: inline-block;
+}
+.productListTag:hover .productList{
+  display: block;
+}
+.productList{
+  position: absolute;
+  left: -40px;
+  display: none;
+  padding: 40px;
+  white-space: nowrap;
+  background: rgba(0,0,0,0.7);
+}
+.productList li, .productList li.router-link-exact-active{
+  color: #ffffff;
+}
+.productList li:hover{
+  color: #0090ff;
 }
 .proService, .techExperience{
   position: relative;

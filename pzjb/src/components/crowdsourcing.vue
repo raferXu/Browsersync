@@ -30,6 +30,10 @@ export default {
   },
   components: {
     bannerBox,zbfunctionBox,cardApplication,consultAndTryBtnG,zbtryBox
+  },
+  created () {
+    console.log('scrollTo')
+    window.scrollTo(0,0)
   }
 }
 </script>

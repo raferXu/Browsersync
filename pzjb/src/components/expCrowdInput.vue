@@ -2,40 +2,42 @@
   <div class="expWrap">
     <div class="expBox">
       <div class="smallImgBox">
-        <img v-for="(v,i) in uploadimg" :key="i" v-if="showimg==true" @click="showCanvasImg(i)" :src=v class="smallImg" >
+        <div class="smallImgList">
+          <img @click="showBigImg(i)" class="smallImg" :class="{'imgActive':imgIndex==i}" v-for="(v,i) in allImgResult" v-if="allImgResult.length>0" :src="host+v['pic_with_mark']" :key="i" :alt="i">
+          <img v-for="(v,i) in uploadimg" :key="i" v-if="showimg" @click="showCanvasImg(i)" :src=v class="smallImg" >
+        </div>
       </div>
-      <div id="imgBox" class="bigImgBox" ref="bigImgBox">
-        <span class="bigImgSpan" ref="bigImgSpan">
-          <img v-show="tryObj.bigImg" class="bigImg" ref="bigImg" :src="tryObj.bigImg" alt="bigImg">
-        </span>
+      <div id="imgBoxW" class="bigImgBox">
+        <div v-show="showCanvas" id="canvasBox" class="bigImgBox">
+          <Pic v-if="showCanvas" ref='pic' :canvasHeight='canvasHeight' :imgFlag='imgFlag' :originImg='originImg' :index="index" :canvasWidth="canvasWidth" ></Pic>
+        </div>
+        <div v-show="!showCanvas" id="imgBox" class="bigImgBox" ref="bigImgBox">
+          <span class="bigImgSpan" ref="bigImgSpan">
+            <img v-show="tryObj.bigImg" class="bigImg" ref="bigImg" :src="tryObj.bigImg" alt="bigImg">
+          </span>
+        </div>
       </div>
-      <div v-if="showCanvas==true" id="canvasBox" style="display:none;" class="bigImgBox">
-        <Pic ref='pic' :canvasHeight='canvasHeight' :imgFlag='imgFlag' :originImg='originImg' :index="index" :canvasWidth="canvasWidth" ></Pic>
-      </div>
+      
       <div class="infoBox" :style="infoBoxStyle">
-        <div class="loadingBox" v-show="step==1">
+        <div class="loadingBox" v-if="item.step==1">
           <p class="loadTips">众包录入中，请稍后查看结果。</p>
-          <!-- <p class="loadTips">众包录入中，请稍后查看结果。<br/>等待期间，欢迎<a target="_blank" style="color:#0090ff;text-decoration:underline" href="https://pazb.pingan.com.cn/static/h5/invite/doTask1sn.html">点此</a>体验平安众包APP。</p> -->
           <span class="mainBtn refreshBtn" @click="refreshFn">刷新</span>
         </div>
-        <div class="initWrap" v-show="step==0">
+        <div class="initWrap" v-if="item.step==0">
           <div class="infoTitleBox">
-            <span class="infoTitle">请在图片中框选需要众包录入的字段内容，不超过5个。</span>
+            <span class="infoTitle">请在图片中框选需要众包录入的字段内容。</span>
           </div>
           <div class="resultBox"></div>
           <div class="submitBox">
-            <span class="countBox"></span>
-            <!-- <span class="countBox">剩余体验次数 {{count}} 次</span> -->
             <span class="mainBtn" @click="submitToCheck">确认提交</span>
           </div>
         </div>
-        <div class="loadingBox resultWrap" v-show="step==2">
+        <div class="loadingBox resultWrap" v-if="item.step==2">
           <div class="regBox">
             <h4>众包录入结果</h4>
-            <p>
+            <p v-for="(v,i) in item['zb_result']" :key="i">
               <span class="star"></span>
-              <span class="label">1: </span>
-              <span class="val">xxxxxx</span>
+              <span class="val">{{v}}</span>
             </p>
           </div>
         </div>
@@ -53,10 +55,17 @@
 
 <script>
 import Pic from '@/components/onlineCanvas.vue'
+import baseUrl from '../Global'
+console.log('baseUrl: '+baseUrl.BASE_URL);
+console.log(baseUrl.BASE_URL);
 export default {
   name: '',
   data () {
     return {
+      host: baseUrl.BASE_URL,
+      paintLength:0,
+      allImgResult:[],
+      imgResult:[],
       imgNum:0,
       count: 5,
       step: -1,
@@ -70,8 +79,8 @@ export default {
       index:0,
       originImg:[],
       files:[],
-      canvasWidth:400,
-      canvasHeight:191,
+      canvasWidth:610,
+      canvasHeight:390,
       tryCount: 5,
       infoBoxStyle: {
         backgroundSize: '100% 100%',
@@ -87,31 +96,134 @@ export default {
         showImgArr: [],
         bigImg: ''
       },
-      example: {
-        result: {}
-      },
-      exampleRes: []
+      list: [],
+      item: {}
     }
   },
+  created(){
+    console.log('scrollTo');
+    window.scrollTo(0,0)
+    var _this = this;
+    this.axios({
+        url:'/token/experience_results/zb',
+        method:'post',
+        data:''
+      }).then(function(res){
+        /*
+        {
+          "pic_with_mark": "/token/img/5395350e052a3ccef710a316031095aa", 
+          "task_infos": [
+            {
+              "zb_result": "NotClear", 
+              "square": [140, 86, 194, 157], 
+              "task_id": 588
+            }, 
+            {
+              "zb_result": "NotClear", 
+              "square": [366, 160, 439, 214], 
+              "task_id": 589
+            }
+          ]
+        }
+        */
+        var s = res.data.body.res;
+        _this.allImgResult = s;
+        _this.showCanvas = false;
+        if(s.length>0){
+          _this.tryObj.bigImg = _this.host+s[0]["pic_with_mark"];
+          for(var i=0;i<s.length;i++){
+            var taskInfos = s[i]['task_infos'];
+            var itemObj = {
+              step: 1,
+              zb_result: []
+            };
+            var stepFlag = 0;
+            for(var j=0;j<taskInfos.length;j++){
+              if(taskInfos[j]["zb_result"]){
+                itemObj.step = 2;
+                itemObj["zb_result"].push(taskInfos[j]["zb_result"]);
+              }else{
+                stepFlag = 1;
+              }
+            }
+            if(stepFlag){
+              console.log('还没答案');
+              itemObj.step = 1;
+            }
+            _this.list.push(itemObj);
+            _this.item = itemObj;
+          }
+          console.log('list');
+          
+          console.log(_this.list);
+
+        }else{
+          console.log('刷新无图片纪录');
+        }
+      })
+  },
   methods: {
+    ajaxResult(){
+      let _this = this;
+      this.axios({
+        url:'/token/experience_results/zb',
+        method:'post',
+        data:''
+      }).then(function(res){
+        var s = res.data.body.res;
+        _this.allImgResult = s;
+        for(var k=0;k<s.length;k++){
+          var resultObj = {
+            step: 1,
+            zb_result: []
+          };
+          var answerSum = s[k]["task_infos"].length;
+          var answerCount = 0;
+          for(var m=0;m<answerCount;m++){
+            if(s[k]["task_infos"][m]["zb_result"]){
+              answerCount++;
+              resultObj["zb_result"].push(s[k]["task_infos"][m]["zb_result"]);
+            }
+          }
+          if(answerSum==answerCount){
+            console.log('全部返回');
+            resultObj.step = 2;
+          }
+          _this.list.push(resultObj);
+        }
+        // for(var i = 0;i<s[s.length-1]["task_infos"].length;i++){
+        //   if(!s[s.length-1]["task_infos"][i].zb_result){
+        //     _this.list[s.length-1].step = 1;
+        //     _this.list[s.length-1]["zb_result"] = [];
+        //     console.log('答案未完成');
+        //     return false;
+        //   }
+        //   _this.list[s.length-1]["zb_result"].push(s[s.length-1]["task_infos"][i]["zb_result"]);
+        // }
+        _this.list[s.length-1].step = 2;
+        _this.item = _this.list[s.length-1];
+        console.log('答案完成');
+        console.log(_this.item);
+        _this.imgResult = s[s.length-1];
+      })
+    },
     refreshFn(){
       console.log('刷新按钮被点击了,发起查询结果的请求');
-      var hasResult = true;
-      if(hasResult){
-        this.step = 2;
-      }
+      this.ajaxResult();
     },
     submitToCheck(){
       console.log(this.imgNum)
-      this.uploadimg[this.imgNum] = self.penal.toDataURL('image/png');
+      // this.uploadimg[this.imgNum] = self.penal.toDataURL('image/png');
       this.viewResult()
-      this.step=1;
     },
     showBigImg(i){
-      this.show = false;
       this.imgIndex = i;
-      this.example = this.exampleRes[i];
-      this.tryObj.bigImg = this.tryObj.showImgArr[i];
+      console.log('showBigImg点击历史图片,this.imgIndex: '+this.imgIndex);
+      console.log(this.list)
+      this.item = this.list[i];
+      this.showCanvas = false;
+      this.tryObj.bigImg = this.host+this.allImgResult[i]['pic_with_mark'];
+      
     },
     upload(){
       if(this.imgUrl == ''){
@@ -126,24 +238,34 @@ export default {
       this.imgFlag = 0;
       this.deleteX();
       this.$refs.pic.drawImage(this.imgUrl);
-      var canvasBox = document.getElementById("canvasBox");
-      var bigImgBox = document.getElementById("imgBox");
-      canvasBox.style.cssText = "display:block;";
-      bigImgBox.style.cssText = "display:none;";
+      this.showCanvas = true;
     },
     fileUpload(){
-      var bigImgBox = document.getElementById("imgBox");
-      bigImgBox.style.cssText = "display:block;";
+      var newItemObj = {
+        step: 0,
+        zb_result: []
+      };
+      this.list.push(newItemObj);
+      this.item = newItemObj;
+      console.log('this.list');
+      console.log(this.list);
+      var imgWrap = document.getElementById("imgBoxW");
+      this.showCanvas = true;
+      this.canvasWidth = imgWrap.clientWidth;
+      this.canvasHeight = imgWrap.clientHeight;
       let self=this;
-      this.step = 0;
+      this.step = 0;  
+      this.originImg = [];
       this.imgFlag = 1;
       var imgBox = [];
-      this.$refs.pic.count = 1;
-        var files=this.$refs.fileInput.files;
+      // this.$refs.pic.count = 1;
+        var files=this.$refs.fileInput.files
         for(let i=0,len=files.length;i<len;i++){
             if (window.FileReader) {    
-                var reader = new FileReader();
+                var reader = new FileReader();    
+                //监听文件读取结束后事件    
                 reader.onloadend = function (e) {
+                  console.log(self.$refs.pic);
                     var image = new Image();
                     image.src = e.target.result;
                     self.uploadimg.push(e.target.result) ;
@@ -165,13 +287,15 @@ export default {
                     })
                     self.deleteX();
                     self.$refs.pic.drawImage(self.files[self.files.length-1].src,0,0,self.canvasWidth,self.canvasHeight);
-                    console.log("self.files.length-1="+(self.files.length-1));
                     self.imgNum = self.files.length-1;
                     self.uploadimg[self.imgNum] = self.files[self.files.length-1].src;
+                    console.log(self.$refs.pic);
                 };    
                 reader.readAsDataURL(files[i]);    
             } 
         }
+        console.log(this.canvasWidth);
+        console.log(this.$refs.pic);
         let formdata = new FormData();
         for(let i=0;i<files.length;i++){
             formdata.append('files',files[i]);  
@@ -182,16 +306,24 @@ export default {
             data:this.params,
             method:'post'
         }).then(function(res){
+            console.log(self.canvasWidth);
+            console.log(self.$refs.pic);
             let data = res.data.body
              console.log(data.url_list);
              self.imageMessage.pic_urls = data.url_list;
         })
-        var bigImgBox = document.getElementById("imgBox");
-        var canvasBox = document.getElementById("canvasBox");
-        canvasBox.style.cssText = "display:block;"
-        bigImgBox.style.cssText = "display:none;";
+        console.log(this.$refs.pic);
+        // this.$refs.pic.allPaintMes = {};
     },
     showCanvasImg(n){
+
+      this.imgIndex = n;
+      console.log('showCanvasImg点击历史图片,this.imgIndex: '+this.imgIndex);
+      console.log(this.list)
+      this.item = this.list[n];
+      this.tryObj.bigImg = this.host+this.allImgResult[n]['pic_with_mark'];
+
+      this.showCanvas = true;
       this.imgNum = n;
       var x = document.getElementsByClassName("close_x");
       for(var i = 0;i<x.length;i++){
@@ -201,11 +333,6 @@ export default {
       for(var j = 0;j<x2.length;j++){
           x2[j].style.display = "block";
       }
-      var bigImgBox = document.getElementById("imgBox");
-      var canvasBox = document.getElementById("canvasBox");
-        canvasBox.style.cssText = "display:block;"
-        bigImgBox.style.cssText = "display:none;";
-      console.log(this.uploadimg);
       this.$refs.pic.drawImage(this.uploadimg[n],0,0,this.canvasWidth,this.canvasHeight);
     },
     deleteX(){
@@ -219,15 +346,19 @@ export default {
     viewResult(){
       let _this = this;
       this.imageMessage.location = this.$refs.pic.allPaintMes;
-      console.log(this.imageMessage);
+      this.paintLength = this.imageMessage.location.length;
       this.axios({
             url:"/token/add_experience_task",
             data:this.imageMessage,
             method:'post'
         }).then(function(res){
-            let data = res.data.body
+            let data = res.data;
              console.log(res);
              console.log(res.data);
+             if(data.code == 200){
+               _this.list[_this.list.length-1].step = 1;
+               _this.item.step=1;
+             }
         })
     }
   },
@@ -243,12 +374,10 @@ export default {
       _this.loading = false;
       return response;
     });
-    var imgBox = document.getElementById("imgBox");
-    var bigImgBox = document.getElementById("imgBox");
-    this.canvasWidth = imgBox.clientWidth;
-    this.canvasHeight = bigImgBox.clientHeight;
-    console.log(this.canvasWidth+"+++"+this.canvasHeight);
-    this.showCanvas = true;
+    var imgWrap = document.getElementById("imgBoxW");
+    this.canvasWidth = imgWrap.clientWidth;
+    this.canvasHeight = imgWrap.clientHeight;
+    // this.showCanvas = true;
   },
   components: {
     Pic
@@ -318,6 +447,9 @@ export default {
   margin-right: 10px;
   font-size:0;
 }
+.smallImgList{
+  width: 140px;
+}
 .smallImg{
   box-sizing: border-box;
   width: 140px;
@@ -328,7 +460,7 @@ export default {
   margin-bottom: 10px;
 }
 .imgActive{
-  border-color: transparent;
+  border-color: #0090ff;
 }
 
 .infoBox{
@@ -424,8 +556,8 @@ export default {
 .regBox:not(:last-child){
   padding-bottom: 50px;
 }
-.regBox>p:nth-of-type(1){
-  padding: 30px 0;
+.regBox>p{
+  padding-top: 30px;
 }
 .star{
   display: inline-block;

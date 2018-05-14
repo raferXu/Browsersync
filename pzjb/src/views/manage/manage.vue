@@ -94,7 +94,14 @@ export default {
           }
         ],
         tableData: [],
-        tableTitle: {}
+        tableTitle: {
+          "name":"模板名称",
+          "project_id":"项目ID",
+          "created":"创建时间",
+          "type":"服务类别",
+          "status":"状态" ,
+          "called_num":"今日调用次数"
+        }
     }
   },
   methods: {
@@ -108,6 +115,7 @@ export default {
     }
   },
   created () {
+    /*
     var data1 = {
       "body":{
         "order":{
@@ -138,15 +146,7 @@ export default {
             "called_num":0,
             "template_id":1
           }
-        ],
-        "tableTitle": {
-          "name":"模板名称",
-          "project_id":"项目ID",
-          "created":"创建时间",
-          "type":"服务类别",
-          "status":"状态" ,
-          "called_num":"今日调用次数"
-        }
+        ]
       },
       "message":"operate successfully",
       "code":200
@@ -159,17 +159,36 @@ export default {
       "message": "operate successfully", 
       "code": 200
     };
-
-    var orderData = data1.body.order;
-    for(var i=0;i<this.orderList.length;i++){
-      this.orderList[i].value = data1.body.order[this.orderList[i]["label"]]
-    }
-
-    this.available_amount = data2.body["available_amount"];
-    this.total_amount = data2.body["total_amount"];
-
-    this.tableData = data1.body["projects"];
-    this.tableTitle = data1.body["tableTitle"];
+    */
+    var _this = this;
+    this.axios.post("/token/public/list_all",{},{}).then(res=>{
+      res = res.data;
+      var code = res.code;
+      console.log(res);
+      if(code=='200'){
+        var data1 = res;
+        var orderData = data1.body.order;
+        for(var i=0;i<this.orderList.length;i++){
+          _this.orderList[i].value = data1.body.order[_this.orderList[i]["label"]]
+        }
+        _this.tableData = data1.body["projects"];
+      }else{
+        console.log('code: '+code);
+      }
+    }).catch(function(error){
+      console.log("/token/public/list_all error init."+error);
+    });
+    
+    this.axios.post("/token/payment/balance",{},{}).then(res=>{
+      var data2 = res.data;
+      _this.available_amount = data2.body["available_amount"];
+      _this.total_amount = data2.body["total_amount"];
+      localStorage.setItem('total_amount',_this.total_amount);
+      localStorage.setItem('available_amount',_this.available_amount);
+    }).catch(function(error){
+      console.log("/token/payment/balance error init."+error);
+    });
+    
   },
   components: {
     ocrEchart,zbEchart,myTable

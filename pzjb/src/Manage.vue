@@ -21,18 +21,30 @@
       <div class="main-wrap">
         <div class="main-container">
             <div class="navbar">
-                <router-link to="/manageIndex">
-                    <img :src="userIcon" alt="user" title="用户中心">
-                </router-link>
-                <router-link to="/ZBmodelApprovaling">
+                <!-- <router-link to="/">
+                    <img :src="userIcon" alt="user" title="账户管理">
+                </router-link> -->
+                <div>
+                    <img :src="userIcon" alt="user" title="账户管理">
+                </div>
+                <div>
+                    <img :src="mailIcon" alt="mail" title="消息中心">
+                </div>
+                <div>
+                    <img :src="issueIcon" alt="issue" title="帮助与支持">
+                </div>
+                <div>
+                    <img :src="accountIcon" alt="account" title="费用管理">
+                </div>
+                <!-- <router-link to="/">
                     <img :src="mailIcon" alt="mail" title="消息中心">
                 </router-link>
-                <router-link to="/manageIssue">
-                    <img :src="issueIcon" alt="issue" title="遇到问题">
+                <router-link to="/">
+                    <img :src="issueIcon" alt="issue" title="帮助与支持">
                 </router-link>
-                <router-link to="/manageAccount">
-                    <img :src="accountIcon" alt="account" title="账户管理">
-                </router-link>
+                <router-link to="/">
+                    <img :src="accountIcon" alt="account" title="费用管理">
+                </router-link> -->
             </div>
             <router-view></router-view>
         </div>
@@ -78,28 +90,28 @@ export default {
                     txt: '身份证',
                     to: '/manageIdCardIndex'
                 },
+                // {
+                //     txt: '银行卡',
+                //     to: '/manageBankCardFinish'
+                // },
+                // {
+                //     txt: '行驶证',
+                //     to: '/manageDrivingCardFinish'
+                // },
+                // {
+                //     txt: '驾驶证',
+                //     to: '/manageVehicleCardFinish'
+                // },
+                // {
+                //     txt: '医疗票据(上海)',
+                //     to: '/approvaling'
+                // },
                 {
-                    txt: '银行卡',
-                    to: '/manageBankCardFinish'
-                },
-                {
-                    txt: '行驶证',
-                    to: '/manageDrivingCardFinish'
-                },
-                {
-                    txt: '驾驶证',
-                    to: '/manageVehicleCardFinish'
-                },
-                {
-                    txt: '医疗票据(上海)',
-                    to: '/approvaling'
-                },
-                {
-                    txt: '自定义OCR模板',
+                    txt: '定制化识别服务',
                     to: '/manageCustomModelIndex'
                 },
                 {
-                    txt: '众包',
+                    txt: '众包录入',
                     to: '/manageZBmodelIndex'
                 }
             ]

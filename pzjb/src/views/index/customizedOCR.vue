@@ -3,7 +3,8 @@
     <bannerBox :bannerSrc="bannerSrc"></bannerBox>
     <div class="bannerTxtBox">
       <h3 class="mainH3 bannerH3">定制化识别服务</h3>
-      <span class="mainBtn">申请开通</span>
+      <!-- <span class="mainBtn">申请开通</span> -->
+      <a class="mainBtn" href="manage.html?to=manageCustomDevIndex">申请开通</a>
     </div>
     <div class="box">
         <standard :standardData="standardData"></standard>
@@ -27,7 +28,8 @@
         <media :mediaData="ocrAppliData[1]"></media>
     </div>
     <div class="pt160 pb160 tc">
-        <span class="mainColorBigBtn">申请定制化服务</span>
+        <!-- <span class="mainColorBigBtn">申请定制化服务</span> -->
+        <a class="mainColorBigBtn" href="manage.html?to=manageCustomDevIndex">申请定制化服务</a>
     </div>
   </div>
 </template>
@@ -67,20 +69,24 @@ export default {
             {
                 title: '1. 金融行业资料电子化',
                 txt: '用于企业证照、年报、财报、票据等纸质资料的自动识别，支持结构化录入，节约人力成本，提升处理效率',
-                url: '',
+                url: require('../../assets/images/金融行业资料电子化.png'),
                 imgRight: true
             },
             {
                 title: '2. 医疗单据识别',
                 txt: '用于医疗行业的单据、票据、病例及体检报告等资料的自动识别和结构化整理工作，快速实现电子化入库，减少人工输入过程，提高输入效率',
-                url: '',
+                url: require('../../assets/images/医疗单据识别.png'),
                 imgRight: false
             }
         ],
       page: 'customizedOCR',
       bannerSrc: require('../../assets/images/定制化识别服务banner.png'),
-      stepSrc: require('../../assets/images/定制化识别服务banner.png')
+      stepSrc: require('../../assets/images/定制化识别服务使用流程.png')
     }
+  },
+  created () {
+    console.log('scrollTo');
+    window.scrollTo(0,0)
   },
   components: {
     bannerBox,media,standard,listItem
@@ -108,6 +114,6 @@ export default {
     width: 336px;
 }
 .stepImg{
-    width: 100%;
+    width: 1203px;
 }
 </style>

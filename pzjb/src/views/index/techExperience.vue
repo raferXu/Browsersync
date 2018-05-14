@@ -1,13 +1,13 @@
 <template>
-  <div class="techExperienceWrap">
+  <div class="techExperienceWrap" @click="changeSelect">
     <div class="techBox">
       <div class="selectBox">
         <ul>
-          <li @click="changeSelect(selectTxt)">{{selectTxt}}</li>
-          <li @click="changeSelect(selectTxt2)" v-show="selectFlag">{{selectTxt2}}</li>
+          <li @click.stop="changeSelect(selectTxt)">{{selectTxt}}</li>
+          <li @click.stop="changeSelect(selectTxt2)" v-show="selectFlag">{{selectTxt2}}</li>
         </ul>
         <span class="selectBtn">
-          <img @click="selectFlag=!selectFlag" class="selectBtnImg" :src="selectBtnSrc" alt="">
+          <img @click.stop="selectFlag=!selectFlag" class="selectBtnImg" :src="selectBtnSrc" alt="">
         </span>
       </div>
     </div>
@@ -23,6 +23,8 @@ import crowdsourcingExp from '@/components/crowdsourcingExp'
 export default {
   name: '',
   created () {
+    console.log('scrollTo');
+    window.scrollTo(0,0)
     var to = this.$route.query.to || localStorage.getItem('experienceId');
     console.log('to: '+to);
     this.changeSelect(to);
@@ -51,6 +53,8 @@ export default {
         this.componentId = 'crowdsourcingExp';
         this.selectFlag = false;
         localStorage.setItem('experienceId','众包服务');
+      }else{
+        this.selectFlag = false;
       }
     }
   },

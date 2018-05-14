@@ -20,7 +20,9 @@
         </ul>
     </div>
     <div class="df mb160 customBox">
-        <div class="imgBox mr160" @click="jumpTo('/customizedOCR')"></div>
+        <div class="imgBox mr160" @click="jumpTo('/customizedOCR')">
+            <img class="serverIcon" :src="customizedOCRSrc" alt="">
+        </div>
         <div class="txtBox">
             <h3 class="mainH3 pt40 pb40">定制化识别服务</h3>
             <p class="mainTxt">
@@ -36,7 +38,8 @@
             </p>
             <span class="mainBtn" @click="jumpTo('/techExperience','crowdsourcingExp')">在线体验</span>
         </div>
-        <div class="imgBox ml160" @click="jumpTo('/crowdsourcing')"></div>
+        <div class="imgBox ml160" @click="jumpTo('/crowdsourcing')">
+        <img class="serverIcon" :src="crowdsourcingSrc" alt=""></div>
     </div>
   </div>
 </template>
@@ -47,6 +50,8 @@ export default {
   props: ['obj'],
   data () {
     return {
+        customizedOCRSrc: require('../assets/images/定制化识别服务场景图.png'),
+        crowdsourcingSrc: require('../assets/images/众包服务场景图.png'),
         standardData: [
             {
                 url: require('../assets/images/身份证体验.png'),
@@ -156,5 +161,8 @@ export default {
 }
 .txtBox{
     flex: 1;
+}
+.serverIcon{
+    width: 840px;
 }
 </style>

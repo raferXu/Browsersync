@@ -25,7 +25,7 @@ export default {
       componentId: 'expCrowdCheck',
       typeArr: [
         {
-          title: '众包检验',
+          title: '众包校验',
           id: 'expCrowdCheck'
         },
         {

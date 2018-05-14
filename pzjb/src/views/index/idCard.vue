@@ -4,7 +4,8 @@
     <div class="bannerTxtBox">
       <h3 class="mainH3 bannerH3">身份证识别</h3>
       <span class="mainBtn bannerBtn" @click="jumpTo('/techExperience','ocrExp')">在线体验</span>
-      <span class="mainBtn bannerBtn">立即开通</span>
+      <!-- <span class="mainBtn bannerBtn">立即开通</span> -->
+      <a class="mainBtn bannerBtn" href="manage.html?to=OCRmodel">立即开通</a>
     </div>
     <div class="pt160">
       <functionBox></functionBox>
@@ -25,6 +26,10 @@ export default {
     return {
       bannerSrc: require('../../assets/images/身份证识别banner.png')
     }
+  },
+  created () {
+    console.log('scrollTo');
+    window.scrollTo(0,0)
   },
   components: {
     bannerBox,functionBox,cardApplication,priceBox

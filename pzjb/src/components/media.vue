@@ -35,6 +35,9 @@ export default {
     height: 220px;
     background: #333333;
 }
+.mediaImg{
+    width: 382px;
+}
 .rr{
     flex-direction: row-reverse;
 }
