@@ -1,7 +1,7 @@
 <template>
-  <div class="manageIssueBox">
+  <div class="manageIssueBox" >
     <h3 class="modelTitle pageTitle modelTitle1">{{title}}</h3>
-    <el-row>
+    <el-row style="background:#fff;">
       <el-col :span="15" class="manageIssueBoxleft modelBox" >
         <el-row>
           <el-col class="title1 modelTitle">1.选择模版类型</el-col>
@@ -9,12 +9,12 @@
         <el-row class="module_type">
           <el-row class="radio_module">
             <el-radio class="radio_list" v-model="radio" label="0">身份证</el-radio>
-            <el-radio class="radio_list" v-model="radio" label="1">驾驶证</el-radio>
+            <!-- <el-radio class="radio_list" v-model="radio" label="1">驾驶证</el-radio>
             <el-radio class="radio_list" v-model="radio" label="2">医疗票据（上海）</el-radio>
             <br><br>
             <el-radio class="radio_list" v-model="radio" label="3">银行卡</el-radio>
             <el-radio class="radio_list" v-model="radio" label="4">行驶证</el-radio>
-            <el-radio class="radio_list" v-model="radio" label="5">自定义模版1</el-radio>
+            <el-radio class="radio_list" v-model="radio" label="5">自定义模版1</el-radio> -->
           </el-row>
         </el-row>
         <el-row></el-row>
@@ -58,7 +58,7 @@
         <el-col class="modelTips mt0"><span class="starRed">* </span>此价格为预扣费的金额，最终花费以实际用量为准。</el-col>
       </el-col>
     </el-row>
-    <div class="btnGBox">
+    <div class="btnGBox"  style="background:#fff;">
       <div class="modelPrimaryBtn" @click="submitOrder">确认订单</div>
     </div>
   </div>
@@ -231,5 +231,9 @@ export default {
       line-height: 90px;
       font-size:20px;
       padding:0 40px;
+      background: #fff;
+    }
+    .pageTitle{
+      background: #fff !important;
     }
 </style>

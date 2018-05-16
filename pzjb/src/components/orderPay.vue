@@ -1,5 +1,5 @@
 <template>
-  <div class="orderPayBox">
+  <div class="orderPayBox" style="background:#fff;">
     <div class="modelTitle pageTitle">{{title}}</div>
     <div class="payWrap">
       <div class="payCon">
@@ -311,5 +311,11 @@ export default {
 .moneyBox{
   font-size: 48px;
   color: #333333;
+}
+.pageTitle{
+  font-size: 20px;
+  height: 90px;
+  padding:0 0 0 40px;
+  line-height: 90px;
 }
 </style>

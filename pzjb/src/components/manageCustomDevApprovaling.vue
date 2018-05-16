@@ -157,7 +157,7 @@ export default {
   padding-left: 40px;
   font-size: 32px;
   color: #323232;
-  border: 1px solid #f0f0f0;
+  /* border: 1px solid #f0f0f0; */
 }
 .contentBox{
   box-sizing: border-box;

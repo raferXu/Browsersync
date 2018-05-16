@@ -114,6 +114,7 @@
     .list {
         display: flex;
         justify-content: space-between;
+        border: none;
     }
     
     .item {

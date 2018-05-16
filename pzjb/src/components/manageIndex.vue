@@ -1,6 +1,6 @@
 <template>
   <div class="manageIssueBox">
-     <h4 class="sectionTitle">概览</h4>
+     <h4 class="sectionTitle" style="background:#fff;">概览</h4>
      <div class="elWrap">
        <el-row :gutter="50" class="box one-box">
         <el-col :span="10">

@@ -183,7 +183,7 @@ export default {
     }
   },
   methods: {
-    getAppAnswer(flag){  //刷新获取列表
+    getAppAnswer(flag){
       var _this = this;
       _this.axios({
         url: '/token/experience_results/ocr',
@@ -193,10 +193,10 @@ export default {
         var data = response.data;
         if(data.code==200){
           _this.ocrResultArr = data.body.res;
-          if(_this.ocrResultArr.length>0){  //列表有数据
+          if(_this.ocrResultArr.length>0){
             console.log('ocrResultArr有数据');
             _this.ocrResult = data.body.res[_this.imgIndex];
-            if(flag==1){  //页面刷新时
+            if(flag==1){
               console.log('页面刷新了，获取列表');
               var NowImgArr = [];
               var NowOthersList = [];
@@ -445,6 +445,12 @@ export default {
         }).then(function (res) {
           console.log('add_orc_zb_task res返回的状态码是： '+res.data.code);
           console.log(res);
+          
+          _this.task = {
+            pic_url: '',
+            task_infos:[]
+          };
+          console.log(_this.task)
         }).catch(function (error) {
           console.log('error');
           console.log(error);
@@ -465,7 +471,7 @@ export default {
       console.log("response init.");
       return response;
     });
-    this.getAppAnswer(1);  //获取列表,初始化页面标志1
+    this.getAppAnswer(1);  //初始化页面标志1
     
   },
 }

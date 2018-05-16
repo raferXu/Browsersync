@@ -1,6 +1,6 @@
 <template>
   <div class="sectionBox">
-    <div class="title">
+    <div class="title" style="height: auto;">
       <img class="titleImg" v-if="obj.title.img" :src="obj.title.img" alt="title">
       <span v-else>{{obj.title.txt}}</span>
     </div>
@@ -32,11 +32,13 @@ export default {
   padding-bottom: 160px;
 }
 .title{
+  height: auto;
   margin-bottom: 80px;
   text-align: center;
+  border: none;
 }
 .titleImg{
-  width: 153px;
+  width: 137px;
 }
 .listBox{
   box-sizing: border-box;

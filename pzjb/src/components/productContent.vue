@@ -1,6 +1,6 @@
 <template>
   <div class="mainBox caseBox">
-    <div class="mainTitle title">
+    <div class="mainTitle tc">
       <img class="titleImg" v-if="obj.title.img" :src="obj.title.img" alt="title">
       <span v-else>{{obj.title.txt}}</span>
     </div>
@@ -112,9 +112,10 @@ export default {
 }
 .title{
   text-align: center;
+  border: none;
 }
 .titleImg{
-  width: 153px;
+  width: 129px;
 }
 
 .left{

@@ -11,7 +11,10 @@
         </div>
       </div>
       <div class="ZBmodelTable" v-show="zbModelObj.length>0">
-        <my-table :tableData="zbModelObj" :tableTitle="tableTitle"></my-table>
+        <h3 class="pageTitle bgf">项目</h3>
+        <div class="tableWrap">
+          <my-table :tableData="zbModelObj" :tableTitle="tableTitle"></my-table>
+        </div>
       </div>
     </div>
   </div>
@@ -55,7 +58,6 @@ export default {
         this.zbModelObj = this.zbModelObj.concat(data)
         console.log(this.zbModelObj)
       }
-      
     }).catch(function(error){
       console.log("/token/project/start error init."+error);
     })
@@ -73,7 +75,6 @@ export default {
     runto(row, column, cell, event){
       var templateId = row.template_id;
       this.$router.push({path: '/manageCustomDevApprovaling',query: {templateId: templateId}});
-
     }
   }
 }
@@ -124,9 +125,8 @@ export default {
 .ZBmodelTable{
   display: flex;
   flex-direction: column;
-  border: 1px solid #828282;
+  margin-top: 20px;
   font-size: 24px;
-  background: #ffffff;
 }
 .row{
   display: flex;
@@ -161,5 +161,16 @@ export default {
 }
 .title{
   background: #fff;
+}
+.pageTitle{
+  padding: 40px 0 20px 40px;
+  font-size: 24px;
+  color: #323232;
+  border-bottom: 1px solid #f0f0f0;
+}
+.tableWrap{
+  font-size: 0.18rem;
+  padding: 0 20px 20px;
+  background: #ffffff;
 }
 </style>

@@ -2,9 +2,9 @@
   <div id="manage">
       <div class="sidebarWrapper">
         <ul class="sidebar-container">
-            <li class="sidebar-item sidebar-logo" style="color:#ffffff;text-align:center;font-size:12px;">
-                <a href="index.html">返回主页</a>
-            </li>
+            <a href="index.html"><li id="logo" class="sidebar-item sidebar-logo" style="color:#ffffff;text-align:center;font-size:12px;">
+                <img class="img" src="./assets/images/平安接包logo.png">
+            </li></a>
             <li class="sidebar-item" @click="toManageIndex">
                 <i class="sidebarIcon" :style="summaryBg"></i><span class="sidebarTxt">概览</span>
             </li>
@@ -223,6 +223,7 @@ export default {
 .main-container{
     min-height: 100%;
     margin-left: 200px;
+    background:#f5f5f5;
 }
 .navbar{
     display: flex;
@@ -236,5 +237,13 @@ export default {
 .navbar img{
     width: 34px;
     margin-right: 60px;
+}
+.img{
+    width:22px;
+    height:38px;
+}
+#logo{
+    line-height: 100%;
+    text-align: center;
 }
 </style>

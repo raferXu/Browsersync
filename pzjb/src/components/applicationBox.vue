@@ -38,8 +38,10 @@ export default {
   /* margin-bottom: 160px; */
 }
 .title{
+  height: auto;
   margin-bottom: 80px;
   text-align: center;
+  border: none;
 }
 .titleImg{
   width: 172px;

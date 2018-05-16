@@ -51,6 +51,7 @@ export default {
   color: white;
 }
 .sectionTitle{
+  background: none;
   font-size:36px;
 }
 .cardApplicationBox{

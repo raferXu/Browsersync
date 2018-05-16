@@ -245,7 +245,7 @@ export default {
         _this.item = _this.list[s.length-1];
         _this.imgResult = s[s.length-1];
         */
-        _this.uploadimg = [];
+        // _this.uploadimg = [];
       })
     },
     refreshFn(){
@@ -589,7 +589,9 @@ export default {
   display: flex;
   justify-content: space-between;
   padding: 0 40px 0 20px;
+  justify-content: flex-end;
 }
+
 .countBox{
   align-self: flex-end;
 }

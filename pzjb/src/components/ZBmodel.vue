@@ -1,9 +1,9 @@
 <template>
   <div>
-    <Row style='margin-top:20px'>
-        <Col span="22" offset="" style="font-size:20px;height:24px;line-height:24px;margin-bottom:20px;padding-left:40px;" >申请众包录入服务</Col>
+    <Row style='background:#fff;'>
+        <Col span="24" offset="" class="title" >申请众包录入服务</Col>
       <Col span="24" offset="0">
-      <Row style="padding: 2px;padding-bottom:20px;">
+      <Row style="padding: 20px;background:#f5f5f5;">
         <Col  span="22" offset="2"><Card :bordered="false" dis-hover>
           <Steps :current="current">
               <Step  content="上传图片"></Step>
@@ -25,17 +25,17 @@
                     <Row style='margin-bottom:20px'>
                         <Col span='2' offset="">
                             <Card :bordered="false"  dis-hover>
-                                <ul class='img'>
-                                    <li v-for='item,index in files' style="position:relative;"  class="list">
+                                <ul class='img' style="height:300px;width:100%;background:#f5f5f5;">
+                                    <li v-for='item,index in files' style="position:relative;"  class="list2">
                                         <img @click="selectImgShow(item,index)" :src="item.src" width="100%" alt="">
                                         <a style="position:absolute;top:0px;right:0px;z-index:1234;" href="#" slot="extra" @click.prevent="del(index)">
                                             <Icon type="close-circled"></Icon>
                                         </a>
                                     </li>
                                 </ul>
-                                <Col span='20'  offset="2">
+                                <Col span='24'  offset="0">
                                 <input multiple type="file" ref='upload' @change="upload" style='display:none'>
-                                <Button style="margin-top:38px;"  size="large" type="primary"  @click='uploadfile'>
+                                <Button style="margin-top:10px;width:100%;"  size="large" type="primary"  @click='uploadfile'>
                                     
                                         <!-- <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon> -->
                                         <!-- <p>上传</p> -->
@@ -56,8 +56,8 @@
                                 </div>
                                    
                             </Col> -->
-                            <div style="width:100%;height:300px">
-                                    <div  v-if="!showUploadImg" @click='uploadfile' style="padding: 20px 0;width:100%;text-align:center;cursor:pointer;">
+                            <div style="width:100%;height:300px;background:#f5f5f5;">
+                                    <div  v-if="!showUploadImg" @click='uploadfile' style="padding: 20px 0;width:100%;text-align:center;cursor:pointer;padding-top:103px;">
                                         <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
                                         <p>点击上传所需识别的图片</p>
                                     </div>
@@ -68,7 +68,7 @@
                                     <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
                                     <p>点击上传所需识别的图片</p>
                                 </div> -->
-                                <Col span="24" offset="" style="font-size:12px;">请点击上传所需识别的图片，每张图片不大于5Mb，格式可为JPEG\PNG。</Col>
+                                <Col span="24" offset="" style="font-size:12px;margin-top:10px;">请点击上传所需识别的图片，每张图片不大于5Mb，格式可为JPEG\PNG。</Col>
                             </Card>
                         </Col>
                         <Col span='14' offset="" style="padding-left:40px;" >
@@ -90,11 +90,11 @@
             </TabPane>
             <TabPane label=""  disabled name='name1'>
                 <div v-if="current == 1">
-                <Row style='margin-bottom:20px;padding: 0 ;'>
+                <Row style='margin-bottom:10px;padding: 0 ;'>
                     <Col span='2' offset=''>
                         <Card :bordered="false" dis-hover>
                             <ul class='img' style="height:349px;width:100%;background:#f5f5f5;">
-                                <li style="width:100%;margin-right:5px;position:relative;" v-for='item,index in files' class="list" >
+                                <li style="width:100%;margin-right:5px;position:relative;" v-for='item,index in files' class="list2" >
                                     <img :src="item.src" width="100%" alt="" @click='showImg(index)'>
                                     <!-- <a style="position:absolute;top:0px;right:0px;z-index:1234;" href="#" slot="extra" @click.prevent="del(index)">
                                         <Icon type="close-circled"></Icon>
@@ -103,25 +103,27 @@
                             </ul>
                         </Card>
                     </Col>
-                    <Col span='10' offset='' style="padding:0 40px;" >
+                    <Col span='8' offset=''  style="padding-left:10px;" >
                         <Card :bordered="false" style='height:349px' dis-hover>
-                            <div class="paint_mes" style="margin-bottom:20px;color:#333;padding-left:20px;">使用鼠标在每张图片中框选出识别字段可能出现的区域，并添加对应字段名及字段描述。</div>
+                            <div class="paint_mes" style="margin-bottom:10px;color:#333;padding-left:20px;">使用鼠标在每张图片中框选出识别字段可能出现的区域，并添加对应字段名及字段描述。</div>
                            <Pic ref='pic' @showImg="showImg" :files="files" :canvasHeight="canvasHeight" :canvasWidth="canvasWidth" @deleteMes="deleteMes" @addItem="addItem" :originImg="originImg" :saveFilesNum="saveFilesNum" :index="index" :percent1="percent1" :filesName="filesName"></Pic>
                         </Card>
                     </Col>
-                    <Col span="12" style="padding:12px 0;">
+                    <Col span="12" style="padding:12px 0 12px 40px;">
                         <!-- <div style="margin-bottom:40px;">请框选需要识别的字段区域</div>
                         <Button class="btn1" style="margin-bottom:40px;" type="primary">框选</Button><br/>-->
                         
                         <Card :bordered="false" style='margin-top:20px;' dis-hover>
-                            <Col :span="10" style="text-align:center">
-                                字段名 <Poptip  trigger="hover"  content="如框选区域中的信息为“广东省深圳市福田区八卦三路平安大厦”，则字段名应填写为“地址”，不超过8个中文字符" placement="bottom">
-                                        <Icon type="information-circled" />
+                            <Col :span="10" style="text-align:left">
+                                字段名 <Poptip  trigger="hover"  content="" placement="bottom">
+                                        <Icon type="ios-information-outline" color="#0090ff" />
+                                        <div class="api pop-content" slot="content" style="">如框选区域中的信息为“广东省深圳市福田区八卦三路平安大厦”，则字段名应填写为“地址”，不超过8个中文字符</div>
                                     </Poptip>
                             </Col>
-                            <Col :span="13"  offset="1"  style="text-align:center">
-                                子段描述 <Poptip trigger="hover"  content="描述该字段的预估字段内容（如需识别的信息范围、文字种类）、字段长度等" placement="bottom">
-                                            <Icon type="information-circled" />
+                            <Col :span="13"  offset="1"  style="text-align:left">
+                                字段描述 <Poptip trigger="hover"  content="" placement="bottom">
+                                            <Icon type="ios-information-outline" color="#0090ff" />
+                                            <div class="api pop-content" slot="content" style="">描述该字段的预估字段内容（如需识别的信息范围、文字种类）、字段长度等</div>
                                         </Poptip>
                             </Col>
                             <Col span="24" offset="">
@@ -140,11 +142,14 @@
                            
                         </Card>
                     </Col>
-                    
-                    <Col span="24" offset="0" style="margin-top:40px;">
+                    <Col span="24" offset="0" style="margin-top:10px;">
+                        <Col span="12"><div style="margin-bottom:10px;padding-right:80px;">提示：框选的范围需要考虑到后期该字段可能产生的偏移情况，框选时可以略微放大框选区域以防信息遗漏。</div></Col>
+                        <Col span="24"><Button class="" style="" type="primary" @click='reset'>重置</Button> </Col>
+                    </Col>
+                    <!-- <Col span="24" offset="0" style="margin-top:40px;">
                         <div style="margin-bottom:40px;">提示：框选的范围需要考虑到后期该字段可能产生的偏移情况，框选时可以略微放大框选区域以防信息遗漏。</div>
                         <Button class="btn1" style="border:1px solid #2d8cf0;background:#fff;color:#2d8cf0;" type="primary" @click='reset'>重置</Button> 
-                    </Col>
+                    </Col> -->
                 </Row>   
                 <Row>
                     <Card :bordered="false" dis-hover>
@@ -183,13 +188,13 @@
                     </Row> -->
                     </div>
             </TabPane>
-            <TabPane label=""  disabled name='name2' style="padding:40px;background:#f5f5f5;"><Col style="">
+            <TabPane label=""  disabled name='name2' style="padding:40px;"><Col style="">
                 <div id="uploadm" v-if="current == 2" >
                 <Upload
                     multiple
                     type="drag"
                     :before-upload="handleUpload"
-                    style="border:none;background:#f5f5f5;"
+                    style="border:none;"
                     action="//jsonplaceholder.typicode.com/posts/">
                     <div style="padding: 20px 0">
                         <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
@@ -198,7 +203,7 @@
                         <p>样本图片规格为：每张图片不大于5Mb，格式可以为JPEG/PNG</p>
                     </div>
                 </Upload>
-                <Col span="8" offset="8"><div>
+                <Col v-show="showPer" span="8" offset="8"><div>
                     <Progress :percent="percent" ></Progress>
                     <Button v-if="percent==100" type="primary" style="margin:40px 40px 0 0;" icon="folder">{{file.name}}</Button>
                 </div></Col>
@@ -225,15 +230,16 @@
                         </FormItem> -->
                         <Col span="24" offset="">
                             <FormItem label="预计月调用次数" required>
-                                <Col span="16"><RadioGroup v-model="formItem.button1" @on-change="changeValue" type="button" size="large">
-                                    <Radio label="1-10000"><span @click="writeTime1">1-10000</span></Radio>
-                                    <Radio label="10001-50000"><span @click="writeTime1">10001-50000</span></Radio>
-                                    <Radio label="50001-100000"><span @click="writeTime1">50001-100000</span></Radio>
-                                    <Radio :label="formItem.button4"><span @click="writeTime">>100000</span></Radio>
-                                </RadioGroup></Col>
-                                <Col class="write_time" span="4"><Input v-if="writetimes" v-model="formItem.button4" placeholder="请输入预计使用次数">
+                                <Col span="18"><RadioGroup v-model="formItem.select" @on-change="changeValue" type="button" size="large">
+                                    <Radio label="1"><span @click="writeTime1">1-10000</span></Radio>
+                                    <Radio label="2"><span @click="writeTime1">10001-50000</span></Radio>
+                                    <Radio label="3"><span @click="writeTime1">50001-100000</span></Radio>
+                                    <Radio label="4"><span @click="writeTime">>100000</span></Radio>
+                                </RadioGroup>
+                                </Col>
+                                <!-- <Col class="write_time" span="4"><Input v-if="writetimes" v-model="formItem.button4" placeholder="请输入预计使用次数">
                                     
-                                </Input></Col>
+                                </Input></Col> -->
                             </FormItem>
                         </Col>
                         <Col  span="24" class="select_time">
@@ -302,7 +308,8 @@
                         </Col >
                         <Col span='12' offset=''>
                             <FormItem label="预计月调用次数：">
-                               <span>{{formItem.select==1?'1~10000':formItem.select==2?'10000~15000':'15000~20000'}}</span>
+                               <!-- <span>{{formItem.select==1?'1~10000':formItem.select==2?'10000~15000':'15000~20000'}}</span> -->
+                               <span>{{formItem.select==1?'1~10000':formItem.select==2?'10001~50000':formItem.select==3?'50001~100000':'>100000'}}</span>
                             </FormItem>
                         </Col >
                         <!-- <Col span='9' offset='1'>
@@ -423,6 +430,7 @@ export default {
   },
   data () {
       return {
+          showPer:false,
           uploadImg:'',
           showUploadImg:false,
           localtion:{},
@@ -514,6 +522,7 @@ export default {
       },
       cancel(){
           console.log("cancel");
+          this.$router.push('/')
       },
       writeTime1(){
           this.writetimes = false;
@@ -586,7 +595,11 @@ export default {
             mark_overlaid : true,
             expected_time : this.formItem.button1,
             desensitization:this.formItem.radio=="1"?true:false,
-            pictures_fields : []
+            pictures_fields : [],
+            size:{
+                "width":this.canvasWidth,
+                "height":this.canvasHeight
+            }
         };
         var data2 = this.saveFiles;
         // json_params.type = "1";
@@ -867,7 +880,7 @@ export default {
         this.file = file;
         this.progressAdd()
         this.isupload=true
-        
+        this.showPer = true;
         return false; 
     },
     progressAdd(){
@@ -899,7 +912,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style >
 .ivu-card-body{
     padding:0;
 }
@@ -908,13 +921,13 @@ export default {
     height: 377px;
     overflow-y:auto;
 }
-.list{
+.list2{
     /* border: 2px transparent ;  */
     cursor: pointer;
     border: 2px solid rgba(0,0,0,0);  
 
 }
-.list:hover{
+.list2:hover{
     border: 2px solid #e4393c;  
 }
 .files{
@@ -942,7 +955,7 @@ export default {
     background-color: #78c4ff;
 }
 .ivu-form-item{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .btn1{width:130px;height:54px;font-size:20px;margin-right:40px;}
 .ivu-upload-drag{
@@ -954,7 +967,7 @@ export default {
     border:none;
 }
 #uploadm .ivu-upload-drag{
-    background:#f5f5f5;
+    background:#fff;
 }
 .ivu-form-item-label{
     height:100%;
@@ -1005,6 +1018,25 @@ export default {
 }
 .ivu-radio-group-button.ivu-radio-group-large .ivu-radio-wrapper,textarea.ivu-input{
     font-size: 12px;
+}
+.title{
+    font-size:20px;height:90px;line-height:90px;padding-left:40px;border-bottom:1px solid #f5f5f5;
+}
+.ivu-steps,.ivu-steps .ivu-steps-head,.ivu-steps-item.ivu-steps-status-wait .ivu-steps-head-inner{
+    background:#f5f5f5;
+}
+.pop-content{
+    width:164px;
+    margin: 0;
+    padding:0;
+    white-space: normal;
+    font-size:14px;
+}
+.ivu-poptip-body{
+    padding:20px;
+}
+.ivu-poptip-arrow{
+    display:none;
 }
 </style>
 

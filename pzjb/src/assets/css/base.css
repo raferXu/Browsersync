@@ -79,6 +79,7 @@ a:hover {
     padding-left: 0.4rem;
     color: #323232;
     font-size: 0.2rem;
+    background: #ffffff;
 }
 
 
@@ -238,7 +239,7 @@ a:hover {
 
 .pageTitle {
     padding: 0.4rem;
-    border: 1px solid #f0f0f0;
+    /* border: 1px solid #f0f0f0; */
     margin-bottom: 0;
 }
 

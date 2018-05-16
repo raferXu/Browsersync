@@ -1,6 +1,6 @@
 <template>
   <div class="manage">
-    <h2 class="sectionTitle">概览</h2>
+    <h2 class="sectionTitle" style="background:#fff;">概览</h2>
     <div class="box firstRow">
         <div class="feeBox">
           <h3 class="pageTitle">费用</h3>
@@ -220,6 +220,7 @@ export default {
   padding: 40px 0 20px 40px;
   font-size: 24px;
   color: #323232;
+  border: none;
   border-bottom: 1px solid #f0f0f0;
 }
 .firstRow{
