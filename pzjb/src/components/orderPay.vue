@@ -27,7 +27,8 @@
           <p>预计使用时长: <span>{{this.account.month}}月</span></p>
         </div>
         <div class="sumBox mb80">
-          <h4>总计: {{this.account.sum}}元 <span>(月调用费 x 预计调用量 x 预计使用时长 x 120%)</span></h4>
+          <h4>总计: {{this.account.sum}}元 </h4>
+          <!-- <span>(月调用费 x 预计调用量 x 预计使用时长 x 120%)</span> -->
           <p><i>*</i> 此价格为预扣费的金额，最终花费以实际用量为准。</p>
         </div>
       </div>

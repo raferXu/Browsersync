@@ -53,7 +53,7 @@
         <el-col class="modelTips"><span class="modelTipsLabel pr5">API 费用: </span>{{price}}元／次</el-col>
         <el-col class="modelTips"><span class="modelTipsLabel pr5">预计月调用量: </span>{{times}}次</el-col>
         <el-col class="modelTips"><span class="modelTipsLabel pr5">预计使用时长: </span>{{ruleForm.time}}月</el-col>
-        <el-col class="modelTips"><span class="modelTipsLabel pr5">保障金: </span>120%</el-col>
+        <!-- <el-col class="modelTips"><span class="modelTipsLabel pr5">保障金: </span>120%</el-col> -->
         <el-col class="modelTitle pt80"><span class="modelTipsLabel pr5">总计: </span>{{total_cost}}元</el-col>
         <el-col class="modelTips mt0"><span class="starRed">* </span>此价格为预扣费的金额，最终花费以实际用量为准。</el-col>
       </el-col>
@@ -94,21 +94,21 @@ export default {
       if(this.times == 10000){
         this.customFlag = false;
         this.price = 0.2; 
-        this.total_cost = this.times * this.price * this.ruleForm.time*1.2;
+        this.total_cost = this.times * this.price * this.ruleForm.time;
       }else if(this.times == 50000){
         this.customFlag = false;
         this.price = "0.17－0.2";
         // this.total_cost = ((this.times-10000) * 0.17 + 0.2*10000) * this.ruleForm.time*1.2;
-        this.total_cost =  this.times * 0.2 * this.ruleForm.time*1.2;
+        this.total_cost =  this.times * 0.2 * this.ruleForm.time;
       }else if(this.times == 100000){
         this.customFlag = false;
         this.price = "0.14－0.2";
-        this.total_cost = this.times * 0.2 * this.ruleForm.time*1.2;
+        this.total_cost = this.times * 0.2 * this.ruleForm.time;
       }else if(this.times == 150000){
         this.customFlag = true;
         this.price = "0.08－0.2";
-        this.total_cost = this.custonInput*0.2 * this.ruleForm.time*1.2;
-
+        this.total_cost = this.custonInput*0.2 * this.ruleForm.time;
+        this.times = this.custonInput;
       }
       this.total_cost = parseInt(this.total_cost);
     },
@@ -126,7 +126,8 @@ export default {
       var obj = {
         add: this.ruleForm.resource,
         month: this.ruleForm.time,
-        num: this.ruleForm.region,
+        // num: this.ruleForm.region,
+        num:this.times,
         price: this.price,
         sum: this.total_cost,
         list: {

@@ -235,15 +235,15 @@
                             <FormItem label="预计调用时长" required>
                                 <RadioGroup v-model="formItem.input4" type="button" size="large">
                                     <!-- <Radio true-value="1个月" false-value="1" ></Radio> -->
-                                    <Radio label="1"></Radio>
-                                    <Radio label="2"></Radio>
-                                    <Radio label="3"></Radio>
-                                    <Radio label="4"></Radio>
-                                    <Radio label="5"></Radio>
-                                    <Radio label="6"></Radio>
-                                    <Radio label="7"></Radio>
-                                    <Radio label="8"></Radio>
-                                    <Radio label="9"></Radio>
+                                    <Radio label="1个月"></Radio>
+                                    <Radio label="2个月"></Radio>
+                                    <Radio label="3个月"></Radio>
+                                    <Radio label="4个月"></Radio>
+                                    <Radio label="5个月"></Radio>
+                                    <Radio label="6个月"></Radio>
+                                    <Radio label="7个月"></Radio>
+                                    <Radio label="8个月"></Radio>
+                                    <Radio label="9个月"></Radio>
                                     <Radio label="1年"></Radio>
                                     <Radio label="2年"></Radio>
                                     <Radio label="3年"></Radio>
@@ -299,7 +299,7 @@
                            
                         <Col span='11' offset='1'>
                             <FormItem label="预计调用时长：">
-                                <span>{{formItem.input4==1?"1-10000":formItem.input4==2?"10001-50000":formItem.input4==3?"50001-100000":">100000"}}</span>
+                                <span>{{formItem.input4}}</span>
                             </FormItem>
                         </Col>
                         <Col span='12' offset=''>
@@ -536,6 +536,11 @@ export default {
                   }
               }
               this.img1 = this.saveFiles[0].src;
+          }else if(this.current == 2){
+              if(this.isupload == false){
+                  alert("请上传压缩文件！");
+                  return false;
+              }
           }else if(this.current == 3){
               this.submitFlag = true;
               this.data1 = [];
@@ -544,6 +549,18 @@ export default {
                       this.data1.push(this.saveFiles[i].infoList[j]);
                   }
               }
+            if(this.formItem.textarea == ""){
+                alert("请填写需求描述！")
+                return false;
+            }
+            if(this.formItem.input4 == ""){
+                alert("请选择预计调用时长！")
+                return false;
+            }
+            if(this.formItem.input5 == ""){
+                alert("请填写预计调用峰值！")
+                return false;
+            }
             //   console.log(this.saveFiles);
             //   console.log(123456)
             //   console.log(this.data1);
@@ -872,6 +889,7 @@ export default {
         this.progressAdd()
         this.isupload=true
         this.showPer = true;
+        console.log(file)
         return false; 
     },
     progressAdd(){

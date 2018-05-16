@@ -91,9 +91,10 @@
             <TabPane label=""  disabled name='name1'>
                 <div v-if="current == 1">
                 <Row style='margin-bottom:10px;padding: 0 ;'>
+                   <Col span="24"><div class="paint_mes" style="margin-bottom:10px;color:#333;">按下并移动鼠标在每张图片中框选出识别字段所在区域，添加对应字段名及字段描述。</div></Col>
                     <Col span='2' offset=''>
                         <Card :bordered="false" dis-hover>
-                            <ul class='img' style="height:349px;width:100%;background:#f5f5f5;">
+                            <ul class='img' style="height:300px;width:100%;background:#f5f5f5;">
                                 <li style="width:100%;margin-right:5px;position:relative;" v-for='item,index in files' class="list2" >
                                     <img :src="item.src" width="100%" alt="" @click='showImg(index)'>
                                     <!-- <a style="position:absolute;top:0px;right:0px;z-index:1234;" href="#" slot="extra" @click.prevent="del(index)">
@@ -104,8 +105,8 @@
                         </Card>
                     </Col>
                     <Col span='8' offset=''  style="padding-left:10px;" >
-                        <Card :bordered="false" style='height:349px' dis-hover>
-                            <div class="paint_mes" style="margin-bottom:10px;color:#333;padding-left:20px;">使用鼠标在每张图片中框选出识别字段可能出现的区域，并添加对应字段名及字段描述。</div>
+                        <Card :bordered="false" style='height:300px' dis-hover>
+                            <!-- <div class="paint_mes" style="margin-bottom:10px;color:#333;padding-left:20px;">使用鼠标在每张图片中框选出识别字段可能出现的区域，并添加对应字段名及字段描述。</div> -->
                            <Pic ref='pic' @showImg="showImg" :files="files" :canvasHeight="canvasHeight" :canvasWidth="canvasWidth" @deleteMes="deleteMes" @addItem="addItem" :originImg="originImg" :saveFilesNum="saveFilesNum" :index="index" :percent1="percent1" :filesName="filesName"></Pic>
                         </Card>
                     </Col>
@@ -246,15 +247,15 @@
                             <FormItem label="预计调用时长" required>
                                 <RadioGroup v-model="formItem.input4" type="button" size="large">
                                     <!-- <Radio true-value="1个月" false-value="1" ></Radio> -->
-                                    <Radio label="1"></Radio>
-                                    <Radio label="2"></Radio>
-                                    <Radio label="3"></Radio>
-                                    <Radio label="4"></Radio>
-                                    <Radio label="5"></Radio>
-                                    <Radio label="6"></Radio>
-                                    <Radio label="7"></Radio>
-                                    <Radio label="8"></Radio>
-                                    <Radio label="9"></Radio>
+                                    <Radio label="1个月"></Radio>
+                                    <Radio label="2个月"></Radio>
+                                    <Radio label="3个月"></Radio>
+                                    <Radio label="4个月"></Radio>
+                                    <Radio label="5个月"></Radio>
+                                    <Radio label="6个月"></Radio>
+                                    <Radio label="7个月"></Radio>
+                                    <Radio label="8个月"></Radio>
+                                    <Radio label="9个月"></Radio>
                                     <Radio label="1年"></Radio>
                                     <Radio label="2年"></Radio>
                                     <Radio label="3年"></Radio>
@@ -545,6 +546,10 @@ export default {
                 alert("请上传图片！");
                 return false;
             }
+            if(this.formItem.input1 == ''){
+                alert('请填写模板名称！');
+                return false;
+            }
             // this.showCanvas = true;
           }else if(this.current == 1){
               _this.save()
@@ -562,6 +567,11 @@ export default {
                   }
               }
               this.img1 = this.saveFiles[0].src;
+          }else if(this.current == 2){
+              if(this.isupload == false){
+                  alert("请上传压缩文件！");
+                  return false;
+              }
           }else if(this.current == 3){
               this.data1 = [];
               for(var i = 0;i<this.saveFiles.length;i++){
@@ -569,6 +579,18 @@ export default {
                       this.data1.push(this.saveFiles[i].infoList[j]);
                   }
               }
+            if(this.formItem.textarea == ""){
+                alert("请填写需求描述！")
+                return false;
+            }
+            if(this.formItem.input4 == ""){
+                alert("请选择预计调用时长！")
+                return false;
+            }
+            if(this.formItem.input5 == ""){
+                alert("请填写预计调用峰值！")
+                return false;
+            }
             //   console.log(this.saveFiles);
             //   console.log(123456)
             //   console.log(this.data1);
