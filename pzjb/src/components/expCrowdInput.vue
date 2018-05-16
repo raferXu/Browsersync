@@ -13,6 +13,7 @@
         </div>
         <div v-show="!showCanvas" id="imgBox" class="bigImgBox" ref="bigImgBox">
           <span class="bigImgSpan" ref="bigImgSpan">
+            <i v-show="!tryObj.bigImg" class="bigImgBoxTip">请上传图片进行体验</i>
             <img v-show="tryObj.bigImg" class="bigImg" ref="bigImg" :src="tryObj.bigImg" alt="bigImg">
           </span>
         </div>
@@ -642,5 +643,12 @@ export default {
   width: 100px;
   height: 100px;
   margin-bottom: 40px;
+}
+
+.bigImgBoxTip{
+  line-height: 3.9rem;
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.24rem;
 }
 </style>

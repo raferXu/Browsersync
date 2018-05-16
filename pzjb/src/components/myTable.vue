@@ -12,7 +12,17 @@
 <script>
 export default {
   name: '',
-  props: ['tableData','tableTitle'],
+  props: {
+    tableData: {
+      default: {}
+    },
+    tableTitle: {
+      default: {}
+    },
+    type: {
+      default: ''
+    }
+  },
   data () {
     return {
     }
@@ -22,8 +32,14 @@ export default {
       console.log(obj);
       if(obj.name=='身份证'){
         this.$router.push({path: '/manageIdCardFinish',query: {templateId: obj["template_id"]}});
-      }else{
+      }else if(this.type=='zb'){
         console.log(obj.name);
+        if(obj.type=='开发'){
+          this.$router.push({path: '/ZBmodelApprovaling',query: {templateId: obj["template_id"]}});
+        }else{
+          this.$router.push({path: '/manageZBmodelFinish',query: {templateId: obj["template_id"]}});
+        }
+      }else{
         if(obj.type=='开发'){
           this.$router.push({path: '/manageCustomDevApprovaling',query: {templateId: obj["template_id"]}});
         }else{

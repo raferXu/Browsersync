@@ -10,7 +10,7 @@
           <span class="state">
             状态: 
             <i class="tipsWrap">
-              <i class="stateTxt">{{statement}}></i>
+              <i class="stateTxt">需求审批中></i>
               <div class="tipsBox">
                 <h5 style="font-size:18px;color:#333333;">状态详情</h5>
                 <p :class="{'tipsBoxDone':info.state>0,'tipsBoxDoing':info.state==0}">需求审批中</p>

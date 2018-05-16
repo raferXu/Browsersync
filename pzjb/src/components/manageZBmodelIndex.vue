@@ -13,7 +13,7 @@
       <div class="ZBmodelTable" v-show="zbModelObj.length>0">
         <h3 class="pageTitle bgf">项目</h3>
         <div class="tableWrap">
-          <my-table :tableData="zbModelObj" :tableTitle="tableTitle"></my-table>
+          <my-table :type="type" :tableData="zbModelObj" :tableTitle="tableTitle"></my-table>
         </div>
       </div>
     </div>
@@ -26,6 +26,7 @@ export default {
   name: '',
   data () {
     return {
+      type: 'zb',
       tableTitle: {
         "name":"模板名称",
         "project_id":"项目ID",
@@ -74,7 +75,7 @@ export default {
     },
     runto(row, column, cell, event){
       var templateId = row.template_id;
-      this.$router.push({path: '/manageCustomDevApprovaling',query: {templateId: templateId}});
+      this.$router.push({path: '/ZBmodelApprovaling',query: {templateId: templateId}});
 
     }
   }
