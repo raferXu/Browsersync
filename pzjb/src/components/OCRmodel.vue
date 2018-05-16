@@ -1,6 +1,6 @@
 <template>
   <div class="manageIssueBox">
-    <h3 class="modelTitle pageTitle">{{title}}</h3>
+    <h3 class="modelTitle pageTitle modelTitle1">{{title}}</h3>
     <el-row>
       <el-col :span="15" class="manageIssueBoxleft modelBox" >
         <el-row>
@@ -225,5 +225,11 @@ export default {
     .starPos{
       position: relative;
       top: 20px;
+    }
+    .modelTitle1{
+      height: 90px;
+      line-height: 90px;
+      font-size:20px;
+      padding:0 40px;
     }
 </style>

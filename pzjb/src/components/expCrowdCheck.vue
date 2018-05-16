@@ -183,7 +183,7 @@ export default {
     }
   },
   methods: {
-    getAppAnswer(flag){
+    getAppAnswer(flag){  //刷新获取列表
       var _this = this;
       _this.axios({
         url: '/token/experience_results/ocr',
@@ -193,10 +193,10 @@ export default {
         var data = response.data;
         if(data.code==200){
           _this.ocrResultArr = data.body.res;
-          if(_this.ocrResultArr.length>0){
+          if(_this.ocrResultArr.length>0){  //列表有数据
             console.log('ocrResultArr有数据');
             _this.ocrResult = data.body.res[_this.imgIndex];
-            if(flag==1){
+            if(flag==1){  //页面刷新时
               console.log('页面刷新了，获取列表');
               var NowImgArr = [];
               var NowOthersList = [];
@@ -516,7 +516,8 @@ export default {
   flex-direction: column;
   height: 390px;
   /* overflow-x: auto; */
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   margin-right: 10px;
   font-size:0;
 }

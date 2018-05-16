@@ -1,69 +1,41 @@
 <template>
   <div class="manageIndexBox">
-    <h3 class="modelTitle pageTitle">{{title}}</h3>
+    <h3 class="title">{{title}}</h3>
     <div class="contentBox">
       <div class="toOpenBox">
         <div class="toOpenInfoBox">
-          <p>产品服务: {{obj.who}}</p>
-          <p>识别字段: {{obj.which}}</p>
-          <p>计费方式: {{obj.how}}</p>
+          <img src="../assets/images/定制化识别服务icon.png" class="img">
         </div>
         <div class="toOpenBtnBox">
-          <div class="btn" @click="toOpen">申请开通</div>
+          <div class="btn btn1" @click="toOpen">申请开通</div>
         </div>
       </div>
-      <div class="ZBmodelTable">
-        <!-- <div class="row" v-for="(value,index) in zbModelObj" :key="index">
-          <div class="col" v-for="(v,i) in value" :key="i">
-            <i v-if="i=='name'&&value['statement']=='生效中'" @click="toFinishPage">{{v}}</i>
-            <b v-else-if="i=='name'&&value['statement']!='状态'" @click="toCheckPage">{{v}}</b>
-            <span v-else>{{v}}</span>
-          </div>
-        </div> -->
-        <el-table  @cell-click="runto" 
-            :data="zbModelObj"
-            stripe
-            style="width: 100%;text-align: center;">
-            <el-table-column align="center"
-              prop="name"
-              label="模板名称">
-            </el-table-column>
-            <el-table-column align="center"
-              prop="project_id"
-              label="项目ID">
-            </el-table-column>
-            <el-table-column align="center"
-              prop="created"
-              label="创建时间">
-            </el-table-column>
-            <el-table-column align="center"
-              prop="type"
-              label="服务类别">
-            </el-table-column>
-            <el-table-column align="center"
-              prop="status"
-              label="状态">
-            </el-table-column>
-            <el-table-column align="center"
-              prop="called_num"
-              label="今日调用次数">
-            </el-table-column>
-          </el-table>
+      <div class="ZBmodelTable" v-show="zbModelObj.length>0">
+        <my-table :tableData="zbModelObj" :tableTitle="tableTitle"></my-table>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import myTable from '@/components/myTable'
 export default {
   name: '',
   data () {
     return {
-      title: '自定义开发',
+      tableTitle: {
+        "name":"模板名称",
+        "project_id":"项目ID",
+        "created":"创建时间",
+        "type":"服务类别",
+        "status":"状态" ,
+        "called_num":"今日调用次数"
+      },
+      title: '定制化识别服务',
       obj: {
-        who: '自定义OCR识别模板',
-        which: '自定义 (支持识别印刷体)',
-        how: '预存款，每月按实际使用量扣款'
+        who: '自定义模板',
+        which: '各式印刷体',
+        how: '预存款，每月按实际使用量扣款，具体费用以实际报价为准'
       },
       zbModelObj: [
       ]
@@ -72,13 +44,10 @@ export default {
   computed: {
   },
   components: {
+    myTable
   },
   created () {
     this.axios.post("/token/public/list_ocr",{},{
-      // /token/public/list_zb
-        // headers: {
-        //   token: "rafer"
-        // }
     }).then(res=>{
       res = res.data;
       if(res.code=='200'){
@@ -113,21 +82,25 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .title{
-  padding: 40px;
-  border: 1px solid #f0f0f0;
+  height: 90px;
+  line-height: 90px;
+  padding-left: 40px;
+  font-size:20px;
 }
 .contentBox{
-  padding: 80px;
+  padding: 20px;
+  background:#f5f5f5;
 }
 .toOpenBox{
   display: flex;
   justify-content: space-between;
   padding: 40px;
-  margin-bottom: 40px;
-  border: 1px solid #828282;
+  /* margin-bottom: 40px; */
+  background:#fff;
+  /* border: 1px solid #828282; */
 }
 .toOpenBox p{
-  font-size: 24px;
+  font-size: 20px;
   line-height: 2;
 }
 .toOpenBtnBox{
@@ -153,6 +126,7 @@ export default {
   flex-direction: column;
   border: 1px solid #828282;
   font-size: 24px;
+  background: #ffffff;
 }
 .row{
   display: flex;
@@ -168,5 +142,24 @@ export default {
 .row:not(:first-child) .col:first-child{
   color: #68bdff;
   cursor: pointer;
+}
+.img{
+  width: 684px;
+  height: auto;
+}
+.btn1{
+  width: 130px;
+  height: 54px;
+  font-size:20px;
+  line-height: 54px;
+  padding: 0px !important;
+  text-align: center;
+  border-radius: 10px;
+}
+.main-container{
+  background:#f5f5f5;
+}
+.title{
+  background: #fff;
 }
 </style>

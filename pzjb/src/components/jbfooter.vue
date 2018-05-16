@@ -48,7 +48,7 @@ export default {
 <style scoped>
 .jbfooter{
   position: relative;
-  padding: 0 502px;
+  padding: 0 200px;
   height: 400px;
   margin-top: -400px;
   background: #333333;

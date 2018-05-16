@@ -14,7 +14,7 @@
         </div>
         <div class="btnGBox">
           <!-- <el-button type="primary" plain @click="toPay">稍后支付</el-button> -->
-          <el-button type="primary" v-if="enough" @click="payNow">确认</el-button>
+          <el-button type="primary" class="btn1" v-if="enough" @click="payNow">确认</el-button>
           <el-button type="primary" v-else @click="toRecharge">充值</el-button>
         </div>
       </div>
@@ -172,6 +172,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.btn1{
+  width: 130px;
+  height: 54px;
+  font-size:20px;
+  line-height: 54px;
+  padding: 0;
+  text-align: center;
+}
 .color82{
   color: #828282;
 }

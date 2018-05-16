@@ -4,7 +4,7 @@
       <div class="smallImgBox">
         <div class="smallImgList">
           <img @click="showBigImg(i)" class="smallImg" :class="{'imgActive':imgIndex==i}" v-for="(v,i) in allImgResult" v-if="allImgResult.length>0" :src="host+v['pic_with_mark']" :key="i" :alt="i">
-          <img v-for="(v,i) in uploadimg" :key="i" v-if="showimg" @click="showCanvasImg(i)" :src=v class="smallImg" >
+          <img v-for="(v,i) in uploadimg" :key="i" v-if="showimg" @click="showCanvasImg(i)" :src=v class="smallImg smallImg2" >
         </div>
       </div>
       <div id="imgBoxW" class="bigImgBox">
@@ -45,9 +45,9 @@
     </div>
     <div class="tipsBox tl">提示: 支持上传大小不超过3M的PNG、JPG、JPEG、BMP任意图片进行体验。</div>
     <div class="expBtnG pb160">
-        <span class="mainBtn btnG">
+        <span @click="canUpload" class="mainBtn btnG">
           本地上传
-          <input ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
+          <input v-show="isAllSubmit" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload()">
         </span>
       </div>
   </div>
@@ -56,8 +56,6 @@
 <script>
 import Pic from '@/components/onlineCanvas.vue'
 import baseUrl from '../Global'
-console.log('baseUrl: '+baseUrl.BASE_URL);
-console.log(baseUrl.BASE_URL);
 export default {
   name: '',
   data () {
@@ -100,11 +98,10 @@ export default {
       item: {}
     }
   },
-  created(){
-    console.log('scrollTo');
-    window.scrollTo(0,0)
+  created(){  //刷新页面
+    window.scrollTo(0,0);
     var _this = this;
-    this.axios({
+    this.axios({  //获取列表
         url:'/token/experience_results/zb',
         method:'post',
         data:''
@@ -128,15 +125,28 @@ export default {
         */
         var s = res.data.body.res;
         _this.allImgResult = s;
-        _this.showCanvas = false;
+        console.log('/token/experience_results/zb data');
+        console.log(s);        
+
+        //显示图片
+        document.getElementById("canvasBox").style.display = 'none';
+        document.getElementById("imgBox").style.display = 'block';
+
+        //列表里有item
         if(s.length>0){
+          console.log('刷新页面,列表里有item');
+          //当前大图显示第一张
           _this.tryObj.bigImg = _this.host+s[0]["pic_with_mark"];
+
+          //构建本地list，构建个数和列表一一对应
           for(var i=0;i<s.length;i++){
             var taskInfos = s[i]['task_infos'];
-            var itemObj = {
+            var itemObj = {  //先设默认值
               step: 1,
               zb_result: []
             };
+
+            //根据有没答案重置默认值
             var stepFlag = 0;
             for(var j=0;j<taskInfos.length;j++){
               if(taskInfos[j]["zb_result"]){
@@ -146,30 +156,71 @@ export default {
                 stepFlag = 1;
               }
             }
-            if(stepFlag){
+            if(stepFlag){  //没答案重设为默认值
               console.log('还没答案');
               itemObj.step = 1;
+              itemObj["zb_result"] = [];
             }
             _this.list.push(itemObj);
-            _this.item = itemObj;
           }
-          console.log('list');
           
-          console.log(_this.list);
-
+          //设置当前为列表第一个
+          _this.item = _this.list[0];
         }else{
           console.log('刷新无图片纪录');
         }
       })
   },
+  computed: {
+    isAllSubmit(){  //是否已有图片已全部提交
+      console.log('computed isAllSubmit')
+      console.log(this.list[this.list.length-1])
+      return this.list[this.list.length-1]?this.list[this.list.length-1].step>0:true;
+    }
+  },
   methods: {
-    ajaxResult(){
+    canUpload(){  //是否可上传
+      console.log('点击上传按钮: '+this.isAllSubmit);
+      if(!this.isAllSubmit){
+        alert('请先框选并提交最后一张图片');
+      }
+    },
+    ajaxResult(){  //刷新按钮查询本题答案
       let _this = this;
       this.axios({
         url:'/token/experience_results/zb',
         method:'post',
         data:''
       }).then(function(res){
+        console.log('当前查询答案的列表项_this.imgIndex')
+        console.log(_this.imgIndex)
+        var s = res.data.body.res;
+        var submitItem = s[_this.imgIndex];
+        var allResultFlag = true;
+        console.log('submitItem');
+        console.log(submitItem);
+        for(var n=0;n<submitItem['task_infos'].length;n++){
+          if(!submitItem['task_infos'][n]['zb_result']){
+            allResultFlag = false;
+          }else{
+            _this.list[_this.imgIndex]['zb_result'].push(submitItem['task_infos'][n]['zb_result'])
+          }
+        }
+        if(allResultFlag){
+          console.log('答案都有了')
+          _this.list[_this.imgIndex].step = 2;
+        }else{
+          console.log('存在未返回的答案');
+          _this.list[_this.imgIndex].step = 1;
+          _this.list[_this.imgIndex]['zb_result'] = [];
+        }
+        
+        _this.item = _this.list[_this.imgIndex];
+        console.log(_this.item);
+        _this.imgResult = s[_this.imgIndex];
+        
+        /*
+        _this.list = [];
         var s = res.data.body.res;
         _this.allImgResult = s;
         for(var k=0;k<s.length;k++){
@@ -179,7 +230,7 @@ export default {
           };
           var answerSum = s[k]["task_infos"].length;
           var answerCount = 0;
-          for(var m=0;m<answerCount;m++){
+          for(var m=0;m<answerSum;m++){
             if(s[k]["task_infos"][m]["zb_result"]){
               answerCount++;
               resultObj["zb_result"].push(s[k]["task_infos"][m]["zb_result"]);
@@ -188,23 +239,13 @@ export default {
           if(answerSum==answerCount){
             console.log('全部返回');
             resultObj.step = 2;
+            _this.list.push(resultObj);
           }
-          _this.list.push(resultObj);
         }
-        // for(var i = 0;i<s[s.length-1]["task_infos"].length;i++){
-        //   if(!s[s.length-1]["task_infos"][i].zb_result){
-        //     _this.list[s.length-1].step = 1;
-        //     _this.list[s.length-1]["zb_result"] = [];
-        //     console.log('答案未完成');
-        //     return false;
-        //   }
-        //   _this.list[s.length-1]["zb_result"].push(s[s.length-1]["task_infos"][i]["zb_result"]);
-        // }
-        _this.list[s.length-1].step = 2;
         _this.item = _this.list[s.length-1];
-        console.log('答案完成');
-        console.log(_this.item);
         _this.imgResult = s[s.length-1];
+        */
+        _this.uploadimg = [];
       })
     },
     refreshFn(){
@@ -212,24 +253,27 @@ export default {
       this.ajaxResult();
     },
     submitToCheck(){
-      console.log(this.imgNum)
-      // this.uploadimg[this.imgNum] = self.penal.toDataURL('image/png');
-      this.viewResult()
+      console.log('submitToCheck确认提交');
+      this.uploadimg[this.imgNum] = self.penal.toDataURL('image/png');
+      this.viewResult();
     },
     showBigImg(i){
       this.imgIndex = i;
-      console.log('showBigImg点击历史图片,this.imgIndex: '+this.imgIndex);
-      console.log(this.list)
       this.item = this.list[i];
-      this.showCanvas = false;
       this.tryObj.bigImg = this.host+this.allImgResult[i]['pic_with_mark'];
+      console.log('showBigImg点击历史图片,this.imgIndex: '+this.imgIndex);
+      console.log('点击图片所对应的item: ');
+      console.log(this.list);
+      console.log(this.item);
+      console.log('当前图片对应的url: '+this.tryObj.bigImg);
+      document.getElementById("canvasBox").style.display = 'none';
+      document.getElementById("imgBox").style.display = 'block';
       
     },
     upload(){
       if(this.imgUrl == ''){
         return false;
       }
-      console.log(this.imgUrl)
       this.originImg  = [];
       this.originImg.push({
         src:this.imgUrl,
@@ -240,90 +284,95 @@ export default {
       this.$refs.pic.drawImage(this.imgUrl);
       this.showCanvas = true;
     },
-    fileUpload(){
+    fileUpload(){  //文件上传
+      var fileLen = this.$refs.fileInput.files.length;
+      console.log('fileUpload函数触发,fileLen: '+fileLen);
+      if(!fileLen) return;  //没有上传，直接返回
+
+      //有文件上传
       var newItemObj = {
         step: 0,
         zb_result: []
       };
       this.list.push(newItemObj);
       this.item = newItemObj;
-      console.log('this.list');
-      console.log(this.list);
+      this.imgIndex = this.list.length-1;
+      console.log('有文件上传');
+      console.log(this.item);
+      console.log(this.imgIndex);
+
       var imgWrap = document.getElementById("imgBoxW");
       this.showCanvas = true;
+      document.getElementById("canvasBox").style.display = 'block';
       this.canvasWidth = imgWrap.clientWidth;
       this.canvasHeight = imgWrap.clientHeight;
-      let self=this;
-      this.step = 0;  
+      let self=this; 
       this.originImg = [];
       this.imgFlag = 1;
       var imgBox = [];
-      // this.$refs.pic.count = 1;
-        var files=this.$refs.fileInput.files
-        for(let i=0,len=files.length;i<len;i++){
-            if (window.FileReader) {    
-                var reader = new FileReader();    
-                //监听文件读取结束后事件    
-                reader.onloadend = function (e) {
-                  console.log(self.$refs.pic);
-                    var image = new Image();
-                    image.src = e.target.result;
-                    self.uploadimg.push(e.target.result) ;
-                    self.showimg = true;
-                    image.onload = function() {
-                      imgBox.push({
-                        width:self.canvasWidth,
-                        height:self.canvasHeight
-                      })
-                    };
-                    self.imageMessage.given_size = imgBox;
-                    self.files.push({
-                        src:e.target.result,
-                        name:files[i].name    
-                    })
-                    self.originImg.push({
-                        src:e.target.result,
-                        name:files[i].name   
-                    })
-                    self.deleteX();
-                    self.$refs.pic.drawImage(self.files[self.files.length-1].src,0,0,self.canvasWidth,self.canvasHeight);
-                    self.imgNum = self.files.length-1;
-                    self.uploadimg[self.imgNum] = self.files[self.files.length-1].src;
-                    console.log(self.$refs.pic);
-                };    
-                reader.readAsDataURL(files[i]);    
-            } 
-        }
-        console.log(this.canvasWidth);
-        console.log(this.$refs.pic);
-        let formdata = new FormData();
-        for(let i=0;i<files.length;i++){
-            formdata.append('files',files[i]);  
-        }
-        this.params=formdata
-        this.axios({
-            url:"/token/upload_files",
-            data:this.params,
-            method:'post'
-        }).then(function(res){
-            console.log(self.canvasWidth);
-            console.log(self.$refs.pic);
-            let data = res.data.body
-             console.log(data.url_list);
-             self.imageMessage.pic_urls = data.url_list;
-        })
-        console.log(this.$refs.pic);
-        // this.$refs.pic.allPaintMes = {};
+      var files=this.$refs.fileInput.files;
+      for(let i=0,len=files.length;i<len;i++){
+        if (window.FileReader) {    
+          var reader = new FileReader();    
+          reader.onloadend = function (e) {
+            var image = new Image();
+            image.src = e.target.result;
+            self.uploadimg.push(e.target.result) ;
+            self.showimg = true;
+            image.onload = function() {
+              imgBox.push({
+                width:self.canvasWidth,
+                height:self.canvasHeight
+              })
+            };
+            self.imageMessage.given_size = imgBox;
+            self.files.push({
+                src:e.target.result,
+                name:files[i].name    
+            })
+            self.originImg.push({
+                src:e.target.result,
+                name:files[i].name   
+            })
+            self.deleteX();
+            function runAsync(){
+              var p = new Promise(function(resolve, reject){
+                self.$refs.pic.drawImage(self.files[self.files.length-1].src,resolve);
+              });
+              return p;
+            }
+            runAsync().then(function(data){
+              self.files[self.index].src = self.$refs.pic.penal.toDataURL('image/png');
+            })
+          };    
+          reader.readAsDataURL(files[i]);    
+        } 
+      }
+      let formdata = new FormData();
+      for(let i=0;i<files.length;i++){
+        formdata.append('files',files[i]);  
+      }
+      this.params = formdata;
+      this.axios({
+          url:"/token/upload_files",
+          data:this.params,
+          method:'post'
+      }).then(function(res){
+          let data = res.data.body
+          self.imageMessage.pic_urls = data.url_list;
+      })
+      if(this.$refs.pic){
+        this.$refs.pic.allPaintMes[0] = [];
+        this.$refs.pic.count = 1;
+      } 
     },
     showCanvasImg(n){
-
-      this.imgIndex = n;
-      console.log('showCanvasImg点击历史图片,this.imgIndex: '+this.imgIndex);
-      console.log(this.list)
-      this.item = this.list[n];
-      this.tryObj.bigImg = this.host+this.allImgResult[n]['pic_with_mark'];
-
+      this.showimg = true;
+      var _this = this;
       this.showCanvas = true;
+      this.imgIndex = this.allImgResult.length+n;
+      console.log('showCanvasImg点击历史图片,this.index: '+(n)+',imgIndex: '+this.allImgResult.length);
+      this.item = this.list[this.allImgResult.length+n];
       this.imgNum = n;
       var x = document.getElementsByClassName("close_x");
       for(var i = 0;i<x.length;i++){
@@ -333,7 +382,8 @@ export default {
       for(var j = 0;j<x2.length;j++){
           x2[j].style.display = "block";
       }
-      this.$refs.pic.drawImage(this.uploadimg[n],0,0,this.canvasWidth,this.canvasHeight);
+      document.getElementById("canvasBox").style.display = 'block';
+      _this.$refs.pic.drawImage(_this.uploadimg[n],0,0,_this.canvasWidth,_this.canvasHeight);
     },
     deleteX(){
       var x = document.getElementsByClassName("close_x");
@@ -348,18 +398,22 @@ export default {
       this.imageMessage.location = this.$refs.pic.allPaintMes;
       this.paintLength = this.imageMessage.location.length;
       this.axios({
-            url:"/token/add_experience_task",
-            data:this.imageMessage,
-            method:'post'
-        }).then(function(res){
-            let data = res.data;
-             console.log(res);
-             console.log(res.data);
-             if(data.code == 200){
-               _this.list[_this.list.length-1].step = 1;
-               _this.item.step=1;
-             }
-        })
+        url:"/token/add_experience_task",
+        data:this.imageMessage,
+        method:'post'
+      }).then(function(res){
+        let data = res.data;
+        if(data.code == 200){
+          _this.uploadimg = [];
+          console.log('add_experience_task');
+          console.log(data['body']['info_sets'][0]);
+          _this.allImgResult.push(data['body']['info_sets'][0])
+          _this.list[_this.list.length-1].step = 1;
+          _this.item = _this.list[_this.list.length-1];
+          console.log('确认提交的当前本地list的item: ');
+          console.log(_this.item)
+        }
+      })
     }
   },
   mounted () {
@@ -377,7 +431,6 @@ export default {
     var imgWrap = document.getElementById("imgBoxW");
     this.canvasWidth = imgWrap.clientWidth;
     this.canvasHeight = imgWrap.clientHeight;
-    // this.showCanvas = true;
   },
   components: {
     Pic
@@ -406,6 +459,7 @@ export default {
   width: 130px;
   height: 54px;
   opacity: 0;
+  z-index: 1;
 }
 .fileUploadBtn1{
   position: absolute;
@@ -435,7 +489,8 @@ export default {
   display: inline-block;
 }
 .bigImg{
-  width: 585px;
+  width: 610px;
+  height: 390px;
   background: #f0f0f0;
 }
 .smallImgBox{
@@ -443,7 +498,8 @@ export default {
   flex-direction: column;
   width: 140px;
   height: 390px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   margin-right: 10px;
   font-size:0;
 }

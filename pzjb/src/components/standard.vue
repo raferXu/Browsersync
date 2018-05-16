@@ -24,4 +24,7 @@ export default {
 .standardImg{
   width: 100%;
 }
+.mainTxtB{
+  color:#828282;
+}
 </style>

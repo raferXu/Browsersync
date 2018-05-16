@@ -1,15 +1,13 @@
 <template>
   <div class="manageIndexBox">
-    <h3 class="modelTitle pageTitle">{{title}}</h3>
+    <h3 class="title">{{title}}</h3>
     <div class="contentBox">
       <div class="toOpenBox">
         <div class="toOpenInfoBox">
-          <p>产品服务: {{obj.who}}</p>
-          <p>识别字段: {{obj.which}}</p>
-          <p>计费方式: {{obj.how}}</p>
+          <img src="../assets/images/身份证icon.png" class="img">
         </div>
         <div class="toOpenBtnBox">
-          <div class="btn" @click="toOpen">申请开通</div>
+          <div class="btn btn1" @click="toOpen">申请开通</div>
         </div>
       </div>
     </div>
@@ -43,21 +41,26 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 .title{
-  padding: 40px;
-  border: 1px solid #f0f0f0;
+  height: 90px;
+  line-height: 90px;
+  padding-left: 40px;
+  font-size:20px;
 }
 .contentBox{
-  padding: 80px;
+  padding: 20px;
+  background:#f5f5f5;
 }
 .toOpenBox{
   display: flex;
   justify-content: space-between;
-  padding: 40px;
-  border: 1px solid #828282;
+  padding: 35px;
+  background:#fff;
+  /* border: 1px solid #828282; */
 }
 .toOpenBox p{
-  font-size: 24px;
+  font-size: 20px;
   line-height: 2;
 }
 .toOpenBtnBox{
@@ -77,5 +80,24 @@ export default {
 }
 .btn:active{
   background: #68bdff;
+}
+.img{
+  width: 688px;
+  height: auto;
+}
+.btn1{
+  width: 130px;
+  height: 54px;
+  font-size:20px;
+  line-height: 54px;
+  padding: 0px !important;
+  text-align: center;
+  border-radius: 10px;
+}
+.main-container{
+  background:#f5f5f5;
+}
+.title{
+  background: #fff;
 }
 </style>

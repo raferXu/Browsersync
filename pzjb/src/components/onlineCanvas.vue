@@ -1,6 +1,6 @@
 <template>
-    <div id="canvas_con">
-        <canvas id="penal" :width="canvasWidth" :height="canvasHeight" style='background:#ccc' @mousemove='mousemove' @mouseup='mouseup' @mousedown='mousedown' @mouseleave='mouseleave'></canvas>
+    <div id="canvas_con" style="width:100%">
+        <canvas id="penal" width="" height="191" style='background:#ccc' @mousemove='mousemove' @mouseup='mouseup' @mousedown='mousedown' @mouseleave='mouseleave'></canvas>
     </div>  
 </template>
 
@@ -52,9 +52,6 @@ export default {
         // pen.strokeRect(1, 1, 190, 100);
         // var docSize = document.body.clientWidth;
         // console.log(this.percent1);
-        console.log('this.canvasWidth');
-        console.log(this.canvasWidth);
-        console.log('this.canvasWidth');
         penal.width = this.canvasWidth;
         penal.height = this.canvasHeight;
         this.imgSize.x = penal.width;
@@ -170,16 +167,23 @@ export default {
          t+=e.offsetLeft;
         return t;
       },
-      drawImage(src){
+      drawImage(src,resolve){
         var _this = this;
         this.pen.clearRect(0,0,800,800);
         // console.log(src)
         var img = new Image();
         img.src = src;
         img.setAttribute('crossOrigin', 'anonymous');
+        // img.onload = function(){
+        //   // console.log('src');
+        //   _this.pen.drawImage(img,0,0,_this.imgSize.x,_this.imgSize.y);
+        // }
         img.onload = function(){
-          // console.log('src');
           _this.pen.drawImage(img,0,0,_this.imgSize.x,_this.imgSize.y);
+          console.log(2222222)
+          if(resolve){
+            resolve('11');
+          }
         }
         // console.log(img.complete)
         
@@ -201,9 +205,11 @@ export default {
           var msg = {};
           msg.n = el.data_attr1;
           msg.m = el.data_attr2;
+          console.log('el.data_attr1');
+          console.log(el.data_attr1);
           x.remove();
           // console.log("11111+++++"+el.data_attr2);
-          self.reDrawImg(el.data_attr1,el.data_attr2);
+          self.reDrawImg(0,el.data_attr2);
           // self.$emit('deleteMes',msg);
         })
       },
@@ -246,9 +252,5 @@ export default {
   
 </script> 
 <style scoped>
-  #penal{
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
+  
 </style>

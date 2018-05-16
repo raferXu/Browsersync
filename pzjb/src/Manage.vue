@@ -204,9 +204,12 @@ export default {
     color: #ffffff;
     white-space: nowrap;
 }
+.serviceItem a{
+    color: #ffffff;
+}
 .serviceItem:hover a{
     color: #0090ff;
-    font-size: 24px;
+    /* font-size: 24px; */
 }
 .serviceListTitle{
     font-size: 14px;
@@ -226,7 +229,7 @@ export default {
     justify-content: normal;
     flex-direction: row-reverse;
     align-items: center;
-    height: 90px;
+    height: 80px;
     font-size: 0;
     background: #3c3c3c;
 }

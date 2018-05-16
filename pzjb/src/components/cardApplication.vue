@@ -50,6 +50,9 @@ export default {
 .txtWhite{
   color: white;
 }
+.sectionTitle{
+  font-size:36px;
+}
 .cardApplicationBox{
   padding: 160px 415px;
   background: #333333;

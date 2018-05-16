@@ -34,8 +34,8 @@ export default {
   margin-bottom: 80px;
 }
 .funcTips{
-  font-size: 24px;
-  color: #666666;
+  font-size: 18px;
+  color: #828282;
   margin-bottom: 40px;
 }
 .example{

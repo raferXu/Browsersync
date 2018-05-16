@@ -1,73 +1,78 @@
 <template>
   <div class="manageCustomDevApprovaling">
-    <h3 class="modelTitle pageTitle">{{title}}</h3>
-    <div class="contentBox">
-      <h4>基本信息</h4>
-      <div class="row">
-        <span class="name">模板名称: <i>{{info.name}}</i></span>
-        <span class="page">模板页数: <i>{{info.page}}</i>页</span>
-      </div>
-      <div class="row">
-        <span class="date">创建时间: <i>{{info.date}}</i></span>
-        <span class="state">
-          状态: 
-          <i class="tipsWrap">
-            <i class="stateTxt">{{info.state}}></i>
-            <div class="tipsBox">
-              <!-- 333333  ff3b30  00c800  828282 -->
-              <h5 style="font-size:18px;color:#333333;">状态详情</h5>
-              <p style="font-size:14px;color:#00c800;">需求审批中</p>
-              <p style="font-size:14px;color:#828282;">需求审批通过，请上传样本</p>
-              <p style="font-size:14px;color:#828282;">审核样本中</p>
-              <p style="font-size:14px;color:#828282;">样本审核通过，请缴纳训练费用</p>
-              <p style="font-size:14px;color:#828282;">模板开发中 (7个工作日)</p>
-              <p style="font-size:14px;color:#828282;">开发完毕，请试用</p>
-            </div>
-          </i>
-        </span>
-        <span v-if="info.fee">训练费用: <i>{{info.fee}}</i> 元</span>
-      </div>
-      <div class="row">
-        <p class="desc">模板描述: <i>{{info.desc}}</i></p>
-      </div>
-      <div class="row">
-        <span class="num">预计月调用次数: <i>{{info.num}}</i></span>
-        <span class="month">预计调用时长: <i>{{info.month}}</i>月</span>
-      </div>
-      <div class="row">
-        <span class="max">预计调用峰值: <i>{{info.max}}</i></span>
-        <span class="add">叠加位置信息: <i>{{info.add?'叠加':'不叠加'}}</i></span>
-      </div>
-    </div>
-    <div class="uploadBox" v-if="info.state==1">
-      <span><i style="color:red;">*</i> 本地上传</span>
-      <i class="tipsWrap issueIcon">
-        i
-        <div class="tipsBox issueTips">
-          <p style="font-size:18px;color:#333333;">
-            请压缩上传不少于3000份清晰、具有代表性的样本文件，样本图片规格：每张图片不大于5Mb，格式可以为JPEG\PNG
-          </p>
+    <h2 class="sectionTitle">{{title}}</h2>
+    <div class="box">
+      <div class="contentBox">
+        <h4>基本信息</h4>
+        <div class="row">
+          <span class="date">创建时间: <i>{{info.date}}</i></span>
+          <span class="name">服务类别: <i>开发</i></span>
+          <span class="state">
+            状态: 
+            <i class="tipsWrap">
+              <i class="stateTxt">{{statement}}></i>
+              <div class="tipsBox">
+                <!-- 333333  ff3b30  00c800  828282 -->
+                <h5 style="font-size:18px;color:#333333;">状态详情</h5>
+                <p style="font-size:14px;color:#00c800;">需求审批中</p>
+                <p style="font-size:14px;color:#828282;">需求审批通过，请上传样本</p>
+                <p style="font-size:14px;color:#828282;">审核样本中</p>
+                <p style="font-size:14px;color:#828282;">样本审核通过，请缴纳训练费用</p>
+                <p style="font-size:14px;color:#828282;">模板开发中 (7个工作日)</p>
+                <p style="font-size:14px;color:#828282;">开发完毕，请试用</p>
+              </div>
+            </i>
+          </span>
         </div>
-      </i>
-      <div class="proofInputBox">
-        <div class="fileNameBox">{{proofFileName}}</div>
-        <div class="fileInputBox">
-          <input class="urlBtn" type="button" value="本地上传">
-          <input ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
+        <div class="row">
+          <p class="desc">模板描述: <i>{{info.desc}}</i></p>
+        </div>
+        <div class="row">
+          <span class="num">预计月调用次数: <i>{{info.num}}</i></span>
+          <span class="month">预计调用时长: <i>{{info.month}}</i>月</span>
+        </div>
+        <div class="row">
+          <span class="max">预计调用峰值: <i>{{info.max}}</i></span>
+          <span></span>
+        </div>
+        <div class="row">
+          <span class="add">叠加位置信息: <i>{{info.add?'叠加':'不叠加'}}</i></span>
+          <span></span>
+        </div>
+        <div class="table" v-show="keyList.length>0">
+          <div class="tableTitle">录入字段</div>
+          <div class="tbrow" v-for="(val,index) in keyList" :key="index">
+            <div class="tbcol">{{index+1}}</div>
+            <div class="tbcol" v-for="(v,i) in val" :key="i">{{v}}</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="developedBox" v-if="info.state==5">
-      <div class="developedShowBox">
-        <div class="showBox show1Box"></div>
-        <div class="showBox show2Box"></div>
+      <!-- <div class="uploadBox" v-if="info.state==1">
+        <span><i style="color:red;">*</i> 本地上传</span>
+        <i class="tipsWrap issueIcon">
+          i
+          <div class="tipsBox issueTips">
+            <p style="font-size:18px;color:#333333;">
+              请压缩上传不少于3000份清晰、具有代表性的样本文件，样本图片规格：每张图片不大于5Mb，格式可以为JPEG\PNG
+            </p>
+          </div>
+        </i>
+        <div class="proofInputBox">
+          <div class="fileNameBox">{{proofFileName}}</div>
+          <div class="fileInputBox">
+            <input class="urlBtn" type="button" value="本地上传">
+            <input ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
+          </div>
+        </div>
       </div>
-      <p>剩余可用次数: xx次</p>
-      <p><i style="color: red;">*</i> 若对此次OCR开发效果需要进一步优化，可联系0755-xxxxxxxx咨询精度优化方案。</p>
-    </div>
-    <div class="btnGBox">
-      <div class="btn" v-if="info.state==1">确认提交</div>
-      <div class="btn">撤销项目</div>
+      <div class="developedBox" v-if="info.state==5">
+        <div class="developedShowBox">
+          <div class="showBox show1Box"></div>
+          <div class="showBox show2Box"></div>
+        </div>
+        <p>剩余可用次数: xx次</p>
+        <p><i style="color: red;">*</i> 若对此次OCR开发效果需要进一步优化，可联系0755-xxxxxxxx咨询精度优化方案。</p>
+      </div> -->
     </div>
   </div>
 </template>
@@ -77,6 +82,7 @@ export default {
   name: '',
   data () {
     return {
+      keyList:[],
       proofFileName: '',
       statementArr: ['需求审批中','需求审批通过，请上传样本','审核样本中','样本审核通过，请缴纳训练费用','模板开发中 (7个工作日)','开发完毕，请试用'],
       tipsBoxShow: false,
@@ -110,21 +116,21 @@ export default {
         res = res.data;
         if(res.code=='200'){
           var data = res.body;
-                   
           this.title = data.name;
           this.info.name = data.name;
           this.info.page = data.page_count;
           this.info.date = data.created.split(' ')[0];
-          this.info.state = data['status_full'];
+          this.info.state = data['status_num'];
           this.info.num = data.expected_frequency;
           this.info.month = data.expected_duration;
           this.info.max = data.expected_peak;
           this.info.add = data.mark_overlaid;
           this.info.desc = data['description'];
+          this.keyList = data["key_list"];
         }
         
       }).catch(function(error){
-        console.log("/token/project/start error init."+error);
+        console.log("/token/template/detail error init."+error);
       })
     }
   },
@@ -138,6 +144,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.box{
+  background: #f0f0f0;
+  padding: 20px 20px 0;
+}
+.box:last-child{
+  padding-bottom: 20px;
+}
 .title{
   height: 90px;
   line-height: 90px;
@@ -148,8 +161,8 @@ export default {
 }
 .contentBox{
   box-sizing: border-box;
-  width: 1400px;
   padding: 80px;
+  background: #ffffff;
 }
 .contentBox h4{
   margin-bottom: 40px;
@@ -157,16 +170,16 @@ export default {
   color: #323232;
 }
 .row{
-  margin-bottom: 20px;
-  font-size: 14px;
-  color: #828282;
+  margin-bottom: 40px;
+  font-size: 18px;
+  color: #333333;
 }
 .row span{
   display: inline-block;
   width: 380px;
 }
 .row i{
-  color: #333333;
+  color: #828282;
 }
 .state{
   position: relative;
@@ -211,7 +224,7 @@ export default {
   border-bottom-color: #ffffff;
 }
 .desc{
-  padding-bottom: 40px;
+  line-height: 1.8;
 }
 .btnGBox{
   box-sizing: border-box;
@@ -318,5 +331,37 @@ export default {
 }
 .developedBox p{
   line-height: 2;
+}
+.table{
+  font-size: 18px;
+  color: #333333;
+}
+.tableTitle{
+  margin-bottom: 20px;
+}
+.tbrow{
+  display: flex;
+  height: 54px;
+  line-height: 54px;
+  text-align: center;
+}
+.tbcol{
+  border-top: 1px solid #f0f0f0;
+  border-left: 1px solid #f0f0f0;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.tbrow .tbcol:nth-child(1){
+  width: 70px;
+}
+.tbrow .tbcol:nth-child(2){
+  width: 176px;
+}
+.tbrow .tbcol:nth-child(3){
+  width: 512px;
+  border-right: 1px solid #f0f0f0;
+}
+.tbrow:last-child .tbcol{
+  border-bottom: 1px solid #f0f0f0;
 }
 </style>

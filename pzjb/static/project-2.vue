@@ -497,7 +497,7 @@ export default {
   }
 }
 </script>
-<style >
+<style scoped>
 .img{
     list-style:none;
     height: 377px;

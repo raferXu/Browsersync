@@ -164,7 +164,7 @@ export default {
           }
         ], 
         legendData:['用量'],
-        xData:['4月26日', '4月27日', '4月28日', '4月29日', '4月30日', '5月1日', '5月2日'],
+        xData:['5月9日', '5月10日', '5月11日', '5月12日', '5月13日', '5月14日', '5月15日'],
         title: ''
       },
       lineChartHeight: '220px',
@@ -327,7 +327,7 @@ export default {
   text-align: center;
 }
  .manageIssueBox{
-    font-size:24px;
+    font-size:20px;
     color: #323232;
     background: #f0f0f0;
  }
@@ -338,7 +338,7 @@ export default {
    background: #ffffff;
  }
  .elWrap{
-   padding: 40px;
+   padding: 35px;
  }
 .orderBox, .moneyBox{
   height: 270px;
@@ -432,5 +432,8 @@ export default {
   padding: .4rem;
   text-align: right;
   border-bottom: 1px solid #f0f0f0;
+}
+.sectionTitle{
+  background:#fff;
 }
 </style>

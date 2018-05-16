@@ -35,6 +35,9 @@ export default {
     height: 220px;
     background: #333333;
 }
+.mainTxtB{
+    color:#828282;
+}
 .mediaImg{
     width: 382px;
 }

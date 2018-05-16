@@ -22,28 +22,28 @@ export default {
       bannerSrc: require('../../assets/images/首页banner.png'),
       techFeaturesObj: {
         title: {
-          img: require('../../assets/images/index/技术特色.png')
+          img: require('../../assets/images/产品特色.png')
         },
         list: [
           {
             img: require('../../assets/images/index/精确识别.png'),
             title: '精确识别',
-            txt: '基于深度学习技术，经过亿万级样本数据进行训练，单字段OCR识别率可达99%；结合平安众包服务，识别准确率可达99.9%以上。'
+            txt: '基于深度学习的自研OCR技术，支持多角度拍摄，适应透视畸变、光照不均的情况，在复杂环境中可保持高识别准确率'
           },
           {
-            img: require('../../assets/images/index/稳定高效.png'),
-            title: '稳定高效',
-            txt: 'OCR结果实时反馈，众包服务24X7不停歇，支持海量图像高效识别，可用性高达99.9%以上。'
+            img: require('../../assets/images/灵活使用icon.png'),
+            title: '灵活使用',
+            txt: '除了可直接调用的全面的 API 接口，还提供了丰富多样的 SDK 供开发者使用，服务使用简单便捷，兼容性强'
           },
           {
             img: require('../../assets/images/index/操作简单.png'),
-            title: '操作简单',
-            txt: '接包平台提供符合技术规范的API访问接口及灵活设置的众包服务，使用简单，兼容性强。'
+            title: '定制开发',
+            txt: '支持自定义OCR识别内容，快速生成识别模型，满足各场景需求'
           },
           {
             img: require('../../assets/images/index/灵活应用.png'),
-            title: '灵活应用',
-            txt: '支持定制化OCR模板训练，除标准证外，更支持各类票据、表格及文档的个性化识别服务，满足各场景需求。'
+            title: '众包助力',
+            txt: '全面、高效、专业的文字录入众包管理平台，解决疑难识别内容。'
           },
         ]
       },

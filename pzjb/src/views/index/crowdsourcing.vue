@@ -21,9 +21,10 @@
             </li>
         </ul>
     </div>
-    <div class="box bg3 stepBox">
+    <div class="box bg3 stepBox" style="position:relative">
         <h3 class="mainH3 tc pb80">使用流程</h3>
         <img class="stepImg" :src="stepSrc" alt="stepImg">
+        <!-- <img class="imgL" src="../../assets/images/众包服务文字识别服务使用流程.png"> -->
     </div>
     <div class="box">
         <h3 class="mainH3B tc pb80">应用场景</h3>
@@ -52,7 +53,7 @@ export default {
     return {
         listData: [
             {
-                url: require('../../assets/images/index/稳定高效.png'),
+                url: require('../../assets/images/安全脱敏icon.png'),
                 title: '安全脱敏',
                 txt: '信息有机拆分，脱敏及防控追溯机制，保障信息安全。'
             },
@@ -62,7 +63,7 @@ export default {
                 txt: '平台数百万日处理量，大量数据快速沉淀实现业务无延时。'
             },
             {
-                url: require('../../assets/images/index/稳定高效.png'),
+                url: require('../../assets/images/高质交付icon.png'),
                 title: '高质交付',
                 txt: '多重验证机制严格把控平台回收结果，提供全面、高效、专业的数据交付。'
             }
@@ -94,8 +95,8 @@ export default {
             }
         ],
       page: 'customizedOCR',
-      bannerSrc: require('../../assets/images/定制化识别服务banner.png'),
-      stepSrc: require('../../assets/images/众包服务使用流程.png')
+      bannerSrc: require('../../assets/images/众包服务banner.png'),
+      stepSrc: require('../../assets/images/开通&未开通OCR文字识别服务使用流程.png')
     }
   },
   components: {
@@ -139,6 +140,12 @@ export default {
     text-align: center;
 }
 .stepImg{
-    width: 1520px;
+    width: 1222px;
+}
+.imgL{
+    position: absolute;
+    top:315px;
+    right:270px;
+    width:377px;
 }
 </style>

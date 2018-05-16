@@ -12,8 +12,8 @@
       </div>
     </div>
     <div class="showBox">
-        <component :is="componentId"></component>
-      </div>
+      <component :is="componentId"></component>
+    </div>
   </div>
 </template>
 
@@ -23,10 +23,9 @@ import crowdsourcingExp from '@/components/crowdsourcingExp'
 export default {
   name: '',
   created () {
-    console.log('scrollTo');
+    console.log(this.$route.query);
     window.scrollTo(0,0)
     var to = this.$route.query.to || localStorage.getItem('experienceId');
-    console.log('to: '+to);
     this.changeSelect(to);
   },
   data () {

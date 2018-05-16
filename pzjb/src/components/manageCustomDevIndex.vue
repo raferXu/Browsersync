@@ -1,100 +1,151 @@
 <template>
   <div>
-    <Row style='margin-top:30px'>
-        <Col span="22" offset="1" style="font-size:24px;height:40px;line-height:40px;" >自定义模版开发</Col>
+    <Row style='margin-top:20px'>
+        <Col span="22" offset="" style="font-size:20px;height:24px;line-height:24px;margin-bottom:20px;padding-left:40px;" >申请定制化识别服务</Col>
       <Col span="24" offset="0">
-      <Row style="padding: 2px;border:1px solid #eee;">
-        <Col  span="13"><Card :bordered="false" dis-hover>
+      <Row style="padding: 2px;padding-bottom:20px;">
+        <Col  span="22" offset="2"><Card :bordered="false" dis-hover>
           <Steps :current="current">
-              <Step  content="填写信息"></Step>
+              <Step  content="上传图片"></Step>
               <Step  content="字段标注"></Step>
-              <Step  content="样本上传"></Step>
+              <Step  content="上传样本集"></Step>
+              <Step  content="完善信息"></Step>
               <Step  content="提交审核"></Step>
           </Steps>
         </Card></Col>
       </Row>
       </Col>
     </Row>
-    <Row style='margin-top:30px'>
+    <Row style='padding:1px 0px;background:#f5f5f5;'>
       <!-- <Col span="17" offset="1"> -->
-      <div style="padding: 0px">
+      <div style="padding: 40px;background:#fff;">
         <Tabs :value='value'>
             <TabPane disabled label=""  name='name0'>
-                <div v-if="current == 0">
-                 <Col span="13" offset="1"><Card :bordered="false" dis-hover>
-                    <Form :model="formItem" label-position="left" :label-width="120">
-                        <FormItem label="模板名称" required>
-                            <Input v-model="formItem.input1"></Input>
-                        </FormItem>
-                        <FormItem label="需求描述" required>
-                            <Input v-model="formItem.textarea" type="textarea" :autosize="{minRows: 5,maxRows: 7}" placeholder="Enter something..."></Input>
-                        </FormItem>
-                        <FormItem label="模版页数" required>
-                            <Input v-model="formItem.input2"></Input>
-                        </FormItem>
-                        <Col span="13"><FormItem label="预计月调用次数" required>
-                            <Select v-model="formItem.select">
-                                <Option value="1">1～10000</Option>
-                                <Option value="2">10000～15000</Option>
-                                <Option value="3">15000～20000</Option>
-                            </Select>
-                        </FormItem>
-                        <FormItem label="预计调用时长" required>
-                            <Input v-model="formItem.input4">
-                                <span slot="append">月</span>
-                            </Input>
-                        </FormItem>
-                        <FormItem label="预计调用峰值" required>
-                            <Input v-model="formItem.input5">
-                                <span slot="append">秒/次</span>
-                            </Input>
-                        </FormItem></Col>
-                        <Col span="24">
-                        <FormItem label="位置叠加信息" required>
-                            <RadioGroup v-model="formItem.radio">
-                                <Radio label="1">需要</Radio>
-                                <Radio label="0">不需要</Radio>
-                            </RadioGroup>
-                        </FormItem></Col>
-                    </Form>
-                </Card></Col>
+                <div v-if="current == 0" style="">
+                    <Row style='margin-bottom:20px'>
+                        <Col span='2' offset="">
+                            <Card :bordered="false"  dis-hover>
+                                <ul class='img'>
+                                    <li v-for='item,index in files' style="position:relative;"  class="list">
+                                        <img @click="selectImgShow(item,index)" :src="item.src" width="100%" alt="">
+                                        <a style="position:absolute;top:0px;right:0px;z-index:1234;" href="#" slot="extra" @click.prevent="del(index)">
+                                            <Icon type="close-circled"></Icon>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <Col span='20'  offset="2">
+                                <input multiple type="file" ref='upload' @change="upload" style='display:none'>
+                                <Button style="margin-top:38px;"  size="large" type="primary"  @click='uploadfile'>
+                                    
+                                        <!-- <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon> -->
+                                        <!-- <p>上传</p> -->
+                                    上传
+                                </Button>
+                                </Col>
+                            </Card>
+                        </Col>
+                        <Col span='8' style="padding-left:10px;" >
+                            <Card :bordered="false" id="canvas_box" style='height:300px'  dis-hover>
+                                <div style="width:100%;height:300px">
+                                    <div  v-if="!showUploadImg" @click='uploadfile' style="padding: 20px 0;width:100%;text-align:center;cursor:pointer;">
+                                        <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
+                                        <p>点击上传所需识别的图片</p>
+                                    </div>
+                                    <!-- <p  v-if="!showUploadImg">请上传图片！</p> -->
+                                    <img v-if="showUploadImg" :src='uploadImg' style="width:100%;height:100%;" >
+                                </div>
+                                   
+                            
+                                <!-- <div  @click='upload' style="padding: 20px 0;width:100%;text-align:center;cursor:pointer;">
+                                    <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
+                                    <p>点击上传所需识别的图片</p>
+                                </div> -->
+                                <Col span="24" offset="" style="font-size:12px;">请点击上传所需识别的图片，每张图片不大于5Mb，格式可为JPEG\PNG。</Col>
+                            </Card>
+                        </Col>
+                        <Col span='14' offset="" style="padding-left:40px;" >
+                            <Form :model="formItem" label-position="top"  >
+                                <FormItem label="模板名称" required>
+                                    <Input v-model="formItem.input1"></Input>
+                                </FormItem>
+                            </Form>
+                            <div>
+                                <Col>提示：</Col>
+                                <Col>1. 支持上传同一文档/票据/证件的多张不同图片，如一张证件的正、反面。</Col>
+                                <Col>2. 模板名称可设置为需要识别的图片类型，如“增值税发票”、“的士票”等，设置后不能更改。</Col>
+                            </div>
+                        </Col>
+                    </Row> 
                 </div>
+                
+                
             </TabPane>
             <TabPane label=""  disabled name='name1'>
                 <div v-if="current == 1">
-                <Row style='margin-bottom:20px'>
-                    <Col span='13' offset='1' >
-                        <Card :bordered="false" style='height:410px' dis-hover>
-                           <Pic ref='pic' @deleteMes="deleteMes" @addItem="addItem" :originImg="originImg" :saveFilesNum="saveFilesNum" :index="index" :percent1="percent1" :filesName="filesName"></Pic>
-                        </Card>
-                    </Col>
-                    <Col span="6" style="padding-top:12px;padding-left:40px">
-                        <div style="margin-bottom:40px;">请框选需要识别的字段区域</div>
-                        <Button class="btn1" style="margin-bottom:40px;" type="primary">框选</Button><br/>
-                        <Button class="btn1" type="primary" @click='save'>保存</Button>
-                    </Col>
-                    <Col span='13' offset='1'>
+                <Row style='margin-bottom:20px;padding: 0 ;'>
+                    <Col span='2' offset=''>
                         <Card :bordered="false" dis-hover>
-                            <ul class='img' style="height:145px;width:100%;background:#f5f5f5;">
-                                <li style="float:left;height:145px;margin-right:5px;position:relative;" v-for='item,index in files' class="list" >
-                                    <img :src="item.src" height="100%" alt="" @click='showImg(index)'>
-                                    <a style="position:absolute;top:0px;right:0px;z-index:1234;" href="#" slot="extra" @click.prevent="del(index)">
+                            <ul class='img' style="height:349px;width:100%;background:#f5f5f5;">
+                                <li style="width:100%;margin-right:5px;position:relative;" v-for='item,index in files' class="list" >
+                                    <img :src="item.src" width="100%" alt="" @click='showImg(index)'>
+                                    <!-- <a style="position:absolute;top:0px;right:0px;z-index:1234;" href="#" slot="extra" @click.prevent="del(index)">
                                         <Icon type="close-circled"></Icon>
-                                    </a>
+                                    </a> -->
                                 </li>
                             </ul>
                         </Card>
                     </Col>
+                    <Col span='10' offset='' style="padding:0 40px;" >
+                        <Card :bordered="false" style='height:349px' dis-hover>
+                            <div class="paint_mes" style="margin-bottom:20px;color:#333;padding-left:20px;">使用鼠标在每张图片中框选出识别字段可能出现的区域，并添加对应字段名及字段描述。</div>
+                           <Pic ref='pic' @showImg="showImg" :files="files" :canvasHeight="canvasHeight" :canvasWidth="canvasWidth" @deleteMes="deleteMes" @addItem="addItem" :originImg="originImg" :saveFilesNum="saveFilesNum" :index="index" :percent1="percent1" :filesName="filesName"></Pic>
+                        </Card>
+                    </Col>
+                    <Col span="12" style="padding:12px 0;">
+                        <!-- <div style="margin-bottom:40px;">请框选需要识别的字段区域</div>
+                        <Button class="btn1" style="margin-bottom:40px;" type="primary">框选</Button><br/>-->
+                        
+                        <Card :bordered="false" style='margin-top:20px;' dis-hover>
+                            <Col :span="10" style="text-align:center">
+                                字段名 <Poptip  trigger="hover"  content="如框选区域中的信息为“广东省深圳市福田区八卦三路平安大厦”，则字段名应填写为“地址”，不超过8个中文字符" placement="bottom">
+                                        <Icon type="information-circled" />
+                                    </Poptip>
+                            </Col>
+                            <Col :span="13"  offset="1"  style="text-align:center">
+                                子段描述 <Poptip trigger="hover"  content="描述该字段的预估字段内容（如需识别的信息范围、文字种类）、字段长度等" placement="bottom">
+                                            <Icon type="information-circled" />
+                                        </Poptip>
+                            </Col>
+                            <Col span="24" offset="">
+                            <div v-for='item,index in saveImg' :key='index' style='margin:20px 0;height:32px;'> 
+                                <Col span="10">
+                                    <Input  v-model='item.value'>
+                                        <div style="width:20px;height:20px;line-height:20px;text-align:center;" slot="prepend">{{index+1}}</div>         
+                                    </Input>
+                                </Col>
+                                <Col span="13" offset="1">
+                                    <Input  v-model='item.value1'>
+                                    </Input>
+                                </Col>
+                            </div>
+                            </Col>
+                           
+                        </Card>
+                    </Col>
                     
+                    <Col span="24" offset="0" style="margin-top:40px;">
+                        <div style="margin-bottom:40px;">提示：框选的范围需要考虑到后期该字段可能产生的偏移情况，框选时可以略微放大框选区域以防信息遗漏。</div>
+                        <Button class="btn1" style="border:1px solid #2d8cf0;background:#fff;color:#2d8cf0;" type="primary" @click='reset'>重置</Button> 
+                    </Col>
                 </Row>   
                 <Row>
                     <Card :bordered="false" dis-hover>
                         <Row>
                             <Col span='6' offset="1">
-                                <input multiple type="file" ref='upload' @change="upload" style='display:none'>
+                                <!-- <input multiple type="file" ref='upload' @change="upload" style='display:none'>
                                 <div style='margin-bottom:5px'>
                                     <Button class="btn1" type="primary" @click='uploadfile'>本地上传</Button>
-                                </div>
+                                </div> -->
                                     <!-- <div style='text-align:center'>
                                         <Button type="primary" @click='save'>保存图片</Button>
                                 </div> -->
@@ -109,10 +160,10 @@
                                 </div>
                             </Col> -->
                         </Row>
-                        <Col span="20" offset="1" style="font-size:12px;">提示：支持上传一种类型的证件／票据／文档的扫描图，每页大小不超过xxMB，长边不超过xxxx像素的png,jpg,jpeg,bmp图片。</Col>
+                        <!-- <Col span="20" offset="1" style="font-size:12px;">提示：支持上传一种类型的证件／票据／文档的扫描图，每页大小不超过xxMB，长边不超过xxxx像素的png,jpg,jpeg,bmp图片。</Col> -->
                     </Card>
                 </Row>
-                    <Row>
+                    <!-- <Row>
                         <Card :bordered="false" style='margin-top:20px' dis-hover>
                             <Col span="13" offset="1"><div v-for='item,index in saveImg' :key='index' style='margin-bottom:5px'> 
                                  <Input  v-model='item.value'>
@@ -121,88 +172,180 @@
                             </div></Col>
                            
                         </Card>
-                    </Row>
+                    </Row> -->
                     </div>
             </TabPane>
-            <TabPane label=""  disabled name='name2'>
-                <div v-if="current == 2">
+            <TabPane label=""  disabled name='name2' style="padding:40px;background:#f5f5f5;"><Col style="">
+                <div id="uploadm" v-if="current == 2" >
                 <Upload
                     multiple
                     type="drag"
                     :before-upload="handleUpload"
+                    style="border:none;background:#f5f5f5;"
                     action="//jsonplaceholder.typicode.com/posts/">
                     <div style="padding: 20px 0">
                         <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
-                        <p>Click or drag files here to upload</p>
+                        <div style="border:1px solid #2d8cf0;color:#2d8cf0;width:200px;height:40px;line-height:40px;text-align:center;font-size:16px;margin:5px auto;">点击上传样本集压缩包</div>
+                        <p>请上传不少于20份与模版标注图片相同类型的图片作为样本集，压缩文件格式为.zip</p>
+                        <p>样本图片规格为：每张图片不大于5Mb，格式可以为JPEG/PNG</p>
                     </div>
                 </Upload>
-                <Col span="13" offset="1"><div>
-                    <Button type="primary" style="margin:40px 40px 0 0;" icon="folder">{{file.name}}</Button>
-                    <!-- <Progress :percent="percent" ></Progress> -->
+                <Col span="8" offset="8"><div>
+                    <Progress :percent="percent" ></Progress>
+                    <Button v-if="percent==100" type="primary" style="margin:40px 40px 0 0;" icon="folder">{{file.name}}</Button>
                 </div></Col>
-                </div>
+                </div></Col>
             </TabPane>
-            <TabPane label=""  disabled name='name3'>
+            <TabPane label="" disabled name='name3' >
                 <div v-if="current == 3">
                  <Card :bordered="false" dis-hover>
-                     <Col style="margin-bottom:50px;font-size:24px;color:#323232;" span="22" offset="1">自定义模版信息</Col>
+                    <Form :model="formItem" label-position="left" :label-width="120">
+                        
+                        <Col span="20" offset=""><FormItem label="需求描述" required>
+                            <Input v-model="formItem.textarea" type="textarea" :autosize="{minRows: 5,maxRows: 7}" placeholder="简单描述您使用业务的应用场景，如支持一款理财APP的用户身份验证。"></Input>
+                        </FormItem></Col>
+                        <!-- <FormItem label="模版页数" required>
+                            <Input v-model="formItem.input2"></Input>
+                        </FormItem> -->
+                        
+                        <!-- <FormItem label="预计月调用次数" required>
+                            <Select v-model="formItem.select">
+                                <Option value="1">1～10000</Option>
+                                <Option value="2">10000～15000</Option>
+                                <Option value="3">15000～20000</Option>
+                            </Select>
+                        </FormItem> -->
+                        <Col span="24" offset="">
+                            <FormItem label="预计月调用次数" required>
+                                <Col span="16"><RadioGroup v-model="formItem.button1" @on-change="changeValue" type="button" size="large">
+                                    <Radio label="1"><span @click="writeTime1">1-10000</span></Radio>
+                                    <Radio label="2"><span @click="writeTime1">10001-50000</span></Radio>
+                                    <Radio label="3"><span @click="writeTime1">50001-100000</span></Radio>
+                                    <Radio label="4"><span @click="writeTime">>100000</span></Radio>
+                                </RadioGroup></Col>
+                                <!-- <Col class="write_time" v-if="writetimes" span="4"><Input v-model="formItem.button4" placeholder="请输入预计使用次数">
+                                    
+                                </Input></Col> -->
+                            </FormItem>
+                        </Col>
+                        <Col  span="24" class="select_time">
+                            <FormItem label="预计调用时长" required>
+                                <RadioGroup v-model="formItem.input4" type="button" size="large">
+                                    <!-- <Radio true-value="1个月" false-value="1" ></Radio> -->
+                                    <Radio label="1"></Radio>
+                                    <Radio label="2"></Radio>
+                                    <Radio label="3"></Radio>
+                                    <Radio label="4"></Radio>
+                                    <Radio label="5"></Radio>
+                                    <Radio label="6"></Radio>
+                                    <Radio label="7"></Radio>
+                                    <Radio label="8"></Radio>
+                                    <Radio label="9"></Radio>
+                                    <Radio label="1年"></Radio>
+                                    <Radio label="2年"></Radio>
+                                    <Radio label="3年"></Radio>
+                                </RadioGroup>
+                            </FormItem>
+                        </Col>
+                        <Col span="13" class="select_need">
+                        <FormItem label="字段位置信息" required>
+                            <RadioGroup v-model="formItem.radio" type="button" size="large">
+                                <Radio label="1">需要</Radio>
+                                <Radio label="0">不需要</Radio>
+                            </RadioGroup>
+                        </FormItem>
+                        </Col>
+                        <Col span="24"><Col span="6" class="form_times">
+                        <FormItem label="预计调用峰值" required>
+                            <Input v-model="formItem.input5">
+                                <span slot="append">次/秒</span>
+                            </Input>
+                        </FormItem>
+                        </Col></Col>
+                    </Form>
+                </Card>
+                </div>
+            </TabPane>
+            <TabPane label=""  disabled name='name4'>
+                <div v-if="current == 4">
+                 <Card :bordered="false" dis-hover>
+                     <!-- <Col style="margin-bottom:50px;font-size:24px;color:#323232;" span="22" offset="1">自定义模版信息</Col> -->
                      <Row>
-                    <Form :model="formItem" label-position="left" :label-width="100">
-                        <Col span='9' offset='1'>
-                            <FormItem label="模板名称">
+                    <Form :model="formItem" label-position="left" :label-width="120">
+                        <Col span='12' offset=''>
+                            <FormItem label="模板名称："  :label-width="80">
                                 <span>{{formItem.input1}}</span>
                             </FormItem>
                         </Col >
-                        <Col span='9' offset='1'>
-                            <FormItem label="模板页数">
-                                <span>{{formItem.input2}}</span>
-                            </FormItem>
-                        </Col>
-                         <Col span='20' offset='1'>
-                            <FormItem label="模板描述">
-                                <span>{{formItem.textarea}}</span>
-                            </FormItem>
-                        </Col>
-                        <Col span='9' offset='1'>
-                            <FormItem label="预计月调用次数">
+                        <Col span='11' offset='1'>
+                            <FormItem label="预计月调用次数：">
                                <span>{{formItem.select==1?'1~10000':formItem.select==2?'10000~15000':'15000~20000'}}</span>
                             </FormItem>
                         </Col >
+                        <!-- <Col span='9' offset='1'>
+                            <FormItem label="模板页数">
+                                <span>{{formItem.input2}}</span>
+                            </FormItem>
+                        </Col> -->
+                         <Col span='12' offset=''>
+                            <FormItem label="需求描述：" :label-width="80">
+                                <span>{{formItem.textarea}}</span>
+                            </FormItem>
+                        </Col>
+                        
                            
-                        <Col span='9' offset='1'>
-                            <FormItem label="预计调用时长">
-                                <span>{{formItem.input4}}</span>
+                        <Col span='11' offset='1'>
+                            <FormItem label="预计调用时长：">
+                                <span>{{formItem.input4==1?"1-10000":formItem.input4==2?"10001-50000":formItem.input4==3?"50001-100000":">100000"}}</span>
                             </FormItem>
                         </Col>
-                        <Col span='9' offset='1'>
-                            <FormItem label="预计调用峰值">
-                               <span>{{formItem.input5}}</span>
+                        <Col span='12' offset=''>
+                            <FormItem label="识别字段：" :label-width="80">
+                                <span>您已在当前模版选择以下字段进行OCR识别</span>
                             </FormItem>
-                        </Col >
-                        <Col span='9' offset='1'>
-                            <FormItem label="叠加位置信息">
-                                <span>{{formItem.radio==1?'需要':'不需要'}}</span>
-                            </FormItem>
+                            <Col span="20" offset="2" style="padding-left:30px;"><Table :border=true :show-header=false highlight-row ref="currentRowTable" :columns="columns3" :data="data1"></Table></Col>
                         </Col>
+
+                        <Col span='11' offset='1'>
+                            <Col span='24' offset=''>
+                                <FormItem label="字段位置信息：">
+                                    <span>{{formItem.radio==1?'需要':'不需要'}}</span>
+                                </FormItem>
+                            </Col>
+                            <Col span='24' offset=''>
+                                <FormItem label="预计调用峰值：">
+                                    <span>{{formItem.input5}}</span>
+                                </FormItem>
+                            </Col >
+                            <Col span='20' offset=''>
+                                <FormItem label="样本集：">
+                                    <span>{{isupload?file.name:'未上传文件'}}</span>
+                                </FormItem>
+                            </Col >
+                        </Col>
+
+
+                        
+                        
                     </Form>
                       </Row>
                 </Card>
-                <Row style='margin-top:20px;'>
+                <!-- <Row style='margin-top:20px;'>
                     <Col style="margin-bottom:50px;font-size:24px;color:#323232;padding-left:16px;" span="22" offset="1">字段标注</Col>
                     <Col span='13' offset='1' dis-hover>
-                        <Card :bordered="false" style='height:410px' dis-hover>
+                        <Card :bordered="false" style='height:349px' dis-hover>
                           <img :src="img1" width="100%" alt="">
                         </Card>
                     </Col>
                     <Col span='9'>
-                         <Card :bordered="false" style='height:410px' dis-hover>
+                         <Card :bordered="false" style='height:349px' dis-hover>
                           <div class="list_info" v-for='item,index in saveFiles[imgIndex].infoList' >
                               <span style="font-weight:800;color:#2d8cf0;">{{index+1}}</span> : <span>{{item.value}}</span>
                           </div>
                         </Card>
                     </Col>
-                </Row>
-                <Row>
+                </Row> -->
+                <!-- <Row>
                     <Col span='13' offset="1">
                         <Card :bordered="false" dis-hover>
                             <ul class='img' style="height:145px;width:100%;background:#f5f5f5;">
@@ -212,15 +355,18 @@
                             </ul>
                         </Card>
                     </Col>
-                </Row>
-                <Row>
+                </Row> -->
+                <!-- <Row>
                     <Col style="margin-bottom:50px;font-size:24px;color:#323232;padding-left:16px;" span="22" offset="1">样本上传</Col>
-        <Col span="13" offset="1"><Card :bordered="false" style='margin-top:20px;text-align:center;' dis-hover>
-            
-            <Button type="primary" icon="folder">{{isupload?file.name:'未上传文件'}}</Button>
-            <Button type="success" v-show='isupload' shape="circle" size='small' icon="checkmark-round"></Button>
-        </Card></Col>
-    </Row></div>
+                    <Col span="13" offset="1">
+                    <Card :bordered="false" style='margin-top:20px;text-align:center;' dis-hover>
+                        
+                        <Button type="primary" icon="folder">{{isupload?file.name:'未上传文件'}}</Button>
+                        <Button type="success" v-show='isupload' shape="circle" size='small' icon="checkmark-round"></Button>
+                    </Card>
+                    </Col>
+                </Row> -->
+                </div>
             </TabPane>
         </Tabs>  
       </div>
@@ -229,11 +375,12 @@
     
       
     
-    <Row style='margin-top:160px;margin-bottom:160px;'>
-      <Col span="20" offset="1" style='text-align:left'>
-      <Button class="btn1" type="primary" v-if='current!=0' @click="back">上一步</Button>
-      <Button class="btn1" type="primary" v-if='current!=3' @click="next">下一步</Button>
-      <Button class="btn1" type="primary" v-if='current==3' @click="submit">确认提交</Button>
+    <Row style='padding-top:40px;padding-bottom:80px;background:#f5f5f5;'>
+      <Col span="24" offset="" style='text-align:right;padding-right:40px;'>
+      <!-- <Button class="btn1" type="primary" v-if='current!=0' @click="back">上一步</Button> -->
+      <Button class="btn1" type="primary" v-if='current!=0' @click="cancel">取消</Button>
+      <Button class="btn1" type="primary" v-if='current!=4' @click="next">下一步</Button>
+      <Button class="btn1" type="primary" v-if='current==4' @click="submit">确认提交</Button>
 
       </Col>
     </Row>
@@ -247,6 +394,13 @@ export default {
   },
   data () {
       return {
+          showUploadImg:false,
+          uploadImg:'',
+          localtion:{},
+          writetimes:false,
+        //   showCanvas:false,
+          canvasWidth:200,
+          canvasHeight:200,
           params:{},
           originImg:[],
           filesName:"",
@@ -263,23 +417,101 @@ export default {
           src:'',
           files:[],
           current: 0,
-           formItem: {
+            formItem: {
                 input1: '',
-                input2: '',
+                input2: '1',
                 input3: '',
                 input4: '',
                 input5: '',
                 textarea:'',
                 radio:'1',
                 select: '1',
+                button1:'1',
+                button2:'1',
+                button4:''
             },
             value:"name0",
-            saveImg:[]
+            saveImg:[],
+            columns3: [
+                {
+                    type: 'index',
+                    width: 60,
+                    align: 'center'
+                },
+                {
+                    key: 'value',
+                    width:120,
+                },
+                {
+                    key: 'value1'
+                }
+            ],
+            data1: []
+        
       }
   },
+  mounted(){
+        
+
+    
+  },
   methods: {
+      selectImgShow(v,i){
+          this.uploadImg = v.src;
+      },
+      reset(){
+          let _this = this;
+          
+          if(!this.saveFiles[this.index]){
+            this.saveImg = [];
+          }else if(this.saveFiles[this.index].infoList){
+            this.saveImg = [];
+            this.saveFiles[this.index].infoList = [];
+          }
+          console.log(this.index);
+          this.$refs.pic.clearCount();
+          function runAsync(){
+              var p = new Promise(function(resolve, reject){
+                    _this.$refs.pic.drawImage(_this.originImg[_this.index].src,resolve);
+                });
+                return p;
+          }
+          runAsync().then(function(data){
+              _this.files[_this.index].src = self.penal.toDataURL('image/png');
+              console.log(333)
+            })
+          
+          console.log(111111);
+      },
+      cancel(){
+          console.log('cancel')
+      },
+      writeTime1(){
+          this.writetimes = false;
+          
+      },
+      writeTime(){
+        //   alert(111);
+          this.writetimes = true;
+      },
+      changeValue(){
+          console.log(event)
+      },
       next () {
-          if(this.current == 1){
+          var _this = this;
+          if(this.current == 0){
+            var canvasBox = document.getElementById("canvas_box");
+            this.canvasWidth = canvasBox.clientWidth;
+            this.canvasHeight = canvasBox.clientHeight;
+            console.log(this.canvasWidth+"+++"+this.canvasHeight);
+            if(this.files.length == 0){
+                alert("请上传图片！");
+                return false;
+            }
+            // this.showCanvas = true;
+          }else if(this.current == 1){
+              _this.save()
+             this.location = this.$refs.pic.allPaintMes;
               if(this.files.length != this.saveFiles.length){
                   alert("请标注所有上传图片！");
                   return false;
@@ -293,6 +525,16 @@ export default {
                   }
               }
               this.img1 = this.saveFiles[0].src;
+          }else if(this.current == 3){
+              this.data1 = [];
+              for(var i = 0;i<this.saveFiles.length;i++){
+                  for(var j = 0;j<this.saveFiles[i].infoList.length;j++){
+                      this.data1.push(this.saveFiles[i].infoList[j]);
+                  }
+              }
+            //   console.log(this.saveFiles);
+            //   console.log(123456)
+            //   console.log(this.data1);
           }
           this.current += 1;
           this.value='name'+this.current
@@ -313,9 +555,13 @@ export default {
             expected_frequency : this.formItem.select,
             expected_duration : this.formItem.input4,
             expected_peak : this.formItem.input5,
-            mark_overlaid : this.formItem.radio
+            mark_overlaid : this.formItem.radio,
+            pictures_fields : []
         };
         var data2 = this.saveFiles;
+        
+        
+
         // json_params.type = "1";
         // json_params.name = this.formItem.input1;
         // json_params.description = this.formItem.textarea;
@@ -350,7 +596,27 @@ export default {
             }).then(function(res){
                 let data = res.data.body
                 console.log(data);
-                json_params.pictures_fields = data.url_list;
+                // json_params.pictures_fields = data.url_list;
+                for(var i = 0;i<data2.length;i++){
+                    var paintData = [];
+                    for(var j = 0;j<_this.saveFiles[i].infoList.length;j++){
+                        paintData.push({
+                            key:_this.saveFiles[i].infoList[j].value,
+                            description:_this.saveFiles[i].infoList[j].value1,
+                            x1:_this.location[i][j].x1,
+                            x2:_this.location[i][j].x2,
+                            y1:_this.location[i][j].y1,
+                            y2:_this.location[i][j].y2
+                        })
+                    }
+                    
+                    json_params.pictures_fields.push({
+                        origin_pic_url:data.url_list[i],
+                        location:paintData
+                    })
+                }
+                console.log("---------")
+                console.log(json_params);
             }),
             _this.axios({
                 url:"/token/upload_files",
@@ -407,9 +673,14 @@ export default {
                         src:e.target.result,
                         name:files[i].name   
                     })
-                };    
-            } 
+                    self.uploadImg = e.target.result;
+                    // console.log(12345)
+                    self.showUploadImg = true;
+                }; 
+            }
+
         }
+        
        let formdata = new FormData();
         for(let i=0;i<files.length;i++){
             formdata.append('files',files[i]);  
@@ -433,6 +704,11 @@ export default {
       },
       del(index){
           this.files.splice(index,1)
+          if(this.files.length != 0){
+              this.uploadImg = this.files[this.files.length-1].src;
+          }else{
+              this.showUploadImg = false;
+          }
       },
       judgeImgData(index){
           for(var i = 0;i<this.saveFiles.length;i++){
@@ -448,7 +724,7 @@ export default {
       },
       showImg(index){
           if(this.saveFlag){this.save();}
-          this.$refs.pic.showCanvas();
+        //   this.$refs.pic.showCanvas();
           this.$refs.pic.clearCount();
           this.$refs.pic.drawImage(this.files[index].src);
         //   this.filesName = this.files[index].name;
@@ -571,28 +847,30 @@ export default {
     },
     handleUpload(file){
         this.file = file;
-        // this.progressAdd()
+        this.progressAdd()
         this.isupload=true
         
         return false; 
     },
-    // progressAdd(){
-    //     let self=this
-    //     let time=setInterval(function(){
-    //         self.percent++
-    //         if(self.percent>=100){
-    //             clearInterval(time)
-    //         }
-    //     },50)
-    // },
+    progressAdd(){
+        let self=this
+        let time=setInterval(function(){
+            self.percent++
+            if(self.percent>=100){
+                clearInterval(time)
+            }
+        },50)
+    },
     addItem(){
         this.saveImg.push({
             value:'',
+            value1:''
         })
     },
     deleteMes(msg){
         if(this.saveFiles[msg.n].infoList[msg.m].value){
             this.saveFiles[msg.n].infoList[msg.m].value = "已删除";
+            this.saveFiles[msg.n].infoList[msg.m].value1 = "已删除";
         }
         // this.saveFiles[msg.n].infoList[msg.m].value = "已删除";
         // console.log(this.saveFiles[msg.n].infoList[msg.m].value+"value");
@@ -601,15 +879,20 @@ export default {
   }
 }
 </script>
-<style >
+<style scoped>
+.ivu-card-body{
+    padding:0;
+}
 .img{
     list-style:none;
     height: 377px;
     overflow-y:auto;
+    overflow-x: hidden;
 }
 .list{
     border: 2px transparent ; 
     cursor: pointer;
+    border: 2px solid rgba(0,0,0,0);
 
 }
 .list:hover{
@@ -643,6 +926,67 @@ export default {
     margin-bottom: 40px;
 }
 .btn1{width:130px;height:54px;font-size:20px;margin-right:40px;}
+.ivu-upload-drag{
+    border:none;
+    
+    padding-bottom: 20px;
+}
+.ivu-upload-drag:hover{
+    border:none;
+}
+#uploadm .ivu-upload-drag{
+    background:#f5f5f5;
+}
+.ivu-form-item-label{
+    height:100%;
+    line-height:100%;
+}
+.ivu-radio-group-button .ivu-radio-wrapper{
+    border-radius: 0px !important;
+    width: 224px;
+    height: 54px;
+    margin-right:20px;
+    text-align: center;
+    line-height: 54px;
+}
+.ivu-radio-group-button .ivu-radio-wrapper-checked{
+    background:#2d8cf0;
+    color:#fff;
+}
+.select_time .ivu-radio-group-button .ivu-radio-wrapper{
+    margin-right:0px;
+    width:100px;
+}
+.select_need .ivu-radio-group-button .ivu-radio-wrapper{
+     width:100px;
+}
+.ivu-radio-group-button .ivu-radio-wrapper{
+    padding: 0;
+}
+.write_time .ivu-input-wrapper,.write_time input{
+    border-radius: 0px !important;
+    width: 224px;
+    height: 54px;
+    line-height: 54px;
+}
+.form_times .ivu-input-group{
+    width: 220px;
+    border-radius: 0px;
+    border: none;
+    color:#828282;
+}
+.form_times input , .form_times .ivu-input-group-append{
+    border-radius: 0px;
+    border: none;
+    background:#f5f5f5;
+    outline:none;
+}
+.paint_mes{
+    font-size:18px;
+}
+.ivu-radio-group-button.ivu-radio-group-large .ivu-radio-wrapper,textarea.ivu-input{
+    font-size: 12px;
+}
 </style>
 
 

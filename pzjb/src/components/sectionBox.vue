@@ -43,12 +43,12 @@ export default {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0 390px;
+  padding: 0 200px;
 }
 .listItem{
   box-sizing: border-box;
-  width: 254px;
-  padding: 0 10px;
+  width: 320px;
+  /* padding: 0 10px; */
   text-align: center;
 }
 .listImg{
@@ -56,10 +56,10 @@ export default {
   margin-bottom: 20px;
 }
 .listTitle{
-  font-size: 36px;
+  font-size: 24px;
   color: #333333;
   /* font-weight: normal; */
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .listTxt{
   text-align: left;

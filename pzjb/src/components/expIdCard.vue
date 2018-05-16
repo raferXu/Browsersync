@@ -243,6 +243,8 @@ export default {
   flex-direction: column;
   margin-right: 10px;
   font-size:0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .smallImg{
   box-sizing: border-box;

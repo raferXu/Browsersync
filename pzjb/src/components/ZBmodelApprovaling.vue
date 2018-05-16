@@ -1,49 +1,53 @@
 <template>
   <div class="manageIndexBox">
     <h3 class="modelTitle pageTitle">{{title}}</h3>
-    <div class="contentBox">
-      <h4>基本信息</h4>
-      <div class="row">
-        <span class="name">模板名称: <i>{{info.name}}</i></span>
-        <span class="page">字段数: <i>{{info.page}}</i></span>
-      </div>
-      <div class="row">
-        <span class="date">创建时间: <i>{{info.date}}</i></span>
-        <span class="state">
-          状态: 
-          <i class="tipsWrap">
-            <i class="stateTxt">{{statement}}></i>
-            <div class="tipsBox">
-              <h5 style="font-size:18px;color:#333333;">状态详情</h5>
-              <p :class="{'tipsBoxDone':info.state>0,'tipsBoxDoing':info.state==0}">需求审批中</p>
-              <p :class="{'tipsBoxDone':info.state>1,'tipsBoxDoing':info.state==1}">需求审批通过，请上传样本</p>
-              <p :class="{'tipsBoxDone':info.state>2,'tipsBoxDoing':info.state==2}">审核样本中</p>
-              <p :class="{'tipsBoxDone':info.state>3,'tipsBoxDoing':info.state==3}">样本审核通过，请缴纳训练费用</p>
-              <p :class="{'tipsBoxDone':info.state>4,'tipsBoxDoing':info.state==4}">模板开发中 (7个工作日)</p>
-              <p :class="{'tipsBoxDone':info.state>5,'tipsBoxDoing':info.state==5}">开发完毕，请试用</p>
-            </div>
-          </i>
-        </span>
-        <span v-if="info.fee">训练费用: <i>{{info.fee}}</i> 元</span>
-      </div>
-      <div class="row">
-        <p class="desc">模板描述: <i>{{info.desc}}</i></p>
-      </div>
-      <div class="row">
-        <span class="num">预计月调用次数: <i>{{info.num}}</i></span>
-        <span class="month">预计调用时长: <i>{{info.month}}</i>月</span>
-      </div>
-      <div class="row">
-        <span class="max">预计调用峰值: <i>{{info.max}}字段/小时</i></span>
-        <span class="add">时效性: <i>{{info.add}}</i></span>
+    <div class="box">
+      <div class="contentBox">
+        <h4>基本信息</h4>
+        <div class="row">
+          <span class="date">创建时间: <i>{{info.date}}</i></span>
+          <span class="name">服务类别: <i>开发</i></span>
+          <span class="state">
+            状态: 
+            <i class="tipsWrap">
+              <i class="stateTxt">{{statement}}></i>
+              <div class="tipsBox">
+                <h5 style="font-size:18px;color:#333333;">状态详情</h5>
+                <p :class="{'tipsBoxDone':info.state>0,'tipsBoxDoing':info.state==0}">需求审批中</p>
+                <p :class="{'tipsBoxDone':info.state>1,'tipsBoxDoing':info.state==1}">需求审批通过，请上传样本</p>
+                <p :class="{'tipsBoxDone':info.state>2,'tipsBoxDoing':info.state==2}">审核样本中</p>
+                <p :class="{'tipsBoxDone':info.state>3,'tipsBoxDoing':info.state==3}">样本审核通过，请缴纳训练费用</p>
+                <p :class="{'tipsBoxDone':info.state>4,'tipsBoxDoing':info.state==4}">模板开发中 (7个工作日)</p>
+                <p :class="{'tipsBoxDone':info.state>5,'tipsBoxDoing':info.state==5}">开发完毕，请试用</p>
+              </div>
+            </i>
+          </span>
+        </div>
+        <div class="row">
+          <p class="desc">模板描述: <i>{{info.desc}}</i></p>
+        </div>
+        <div class="row">
+          <span class="num">预计月调用次数: <i>{{info.num}}</i></span>
+          <span class="month">预计调用时长: <i>{{info.month}}</i>月</span>
+        </div>
+        <div class="row">
+          <span class="max">预计调用峰值: <i>{{info.max}}字段/小时</i></span>
+          <span class="add">时效性: <i>{{info.add}}</i></span>
+        </div>
+        <div class="row">
+          <span class="overload">需要脱敏处理: <i>{{info.overload?'需要':'不需要'}}</i></span>
+        </div>
+        <div class="table" v-show="keyList.length>0">
+          <div class="tableTitle">录入字段</div>
+          <div class="tbrow" v-for="(val,index) in keyList" :key="index">
+            <div class="tbcol">{{index+1}}</div>
+            <div class="tbcol" v-for="(v,i) in val" :key="i">{{v}}</div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="annotationBox">
-      <h5>字段标注</h5>
-      <p></p>
-    </div>
-    <div class="uploadBox" v-if="info.state==1">
-      <span><i style="color:red;">*</i> 本地上传</span>
+    <!-- <div class="uploadBox" v-if="info.state==1"> -->
+      <!-- <span><i style="color:red;">*</i> 本地上传</span>
       <i class="tipsWrap issueIcon">
         i
         <div class="tipsBox issueTips">
@@ -51,28 +55,28 @@
             请压缩上传不少于3000份清晰、具有代表性的样本文件，样本图片规格：每张图片不大于5Mb，格式可以为JPEG\PNG
           </p>
         </div>
-      </i>
-      <div class="proofInputBox">
+      </i> -->
+      <!-- <div class="proofInputBox">
         <div class="fileNameBox">{{proofFileName}}</div>
         <div class="fileInputBox">
           <input class="urlBtn" type="button" value="本地上传">
           <input ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
         </div>
-      </div>
-    </div>
-    <div class="developedBox" v-if="info.state==5">
+      </div> -->
+    <!-- </div> -->
+    <!-- <div class="developedBox" v-if="info.state==5">
       <div class="developedShowBox">
         <div class="showBox show1Box"></div>
         <div class="showBox show2Box"></div>
       </div>
       <p>剩余可用次数: xx次</p>
       <p><i style="color: red;">*</i> 若对此次OCR开发效果需要进一步优化，可联系0755-xxxxxxxx咨询精度优化方案。</p>
-    </div>
-    <div class="btnGBox">
+    </div> -->
+    <!-- <div class="btnGBox">
       <div class="btn" @click="reviseModel">修改模板</div>
       <div class="btn" v-if="info.state!=3">撤销项目</div>
       <div class="btn" v-if="info.state==3" @click="open">立即开通</div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -81,20 +85,23 @@ export default {
   name: '',
   data () {
     return {
+      keyList: [
+        
+      ],
       proofFileName: '',
       statementArr: ['需求审批中','需求审批通过，请上传样本','审核样本中','样本审核通过，请缴纳训练费用','模板开发中 (7个工作日)','开发完毕，请试用'],
       tipsBoxShow: false,
       title: '我的自定义模板2',
       info: {
         name: '我的自定义模板2',
-        page: 'xxxxx',
         date: '2018年5月12日 12:39',
-        state: 1,
+        state: 0,
         desc: '模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述模板描述',
         num: '1-1000',
         month: '10',
         max: '100',
-        add: 'T+1'
+        add: 'T+1',
+        overload: false
       }
     }
   },
@@ -114,19 +121,51 @@ export default {
       console.log('立即开通')
       this.$router.push('/orderPay')
     }
+  },
+  created () {
+    var templateId = this.$route.query.templateId;
+    if(templateId){
+      this.axios.post("/token/template/detail",{"template_id": templateId},{
+        // headers: {
+        //   token: "rafer"
+        // }
+      }).then(res=>{
+        res = res.data;
+        if(res.code=='200'){
+          var data = res.body;
+          this.title = data.name;
+          this.info.name = data.name;
+          this.info.date = data.created.split(' ')[0];
+          this.info.num = data.expected_frequency;
+          this.info.month = data.expected_duration;
+          this.info.max = data.expected_peak;
+          this.info.add = data.mark_overlaid;
+          this.info.desc = data['description'];
+          this.keyList = data["key_list"];
+          this.info.state = data['status_num'];
+          this.info.overload = data['mark_overlaid'];
+        }
+      }).catch(function(error){
+        console.log("/token/template/detail error init."+error);
+      })
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.box{
+  background: #f0f0f0;
+  padding: 20px 20px 0;
+}
 .title{
   padding: 40px;
   border: 1px solid #f0f0f0;
 }
 .contentBox{
   box-sizing: border-box;
-  width: 1400px;
+  background: #ffffff;
   padding: 80px;
 }
 .contentBox h4{
@@ -135,16 +174,16 @@ export default {
   color: #323232;
 }
 .row{
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   font-size: 14px;
-  color: #828282;
+  color: #333333;
 }
 .row span{
   display: inline-block;
   width: 380px;
 }
 .row i{
-  color: #333333;
+  color: #828282;
 }
 .state{
   position: relative;
@@ -202,7 +241,7 @@ export default {
   color:#ff3b30;
 }
 .desc{
-  padding-bottom: 40px;
+  line-height: 1.8;
 }
 .btnGBox{
   box-sizing: border-box;
@@ -320,5 +359,37 @@ export default {
   width: 500px;
   height: 300px;
   background: #f0f0f0;
+}
+.table{
+  font-size: 18px;
+  color: #333333;
+}
+.tableTitle{
+  margin-bottom: 20px;
+}
+.tbrow{
+  display: flex;
+  height: 54px;
+  line-height: 54px;
+  text-align: center;
+}
+.tbcol{
+  border-top: 1px solid #f0f0f0;
+  border-left: 1px solid #f0f0f0;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.tbrow .tbcol:nth-child(1){
+  width: 70px;
+}
+.tbrow .tbcol:nth-child(2){
+  width: 176px;
+}
+.tbrow .tbcol:nth-child(3){
+  width: 512px;
+  border-right: 1px solid #f0f0f0;
+}
+.tbrow:last-child .tbcol{
+  border-bottom: 1px solid #f0f0f0;
 }
 </style>

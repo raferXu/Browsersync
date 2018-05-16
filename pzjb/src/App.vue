@@ -18,7 +18,7 @@
                 </ul>
               <!-- </router-link> -->
               </li>
-              <router-link tag="li" to="/techExperience">技术体验</router-link>
+              <router-link tag="li" to="/techExperience?to=OCR文字识别">技术体验</router-link>
               <li>开发者中心</li>
               <li>合作咨询</li>
               <!-- <router-link tag="li" to="/devCenter">开发者中心</router-link> -->
@@ -159,9 +159,9 @@ export default {
   z-index: 1;
   display: flex;
   width: 100%;
-  height: 60px;
-  line-height: 60px;
-  padding: 0 375px;
+  height: 80px;
+  line-height: 80px;
+  padding: 0 200px;
   background: rgba(0,0,0,0.5);
   /* overflow: hidden; */
 }
@@ -175,10 +175,13 @@ export default {
 }
 .logoWrap{
   cursor: pointer;
+  margin-right: 60px;
 }
 .logo{
   width: 22px;
   cursor: pointer;
+  float: left;
+  margin-top:15px;
 }
 .logoTxt{
   font-size: 24px;
@@ -187,7 +190,7 @@ export default {
 }
 .navbar-nav>li, .navbar-nav>li a{
   padding: 0 20px;
-  font-size: 14px;
+  font-size: 18px;
   color: #ffffff;
 }
 .navbar-nav>li:hover, .navbar-nav>li:hover a{
@@ -215,9 +218,9 @@ export default {
 }
 .productList{
   position: absolute;
-  left: -40px;
+  left: -5px;
   display: none;
-  padding: 40px;
+  padding: 20px;
   white-space: nowrap;
   background: rgba(0,0,0,0.7);
 }
@@ -226,6 +229,11 @@ export default {
 }
 .productList li:hover{
   color: #0090ff;
+}
+.productList li{
+  line-height:40px;
+  height:40px;
+  text-align: left;
 }
 .proService, .techExperience{
   position: relative;

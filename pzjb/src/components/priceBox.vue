@@ -64,6 +64,7 @@ export default {
 }
 .sectionTitle{
   margin-bottom: 80px;
+  font-size:36px;
 }
 .priceTable{
   display: flex;

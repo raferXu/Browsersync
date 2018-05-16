@@ -40,7 +40,7 @@ export default {
           }
         ], 
         legendData:['用量'],
-        xData:['4月10日', '4月11日', '4月12日', '4月13日', '4月14日', '4月15日', '4月16日'],
+        xData:['5月9日', '5月10日', '5月11日', '5月12日', '5月13日', '5月14日', '5月15日'],
         title: ''
       },
       lineChartHeight: '220px',
@@ -54,7 +54,7 @@ export default {
 .showDataBox{
   display: flex;
   justify-content: space-between;
-  padding: 40px 620px 40px;
+  padding: 40px 620px 0px;
 }
 .echartTip{
   padding: 0 0 40px;

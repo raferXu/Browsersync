@@ -21,6 +21,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.mainH3B{
+  font-size:24px;
+  
+}
+.mainTxtB{
+  color:#828282;
+}
+.pt40{
+  padding:20px;
+}
 .listImg{
   width: 75px;
 }

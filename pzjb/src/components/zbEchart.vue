@@ -68,7 +68,7 @@ export default {
 .showDataBox{
   display: flex;
   justify-content: space-between;
-  padding: 40px 275px 80px;
+  padding: 40px 275px 0px;
 }
 .echartTip{
   padding: 40px 0;

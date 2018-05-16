@@ -1,6 +1,6 @@
 <template>
     <div id="canvas_con" style="">
-        <canvas id="penal" width="705" height="385" style='background:#ccc;display:none;' @mousemove='mousemove' @mouseup='mouseup' @mousedown='mousedown' @mouseleave='mouseleave'></canvas>
+        <canvas id="penal" width="705" height="385" style='background:#ccc;' @mousemove='mousemove' @mouseup='mouseup' @mousedown='mousedown' @mouseleave='mouseleave'></canvas>
     </div>  
 </template>
 
@@ -8,7 +8,7 @@
 // import {draw} from '@components/canvas/canvas'
 
 export default {
-  props: ['percent1','filesName','index','originImg'],
+  props: ['percent1','filesName','index','originImg','canvasWidth','canvasHeight','files'],
   data () {
     return {
         pen:{},
@@ -28,32 +28,52 @@ export default {
     }
   },
   mounted() {
-      let penal=this.penal=document.getElementById('penal');
-      let canvasCon = document.getElementById("canvas_con");
-      let pen=this.pen=penal.getContext('2d')
-      pen.strokeStyle = "red";
+      // let penal=this.penal=document.getElementById('penal');
+      // let canvasCon = document.getElementById("canvas_con");
+      // let pen=this.pen=penal.getContext('2d')
+      // pen.strokeStyle = "red";
+      //   //第四步：绘制矩形，只有线。内容是空的
+      //   // pen.strokeRect(1, 1, 190, 100);
+      //   var docSize = document.body.clientWidth;
+      //   // console.log(this.percent1);
+      //   penal.width = docSize * this.percent1;
+      //   this.imgSize.x = penal.width;
+      //   this.imgSize.y = 385;
+      //   canvasCon.style.cssText="width:"+penal.width+"px;height:385px;position:relative;margin:0 auto;";
+      
+      this.$nextTick(() => {
+        let penal=this.penal=document.getElementById('penal');
+        let canvasCon = document.getElementById("canvas_con");
+        let pen=this.pen=penal.getContext('2d')
+        pen.strokeStyle = "red";
         //第四步：绘制矩形，只有线。内容是空的
         // pen.strokeRect(1, 1, 190, 100);
-        var docSize = document.body.clientWidth;
+        // var docSize = document.body.clientWidth;
         // console.log(this.percent1);
-        penal.width = docSize * this.percent1;
+        penal.width = this.canvasWidth;
+        penal.height = this.canvasHeight;
+        console.log("------"+this.canvasWidth+"-----"+this.canvasHeight);
         this.imgSize.x = penal.width;
-        this.imgSize.y = 385;
-        canvasCon.style.cssText="width:"+penal.width+"px;height:385px;position:relative;margin:0 auto;";
+        this.imgSize.y = penal.height;
+        // console.log(this.canvasWidth+"__________");
+        canvasCon.style.cssText="width:"+this.imgSize.x+"px;height:"+this.imgSize.y+"px;position:relative;margin:0 auto;";
+        this.$emit("showImg",0)
+        //this.createCloseBtn();
+      })
         //this.createCloseBtn();
   },
   methods:{
-    showCanvas(){
-        var penal = document.getElementById("penal");
-        penal.style.cssText="display:block";
-      },
+      // showCanvas(){
+      //   var penal = document.getElementById("penal");
+      //   penal.style.cssText="display:block";
+      // },
       mousedown(e){
         this.isDraw = true;
         this.img.src = this.penal.toDataURL('image/png');
         this.originX = e.clientX - this.penal.getBoundingClientRect().left;    //原点x坐标
         this.originY = e.clientY - this.penal.getBoundingClientRect().top;     //原点y坐标
         this.pen.moveTo(this.originX, this.originY);
-        this.pen.strokeStyle = 'red';
+        this.pen.strokeStyle = '#2d8cf0';
         this.pen.lineWidth = '2px';
         this.pen.beginPath();
         this.paintxy.y = this.originY;
@@ -90,13 +110,14 @@ export default {
       },
       mouseup(e){
         this.$emit("addItem");
-        this.pen.fillStyle = 'red';
+        this.pen.fillStyle = '#2d8cf0';
         this.pen.font = '14px 宋体';
         console.log("count:"+this.count);
         this.paintMes.x2 = e.clientX - this.penal.getBoundingClientRect().left;
         this.paintMes.y2 = e.clientY - this.penal.getBoundingClientRect().top;
         this.addPaintMes();
-        this.pen.strokeText(this.count,e.clientX - this.penal.getBoundingClientRect().left + 10,e.clientY - this.penal.getBoundingClientRect().top);
+        this.pen.strokeText(this.count,this.paintMes.x1,this.paintMes.y1+10);
+        // this.pen.strokeText(this.count,e.clientX - this.penal.getBoundingClientRect().left + 10,e.clientY - this.penal.getBoundingClientRect().top);
         this.paintxy.x = e.clientX - this.penal.getBoundingClientRect().left;
         this.paintData.push(this.paintxy);
         
@@ -106,8 +127,8 @@ export default {
         this.isDraw = false;
         this.count++;
         this.paintxy = [];
-        
-        this.createCloseBtn(this.paintMes.x2-12,this.paintMes.y1-5);
+       
+        // this.createCloseBtn(this.paintMes.x2-12,this.paintMes.y1-5);
       }, 
       addPaintMes(){
         var attr = this.index;
@@ -151,11 +172,19 @@ export default {
          t+=e.offsetLeft;
         return t;
       },
-      drawImage(src){
+      drawImage(src,resolve){
+        let _this = this;
         this.pen.clearRect(0,0,800,800);
         var img = new Image();
         img.src = src;
-        this.pen.drawImage(img,0,0,this.imgSize.x,this.imgSize.y);
+        // this.pen.drawImage(img,0,0,this.imgSize.x,this.imgSize.y);
+        img.onload = function(){
+          _this.pen.drawImage(img,0,0,_this.imgSize.x,_this.imgSize.y);
+          console.log(2222222)
+          if(resolve){
+            resolve('11');
+          }
+        }
       },
       createCloseBtn(left,top){
         let self = this;
@@ -167,7 +196,7 @@ export default {
         x.data_attr1 = this.index;
         x.data_attr2 = this.count-2;
         document.getElementById("canvas_con").appendChild(x);
-        x.style.cssText="left:"+left+"px;top:"+top+"px;position: absolute;color: red;font-size: 14px;cursor: pointer;height: 16px;z-index: 9999;width: 16px;";
+        x.style.cssText="left:"+left+"px;top:"+top+"px;position: absolute;color: #2d8cf0;font-size: 14px;cursor: pointer;height: 16px;z-index: 9999;width: 16px;";
         x.addEventListener("click",function(event){
           // alert(111);
           var el = event.currentTarget;
@@ -177,16 +206,17 @@ export default {
           x.remove();
           // console.log("11111+++++"+el.data_attr2);
           self.reDrawImg(el.data_attr1,el.data_attr2);
-          // self.$emit('deleteMes',msg);
+          self.$emit('deleteMes',msg);
         })
       },
       reDrawImg(attr1,attr2){
+        let _this = this;
         var img = new Image();
         // console.log(this.index+"+++++++")
         img.src = this.originImg[attr1].src;
         img.name = this.originImg[attr1].name;
         this.allPaintMes[attr1][attr2].length = 0;
-        this.pen.fillStyle = 'red';
+        this.pen.fillStyle = '#2d8cf0';
         this.pen.font = '14px 宋体';
         // this.pen.drawImage(img.src);
         this.pen.clearRect(0,0,this.imgSize.x,this.imgSize.y);
@@ -197,10 +227,11 @@ export default {
         console.log(this.allPaintMes[attr1].length)
         for(var i = 0;i<this.allPaintMes[attr1].length;i++){
           if(this.allPaintMes[attr1][i] && this.allPaintMes[attr1][i].length!=0){
-            this.pen.beginPath();
-            this.pen.strokeRect(this.allPaintMes[attr1][i][0].x1,this.allPaintMes[attr1][i][0].y1,Math.abs(this.allPaintMes[attr1][i][0].x2-this.allPaintMes[attr1][i][0].x1),Math.abs(this.allPaintMes[attr1][i][0].y2-this.allPaintMes[attr1][i][0].y1));
-            this.pen.strokeText(i+1,this.allPaintMes[attr1][i][0].x2,this.allPaintMes[attr1][i][0].y2);
-            this.pen.closePath();
+            _this.pen.beginPath();
+            _this.pen.strokeRect(_this.allPaintMes[attr1][i].x1,_this.allPaintMes[attr1][i].y1,Math.abs(_this.allPaintMes[attr1][i].x2-_this.allPaintMes[attr1][i].x1),Math.abs(_this.allPaintMes[attr1][i].y2-_this.allPaintMes[attr1][i].y1));
+            // _this.pen.strokeText(i+1,_this.allPaintMes[attr1][i].x2+10,_this.allPaintMes[attr1][i].y2);
+             _this.pen.strokeText(i+1,_this.allPaintMes[attr1][i].x1,_this.allPaintMes[attr1][i].y1+10);
+            _this.pen.closePath();
           }
           
         }
