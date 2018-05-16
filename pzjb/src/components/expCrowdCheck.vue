@@ -465,7 +465,7 @@ export default {
       console.log("response init.");
       return response;
     });
-    this.getAppAnswer(1);  //初始化页面标志1
+    this.getAppAnswer(1);  //获取列表,初始化页面标志1
     
   },
 }
