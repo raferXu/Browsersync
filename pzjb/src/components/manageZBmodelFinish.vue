@@ -283,6 +283,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.manageIndexBox{
+  background: #ffffff;
+}
 .title{
   padding: 40px;
   border: 1px solid #f0f0f0;

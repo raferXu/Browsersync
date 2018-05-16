@@ -33,7 +33,6 @@ export default {
       if(obj.name=='身份证'){
         this.$router.push({path: '/manageIdCardFinish',query: {templateId: obj["template_id"]}});
       }else if(this.type=='zb'){
-        console.log(obj.name);
         if(obj.type=='开发'){
           this.$router.push({path: '/ZBmodelApprovaling',query: {templateId: obj["template_id"]}});
         }else{

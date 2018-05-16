@@ -40,7 +40,7 @@ export default {
             name:'回收率',
             type:'bar',
             barWidth: '30%',
-            data:[90, 70, 80, 97], 
+            data:[, 70, 80, ], 
             itemStyle: {
               normal: {
                 color: '#0090ff',
@@ -54,7 +54,7 @@ export default {
           }
         ],
         legendData:['回收率'],
-        xData:['众包1', '众包2', '众包3', '众包4'],
+        xData:['', '营业执照', '的士票', ''],
         title: ''
       },
       barChartHeight: '220px',
