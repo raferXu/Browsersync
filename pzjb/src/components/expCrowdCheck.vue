@@ -41,13 +41,13 @@
         <div class="loadingBox resultWrap" v-if="others.step==2">
           <div class="regBox ocrRegBox">
             <h4>OCR识别结果</h4>
-            <p>
-              <span class="star"><i v-if="ocrResult['ID_XingMing']">*</i></span>
+            <p v-if="ocrResult['ID_XingMing']">
+              <span class="star"><i v-if="ocrResult['ID_XingMing']"></i></span>
               <span class="label">姓名: </span>
               <span class="val">{{ocrResult['ID_XingMing']?ocrResult['ID_XingMing']["alg_answer"]:example.ID_XingMing.text}}</span>
             </p>
-            <p>
-              <span class="star"><i v-if="ocrResult['ID_HaoMa']">*</i></span>
+            <p v-if="ocrResult['ID_HaoMa']">
+              <span class="star"><i v-if="ocrResult['ID_HaoMa']"></i></span>
               <span class="label">身份证: </span>
               <span class="val">{{ocrResult['ID_HaoMa']?ocrResult['ID_HaoMa']["alg_answer"]:example.ID_HaoMa.text}}</span>
             </p>
@@ -55,12 +55,12 @@
           <div class="regBox crowdsRegBox">
             <h4>众包识别结果</h4>
             <p v-if="ocrResult['ID_XingMing']">
-              <span class="star"><i v-if="ocrResult['ID_XingMing']">*</i></span>
+              <span class="star"><i v-if="ocrResult['ID_XingMing']"></i></span>
               <span class="label">姓名: </span>
               <span class="val">{{ocrResult['ID_XingMing']?ocrResult['ID_XingMing']['zb_result']:'xxxxxx'}}</span>
             </p>
             <p v-if="ocrResult['ID_HaoMa']">
-              <span class="star"><i v-if="ocrResult['ID_HaoMa']">*</i></span>
+              <span class="star"><i v-if="ocrResult['ID_HaoMa']"></i></span>
               <span class="label">身份证: </span>
               <span class="val">{{ocrResult['ID_HaoMa']?ocrResult['ID_HaoMa']['zb_result']:'xxxxxx'}}</span>
             </p>

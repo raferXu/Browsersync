@@ -394,6 +394,7 @@ export default {
       _this.$refs.pic.drawImage(_this.uploadimg[n],0,0,_this.canvasWidth,_this.canvasHeight);
       this.$refs.pic.allPaintMes[0] = [];
       this.deleteX();
+      this.$refs.pic.count = 1;
     },
     deleteX(){
       var x = document.getElementsByClassName("close_x");

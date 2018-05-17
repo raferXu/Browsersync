@@ -12,11 +12,7 @@
           <p class="noEnoughBox" v-if="enough"></p>
           <p class="noEnoughBox noEnoughTips" v-else>你的余额不足，请充值！</p>
         </div>
-        <div class="btnGBox">
-          <!-- <el-button type="primary" plain @click="toPay">稍后支付</el-button> -->
-          <el-button type="primary" class="btn1" v-if="enough" @click="payNow">确认</el-button>
-          <el-button type="primary" v-else @click="toRecharge">充值</el-button>
-        </div>
+        
       </div>
       <div class="payView">
         <h4 class="mb40">预扣费</h4>
@@ -26,12 +22,17 @@
           <p>预计调用量: <span>{{this.account.num}}次</span></p>
           <p>预计使用时长: <span>{{this.account.month}}月</span></p>
         </div>
-        <div class="sumBox mb80">
+        <div class="sumBox">
           <h4>总计: {{this.account.sum}}元 </h4>
           <!-- <span>(月调用费 x 预计调用量 x 预计使用时长 x 120%)</span> -->
           <p><i>*</i> 此价格为预扣费的金额，最终花费以实际用量为准。</p>
         </div>
+        
       </div>
+    </div>
+    <div class="btnGBox">
+      <el-button type="primary" class="btn1" v-if="enough" @click="payNow">确认</el-button>
+      <el-button type="primary" v-else @click="toRecharge">充值</el-button>
     </div>
   </div>
 </template>
@@ -180,6 +181,7 @@ export default {
   line-height: 54px;
   padding: 0;
   text-align: center;
+  margin: 0;
 }
 .color82{
   color: #828282;
@@ -295,7 +297,7 @@ export default {
 .noEnoughBox{
   width: 247px;
   height: 54px;
-  margin: 80px 0 360px;
+  margin: 80px 0 0;
 }
 .noEnoughTips{
   line-height: 54px;
@@ -318,5 +320,10 @@ export default {
   height: 90px;
   padding:0 0 0 40px;
   line-height: 90px;
+}
+.btnGBox{
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.6rem 0.8rem;
 }
 </style>
