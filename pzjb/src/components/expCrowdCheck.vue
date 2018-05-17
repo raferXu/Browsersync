@@ -323,11 +323,33 @@ export default {
         if(response.status==200){
           console.log(response);
           var data = response.data;
+          var returnJSON = data[fileName][0],returnInfo;
           _this.others.coordinateFlag = true;
-          console.log(_this.imgIndex);  //9
           _this.othersList[nowOcrImgIndex].coordinateFlag = true;
-          _this.exampleRes.push(data[fileName][0]['info']);
-          _this.example = data[fileName][0]['info'];
+          if(returnJSON){
+            returnInfo = returnJSON['info'];
+          }else{
+            returnInfo = {
+              "ID_HaoMa": {
+                "score": "666", 
+                "text": "", 
+                "xmax": "397.0", 
+                "xmin": "138.0", 
+                "ymax": "261.121246338", 
+                "ymin": "238.674926758"
+              }, 
+              "ID_XingMing": {
+                "score": "666", 
+                "text": "", 
+                "xmax": "129.0", 
+                "xmin": "73.0", 
+                "ymax": "60.3761863708", 
+                "ymin": "32.8974304199"
+              }
+            }
+          }
+          _this.exampleRes.push(returnInfo);
+          _this.example = returnInfo;
         }else{
           console.log('response.status: '+response.status);
           _this.others.coordinateFlag = false;
@@ -359,6 +381,7 @@ export default {
       this.upload_files(obj);
       this.handleImg(obj);
       this.ocrFn(obj,fileName);
+
     },
     handleImg(obj){
       var _this = this;
@@ -422,6 +445,12 @@ export default {
         console.log('坐标没拿到或者文件上传失败');
         return;
       }
+      if(this.exampleRes[this.imgIndex]['ID_HaoMa']['score']=='666'){
+        console.log('算法接口返回空，上传的不是身份证');
+        alert('请上传身份证图片');
+        return;
+      }
+      
       var _this = this;
       var len = this.checkedNames.length;
       if(len){

@@ -131,6 +131,11 @@ export default {
   },
   components: {
     sfz,jbfooter
+  },
+  created(){
+    console.log('this.$route.name');
+    console.log(this.$route.name);
+    console.log(this.$route);
   }
 }
 </script>
@@ -224,10 +229,10 @@ export default {
   white-space: nowrap;
   background: rgba(0,0,0,0.7);
 }
-.productList li, .productList li.router-link-exact-active{
+.productList li{
   color: #ffffff;
 }
-.productList li:hover{
+.productList li:hover,.productList li.router-link-exact-active{
   color: #0090ff;
 }
 .productList li{

@@ -269,6 +269,13 @@ export default {
       console.log('当前图片对应的url: '+this.tryObj.bigImg);
       document.getElementById("canvasBox").style.display = 'none';
       document.getElementById("imgBox").style.display = 'block';
+      // this.uploadimg[this.imgNum] = self.penal.toDataURL('image/png');
+      if(this.$refs.pic){
+        this.$refs.pic.allPaintMes[0] = [];
+        this.deleteX();
+
+      }
+      
       
     },
     upload(){
@@ -379,12 +386,14 @@ export default {
       for(var i = 0;i<x.length;i++){
           x[i].style.display = "none";
       }
-      var x2 = document.getElementsByClassName("close_x_"+i);
+      var x2 = document.getElementsByClassName("close_x_"+n);
       for(var j = 0;j<x2.length;j++){
           x2[j].style.display = "block";
       }
       document.getElementById("canvasBox").style.display = 'block';
       _this.$refs.pic.drawImage(_this.uploadimg[n],0,0,_this.canvasWidth,_this.canvasHeight);
+      this.$refs.pic.allPaintMes[0] = [];
+      this.deleteX();
     },
     deleteX(){
       var x = document.getElementsByClassName("close_x");
@@ -413,8 +422,10 @@ export default {
           _this.item = _this.list[_this.list.length-1];
           console.log('确认提交的当前本地list的item: ');
           console.log(_this.item)
+          _this.showBigImg(_this.allImgResult.length-1);
         }
       })
+      
     }
   },
   mounted () {

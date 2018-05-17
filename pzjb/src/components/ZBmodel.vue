@@ -416,7 +416,7 @@
       <!-- <Button class="btn1" type="primary" v-if='current!=0' @click="back">上一步</Button>
       <Button class="btn1" type="primary" v-if='current!=4' @click="next">下一步</Button>
       <Button class="btn1" type="primary" v-if='current==4' @click="submit">确认提交</Button> -->
-        <Button class="btn1" type="primary" v-if='current!=0' @click="cancel">取消</Button>
+        <Button class="btn1" type="primary" v-if='current!=0' @click="cancel">取消申请</Button>
       <Button class="btn1" type="primary" v-if='current!=4' @click="next">下一步</Button>
       <Button class="btn1" type="primary" v-if='current==4' @click="submit">确认提交</Button>
       </Col>

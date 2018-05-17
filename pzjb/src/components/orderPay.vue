@@ -281,12 +281,12 @@ export default {
   color: #333333;
 }
 .payView p{
-  font-size: 14px;
+  font-size: 18px;
   color: #828282;
   line-height: 2;
 }
 .payView span{
-  font-size: 14px;
+  font-size: 18px;
   color: #333333;
 }
 .payView i{

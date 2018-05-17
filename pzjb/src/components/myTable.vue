@@ -3,8 +3,11 @@
     <div class="row tableTitle">
       <div class="col" v-for="(v,i) in tableTitle" :key="i">{{v}}</div>
     </div>
-    <div class="row bodyRow" v-for="(v1,i1) in tableData" :key="i1" @click="jumpTo(tableData[i1])">
+    <div v-if="tableData.length>0" class="row bodyRow" v-for="(v1,i1) in tableData" :key="i1" @click="jumpTo(tableData[i1])">
       <div class="col" v-for="(v2,i2) in tableTitle" :key="i2">{{v1[i2]}}</div>
+    </div>
+    <div v-if="tableData.length==0" class="row bodyRow">
+      <div class="col">暂无数据</div>
     </div>
   </div>
 </template>
@@ -14,7 +17,7 @@ export default {
   name: '',
   props: {
     tableData: {
-      default: {}
+      default: []
     },
     tableTitle: {
       default: {}

@@ -87,7 +87,7 @@ export default {
             title: '产品服务',
             listData: [
                 {
-                    txt: '身份证',
+                    txt: '身份证识别',
                     to: '/manageIdCardIndex'
                 },
                 // {

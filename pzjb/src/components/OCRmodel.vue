@@ -38,7 +38,7 @@
               <el-input style="width:200px;" @change="selectChange" v-model="ruleForm.time"><template slot="append">月</template></el-input>
             </el-form-item><br>
             <span class="starRed starPos">＊ </span>
-            <el-form-item class="modelInputLabel" label="叠加位置信息">
+            <el-form-item class="modelInputLabel" label="字段位置信息">
               <el-radio-group v-model="ruleForm.resource">
                 <el-radio value="true" label="需要"></el-radio>
                 <el-radio value="false" label="不需要"></el-radio>
@@ -221,6 +221,8 @@ export default {
       margin:50px;
     } */
     .btnGBox{
+      display: flex;
+      justify-content: flex-end;
       padding: 160px 80px;
     }
     .starPos{

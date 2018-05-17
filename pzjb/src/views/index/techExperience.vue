@@ -41,13 +41,13 @@ export default {
   },
   methods: {
     changeSelect(i){
-      if(i=='OCR文字识别'){
+      if(i=='OCR文字识别'||i=='ocrExp'){
         this.selectTxt = 'OCR文字识别';
         this.selectTxt2 = '众包服务';
         this.componentId = 'ocrExp';
         this.selectFlag = false;
         localStorage.setItem('experienceId','OCR文字识别');
-      }else if(i=='众包服务'){
+      }else if(i=='众包服务'||i=='crowdsourcingExp'){
         this.selectTxt = '众包服务';
         this.selectTxt2 = 'OCR文字识别';
         this.componentId = 'crowdsourcingExp';

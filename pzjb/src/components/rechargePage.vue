@@ -10,7 +10,7 @@
         <div class="rechargeStepOneBox mb80">
           <h4 class="mb40">充值方法</h4>
           <h5 class="mb40 fs24">1.汇款</h5>
-          <p class="mb40">请汇款至遗下账户信息，平安接包将会于3个工作日内确认汇款信息，并将充值金额同步至您的接包账户，在转账成功后，本订单将会自动进行预扣费，同时服务生效。</p>
+          <p class="mb40">请汇款至以下账户信息，平安接包平台将会于3个工作日内确认汇款信息，并将充值金额同步至您的账户。</p>
           <div>
             <p>
               <span class="color82">银行户名: </span>
@@ -18,7 +18,7 @@
             </p>
             <p>
               <span class="color82">银行账号: </span>
-              <span>xxxxxxxxxxxxxxxx</span>
+              <span>20981000299904</span>
             </p>
             <p>
               <span class="color82">开户银行: </span>
@@ -186,6 +186,7 @@ export default {
   border-bottom: 1px solid #f0f0f0;
 }
 .orderPayBox{
+  background: #ffffff;
   line-height: 1;
 }
 .rechargeBox{
