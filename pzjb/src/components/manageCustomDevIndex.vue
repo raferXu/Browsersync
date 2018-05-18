@@ -108,13 +108,13 @@
                         
                         <Card :bordered="false" style='margin-top:20px;' dis-hover>
                             <Col :span="10" style="text-align:left;">
-                                字段名 <Poptip  trigger="hover"  placement="bottom">
+                                <span style="color:#f05a3b;">*</span>字段名 <Poptip  trigger="hover"  placement="bottom">
                                         <Icon  type="ios-information-outline" color="#0090ff"  />
                                          <div class="api pop-content" slot="content" style="">如框选区域中的信息为“广东省深圳市福田区八卦三路平安大厦”，则字段名应填写为“地址”，不超过8个中文字符</div>
                                     </Poptip>
                             </Col>
                             <Col :span="13"  offset="1"  style="text-align:left">
-                                字段描述 <Poptip trigger="hover"   placement="bottom">
+                                <span style="color:#f05a3b;">*</span>字段描述 <Poptip trigger="hover"   placement="bottom">
                                             <Icon type="ios-information-outline" color="#0090ff"  />
                                             <div class="api pop-content" slot="content" style="">描述该字段的预估字段内容（如需识别的信息范围、文字种类）、字段长度等</div>
                                         </Poptip>
@@ -235,18 +235,18 @@
                             <FormItem label="预计调用时长" required>
                                 <RadioGroup v-model="formItem.input4" type="button" size="large">
                                     <!-- <Radio true-value="1个月" false-value="1" ></Radio> -->
-                                    <Radio label="1个月"></Radio>
-                                    <Radio label="2个月"></Radio>
-                                    <Radio label="3个月"></Radio>
-                                    <Radio label="4个月"></Radio>
-                                    <Radio label="5个月"></Radio>
-                                    <Radio label="6个月"></Radio>
-                                    <Radio label="7个月"></Radio>
-                                    <Radio label="8个月"></Radio>
-                                    <Radio label="9个月"></Radio>
-                                    <Radio label="1年"></Radio>
-                                    <Radio label="2年"></Radio>
-                                    <Radio label="3年"></Radio>
+                                    <Radio label="1"><span>1个月</span></Radio>
+                                    <Radio label="2"><span>2个月</span></Radio>
+                                    <Radio label="3"><span>3个月</span></Radio>
+                                    <Radio label="4"><span>4个月</span></Radio>
+                                    <Radio label="5"><span>5个月</span></Radio>
+                                    <Radio label="6"><span>6个月</span></Radio>
+                                    <Radio label="7"><span>7个月</span></Radio>
+                                    <Radio label="8"><span>8个月</span></Radio>
+                                    <Radio label="9"><span>9个月</span></Radio>
+                                    <Radio label="12"><span>1年</span></Radio>
+                                    <Radio label="24"><span>2年</span></Radio>
+                                    <Radio label="36"><span>3年</span></Radio>
                                 </RadioGroup>
                             </FormItem>
                         </Col>
@@ -299,7 +299,7 @@
                            
                         <Col span='11' offset='1'>
                             <FormItem label="预计调用时长：">
-                                <span>{{formItem.input4}}</span>
+                                <span>{{formItem.input4=="1"?"1个月":formItem.input4=="2"?"2个月":formItem.input4=="3"?"3个月":formItem.input4=="4"?"4个月":formItem.input4=="5"?"5个月":formItem.input4=="6"?"6个月":formItem.input4=="7"?"7个月":formItem.input4=="8"?"8个月":formItem.input4=="9"?"9个月":formItem.input4=="12"?"1年":formItem.input4=="24"?"2年":"3年"}}</span>
                             </FormItem>
                         </Col>
                         <Col span='12' offset=''>
@@ -521,6 +521,20 @@ export default {
             
             // this.showCanvas = true;
           }else if(this.current == 1){
+              for(var j = 0;j<this.saveFiles.length;j++){
+                  for(var k = 0;k<this.saveFiles[j].infoList.length;k++){
+                      if(this.saveFiles[j].infoList[k].value == "" || this.saveFiles[j].infoList[k].value1 == ""){
+                          alert("请填写所有字段名及字段描述！");
+                          return false;
+                      }
+                  }
+              }
+              for(var l = 0;l<this.saveImg.length;l++){
+                  if(this.saveImg[l].value == '' || this.saveImg[l].value1 == ''){
+                      alert("请填写所有字段名及字段描述！");
+                      return false;
+                  }
+              }
               _this.save()
              this.location = this.$refs.pic.allPaintMes;
               if(this.files.length != this.saveFiles.length){
@@ -535,6 +549,8 @@ export default {
                     // console.log(this.saveFiles[i].infoList.length);
                   }
               }
+            //   console.log(this.saveFiles)
+              
               this.img1 = this.saveFiles[0].src;
           }else if(this.current == 2){
               if(this.isupload == false){

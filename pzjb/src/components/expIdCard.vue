@@ -154,10 +154,11 @@ export default {
       let data = new FormData();
       data.append('file', obj);
       data.append('deviceId', 'device001');
-      data.append('clientType', '1');
-      data.append('appKey', '1234567890');
+      data.append('clientType', '2');
+      data.append('appKey', '24680');
+      data.append('appID', 'com.pingan.ocr.demo');
       _this.axios({
-        url: 'https://test-pazb.pingan.com.cn:20443/alg/ocr_chanxian_test/id_test_only',
+        url: 'https://test-pazb.pingan.com.cn:20443/alg/ocr_chanxian_test/identity_card_grab_rec',
         method: 'post',
         data: data,
         headers: {

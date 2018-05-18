@@ -102,7 +102,8 @@ export default {
         max: '100',
         add: 'T+1',
         overload: false
-      }
+      },
+      expectedTimeArr: ['','3小时','12小时','24小时','当日','次日返回']
     }
   },
   computed: {
@@ -139,11 +140,11 @@ export default {
           this.info.num = data.expected_frequency;
           this.info.month = data.expected_duration;
           this.info.max = data.expected_peak;
-          // this.info.add = data.mark_overlaid;
+          this.info.add = this.expectedTimeArr[data['expected_time']];
           this.info.desc = data['description'];
           this.keyList = data["key_list"];
           this.info.state = data['status_num'];
-          this.info.overload = data['mark_overlaid'];
+          this.info.overload = data['desensitization'];
         }
       }).catch(function(error){
         console.log("/token/template/detail error init."+error);
@@ -155,6 +156,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.modelTitle{
+  background: #ffffff;
+}
 .box{
   background: #f0f0f0;
   padding: 20px 20px 0;

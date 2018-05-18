@@ -12,7 +12,8 @@
                 <i class="sidebarIcon" :style="serviceBg"></i><span class="sidebarTxt">产品服务</span>
                 <ul class="serviceList" v-show="!hideSideBarServiceList">
                     <li class="serviceItem" v-for="(v,i) in serviceData.listData" :key="i">
-                        <router-link :to="v.to">{{v.txt}}</router-link>
+                        <a v-if="v.txt=='身份证识别'" @click="jumpToIdCard">{{v.txt}}</a>
+                        <router-link v-else :to="v.to">{{v.txt}}</router-link>
                     </li>
                 </ul>
             </li>
@@ -129,6 +130,32 @@ export default {
       },
       toManageIndex(){
           this.$router.push('/manageIndex')
+      },
+      jumpToIdCard(){
+          console.log('jumpToIdCard');
+          var _this = this;
+        this.axios.post("/token/public/list_public",{},{}).then(res=>{
+            res = res.data;
+            var code = res.code;
+            console.log('/token/public/list_public');
+            console.log(res);
+            if(code=='200'){
+                var publicList = res.body.projects;
+                for(var z=0;z<publicList.length;z++){
+                    if(publicList[z].name=='身份证'){
+                        console.log('有身份证项目');
+                        this.$router.push({path: '/manageIdCardFinish',query: {templateId: publicList[z]["template_id"]}});
+                        return;
+                    }
+                }
+                this.$router.push('/manageIdCardIndex');
+                
+            }else{
+                console.log('code: '+code);
+            }
+        }).catch(function(error){
+        console.log("/token/public/list_public error init."+error);
+        });
       }
   }
 }

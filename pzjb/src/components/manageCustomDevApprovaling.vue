@@ -32,11 +32,11 @@
           <span class="month">预计调用时长: <i>{{info.month}}</i>月</span>
         </div>
         <div class="row">
-          <span class="max">预计调用峰值: <i>{{info.max}}</i></span>
+          <span class="max">预计调用峰值: <i>{{info.max}}</i> 次/秒</span>
           <span></span>
         </div>
         <div class="row">
-          <span class="add">叠加位置信息: <i>{{info.add?'叠加':'不叠加'}}</i></span>
+          <span class="add">字段位置信息: <i>{{info.add?'需要':'不需要'}}</i></span>
           <span></span>
         </div>
         <div class="table" v-show="keyList.length>0">

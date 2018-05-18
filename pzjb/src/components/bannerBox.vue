@@ -28,6 +28,6 @@ export default {
   height: 100%;
 }
 .bannerH{
-  height: 620px;
+  height: 1080px;
 }
 </style>

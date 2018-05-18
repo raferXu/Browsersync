@@ -12,7 +12,7 @@
             </div>
             <div class="rechargeBox tc">
               <img :src="rechargeIcon" class="rechargeIcon" alt="rechargeIcon"><br>
-              <span class="mainColorBtn rechargeBtn">充值</span>
+              <span class="mainColorBtn rechargeBtn" @click="toRecharge">充值</span>
             </div>
           </div>
         </div>
@@ -112,6 +112,9 @@ export default {
     showZbEchart(){
       this.echartIndex = 1;
       this.componentId = 'zbEchart';
+    },
+    toRecharge(){
+      this.$router.push('/rechargePage');
     }
   },
   created () {

@@ -33,7 +33,7 @@
         <div class="rechargeStepTwoBox">
           <h5 class="mb40 fs24">2.填写您的汇款信息</h5>
           <div>
-            <el-form ref="form" :model="recharge" label-width="100px">
+            <el-form ref="form" :model="recharge" label-width="120px">
               <el-form-item label="汇款银行">
                 <el-input v-model="recharge.remittance_bank"></el-input>
               </el-form-item>
@@ -125,13 +125,31 @@ export default {
       }
     }
   },
+  computed: {
+    
+  },
   methods: {
+    finishFlag(){
+      for(var key in this.recharge){
+        if(key!='payment_method'){
+          if(!this.recharge[key]){
+            return false;
+          }
+        }
+      }
+      return true;
+    },
     returnPage(){
       this.$router.go(-1);
     },
     onSubmit() {
       console.log('submit!');
+      console.log(this.finishFlag());
       this.recharge.remittance_amount = parseFloat(this.recharge.remittance_amount);
+      if(!this.finishFlag()){
+        alert('请填写所有信息');
+        return;
+      }
       this.axios.post("/token/payment/recharge",this.recharge,{
         // headers: {
         //   token: "rafer"

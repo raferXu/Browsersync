@@ -1,5 +1,5 @@
 <template>
-  <div class="manageIndexBox">
+  <div class="manageIndexBox bgf">
     <h3 class="modelTitle pageTitle">{{title}}</h3>
     <div class="contentBox modelBox">
       <div class="table baseInfoWrap">
@@ -141,8 +141,8 @@ export default {
           id: '1234567890QWER',
           state: '生效中',
           date: '2018年1月12日',
-          apiKey: 'xxxxxxxxxxxxxxxxxx',
-          secretKey: 'xxxxxxxxxxxxxxxxxxxx',
+          apiKey: 471856293463547120,
+          secretKey: 70517592369252962214,
           count: '10000-50000',
           month: '3',
           price: '0.17-0.2',
@@ -167,6 +167,13 @@ export default {
   components: {
   },
   methods: {
+     RndNum(n) {
+        var rnd = "";
+        for (var i = 0; i < n; i++) {
+            rnd += Math.floor(Math.random() * 10);
+        }
+        return rnd;
+    },
     setOptions() {
       var self = this
       this.chart.setOption({
@@ -243,7 +250,8 @@ export default {
           _this.obj.base.count = _this.region[data.expected_frequency]
           // _this.obj.base.month = data.expected_frequency
           // _this.obj.base.price = data.expected_frequency
-          _this.obj.base.pay = data.accumulative_payment
+          // _this.obj.base.pay = data.accumulative_payment
+          _this.obj.base.pay = data['total_bought_calls'],
           // _this.obj.process.money = data.expected_frequency
           // _this.obj.process.allFail = data.failed_calls
           // _this.obj.process.count = data.success_calls
