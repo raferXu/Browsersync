@@ -35,7 +35,7 @@
           </div>
           <div class="submitBox">
             <span class="countBox"></span>
-            <span class="mainBtn" :class="{'disabled':!others.coordinateFlag||!others.uploadFlag}" @click="submitToCheck">确认提交</span>
+            <span class="mainBtn" @click="submitToCheck">确认提交</span>
           </div>
         </div>
         <div class="loadingBox resultWrap" v-if="others.step==2">
@@ -69,9 +69,9 @@
       </div>
     </div>
     <div class="tipsBox tl">提示: 支持上传大小不超过3M的PNG、JPG、JPEG、BMP身份证图片进行体验。</div>
-    <div class="expBtnG pb160">
+    <div class="expBtnG">
       <span class="mainBtn btnG">
-        本地上传
+        图片上传
         <input ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
       </span>
     </div>
@@ -79,12 +79,14 @@
 </template>
 
 <script>
+import {common} from '../assets/js/common'
 import baseUrl from '../Global'
 console.log('baseUrl: '+baseUrl.BASE_URL);
 export default {
   name: '',
   data () {
     return {
+      hasClickSubmit: false,
       task: {
         pic_url: '',
         task_infos:[]
@@ -243,12 +245,18 @@ export default {
           }
         }else{
           console.log('experience_results/ocr data.code: '+data.code);
+          alert('网络异常，请刷新页面');
+          common.refresh();
+          
+          // location.reload();
         }
-
       })
       .catch(function (error) {
-        console.log('error');
+        console.log('/token/experience_results/ocr error');
         console.log(error);
+        alert('网络异常，请刷新页面');
+        common.refresh();
+        // location.reload();
       });
     },
     checkAppResult(){
@@ -328,7 +336,10 @@ export default {
           _this.othersList[nowOcrImgIndex].coordinateFlag = true;
           if(returnJSON){
             returnInfo = returnJSON['info'];
+            
           }else{
+            console.log('id_test_inner接口返回空，请上传身份证');
+            console.log(returnJSON);
             returnInfo = {
               "ID_HaoMa": {
                 "score": "666", 
@@ -354,11 +365,17 @@ export default {
           console.log('response.status: '+response.status);
           _this.others.coordinateFlag = false;
           _this.othersList[nowOcrImgIndex].coordinateFlag = false;
+          alert('网络异常，请刷新页面');
+          common.refresh();
+          // location.reload();
         }
       })
       .catch(function (error) {
-        console.log('error');
+        console.log('ocr_chanxian_test/id_test_inner error');
         console.log(error);
+        alert('网络异常，请刷新页面');
+        common.refresh();
+        // location.reload();
       });
     },
     fileUpload(e){
@@ -429,25 +446,43 @@ export default {
               _this.others["pic_url"] = resData.body["url_list"][0];
               _this.othersList[nowImgIndex]["pic_url"] = resData.body["url_list"][0];
             }else{
-              console.log('data.code: '+resData.code);
+              console.log('upload_files data.code: '+resData.code);
               _this.others.uploadFlag = false;
               _this.othersList[nowImgIndex].uploadFlag = false;
+              alert('网络异常，请刷新页面');
+              common.refresh();
+              // location.reload();
             }
           }else{
-            console.log('res.status: '+res.status);
+            console.log('upload_files res.status: '+res.status);
             _this.others.uploadFlag = false;
             _this.othersList[nowImgIndex].uploadFlag = false;
+            alert('网络异常，请刷新页面');
+            common.refresh();
+            // location.reload();
           }
       }); 
     },
     submitToCheck(){
+      
+      console.log('submitToCheck确认提交按钮被点击了 '+this.hasClickSubmit);
+      if(this.hasClickSubmit){
+        console.log('确认提交按钮被点击,请求提交未返回');
+        return;
+      }
+      this.hasClickSubmit = true;
       if(!this.others.coordinateFlag||!this.others.uploadFlag){
         console.log('坐标没拿到或者文件上传失败');
+        alert('网络异常，请刷新页面');
+        console.log(localStorage.getItem('experienceId'));
+        console.log(localStorage.getItem('crowdsourcingExp'));
         return;
       }
       if(this.exampleRes[this.imgIndex]['ID_HaoMa']['score']=='666'){
         console.log('算法接口返回空，上传的不是身份证');
         alert('请上传身份证图片');
+        this.hasClickSubmit = false;
+        
         return;
       }
       
@@ -472,6 +507,7 @@ export default {
           method: 'post',
           data: _this.task
         }).then(function (res) {
+          _this.hasClickSubmit = false;
           console.log('add_orc_zb_task res返回的状态码是： '+res.data.code);
           console.log(res);
           
@@ -481,16 +517,19 @@ export default {
           };
           console.log(_this.task)
         }).catch(function (error) {
-          console.log('error');
+          console.log('/token/add_orc_zb_task error');
           console.log(error);
+          alert('网络异常，请刷新页面');
+          common.refresh();
+          // location.reload();
         })
-
       }else{
         alert('请选择字段');
       }
     }
   },
   created () {
+    localStorage.setItem('crowdsourcingExp','expCrowdCheck');
     var _this = this;
     this.axios.interceptors.request.use(function(config){
       console.log("request init.");
@@ -501,22 +540,18 @@ export default {
       return response;
     });
     this.getAppAnswer(1);  //初始化页面标志1
-    
   },
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.disabled{
-  cursor: not-allowed; 
-}
 .expBox{
   display: flex;
   padding: 108px 200px 0;
 }
 .expBtnG{
-  padding-top: 167px;
+  padding-top: 120px;
   text-align: center;
 }
 .btnG{
@@ -680,10 +715,5 @@ export default {
 }
 .val{
   padding-left: 10px;
-}
-.mainBtn.disabled:hover {
-    color: #ffffff;
-    cursor: not-allowed;
-    border: 1px solid #ffffff;
 }
 </style>

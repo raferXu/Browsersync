@@ -43,7 +43,7 @@ export default {
           {
             img: require('../../assets/images/index/灵活应用.png'),
             title: '众包助力',
-            txt: '全面、高效、专业的文字录入众包管理平台，解决疑难识别内容。'
+            txt: '全面、高效、专业的文字录入众包管理平台，解决疑难识别内容'
           },
         ]
       },

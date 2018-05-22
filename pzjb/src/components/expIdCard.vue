@@ -60,9 +60,10 @@
         </div>
       </div>
     </div>
-    <div class="expBtnG pb160">
+    <div class="tipsBox tl">提示: 支持上传大小不超过3M的PNG、JPG、JPEG、BMP身份证图片进行体验。</div>
+    <div class="expBtnG">
         <span class="mainBtn btnG">
-          本地上传
+          图片上传
           <input ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
         </span>
       </div>
@@ -209,7 +210,7 @@ export default {
   padding: 108px 200px 0;
 }
 .expBtnG{
-  padding-top: 167px;
+  padding-top: 120px;
   text-align: center;
 }
 .btnG{
@@ -310,5 +311,12 @@ export default {
   color: white;
   background: rgba(0,0,0,0.7);
   text-align: center;
+}
+.tipsBox{
+  transform-origin: left top;
+  transform: scale(0.9);
+  margin: .2rem 3.5rem 0;
+  font-size: 0.14rem;
+  color: #ffffff;
 }
 </style>

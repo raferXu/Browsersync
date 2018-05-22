@@ -11,6 +11,8 @@ export default {
   props: ['percent1','filesName','index','originImg','canvasWidth','canvasHeight','files'],
   data () {
     return {
+      isDown:false,
+        isMove:false,
         pen:{},
         penal:{},
         isDraw:false,
@@ -68,6 +70,7 @@ export default {
       //   penal.style.cssText="display:block";
       // },
       mousedown(e){
+        this.isDown = true;
         this.isDraw = true;
         this.img.src = this.penal.toDataURL('image/png');
         this.originX = e.clientX - this.penal.getBoundingClientRect().left;    //原点x坐标
@@ -82,6 +85,9 @@ export default {
        
       },
       mousemove(e){
+        if(this.isDown){
+          this.isMove = true;
+        }
           let self=this
           if(self.isDraw){
             var x = e.clientX - self.penal.getBoundingClientRect().left;
@@ -97,24 +103,36 @@ export default {
             // if(y < originY){
             //     newOriginY = y;
             // }
+            if(x>this.canvasWidth){
+              
+              x = this.canvasWidth;
+            }
             self.pen.rect(newOriginX,newOriginY,Math.abs(x-this.originX),Math.abs(y-this.originY));
             self.pen.stroke();
             self.pen.closePath();
         }
       },
-      mouseleave(){
+      mouseleave(e){
         if(this.isDraw){
+          this.mousemove(e);
+            this.mouseup(e);
             this.pen.closePath();
             this.isDraw = false;
         }
       },
       mouseup(e){
+        this.isDown = false;
+        this.isDraw = false;
+        if(!this.isMove) return;
         this.$emit("addItem");
         this.pen.fillStyle = '#2d8cf0';
         this.pen.font = '14px 宋体';
         console.log("count:"+this.count);
         this.paintMes.x2 = e.clientX - this.penal.getBoundingClientRect().left;
         this.paintMes.y2 = e.clientY - this.penal.getBoundingClientRect().top;
+        if(this.paintMes.x2>this.canvasWidth){
+          this.paintMes.x2 = this.canvasWidth;
+        }
         this.addPaintMes();
         this.pen.strokeText(this.count,this.paintMes.x1,this.paintMes.y1+10);
         // this.pen.strokeText(this.count,e.clientX - this.penal.getBoundingClientRect().left + 10,e.clientY - this.penal.getBoundingClientRect().top);
@@ -124,7 +142,7 @@ export default {
         
         // console.log(this.paintData[this.count-1]);
         // this.pen.fillText("X",this.paintData[this.count-1].x+10,this.paintData[this.count-1].y+10);
-        this.isDraw = false;
+        this.isMove = false;
         this.count++;
         this.paintxy = [];
        

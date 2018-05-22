@@ -9,7 +9,7 @@
             </span>
             <ul class="navbar-nav navbar-main">
               <li class="productListTag">
-              <!-- <router-link tag="li" to="/" class="productListTag"> -->
+              <!-- <router-link tag="li" to="/productList" class="productListTag"> -->
                 <span class="productListTitle">产品服务</span>
                 <ul class="productList">
                   <router-link tag="li" to="/idCard">身份证识别</router-link>
@@ -18,7 +18,8 @@
                 </ul>
               <!-- </router-link> -->
               </li>
-              <router-link tag="li" to="/techExperience?to=OCR文字识别">技术体验</router-link>
+              <!-- <router-link tag="li" :to="{path: '/techExperience',query: {to:'OCR文字识别'}}">技术体验</router-link> -->
+              <router-link tag="li" to="/techExperience">技术体验</router-link>
               <li>开发者中心</li>
               <li>合作咨询</li>
               <!-- <router-link tag="li" to="/devCenter">开发者中心</router-link> -->
@@ -232,7 +233,7 @@ export default {
 .productList li{
   color: #ffffff;
 }
-.productList li:hover,.productList li.router-link-exact-active{
+.productList li:hover,.productList li.router-link-active{
   color: #0090ff;
 }
 .productList li{
@@ -283,7 +284,7 @@ export default {
   border-bottom: 1px solid #333333;
 }
 
-.navbar-main .router-link-exact-active{
+.navbar-main .router-link-active{
   color: #0090ff;
 }
 </style>

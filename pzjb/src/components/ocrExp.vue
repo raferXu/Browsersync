@@ -30,6 +30,9 @@ export default {
   },
   components: {
     expIdCard
+  },
+  created () {
+    localStorage.setItem('experienceId','OCR文字识别');
   }
 }
 </script>

@@ -46,6 +46,7 @@ export default {
     expCrowdCheck,expCrowdInput
   },
   created () {
+    localStorage.setItem('experienceId','众包服务');
     var exp = localStorage.getItem('crowdsourcingExp');
     if(exp=='expCrowdCheck'){
       this.componentId = exp;

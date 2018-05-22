@@ -74,7 +74,7 @@ export default {
     return {
       customFlag: false,
       custonInput: '',
-      title: '开通ORC服务',
+      title: '开通OCR服务',
       radio: "0",
       ruleForm: {
         // name: '',

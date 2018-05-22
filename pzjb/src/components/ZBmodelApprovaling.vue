@@ -127,9 +127,9 @@ export default {
     var templateId = this.$route.query.templateId;
     if(templateId){
       this.axios.post("/token/template/detail",{"template_id": templateId},{
-        // headers: {
-        //   token: "rafer"
-        // }
+        headers: {
+          "Content-Type": "application/json"
+        }
       }).then(res=>{
         res = res.data;
         if(res.code=='200'){

@@ -19,7 +19,7 @@ Vue.use(Router)
 
 export default new Router({
     // mode: 'history',
-    linkActiveClass: 'active',
+    // linkActiveClass: 'active',
     routes: [{
             path: '/',
             name: 'index',
@@ -44,6 +44,25 @@ export default new Router({
             name: 'zbPro',
             component: zbPro
         },
+        // {
+        //     path: '/productList',
+        //     children: [{
+        //             path: 'idCard',
+        //             name: 'idCard',
+        //             component: idCard
+        //         },
+        //         {
+        //             path: 'customizedOCR',
+        //             name: 'customizedOCR',
+        //             component: customizedOCR
+        //         },
+        //         {
+        //             path: 'crowdsourcing',
+        //             name: 'crowdsourcing',
+        //             component: crowdsourcing
+        //         }
+        //     ]
+        // },
         {
             path: '/idCard',
             name: 'idCard',
