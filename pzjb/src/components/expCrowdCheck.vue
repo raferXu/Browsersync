@@ -70,9 +70,9 @@
     </div>
     <div class="tipsBox tl">提示: 支持上传大小不超过3M的PNG、JPG、JPEG、BMP身份证图片进行体验。</div>
     <div class="expBtnG">
-      <span class="mainBtn btnG">
+      <span class="uploadBtn btnG">
         图片上传
-        <input ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
+        <input accept="image/bmp,image/jpeg,image/jpg,image/png" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
       </span>
     </div>
   </div>
@@ -246,7 +246,7 @@ export default {
         }else{
           console.log('experience_results/ocr data.code: '+data.code);
           alert('网络异常，请刷新页面');
-          common.refresh();
+          common.refresh(_this);
           
           // location.reload();
         }
@@ -255,7 +255,7 @@ export default {
         console.log('/token/experience_results/ocr error');
         console.log(error);
         alert('网络异常，请刷新页面');
-        common.refresh();
+        common.refresh(_this);
         // location.reload();
       });
     },
@@ -340,6 +340,8 @@ export default {
           }else{
             console.log('id_test_inner接口返回空，请上传身份证');
             console.log(returnJSON);
+            alert('请上传身份证图片');
+            common.refresh(_this);
             returnInfo = {
               "ID_HaoMa": {
                 "score": "666", 
@@ -366,7 +368,7 @@ export default {
           _this.others.coordinateFlag = false;
           _this.othersList[nowOcrImgIndex].coordinateFlag = false;
           alert('网络异常，请刷新页面');
-          common.refresh();
+          common.refresh(_this);
           // location.reload();
         }
       })
@@ -374,8 +376,7 @@ export default {
         console.log('ocr_chanxian_test/id_test_inner error');
         console.log(error);
         alert('网络异常，请刷新页面');
-        common.refresh();
-        // location.reload();
+        common.refresh(_this);
       });
     },
     fileUpload(e){
@@ -450,7 +451,7 @@ export default {
               _this.others.uploadFlag = false;
               _this.othersList[nowImgIndex].uploadFlag = false;
               alert('网络异常，请刷新页面');
-              common.refresh();
+              common.refresh(_this);
               // location.reload();
             }
           }else{
@@ -458,7 +459,7 @@ export default {
             _this.others.uploadFlag = false;
             _this.othersList[nowImgIndex].uploadFlag = false;
             alert('网络异常，请刷新页面');
-            common.refresh();
+            common.refresh(_this);
             // location.reload();
           }
       }); 
@@ -520,7 +521,7 @@ export default {
           console.log('/token/add_orc_zb_task error');
           console.log(error);
           alert('网络异常，请刷新页面');
-          common.refresh();
+          common.refresh(_this);
           // location.reload();
         })
       }else{
@@ -530,7 +531,6 @@ export default {
   },
   created () {
     localStorage.setItem('crowdsourcingExp','expCrowdCheck');
-    var _this = this;
     this.axios.interceptors.request.use(function(config){
       console.log("request init.");
       return config;
@@ -551,7 +551,7 @@ export default {
   padding: 108px 200px 0;
 }
 .expBtnG{
-  padding-top: 120px;
+  padding-top: 80px;
   text-align: center;
 }
 .btnG{

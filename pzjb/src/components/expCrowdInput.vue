@@ -46,9 +46,9 @@
     </div>
     <div class="tipsBox tl">提示: 支持上传大小不超过3M的PNG、JPG、JPEG、BMP任意图片进行体验。</div>
     <div class="expBtnG">
-        <span @click="canUpload" class="mainBtn btnG">
+        <span @click="canUpload" class="uploadBtn btnG">
           图片上传
-          <input v-show="isAllSubmit" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload()">
+          <input accept="image/bmp,image/jpeg,image/jpg,image/png" v-show="isAllSubmit" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload()">
         </span>
       </div>
   </div>
@@ -118,7 +118,7 @@ export default {
 
         //显示图片
         document.getElementById("canvasBox").style.display = 'none';
-        document.getElementById("imgBox").style.display = 'block';
+        // document.getElementById("imgBox").style.display = 'block';
 
         //列表里有item
         if(s.length>0){
@@ -179,7 +179,7 @@ export default {
       console.log('点击上传按钮: '+this.isAllSubmit);
       if(!this.isAllSubmit){
         alert('请先框选并提交最后一张图片');
-        common.refresh();
+        common.refresh(this);
       }
     },
     ajaxResult(){  //刷新按钮查询本题答案
@@ -228,7 +228,13 @@ export default {
       console.log(this.submitFlag)
       if(this.submitFlag) return;
       this.submitFlag = true;
-      
+      console.log(this.$refs.pic.count1)
+      if(this.$refs.pic.count1==0){
+        alert("请在图片中框选需要众包录入的字段内容！");
+        this.hasClick = false;
+        this.submitFlag = false;
+        return false;
+      }
       if(!this.hasClick){
         console.log('submitToCheck确认提交');
         this.uploadimg[this.imgNum] = self.penal.toDataURL('image/png');
@@ -348,7 +354,7 @@ export default {
           self.imageMessage.pic_urls = data.url_list;
       }).catch(function(){
         alert("上传图片失败！");
-        common.refresh();
+        common.refresh(self);
       })
       if(this.$refs.pic){
         this.$refs.pic.allPaintMes[0] = [];
@@ -389,14 +395,14 @@ export default {
       let _this = this;
       this.hasClick = true;
       
-      console.log(this.$refs.pic.allPaintMes)
-      if(!this.$refs.pic.allPaintMes.length){
-        alert("请在图片中框选需要众包录入的字段内容！");
-        this.hasClick = false;
-        this.submitFlag = false;
+      
+      // if(this.$refs.pic.count==1){
+      //   alert("请在图片中框选需要众包录入的字段内容！");
+      //   this.hasClick = false;
+      //   this.submitFlag = true;
         
-        return false;
-      }
+      //   return false;
+      // }
       // return false;
       this.imageMessage.location = this.$refs.pic.allPaintMes;
       this.paintLength = this.imageMessage.location.length;
@@ -426,7 +432,7 @@ export default {
         }
       }).catch(function(){
         alert('网络异常,请刷新页面');
-        common.refresh();
+        common.refresh(_this);
       })
     }
   },
@@ -459,7 +465,7 @@ export default {
   padding: 108px 200px 0;
 }
 .expBtnG{
-  padding-top: 120px;
+  padding-top: 80px;
   text-align: center;
 }
 .btnG{

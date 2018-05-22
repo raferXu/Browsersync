@@ -1,9 +1,9 @@
 let common = {
-    refresh: function() {
-        _this.$router.push({
+    refresh: function(t) {
+        t.$router.push({
             path: '/_empty',
         });
-        _this.$router.go(-1);
+        t.$router.go(-1);
     }
 }
 export {

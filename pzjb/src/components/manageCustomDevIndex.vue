@@ -669,6 +669,9 @@ export default {
                 }
                 console.log("---------")
                 console.log(json_params);
+            }).catch(function(){
+                alert("网络异常，请重提交！");
+                _this.submitFlag = true;
             }),
             _this.axios({
                 url:"/token/upload_files",
@@ -679,6 +682,9 @@ export default {
                 let data = res.data.body
                 console.log(data);
                 json_params.assessment_sample = data.url_list;
+            }).catch(function(){
+                console.log("网络异常，请重提交！");
+                _this.submitFlag = true;
             })
         ]).then(function(){
             console.log(json_params)
@@ -698,7 +704,7 @@ export default {
                 
             }).catch(()=>{
                 console.log('new catch submitflag true');
-                this.submitFlag = true;
+                _this.submitFlag = true;
             })
         })
         
@@ -720,6 +726,11 @@ export default {
                 reader.onloadend = function (e) {
                     // $(".img").attr("src",e.target.result);    //e.target.result就是最后的路径地址
                     console.log(files[i].name)
+                    var _fileName = files[i].name.substring(files[i].name.lastIndexOf(".") + 1).toLowerCase();
+                    if (_fileName !== "png" && _fileName !== "jpg" && _fileName !== "bmp" && _fileName !== "jpeg") {
+                        alert("上传图片格式不正确，请重新上传");
+                        return false;
+                    }
                     self.files.push({
                         src:e.target.result,
                         name:files[i].name    

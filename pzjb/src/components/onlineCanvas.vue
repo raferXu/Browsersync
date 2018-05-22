@@ -11,6 +11,7 @@ export default {
   props: ['canvasWidth','canvasHeight','index','originImg','imgFlag'],
   data () {
     return {
+        count1:0,
         createX:false,
         pen:{},
         penal:{},
@@ -105,7 +106,7 @@ export default {
             }
             y=y<0?0:y;
             x=x<0?0:x;
-            if(Math.abs(x-this.originX)>15 && Math.abs(y-this.originY)>15){
+            if(Math.abs(x-this.originX)>5 && Math.abs(y-this.originY)>5){
               self.pen.rect(newOriginX,newOriginY,x-this.originX,y-this.originY);
             }
             
@@ -149,7 +150,7 @@ export default {
         this.paintxy.x = e.clientX - this.penal.getBoundingClientRect().left;
         this.paintData.push(this.paintxy);
         this.isDraw = false;
-        if(Math.abs(this.paintMes.x2-this.paintMes.x1)<15 || Math.abs(this.paintMes.y2-this.paintMes.y1)<15) return;
+        if(Math.abs(this.paintMes.x2-this.paintMes.x1)<5 || Math.abs(this.paintMes.y2-this.paintMes.y1)<5) return;
         if(this.paintMes.x2>this.paintMes.x1 && this.paintMes.y2>this.paintMes.y1){
           this.createCloseBtn(this.paintMes.x2-12,this.paintMes.y1-5);
         }else if(this.paintMes.x2<this.paintMes.x1 && this.paintMes.y2<this.paintMes.y1){
@@ -160,6 +161,7 @@ export default {
           this.createCloseBtn(this.paintMes.x1-12,this.paintMes.y1-5);
         }
         this.count++;
+        this.count1++;
         // console.log(this.paintData[this.count-1]);
         // this.pen.fillText("X",this.paintData[this.count-1].x+10,this.paintData[this.count-1].y+10);
         this.createX = false;
@@ -183,7 +185,18 @@ export default {
         //   this.allPaintMes[attr].push(this.savePaint);
         // } 
         // this.savePaint = [];
-        if(Math.abs(this.paintMes.x2-this.paintMes.x1)<15 || Math.abs(this.paintMes.y2-this.paintMes.y1)<15) return;
+        if(Math.abs(this.paintMes.x2-this.paintMes.x1)<5 || Math.abs(this.paintMes.y2-this.paintMes.y1)<5) return;
+        var xx = 0,yy=0;
+        if(this.paintMes.x1>this.paintMes.x2){
+          xx = this.paintMes.x2;
+          this.paintMes.x2 = this.paintMes.x1;
+          this.paintMes.x1 = xx;
+        }
+        if(this.paintMes.y1>this.paintMes.y2){
+          yy = this.paintMes.y2;
+          this.paintMes.y2 = this.paintMes.y1;
+          this.paintMes.y1 = yy;
+        }
         if(!this.allPaintMes[attr]){
           this.allPaintMes[attr] = [];
           this.allPaintMes[attr].push({
@@ -254,6 +267,7 @@ export default {
           console.log(el.data_attr1);
           console.log(el.data_attr2);
           x.remove();
+          self.count1--;
           // console.log("11111+++++"+el.data_attr2);
           self.reDrawImg(0,el.data_attr2);
           // self.$emit('deleteMes',msg);

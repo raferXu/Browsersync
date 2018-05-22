@@ -1,5 +1,6 @@
 <template>
   <div class="expWrap">
+    <!-- <div style="width:15px;height:15px;background:red;position:absolute;"></div> -->
     <div class="expBox">
       <div class="smallImgBox">
         <div class="smallImgList">
@@ -47,19 +48,21 @@
     <div class="expBtnG">
         <span @click="canUpload" class="mainBtn btnG">
           图片上传
-          <input v-show="isAllSubmit" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload()">
+          <input accept="image/bmp,image/jpeg,image/jpg,image/png" v-show="isAllSubmit" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload()">
         </span>
       </div>
   </div>
 </template>
 
 <script>
+import {common} from '../assets/js/common'
 import Pic from '@/components/onlineCanvas.vue'
 import baseUrl from '../Global'
 export default {
   name: '',
   data () {
     return {
+      submitFlag:false,
       hasClick: false,
       host: baseUrl.BASE_URL,
       paintLength:0,
@@ -168,6 +171,7 @@ export default {
       console.log('点击上传按钮: '+this.isAllSubmit);
       if(!this.isAllSubmit){
         alert('请先框选并提交最后一张图片');
+        common.refresh(this);
       }
     },
     ajaxResult(){  //刷新按钮查询本题答案
@@ -213,6 +217,10 @@ export default {
     },
     submitToCheck(){
       console.log('submitToCheck按钮点击');
+      console.log(this.submitFlag)
+      if(this.submitFlag) return;
+      this.submitFlag = true;
+      
       if(!this.hasClick){
         console.log('submitToCheck确认提交');
         this.uploadimg[this.imgNum] = self.penal.toDataURL('image/png');
@@ -330,6 +338,9 @@ export default {
       }).then(function(res){
           let data = res.data.body
           self.imageMessage.pic_urls = data.url_list;
+      }).catch(function(){
+        alert("上传图片失败！");
+        common.refresh(self);
       })
       if(this.$refs.pic){
         this.$refs.pic.allPaintMes[0] = [];
@@ -369,6 +380,16 @@ export default {
     viewResult(){
       let _this = this;
       this.hasClick = true;
+      
+      console.log(this.$refs.pic.allPaintMes)
+      if(!this.$refs.pic.allPaintMes.length){
+        alert("请在图片中框选需要众包录入的字段内容！");
+        this.hasClick = false;
+        this.submitFlag = false;
+        
+        return false;
+      }
+      // return false;
       this.imageMessage.location = this.$refs.pic.allPaintMes;
       this.paintLength = this.imageMessage.location.length;
       this.axios({
@@ -389,12 +410,16 @@ export default {
           console.log('确认提交的当前本地list的item: ');
           console.log(_this.item)
           _this.showBigImg(_this.allImgResult.length-1);
+          _this.submitFlag = false;
         }else{
           alert('网络异常,请刷新页面');
-          location.reload();
+          common.refresh(_this);
+
         }
+      }).catch(function(){
+        alert('网络异常,请刷新页面');
+        common.refresh(_this);
       })
-      
     }
   },
   mounted () {

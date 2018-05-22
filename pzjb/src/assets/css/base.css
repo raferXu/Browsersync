@@ -26,6 +26,14 @@ p {
     margin: 0;
 }
 
+body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
 h2,
 h3,
 h4 {
@@ -296,9 +304,27 @@ a:hover {
 }
 
 .mainBtn:hover {
-    color: #0090ff;
+    color: #333333;
     cursor: pointer;
+    border: 1px solid #ffffff;
+    background: #ffffff;
+}
+
+.uploadBtn {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 1.3rem;
+    height: 0.54rem;
+    text-align: center;
+    line-height: 0.54rem;
+    font-size: 0.2rem;
+    color: #ffffff;
     border: 1px solid #0090ff;
+    background: #0090ff;
+}
+
+.uploadBtn:hover {
+    cursor: pointer;
 }
 
 .mainColorBtn {

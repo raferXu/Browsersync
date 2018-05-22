@@ -62,15 +62,16 @@
     </div>
     <div class="tipsBox tl">提示: 支持上传大小不超过3M的PNG、JPG、JPEG、BMP身份证图片进行体验。</div>
     <div class="expBtnG">
-        <span class="mainBtn btnG">
+        <span class="uploadBtn btnG">
           图片上传
-          <input ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
+          <input accept="image/bmp,image/jpeg,image/jpg,image/png" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
         </span>
       </div>
   </div>
 </template>
 
 <script>
+import {common} from '../assets/js/common'
 export default {
   name: '',
   data () {
@@ -174,6 +175,8 @@ export default {
             _this.example.result = info;
             _this.exampleRes.splice(3,_this.exampleRes.length-3,{'result': info});
           }else{
+            alert('请上传身份证图片');
+            common.refresh(_this);
             _this.example.result = {};
             _this.exampleRes.splice(3,_this.exampleRes.length-3,{'result': {}});
           }
@@ -184,10 +187,13 @@ export default {
       .catch(function (error) {
         console.log('error');
         console.log(error);
+        alert('网络异常,请刷新页面');
+        common.refresh(_this);
       });
     }
   },
-  mounted () {
+  created () {
+    localStorage.setItem('experienceId','ocrExp');
     var _this = this;
     this.axios.interceptors.request.use(function(config){
       console.log("request init.");
@@ -210,7 +216,7 @@ export default {
   padding: 108px 200px 0;
 }
 .expBtnG{
-  padding-top: 120px;
+  padding-top: 80px;
   text-align: center;
 }
 .btnG{
