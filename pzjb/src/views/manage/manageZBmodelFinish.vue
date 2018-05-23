@@ -38,12 +38,12 @@
             <div class="col">
               <i class="modelLabel">校验时效性: </i>
               <input v-if="edit" type="text" v-model="obj.base.checkTime">
-              <span v-else>{{obj.base.apiKey}}</span>
+              <span v-else>{{obj.base.checkTime}}</span>
             </div>
             <div class="col">
               <i class="modelLabel">校验次数: </i>
               <input v-if="edit" type="text" v-model="obj.base.checkCount">
-              <span v-else>{{obj.base.secretKey}}</span>次
+              <span v-else>{{obj.base.checkCount}}</span>次
             </div>
             <div class="col"></div>
           </div>
@@ -182,16 +182,16 @@ export default {
       },
       obj: {
         base: {
-          name: '众包',
+          name: '快递单',
           id: '1234567890QWER',
           state: '生效中',
-          date: '2018年1月12日',
-          apiKey: 'xxxxxxxxxxxxxxxxxx',
-          secretKey: 'xxxxxxxxxxxxxxxxxxxx',
+          date: '2018年5月22日',
+          apiKey: '4241231215153',
+          secretKey: '6436725721341231',
           count: '1-10000',
           month: '3',
           price: '0.5',
-          checkTime: 'T+1',
+          checkTime: '3小时',
           checkCount: '3'
         },
         process: {

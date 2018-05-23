@@ -127,7 +127,7 @@ export default {
     return {
       radio: '0',
       value6: '',
-      title: '我的自定义模板',
+      title: '飞机票',
       edit: false,
       region: {
         '10000': "1-10000",
@@ -140,9 +140,9 @@ export default {
           name: '行驶证',
           id: '23457321',
           state: '生效中',
-          date: '2018年1月12日',
-          apiKey: 'xxxxxxxxxxxxxxxxxx',
-          secretKey: 'xxxxxxxxxxxxxxxxxxxx',
+          date: '2018年5月22日',
+          apiKey: '8547345434',
+          secretKey: '1423132543565473',
           count: '10000-50000',
           month: '3',
           price: '0.17-0.2',

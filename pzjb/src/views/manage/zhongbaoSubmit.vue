@@ -4,8 +4,8 @@
       <Col span="22" offset="" >申请众包录入服务</Col>
     </div>
     <Row style="padding:40px 20px 160px 20px;text-align:center;">
-      <img src="../assets/images/开通完成.png" style="width:100%;margin-bottom:200px;">
-      <img class="img" src="../assets/images/申请成功提交icon.png" alt="">
+      <img src="../../assets/images/开通完成.png" style="width:100%;margin-bottom:200px;">
+      <img class="img" src="../../assets/images/申请成功提交icon.png" alt="">
       <!-- <Icon type="checkmark-circled" size="40" color="#00c802" /> -->
       <Col class="mes">您的众包录入服务申请已成功提交，审核结果将于7个工作日内反馈，请于控制台查询。</Col>
       <Button class="btn" type="primary" @click="clickFn">确定</Button>
