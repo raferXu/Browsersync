@@ -39,7 +39,6 @@
 </template>
 
 <script>
-import sfz from './components/sfz'
 import jbfooter from './components/jbfooter'
 export default {
   name: 'App',
@@ -82,7 +81,7 @@ export default {
     }
   },
   components: {
-    sfz,jbfooter
+    jbfooter
   },
   created(){
     console.log('this.$route.name');
