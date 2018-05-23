@@ -963,10 +963,7 @@ export default {
   }
 }
 </script>
-<style >
-.ivu-card-body{
-    padding:0;
-}
+<style scoped>
 .img{
     list-style:none;
     height: 377px;
@@ -987,6 +984,45 @@ export default {
 .list_info{
     text-align: left ;
 }
+.btn1{width:130px;height:54px;font-size:20px;margin-right:40px;}
+.paint_mes{
+    font-size:18px;
+}
+.title{
+    font-size:20px;height:90px;line-height:90px;padding-left:40px;border-bottom:1px solid #f5f5f5;
+}
+.pop-content{
+    width:164px;
+    margin: 0;
+    padding:0;
+    white-space: normal;
+    font-size:14px;
+}
+</style>
+
+<style >
+.ivu-card-body{
+    padding:0;
+}
+/* .img{
+    list-style:none;
+    height: 377px;
+    overflow-y:auto;
+}
+.list2{
+    cursor: pointer;
+    border: 2px solid rgba(0,0,0,0);  
+
+}
+.list2:hover{
+    border: 2px solid #e4393c;  
+}
+.files{
+    margin-bottom:5px;
+}
+.list_info{
+    text-align: left ;
+} */
 .ivu-tabs .ivu-tabs-bar {
         display: none;
     }
@@ -1008,7 +1044,7 @@ export default {
 .ivu-form-item{
     margin-bottom: 20px;
 }
-.btn1{width:130px;height:54px;font-size:20px;margin-right:40px;}
+/* .btn1{width:130px;height:54px;font-size:20px;margin-right:40px;} */
 .ivu-upload-drag{
     border:none;
     
@@ -1064,25 +1100,25 @@ export default {
     background:#f5f5f5;
     outline:none;
 }
-.paint_mes{
+/* .paint_mes{
     font-size:18px;
-}
+} */
 .ivu-radio-group-button.ivu-radio-group-large .ivu-radio-wrapper,textarea.ivu-input{
     font-size: 12px;
 }
-.title{
+/* .title{
     font-size:20px;height:90px;line-height:90px;padding-left:40px;border-bottom:1px solid #f5f5f5;
-}
+} */
 .ivu-steps,.ivu-steps .ivu-steps-head,.ivu-steps-item.ivu-steps-status-wait .ivu-steps-head-inner{
     background:#f5f5f5;
 }
-.pop-content{
+/* .pop-content{
     width:164px;
     margin: 0;
     padding:0;
     white-space: normal;
     font-size:14px;
-}
+} */
 .ivu-poptip-body{
     padding:20px;
 }

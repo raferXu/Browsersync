@@ -31,7 +31,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
     .mes{
       font-size:18px;
       margin-top:80px;
@@ -45,10 +45,18 @@ export default {
       border:1px solid #0090ff;
       color:#0090ff;
     }
-    .title{border:1px solid #eee;height:80px;font-size:20px;line-height:80px;}
-    /* .title{border:1px solid #eee;height:80px;font-size:20px;line-height:80px;} */
-     .title1{padding-left:40px;}
+    .title{
+      padding-left: 40px;
+      border:1px solid #eee;
+      height:80px;
+      font-size:20px;
+      line-height:80px;
+    }
+     .title1{
+       padding-left:40px;
+     }
      .img{
-       width:229px;height:134px;
+       width:229px;
+       height:134px;
      }
 </style>

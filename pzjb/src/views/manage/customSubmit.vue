@@ -31,7 +31,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
     .mes{
       font-size:18px;
       margin-top:80px;

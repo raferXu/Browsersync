@@ -4,8 +4,8 @@
           <img class="mediaImg" :src="mediaData.url" alt="mediaImg">
       </div>
       <div class="txtBox">
-          <h3 class="mainH3B pt40 pb40">{{mediaData.title}}</h3>
-          <p class="mainTxtB">{{mediaData.txt}}</p>
+          <h3 class="mainH3B pt40 pb40" :style="overridingStyles">{{mediaData.title}}</h3>
+          <p class="mainTxtB" :style="overridingStyles">{{mediaData.txt}}</p>
       </div>
   </div>
 </template>
@@ -13,7 +13,14 @@
 <script>
 export default {
   name: '',
-  props: ['mediaData'],
+  props: {
+      mediaData: {
+          default: {}
+      },
+      overridingStyles: {
+          default: {}
+      }
+  },
   data () {
     return {
     }

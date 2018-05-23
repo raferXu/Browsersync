@@ -1,7 +1,7 @@
 <template>
   <div class="standardWrap">
     <h3 class="mainH3B pb80 tc">{{standardData.title}}</h3>
-    <p class="mainTxtB pb40">{{standardData.txt}}</p>
+    <p class="mainTxtB pb40 tl">{{standardData.txt}}</p>
     <div class="imgBox">
       <img class="standardImg" :src="standardData.url" alt="standardImg">
     </div>

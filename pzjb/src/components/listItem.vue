@@ -26,6 +26,7 @@ export default {
   
 }
 .mainTxtB{
+  text-align: left;
   color:#828282;
 }
 .pt40{

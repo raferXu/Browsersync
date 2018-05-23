@@ -946,10 +946,7 @@ export default {
   }
 }
 </script>
-<style>
-.ivu-card-body{
-    padding:0;
-}
+<style scoped>
 .img{
     list-style:none;
     height: 377px;
@@ -970,6 +967,27 @@ export default {
 }
 .list_info{
     text-align: left ;
+}
+.btn1{width:130px;height:54px;font-size:20px;margin-right:40px;}
+
+.title{
+    font-size:20px;height:90px;line-height:90px;padding-left:40px;
+}
+.pop-content{
+    width:164px;
+    margin: 0;
+    padding:0;
+    white-space: normal;
+    font-size:14px;
+}
+.paint_mes{
+    font-size:18px;
+}
+</style>
+
+<style>
+.ivu-card-body{
+    padding:0;
 }
 .ivu-tabs .ivu-tabs-bar {
         display: none;
@@ -992,7 +1010,6 @@ export default {
 .ivu-form-item{
     margin-bottom: 20px;
 }
-.btn1{width:130px;height:54px;font-size:20px;margin-right:40px;}
 .ivu-upload-drag{
     border:none;
     
@@ -1000,9 +1017,6 @@ export default {
 }
 .ivu-upload-drag:hover{
     border:none;
-}
-#uploadm .ivu-upload-drag{
-    /* background:#f5f5f5; */
 }
 .ivu-form-item-label{
     height:100%;
@@ -1048,25 +1062,14 @@ export default {
     background:#f5f5f5;
     outline:none;
 }
-.paint_mes{
-    font-size:18px;
-}
+
 .ivu-radio-group-button.ivu-radio-group-large .ivu-radio-wrapper,textarea.ivu-input{
     font-size: 12px;
-}
-.title{
-    font-size:20px;height:90px;line-height:90px;padding-left:40px;
 }
 .ivu-steps,.ivu-steps .ivu-steps-head,.ivu-steps-item.ivu-steps-status-wait .ivu-steps-head-inner{
     background:#f5f5f5;
 }
-.pop-content{
-    width:164px;
-    margin: 0;
-    padding:0;
-    white-space: normal;
-    font-size:14px;
-}
+
 .ivu-poptip-body{
     padding:20px;
 }
