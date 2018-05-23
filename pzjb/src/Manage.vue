@@ -91,22 +91,6 @@ export default {
                     txt: '身份证识别',
                     to: '/manageIdCardIndex'
                 },
-                // {
-                //     txt: '银行卡',
-                //     to: '/manageBankCardFinish'
-                // },
-                // {
-                //     txt: '行驶证',
-                //     to: '/manageDrivingCardFinish'
-                // },
-                // {
-                //     txt: '驾驶证',
-                //     to: '/manageVehicleCardFinish'
-                // },
-                // {
-                //     txt: '医疗票据(上海)',
-                //     to: '/approvaling'
-                // },
                 {
                     txt: '定制化识别服务',
                     to: '/manageCustomModelIndex'

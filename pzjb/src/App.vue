@@ -18,7 +18,6 @@
                 </ul>
               <!-- </router-link> -->
               </li>
-              <!-- <router-link tag="li" :to="{path: '/techExperience',query: {to:'OCR文字识别'}}">技术体验</router-link> -->
               <router-link tag="li" to="/techExperience">技术体验</router-link>
               <li>开发者中心</li>
               <li>合作咨询</li>
@@ -54,54 +53,6 @@ export default {
         },
         right: {
 
-        },
-        main: {
-          pro: {
-            normal: [
-              {
-                name: 'OCR文字识别',
-                path: '/ocrPro'
-              },
-              {
-                name: '众包业务',
-                path: '/zbPro'
-              }
-            ]
-          },
-          tech: {
-            ocr: [
-              {
-                name: '身份证',
-                path: '/idCard'
-              },
-              {
-                name: '银行卡',
-                path: '/bankCard'
-              },
-              {
-                name: '行驶证',
-                path: '/drivingCard'
-              },
-              {
-                name: '驾驶证',
-                path: '/vehicleCard'
-              },
-              {
-                name: '医疗票据(上海)',
-                path: '/hospitalBill'
-              },
-              {
-                name: '自定义OCR模板',
-                path: '/customizedOCR'
-              }
-            ],
-            zb: [
-              {
-                name: '众包',
-                path: '/crowdsourcing'
-              }
-            ]
-          }
         }
       }
     }
