@@ -18,7 +18,10 @@ export default {
           default: {}
       },
       overridingStyles: {
-          default: {}
+          type: Object,
+          default: function () {
+              return {}
+          }
       }
   },
   data () {

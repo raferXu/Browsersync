@@ -58,6 +58,8 @@ export default {
     console.log('scrollTo');
     window.scrollTo(0,0)
   },
+  computed: {
+  },
   components: {
     bannerBox,
     standard,

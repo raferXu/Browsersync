@@ -33,31 +33,30 @@
         <div class="rechargeStepTwoBox">
           <h5 class="mb40 fs24">2.填写您的汇款信息</h5>
           <div>
-            <el-form ref="form" :model="recharge" label-width="120px">
-              <el-form-item label="汇款银行">
-                <el-input v-model="recharge.remittance_bank"></el-input>
-              </el-form-item>
-              <el-form-item label="汇款帐号">
-                <el-input v-model="recharge.remittance_account"></el-input>
-              </el-form-item>
-              <el-form-item label="汇款金额">
-                <el-input v-model="recharge.remittance_amount"></el-input>
-              </el-form-item>
-              <el-form-item label="汇款日期">
-                <!-- <el-input v-model="form.date"></el-input> -->
-                <el-date-picker
+            <Form ref="form" :model="recharge" :label-width="120">
+              <FormItem label="汇款银行">
+                <Input v-model="recharge.remittance_bank"></Input>
+              </FormItem>
+              <FormItem label="汇款帐号">
+                <Input v-model="recharge.remittance_account"></Input>
+              </FormItem>
+              <FormItem label="汇款金额">
+                <Input v-model="recharge.remittance_amount"></Input>
+              </FormItem>
+              <FormItem label="汇款日期">
+                <DatePicker
                   v-model="recharge.remittance_date"
                   type="date"
                   placeholder="选择日期" style="width: 100%;">
-                </el-date-picker>
-              </el-form-item>
-              <el-form-item label="汇款人">
-                <el-input v-model="recharge.remitter"></el-input>
-              </el-form-item>
-              <el-form-item label="汇款人手机">
-                <el-input v-model="recharge.remitter_phone_number"></el-input>
-              </el-form-item>
-              <el-form-item label="汇款凭证">
+                </DatePicker>
+              </FormItem>
+              <FormItem label="汇款人">
+                <Input v-model="recharge.remitter"></Input>
+              </FormItem>
+              <FormItem label="汇款人手机">
+                <Input v-model="recharge.remitter_phone_number"></Input>
+              </FormItem>
+              <FormItem label="汇款凭证">
                 <div class="proofBox">
                   <div class="proofImgBox">
                     <img v-if="recharge.remittance_pic" :src="recharge.remittance_pic" alt="proofImg" class="proofImg">
@@ -66,19 +65,18 @@
                     <div class="fileNameBox">{{recharge.remittance_pic}}</div>
                     <div class="fileInputBox">
                       <input class="urlBtn" type="button" value="本地上传">
-                      <input ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
+                      <input accept="image/jpg,image/jpeg,image/png,application/pdf" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
                     </div>
                   </div>
                   <div class="proofInfoBox">
                     提示: 请上传大小不超过3MB的JPG/PNG/PDF格式的单据
                   </div>
                 </div>
-              </el-form-item>
-              <el-form-item>
-                <el-button type="primary" @click="onSubmit">确认充值</el-button>
-                <!-- <el-button @click="returnPage">返回</el-button> -->
-              </el-form-item>
-            </el-form>
+              </FormItem>
+              <FormItem>
+                <Button type="primary" @click="onSubmit">确认充值</Button>
+              </FormItem>
+            </Form>
           </div>
         </div>
       </div>
@@ -183,6 +181,7 @@ export default {
   }
 }
 </script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

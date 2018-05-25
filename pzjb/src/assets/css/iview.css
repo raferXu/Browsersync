@@ -1,0 +1,14 @@
+.ivu-input,
+.ivu-form-item-content,
+.ivu-form .ivu-form-item-label,
+.ivu-select-single .ivu-select-selection,
+.ivu-select-single .ivu-select-selection .ivu-select-placeholder,
+.ivu-select-single .ivu-select-selection .ivu-select-selected-value {
+    height: 54px;
+    line-height: 54px;
+}
+
+.ivu-form .ivu-form-item-label {
+    padding-top: 0;
+    padding-bottom: 0;
+}

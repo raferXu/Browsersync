@@ -1,25 +1,43 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import manageIndex from '@/views/manage/manage'
-import orderPay from '@/views/manage/orderPay'
-import rechargePage from '@/views/manage/rechargePage'
+// import manageIndex from '@/views/manage/manage'
+// import orderPay from '@/views/manage/orderPay'
+// import rechargePage from '@/views/manage/rechargePage'
 
-import manageIdCardIndex from '@/views/manage/manageIdCardIndex'
-import OCRmodel from '@/views/manage/OCRmodel'
-import manageIdCardFinish from '@/views/manage/manageIdCardFinish'
+// import manageIdCardIndex from '@/views/manage/manageIdCardIndex'
+// import OCRmodel from '@/views/manage/OCRmodel'
+// import manageIdCardFinish from '@/views/manage/manageIdCardFinish'
 
-import manageZBmodelIndex from '@/views/manage/manageZBmodelIndex'
-import ZBmodel from '@/views/manage/ZBmodel'
-import zhongbaoSubmit from '@/views/manage/zhongbaoSubmit'
-import ZBmodelApprovaling from '@/views/manage/ZBmodelApprovaling'
-import manageZBmodelFinish from '@/views/manage/manageZBmodelFinish'
+// import manageZBmodelIndex from '@/views/manage/manageZBmodelIndex'
+// import ZBmodel from '@/views/manage/ZBmodel'
+// import zhongbaoSubmit from '@/views/manage/zhongbaoSubmit'
+// import ZBmodelApprovaling from '@/views/manage/ZBmodelApprovaling'
+// import manageZBmodelFinish from '@/views/manage/manageZBmodelFinish'
 
-import manageCustomModelIndex from '@/views/manage/manageCustomModelIndex'
-import manageCustomDevIndex from '@/views/manage/manageCustomDevIndex'
-import customSubmit from '@/views/manage/customSubmit'
-import manageCustomDevApprovaling from '@/views/manage/manageCustomDevApprovaling'
-import manageCustomDevFinish from '@/views/manage/manageCustomDevFinish'
+// import manageCustomModelIndex from '@/views/manage/manageCustomModelIndex'
+// import manageCustomDevIndex from '@/views/manage/manageCustomDevIndex'
+// import customSubmit from '@/views/manage/customSubmit'
+// import manageCustomDevApprovaling from '@/views/manage/manageCustomDevApprovaling'
+// import manageCustomDevFinish from '@/views/manage/manageCustomDevFinish'
+
+const manageIndex = resolve => require(['../views/manage/manage.vue'], resolve)
+const orderPay = resolve => require(['../views/manage/orderPay.vue'], resolve)
+const rechargePage = resolve => require(['../views/manage/rechargePage.vue'], resolve)
+const manageIdCardIndex = resolve => require(['../views/manage/manageIdCardIndex.vue'], resolve)
+const OCRmodel = resolve => require(['../views/manage/OCRmodel.vue'], resolve)
+const manageIdCardFinish = resolve => require(['../views/manage/manageIdCardFinish.vue'], resolve)
+const manageZBmodelIndex = resolve => require(['../views/manage/manageZBmodelIndex.vue'], resolve)
+const ZBmodel = resolve => require(['../views/manage/ZBmodel.vue'], resolve)
+const zhongbaoSubmit = resolve => require(['../views/manage/zhongbaoSubmit.vue'], resolve)
+const ZBmodelApprovaling = resolve => require(['../views/manage/ZBmodelApprovaling.vue'], resolve)
+const manageZBmodelFinish = resolve => require(['../views/manage/manageZBmodelFinish.vue'], resolve)
+const manageCustomModelIndex = resolve => require(['../views/manage/manageCustomModelIndex.vue'], resolve)
+const manageCustomDevIndex = resolve => require(['../views/manage/manageCustomDevIndex.vue'], resolve)
+const customSubmit = resolve => require(['../views/manage/customSubmit.vue'], resolve)
+const manageCustomDevApprovaling = resolve => require(['../views/manage/manageCustomDevApprovaling.vue'], resolve)
+const manageCustomDevFinish = resolve => require(['../views/manage/manageCustomDevFinish.vue'], resolve)
+
 
 Vue.use(Router)
 export default new Router({

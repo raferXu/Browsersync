@@ -90,26 +90,21 @@
       </div>
       <div class="table APIWrap">
         <h4 class="">
-          <el-row class="modelTitle APITitle">
-           <el-col :span="6">
+          <Row class="modelTitle APITitle">
+           <Col span="6">
              <h4 class="">API监控</h4>
-           </el-col>
-           <el-col :span="18" class="tr">
-             <el-radio v-model="radio" label="0">小时</el-radio>
-             <el-radio v-model="radio" label="1">日</el-radio>
-             <el-radio v-model="radio" label="2">月</el-radio>
-             <el-radio v-model="radio" label="3">自定义</el-radio>
-             <el-date-picker
-              v-model="value6"
-              type="daterange"
-              range-separator="至"
-              start-placeholder="2018-5-2"
-              end-placeholder="2018-5-2"
-              style="margin-left:30px;"
-              >
-             </el-date-picker>
-           </el-col>
-         </el-row>
+           </Col>
+           <Col span="18" class="tr">
+             <RadioGroup v-model="time">
+              <Radio label="小时"></Radio>
+              <Radio label="日"></Radio>
+              <Radio label="月"></Radio>
+              <Radio label="自定义"></Radio>
+            </RadioGroup>
+            <DatePicker format="yyyy/MM/dd" type="daterange" placement="bottom-end" v-model="value6" placeholder="Select date" style="width: 300px">
+            </DatePicker>
+           </Col>
+          </Row>
         </h4>
         <div class="APIBox">
          <div id="main" style="width: 100%;height:300px;"> </div>
@@ -125,8 +120,8 @@ export default {
   name: '',
   data () {
     return {
-      radio: '0',
-      value6: '',
+      time: '小时',
+      value6: ['',''],
       title: '身份证',
       edit: false,
       region: {

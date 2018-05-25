@@ -87,7 +87,18 @@ export default {
     console.log('this.$route.name');
     console.log(this.$route.name);
     console.log(this.$route);
-  }
+  },
+  watch:{
+        '$route':function(to,from){
+          console.log('watch $route');
+          let token = window.localStorage.getItem('token');
+　　　　　　if (to.matched.some(record => record.meta.requiresAuth) && (!token || token === null)) {
+　　　　　　　　console.log('没有登录')
+　　　　　　} else {
+　　　　　　   console.log('无需登陆或已登录')
+　　　　　　}
+  　　　}
+　}
 }
 </script>
 

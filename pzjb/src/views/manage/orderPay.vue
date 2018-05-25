@@ -6,13 +6,12 @@
         <h4>请选择您的支付方式: </h4>
         <div class="accountBox">
           <p class="moneyWrap">
-            <el-radio v-model="radio" label="1">使用账户余额</el-radio>
+            <Radio v-model="radio">使用账户余额</Radio>
             <span class="moneyBox">¥ {{money}}</span>
           </p>
           <p class="noEnoughBox" v-if="enough"></p>
           <p class="noEnoughBox noEnoughTips" v-else>你的余额不足，请充值！</p>
         </div>
-        
       </div>
       <div class="payView">
         <h4 class="mb40">预扣费</h4>
@@ -24,15 +23,13 @@
         </div>
         <div class="sumBox">
           <h4>总计: {{this.account.sum}}元 </h4>
-          <!-- <span>(月调用费 x 预计调用量 x 预计使用时长 x 120%)</span> -->
           <p><i>*</i> 此价格为预扣费的金额，最终花费以实际用量为准。</p>
         </div>
-        
       </div>
     </div>
     <div class="btnGBox">
-      <el-button type="primary" class="btn1" v-if="enough" @click="payNow">确认</el-button>
-      <el-button type="primary" v-else @click="toRecharge">充值</el-button>
+      <Button type="primary" class="btn1" v-if="enough" @click="payNow">确认</Button>
+      <Button type="primary" v-else @click="toRecharge">充值</Button>
     </div>
   </div>
 </template>
@@ -45,7 +42,7 @@ export default {
   data() {
     return {
       enough: true,
-      radio: '1',
+      radio: true,
       money: 0,
       account: {
         
