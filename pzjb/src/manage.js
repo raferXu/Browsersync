@@ -6,11 +6,13 @@ import './assets/css/iview.css'
 import Vue from 'vue'
 import Manage from './Manage.vue'
 import router from './router/manage.js'
-import axios from 'axios'
-import global_ from './Global.vue'
 
-Vue.prototype.GLOBAL = global_;
-axios.defaults.baseURL = global_.BASE_URL;
+// import axios from 'axios'
+// import global_ from './Global.vue'
+// Vue.prototype.GLOBAL = global_;
+// axios.defaults.baseURL = global_.BASE_URL;
+
+import axios from './http/index'
 
 import echarts from 'echarts'
 

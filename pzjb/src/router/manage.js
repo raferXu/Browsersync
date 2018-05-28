@@ -37,6 +37,7 @@ const manageCustomDevIndex = resolve => require(['../views/manage/manageCustomDe
 const customSubmit = resolve => require(['../views/manage/customSubmit.vue'], resolve)
 const manageCustomDevApprovaling = resolve => require(['../views/manage/manageCustomDevApprovaling.vue'], resolve)
 const manageCustomDevFinish = resolve => require(['../views/manage/manageCustomDevFinish.vue'], resolve)
+const loginPage = resolve => require(['../views/common/login.vue'], resolve)
 
 
 Vue.use(Router)
@@ -127,6 +128,11 @@ export default new Router({
             path: '/manageCustomModelIndex',
             name: 'manageCustomModelIndex',
             component: manageCustomModelIndex
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: loginPage
         }
     ]
 })

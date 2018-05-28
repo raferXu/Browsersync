@@ -20,7 +20,7 @@ const idCard = resolve => require(['../views/index/idCard.vue'], resolve)
 const customizedOCR = resolve => require(['../views/index/customizedOCR.vue'], resolve)
 const crowdsourcing = resolve => require(['../views/index/crowdsourcing.vue'], resolve)
 const techExperience = resolve => require(['../views/index/techExperience.vue'], resolve)
-const loginPage = resolve => require(['../views/index/login.vue'], resolve)
+const loginPage = resolve => require(['../views/common/login.vue'], resolve)
 
 Vue.use(Router)
 
@@ -64,7 +64,8 @@ const router = new Router({
             path: '/crowdsourcing',
             name: 'crowdsourcing',
             component: crowdsourcing
-        }, {
+        },
+        {
             path: '/login',
             name: 'login',
             component: loginPage
@@ -74,6 +75,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
     console.log('router.beforeEach');
+    console.log(to);
     let token = window.localStorage.getItem('token')
     if (to.matched.some(record => record.meta.requiresAuth) && (!token || token === null)) {
         next({

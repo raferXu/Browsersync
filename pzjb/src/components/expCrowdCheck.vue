@@ -187,6 +187,7 @@ export default {
   methods: {
     getAppAnswer(flag){
       var _this = this;
+      var nowIndex = this.imgIndex;
       _this.axios({
         url: '/token/experience_results/ocr',
         method: 'post'
@@ -197,7 +198,7 @@ export default {
           _this.ocrResultArr = data.body.res;
           if(_this.ocrResultArr.length>0){
             console.log('ocrResultArr有数据');
-            _this.ocrResult = data.body.res[_this.imgIndex];
+            _this.ocrResult = data.body.res[nowIndex];
             if(flag==1){
               console.log('页面刷新了，获取列表');
               var NowImgArr = [];
@@ -232,14 +233,14 @@ export default {
                 });
               }
               _this.tryObj.showImgArr = NowImgArr;
-              _this.tryObj.bigImg = NowImgArr[_this.imgIndex];
+              _this.tryObj.bigImg = NowImgArr[nowIndex];
               _this.othersList = NowOthersList;
-              _this.others = NowOthersList[_this.imgIndex];
+              _this.others = NowOthersList[nowIndex];
               _this.exampleRes = NowExampleRes;
             }else{
               console.log('图片上传');
             }
-            _this.checkAppResult();
+            _this.checkAppResult(nowIndex);
           }else{
             console.log('返回的ocrResultArr为空数组,新用户初始化状态');
           }
@@ -247,8 +248,6 @@ export default {
           console.log('experience_results/ocr data.code: '+data.code);
           alert('网络异常，请刷新页面');
           common.refresh(_this);
-          
-          // location.reload();
         }
       })
       .catch(function (error) {
@@ -256,10 +255,9 @@ export default {
         console.log(error);
         alert('网络异常，请刷新页面');
         common.refresh(_this);
-        // location.reload();
       });
     },
-    checkAppResult(){
+    checkAppResult(nowIndex){
       var _this = this;
       // Cannot read property 'ID_HaoMa' of undefined
       console.log(_this.ocrResult);
@@ -270,22 +268,22 @@ export default {
             if(_this.ocrResult["ID_HaoMa"]["zb_result"]&&_this.ocrResult["ID_XingMing"]["zb_result"]){
               console.log('姓名和身份证app结果都有了');
               _this.others.step = 2;
-              _this.othersList[_this.imgIndex].step = 2;
+              _this.othersList[nowIndex].step = 2;
             }else{
               console.log('姓名和身份证还没全部返回结果');
               _this.others.step = 1;
-              _this.othersList[_this.imgIndex].step = 1;
+              _this.othersList[nowIndex].step = 1;
             }
           }else{
             console.log('只校验身份证字段');
             if(_this.ocrResult["ID_HaoMa"]["zb_result"]){
               console.log('身份证app结果有了');
               _this.others.step = 2;
-              _this.othersList[_this.imgIndex].step = 2;
+              _this.othersList[nowIndex].step = 2;
             }else{
               console.log('身份证app结果还没返回');
               _this.others.step = 1;
-              _this.othersList[_this.imgIndex].step = 1;
+              _this.othersList[nowIndex].step = 1;
             }
           }
         }else if(_this.ocrResult["ID_XingMing"]){
@@ -293,29 +291,27 @@ export default {
           if(_this.ocrResult["ID_XingMing"]["zb_result"]){
             console.log('姓名app结果有了');
             _this.others.step = 2;
-            _this.othersList[_this.imgIndex].step = 2;
+            _this.othersList[nowIndex].step = 2;
           }else{
             console.log('姓名app结果还没返回');
             _this.others.step = 1;
-            _this.othersList[_this.imgIndex].step = 1;
+            _this.othersList[nowIndex].step = 1;
           }
         }
       }
     },
     showBigImg(i){
-      this.imgIndex = i;
-      this.others = this.othersList[i];
-      this.ocrResult = this.ocrResultArr[i];
-      // if(this.ocrResult){
-        this.checkAppResult();
-      // }
-      this.tryObj.bigImg = this.tryObj.showImgArr[i];
-      this.others.step = this.othersList[this.imgIndex].step;
-      this.example = this.exampleRes[i];
+      var nowIndex = i;
+      this.imgIndex = nowIndex;
+      this.others = this.othersList[nowIndex];
+      this.ocrResult = this.ocrResultArr[nowIndex];
+      this.checkAppResult(nowIndex);
+      this.tryObj.bigImg = this.tryObj.showImgArr[nowIndex];
+      this.others.step = this.othersList[nowIndex].step;
+      this.example = this.exampleRes[nowIndex];
     },
     ocrFn(obj,fileName){
       var _this = this;
-      console.log(_this.imgIndex);  //10
       var nowOcrImgIndex = _this.imgIndex;
       let data = new FormData();
       data.append('file', obj);
@@ -369,7 +365,6 @@ export default {
           _this.othersList[nowOcrImgIndex].coordinateFlag = false;
           alert('网络异常，请刷新页面');
           common.refresh(_this);
-          // location.reload();
         }
       })
       .catch(function (error) {
@@ -428,7 +423,6 @@ export default {
     },
     upload_files(obj){
       var _this = this;
-      console.log(_this.imgIndex)
       var nowImgIndex = _this.imgIndex;
       let formdata = new FormData();
       formdata.append('files',obj);
@@ -442,7 +436,6 @@ export default {
             var resData = res.data;
             if(resData.code==200){
               _this.others.uploadFlag = true;
-              console.log(_this.imgIndex)
               _this.othersList[nowImgIndex].uploadFlag = true;
               _this.others["pic_url"] = resData.body["url_list"][0];
               _this.othersList[nowImgIndex]["pic_url"] = resData.body["url_list"][0];
@@ -465,7 +458,7 @@ export default {
       }); 
     },
     submitToCheck(){
-      
+      var nowIndex = this.imgIndex;
       console.log('submitToCheck确认提交按钮被点击了 '+this.hasClickSubmit);
       if(this.hasClickSubmit){
         console.log('确认提交按钮被点击,请求提交未返回');
@@ -479,7 +472,7 @@ export default {
         console.log(localStorage.getItem('crowdsourcingExp'));
         return;
       }
-      if(this.exampleRes[this.imgIndex]['ID_HaoMa']['score']=='666'){
+      if(this.exampleRes[nowIndex]['ID_HaoMa']['score']=='666'){
         console.log('算法接口返回空，上传的不是身份证');
         alert('请上传身份证图片');
         this.hasClickSubmit = false;
@@ -493,15 +486,15 @@ export default {
         for(var i=0;i<this.checkedNames.length;i++){
           var obj = {};
           obj.type = this.checkedNames[i];
-          var info = this.exampleRes[this.imgIndex][this.checkedNames[i]];
+          var info = this.exampleRes[nowIndex][this.checkedNames[i]];
           obj['alg_answer'] = info['text'];
           obj['square'] = [info['xmin'],info['ymin'],info['xmax'],info['ymax']];
           this.task.task_infos.push(obj);
         }
         
-        this.task.pic_url = this.othersList[this.imgIndex].pic_url;
+        this.task.pic_url = this.othersList[nowIndex].pic_url;
         this.others.step = 1;
-        this.othersList[this.imgIndex].step = 1;
+        this.othersList[nowIndex].step = 1;
 
         this.axios({
           url: '/token/add_orc_zb_task',
@@ -522,7 +515,6 @@ export default {
           console.log(error);
           alert('网络异常，请刷新页面');
           common.refresh(_this);
-          // location.reload();
         })
       }else{
         alert('请选择字段');

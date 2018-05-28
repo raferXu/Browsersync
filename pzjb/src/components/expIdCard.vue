@@ -64,7 +64,7 @@
     <div class="expBtnG">
         <span class="uploadBtn btnG">
           图片上传
-          <input accept="image/bmp,image/jpeg,image/jpg,image/png" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
+          <input v-if="fileInputFlag" accept="image/bmp,image/jpeg,image/jpg,image/png" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
         </span>
       </div>
   </div>
@@ -76,6 +76,7 @@ export default {
   name: '',
   data () {
     return {
+      fileInputFlag: true,
       infoBoxStyle: {
         backgroundSize: '100% 100%',
         backgroundRepeat: 'no-repeat',
@@ -124,17 +125,19 @@ export default {
   },
   methods: {
     showBigImg(i){
-      this.imgIndex = i;
-      this.example = this.exampleRes[i];
-      this.tryObj.bigImg = this.tryObj.showImgArr[i];
+      var nowIndex = i;
+      this.imgIndex = nowIndex;
+      this.example = this.exampleRes[nowIndex];
+      this.tryObj.bigImg = this.tryObj.showImgArr[nowIndex];
     },
     fileUpload(e){
-      this.imgIndex = 3;
+      var insertNum = 3;
+      this.imgIndex = insertNum;
       var _this = this;
       var obj = _this.$refs.fileInput.files[0];
       var objUrl = window.URL.createObjectURL(obj);
       this.tryObj.bigImg = objUrl;
-      this.tryObj.showImgArr.splice(3,this.tryObj.showImgArr.length-3,''+objUrl);
+      this.tryObj.showImgArr.splice(insertNum,this.tryObj.showImgArr.length-insertNum,''+objUrl);
 
       var image = new Image();   
       image.onload =function(){  
@@ -167,25 +170,28 @@ export default {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       }).then(function (response) {
+        var info = {};
         if(response.status==200){
           var data = response.data;
-          _this.responseTxt = data
+          _this.responseTxt = data;
           if(data.code==200){
-            var info = data.info;
-            _this.example.result = info;
-            _this.exampleRes.splice(3,_this.exampleRes.length-3,{'result': info});
+            info = data.info;
           }else{
             alert('请上传身份证图片');
             common.refresh(_this);
-            _this.example.result = {};
-            _this.exampleRes.splice(3,_this.exampleRes.length-3,{'result': {}});
           }
         }else{
           console.log('response.status: '+response.status)
         }
+        _this.example.result = info;
+        _this.exampleRes.splice(insertNum,_this.exampleRes.length-insertNum,{'result': info});
+        _this.fileInputFlag = false;
+        _this.$nextTick(()=>{
+          _this.fileInputFlag = true;
+        });
       })
       .catch(function (error) {
-        console.log('error');
+        console.log('alg/ocr_chanxian_test/identity_card_grab_rec error');
         console.log(error);
         alert('网络异常,请刷新页面');
         common.refresh(_this);
