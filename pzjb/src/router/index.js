@@ -20,14 +20,13 @@ const idCard = resolve => require(['../views/index/idCard.vue'], resolve)
 const customizedOCR = resolve => require(['../views/index/customizedOCR.vue'], resolve)
 const crowdsourcing = resolve => require(['../views/index/crowdsourcing.vue'], resolve)
 const techExperience = resolve => require(['../views/index/techExperience.vue'], resolve)
-const loginPage = resolve => require(['../views/common/login.vue'], resolve)
+const login = resolve => require(['../views/common/login.vue'], resolve)
+const register = resolve => require(['../views/common/register.vue'], resolve)
 
 Vue.use(Router)
 
 // 页面刷新时，重新赋值token
-if (window.localStorage.getItem('token')) {
-    store.commit('loginFn', window.localStorage.getItem('token'))
-}
+store.commit('loginFn', window.localStorage.getItem('token'))
 
 const router = new Router({
     // mode: 'history',
@@ -35,6 +34,11 @@ const router = new Router({
 
     routes: [{
             path: '/',
+            name: 'index',
+            component: index
+        },
+        {
+            path: '/index',
             name: 'index',
             component: index
         },
@@ -68,7 +72,12 @@ const router = new Router({
         {
             path: '/login',
             name: 'login',
-            component: loginPage
+            component: login
+        },
+        {
+            path: '/register',
+            name: 'register',
+            component: register
         }
     ]
 })
@@ -77,7 +86,7 @@ router.beforeEach((to, from, next) => {
     console.log('router.beforeEach');
     console.log(to);
     let token = window.localStorage.getItem('token')
-    if (to.matched.some(record => record.meta.requiresAuth) && (!token || token === null)) {
+    if (to.matched.some(record => record.meta.requiresAuth) && (!token || token === null || token === 'null')) {
         next({
             path: '/login',
             query: {

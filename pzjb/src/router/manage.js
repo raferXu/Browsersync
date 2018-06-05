@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '../store/manage/manage'
 
 // import manageIndex from '@/views/manage/manage'
 // import orderPay from '@/views/manage/orderPay'
@@ -37,102 +38,183 @@ const manageCustomDevIndex = resolve => require(['../views/manage/manageCustomDe
 const customSubmit = resolve => require(['../views/manage/customSubmit.vue'], resolve)
 const manageCustomDevApprovaling = resolve => require(['../views/manage/manageCustomDevApprovaling.vue'], resolve)
 const manageCustomDevFinish = resolve => require(['../views/manage/manageCustomDevFinish.vue'], resolve)
-const loginPage = resolve => require(['../views/common/login.vue'], resolve)
+const login = resolve => require(['../views/common/login.vue'], resolve)
+const register = resolve => require(['../views/common/register.vue'], resolve)
 
 
 Vue.use(Router)
-export default new Router({
+
+// 页面刷新时，重新赋值token
+store.commit('loginFn', window.localStorage.getItem('token'))
+
+const router = new Router({
     // mode: 'history',
     // linkActiveClass: 'active',
     routes: [{
             path: '/',
             name: 'manageIndex',
+            meta: {
+                requiresAuth: true
+            },
             component: manageIndex
         },
         {
             path: '/manageIndex',
             name: 'manageIndex',
+            meta: {
+                requiresAuth: true
+            },
             component: manageIndex
         },
         {
             path: '/zhongbaoSubmit',
             name: 'zhongbaoSubmit',
+            meta: {
+                requiresAuth: true
+            },
             component: zhongbaoSubmit
         },
         {
             path: '/customSubmit',
             name: 'customSubmit',
+            meta: {
+                requiresAuth: true
+            },
             component: customSubmit
         },
         {
             path: '/orderPay',
             name: 'orderPay',
+            meta: {
+                requiresAuth: true
+            },
             component: orderPay
         },
         {
             path: '/rechargePage',
             name: 'rechargePage',
+            meta: {
+                requiresAuth: true
+            },
             component: rechargePage
         },
         {
             path: '/OCRmodel',
             name: 'OCRmodel',
+            meta: {
+                requiresAuth: true
+            },
             component: OCRmodel
         },
         {
             path: '/manageIdCardIndex',
             name: 'manageIdCardIndex',
+            meta: {
+                requiresAuth: true
+            },
             component: manageIdCardIndex
         },
         {
             path: '/manageIdCardFinish',
             name: 'manageIdCardFinish',
+            meta: {
+                requiresAuth: true
+            },
             component: manageIdCardFinish
         },
         {
             path: '/manageCustomDevFinish',
             name: 'manageCustomDevFinish',
+            meta: {
+                requiresAuth: true
+            },
             component: manageCustomDevFinish
         },
         {
             path: '/manageCustomDevApprovaling',
             name: 'manageCustomDevApprovaling',
+            meta: {
+                requiresAuth: true
+            },
             component: manageCustomDevApprovaling
         },
         {
             path: '/manageZBmodelIndex',
             name: 'manageZBmodelIndex',
+            meta: {
+                requiresAuth: true
+            },
             component: manageZBmodelIndex
         },
         {
             path: '/manageZBmodelFinish',
             name: 'manageZBmodelFinish',
+            meta: {
+                requiresAuth: true
+            },
             component: manageZBmodelFinish
         },
         {
             path: '/ZBmodelApprovaling',
             name: 'ZBmodelApprovaling',
+            meta: {
+                requiresAuth: true
+            },
             component: ZBmodelApprovaling
         },
         {
             path: '/ZBmodel',
             name: 'ZBmodel',
+            meta: {
+                requiresAuth: true
+            },
             component: ZBmodel
         },
         {
             path: '/manageCustomDevIndex',
             name: 'manageCustomDevIndex',
+            meta: {
+                requiresAuth: true
+            },
             component: manageCustomDevIndex
         },
         {
             path: '/manageCustomModelIndex',
             name: 'manageCustomModelIndex',
+            meta: {
+                requiresAuth: true
+            },
             component: manageCustomModelIndex
         },
         {
             path: '/login',
             name: 'login',
-            component: loginPage
+            component: login
+        },
+        {
+            path: '/register',
+            name: 'register',
+            component: register
         }
     ]
 })
+
+router.beforeEach((to, from, next) => {
+    console.log('manage router.beforeEach');
+    console.log(to);
+    let token = window.localStorage.getItem('token')
+    if (to.matched.some(record => record.meta.requiresAuth) && (!token || token === null || token === 'null')) {
+        // next({
+        //     path: '/login',
+        //     query: {
+        //         redirect: to.fullPath
+        //     }
+        // })
+        console.log('router文件夹的manage.js里的router.beforeEach函数里判断用户没有登录，需要去登录');
+
+    } else {
+        next()
+    }
+})
+
+export default router

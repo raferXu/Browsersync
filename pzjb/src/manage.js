@@ -1,22 +1,17 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 import css from './assets/css/base.css'
 import './assets/css/iview.css'
 import Vue from 'vue'
+import store from './store/index/index'
 import Manage from './Manage.vue'
 import router from './router/manage.js'
-
-// import axios from 'axios'
-// import global_ from './Global.vue'
-// Vue.prototype.GLOBAL = global_;
-// axios.defaults.baseURL = global_.BASE_URL;
 
 import axios from './http/index'
 
 import echarts from 'echarts'
-
-import iView from 'iview';
 
 Vue.use(iView);
 
@@ -26,12 +21,11 @@ Vue.prototype.axios = axios
 
 Vue.config.productionTip = false
 
-// Vue.use(ElementUI);
-
 /* eslint-disable no-new */
 new Vue({
     el: '#manage',
     router,
+    store,
     components: { Manage },
     template: '<Manage/>'
 })

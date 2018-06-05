@@ -6,7 +6,11 @@ Vue.use(Vuex)
 
 // initial state
 const state = {
-    token: null
+    token: null,
+    tokenFail: false,
+    name: '',
+    phone: '',
+    footerFlag: true
 }
 
 // getters
@@ -21,13 +25,40 @@ const action = {
 
 // mutations
 const mutations = {
+    setTokenFail: (state, data) => {
+        localStorage.setItem('tokenFail', data);
+        state.tokenFail = data;
+    },
+    cancelTokenFail: (state, data) => {
+        localStorage.setItem('tokenFail', data);
+        state.tokenFail = data;
+    },
     loginFn: (state, data) => {
-        localStorage.token = data;
+        localStorage.setItem('token', data);
         state.token = data;
     },
     logoutFn: (state) => {
         localStorage.removeItem('token');
+        localStorage.removeItem('name');
+        localStorage.removeItem('phone');
+        localStorage.removeItem('tokenFail');
         state.token = null
+    },
+    setName: (state, data) => {
+        localStorage.setItem('name', data);
+        state.name = data;
+    },
+    setPhone: (state, data) => {
+        localStorage.setItem('phone', data);
+        state.phone = data;
+    },
+    footerShow: (state) => {
+        console.log('store footerShow');
+        state.footerFlag = true
+    },
+    footerHide: (state) => {
+        console.log('store footerHide');
+        state.footerFlag = false
     }
 }
 

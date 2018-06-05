@@ -43,6 +43,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         }
     },
     plugins: [
+        // new webpack.DllReferencePlugin({
+        //     context: __dirname,
+        //     manifest: require('../manifest.json')
+        // }),
         new webpack.DefinePlugin({
             'process.env': require('../config/dev.env')
         }),

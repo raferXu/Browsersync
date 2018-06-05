@@ -118,51 +118,7 @@ export default {
     }
   },
   created () {
-    /*
-    var data1 = {
-      "body":{
-        "order":{
-          "生效中":1,
-          "到账中":0,
-          "待付款":0,
-          "订单总数":1,
-          "待补充":0,
-          "已失效":0,
-          "审核中":0
-        },
-        "projects":[
-          {
-            "status":"生效中",
-            "name":"身份证",
-            "created":"2018-05-09 11:39:31.350891",
-            "type":"调用",
-            "project_id":3,
-            "called_num":0,
-            "template_id":1
-          },
-          {
-            "status":"生效中",
-            "name":"身份证",
-            "created":"2018-05-09 11:39:31.350891",
-            "type":"调用",
-            "project_id":3,
-            "called_num":0,
-            "template_id":1
-          }
-        ]
-      },
-      "message":"operate successfully",
-      "code":200
-    };
-    var data2 = {
-      "body": {
-        "available_amount": 2.0, 
-        "total_amount": 3.0
-      }, 
-      "message": "operate successfully", 
-      "code": 200
-    };
-    */
+    
     var _this = this;
     this.axios.post("/token/public/list_all",{},{}).then(res=>{
       res = res.data;

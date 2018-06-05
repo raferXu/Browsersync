@@ -4,8 +4,8 @@
     <div class="bannerTxtBox">
       <h3 class="mainH3 bannerH3">众包服务</h3>
       <span class="mainBtn bannerBtn" @click="jumpTo('/techExperience','众包服务')">在线体验</span>
-      <!-- <span class="mainBtn bannerBtn">申请开通</span> -->
-      <a class="mainBtn bannerBtn" href="manage.html?to=ZBmodel">立即开通</a>
+      <a v-if="loginFlag" class="mainBtn bannerBtn" href="manage.html?to=ZBmodel">立即开通</a>
+      <router-link v-else class="mainBtn bannerBtn" to="/login?from=manage_ZBmodel">立即开通</router-link>
     </div>
     <div class="box">
         <h3 class="mainH3B tc pb80">功能介绍</h3>
@@ -24,7 +24,6 @@
     <div class="box bg3 stepBox" style="position:relative">
         <h3 class="mainH3 tc pb80">使用流程</h3>
         <img class="stepImg" :src="stepSrc" alt="stepImg">
-        <!-- <img class="imgL" src="../../assets/images/众包服务文字识别服务使用流程.png"> -->
     </div>
     <div class="box">
         <h3 class="mainH3B tc pb80">应用场景</h3>
@@ -33,8 +32,8 @@
         <media :mediaData="ocrAppliData[1]"></media>
     </div>
     <div class="pt160 pb160 tc">
-        <!-- <span class="mainColorBigBtn">申请众包服务</span> -->
-        <a class="mainColorBigBtn" href="manage.html?to=ZBmodel">申请众包服务</a>
+        <a v-if="loginFlag" class="mainColorBigBtn" href="manage.html?to=ZBmodel">申请众包服务</a>
+        <router-link v-else class="mainColorBigBtn" to="/login?from=manage_ZBmodel">申请众包服务</router-link>
     </div>
   </div>
 </template>
@@ -101,6 +100,16 @@ export default {
   },
   components: {
     bannerBox,media,listItem
+  },
+  computed: {
+        loginFlag: function(){
+            let token = this.$store.state.token || localStorage.getItem('token');
+            if(!token || token===null || token==='null'){
+                return false;
+            }else{
+                return true;
+            }
+        }
   },
   methods: {
       jumpTo(link,params){

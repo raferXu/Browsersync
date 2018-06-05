@@ -71,6 +71,7 @@ textarea {
     -webkit-appearance: none;
     border-radius: 0;
     border: none;
+    padding: 0;
 }
 
 a:hover {

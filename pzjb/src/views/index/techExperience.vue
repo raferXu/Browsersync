@@ -23,6 +23,7 @@ import crowdsourcingExp from '@/components/crowdsourcingExp'
 export default {
   name: '',
   created () {
+    console.log('进入技术体验页时的token是: '+window.localStorage.getItem('token'));
     console.log('scrollTo');
     window.scrollTo(0,0)
     var to = this.$route.query.to || localStorage.getItem('experienceId');

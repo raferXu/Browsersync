@@ -9,12 +9,10 @@ axios.defaults.baseURL = global_.BASE_URL;
 // http request 拦截器
 axios.interceptors.request.use(
     config => {
-        console.log('axios.interceptors.request.use config')
+        console.log('axios.interceptors.request.use config，获取的token值为: ')
         console.log(store.state.token)
-        console.log(config)
-        console.log(store)
         if (store.state.token) {
-            config.headers.Authorization = `token ${store.state.token}`;
+            config.headers.Authorization = `${store.state.token}`;
         }
         return config;
     },
@@ -27,6 +25,23 @@ axios.interceptors.request.use(
 
 axios.interceptors.response.use(
     response => {
+        console.log('http response 拦截器,正常返回的response是：');
+        console.log(response.data);
+        switch (response.data.code) {
+            case 602:
+                console.log('参数错误，返回602');
+                break;
+            case 603:
+                console.log('token错误，返回603');
+                store.commit('setTokenFail', true);
+                store.commit('logoutFn');
+                break;
+            case 604:
+                console.log('token过期，返回604');
+                store.commit('setTokenFail', true);
+                store.commit('logoutFn');
+                break;
+        }
         return response;
     },
     error => {
@@ -34,7 +49,7 @@ axios.interceptors.response.use(
             switch (error.response.status) {
                 case 401:
                     // 401 清除token信息并跳转到登录页面
-                    store.commit('loginout');
+                    store.commit('logoutFn');
                     // router.replace({
                     //     path: 'login',
                     //     query: {

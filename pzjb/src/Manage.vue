@@ -50,19 +50,59 @@
             <router-view></router-view>
         </div>
       </div>
-      
+      <div class="maskBg" v-if="modal1">
+          <div class="tipBox">
+              <p>帐号异常，请重新登录</p>
+              <p>
+                  <button @click="loginBtnClick" ref="loginBtn">确定</button>
+              </p>
+          </div>
+      </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'manage',
+  watch:{
+    '$route': function(to,from){
+      console.log('manage watch $route');
+      let token = this.$store.state.token;
+      if(!token || token === null || token === 'null'){
+          token = window.localStorage.getItem('token');
+          this.$store.state.token = window.localStorage.getItem('token')
+      }
+　　　 if (to.matched.some(record => record.meta.requiresAuth) && (!token || token === null || token === 'null')) {
+　　　　　console.log('manage.vue 页面需要登录却没有登录');
+        this.$store.commit('footerHide');
+        this.$refs.loginBtn.click();
+　　　 } else {
+　　　　　console.log('manage.vue 无需登陆或已登录或在注册或登录页面')
+        this.$store.commit('footerShow');
+　　　 }
+　　 }
+　},
   created () {
+      console.log('manage localStorage token');
+      console.log(localStorage.getItem('token'));
+      console.log('manage store token');
+      console.log(this.$store.state.token)
       var search = location.search;
       if(/to/.test(search)){
         var to = location.search.split('?')[1].split('=')[1];
         console.log('/'+to);
         this.$router.push('/'+to)
+      }
+  },
+  computed: {
+      modal1: function () {
+          let tokenFail = this.$store.state.tokenFail;
+          console.log('modal1: '+tokenFail);
+          if(tokenFail){
+              return true;
+          }else{
+              return false;
+          }
       }
   },
   data () {
@@ -104,43 +144,47 @@ export default {
     }
   },
   methods: {
-      toggleSidebar(){
-      },
-      serviceIconOverFn(){
-          this.hideSideBarServiceList = false;
-      },
-      serviceIconOutFn(){
-          this.hideSideBarServiceList = true;
-      },
-      toManageIndex(){
-          this.$router.push('/manageIndex')
-      },
-      jumpToIdCard(){
-          console.log('jumpToIdCard');
-          var _this = this;
-        this.axios.post("/token/public/list_public",{},{}).then(res=>{
-            res = res.data;
-            var code = res.code;
-            console.log('/token/public/list_public');
-            console.log(res);
-            if(code=='200'){
-                var publicList = res.body.projects;
-                for(var z=0;z<publicList.length;z++){
-                    if(publicList[z].name=='身份证'){
-                        console.log('有身份证项目');
-                        this.$router.push({path: '/manageIdCardFinish',query: {templateId: publicList[z]["template_id"]}});
-                        return;
-                    }
+    loginBtnClick(){
+        console.log('loginBtnClick');
+        window.location.href = 'index.html?to=login&from=manage'
+    },
+    toggleSidebar(){
+    },
+    serviceIconOverFn(){
+        this.hideSideBarServiceList = false;
+    },
+    serviceIconOutFn(){
+        this.hideSideBarServiceList = true;
+    },
+    toManageIndex(){
+        this.$router.push('/manageIndex')
+    },
+    jumpToIdCard(){
+        console.log('jumpToIdCard');
+        var _this = this;
+    this.axios.post("/token/public/list_public",{},{}).then(res=>{
+        res = res.data;
+        var code = res.code;
+        console.log('/token/public/list_public');
+        console.log(res);
+        if(code=='200'){
+            var publicList = res.body.projects;
+            for(var z=0;z<publicList.length;z++){
+                if(publicList[z].name=='身份证'){
+                    console.log('有身份证项目');
+                    this.$router.push({path: '/manageIdCardFinish',query: {templateId: publicList[z]["template_id"]}});
+                    return;
                 }
-                this.$router.push('/manageIdCardIndex');
-                
-            }else{
-                console.log('code: '+code);
             }
-        }).catch(function(error){
-        console.log("/token/public/list_public error init."+error);
-        });
-      }
+            this.$router.push('/manageIdCardIndex');
+            
+        }else{
+            console.log('code: '+code);
+        }
+    }).catch(function(error){
+    console.log("/token/public/list_public error init."+error);
+    });
+    }
   }
 }
 </script>
@@ -255,6 +299,25 @@ export default {
 }
 #logo{
     line-height: 100%;
+    text-align: center;
+}
+
+.maskBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    background: rgba(0,0,0,0.7);
+}
+.tipBox{
+    width: 40%;
+    margin: 100px auto;
+    background: #ffffff;
+}
+.tipBox p{
+    padding: 10px;
     text-align: center;
 }
 </style>

@@ -13,8 +13,8 @@
       </div>
     </div>
     <div class="btnG">
-      <!-- <span class="mainColorBtn">立即开通</span> -->
-      <a class="mainColorBtn" href="manage.html?to=OCRmodel">立即开通</a>
+      <a v-if="loginFlag" class="mainColorBtn" href="manage.html?to=OCRmodel">立即开通</a>
+      <router-link v-else class="mainColorBtn" to="/login?from=manage_OCRmodel">立即开通</router-link>
     </div>
   </div>
 </template>
@@ -49,6 +49,16 @@ export default {
           price: '0.08'
         }
       ]
+    }
+  },
+  computed: {
+    loginFlag: function(){
+      let token = this.$store.state.token || localStorage.getItem('token');
+      if(!token || token===null || token==='null'){
+        return false;
+      }else{
+        return true;
+      }
     }
   },
   components: {

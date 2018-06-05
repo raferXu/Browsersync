@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="doc">
+    <div class="doc" :class="{'pb0':!footerFlag}">
       <div class="jbheader">
         <div class="navbar">
           <div class="navbar-nav navbar-left">
@@ -9,14 +9,12 @@
             </span>
             <ul class="navbar-nav navbar-main">
               <li class="productListTag">
-              <!-- <router-link tag="li" to="/productList" class="productListTag"> -->
                 <span class="productListTitle">产品服务</span>
                 <ul class="productList">
                   <router-link tag="li" to="/idCard">身份证识别</router-link>
                   <router-link tag="li" to="/customizedOCR">定制化识别服务</router-link>
                   <router-link tag="li" to="/crowdsourcing">众包服务</router-link>
                 </ul>
-              <!-- </router-link> -->
               </li>
               <router-link tag="li" to="/techExperience">技术体验</router-link>
               <li>开发者中心</li>
@@ -26,37 +24,140 @@
             </ul>
           </div>
           <ul class="navbar-nav navbar-right">
-            <!-- <router-link tag="li" to="/loginPage">登录</router-link> -->
-            <!-- <router-link tag="li" to="/registerPage">注册</router-link> -->
-            <li><a href="manage.html">控制台</a></li>
+            <template v-if="loginFlag">
+              <li class="username" @mouseover="userMouseover" @mouseout="userMouseout">
+                <div :title="username">{{username}}</div>
+                <span v-show="usernameHoverFlag" class="loginout" @click="loginout">退出</span>
+              </li>
+              <li><a href="manage.html">控制台</a></li>
+            </template>
+            <template v-else>
+              <router-link tag="li" to="/login">登录</router-link>
+              <router-link tag="li" to="/register">注册</router-link>
+              <router-link tag="li" to="/login?from=manage">控制台</router-link>
+            </template>
           </ul>
         </div>
       </div>
       <router-view></router-view>
     </div>
-    <jbfooter></jbfooter>
+    <div v-if="footerFlag">
+      <jbfooter></jbfooter>
+    </div>
+    <div class="maskBg" v-if="modal1">
+        <div class="tipBox">
+            <p>帐号异常，请重新登录</p>
+            <p>
+                <button @click="loginBtnClick" ref="loginBtn">确定</button>
+            </p>
+        </div>
+    </div>
   </div>
 </template>
 
 <script>
 import jbfooter from './components/jbfooter'
+import {common} from './assets/js/common'
 export default {
   name: 'App',
   data(){
     return {
+      usernameHoverFlag: false,
       nowNav: '',
       navbarObj: {
         left: {
           icon: require('./assets/images/平安接包logo.png'),
           txt: '平安接包'
         },
-        right: {
-
+        right: {}
+      }
+    }
+  },
+  computed: {
+    footerFlag(){
+      return this.$store.state.footerFlag
+    },
+    loginFlag(){
+      let token = this.$store.state.token;
+      if(!token || token===null || token==='null'){
+        console.log('$store.state.token为空');
+        token =  this.$store.state.token = localStorage.getItem('token');
+        if(!token || token===null || token==='null'){
+          console.log('$localStorage.token为空');
+          return false;
+        }else{
+          console.log('$localStorage.token存在');
+          return true;
         }
+      }
+      return true;
+    },
+    username(){
+      console.log('$store username: '+this.$store.state.name);
+      console.log('localStorage username: '+localStorage.getItem('name'));
+      if(this.$store.state.name){
+        return this.$store.state.name;
+      }else if(localStorage.getItem('name')){
+        this.$store.state.name = localStorage.getItem('name');
+        return localStorage.getItem('name')
+      }else{
+        return '';
+      }
+      
+    },
+    modal1: function () {
+      let tokenFail = this.$store.state.tokenFail;
+      console.log('modal1: '+tokenFail);
+      if(tokenFail){
+          return true;
+      }else{
+          return false;
       }
     }
   },
   methods: {
+    loginBtnClick(){
+        console.log('loginBtnClick');
+        window.location.href = 'index.html?to=login&from=manage'
+    },
+    loginoutReq(data){
+      return this.axios({
+          url:"/token/account/log_out",
+          data:data,
+          method:'post'
+      });
+    },
+    loginout(){
+      console.log('点击退出按钮');
+      var loginoutJSON = {
+        phone: this.$store.state.phone || localStorage.getItem('phone')
+      };
+
+      this.loginoutReq(loginoutJSON).then((res)=>{
+        console.log('/token/account/log_out then')
+        if(res.status==200){
+            var resData = res.data;
+            if(resData.code==200){
+              this.$store.commit('logoutFn');
+              common.refresh2(this);
+            }else{
+              console.log('接口异常，返回码为: '+resData.code);
+            }
+        }else{
+          console.log('网络异常，返回状态码: '+res.status);
+        }
+      }).catch((err)=>{
+        console.log('/token/account/log_out err')
+        console.log(err)
+      });
+      
+    },
+    userMouseover(){
+      this.usernameHoverFlag = true;
+    },
+    userMouseout(){
+      this.usernameHoverFlag = false;
+    },
     showTech(){
       this.nowNav = 'tech';
     },
@@ -84,20 +185,35 @@ export default {
     jbfooter
   },
   created(){
-    console.log('this.$route.name');
-    console.log(this.$route.name);
+    console.log('index localStorage token');
+    console.log(localStorage.getItem('token'));
+    console.log('index store token');
+    console.log(this.$store.state.token)
+    console.log('this.$route');
     console.log(this.$route);
+    var to = common.GetUrlParam('to');
+    if(to){
+      this.$router.push({
+        path: '/login'
+      });
+    }
   },
   watch:{
-        '$route':function(to,from){
-          console.log('watch $route');
-          let token = window.localStorage.getItem('token');
-　　　　　　if (to.matched.some(record => record.meta.requiresAuth) && (!token || token === null)) {
-　　　　　　　　console.log('没有登录')
-　　　　　　} else {
-　　　　　　   console.log('无需登陆或已登录')
-　　　　　　}
-  　　　}
+    '$route': function(to,from){
+      console.log('watch $route');
+      let token = this.$store.state.token;
+      if(!token || token === null || token === 'null'){
+          token = window.localStorage.getItem('token');
+          this.$store.state.token = window.localStorage.getItem('token')
+      }
+　　　 if (to.matched.some(record => record.meta.requiresAuth) && (!token || token === null || token === 'null')) {
+　　　　　console.log('app.vue 页面需要登录却没有登录');
+        this.$store.commit('footerHide');
+　　　 } else {
+　　　　　console.log('app.vue 无需登陆或已登录或在注册或登录页面')
+        this.$store.commit('footerShow');
+　　　 }
+　　 }
 　}
 }
 </script>
@@ -115,15 +231,19 @@ export default {
   position: relative;
   box-sizing: border-box;
   min-height: 100%;
+  /* height: 100%; */
   padding-bottom: 400px;
   z-index: 1;
+}
+.pb0{
+  padding-bottom: 0;
 }
 .jbheader{
   box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 11;
   display: flex;
   width: 100%;
   height: 80px;
@@ -247,5 +367,44 @@ export default {
 
 .navbar-main .router-link-active{
   color: #0090ff;
+}
+.username{
+  position: relative;
+  width: 1.5rem;
+}
+.username div{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.navbar-nav .username:hover{
+  color: #ffffff;
+}
+.navbar-nav .username span:hover{
+  color: #0090ff;
+}
+.loginout{
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  line-height: 50px;
+  background: #000000;
+}
+
+.maskBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    background: rgba(0,0,0,0.7);
+}
+.tipBox{
+    width: 40%;
+    margin: 100px auto;
+    background: #ffffff;
 }
 </style>

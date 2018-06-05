@@ -3,8 +3,8 @@
         <bannerBox :bannerSrc="bannerSrc"></bannerBox>
         <div class="bannerTxtBox">
             <h3 class="mainH3 bannerH3">定制化识别服务</h3>
-            <!-- <span class="mainBtn">申请开通</span> -->
-            <a class="mainBtn" href="manage.html?to=manageCustomDevIndex">申请开通</a>
+            <a v-if="loginFlag" class="mainBtn" href="manage.html?to=manageCustomDevIndex">申请开通</a>
+            <router-link v-else class="mainBtn" to="/login?from=manage_manageCustomDevIndex">申请开通</router-link>
         </div>
         <div class="box">
             <standard :standardData="standardData"></standard>
@@ -28,8 +28,8 @@
             <media :mediaData="ocrAppliData[1]"></media>
         </div>
         <div class="pt160 pb160 tc">
-            <!-- <span class="mainColorBigBtn">申请定制化服务</span> -->
-            <a class="mainColorBigBtn" href="manage.html?to=manageCustomDevIndex">申请定制化服务</a>
+            <a v-if="loginFlag" class="mainColorBigBtn" href="manage.html?to=manageCustomDevIndex">申请定制化服务</a>
+            <router-link v-else class="mainColorBigBtn" to="/login?from=manage_manageCustomDevIndex">申请定制化服务</router-link>
         </div>
     </div>
 </template>
@@ -85,6 +85,16 @@
         created() {
             console.log('scrollTo');
             window.scrollTo(0, 0)
+        },
+        computed: {
+            loginFlag: function(){
+            let token = this.$store.state.token || localStorage.getItem('token');
+            if(!token || token===null || token==='null'){
+                return false;
+            }else{
+                return true;
+            }
+            }
         },
         components: {
             bannerBox,

@@ -4,7 +4,8 @@
     <div class="bannerTxtBox">
       <h3 class="mainH3 bannerH3">身份证识别</h3>
       <span class="mainBtn bannerBtn" @click="jumpTo('/techExperience','ocrExp')">在线体验</span>
-      <a class="mainBtn bannerBtn" href="manage.html?to=OCRmodel">立即开通</a>
+      <a v-if="loginFlag" class="mainBtn bannerBtn" href="manage.html?to=OCRmodel">立即开通</a>
+      <router-link v-else class="mainBtn bannerBtn" to="/login?from=manage_OCRmodel">立即开通</router-link>
     </div>
     <div class="standardBox">
       <standard :standardData="standardData"></standard>
@@ -59,6 +60,14 @@ export default {
     window.scrollTo(0,0)
   },
   computed: {
+    loginFlag: function(){
+      let token = this.$store.state.token || localStorage.getItem('token');
+      if(!token || token===null || token==='null'){
+        return false;
+      }else{
+        return true;
+      }
+    }
   },
   components: {
     bannerBox,
