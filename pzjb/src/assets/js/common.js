@@ -57,7 +57,7 @@ let common = {
     },
     backTo: function(url) {
         console.log('backTo函数参数: ' + url);
-        alert(url)
+        // alert(url)
         var backUrl = 'index.html'
         switch (url) {
             case 'manage':

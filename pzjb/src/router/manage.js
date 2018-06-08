@@ -51,14 +51,6 @@ const router = new Router({
     // mode: 'history',
     // linkActiveClass: 'active',
     routes: [{
-            path: '/',
-            name: 'manageIndex',
-            meta: {
-                requiresAuth: true
-            },
-            component: manageIndex
-        },
-        {
             path: '/manageIndex',
             name: 'manageIndex',
             meta: {
@@ -195,6 +187,13 @@ const router = new Router({
             path: '/register',
             name: 'register',
             component: register
+        },
+        {
+            path: '/',
+            meta: {
+                requiresAuth: true
+            },
+            redirect: '/manageIndex'
         }
     ]
 })

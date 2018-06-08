@@ -57,7 +57,7 @@ export default {
                 txt: '信息有机拆分，脱敏及防控追溯机制，保障信息安全。'
             },
             {
-                url: require('../../assets/images/index/稳定高效.png'),
+                url: require('../../assets/images/稳定高效.png'),
                 title: '快速响应',
                 txt: '平台数百万日处理量，大量数据快速沉淀实现业务无延时。'
             },

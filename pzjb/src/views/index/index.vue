@@ -34,7 +34,7 @@ export default {
         },
         list: [
           {
-            url: require('../../assets/images/index/精确识别.png'),
+            url: require('../../assets/images/精确识别.png'),
             title: '精确识别',
             txt: '基于深度学习的自研OCR技术，支持多角度拍摄，适应透视畸变、光照不均的情况，在复杂环境中可保持高识别准确率'
           },
@@ -44,12 +44,12 @@ export default {
             txt: '除了可直接调用的全面的 API 接口，还提供了丰富多样的 SDK 供开发者使用，服务使用简单便捷，兼容性强'
           },
           {
-            url: require('../../assets/images/index/操作简单.png'),
+            url: require('../../assets/images/操作简单.png'),
             title: '定制开发',
             txt: '支持自定义OCR识别内容，快速生成识别模型，满足各场景需求'
           },
           {
-            url: require('../../assets/images/index/灵活应用.png'),
+            url: require('../../assets/images/灵活应用.png'),
             title: '众包助力',
             txt: '全面、高效、专业的文字录入众包管理平台，解决疑难识别内容'
           },
@@ -57,20 +57,20 @@ export default {
       },
       applicationScenObj: {
         title: {
-          img: require('../../assets/images/index/应用场景.png')
+          img: require('../../assets/images/应用场景.png')
         },
         list: [
           {
-            img: require('../../assets/images/index/金融.png')
+            img: require('../../assets/images/金融.png')
           },
           {
-            img: require('../../assets/images/index/医疗.png')
+            img: require('../../assets/images/医疗.png')
           },
           {
-            img: require('../../assets/images/index/政府.png')
+            img: require('../../assets/images/政府.png')
           },
           {
-            img: require('../../assets/images/index/物流.png')
+            img: require('../../assets/images/物流.png')
           }
         ]
       },

@@ -30,14 +30,11 @@ store.commit('loginFn', window.localStorage.getItem('token'))
 
 const router = new Router({
     // mode: 'history',
+    // base: __dirname,
+    // base: '/Browersync/pzjb/dist/',
     // linkActiveClass: 'active',
 
     routes: [{
-            path: '/',
-            name: 'index',
-            component: index
-        },
-        {
             path: '/index',
             name: 'index',
             component: index
@@ -78,6 +75,10 @@ const router = new Router({
             path: '/register',
             name: 'register',
             component: register
+        },
+        {
+            path: '/',
+            redirect: '/index'
         }
     ]
 })
