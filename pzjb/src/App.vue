@@ -243,12 +243,13 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  margin: 0 auto;
   z-index: 11;
   display: flex;
-  width: 100%;
-  height: 80px;
-  line-height: 80px;
-  padding: 0 200px;
+  width: 1170px;
+  height: 60px;
+  line-height: 60px;
   background: rgba(0,0,0,0.5);
   /* overflow: hidden; */
 }
@@ -277,7 +278,7 @@ export default {
 }
 .navbar-nav>li, .navbar-nav>li a{
   padding: 0 20px;
-  font-size: 18px;
+  font-size: 14px;
   color: #ffffff;
 }
 .navbar-nav>li:hover, .navbar-nav>li:hover a{
