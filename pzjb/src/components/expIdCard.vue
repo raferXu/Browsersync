@@ -162,6 +162,7 @@ export default {
       data.append('clientType', '2');
       data.append('appKey', '24680');
       data.append('appID', 'com.pingan.ocr.demo');
+      _this.loading = true;
       _this.axios({
         url: 'https://test-pazb.pingan.com.cn:20443/alg/ocr_chanxian_test/identity_card_grab_rec',
         method: 'post',
@@ -170,6 +171,7 @@ export default {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       }).then(function (response) {
+        _this.loading = false;
         var info = {};
         if(response.status==200){
           var data = response.data;
@@ -200,17 +202,6 @@ export default {
   },
   created () {
     localStorage.setItem('experienceId','ocrExp');
-    var _this = this;
-    this.axios.interceptors.request.use(function(config){
-      console.log("request init.");
-      _this.loading = true;
-      return config;
-    });
-    this.axios.interceptors.response.use(function(response){
-      console.log("response init.");
-      _this.loading = false;
-      return response;
-    })
   },
 }
 </script>

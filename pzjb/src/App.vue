@@ -221,9 +221,9 @@ export default {
 <style scoped>
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
   text-align: center;
   color: #2c3e50;
 }
@@ -244,10 +244,10 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  margin: 0 auto;
   z-index: 11;
   display: flex;
-  width: 1170px;
+  width: 100%;
+  min-width: 1170px;
   height: 60px;
   line-height: 60px;
   background: rgba(0,0,0,0.5);
@@ -256,20 +256,22 @@ export default {
 .navbar{
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 1170px;
+  margin: 0 auto;
 }
 .navbar-nav{
   display: flex;
 }
 .logoWrap{
+  display: flex;
+  align-items: center;
   cursor: pointer;
-  margin-right: 60px;
+  margin-right: 40px;
 }
 .logo{
   width: 22px;
   cursor: pointer;
   float: left;
-  margin-top:15px;
 }
 .logoTxt{
   font-size: 24px;
@@ -386,7 +388,7 @@ export default {
 }
 .loginout{
   position: absolute;
-  top: 80px;
+  top: 60px;
   left: 0px;
   right: 0px;
   text-align: center;

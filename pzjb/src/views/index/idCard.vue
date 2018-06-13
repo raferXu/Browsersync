@@ -1,29 +1,47 @@
 <template>
   <div class="idCardBox">
-    <bannerBox :bannerSrc="bannerSrc"></bannerBox>
-    <div class="bannerTxtBox">
-      <h3 class="mainH3 bannerH3">身份证识别</h3>
-      <span class="mainBtn bannerBtn" @click="jumpTo('/techExperience','ocrExp')">在线体验</span>
-      <a v-if="loginFlag" class="mainBtn bannerBtn" href="manage.html?to=OCRmodel">立即开通</a>
-      <router-link v-else class="mainBtn bannerBtn" to="/login?from=manage_OCRmodel">立即开通</router-link>
-    </div>
-    <div class="standardBox">
+    <bannerBox :bannerStyle="bannerStyle">
+      <div class="bannerTxtBox">
+        <h3 class="mainH3 bannerH3">身份证识别</h3>
+        <span class="mainBtn bannerBtn" @click="jumpTo('/techExperience','ocrExp')">在线体验</span>
+        <a v-if="loginFlag" class="mainBtn bannerBtn" href="manage.html?to=OCRmodel">立即开通</a>
+        <router-link v-else class="mainBtn bannerBtn" to="/login?from=manage_OCRmodel">立即开通</router-link>
+      </div>
+    </bannerBox>
+    <!-- <jbSection>
+      <div slot="sectionHeaderTitle" class="sectionHeader">功能介绍</div>
+      <div slot="content">
+          <p class="funcTxt">{{standardData.txt}}</p>
+          <img class="funcImg" :src="standardData.url" alt="">
+      </div>
+    </jbSection> -->
+    <div class="box">
       <standard :standardData="standardData"></standard>
     </div>
-    <div class="box">
+    <jbSection :jbSectionStyle="applicationScenStyle">
+      <h4 slot="sectionHeaderTitle" class="sectionHeader"></h4>
+      <ul slot="content" class="list">
+          <li v-for="(listObj,index) in applicationScenObj.list" :key="index">
+              <listBox :obj="listObj"></listBox>
+          </li>
+      </ul>
+    </jbSection>
+    <!-- <div class="box">
         <h3 class="mainH3B tc pb80">应用场景</h3>
         <media :mediaData="ocrAppliData[0]" :overridingStyles="overridingStyles"></media>
         <div class="divide"></div>
         <media :mediaData="ocrAppliData[1]" :overridingStyles="overridingStyles"></media>
-    </div>
+    </div> -->
     <priceBox></priceBox>
   </div>
 </template>
 
 <script>
+import jbSection from '@/components/jbSection'
 import bannerBox from '@/components/bannerBox'
 import standard from '@/components/standard'
-import media from '@/components/media'
+// import media from '@/components/media'
+import listBox from '@/components/listBox'
 import priceBox from '@/components/priceBox'
 export default {
   name: '',
@@ -52,7 +70,34 @@ export default {
           txt: '人社、金融、工商、公安等政府办事部门使用身份证OCR技术，可以快速识别用户身份信息，缓解政府部门办事压力，减少业务办理的等待时间，是智能识别产业在政务领域的一大突破。'
         }
       ],
-      bannerSrc: require('../../assets/images/身份证识别banner.png')
+      // bannerSrc: require('../../assets/images/身份证识别banner.png'),
+      bannerStyle: {
+        backgroundSize: '1920px 500px',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+        backgroundImage: 'url(' + require('../../assets/images/身份证识别banner.png') + ')'
+      },
+      applicationScenObj: {
+        list: [
+          {
+            title: '服务类产品用户实名认证',
+            text: '身份证OCR识别技术服务于银行、保险、物流及互联网等行业，适用于各类用户身份认证场景，自动识别并录入姓名及身份证号信息，提升信息输入效率。',
+            src: require('../../assets/images/服务类产品用户实名认证.png')
+          },
+          {
+            title: '业务部门身份信息采集',
+            text: '人社、金融、工商、公安等政府办事部门使用身份证OCR技术，可以快速识别用户身份信息，缓解政府部门办事压力，减少业务办理的等待时间，是智能识别产业在政务领域的一大突破。',
+            src: require('../../assets/images/业务部门身份信息采集.png')
+          }
+        ]
+      },
+      applicationScenStyle: {
+        height: '696px',
+        backgroundSize: '1920px 696px',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+        backgroundImage: 'url(' + require('../../assets/images/应用场景-身份证识别.png') + ')'
+      }
     }
   },
   created () {
@@ -72,8 +117,10 @@ export default {
   components: {
     bannerBox,
     standard,
-    media,
-    priceBox
+    // media,
+    listBox,
+    priceBox,
+    jbSection
   },
   methods: {
       jumpTo(link,params){
@@ -91,15 +138,40 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.standardBox{
-  padding: 160px 415px;
-}
-.box{
-  padding: 160px 415px;
-  background: #333333;
-  color: #ffffff;
+.box {
+    width: 1170px;;
+    padding: 80px 0;
+    margin: 0 auto;
+    text-align: left;
 }
 .divide{
   height: 80px;
+}
+.sectionHeader{
+  box-sizing: content-box;
+  min-height: 36px;
+  padding: 80px 0;
+  font-size: 36px;
+  color: #333333;
+}
+.funcBox{
+  width: 1170px;
+  margin: 0 auto;
+}
+.funcTxt{
+  line-height: 30px;
+  font-size: 18px;
+  color: #828282;
+  text-align: left;
+}
+.funcImg{
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+.list{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 80px;
 }
 </style>

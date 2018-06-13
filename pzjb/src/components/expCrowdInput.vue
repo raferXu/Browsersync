@@ -90,7 +90,6 @@ export default {
         backgroundImage: 'url(' + require('../assets/images/识别结果框2.png') + ')' 
       },
       responseTxt: '',
-      loading: false,
       imgUrl: '',
       nowTable: 'result',
       imgIndex: 0,
@@ -438,16 +437,6 @@ export default {
   },
   mounted () {
     var _this = this;
-    this.axios.interceptors.request.use(function(config){
-      console.log("request init.");
-      _this.loading = true;
-      return config;
-    });
-    this.axios.interceptors.response.use(function(response){
-      console.log("response init.");
-      _this.loading = false;
-      return response;
-    });
     var imgWrap = document.getElementById("imgBoxW");
     this.canvasWidth = imgWrap.clientWidth;
     this.canvasHeight = imgWrap.clientHeight;

@@ -56,7 +56,7 @@
               <FormItem label="汇款人手机">
                 <Input v-model="recharge.remitter_phone_number"></Input>
               </FormItem>
-              <FormItem label="汇款凭证">
+              <FormItem label="汇款凭证" class="proofItem">
                 <div class="proofBox">
                   <div class="proofImgBox">
                     <img v-if="recharge.remittance_pic" :src="recharge.remittance_pic" alt="proofImg" class="proofImg">
@@ -86,6 +86,7 @@
 </template>
 
 <script>
+import {common} from './../../assets/js/common'
 export default {
   name: '',
   data() {
@@ -123,8 +124,23 @@ export default {
       }
     }
   },
-  computed: {
+  created(){
     
+    common.ajax.ajaxReq(this,{
+      url: common.ajax.paymentBalance,
+      suc: function(that,res){
+        that.balance = res.body["total_amount"];
+        localStorage.setItem('total_amount',that.balance);
+      }
+    });
+    // var _this = this;
+    // this.axios.post("/token/payment/balance",{},{}).then(res=>{
+    //   var data2 = res.data;
+    //   _this.balance = data2.body["total_amount"];
+    //   localStorage.setItem('total_amount',_this.balance);
+    // }).catch(function(error){
+    //   console.log("/token/payment/balance error init."+error);
+    // });
   },
   methods: {
     finishFlag(){
@@ -148,11 +164,7 @@ export default {
         alert('请填写所有信息');
         return;
       }
-      this.axios.post("/token/payment/recharge",this.recharge,{
-        // headers: {
-        //   token: "rafer"
-        // }
-      }).then(res=>{
+      this.axios.post("/token/payment/recharge",this.recharge,{}).then(res=>{
         console.log(res)
         res = res.data;
         var code = res.code;
@@ -274,5 +286,12 @@ export default {
   padding-top: 20px;
   font-size: 14px;
   color: #828282;
+}
+
+
+</style>
+<style>
+.proofItem .ivu-form-item-content{
+  height: auto;
 }
 </style>

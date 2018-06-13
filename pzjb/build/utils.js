@@ -47,8 +47,7 @@ exports.cssLoaders = function(options) {
         if (options.extract) {
             return ExtractTextPlugin.extract({
                 use: loaders,
-                fallback: 'vue-style-loader',
-                publicPath: '../../'
+                fallback: 'vue-style-loader'
             })
         } else {
             return ['vue-style-loader'].concat(loaders)
@@ -60,7 +59,9 @@ exports.cssLoaders = function(options) {
         css: generateLoaders(),
         postcss: generateLoaders(),
         less: generateLoaders('less'),
-        sass: generateLoaders('sass', { indentedSyntax: true }),
+        sass: generateLoaders('sass', {
+            indentedSyntax: true
+        }),
         scss: generateLoaders('sass'),
         stylus: generateLoaders('stylus'),
         styl: generateLoaders('stylus')

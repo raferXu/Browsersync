@@ -88,7 +88,7 @@ export default {
                   this.$router.push({path:link,query:{to: params}});
               }else{
                   this.$router.push(link);
-              }
+              } 
           }
       }
   }

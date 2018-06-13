@@ -1,18 +1,27 @@
 <template>
   <div class="customizedOCRBox">
-    <bannerBox :bannerSrc="bannerSrc"></bannerBox>
-    <div class="bannerTxtBox">
-      <h3 class="mainH3 bannerH3">众包服务</h3>
-      <span class="mainBtn bannerBtn" @click="jumpTo('/techExperience','众包服务')">在线体验</span>
-      <a v-if="loginFlag" class="mainBtn bannerBtn" href="manage.html?to=ZBmodel">立即开通</a>
-      <router-link v-else class="mainBtn bannerBtn" to="/login?from=manage_ZBmodel">立即开通</router-link>
-    </div>
-    <div class="box">
+    <bannerBox :bannerStyle="bannerStyle">
+        <div class="bannerTxtBox">
+        <h3 class="mainH3 bannerH3">众包服务</h3>
+        <span class="mainBtn bannerBtn" @click="jumpTo('/techExperience','众包服务')">在线体验</span>
+        <a v-if="loginFlag" class="mainBtn bannerBtn" href="manage.html?to=ZBmodel">立即开通</a>
+        <router-link v-else class="mainBtn bannerBtn" to="/login?from=manage_ZBmodel">立即开通</router-link>
+        </div>
+    </bannerBox>
+    <jbSection>
+        <h4 slot="sectionHeaderTitle" class="sectionHeader">功能介绍</h4>
+        <ul slot="content" class="list">
+            <li class="sectionListItem" v-for="(listObj,index) in funcScenObj.list" :key="index">
+                <listBox :obj="listObj"></listBox>
+            </li>
+        </ul>
+    </jbSection>
+    <!-- <div class="box">
         <h3 class="mainH3B tc pb80">功能介绍</h3>
         <media :mediaData="ocrAppliData[2]"></media>
         <div class="divide"></div>
         <media :mediaData="ocrAppliData[3]"></media>
-    </div>
+    </div> -->
     <div class="box futBox">
         <h3 class="mainH3B tc pb80">产品特色</h3>
         <ul class="list">
@@ -21,17 +30,26 @@
             </li>
         </ul>
     </div>
-    <div class="box bg3 stepBox" style="position:relative">
+    <jbSection :jbSectionStyle="stepStyle"></jbSection>
+    <!-- <div class="box bg3 stepBox" style="position:relative">
         <h3 class="mainH3 tc pb80">使用流程</h3>
         <img class="stepImg" :src="stepSrc" alt="stepImg">
-    </div>
-    <div class="box">
+    </div> -->
+    <!-- <div class="box">
         <h3 class="mainH3B tc pb80">应用场景</h3>
         <media :mediaData="ocrAppliData[0]"></media>
         <div class="divide"></div>
         <media :mediaData="ocrAppliData[1]"></media>
-    </div>
-    <div class="pt160 pb160 tc">
+    </div> -->
+    <jbSection>
+        <h4 slot="sectionHeaderTitle" class="sectionHeader">应用场景</h4>
+        <ul slot="content" class="list">
+            <li class="sectionListItem" v-for="(listObj,index) in applicationScenObj.list" :key="index">
+                <listBox :obj="listObj"></listBox>
+            </li>
+        </ul>
+    </jbSection>
+    <div class="pt80 pb80 tc">
         <a v-if="loginFlag" class="mainColorBigBtn" href="manage.html?to=ZBmodel">申请众包服务</a>
         <router-link v-else class="mainColorBigBtn" to="/login?from=manage_ZBmodel">申请众包服务</router-link>
     </div>
@@ -42,6 +60,8 @@
 import bannerBox from '@/components/bannerBox'
 import media from '@/components/media'
 import listItem from '@/components/listItem'
+import listBox from '@/components/listBox'
+import jbSection from '@/components/jbSection'
 export default {
   name: '',
   created () {
@@ -50,6 +70,13 @@ export default {
   },
   data () {
     return {
+        stepStyle: {
+            height: '712px',
+            backgroundSize: '1920px 712px',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
+            backgroundImage: 'url(' + require('../../assets/images/使用流程-众包服务.png') + ')'
+        },
         listData: [
             {
                 url: require('../../assets/images/安全脱敏icon.png'),
@@ -67,6 +94,34 @@ export default {
                 txt: '多重验证机制严格把控平台回收结果，提供全面、高效、专业的数据交付。'
             }
         ],
+        funcScenObj: {
+            list: [
+            {
+                title: '众包审核——校验OCR识别结果',
+                text: '基于OCR识别结果，将机器识别准确率较低的疑难文字，通过平安众包人工审核服务进行有效纠错，助力OCR识别精度提升至99.9%。',
+                src: require('../../assets/images/众包审核——校验OCR识别结果.png')
+            },
+            {
+                title: '众包录入——纯人工输入',
+                text: '通过24*7全天候运营的平安众包平台，连接海量用户进行文字录入，并提供交叉验证机制对回收结果进行系统自动核对，高质高效完成数据交付。',
+                src: require('../../assets/images/众包录入——纯人工输入.png')
+            }
+            ]
+        },
+        applicationScenObj: {
+            list: [
+            {
+                title: '手写体识别',
+                text: '针对手写数字、手写文字体等多种复杂图片进行纯人工文字检测及录入，迅速完成文档电子化。',
+                src: require('../../assets/images/手写体识别.png')
+            },
+            {
+                title: '机器识别的低效字段',
+                text: '解决整图文字识别中个别信息识别效果差影响业务适用性的情况，通过人工快速纠正OCR错误识别信息，迅速提升整体准确性，达到各场景下的可用性标准。',
+                src: require('../../assets/images/机器识别的低效字段.png')
+            }
+            ]
+        },
         ocrAppliData: [
             {
                 title: '1. 手写体识别',
@@ -94,12 +149,22 @@ export default {
             }
         ],
       page: 'customizedOCR',
-      bannerSrc: require('../../assets/images/众包服务banner.png'),
+    //   bannerSrc: require('../../assets/images/众包服务banner.png'),
+      bannerStyle: {
+        backgroundSize: '1920px 500px',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+        backgroundImage: 'url(' + require('../../assets/images/众包服务banner.png') + ')'
+      },
       stepSrc: require('../../assets/images/开通&未开通OCR文字识别服务使用流程.png')
     }
   },
   components: {
-    bannerBox,media,listItem
+    bannerBox,
+    media,
+    jbSection,
+    listBox,
+    listItem
   },
   computed: {
         loginFlag: function(){
@@ -128,11 +193,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .box{
-    padding: 160px 375px 0;
+    width: 1170px;
+    margin: 0 auto;
+    padding-top: 160px;
     text-align: left;
 }
 .futBox, .stepBox{
-    padding-bottom: 160px;
+    padding-bottom: 80px;
 }
 .divide{
     height: 80px;

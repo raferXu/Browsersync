@@ -1,5 +1,6 @@
 html {
     font-size: 100px;
+    -webkit-text-size-adjust: none;
 }
 
 html,
@@ -24,6 +25,7 @@ h4,
 h5,
 p {
     margin: 0;
+    max-height: 999999px;
 }
 
 body {
@@ -202,6 +204,10 @@ a:hover {
     text-align: left;
 }
 
+.p30 {
+    padding: 30px;
+}
+
 .pr5 {
     padding-right: 0.05rem;
 }
@@ -228,6 +234,11 @@ a:hover {
 
 .pt160 {
     padding-top: 1.6rem;
+}
+
+.plr30 {
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
 }
 
 .mt0 {
@@ -279,8 +290,8 @@ a:hover {
 
 .mainTxtB {
     color: #333333;
-    font-size: 0.18rem;
-    line-height: 0.3rem;
+    font-size: 0.14rem;
+    line-height: 0.24rem;
 }
 
 .df {
@@ -295,7 +306,7 @@ a:hover {
 .mainBtn {
     box-sizing: border-box;
     display: inline-block;
-    width: 1.3rem;
+    width: 1.5rem;
     height: 0.54rem;
     text-align: center;
     line-height: 0.54rem;
@@ -314,7 +325,7 @@ a:hover {
 .uploadBtn {
     box-sizing: border-box;
     display: inline-block;
-    width: 1.3rem;
+    width: 1.5rem;
     height: 0.54rem;
     text-align: center;
     line-height: 0.54rem;
@@ -331,7 +342,7 @@ a:hover {
 .mainColorBtn {
     box-sizing: border-box;
     display: inline-block;
-    width: 1.3rem;
+    width: 1.5rem;
     height: 0.54rem;
     text-align: center;
     line-height: 0.54rem;
@@ -396,4 +407,25 @@ a:hover {
 
 .bgf {
     background: #ffffff;
+}
+
+.minWidthBox {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.sectionHeader {
+    box-sizing: content-box;
+    min-height: 36px;
+    padding: 80px 0;
+    font-size: 36px;
+    color: #333333;
+}
+
+.emptyHeader {
+    height: 116px;
+}
+
+.sectionListItem {
+    box-shadow: 0 0 15px #f0f0f0;
 }

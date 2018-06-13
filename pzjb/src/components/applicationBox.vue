@@ -1,9 +1,5 @@
 <template>
-  <div class="applicationBox" :style="applicationBg">
-    <div class="title">
-      <img class="titleImg" v-if="obj.title.img" :src="obj.title.img" alt="title">
-      <span v-else>{{obj.title.txt}}</span>
-    </div>
+  <div class="applicationBox">
     <ul class="listBox">
       <li class="listItem" v-for="(item,index) in obj.list" :key="index">
         <img class="listImg" :src="item.img" alt="listImg" :class="{'moveDown':index%2==1}">
@@ -18,11 +14,6 @@ export default {
   props: ['obj'],
   data () {
     return {
-      applicationBg: {
-        backgroundSize: '100% 100%',
-        backgroundRepeat: 'no-repeat',
-        backgroundImage: 'url(' + require('../assets/images/应用场景背景.png') + ')' ,
-      }
     }
   }
 }
@@ -31,11 +22,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .applicationBox{
-  box-sizing: border-box;
-  width: 100%;
+  width: 1170px;
   height: 857px;
-  padding: 160px 390px;
-  /* margin-bottom: 160px; */
+  margin: 0 auto;
 }
 .title{
   height: auto;

@@ -523,14 +523,6 @@ export default {
   },
   created () {
     localStorage.setItem('crowdsourcingExp','expCrowdCheck');
-    this.axios.interceptors.request.use(function(config){
-      console.log("request init.");
-      return config;
-    });
-    this.axios.interceptors.response.use(function(response){
-      console.log("response init.");
-      return response;
-    });
     this.getAppAnswer(1);  //初始化页面标志1
   },
 }

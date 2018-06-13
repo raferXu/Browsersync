@@ -52,6 +52,7 @@
 import ocrEchart from '@/components/ocrEchart'
 import zbEchart from '@/components/zbEchart'
 import myTable from '@/components/myTable'
+import {common} from './../../assets/js/common'
 export default {
   name: '',
   data () {
@@ -115,37 +116,73 @@ export default {
     },
     toRecharge(){
       this.$router.push('/rechargePage');
-    }
-  },
-  created () {
-    
-    var _this = this;
-    this.axios.post("/token/public/list_all",{},{}).then(res=>{
-      res = res.data;
-      var code = res.code;
-      console.log(res);
-      if(code=='200'){
-        var data1 = res;
+    },
+    publicList_allSuc(_this,data1){
         var orderData = data1.body.order;
         for(var i=0;i<this.orderList.length;i++){
           _this.orderList[i].value = data1.body.order[_this.orderList[i]["label"]]
         }
         _this.tableData = data1.body["projects"];
-      }else{
-        console.log('code: '+code);
-      }
-    }).catch(function(error){
-      console.log("/token/public/list_all error init."+error);
+    },
+    paymentBalanceSuc(_this,data2){
+        _this.available_amount = data2.body["available_amount"];
+        _this.total_amount = data2.body["total_amount"];
+        localStorage.setItem('total_amount',_this.total_amount);
+        localStorage.setItem('available_amount',_this.available_amount);
+    }
+  },
+  created () {
+    var _this = this;
+    common.ajax.ajaxReq(this,{
+      url: common.ajax['publicList_all'],
+      suc: _this.publicList_allSuc
     });
+
+    // var _this = this;
+    // this.axios.post("/token/public/list_all",{},{}).then(res=>{
+    //   res = res.data;
+    //   var code = res.code;
+    //   console.log(res);
+    //   if(code=='200'){
+    //     var data1 = res;
+    //     var orderData = data1.body.order;
+    //     for(var i=0;i<this.orderList.length;i++){
+    //       _this.orderList[i].value = data1.body.order[_this.orderList[i]["label"]]
+    //     }
+    //     _this.tableData = data1.body["projects"];
+    //   }else{
+    //     console.log('code: '+code);
+    //   }
+    // }).catch(function(error){
+    //   console.log("/token/public/list_all error init."+error);
+    // });
     
-    this.axios.post("/token/payment/balance",{},{}).then(res=>{
-      var data2 = res.data;
-      _this.available_amount = data2.body["available_amount"];
-      _this.total_amount = data2.body["total_amount"];
-      localStorage.setItem('total_amount',_this.total_amount);
-      localStorage.setItem('available_amount',_this.available_amount);
-    }).catch(function(error){
-      console.log("/token/payment/balance error init."+error);
+    // this.axios.post("/token/payment/balance",{},{}).then(res=>{
+      
+    //   var status = res.status;
+    //   if(status=='200'){
+    //     var data2 = res.data;
+    //     if(data2.code==200){
+    //       console.log('payment/balance success');
+    //       _this.available_amount = data2.body["available_amount"];
+    //       _this.total_amount = data2.body["total_amount"];
+    //       localStorage.setItem('total_amount',_this.total_amount);
+    //       localStorage.setItem('available_amount',_this.available_amount);
+    //     }else{
+    //       console.log('payment/balance code: '+code);
+    //     }
+        
+    //   }else{
+    //     console.log('payment/balance status: '+status);
+    //   }
+      
+    // }).catch(function(error){
+    //   console.log("/token/payment/balance error init."+error);
+    // });
+
+    common.ajax.ajaxReq(this,{
+      url: common.ajax.paymentBalance,
+      suc: _this.paymentBalanceSuc
     });
     
   },

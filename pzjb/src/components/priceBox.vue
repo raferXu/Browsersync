@@ -8,7 +8,7 @@
       <div class="lastRow">
         <span class="redStar">*</span>
         按梯度收费，产品的每个购买阶梯使用一个价格，每个阶梯内的用量与该阶梯的价格相乘，累加后得出总价。
-如：用户本月调用了40000次，则产生费用为 10000*0.2+（40000-10000）*0.17 = 7100 元
+如：用户本月调用了40000次，则产生费用为 10000*0.2+（40000-10000）*0.17 = 7100 元。
 每月费用在次月第一天的00：00结算。
       </div>
     </div>
@@ -70,26 +70,27 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .priceBox{
-  padding: 160px 415px;
+  width: 1170px;
+  padding: 80px 0;
+  margin: 0 auto;
 }
 .sectionTitle{
+  height: auto;
+  line-height: 1;
   margin-bottom: 80px;
   font-size:36px;
 }
 .priceTable{
   display: flex;
   flex-direction: column;
-  /* height: 330px; */
-  margin-bottom: 40px;
-  font-size: 24px;
+  margin-bottom: 80px;
+  font-size: 14px;
+  color: #828282;
   overflow: hidden;
 }
 .row{
   display: flex;
-  line-height: 54px;
-  font-size: 24px;
-  line-height: 54px;
-  color: #333333;
+  line-height: 40px;
 }
 .row:nth-child(even){
   background: #f0f0f0;
@@ -98,7 +99,7 @@ export default {
   background: #dcdcdc;
 }
 .row:first-child{
-  font-size: 20px;
+  font-size: 18px;
   color: #ffffff;
   background: #333333;
   margin-bottom: 10px;
@@ -112,8 +113,7 @@ export default {
 }
 .lastRow{
   background: #f0f0f0;
-  padding: 15px 120px;
-  font-size: 18px;
+  padding: 15px 150px;
   line-height: 30px;
   text-align: left;
 }

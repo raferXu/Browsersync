@@ -30,16 +30,27 @@ axios.interceptors.response.use(
         switch (response.data.code) {
             case 602:
                 console.log('参数错误，返回602');
+                alert('请求失败，请稍后重试（错误代码602）');
                 break;
             case 603:
                 console.log('token错误，返回603');
                 store.commit('setTokenFail', true);
                 store.commit('logoutFn');
+                alert('请求失败，请稍后重试（错误代码603）');
                 break;
             case 604:
                 console.log('token过期，返回604');
                 store.commit('setTokenFail', true);
                 store.commit('logoutFn');
+                alert('请求失败，请稍后重试（错误代码604）');
+                break;
+            case 605:
+                console.log('参数错误，返回605');
+                alert('请求失败，请稍后重试（错误代码605）');
+                break;
+            case 606:
+                console.log('参数错误，返回606');
+                alert('请求失败，请稍后重试（错误代码606）');
                 break;
         }
         return response;
