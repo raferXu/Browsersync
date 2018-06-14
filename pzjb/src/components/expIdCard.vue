@@ -5,9 +5,10 @@
         <img @click="showBigImg(i)" class="smallImg" :class="{'imgActive':imgIndex==i}" v-for="(v,i) in tryObj.showImgArr" :src="v" :key="i" :alt="i">
       </div>
       <div class="bigImgBox" ref="bigImgBox">
-        <span class="bigImgSpan" ref="bigImgSpan">
+        <!-- <span class="bigImgSpan" ref="bigImgSpan">
           <img class="bigImg" ref="bigImg" :src="tryObj.bigImg" alt="bigImg">
-        </span>
+        </span> -->
+        <canvas id="mycanvas" width="416" height="350"></canvas>
       </div>
       <div class="infoBox" :style="infoBoxStyle">
         <div class="loadingBox" v-show="loading">加载中...</div>
@@ -60,13 +61,15 @@
         </div>
       </div>
     </div>
-    <div class="tipsBox tl">提示: 支持上传大小不超过3M的PNG、JPG、JPEG、BMP身份证图片进行体验。</div>
-    <div class="expBtnG">
+    <div class="tipsWrap">
+      <div class="tipsBox tl">提示: 支持上传大小不超过3M的PNG、JPG、JPEG、BMP身份证图片进行体验。</div>
+      <div class="expBtnG">
         <span class="uploadBtn btnG">
-          图片上传
+          上传图片
           <input v-if="fileInputFlag" accept="image/bmp,image/jpeg,image/jpg,image/png" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
         </span>
       </div>
+    </div>
   </div>
 </template>
 
@@ -76,6 +79,15 @@ export default {
   name: '',
   data () {
     return {
+      context: null,
+      boxW: 0,
+      boxH: 0,
+      natImgW: 0,
+      natImgH: 0,
+      canvas: {
+        width: 416,
+        height: 350
+      },
       fileInputFlag: true,
       infoBoxStyle: {
         backgroundSize: '100% 100%',
@@ -124,23 +136,107 @@ export default {
     }
   },
   methods: {
+    createcanvas() {
+      var mycanvas=document.getElementById('mycanvas');
+      mycanvas.width = this.canvas.width;
+      mycanvas.height = this.canvas.height;
+      this.context=mycanvas.getContext('2d');
+    },
+    drawMyImage(obj) {
+      console.log('开始绘制图片');
+      console.log(obj);
+      this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
+      this.context.drawImage(obj.src, obj.x, obj.y, obj.w, obj.h);
+    },
+    showImg(src){
+      var _this = this;
+      this.getImageSize(src).then((res)=>{
+        var direction = _this.getScaleDirection(res);
+        var drawObj = _this.setImageSize(direction,res);
+        var obj = Object.assign({},drawObj,{src:res.img})
+        _this.drawMyImage(obj);
+      },(rej)=>{
+        console.log('获取图片失败');
+      });
+    },
+    getImageSize(src){
+      return new Promise((resolve,reject)=>{
+        var img=new Image(), obj = {};
+        img.onload=function() {
+          console.log('图片加载成功');
+          obj.w = img.naturalWidth;
+          obj.h = img.naturalHeight;
+          obj.img = img;
+          resolve(obj);
+        }
+        img.onerror = function(){
+          alert('图片加载失败，请刷新重试');
+          reject(new Error('图片加载失败, url: '+src));
+        }
+        img.src=src;
+      })
+    },
+    getScaleDirection(obj){
+      var wScale = this.boxW / obj.w;
+      var hScale = this.boxH / obj.h;
+      if(wScale>hScale){
+        console.log('高度应该撑满')
+        return {
+          d: 'v',
+          s: hScale
+        };
+      }else{
+        console.log('宽度应该撑满')
+        return {
+          d: 'h',
+          s: wScale
+        };
+      }
+    },
+    setImageSize(scaleObj,imgObj){
+      var _this = this;
+      var s = scaleObj.s;
+      var size = {};
+      var x,y,w,h;
+      if(scaleObj.d=='h'){
+        w = _this.boxW;
+        x = 0;
+        h = s*imgObj.h;
+        y = (_this.boxH - h)/2
+      }else{
+        h = _this.boxH;
+        y = 0;
+        w = s*imgObj.w;
+        x = (_this.boxW - w)/2
+      }
+      return {
+        x: x,
+        y: y,
+        w: w,
+        h: h
+      }
+    },
     showBigImg(i){
-      var nowIndex = i;
+      let nowIndex = i;
       this.imgIndex = nowIndex;
       this.example = this.exampleRes[nowIndex];
       this.tryObj.bigImg = this.tryObj.showImgArr[nowIndex];
+      this.showImg(this.tryObj.showImgArr[nowIndex]);
     },
     fileUpload(e){
-      var insertNum = 3;
+      
+      let insertNum = 3;
       this.imgIndex = insertNum;
       var _this = this;
       var obj = _this.$refs.fileInput.files[0];
       var objUrl = window.URL.createObjectURL(obj);
       this.tryObj.bigImg = objUrl;
+      
       this.tryObj.showImgArr.splice(insertNum,this.tryObj.showImgArr.length-insertNum,''+objUrl);
 
       var image = new Image();   
-      image.onload =function(){  
+      image.onload =function(){
+          _this.showImg(objUrl);  
           var width = image.width;  
           var height = image.height;  
           var wrapW = _this.$refs.bigImgBox.clientWidth;
@@ -155,7 +251,6 @@ export default {
           }
       }  
       image.src = objUrl;
-
       let data = new FormData();
       data.append('file', obj);
       data.append('deviceId', 'device001');
@@ -203,6 +298,14 @@ export default {
   created () {
     localStorage.setItem('experienceId','ocrExp');
   },
+  mounted () {
+    var _this = this;
+    this.boxW = this.$refs.bigImgBox.clientWidth;
+    this.boxH = this.$refs.bigImgBox.clientHeight;
+    this.createcanvas();
+    this.showImg(_this.tryObj.bigImg);
+
+  }
 }
 </script>
 
@@ -210,10 +313,12 @@ export default {
 <style scoped>
 .expBox{
   display: flex;
-  padding: 108px 200px 0;
+  width: 1170px;
+  padding-top: 110px;
+  margin: 0 auto;
 }
 .expBtnG{
-  padding-top: 80px;
+  padding-top: 40px;
   text-align: center;
 }
 .btnG{
@@ -224,14 +329,14 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width: 130px;
+  width: 150px;
   height: 54px;
   opacity: 0;
 }
 
 .bigImgBox{
-  width: 610px;
-  height: 390px;
+  width: 416px;
+  height: 350px;
   overflow: hidden;
   background: #ffffff;
 }
@@ -240,11 +345,13 @@ export default {
   display: inline-block;
 }
 .bigImg{
-  width: 585px;
+  width: 416px;
   background: #f0f0f0;
 }
 .smallImgBox{
   display: flex;
+  width: 140px;
+  height: 350px;
   flex-direction: column;
   margin-right: 10px;
   font-size:0;
@@ -265,19 +372,19 @@ export default {
 }
 
 .infoBox{
+  font-size: 18px;
   position: relative;
-  width: 722px;
-  height: 392px;
+  width: 566px;
+  height: 352px;
   margin-left: 40px;
   color: #ffffff;
 }
 .infoTitleBox{
-  line-height: 60px;
+  padding-top: 10px;
   padding-left: 20px;
   text-align: left;
 }
 .infoTitle{
-  font-size: 24px;
   color: #0090ff;
 }
 .infoTitle:hover, .bdb{
@@ -285,7 +392,7 @@ export default {
   cursor: pointer;
 }
 .infoTitle:not(:last-child){
-  margin-right: 40px;
+  margin-right: 54px;
 }
 .resultBox, .responseBox{
   box-sizing: border-box;
@@ -295,10 +402,9 @@ export default {
   overflow: auto;
   text-align: left;
   line-height: 2;
-  font-size: 24px;
 }
 .resultBox{
-  padding-top: 30px;
+  padding-top: 20px;
 }
 .key{
   margin-right: 20px;
@@ -315,10 +421,13 @@ export default {
   background: rgba(0,0,0,0.7);
   text-align: center;
 }
+.tipsWrap{
+  width: 1170px;
+  margin: 0 auto;
+}
 .tipsBox{
-  transform-origin: left top;
-  transform: scale(0.9);
-  margin: .2rem 3.5rem 0;
+  width: 416px;
+  margin: 10px 0 0 150px;
   font-size: 0.14rem;
   color: #ffffff;
 }

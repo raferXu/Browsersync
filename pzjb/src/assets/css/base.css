@@ -322,6 +322,25 @@ a:hover {
     background: #ffffff;
 }
 
+.techBtn {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 80px;
+    height: 0.4rem;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.14rem;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.techBtn:hover {
+    color: #333333;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    background: #ffffff;
+}
+
 .uploadBtn {
     box-sizing: border-box;
     display: inline-block;

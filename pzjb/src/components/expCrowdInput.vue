@@ -22,7 +22,7 @@
       <div class="infoBox" :style="infoBoxStyle">
         <div class="loadingBox" v-if="item.step==1">
           <p class="loadTips">众包录入中，请稍后查看结果。</p>
-          <span class="mainBtn refreshBtn" @click="refreshFn">刷新</span>
+          <span class="techBtn refreshBtn" @click="refreshFn">刷新</span>
         </div>
         <div class="initWrap" v-if="item.step==0">
           <div class="infoTitleBox">
@@ -30,7 +30,7 @@
           </div>
           <div class="resultBox"></div>
           <div class="submitBox">
-            <span class="mainBtn" @click="submitToCheck">确认提交</span>
+            <span class="techBtn" @click="submitToCheck">确认提交</span>
           </div>
         </div>
         <div class="loadingBox resultWrap" v-if="item.step==2">
@@ -44,13 +44,15 @@
         </div>
       </div>
     </div>
-    <div class="tipsBox tl">提示: 支持上传大小不超过3M的PNG、JPG、JPEG、BMP任意图片进行体验。</div>
-    <div class="expBtnG">
+    <div class="tipsWrap">
+      <div class="tipsBox tl">提示: 支持上传大小不超过3M的PNG、JPG、JPEG、BMP任意图片进行体验。</div>
+      <div class="expBtnG">
         <span @click="canUpload" class="uploadBtn btnG">
           图片上传
           <input accept="image/bmp,image/jpeg,image/jpg,image/png" v-show="isAllSubmit" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload()">
         </span>
       </div>
+    </div>
   </div>
 </template>
 
@@ -451,10 +453,12 @@ export default {
 <style scoped>
 .expBox{
   display: flex;
-  padding: 108px 200px 0;
+  width: 1170px;
+  padding-top: 110px;
+  margin: 0 auto;
 }
 .expBtnG{
-  padding-top: 80px;
+  padding-top: 40px;
   text-align: center;
 }
 .btnG{
@@ -481,8 +485,8 @@ export default {
 
 .bigImgBox{
   position: relative;
-  width: 610px;
-  height: 390px;
+  width: 416px;
+  height: 350px;
   overflow: hidden;
   background: #000000;
 }
@@ -490,23 +494,23 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width: 610px;
-  height: 390px;
+  width: 416px;
+  height: 350px;
 }
 .bigImgSpan{
   position: relative;
   display: inline-block;
 }
 .bigImg{
-  width: 610px;
-  height: 390px;
+  width: 416px;
+  height: 350px;
   background: #f0f0f0;
 }
 .smallImgBox{
   display: flex;
   flex-direction: column;
   width: 140px;
-  height: 390px;
+  height: 350px;
   overflow-y: auto;
   overflow-x: hidden;
   margin-right: 10px;
@@ -530,34 +534,34 @@ export default {
 
 .infoBox{
   position: relative;
-  width: 722px;
-  height: 392px;
+  width: 566px;
+  height: 352px;
   margin-left: 40px;
   color: #ffffff;
 }
 .infoTitleBox{
   line-height: 1;
+  padding-top: 10px;
   padding-left: 20px;
-  padding-top: 40px;
   text-align: left;
 }
 .infoTitle{
-  font-size: 24px;
+  font-size: 18px;
   color: #ffffff;
 }
 .infoTitle:not(:last-child){
-  margin-right: 40px;
+  margin-right: 54px;
 }
 .resultBox{
   box-sizing: border-box;
   position: relative;
   height: 236px;
-  padding: 30px 40px;
+  padding: 20px 20px 0;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: left;
   line-height: 2;
-  font-size: 24px;
+  font-size: 18px;
 }
 .key{
   margin-right: 20px;
@@ -572,13 +576,16 @@ export default {
   color: white;
   background: rgba(0,0,0);
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
   z-index: 1;
 }
+.tipsWrap{
+  width: 1170px;
+  margin: 0 auto;
+}
 .tipsBox{
-  transform-origin: left top;
-  transform: scale(0.7);
-  margin: .2rem 3.5rem 0;
+  width: 416px;
+  margin: 10px 0 0 150px;
   font-size: 0.14rem;
   color: #ffffff;
 }
@@ -614,7 +621,7 @@ export default {
   overflow: auto;
 }
 .resultWrap{
-  padding: 40px 20px;
+  padding: 20px;
 }
 .regBox{
   line-height: 1;
@@ -624,7 +631,7 @@ export default {
   padding-bottom: 50px;
 }
 .regBox>p{
-  padding-top: 30px;
+  padding-top: 20px;
 }
 .star{
   display: inline-block;
@@ -657,7 +664,7 @@ export default {
   line-height: 3.9rem;
   color: #ffffff;
   text-align: center;
-  font-size: 0.24rem;
+  font-size: 0.18rem;
 }
 
 </style>

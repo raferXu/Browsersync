@@ -19,16 +19,6 @@
             </ul>
         </div>
         <jbSection :jbSectionStyle="stepStyle"></jbSection>
-        <!-- <div class="box bg3 stepBox">
-            <h3 class="mainH3 tc pb80">使用流程</h3>
-            <img class="stepImg" :src="stepSrc" alt="stepImg">
-        </div> -->
-        <!-- <div class="box">
-            <h3 class="mainH3B tc pb80">应用场景</h3>
-            <media :mediaData="ocrAppliData[0]"></media>
-            <div class="divide"></div>
-            <media :mediaData="ocrAppliData[1]"></media>
-        </div> -->
         <jbSection>
             <h4 slot="sectionHeaderTitle" class="sectionHeader">应用场景</h4>
             <ul slot="content" class="list">
@@ -46,7 +36,6 @@
 
 <script>
     import bannerBox from '@/components/bannerBox'
-    // import media from '@/components/media'
     import standard from '@/components/standard'
     import listItem from '@/components/listItem'
     import listBox from '@/components/listBox'
@@ -83,21 +72,6 @@
                     txt: '基于强大通用文字识别引擎，快速生成专有模板与算法模型，提供定制化识别服务。可自由选择任意需进行识别的图片与图片上的文字内容，智能识别成为可编辑的文本。',
                     url: require('../../assets/images/定制化识别服务功能介绍.png')
                 },
-                // ocrAppliData: [{
-                //         title: '1. 金融行业资料电子化',
-                //         txt: '用于企业证照、年报、财报、票据等纸质资料的自动识别，支持结构化录入，节约人力成本，提升处理效率',
-                //         url: require('../../assets/images/金融行业资料电子化.png'),
-                //         imgRight: true
-                //     },
-                //     {
-                //         title: '2. 医疗单据识别',
-                //         txt: '用于医疗行业的单据、票据、病例及体检报告等资料的自动识别和结构化整理工作，快速实现电子化入库，减少人工输入过程，提高输入效率',
-                //         url: require('../../assets/images/医疗单据识别.png'),
-                //         imgRight: false
-                //     }
-                // ],
-                page: 'customizedOCR',
-                // bannerSrc: require('../../assets/images/定制化识别服务banner.png'),
                 bannerStyle: {
                     backgroundSize: '1920px 500px',
                     backgroundRepeat: 'no-repeat',
@@ -118,7 +92,6 @@
                     }
                     ]
                 },
-                // stepSrc: require('../../assets/images/定制化识别服务使用流程.png')
             }
         },
         created() {
@@ -137,7 +110,6 @@
         },
         components: {
             bannerBox,
-            // media,
             standard,
             jbSection,
             listBox,
@@ -155,8 +127,7 @@
         text-align: left;
     }
     
-    .futBox,
-    .stepBox {
+    .futBox {
         padding-bottom: 80px;
     }
     
@@ -174,8 +145,5 @@
         width: 336px;
     }
     
-    .stepImg {
-        width: 1203px;
-    }
     
 </style>

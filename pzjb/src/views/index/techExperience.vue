@@ -12,8 +12,8 @@
       </div>
     </div>
     <div class="showBox">
-        <component :is="componentId"></component>
-      </div>
+      <component :is="componentId"></component>
+    </div>
   </div>
 </template>
 
@@ -71,28 +71,33 @@ export default {
   background: #1e1e1e;
 }
 .techBox{
+  position: relative;
+  z-index: 1;
   box-sizing: border-box;
-  height: 260px;
-  padding: 140px 0 0 40px;
+  width: 1170px;
+  padding-top: 140px;
+  padding-bottom: 20px;
+  margin: 0 auto;
 }
 .selectBox{
   position: relative;
-  width: 253px;
-  height: 58px;
+  width: 150px;
+  height: 54px;
 }
 .selectBox ul{
   display: flex;
-  width: 253px;
+  width: 150px;
   flex-direction: column;
-  font-size: 36px;
+  font-size: 20px;
   color: #ffffff;
 }
 .selectBox li{
   box-sizing: border-box;
-  width: 253px;
-  height: 58px;
-  line-height: 58px;
+  width: 150px;
+  height: 54px;
+  line-height: 54px;
   text-align: center;
+  background: #1e1e1e;
   border: 1px solid #0090ff;
 }
 .selectBox li:last-child{
@@ -101,11 +106,15 @@ export default {
 .selectBtnImg{
   position: absolute;
   top: 0;
-  right: -57px;
-  width: 58px;
-  height: 58px;
+  right: -53px;
+  width: 54px;
+  height: 54px;
 }
 .showBox{
-  padding-bottom: 234px;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 1170px;
+  margin: 0 auto;
+  padding-bottom: 80px;
 }
 </style>

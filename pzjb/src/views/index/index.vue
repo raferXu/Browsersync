@@ -25,7 +25,6 @@
           </li>
       </ul>
     </jbSection>
-    <!-- <productContent :obj="caseObj"></productContent> -->
     <jbSection :jbSectionStyle="applicationScenStyle">
       <h4 slot="sectionHeaderImg" class="sectionHeader">
         <img :src="applicationScenImg" alt="">
@@ -52,7 +51,6 @@ import jbSection from '@/components/jbSection'
 import listItem from '@/components/listItem'
 import listBox from '@/components/listBox'
 import applicationBox from '@/components/applicationBox'
-// import productContent from '@/components/productContent'
 export default {
   name: '',
   data () {
@@ -124,16 +122,6 @@ export default {
           }
         ]
       },
-      // caseObj: {
-      //   title: {
-      //     img: require('../../assets/images/产品内容.png')
-      //   },
-      //   pasx: {
-      //     img: require('../../assets/images/产品内容.png'),
-      //     name: '产品内容',
-      //     txt: '产品内容'
-      //   }
-      // },
       caseImg: require('../../assets/images/客户案例.png'),
       parsImg: require('../../assets/images/平安人寿.png'),
       pacxImg: require('../../assets/images/平安产险.png'),
@@ -210,7 +198,6 @@ export default {
     bannerBox,
     jbSection,
     applicationBox,
-    // productContent,
     listBox,
     listItem
   }

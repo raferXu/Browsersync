@@ -16,12 +16,6 @@
             </li>
         </ul>
     </jbSection>
-    <!-- <div class="box">
-        <h3 class="mainH3B tc pb80">功能介绍</h3>
-        <media :mediaData="ocrAppliData[2]"></media>
-        <div class="divide"></div>
-        <media :mediaData="ocrAppliData[3]"></media>
-    </div> -->
     <div class="box futBox">
         <h3 class="mainH3B tc pb80">产品特色</h3>
         <ul class="list">
@@ -31,16 +25,6 @@
         </ul>
     </div>
     <jbSection :jbSectionStyle="stepStyle"></jbSection>
-    <!-- <div class="box bg3 stepBox" style="position:relative">
-        <h3 class="mainH3 tc pb80">使用流程</h3>
-        <img class="stepImg" :src="stepSrc" alt="stepImg">
-    </div> -->
-    <!-- <div class="box">
-        <h3 class="mainH3B tc pb80">应用场景</h3>
-        <media :mediaData="ocrAppliData[0]"></media>
-        <div class="divide"></div>
-        <media :mediaData="ocrAppliData[1]"></media>
-    </div> -->
     <jbSection>
         <h4 slot="sectionHeaderTitle" class="sectionHeader">应用场景</h4>
         <ul slot="content" class="list">
@@ -58,7 +42,6 @@
 
 <script>
 import bannerBox from '@/components/bannerBox'
-import media from '@/components/media'
 import listItem from '@/components/listItem'
 import listBox from '@/components/listBox'
 import jbSection from '@/components/jbSection'
@@ -122,46 +105,16 @@ export default {
             }
             ]
         },
-        ocrAppliData: [
-            {
-                title: '1. 手写体识别',
-                txt: '针对手写数字、手写文字体等多种复杂图片进行纯人工文字检测及录入，迅速完成文档电子化。',
-                url: require('../../assets/images/手写体识别.png'),
-                imgRight: true
-            },
-            {
-                title: '2. 机器识别的低效字段',
-                txt: '解决整图文字识别中个别信息识别效果差影响业务适用性的情况，通过人工快速纠正OCR错误识别信息，迅速提升整体准确性，达到各场景下的可用性标准。',
-                url: require('../../assets/images/机器识别的低效字段.png'),
-                imgRight: false
-            },
-            {
-                title: '众包审核——校验OCR识别结果',
-                txt: '基于OCR识别结果，将机器识别准确率较低的疑难文字，通过平安众包人工审核服务进行有效纠错，助力OCR识别精度提升至99.9%。',
-                url: require('../../assets/images/众包审核——校验OCR识别结果.png'),
-                imgRight: false
-            },
-            {
-                title: '众包录入——纯人工输入',
-                txt: '通过24*7全天候运营的平安众包平台，连接海量用户进行文字录入，并提供交叉验证机制对回收结果进行系统自动核对，高质高效完成数据交付。',
-                url: require('../../assets/images/众包录入——纯人工输入.png'),
-                imgRight: true
-            }
-        ],
-      page: 'customizedOCR',
-    //   bannerSrc: require('../../assets/images/众包服务banner.png'),
-      bannerStyle: {
-        backgroundSize: '1920px 500px',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center center',
-        backgroundImage: 'url(' + require('../../assets/images/众包服务banner.png') + ')'
-      },
-      stepSrc: require('../../assets/images/开通&未开通OCR文字识别服务使用流程.png')
+        bannerStyle: {
+            backgroundSize: '1920px 500px',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
+            backgroundImage: 'url(' + require('../../assets/images/众包服务banner.png') + ')'
+        },
     }
   },
   components: {
     bannerBox,
-    media,
     jbSection,
     listBox,
     listItem
@@ -198,7 +151,7 @@ export default {
     padding-top: 160px;
     text-align: left;
 }
-.futBox, .stepBox{
+.futBox{
     padding-bottom: 80px;
 }
 .divide{
@@ -210,13 +163,6 @@ export default {
 }
 .item{
     width: 336px;
-}
-.stepBox{
-    padding: 1.6rem 0;
-    text-align: center;
-}
-.stepImg{
-    width: 1222px;
 }
 .imgL{
     position: absolute;

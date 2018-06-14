@@ -18,8 +18,10 @@ export default {
     return {
       tabIndex: 0,
       expBodyStyle: {
-        backgroundSize: '100% 100%',
+        height: '723px',
+        backgroundSize: '1920px 723px',
         backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
         backgroundImage: 'url(' + require('../assets/images/OCR文字识别背景.png') + ')' 
       },
       componentId: 'expCrowdCheck',
@@ -72,10 +74,14 @@ export default {
   top: -6px;
 }
 .expTitle li{
-  font-size: 24px;
+  width: 80px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin: 0 40px;
+  font-size: 18px;
   color: #ffffff;
-  padding: 0 20px 20px;
-  border-bottom: 8px solid transparent;
+  border-bottom: 4px solid transparent;
 }
 .expTitle li:hover{
   cursor: pointer;
@@ -84,8 +90,7 @@ export default {
   border-bottom-color: #0090ff;
 }
 .expBody{
-  width: 1920px;
-  height: 645px;
+  width: 100%;
+  min-width: 1170px;
 }
-
 </style>
