@@ -5,9 +5,6 @@
         <img @click="showBigImg(i)" class="smallImg" :class="{'imgActive':imgIndex==i}" v-for="(v,i) in tryObj.showImgArr" :src="v" :key="i" :alt="i">
       </div>
       <div class="bigImgBox" ref="bigImgBox">
-        <!-- <span class="bigImgSpan" ref="bigImgSpan">
-          <img class="bigImg" ref="bigImg" :src="tryObj.bigImg" alt="bigImg">
-        </span> -->
         <canvas id="mycanvas" width="416" height="350"></canvas>
       </div>
       <div class="infoBox" :style="infoBoxStyle">
@@ -142,7 +139,7 @@ export default {
       mycanvas.height = this.canvas.height;
       this.context=mycanvas.getContext('2d');
     },
-    drawMyImage(obj) {
+    drawImage(obj) {
       console.log('开始绘制图片');
       console.log(obj);
       this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
@@ -154,7 +151,7 @@ export default {
         var direction = _this.getScaleDirection(res);
         var drawObj = _this.setImageSize(direction,res);
         var obj = Object.assign({},drawObj,{src:res.img})
-        _this.drawMyImage(obj);
+        _this.drawImage(obj);
       },(rej)=>{
         console.log('获取图片失败');
       });
@@ -216,48 +213,15 @@ export default {
         h: h
       }
     },
-    showBigImg(i){
+    showBigImg(i){  //点击小图绘制相应大图
       let nowIndex = i;
       this.imgIndex = nowIndex;
       this.example = this.exampleRes[nowIndex];
       this.tryObj.bigImg = this.tryObj.showImgArr[nowIndex];
       this.showImg(this.tryObj.showImgArr[nowIndex]);
     },
-    fileUpload(e){
-      
-      let insertNum = 3;
-      this.imgIndex = insertNum;
+    axiosIdentity(data,insertNum){
       var _this = this;
-      var obj = _this.$refs.fileInput.files[0];
-      var objUrl = window.URL.createObjectURL(obj);
-      this.tryObj.bigImg = objUrl;
-      
-      this.tryObj.showImgArr.splice(insertNum,this.tryObj.showImgArr.length-insertNum,''+objUrl);
-
-      var image = new Image();   
-      image.onload =function(){
-          _this.showImg(objUrl);  
-          var width = image.width;  
-          var height = image.height;  
-          var wrapW = _this.$refs.bigImgBox.clientWidth;
-          var wrapH = _this.$refs.bigImgBox.clientHeight;
-          if(width/height>wrapW/wrapH){
-            console.log('宽占满');
-          }else{
-            console.log('高占满');
-            _this.$refs.bigImgSpan.style.height = '100%';
-            _this.$refs.bigImg.style.height = '100%';
-            _this.$refs.bigImg.style.width = 'auto';
-          }
-      }  
-      image.src = objUrl;
-      let data = new FormData();
-      data.append('file', obj);
-      data.append('deviceId', 'device001');
-      data.append('clientType', '2');
-      data.append('appKey', '24680');
-      data.append('appID', 'com.pingan.ocr.demo');
-      _this.loading = true;
       _this.axios({
         url: 'https://test-pazb.pingan.com.cn:20443/alg/ocr_chanxian_test/identity_card_grab_rec',
         method: 'post',
@@ -293,18 +257,43 @@ export default {
         alert('网络异常,请刷新页面');
         common.refresh(_this);
       });
+    },
+    setAxiosData(obj){
+      let data = new FormData();
+      data.append('file', obj);
+      data.append('deviceId', 'device001');
+      data.append('clientType', '2');
+      data.append('appKey', '24680');
+      data.append('appID', 'com.pingan.ocr.demo');
+      return data;
+    },
+    fileUpload(e){
+      
+      let insertNum = 3;
+      //获取上传图片信息
+      var obj = this.$refs.fileInput.files[0];
+      var objUrl = window.URL.createObjectURL(obj);
+      //设置左边小图
+      this.tryObj.showImgArr.splice(insertNum,this.tryObj.showImgArr.length-insertNum,''+objUrl);
+      this.imgIndex = insertNum;
+      //绘制大图
+      this.tryObj.bigImg = objUrl;
+      this.showImg(objUrl); 
+      //请求获取图片信息
+      let data = this.setAxiosData(obj)
+      this.loading = true;
+      this.axiosIdentity(data,insertNum)
     }
   },
   created () {
     localStorage.setItem('experienceId','ocrExp');
   },
-  mounted () {
+  mounted () {  //绘制第一张图
     var _this = this;
     this.boxW = this.$refs.bigImgBox.clientWidth;
     this.boxH = this.$refs.bigImgBox.clientHeight;
     this.createcanvas();
     this.showImg(_this.tryObj.bigImg);
-
   }
 }
 </script>
@@ -339,14 +328,6 @@ export default {
   height: 350px;
   overflow: hidden;
   background: #ffffff;
-}
-.bigImgSpan{
-  position: relative;
-  display: inline-block;
-}
-.bigImg{
-  width: 416px;
-  background: #f0f0f0;
 }
 .smallImgBox{
   display: flex;
