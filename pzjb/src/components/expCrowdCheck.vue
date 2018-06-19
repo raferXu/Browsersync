@@ -7,9 +7,7 @@
         </div>
       </div>
       <div class="bigImgBox" ref="bigImgBox">
-        <span class="bigImgSpan" ref="bigImgSpan">
-          <img class="bigImg" ref="bigImg" :src="tryObj.bigImg" alt="bigImg">
-        </span>
+        <exp-canvas :hasClickSubmit="hasClickSubmit" @getCanvasImg="getCanvasImg" :rectData="rectData" :src="tryObj.bigImg"></exp-canvas>
       </div>
       <div class="infoBox" :style="infoBoxStyle">
         <div class="loadingBox" v-if="others.step==1">
@@ -71,9 +69,9 @@
     <div class="tipsWrap">
       <div class="tipsBox tl">提示: 支持上传大小不超过3M的PNG、JPG、JPEG、BMP身份证图片进行体验。</div>
       <div class="expBtnG">
-        <span class="uploadBtn btnG">
+        <span @click="canUploadFn" class="uploadBtn btnG">
           图片上传
-          <input accept="image/bmp,image/jpeg,image/jpg,image/png" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
+          <input v-show="canUploadFlag" accept="image/bmp,image/jpeg,image/jpg,image/png" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
         </span>
       </div>
     </div>
@@ -84,10 +82,25 @@
 import {common} from '../assets/js/common'
 import baseUrl from '../Global'
 console.log('baseUrl: '+baseUrl.BASE_URL);
+import expCanvas from './expCanvas'
 export default {
   name: '',
+  components: {
+    expCanvas
+  },
+  watch: {
+    checkedNames(){ //多选框改变时改变rectData，从而通知canvas重新绘制
+      console.log('checkedNames change');
+      this.rectData.checkedNames = this.checkedNames
+      this.rectData.example = this.example
+    }
+  },
   data () {
     return {
+      rectData: {
+        checkedNames: [],
+        example: {}
+      },
       hasClickSubmit: false,
       task: {
         pic_url: '',
@@ -187,65 +200,82 @@ export default {
     }
   },
   methods: {
-    getAppAnswer(flag){
+    getCanvasImg(src){  //将已提交的画框图片插入小图列表
+      console.log('parent getcanvasImg src')
+      console.log(src)
+      this.tryObj.showImgArr[this.tryObj.showImgArr.length-1] = src;
+    },
+    init(nowIndex){  //构造初始化时的已有图片的数据占位符
       var _this = this;
-      var nowIndex = this.imgIndex;
-      _this.axios({
+      console.log('初始化页面');
+      var NowImgArr = [];
+      var NowOthersList = [];
+      var NowExampleRes = [];
+      for(var i=0;i<_this.ocrResultArr.length;i++){
+        var nowImgUrl = baseUrl.BASE_URL+_this.ocrResultArr[i]["pic_with_mark"];
+        NowImgArr.push(nowImgUrl);
+        NowOthersList.push({
+          pic_url: nowImgUrl,
+          step: 1,
+          coordinateFlag: true,
+          uploadFlag: true
+        });
+        NowExampleRes.push({
+          "ID_HaoMa": {
+            "score": "", 
+            "text": "", 
+            "xmax": "", 
+            "xmin": "", 
+            "ymax": "", 
+            "ymin": ""
+          }, 
+          "ID_XingMing": {
+            "score": "", 
+            "text": "", 
+            "xmax": "", 
+            "xmin": "", 
+            "ymax": "", 
+            "ymin": ""
+          }
+        });
+      }
+      _this.tryObj.showImgArr = NowImgArr;
+      _this.tryObj.bigImg = NowImgArr[nowIndex];
+      _this.othersList = NowOthersList;
+      _this.others = NowOthersList[nowIndex];
+      _this.exampleRes = NowExampleRes;
+    },
+    checkExperienceResult(){  //请求查询结果列表
+      var _this = this;
+      return _this.axios({
         url: '/token/experience_results/ocr',
         method: 'post'
-      }).then(function (response) {
+      });
+    },
+    handleOcrResult(data,nowIndex,flag){  //对请求结果列表的处理
+      var _this = this;
+      _this.ocrResultArr = data.body.res;
+        if(_this.ocrResultArr.length>0){
+          console.log('ocrResultArr有数据');
+          _this.ocrResult = data.body.res[nowIndex];
+          if(flag==1){  //页面初始化
+            _this.init(nowIndex);
+          }else{
+            console.log('图片上传');
+          }
+          _this.checkAppResult(nowIndex);
+        }else{
+          console.log('返回的ocrResultArr为空数组,新用户初始化状态');
+        }
+    },
+    getAppAnswer(flag){  //获取结果列表
+      var _this = this;
+      var nowIndex = this.imgIndex;
+      _this.checkExperienceResult().then(function (response) {
         console.log(response)
         var data = response.data;
         if(data.code==200){
-          _this.ocrResultArr = data.body.res;
-          if(_this.ocrResultArr.length>0){
-            console.log('ocrResultArr有数据');
-            _this.ocrResult = data.body.res[nowIndex];
-            if(flag==1){
-              console.log('页面刷新了，获取列表');
-              var NowImgArr = [];
-              var NowOthersList = [];
-              var NowExampleRes = [];
-              for(var i=0;i<_this.ocrResultArr.length;i++){
-                var nowImgUrl = baseUrl.BASE_URL+_this.ocrResultArr[i]["pic_with_mark"];
-                NowImgArr.push(nowImgUrl);
-                NowOthersList.push({
-                  pic_url: nowImgUrl,
-                  step: 1,
-                  coordinateFlag: true,
-                  uploadFlag: true
-                });
-                NowExampleRes.push({
-                  "ID_HaoMa": {
-                    "score": "", 
-                    "text": "", 
-                    "xmax": "", 
-                    "xmin": "", 
-                    "ymax": "", 
-                    "ymin": ""
-                  }, 
-                  "ID_XingMing": {
-                    "score": "", 
-                    "text": "", 
-                    "xmax": "", 
-                    "xmin": "", 
-                    "ymax": "", 
-                    "ymin": ""
-                  }
-                });
-              }
-              _this.tryObj.showImgArr = NowImgArr;
-              _this.tryObj.bigImg = NowImgArr[nowIndex];
-              _this.othersList = NowOthersList;
-              _this.others = NowOthersList[nowIndex];
-              _this.exampleRes = NowExampleRes;
-            }else{
-              console.log('图片上传');
-            }
-            _this.checkAppResult(nowIndex);
-          }else{
-            console.log('返回的ocrResultArr为空数组,新用户初始化状态');
-          }
+          _this.handleOcrResult(data,nowIndex,flag)
         }else{
           console.log('experience_results/ocr data.code: '+data.code);
           alert('网络异常，请刷新页面');
@@ -259,7 +289,7 @@ export default {
         common.refresh(_this);
       });
     },
-    checkAppResult(nowIndex){
+    checkAppResult(nowIndex){  //根据查询app结果判断结果是否已返回
       var _this = this;
       // Cannot read property 'ID_HaoMa' of undefined
       console.log(_this.ocrResult);
@@ -302,8 +332,11 @@ export default {
         }
       }
     },
-    showBigImg(i){
+    showBigImg(i){  //点击小图显示大图
       var nowIndex = i;
+      if(i!=this.tryObj.showImgArr.length){
+        this.checkedNames = []
+      }
       this.imgIndex = nowIndex;
       this.others = this.othersList[nowIndex];
       this.ocrResult = this.ocrResultArr[nowIndex];
@@ -312,55 +345,67 @@ export default {
       this.others.step = this.othersList[nowIndex].step;
       this.example = this.exampleRes[nowIndex];
     },
-    ocrFn(obj,fileName){
+    axiosOcrTest(data){
       var _this = this;
-      var nowOcrImgIndex = _this.imgIndex;
-      let data = new FormData();
-      data.append('file', obj);
-      data.append('text', JSON.stringify({"0":""+fileName}));
-      _this.axios({
+      return _this.axios({
         url: 'https://test-pazb.pingan.com.cn:20443/alg/ocr_chanxian_test/id_test_inner',
         method: 'post',
         data: data,
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
-      }).then(function (response) {
-        if(response.status==200){
-          console.log(response);
-          var data = response.data;
-          var returnJSON = data[fileName][0],returnInfo;
-          _this.others.coordinateFlag = true;
-          _this.othersList[nowOcrImgIndex].coordinateFlag = true;
-          if(returnJSON){
-            returnInfo = returnJSON['info'];
-            
-          }else{
-            console.log('id_test_inner接口返回空，请上传身份证');
-            console.log(returnJSON);
-            alert('请上传身份证图片');
-            common.refresh(_this);
-            returnInfo = {
-              "ID_HaoMa": {
-                "score": "666", 
-                "text": "", 
-                "xmax": "397.0", 
-                "xmin": "138.0", 
-                "ymax": "261.121246338", 
-                "ymin": "238.674926758"
-              }, 
-              "ID_XingMing": {
-                "score": "666", 
-                "text": "", 
-                "xmax": "129.0", 
-                "xmin": "73.0", 
-                "ymax": "60.3761863708", 
-                "ymin": "32.8974304199"
-              }
-            }
+      })
+    },
+    showOcrTestResult(response,fileName,nowOcrImgIndex){
+      console.log(response);
+      var _this = this;
+      var data = response.data;
+      var returnJSON = data[fileName][0],returnInfo;
+      _this.others.coordinateFlag = true;
+      _this.othersList[nowOcrImgIndex].coordinateFlag = true;
+      if(returnJSON){
+        returnInfo = returnJSON['info'];
+        
+      }else{
+        console.log('id_test_inner接口返回空，请上传身份证');
+        console.log(returnJSON);
+        alert('请上传身份证图片');
+        common.refresh(_this);
+        returnInfo = {
+          "ID_HaoMa": {
+            "score": "666", 
+            "text": "", 
+            "xmax": "397.0", 
+            "xmin": "138.0", 
+            "ymax": "261.121246338", 
+            "ymin": "238.674926758"
+          }, 
+          "ID_XingMing": {
+            "score": "666", 
+            "text": "", 
+            "xmax": "129.0", 
+            "xmin": "73.0", 
+            "ymax": "60.3761863708", 
+            "ymin": "32.8974304199"
           }
-          _this.exampleRes.push(returnInfo);
-          _this.example = returnInfo;
+        }
+      }
+      _this.exampleRes.push(returnInfo);
+      _this.example = returnInfo;
+    },
+    setAxiosOcrTestData(obj,fileName){
+      let data = new FormData();
+      data.append('file', obj);
+      data.append('text', JSON.stringify({"0":""+fileName}));
+      return data;
+    },
+    ocrFn(obj,fileName){
+      var _this = this;
+      var nowOcrImgIndex = _this.imgIndex;
+      let data = _this.setAxiosOcrTestData(obj,fileName);
+      _this.axiosOcrTest(data).then(function (response) {
+        if(response.status==200){
+          _this.showOcrTestResult(response,fileName,nowOcrImgIndex)
         }else{
           console.log('response.status: '+response.status);
           _this.others.coordinateFlag = false;
@@ -375,6 +420,12 @@ export default {
         alert('网络异常，请刷新页面');
         common.refresh(_this);
       });
+    },
+    canUploadFn(){
+      if(!this.canUploadFlag){
+        alert('请先勾选已有图片字段信息')
+        return;
+      }
     },
     fileUpload(e){
       this.checkedNames = [];
@@ -392,62 +443,49 @@ export default {
       this.others = Object.assign({},this.others,othersObj);
       this.ocrResultArr.push({});
       this.ocrResult = {};
-
       this.upload_files(obj);
       this.handleImg(obj);
+      
       this.ocrFn(obj,fileName);
-
     },
     handleImg(obj){
       var _this = this;
       var objUrl = window.URL.createObjectURL(obj);
       this.tryObj.bigImg = objUrl;
       this.tryObj.showImgArr.push(objUrl);
-      var image = new Image();   
-      image.onload =function(){  
-          var width = image.width;  
-          var height = image.height;  
-          var wrapW = _this.$refs.bigImgBox.clientWidth;
-          var wrapH = _this.$refs.bigImgBox.clientHeight;
-          if(width/height>wrapW/wrapH){
-            console.log('宽占满');
-            _this.$refs.bigImgSpan.style.width = '100%';
-            _this.$refs.bigImg.style.width = '100%';
-            _this.$refs.bigImg.style.height = 'auto';
-          }else{
-            console.log('高占满');
-            _this.$refs.bigImgSpan.style.height = '100%';
-            _this.$refs.bigImg.style.height = '100%';
-            _this.$refs.bigImg.style.width = 'auto';
-          }
-      }  
-      image.src = objUrl;
+    },
+    axiosUploadFiles(formdata){
+      var _this = this;
+      return _this.axios({
+          url:"/token/upload_files",
+          data:formdata,
+          method:'post'
+      })
+    },
+    showUploadFilesResult(resData,nowImgIndex){
+      var _this = this;
+      _this.others.uploadFlag = true;
+      _this.othersList[nowImgIndex].uploadFlag = true;
+      _this.others["pic_url"] = resData.body["url_list"][0];
+      _this.othersList[nowImgIndex]["pic_url"] = resData.body["url_list"][0];
     },
     upload_files(obj){
       var _this = this;
       var nowImgIndex = _this.imgIndex;
       let formdata = new FormData();
       formdata.append('files',obj);
-      _this.axios({
-          url:"/token/upload_files",
-          data:formdata,
-          method:'post'
-      }).then(function(res){
+      _this.axiosUploadFiles(formdata).then(function(res){
           console.log(res);
           if(res.status==200){
             var resData = res.data;
             if(resData.code==200){
-              _this.others.uploadFlag = true;
-              _this.othersList[nowImgIndex].uploadFlag = true;
-              _this.others["pic_url"] = resData.body["url_list"][0];
-              _this.othersList[nowImgIndex]["pic_url"] = resData.body["url_list"][0];
+              _this.showUploadFilesResult(resData,nowImgIndex)
             }else{
               console.log('upload_files data.code: '+resData.code);
               _this.others.uploadFlag = false;
               _this.othersList[nowImgIndex].uploadFlag = false;
               alert('网络异常，请刷新页面');
               common.refresh(_this);
-              // location.reload();
             }
           }else{
             console.log('upload_files res.status: '+res.status);
@@ -455,63 +493,73 @@ export default {
             _this.othersList[nowImgIndex].uploadFlag = false;
             alert('网络异常，请刷新页面');
             common.refresh(_this);
-            // location.reload();
           }
       }); 
     },
-    submitToCheck(){
-      var nowIndex = this.imgIndex;
-      console.log('submitToCheck确认提交按钮被点击了 '+this.hasClickSubmit);
+    canSubmitFn(){
       if(this.hasClickSubmit){
         console.log('确认提交按钮被点击,请求提交未返回');
         return;
       }
       this.hasClickSubmit = true;
+    },
+    isNotWrongBeforeSubmit(){
       if(!this.others.coordinateFlag||!this.others.uploadFlag){
         console.log('坐标没拿到或者文件上传失败');
         alert('网络异常，请刷新页面');
-        console.log(localStorage.getItem('experienceId'));
-        console.log(localStorage.getItem('crowdsourcingExp'));
         return;
       }
+    },
+    isIdCard(nowIndex){
       if(this.exampleRes[nowIndex]['ID_HaoMa']['score']=='666'){
         console.log('算法接口返回空，上传的不是身份证');
         alert('请上传身份证图片');
         this.hasClickSubmit = false;
-        
         return;
       }
+    },
+    setAxiosAddZbTaskData(nowIndex){
+      for(var i=0;i<this.checkedNames.length;i++){
+        var obj = {};
+        obj.type = this.checkedNames[i];
+        var info = this.exampleRes[nowIndex][this.checkedNames[i]];
+        obj['alg_answer'] = info['text'];
+        obj['square'] = [info['xmin'],info['ymin'],info['xmax'],info['ymax']];
+        this.task.task_infos.push(obj);
+      }
+      
+      this.task.pic_url = this.othersList[nowIndex].pic_url;
+      this.others.step = 1;
+      this.othersList[nowIndex].step = 1;
+    },
+    axiosAddZbTask(){
+      var _this = this;
+      return this.axios({
+        url: '/token/add_orc_zb_task',
+        method: 'post',
+        data: _this.task
+      })
+    },
+    submitToCheck(){
+      var nowIndex = this.imgIndex;
+      console.log('submitToCheck确认提交按钮被点击了 '+this.hasClickSubmit);
+      this.canSubmitFn()
+      this.isNotWrongBeforeSubmit()
+      this.isIdCard(nowIndex)
       
       var _this = this;
       var len = this.checkedNames.length;
       if(len){
-        for(var i=0;i<this.checkedNames.length;i++){
-          var obj = {};
-          obj.type = this.checkedNames[i];
-          var info = this.exampleRes[nowIndex][this.checkedNames[i]];
-          obj['alg_answer'] = info['text'];
-          obj['square'] = [info['xmin'],info['ymin'],info['xmax'],info['ymax']];
-          this.task.task_infos.push(obj);
-        }
-        
-        this.task.pic_url = this.othersList[nowIndex].pic_url;
-        this.others.step = 1;
-        this.othersList[nowIndex].step = 1;
+        this.setAxiosAddZbTaskData(nowIndex)
 
-        this.axios({
-          url: '/token/add_orc_zb_task',
-          method: 'post',
-          data: _this.task
-        }).then(function (res) {
+        this.axiosAddZbTask().then(function (res) {
           _this.hasClickSubmit = false;
           console.log('add_orc_zb_task res返回的状态码是： '+res.data.code);
           console.log(res);
-          
-          _this.task = {
+          _this.task = {  //请求完成后重置请求参数，以便后续使用
             pic_url: '',
             task_infos:[]
           };
-          console.log(_this.task)
         }).catch(function (error) {
           console.log('/token/add_orc_zb_task error');
           console.log(error);
@@ -522,6 +570,13 @@ export default {
         alert('请选择字段');
       }
     }
+  },
+  computed: {
+    canUploadFlag(){  //根据已有图片是否已提交来判断可否上传
+      return this.othersList[this.othersList.length-1].step ? true : false;
+    }
+  },
+  mounted(){
   },
   created () {
     localStorage.setItem('crowdsourcingExp','expCrowdCheck');
@@ -561,14 +616,14 @@ export default {
   overflow: hidden;
   background: #ffffff;
 }
-.bigImgSpan{
+/* .bigImgSpan{
   position: relative;
   display: inline-block;
-}
-.bigImg{
+} */
+/* .bigImg{
   width: 416px;
   background: #f0f0f0;
-}
+} */
 .smallImgBox{
   display: flex;
   width: 140px;

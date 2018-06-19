@@ -42,7 +42,7 @@ export default {
       //   this.imgSize.x = penal.width;
       //   this.imgSize.y = 385;
       //   canvasCon.style.cssText="width:"+penal.width+"px;height:385px;position:relative;margin:0 auto;";
-      
+        
       this.$nextTick(() => {
         let penal=this.penal=document.getElementById('penal');
         let canvasCon = document.getElementById("canvas_con");

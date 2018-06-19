@@ -5,7 +5,7 @@
         <img @click="showBigImg(i)" class="smallImg" :class="{'imgActive':imgIndex==i}" v-for="(v,i) in tryObj.showImgArr" :src="v" :key="i" :alt="i">
       </div>
       <div class="bigImgBox" ref="bigImgBox">
-        <canvas id="mycanvas" width="416" height="350"></canvas>
+        <exp-canvas :src="tryObj.bigImg"></exp-canvas>
       </div>
       <div class="infoBox" :style="infoBoxStyle">
         <div class="loadingBox" v-show="loading">加载中...</div>
@@ -72,25 +72,21 @@
 
 <script>
 import {common} from '../assets/js/common'
+import expCanvas from './expCanvas'
 export default {
   name: '',
+  components: {
+    expCanvas
+  },
   data () {
     return {
-      context: null,
-      boxW: 0,
-      boxH: 0,
-      natImgW: 0,
-      natImgH: 0,
-      canvas: {
-        width: 416,
-        height: 350
-      },
       fileInputFlag: true,
       infoBoxStyle: {
         backgroundSize: '100% 100%',
         backgroundRepeat: 'no-repeat',
         backgroundImage: 'url(' + require('../assets/images/识别结果框.png') + ')' 
       },
+      insertNum: 3,
       responseTxt: '',
       loading: false,
       imgUrl: '',
@@ -133,94 +129,13 @@ export default {
     }
   },
   methods: {
-    createcanvas() {
-      var mycanvas=document.getElementById('mycanvas');
-      mycanvas.width = this.canvas.width;
-      mycanvas.height = this.canvas.height;
-      this.context=mycanvas.getContext('2d');
-    },
-    drawImage(obj) {
-      console.log('开始绘制图片');
-      console.log(obj);
-      this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
-      this.context.drawImage(obj.src, obj.x, obj.y, obj.w, obj.h);
-    },
-    showImg(src){
-      var _this = this;
-      this.getImageSize(src).then((res)=>{
-        var direction = _this.getScaleDirection(res);
-        var drawObj = _this.setImageSize(direction,res);
-        var obj = Object.assign({},drawObj,{src:res.img})
-        _this.drawImage(obj);
-      },(rej)=>{
-        console.log('获取图片失败');
-      });
-    },
-    getImageSize(src){
-      return new Promise((resolve,reject)=>{
-        var img=new Image(), obj = {};
-        img.onload=function() {
-          console.log('图片加载成功');
-          obj.w = img.naturalWidth;
-          obj.h = img.naturalHeight;
-          obj.img = img;
-          resolve(obj);
-        }
-        img.onerror = function(){
-          alert('图片加载失败，请刷新重试');
-          reject(new Error('图片加载失败, url: '+src));
-        }
-        img.src=src;
-      })
-    },
-    getScaleDirection(obj){
-      var wScale = this.boxW / obj.w;
-      var hScale = this.boxH / obj.h;
-      if(wScale>hScale){
-        console.log('高度应该撑满')
-        return {
-          d: 'v',
-          s: hScale
-        };
-      }else{
-        console.log('宽度应该撑满')
-        return {
-          d: 'h',
-          s: wScale
-        };
-      }
-    },
-    setImageSize(scaleObj,imgObj){
-      var _this = this;
-      var s = scaleObj.s;
-      var size = {};
-      var x,y,w,h;
-      if(scaleObj.d=='h'){
-        w = _this.boxW;
-        x = 0;
-        h = s*imgObj.h;
-        y = (_this.boxH - h)/2
-      }else{
-        h = _this.boxH;
-        y = 0;
-        w = s*imgObj.w;
-        x = (_this.boxW - w)/2
-      }
-      return {
-        x: x,
-        y: y,
-        w: w,
-        h: h
-      }
-    },
     showBigImg(i){  //点击小图绘制相应大图
       let nowIndex = i;
       this.imgIndex = nowIndex;
       this.example = this.exampleRes[nowIndex];
       this.tryObj.bigImg = this.tryObj.showImgArr[nowIndex];
-      this.showImg(this.tryObj.showImgArr[nowIndex]);
     },
-    axiosIdentity(data,insertNum){
+    axiosIdentity(data){  //身份证识别请求
       var _this = this;
       _this.axios({
         url: 'https://test-pazb.pingan.com.cn:20443/alg/ocr_chanxian_test/identity_card_grab_rec',
@@ -231,25 +146,7 @@ export default {
         }
       }).then(function (response) {
         _this.loading = false;
-        var info = {};
-        if(response.status==200){
-          var data = response.data;
-          _this.responseTxt = data;
-          if(data.code==200){
-            info = data.info;
-          }else{
-            alert('请上传身份证图片');
-            common.refresh(_this);
-          }
-        }else{
-          console.log('response.status: '+response.status)
-        }
-        _this.example.result = info;
-        _this.exampleRes.splice(insertNum,_this.exampleRes.length-insertNum,{'result': info});
-        _this.fileInputFlag = false;
-        _this.$nextTick(()=>{
-          _this.fileInputFlag = true;
-        });
+        _this.showResult(response);
       })
       .catch(function (error) {
         console.log('alg/ocr_chanxian_test/identity_card_grab_rec error');
@@ -258,7 +155,29 @@ export default {
         common.refresh(_this);
       });
     },
-    setAxiosData(obj){
+    showResult(response){  //识别结果显示
+      var info = {};
+      var _this = this;
+      if(response.status==200){
+        var data = response.data;
+        _this.responseTxt = data;
+        if(data.code==200){
+          info = data.info;
+        }else{
+          alert('请上传身份证图片');
+          common.refresh(_this);
+        }
+      }else{
+        console.log('response.status: '+response.status)
+      }
+      _this.example.result = info;
+      _this.exampleRes.splice(_this.insertNum,_this.exampleRes.length-_this.insertNum,{'result': info});
+      _this.fileInputFlag = false;
+      _this.$nextTick(()=>{
+        _this.fileInputFlag = true;
+      });
+    },
+    setAxiosData(obj){  //整合请求数据
       let data = new FormData();
       data.append('file', obj);
       data.append('deviceId', 'device001');
@@ -267,33 +186,27 @@ export default {
       data.append('appID', 'com.pingan.ocr.demo');
       return data;
     },
-    fileUpload(e){
+    fileUpload(e){  //文件上传
       
-      let insertNum = 3;
+      var _this = this;;
       //获取上传图片信息
       var obj = this.$refs.fileInput.files[0];
       var objUrl = window.URL.createObjectURL(obj);
       //设置左边小图
-      this.tryObj.showImgArr.splice(insertNum,this.tryObj.showImgArr.length-insertNum,''+objUrl);
-      this.imgIndex = insertNum;
+      this.tryObj.showImgArr.splice(_this.insertNum,this.tryObj.showImgArr.length-_this.insertNum,''+objUrl);
+      this.imgIndex = _this.insertNum;
       //绘制大图
       this.tryObj.bigImg = objUrl;
-      this.showImg(objUrl); 
       //请求获取图片信息
       let data = this.setAxiosData(obj)
       this.loading = true;
-      this.axiosIdentity(data,insertNum)
+      this.axiosIdentity(data)
     }
   },
   created () {
     localStorage.setItem('experienceId','ocrExp');
   },
-  mounted () {  //绘制第一张图
-    var _this = this;
-    this.boxW = this.$refs.bigImgBox.clientWidth;
-    this.boxH = this.$refs.bigImgBox.clientHeight;
-    this.createcanvas();
-    this.showImg(_this.tryObj.bigImg);
+  mounted () {
   }
 }
 </script>
