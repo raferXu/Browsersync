@@ -67,21 +67,24 @@ export default {
 <style scoped>
 .showDataBox{
   display: flex;
-  justify-content: space-between;
-  padding: 40px 275px 0px;
+  justify-content: center;
+}
+.box:not(:first-child){
+  margin-left: 120px;
 }
 .echartTip{
-  padding: 40px 0;
-  font-size: 18px;
+  padding: 0 0 20px;
+  font-size: 14px;
   color: #323232;
 }
 .label{
-  font-size: 18px;
+  padding-top:30px;
+  font-size: 14px;
   color: #828282;
 }
 .value{
-  padding-top: 16px;
-  font-size: 24px;
+  padding-top: 12px;
+  font-size: 20px;
   color: #323232;
   font-weight: bold;
 }

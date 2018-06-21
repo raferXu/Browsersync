@@ -55,9 +55,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.tableBox{
+  max-height: 690px;
+  overflow-y: auto;
+}
 .row{
   display: flex;
-  line-height: 80px;
+  line-height: 60px;
+  color: #323232;
+  font-size: 14px;
 }
 .row:nth-child(even){
   background: #fafafa;
@@ -67,10 +73,10 @@ export default {
   text-align: center;
 }
 .tableTitle{
-  height: 100px;
-  line-height: 100px;
-  font-size: 18px;
-  color: #323232;
+  height: 60px;
+  line-height: 60px;
+  font-size: 14px;
+  color: #828282;
 }
 .bodyRow:hover{
   cursor: pointer;

@@ -13,7 +13,7 @@
             return urlList[i].value
         }
     };
-    return 'https://test-pazb.pingan.com.cn:20443/bss'
+    return 'http://192.168.0.143:1987'
   }
   let BASE_URL = getBaseUrl();
   export default{  

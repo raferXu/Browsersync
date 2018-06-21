@@ -194,6 +194,7 @@ export default {
 #manage{
     position: relative;
     width: 100%;
+    min-width: 1170px;
     height: 100%;
     overflow: hidden;
 }
@@ -203,7 +204,7 @@ export default {
     top: 0;
     bottom: 0;
     z-index: 1;
-    width: 200px;
+    width: 180px;
     background: #333333;
 }
 .sidebar-container{
@@ -235,7 +236,7 @@ export default {
 .sidebarIcon{
     width: 24px;
     height: 24px;
-    margin: 0 30px;
+    margin: 0 20px 0 30px;
 }
 .sidebarTxt{
     color:#969696;
@@ -246,7 +247,7 @@ export default {
 }
 .serviceList{
     position: absolute;
-    left: 200px;
+    left: 180px;
     top: 0;
     display: flex;
     flex-direction: column;
@@ -271,13 +272,14 @@ export default {
     color: #c8c8c8;
 }
 .main-wrap{
-    width: 100%;
+    box-sizing: border-box;
     height: 100%;
-    overflow: auto;
+    margin-left: 180px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .main-container{
     min-height: 100%;
-    margin-left: 200px;
     background:#f5f5f5;
 }
 .navbar{

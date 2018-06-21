@@ -258,9 +258,10 @@ a:hover {
 }
 
 .pageTitle {
-    padding: 0.4rem;
-    /* border: 1px solid #f0f0f0; */
+    padding: 0.2rem;
     margin-bottom: 0;
+    font-size: 18px;
+    color: #323232;
 }
 
 .mainBox {

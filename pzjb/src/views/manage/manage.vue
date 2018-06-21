@@ -19,7 +19,7 @@
         <div class="orderBox">
           <h3 class="pageTitle">订单进度</h3>
           <ul class="orderList">
-            <li class="orderItem tc" v-for="(v,i) in orderList" :key="i">
+            <li class="orderItem tc" :class="{'firstItem':i==0}" v-for="(v,i) in orderList" :key="i">
               <p class="orderItemIconBox"><img class="orderItemIcon" :src="v.url" alt="icon"></p>
               <p class="orderItemLabel">{{v.label}}</p>
               <p class="orderItemVal">{{v.value}}</p>
@@ -213,8 +213,8 @@ export default {
   padding-bottom: 20px;
 }
 .pageTitle{
-  padding: 40px 0 20px 40px;
-  font-size: 24px;
+  padding: 20px;
+  font-size: 18px;
   color: #323232;
   border: none;
   border-bottom: 1px solid #f0f0f0;
@@ -223,7 +223,7 @@ export default {
   display: flex;
 }
 .feeBox{
-  width: 408px;
+  width: 318px;
   margin-right: 20px;
   background: #ffffff;
 }
@@ -232,18 +232,26 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 210px;
-  padding: 40px;
+  height: 140px;
+  padding: 30px 20px;
   padding-bottom: 0;
 }
+.availableAmountLabel{
+  color: #828282;
+  font-size: 14px;
+}
 .availableAmount{
-  padding: 18px 0 40px;
+  padding: 20px 0;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 24px;
+}
+.totalAmountBox{
+  color: #323232;
+  font-size: 14px;
 }
 .rechargeIcon{
-  width: 62px;
-  margin-bottom: 34px;
+  width: 40px;
+  margin-bottom: 20px;
 }
 .orderBox{
   flex: 1;
@@ -251,44 +259,52 @@ export default {
 }
 .rechargeBtn{
   width: 80px;
-  height: 34px;
-  line-height: 34px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
 }
 .orderList{
   display: flex;
-  padding-top: 40px;
+  padding-top: 30px;
 }
-.orderItem{
+.orderItem:not(:first-child){
   flex: 1;
 }
 .orderItem:not(:last-child){
   border-right: 1px solid #f0f0f0;
 }
 .orderItemIconBox{
-  width: 52px;
-  height: 57px;
+  width: 32px;
+  height: 32px;
   margin: 0 auto;
 }
 .orderItemIcon{
   width: 100%;
 }
 .orderItemLabel{
-  padding: 16px 0 18px;
-  font-size: 18px;
+  padding: 12px 0;
+  font-size: 14px;
   color: #828282;
 }
 .orderItemVal{
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: #323232;
+}
+.firstItem{
+  width: 125px;
+  padding-top: 2px;
+}
+.firstItem .orderItemVal{
+  font-size: 24px;
 }
 .echartTitle{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   box-sizing: border-box;
-  height: 90px;
-  padding-right: 40px;
+  height: 60px;
+  padding-right: 20px;
   padding-bottom: 0;
 }
 .echartBtn{
@@ -302,13 +318,12 @@ export default {
   border-color: #0090ff;
 }
 .echartBtn:not(:last-child){
-  margin-right: 40px;
+  margin-right: 30px;
 }
 .projectList{
-  max-height: 930px;
+  max-height: 690px;
   overflow-y: auto;
   overflow-x: hidden;
   background: #ffffff;
-  padding: 0 40px;
 }
 </style>
