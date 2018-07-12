@@ -204,17 +204,17 @@ export default {
 
 </script>
 <style>
-.ivu-checkbox-wrapper{
+.logAndRegWrap .ivu-checkbox-wrapper{
   font-size: 14px;
   margin: 0;
 }
-.ivu-checkbox{
+.logAndRegWrap .ivu-checkbox{
   margin-right: 3px;
 }
-.ivu-checkbox-inner{
+/* .logAndRegWrap .ivu-checkbox-inner{
   background: none;
   border-color: #ffffff;
-}
+} */
 </style>
 <style scoped>
 .logAndRegWrap{
@@ -299,6 +299,7 @@ export default {
   width: 300px;
   height: 40px;
   line-height: 40px;
+  font-size: 14px;
   text-align: center;
   color: #ffffff;
   background: #0090ff;

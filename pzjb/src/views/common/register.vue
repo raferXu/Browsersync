@@ -414,11 +414,11 @@ export default {
 
 </script>
 <style>
-.ivu-checkbox-wrapper{
+.logAndRegWrap .ivu-checkbox-wrapper{
   margin: 0;
   color: #ffffff;
 }
-.ivu-checkbox-inner{
+.logAndRegWrap .ivu-checkbox-inner{
   background: none;
   border-color: #ffffff;
 }

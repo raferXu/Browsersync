@@ -49,15 +49,15 @@ export default {
 .jbfooter{
   position: relative;
   padding: 0 200px;
-  height: 400px;
-  margin-top: -400px;
+  height: 300px;
+  margin-top: -300px;
   background: #333333;
   color: #ffffff;
 }
 .tipsBox{
   display: flex;
   justify-content: space-between;
-  padding-top: 80px;
+  padding-top: 40px;
 }
 .tipsBox li{
   display: flex;
@@ -78,7 +78,7 @@ export default {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 80px;
+  bottom: 40px;
   text-align: center;
   font-size: 12px;
 }

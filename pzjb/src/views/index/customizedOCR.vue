@@ -45,8 +45,8 @@
         data() {
             return {
                 stepStyle: {
-                    height: '371px',
-                    backgroundSize: '1920px 371px',
+                    height: '311px',
+                    backgroundSize: '1920px 311px',
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center center',
                     backgroundImage: 'url(' + require('../../assets/images/使用流程-定制化识别服务.png') + ')'
@@ -122,13 +122,13 @@
 <style scoped>
     .box {
         width: 1170px;;
-        padding: 80px 0;
+        padding: 60px 0;
         margin: 0 auto;
         text-align: left;
     }
     
     .futBox {
-        padding-bottom: 80px;
+        padding-bottom: 60px;
     }
     
     .divide {

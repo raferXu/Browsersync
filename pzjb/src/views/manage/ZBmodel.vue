@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="zbmodel">
     <Row style='background:#fff;'>
         <Col span="24" offset="" class="title" >申请众包录入服务</Col>
       <Col span="24" offset="0">
@@ -1001,7 +1001,7 @@ export default {
 </style>
 
 <style >
-.ivu-card-body{
+#zbmodel .ivu-card-body{
     padding:0;
 }
 /* .img{
@@ -1023,44 +1023,44 @@ export default {
 .list_info{
     text-align: left ;
 } */
-.ivu-tabs .ivu-tabs-bar {
+#zbmodel .ivu-tabs .ivu-tabs-bar {
         display: none;
     }
-.ivu-steps-horizontal .ivu-steps-content{
+#zbmodel .ivu-steps-horizontal .ivu-steps-content{
         padding-left: 0px;
     margin-left: -15px;
     margin-top: 10px;
 }
-.ivu-steps{
+#zbmodel .ivu-steps{
     padding-left:5%;
 }
-.ivu-steps-content{
+#zbmodel .ivu-steps-content{
     font-size:18px;
 }
-.ivu-steps-item.ivu-steps-status-process .ivu-steps-head-inner{
+#zbmodel .ivu-steps-item.ivu-steps-status-process .ivu-steps-head-inner{
     border-color: #78c4ff;
     background-color: #78c4ff;
 }
-.ivu-form-item{
+#zbmodel .ivu-form-item{
     margin-bottom: 20px;
 }
 /* .btn1{width:130px;height:54px;font-size:20px;margin-right:40px;} */
-.ivu-upload-drag{
+#zbmodel .ivu-upload-drag{
     border:none;
     
     padding-bottom: 20px;
 }
-.ivu-upload-drag:hover{
+#zbmodel .ivu-upload-drag:hover{
     border:none;
 }
 #uploadm .ivu-upload-drag{
     background:#fff;
 }
-.ivu-form-item-label{
+#zbmodel .ivu-form-item-label{
     height:100%;
     line-height:100%;
 }
-.ivu-radio-group-button .ivu-radio-wrapper{
+#zbmodel .ivu-radio-group-button .ivu-radio-wrapper{
     border-radius: 0px !important;
     width: 224px;
     height: 54px;
@@ -1068,33 +1068,33 @@ export default {
     text-align: center;
     line-height: 54px;
 }
-.ivu-radio-group-button .ivu-radio-wrapper-checked{
+#zbmodel .ivu-radio-group-button .ivu-radio-wrapper-checked{
     background:#2d8cf0;
     color:#fff;
 }
-.select_time .ivu-radio-group-button .ivu-radio-wrapper{
+#zbmodel .select_time .ivu-radio-group-button .ivu-radio-wrapper{
     margin-right:0px;
     width:100px;
 }
-.select_need .ivu-radio-group-button .ivu-radio-wrapper{
+#zbmodel .select_need .ivu-radio-group-button .ivu-radio-wrapper{
      width:100px;
 }
-.ivu-radio-group-button .ivu-radio-wrapper{
+#zbmodel .ivu-radio-group-button .ivu-radio-wrapper{
     padding: 0;
 }
-.write_time .ivu-input-wrapper,.write_time input{
+#zbmodel .write_time .ivu-input-wrapper,#zbmodel .write_time input{
     border-radius: 0px !important;
     width: 224px;
     height: 54px;
     line-height: 54px;
 }
-.form_times .ivu-input-group{
+#zbmodel .form_times .ivu-input-group{
     width: 220px;
     border-radius: 0px;
     border: none;
     color:#828282;
 }
-.form_times input , .form_times .ivu-input-group-append{
+#zbmodel .form_times input , #zbmodel .form_times .ivu-input-group-append{
     border-radius: 0px;
     border: none;
     background:#f5f5f5;
@@ -1103,13 +1103,13 @@ export default {
 /* .paint_mes{
     font-size:18px;
 } */
-.ivu-radio-group-button.ivu-radio-group-large .ivu-radio-wrapper,textarea.ivu-input{
+#zbmodel .ivu-radio-group-button.ivu-radio-group-large .ivu-radio-wrapper,#zbmodel textarea.ivu-input{
     font-size: 12px;
 }
 /* .title{
     font-size:20px;height:90px;line-height:90px;padding-left:40px;border-bottom:1px solid #f5f5f5;
 } */
-.ivu-steps,.ivu-steps .ivu-steps-head,.ivu-steps-item.ivu-steps-status-wait .ivu-steps-head-inner{
+#zbmodel .ivu-steps,#zbmodel .ivu-steps .ivu-steps-head,#zbmodel .ivu-steps-item.ivu-steps-status-wait .ivu-steps-head-inner{
     background:#f5f5f5;
 }
 /* .pop-content{
@@ -1119,10 +1119,10 @@ export default {
     white-space: normal;
     font-size:14px;
 } */
-.ivu-poptip-body{
+#zbmodel .ivu-poptip-body{
     padding:20px;
 }
-.ivu-poptip-arrow{
+#zbmodel .ivu-poptip-arrow{
     display:none;
 }
 </style>

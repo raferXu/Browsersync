@@ -26,12 +26,12 @@
       </ul>
     </jbSection>
     <jbSection :jbSectionStyle="applicationScenStyle">
-      <h4 slot="sectionHeaderImg" class="sectionHeader">
+      <!-- <h4 slot="sectionHeaderImg" class="sectionHeader">
         <img :src="applicationScenImg" alt="">
       </h4>
       <div slot="content">
         <applicationBox :obj="applicationScenObj"></applicationBox>
-      </div>
+      </div> -->
     </jbSection>
     <jbSection>
       <h4 slot="sectionHeaderImg" class="sectionHeader">
@@ -56,22 +56,22 @@ export default {
   data () {
     return {
       applicationScenStyle: {
-        height: '857px',
-        backgroundSize: '1920px 857px',
+        height: '565px',
+        backgroundSize: '1920px 565px',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center center',
         backgroundImage: 'url(' + require('../../assets/images/应用场景背景.png') + ')'
       },
       productContentStyle: {
-        height: '817px',
-        backgroundSize: '1920px 817px',
+        height: '727px',
+        backgroundSize: '1920px 727px',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center center',
         backgroundImage: 'url(' + require('../../assets/images/产品内容-首页.png') + ')'
       },
       bannerStyle: {
-        height: '1080px',
-        backgroundSize: '1920px 1080px',
+        height: '680px',
+        backgroundSize: '1920px 680px',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center center',
         backgroundImage: 'url(' + require('../../assets/images/首页banner.png') + ')'
@@ -173,7 +173,7 @@ export default {
         ],
         listStyle: {
           width: '363px',
-          height: '461px',
+          height: '441px',
           background: '#ffffff'
         }
       }
@@ -208,7 +208,7 @@ export default {
 <style scoped>
 .title{
   height: auto;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   text-align: center;
   border: none;
 }
@@ -218,7 +218,7 @@ export default {
 .list{
     display: flex;
     justify-content: space-between;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
 }
 .item{
     width: 232px;
@@ -226,14 +226,14 @@ export default {
 .btnG{
   display: flex;
   justify-content: space-around;
-  margin-top: 40px;
+  margin-top: 30px;
   text-align: center;
   color: #0090ff;
   font-size: 14px;
 }
 .caseBox{
   width: 644px;
-  padding-bottom: 160px;
+  padding-bottom: 80px;
   margin: 0 auto;
 }
 

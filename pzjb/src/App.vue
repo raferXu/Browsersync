@@ -232,7 +232,7 @@ export default {
   box-sizing: border-box;
   min-height: 100%;
   /* height: 100%; */
-  padding-bottom: 400px;
+  padding-bottom: 300px;
   z-index: 1;
 }
 .pb0{

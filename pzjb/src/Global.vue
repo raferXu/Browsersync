@@ -3,6 +3,7 @@
   // const BASE_URL = 'https://test-pazb.pingan.com.cn:20443'; 
   // const BASE_URL = 'http://192.168.0.143:1987';  
 //   const BASE_URL = 'http://192.168.0.203:5001';  
+//   const BASE_URL = 'http://192.168.0.170:5001';  
   function getBaseUrl() {
     let urlList = [
       {key:'30.4.88.47/web/BSS_Web1',value:'30.4.88.47/bss'},
@@ -13,7 +14,7 @@
             return urlList[i].value
         }
     };
-    return 'http://192.168.0.143:1987'
+    return 'http://192.168.0.170:5001'
   }
   let BASE_URL = getBaseUrl();
   export default{  

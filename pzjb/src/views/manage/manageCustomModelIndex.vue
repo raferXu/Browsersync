@@ -4,10 +4,16 @@
     <div class="contentBox">
       <div class="toOpenBox">
         <div class="toOpenInfoBox">
-          <img src="../../assets/images/定制化识别服务icon.png" class="img">
+          <img :src="content.img" class="img">
+          <div class="textBox">
+            <h3>{{content.title}}</h3>
+            <p><span>识别内容:</span>{{content.content}}</p>
+            <p><span>支持对象:</span>{{content.object}}</p>
+            <p><span>计费方式:</span>{{content.fee}}</p>
+          </div>
         </div>
         <div class="toOpenBtnBox">
-          <div class="btn btn1" @click="toOpen">申请开通</div>
+          <div class="btn btn1" @click="toOpen">{{content.btn}}</div>
         </div>
       </div>
       <div class="ZBmodelTable" v-show="zbModelObj.length>0">
@@ -26,6 +32,15 @@ export default {
   name: '',
   data () {
     return {
+      title: '定制化识别服务',
+      content: {
+        img: require('../../assets/images/定制化识别服务icon.png'),
+        btn: '申请开通',
+        title: '定制化识别服务',
+        content: '自定义模板',
+        object: '各式印刷体',
+        fee: '预存款，每月按实际使用量扣款，具体费用以实际报价为准'
+      },
       tableTitle: {
         "name":"模板名称",
         "project_id":"项目ID",
@@ -33,12 +48,6 @@ export default {
         "type":"服务类别",
         "status":"状态" ,
         "called_num":"今日调用次数"
-      },
-      title: '定制化识别服务',
-      obj: {
-        who: '自定义模板',
-        which: '各式印刷体',
-        how: '预存款，每月按实际使用量扣款，具体费用以实际报价为准'
       },
       zbModelObj: [
       ]
@@ -93,12 +102,12 @@ export default {
   background:#f5f5f5;
 }
 .toOpenBox{
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding: 40px;
-  /* margin-bottom: 40px; */
+  min-width: 930px;
+  padding: 30px;
   background:#fff;
-  /* border: 1px solid #828282; */
 }
 .toOpenBox p{
   font-size: 20px;
@@ -106,21 +115,23 @@ export default {
 }
 .toOpenBtnBox{
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 .btn{
   display: inline-block;
   text-align: center;
-  height: 54px;
-  line-height: 54px;
+  height: 40px;
+  line-height: 40px;
   padding: 0 20px;
-  color: #ffffff;
-  font-size: 24px;
-  background: #0090ff;
+  border: 1px solid #0090ff;
+  color: #0090ff;
+  font-size: 20px;
+  background: #ffffff;
   cursor: pointer;
 }
-.btn:active{
-  background: #68bdff;
+.btn:active,.btn:hover{
+  background: #0090ff;
+  color: #ffffff;
 }
 .ZBmodelTable{
   display: flex;
@@ -143,18 +154,38 @@ export default {
   color: #68bdff;
   cursor: pointer;
 }
-.img{
-  width: 684px;
-  height: auto;
+.toOpenInfoBox{
+  display: flex;
 }
+.img{
+  width: 75px;
+  height: 75px;
+}
+.textBox{
+  padding-left: 30px;
+}
+.contentBox h3{
+  font-size: 18px;
+  color: #323232;
+  padding-bottom: 20px;
+}
+.contentBox p{
+  line-height: 20px;
+  font-size: 14px;
+  color: #323232;
+}
+.contentBox span{
+  padding-right: 20px;
+  color: #828282;
+}
+
 .btn1{
   width: 130px;
-  height: 54px;
+  height: 40px;
   font-size:20px;
-  line-height: 54px;
+  line-height: 40px;
   padding: 0px !important;
   text-align: center;
-  border-radius: 10px;
 }
 .main-container{
   background:#f5f5f5;

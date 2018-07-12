@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="manageCustomDevIndex">
     <Row style='background:#fff;'>
         <Col span="24" offset="" class="title" style="" >申请定制化识别服务</Col>
       <Col span="24" offset="0">
@@ -986,43 +986,43 @@ export default {
 </style>
 
 <style>
-.ivu-card-body{
+#manageCustomDevIndex .ivu-card-body{
     padding:0;
 }
-.ivu-tabs .ivu-tabs-bar {
+#manageCustomDevIndex .ivu-tabs .ivu-tabs-bar {
         display: none;
     }
-.ivu-steps-horizontal .ivu-steps-content{
+#manageCustomDevIndex .ivu-steps-horizontal .ivu-steps-content{
         padding-left: 0px;
     margin-left: -15px;
     margin-top: 10px;
 }
-.ivu-steps{
+#manageCustomDevIndex .ivu-steps{
     padding-left:5%;
 }
-.ivu-steps-content{
+#manageCustomDevIndex .ivu-steps-content{
     font-size:18px;
 }
-.ivu-steps-item.ivu-steps-status-process .ivu-steps-head-inner{
+#manageCustomDevIndex .ivu-steps-item.ivu-steps-status-process .ivu-steps-head-inner{
     border-color: #78c4ff;
     background-color: #78c4ff;
 }
-.ivu-form-item{
+#manageCustomDevIndex .ivu-form-item{
     margin-bottom: 20px;
 }
-.ivu-upload-drag{
+#manageCustomDevIndex .ivu-upload-drag{
     border:none;
     
     padding-bottom: 20px;
 }
-.ivu-upload-drag:hover{
+#manageCustomDevIndex .ivu-upload-drag:hover{
     border:none;
 }
-.ivu-form-item-label{
+#manageCustomDevIndex .ivu-form-item-label{
     height:100%;
     line-height:100%;
 }
-.ivu-radio-group-button .ivu-radio-wrapper{
+#manageCustomDevIndex .ivu-radio-group-button .ivu-radio-wrapper{
     border-radius: 0px !important;
     width: 224px;
     height: 54px;
@@ -1030,50 +1030,50 @@ export default {
     text-align: center;
     line-height: 54px;
 }
-.ivu-radio-group-button .ivu-radio-wrapper-checked{
+#manageCustomDevIndex .ivu-radio-group-button .ivu-radio-wrapper-checked{
     background:#2d8cf0;
     color:#fff;
 }
-.select_time .ivu-radio-group-button .ivu-radio-wrapper{
+#manageCustomDevIndex .select_time .ivu-radio-group-button .ivu-radio-wrapper{
     margin-right:0px;
     width:100px;
 }
-.select_need .ivu-radio-group-button .ivu-radio-wrapper{
+#manageCustomDevIndex .select_need .ivu-radio-group-button .ivu-radio-wrapper{
      width:100px;
 }
-.ivu-radio-group-button .ivu-radio-wrapper{
+#manageCustomDevIndex .ivu-radio-group-button .ivu-radio-wrapper{
     padding: 0;
 }
-.write_time .ivu-input-wrapper,.write_time input{
+#manageCustomDevIndex .write_time .ivu-input-wrapper,.write_time input{
     border-radius: 0px !important;
     width: 224px;
     height: 54px;
     line-height: 54px;
 }
-.form_times .ivu-input-group{
+#manageCustomDevIndex .form_times .ivu-input-group{
     width: 220px;
     border-radius: 0px;
     border: none;
     color:#828282;
 }
-.form_times input , .form_times .ivu-input-group-append{
+#manageCustomDevIndex .form_times input , #manageCustomDevIndex .form_times .ivu-input-group-append{
     border-radius: 0px;
     border: none;
     background:#f5f5f5;
     outline:none;
 }
 
-.ivu-radio-group-button.ivu-radio-group-large .ivu-radio-wrapper,textarea.ivu-input{
+#manageCustomDevIndex .ivu-radio-group-button.ivu-radio-group-large .ivu-radio-wrapper,textarea.ivu-input{
     font-size: 12px;
 }
-.ivu-steps,.ivu-steps .ivu-steps-head,.ivu-steps-item.ivu-steps-status-wait .ivu-steps-head-inner{
+#manageCustomDevIndex .ivu-steps,#manageCustomDevIndex .ivu-steps .ivu-steps-head,#manageCustomDevIndex .ivu-steps-item.ivu-steps-status-wait .ivu-steps-head-inner{
     background:#f5f5f5;
 }
 
-.ivu-poptip-body{
+#manageCustomDevIndex .ivu-poptip-body{
     padding:20px;
 }
-.ivu-poptip-arrow{
+#manageCustomDevIndex .ivu-poptip-arrow{
     display:none;
 }
 </style>

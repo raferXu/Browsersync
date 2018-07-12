@@ -212,12 +212,20 @@ a:hover {
     padding-right: 0.05rem;
 }
 
+.pb30 {
+    padding-bottom: 0.3rem;
+}
+
 .pb40 {
     padding-bottom: 0.4rem;
 }
 
 .pb80 {
-    padding-bottom: 0.8rem;
+    padding-bottom: 0.6rem;
+}
+
+.pb60 {
+    padding-bottom: 0.6rem;
 }
 
 .pb160 {
@@ -228,8 +236,12 @@ a:hover {
     padding-top: 0.4rem;
 }
 
+.pt60 {
+    padding-top: 0.6rem;
+}
+
 .pt80 {
-    padding-top: 0.8rem;
+    padding-top: 0.6rem;
 }
 
 .pt160 {
@@ -247,6 +259,18 @@ a:hover {
 
 .mb0 {
     margin-bottom: 0;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb40 {
+    margin-bottom: 40px;
+}
+
+.mb80 {
+    margin-bottom: 80px;
 }
 
 .mb160 {
@@ -270,7 +294,7 @@ a:hover {
 }
 
 .mainTitle {
-    padding-bottom: 0.8rem;
+    padding-bottom: 0.6rem;
 }
 
 .mainH3 {
@@ -418,7 +442,7 @@ a:hover {
 }
 
 .bannerBtn:not(:last-child) {
-    margin-right: 0.8rem;
+    margin-right: 0.4rem;
 }
 
 .bg3 {
@@ -437,7 +461,7 @@ a:hover {
 .sectionHeader {
     box-sizing: content-box;
     min-height: 36px;
-    padding: 80px 0;
+    padding: 60px 0;
     font-size: 36px;
     color: #333333;
 }

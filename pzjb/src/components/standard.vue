@@ -1,7 +1,11 @@
 <template>
   <div class="standardWrap">
-    <h3 class="mainH3B pb80 tc">{{standardData.title}}</h3>
-    <p class="mainTxtB pb40 tl">{{standardData.txt}}</p>
+    <h3 class="mainH3B pb30 tc">{{standardData.title}}</h3>
+    <div class="mainTxtB pb40 tc">
+      <p class="tl" style="display:inline-block">
+        {{standardData.txt}}
+      </p>
+    </div>
     <div class="imgBox">
       <img class="standardImg" :src="standardData.url" alt="standardImg">
     </div>

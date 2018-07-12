@@ -71,19 +71,19 @@ export default {
 <style scoped>
 .priceBox{
   width: 1170px;
-  padding: 80px 0;
+  padding: 60px 0;
   margin: 0 auto;
 }
 .sectionTitle{
   height: auto;
   line-height: 1;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   font-size:36px;
 }
 .priceTable{
   display: flex;
   flex-direction: column;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   font-size: 14px;
   color: #828282;
   overflow: hidden;

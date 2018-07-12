@@ -22,7 +22,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .mainH3B{
-  padding: 30px 0;
+  padding: 20px 0;
   font-size:18px;
   color: #333333;
 }

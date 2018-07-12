@@ -1,82 +1,84 @@
 <template>
   <div class="orderPayBox">
     <div class="modelTitle pageTitle">{{title}}</div>
-    <div class="payCon">
-      <div class="balanceBox mb80">
-        <h4 class="mb40">账户余额</h4>
-        <p class="balanceVal">¥ {{balance}}</p>
-      </div>
-      <div class="rechargeBox">
-        <div class="rechargeStepOneBox mb80">
-          <h4 class="mb40">充值方法</h4>
-          <h5 class="mb40 fs24">1.汇款</h5>
-          <p class="mb40">请汇款至以下账户信息，平安接包平台将会于3个工作日内确认汇款信息，并将充值金额同步至您的账户。</p>
-          <div>
-            <p>
-              <span class="color82">银行户名: </span>
-              <span>平安科技</span>
-            </p>
-            <p>
-              <span class="color82">银行账号: </span>
-              <span>20981000299904</span>
-            </p>
-            <p>
-              <span class="color82">开户银行: </span>
-              <span>平安银行</span>
-            </p>
-            <p>
-              <span class="color82">转账附言: </span>
-              <span>请填写您的用户名</span>
-            </p>
-          </div>
+    <div class="conWrap">
+      <div class="payCon">
+        <div class="subTitle">{{title}}</div>
+        <div class="balanceBox">
+          <h4 class="mb20">账户余额</h4>
+          <p class="balanceVal">¥ {{balance}}</p>
         </div>
-        <div class="rechargeStepTwoBox">
-          <h5 class="mb40 fs24">2.填写您的汇款信息</h5>
-          <div>
-            <Form ref="form" :model="recharge" :label-width="120">
-              <FormItem label="汇款银行">
-                <Input v-model="recharge.remittance_bank"></Input>
-              </FormItem>
-              <FormItem label="汇款帐号">
-                <Input v-model="recharge.remittance_account"></Input>
-              </FormItem>
-              <FormItem label="汇款金额">
-                <Input v-model="recharge.remittance_amount"></Input>
-              </FormItem>
-              <FormItem label="汇款日期">
-                <DatePicker
-                  v-model="recharge.remittance_date"
-                  type="date"
-                  placeholder="选择日期" style="width: 100%;">
-                </DatePicker>
-              </FormItem>
-              <FormItem label="汇款人">
-                <Input v-model="recharge.remitter"></Input>
-              </FormItem>
-              <FormItem label="汇款人手机">
-                <Input v-model="recharge.remitter_phone_number"></Input>
-              </FormItem>
-              <FormItem label="汇款凭证" class="proofItem">
-                <div class="proofBox">
-                  <div class="proofImgBox">
-                    <img v-if="recharge.remittance_pic" :src="recharge.remittance_pic" alt="proofImg" class="proofImg">
-                  </div>
-                  <div class="proofInputBox">
-                    <div class="fileNameBox">{{recharge.remittance_pic}}</div>
-                    <div class="fileInputBox">
-                      <input class="urlBtn" type="button" value="本地上传">
-                      <input accept="image/jpg,image/jpeg,image/png,application/pdf" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
+        <div class="rechargeBox">
+          <div class="rechargeStepOneBox">
+            <h4 class="mb20">充值方法</h4>
+            <p class="mb40 lh20">1.汇款: 请汇款至以下账户信息，平安接包平台将会于3个工作日内确认汇款信息，并将充值金额同步至您的账户。在转账成功后，本订单将自动进行预扣费，同时服务生效。</p>
+            <div class="accountExample">
+              <p>
+                <span class="color82">银行户名: </span>
+                <span>平安科技</span>
+              </p>
+              <p>
+                <span class="color82">银行账号: </span>
+                <span>20981000299904</span>
+              </p>
+              <p class="pd80">
+                <span class="color82">开户银行: </span>
+                <span>平安银行</span>
+              </p>
+              <p class="pd80">
+                <span class="color82">转账附言: </span>
+                <span>请填写您的用户名</span>
+              </p>
+            </div>
+          </div>
+          <div class="rechargeStepTwoBox">
+            <h5 class="stepTitle">2.填写您的汇款信息</h5>
+            <div>
+              <Form ref="form" :model="recharge" :label-width="96" label-position="left">
+                <FormItem label="汇款银行">
+                  <Input v-model="recharge.remittance_bank"></Input>
+                </FormItem>
+                <FormItem label="汇款帐号">
+                  <Input v-model="recharge.remittance_account"></Input>
+                </FormItem>
+                <FormItem label="汇款金额">
+                  <Input v-model="recharge.remittance_amount"></Input>
+                </FormItem>
+                <FormItem label="汇款日期">
+                  <DatePicker
+                    v-model="recharge.remittance_date"
+                    type="date"
+                    placeholder="选择日期" style="width: 100%;">
+                  </DatePicker>
+                </FormItem>
+                <FormItem label="汇款人">
+                  <Input v-model="recharge.remitter"></Input>
+                </FormItem>
+                <FormItem label="汇款人手机">
+                  <Input v-model="recharge.remitter_phone_number"></Input>
+                </FormItem>
+                <FormItem label="汇款凭证" class="proofItem">
+                  <div class="proofBox">
+                    <div class="proofImgBox">
+                      <img v-if="recharge.remittance_pic" :src="recharge.remittance_pic" alt="proofImg" class="proofImg">
+                    </div>
+                    <div class="proofInputBox">
+                      <div class="fileNameBox">{{recharge.remittance_pic}}</div>
+                      <div class="fileInputBox">
+                        <input class="urlBtn" type="button" value="本地上传">
+                        <input accept="image/jpg,image/jpeg,image/png,application/pdf" ref="fileInput" class="fileUploadBtn" type="file" @change="fileUpload">
+                      </div>
+                    </div>
+                    <div class="proofInfoBox">
+                      提示: 请上传大小不超过3MB的JPG/PNG/PDF格式的单据
                     </div>
                   </div>
-                  <div class="proofInfoBox">
-                    提示: 请上传大小不超过3MB的JPG/PNG/PDF格式的单据
-                  </div>
-                </div>
-              </FormItem>
-              <FormItem>
-                <Button type="primary" @click="onSubmit">确认充值</Button>
-              </FormItem>
-            </Form>
+                </FormItem>
+              </Form>
+              <div class="btnG rlt">
+                <button class="submitBtn" @click="onSubmit">确认充值</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -206,10 +208,18 @@ export default {
 .mb40{
   margin-bottom: 40px;
 }
+.mb20{
+  margin-bottom: 20px;
+}
+.lh20{
+  line-height: 20px;
+}
 .fs24{
   font-size: 24px;
 }
-
+.rlt{
+  position: relative;
+}
 .title{
   padding: 40px;
   border-bottom: 1px solid #f0f0f0;
@@ -219,79 +229,153 @@ export default {
   line-height: 1;
 }
 .rechargeBox{
-  line-height: 1.6;
+  padding-left: 20px;
 }
-.payCon{
-  width: 1200px;
-  padding: 80px 80px 160px;
-  font-size: 24px;
+.rechargeStepOneBox, .stepTitle{
+  font-size: 14px;
   color: #323232;
 }
+.rechargeStepOneBox{
+  padding-right: 60px;
+}
+.stepTitle{
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+.accountExample{
+  overflow: hidden;
+}
+.accountExample p{
+  float: left;
+  width: 50%;
+  padding-bottom: 40px;
+}
+.conWrap{
+  padding: 20px;
+  background: #f0f0f0;
+}
+.payCon{
+  min-width: 930px;
+  font-size: 14px;
+  color: #323232;
+  background: #fff;
+}
+.subTitle{
+  height: 60px;
+  line-height: 60px;
+  padding-left: 20px;
+  border: 1px solid #f0f0f0;
+  font-size: 20px;
+  color: #323232;
+}
+.balanceBox{
+  padding: 20px;
+  padding-bottom: 40px;
+  color: #828282;
+}
 .balanceVal{
-  font-size: 48px;
+  font-size: 24px;
   color: #323232;
   font-weight: bold;
 }
 .proofImgBox{
   width: 100%;
-  min-height: 400px;
+  min-height: 132px;
   background: #f0f0f0;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .proofImg{
   width: 100%;
 }
 .proofInputBox{
   display: flex;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
   border: 1px solid #aadaff;
 }
 .fileNameBox{
   box-sizing: border-box;
   flex: 1;
-  height: 54px;
-  line-height: 54px;
+  height: 36px;
+  line-height: 36px;
   padding-left: 10px;
-  /* border: 1px solid #aadaff; */
   border-right: none;
 }
 .fileInputBox{
   position: relative;
-  width: 130px;
-  height: 54px;
+  width: 80px;
+  height: 36px;
   overflow: hidden;
   background: #0090ff;
 }
 .urlBtn{
-  position: relative;
-  top: -2px;
-  width: 130px;
-  height: 54px;
-  line-height: 54px;
+  position: absolute;
+  width: 80px;
+  height: 36px;
+  line-height: 36px;
   text-align: center;
   color: #ffffff;
-  font-size: 24px;
+  font-size: 14px;
   background: #0090ff;
 }
 .fileUploadBtn{
   position: absolute;
   top: 0;
   left: 0;
-  width: 130px;
-  height: 54px;
+  width: 80px;
+  height: 36px;
   opacity: 0;
 }
 .proofInfoBox{
+  line-height: 1;
   padding-top: 20px;
   font-size: 14px;
   color: #828282;
 }
-
+.btnG{
+  min-width: 930px;
+  height: 100px;
+  border-top: 1px solid #f0f0f0;
+}
+.submitBtn{
+  position: absolute;
+  top: 30px;
+  right: 60px;
+  width: 130px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  text-align: center;
+  font-size: 18px;
+  color: #ffffff;
+  background: #0090ff;
+}
 
 </style>
 <style>
-.proofItem .ivu-form-item-content{
+.orderPayBox .proofItem .ivu-form-item-content{
   height: auto;
+}
+.orderPayBox .ivu-form-item{
+  margin-bottom: 30px;
+}
+.orderPayBox .ivu-form .ivu-form-item-label{
+  font-size: 14px;
+  color: #828282;
+}
+.orderPayBox .ivu-input-wrapper{
+  width: 400px;
+}
+.orderPayBox .ivu-input, .ivu-form-item-content, .orderPayBox .ivu-form .ivu-form-item-label, .orderPayBox .ivu-select-single .ivu-select-selection, .orderPayBox .ivu-select-single .ivu-select-selection .ivu-select-placeholder, .orderPayBox .ivu-select-single .ivu-select-selection .ivu-select-selected-value{
+  height: 36px;
+  line-height: 36px;
+}
+.orderPayBox .ivu-input{
+  padding: 0 0 0 10px;
+  font-size: 14px;
+  line-height: 36px;
+}
+.orderPayBox .ivu-form-item-content{
+  width: 400px;
 }
 </style>

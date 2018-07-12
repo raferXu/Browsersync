@@ -54,8 +54,8 @@ export default {
   data () {
     return {
         stepStyle: {
-            height: '712px',
-            backgroundSize: '1920px 712px',
+            height: '592px',
+            backgroundSize: '1920px 592px',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center center',
             backgroundImage: 'url(' + require('../../assets/images/使用流程-众包服务.png') + ')'
@@ -148,11 +148,11 @@ export default {
 .box{
     width: 1170px;
     margin: 0 auto;
-    padding-top: 160px;
+    padding-top: 120px;
     text-align: left;
 }
 .futBox{
-    padding-bottom: 80px;
+    padding-bottom: 60px;
 }
 .divide{
     height: 80px;

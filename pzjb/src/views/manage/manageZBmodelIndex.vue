@@ -4,7 +4,13 @@
     <div class="contentBox">
       <div class="toOpenBox">
         <div class="toOpenInfoBox">
-          <img src="../../assets/images/众包录入icon.png" class="img">
+          <img :src="content.img" class="img">
+          <div class="textBox">
+            <h3>{{content.title}}</h3>
+            <p><span>识别内容:</span>{{content.content}}</p>
+            <p><span>支持对象:</span>{{content.object}}</p>
+            <p><span>计费方式:</span>{{content.fee}}</p>
+          </div>
         </div>
         <div class="toOpenBtnBox">
           <div class="btn btn1" @click="toOpen">申请开通</div>
@@ -26,6 +32,7 @@ export default {
   name: '',
   data () {
     return {
+      title: '众包服务',
       type: 'zb',
       tableTitle: {
         "name":"模板名称",
@@ -35,11 +42,13 @@ export default {
         "status":"状态" ,
         "called_num":"今日调用次数"
       },
-      title: '众包录入',
-      obj: {
-        who: '众包文字识别',
-        which: '自定义 (支持印刷体及手写体)',
-        how: '预存款，每月按实际使用量扣款'
+      content: {
+        img: require('../../assets/images/众包录入icon.png'),
+        btn: '申请开通',
+        title: '众包录入',
+        content: '自定义模板',
+        object: '各式印刷体、手写体',
+        fee: '预存款，每月按实际使用量扣款，具体费用以实际报价为准'
       },
       zbModelObj: []
     }
@@ -97,7 +106,7 @@ export default {
 .toOpenBox{
   display: flex;
   justify-content: space-between;
-  padding: 40px;
+  padding: 30px;
   background:#fff;
 }
 .toOpenBox p{
@@ -106,21 +115,23 @@ export default {
 }
 .toOpenBtnBox{
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 .btn{
   display: inline-block;
   text-align: center;
-  height: 54px;
-  line-height: 54px;
+  height: 40px;
+  line-height: 40px;
   padding: 0 20px;
-  color: #ffffff;
-  font-size: 24px;
-  background: #0090ff;
+  border: 1px solid #0090ff;
+  color: #0090ff;
+  font-size: 20px;
+  background: #ffffff;
   cursor: pointer;
 }
-.btn:active{
-  background: #68bdff;
+.btn:active,.btn:hover{
+  background: #0090ff;
+  color: #ffffff;
 }
 .ZBmodelTable{
   display: flex;
@@ -143,18 +154,13 @@ export default {
   color: #68bdff;
   cursor: pointer;
 }
-.img{
-  width: 688px;
-  height:120px;
-}
 .btn1{
   width: 130px;
-  height: 54px;
+  height: 40px;
   font-size:20px;
-  line-height: 54px;
+  line-height: 40px;
   padding: 0px !important;
   text-align: center;
-  border-radius: 10px;
 }
 .main-container{
   background:#f5f5f5;
@@ -172,5 +178,30 @@ export default {
   font-size: 0.18rem;
   padding: 0 20px 20px;
   background: #ffffff;
+}
+
+.toOpenInfoBox{
+  display: flex;
+}
+.img{
+  width: 75px;
+  height: 75px;
+}
+.textBox{
+  padding-left: 30px;
+}
+.contentBox h3{
+  font-size: 18px;
+  color: #323232;
+  padding-bottom: 20px;
+}
+.contentBox p{
+  line-height: 20px;
+  font-size: 14px;
+  color: #323232;
+}
+.contentBox span{
+  padding-right: 20px;
+  color: #828282;
 }
 </style>

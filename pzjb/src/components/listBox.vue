@@ -19,7 +19,7 @@ export default {
           type: Object,
           default: () => { return {
                 width: '565px',
-                height: '422px',
+                height: '382px',
                 background: '#ffffff'
             }
           }
@@ -50,14 +50,14 @@ export default {
     width: 100%;
 }
 .listBox h4{
-    padding: 30px;
+    padding: 20px;
     font-size: 24px;
     color: #323232;
     text-align: center;
     line-height: 1;
 }
 .listBox p{
-    padding: 0 30px;
+    padding: 0 20px;
     font-size: 14px;
     color: #828282;
     text-align: left;

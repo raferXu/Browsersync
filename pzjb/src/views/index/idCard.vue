@@ -63,8 +63,8 @@ export default {
         ]
       },
       applicationScenStyle: {
-        height: '696px',
-        backgroundSize: '1920px 696px',
+        height: '596px',
+        backgroundSize: '1920px 596px',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center center',
         backgroundImage: 'url(' + require('../../assets/images/应用场景-身份证识别.png') + ')'
@@ -110,20 +110,20 @@ export default {
 <style scoped>
 .box {
     width: 1170px;;
-    padding: 80px 0;
+    padding: 60px 0;
     margin: 0 auto;
     text-align: left;
 }
 .sectionHeader{
   box-sizing: content-box;
   min-height: 36px;
-  padding: 80px 0;
+  padding: 60px 0;
   font-size: 36px;
   color: #333333;
 }
 .list{
     display: flex;
     justify-content: space-between;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
 }
 </style>

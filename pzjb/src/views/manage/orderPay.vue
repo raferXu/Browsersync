@@ -1,35 +1,39 @@
 <template>
   <div class="orderPayBox" style="background:#fff;">
     <div class="modelTitle pageTitle">{{title}}</div>
-    <div class="payWrap">
+    <div class="conWrap">
       <div class="payCon">
-        <h4>请选择您的支付方式: </h4>
-        <div class="accountBox">
-          <p class="moneyWrap">
-            <Radio v-model="radio">使用账户余额</Radio>
-            <span class="moneyBox">¥ {{money}}</span>
-          </p>
-          <p class="noEnoughBox" v-if="enough"></p>
-          <p class="noEnoughBox noEnoughTips" v-else>你的余额不足，请充值！</p>
+        <div class="subTitle bd1">{{title}}</div>
+        <div class="payTypeBox">
+          <h4 class="mb20">请选择您的支付方式: </h4>
+          <div class="accountBox">
+            <p class="moneyWrap">
+              <Radio v-model="radio">使用账户余额</Radio>
+              <span class="moneyBox">¥ {{money}}</span>
+            </p>
+            <p class="noEnoughBox noEnoughTips" v-if="!enough">你的余额不足，请充值！</p>
+          </div>
+        </div>
+        <div class="payTypeBox">
+          <h4 class="mb40">预扣费</h4>
+          <div class="APIfeeBox">
+            <h5 class="mb20">API费用</h5>
+            <div class="APIConBox mb40">
+              <p>月调用费: <span>{{this.account.price}}元/次</span></p>
+              <p>预计调用量: <span>{{this.account.num}}次</span></p>
+              <p>预计使用时长: <span>{{this.account.month}}月</span></p>
+            </div>
+          </div>
+          <div class="sumBox">
+            <h4 class="mb20">总计: {{this.account.sum}}元 <span>（月调用费 X 预计调用量 X 预计使用时长 X 120%）</span></h4>
+            <p><i>*</i> 此价格为预扣费的金额，最终花费以实际用量为准。</p>
+          </div>
+        </div>
+        <div class="payTypeBox btnGBox">
+          <button class="submitBtn btn1" v-if="enough" @click="payNow">确认</button>
+          <button class="submitBtn" v-else @click="toRecharge">充值</button>
         </div>
       </div>
-      <div class="payView">
-        <h4 class="mb40">预扣费</h4>
-        <div class="APIfeeBox mb40">
-          <h5 class="mb20">API费用</h5>
-          <p>月调用费: <span>{{this.account.price}}元/次</span></p>
-          <p>预计调用量: <span>{{this.account.num}}次</span></p>
-          <p>预计使用时长: <span>{{this.account.month}}月</span></p>
-        </div>
-        <div class="sumBox">
-          <h4>总计: {{this.account.sum}}元 </h4>
-          <p><i>*</i> 此价格为预扣费的金额，最终花费以实际用量为准。</p>
-        </div>
-      </div>
-    </div>
-    <div class="btnGBox">
-      <Button type="primary" class="btn1" v-if="enough" @click="payNow">确认</Button>
-      <Button type="primary" v-else @click="toRecharge">充值</Button>
     </div>
   </div>
 </template>
@@ -71,7 +75,6 @@ export default {
     }
   },
   created () {
-    
     console.log(localStorage.getItem('available_amount'))
     this.money = localStorage.getItem('available_amount');
     this.account = Object.assign({},this.account,this.$route.params)
@@ -183,15 +186,6 @@ export default {
 .color82{
   color: #828282;
 }
-.mb80{
-  margin-bottom: 80px;
-}
-.mb40{
-  margin-bottom: 40px;
-}
-.mb20{
-  margin-bottom: 20px;
-}
 
 .title{
   height: 90px;
@@ -201,25 +195,37 @@ export default {
   color: #323232;
   border-bottom: 1px solid #f0f0f0;
 }
-.payWrap{
-  display: flex;
+.conWrap{
+  padding: 20px;
+  background: #f0f0f0;
 }
 .payCon{
-  box-sizing: border-box;
-  width: 1200px;
-  padding: 80px 80px 40px;
-  font-size: 24px;
-  color: #323232;
-  border-right: 1px solid #f0f0f0;
-}
-.accountBox{
-  padding: 40px 0 80px;
-}
-.accountRadio{
+  min-width: 930px;
   font-size: 14px;
+  color: #323232;
+  background: #fff;
+}
+.subTitle{
+  height: 60px;
+  line-height: 60px;
+  padding-left: 20px;
+  font-size: 20px;
+  color: #323232;
+}
+.payTypeBox{
+  padding: 30px 60px 30px 20px;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+.payTypeBox h4{
+  font-size: 14px;
+  color: #828282;
+}
+.bd1{
+  border-bottom: 1px solid #f0f0f0;
 }
 .balanceVal{
-  font-size: 48px;
+  font-size: 24px;
   color: #323232;
   font-weight: bold;
 }
@@ -267,41 +273,17 @@ export default {
   height: 54px;
   opacity: 0;
 }
-
-.payView{
-  padding: 80px;
-}
-.payView h4{
-  font-size: 24px;
-  color: #333333;
-}
-.payView h5{
-  font-size: 18px;
-  color: #333333;
-}
-.payView p{
-  font-size: 18px;
-  color: #828282;
-  line-height: 2;
-}
-.payView span{
-  font-size: 18px;
-  color: #333333;
-}
-.payView i{
-  color: #ff3b30;
-}
 .noEnoughBox{
-  width: 247px;
-  height: 54px;
-  margin: 80px 0 0;
+  width: 165px;
+  height: 36px;
 }
 .noEnoughTips{
-  line-height: 54px;
+  line-height: 36px;
   text-align: center;
-  font-size: 20px;
-  color: #0090ff;
-  background: #e3f3ff;
+  font-size: 14px;
+  color: #ff3b30;
+  border: 1px solid #ff3b30;
+  background: #ffebea;
 }
 .moneyWrap{
   display: flex;
@@ -309,8 +291,8 @@ export default {
   align-items: center;
 }
 .moneyBox{
-  font-size: 48px;
-  color: #333333;
+  font-size: 24px;
+  color: #323232;
 }
 .pageTitle{
   font-size: 20px;
@@ -321,6 +303,45 @@ export default {
 .btnGBox{
   display: flex;
   justify-content: flex-end;
-  padding: 1.6rem 0.8rem;
+}
+.APIConBox{
+  display: flex;
+  justify-content: space-between;
+  color: #828282;
+}
+.APIConBox span{
+  color: #323232;
+}
+.sumBox{
+  font-size: 14px;
+  color: #323232;
+}
+.sumBox h4{
+  color: #323232;
+  font-size: 18px;
+}
+.sumBox span{
+  font-size: 14px;
+}
+.sumBox p{
+  color: #828282;
+}
+.sumBox i{
+  color: #ff3b30;
+}
+.submitBtn{
+  width: 130px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  text-align: center;
+  font-size: 18px;
+  color: #ffffff;
+  background: #0090ff;
+}
+</style>
+<style>
+.orderPayBox .ivu-radio-wrapper{
+  font-size: 14px;
 }
 </style>

@@ -37,15 +37,16 @@ export default {
         this.$router.push({path: '/manageIdCardFinish',query: {templateId: obj["template_id"]}});
       }else if(this.type=='zb'||obj.category==2){
         if(obj.type=='开发'){
-          this.$router.push({path: '/ZBmodelApprovaling',query: {templateId: obj["template_id"]}});
+          // this.$router.push({path: '/ZBmodelApprovaling',query: {templateId: obj["template_id"],type:'zb'}});
+          this.$router.push({path: '/manageCustomDevApprovaling',query: {templateId: obj["template_id"],type:'zb'}});
         }else{
-          this.$router.push({path: '/manageZBmodelFinish',query: {templateId: obj["template_id"]}});
+          this.$router.push({path: '/manageZBmodelFinish',query: {templateId: obj["template_id"],type:'zb'}});
         }
       }else{
         if(obj.type=='开发'){
-          this.$router.push({path: '/manageCustomDevApprovaling',query: {templateId: obj["template_id"]}});
+          this.$router.push({path: '/manageCustomDevApprovaling',query: {templateId: obj["template_id"],type:'ocr'}});
         }else{
-          this.$router.push({path: '/manageCustomDevFinish',query: {templateId: obj["template_id"]}});
+          this.$router.push({path: '/manageCustomDevFinish',query: {templateId: obj["template_id"],type:'ocr'}});
         }
       }
     }
@@ -55,15 +56,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.tableBox{
-  max-height: 690px;
-  overflow-y: auto;
-}
 .row{
   display: flex;
-  line-height: 60px;
-  color: #323232;
-  font-size: 14px;
+  line-height: 80px;
 }
 .row:nth-child(even){
   background: #fafafa;
@@ -73,10 +68,10 @@ export default {
   text-align: center;
 }
 .tableTitle{
-  height: 60px;
-  line-height: 60px;
-  font-size: 14px;
-  color: #828282;
+  height: 100px;
+  line-height: 100px;
+  font-size: 18px;
+  color: #323232;
 }
 .bodyRow:hover{
   cursor: pointer;
