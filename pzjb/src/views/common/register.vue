@@ -185,6 +185,7 @@ export default {
     };
   },
   created () {
+    // 设置cancelTokenFail，footerHide，获取跳转到登陆也的url，验证每个输入框的值，提交
     this.$store.commit('cancelTokenFail',false);
     this.$store.commit('footerHide');
     this.from = common.GetUrlParam('from');
